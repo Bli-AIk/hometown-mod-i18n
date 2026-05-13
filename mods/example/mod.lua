@@ -1,3 +1,3 @@
 function Mod:init()
-    print("Loaded "..self.info.name.."!")
+    print("booom "..self.info.name.."!")
 end
