@@ -240,19 +240,47 @@ end
         cutscene:text("* This is for you,[wait:5] dad.", "upset_down", "noelle")
         noelle:setAnimation("ball")
         Assets.playSound("jump")
-        cutscene:wait(cutscene:slideTo(noelle, 230, 135, 0.6))
-        noelle:setSprite("target_1")
-        noelle:slideTo(186, 271, 0.4, "in-cubic")
-        cutscene:wait(0.4)
+        cutscene:wait(cutscene:slideTo(noelle, 230, 135, 0.2))
+        noelle:setSprite("make_fountain/target_1")
+        noelle:slideTo(171, 180, 0.2, "out-sine") -- might try out-expo?
+        cutscene:wait(0.3)
+        local n_x, n_y = noelle:getRelativePos(0, 0, Game.world)
+        n_y = n_y - 7
+        local total_stars = 19    
+        local spacing = 12           
+        local wave_height = 6     
+        local delay_per_star = 0.05
+        local life_time = 0.5        
+        local wave_cycles = 2        
+        local horizontal_shift = 8
+        for i = 1, total_stars do
+            local offset_index = i - (total_stars + 1) / 2
+            local target_x = n_x + (offset_index * spacing) + horizontal_shift
+            local progress = (i - 1) / (total_stars - 1)
+            local wave_offset = -math.cos(progress * wave_cycles * 2 * math.pi) * wave_height
+            local target_y = n_y + (noelle.height / 2) + wave_offset
+            local sprite = Sprite("effects/make_fountain/blaze_shine", target_x, target_y)
+            sprite:setOrigin(0.5, 0.5) 
+            sprite.layer = noelle.layer - 0.1
+            Game.world:addChild(sprite)
+            sprite:play(0.5, true) 
+            Assets.playSound("fountain_target")
+            Game.world.timer:after(life_time, function()
+                if sprite and sprite.stage then
+                    sprite:fadeOutAndRemove(0.15)
+                end
+            end)
+            cutscene:wait(delay_per_star)
+        end
+        cutscene:wait(cutscene:slideTo(noelle, 159, 269, 0.5, "in-expo"))
         noelle:setSprite("make_fountain/make_1")
         Game.world:shake(10, 10)
         noelle:setAnimation("make_fountain/make_loop")
         Assets.playSound("fountain_make")
-        local pillar = FMPillar(186, 271, noelle)
+        local pillar = FMPillar(161, 269, noelle)
         pillar.layer = noelle.layer - 0.01
         Game.world:addChild(pillar)
         cutscene:wait(7)
-        Game.world:stopShake()
         noelle:resetSprite() 
         Assets.playSound("bump", 0.6)
         noelle:shake(2)
@@ -260,7 +288,7 @@ end
         noelle:setSprite("make_fountain/jump_off_landed")  
         local ball_instances = {}
         local particle_timer = Game.world.timer:every(0.04, function()
-            local p = FMBall(186 + love.math.random(-10, 10), 271)
+            local p = FMBall(159 + love.math.random(-10, 10), 264)
             p.layer = noelle.layer + 5
             table.insert(ball_instances, p)
             Game.world:addChild(p)

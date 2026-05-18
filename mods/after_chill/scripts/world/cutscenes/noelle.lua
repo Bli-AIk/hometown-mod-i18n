@@ -4,6 +4,11 @@ return {
 
     ---@param cutscene WorldCutscene
     wall = function(cutscene, event)
+            for _, child in ipairs(Game.world.children) do 
+                if child:includes(ChaserEnemy) then 
+                    child:remove()
+                end 
+            end 
             Game:removePartyMember("ralsei")
             cutscene:loadMap("room2")
             local noelle = cutscene:spawnNPC("noelle", 225, -30)
