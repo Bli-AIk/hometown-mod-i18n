@@ -9,7 +9,7 @@ function character:init()
     self:setLightActor("kris_lw")
     self:setDarkTransitionActor("kris_dark_transition")
 
-    self.level = 5
+    self.level = 2
     if Game.chapter == 1 then
         self.title = "Leader\nCommands the party\nwith various ACTs."
     elseif Game.chapter == 2 or Game.chapter == 5 then
@@ -78,11 +78,9 @@ function character:init()
     self.stronger_absent = {"kris","susie","ralsei"}
     self.weapon_icon = "ui/menu/equip/sword"
 
-    -- self:setWeapon("wood_blade")
-    -- if Game.chapter >= 2 then
-    --     self:setArmor(1, "amber_card")
-    --     self:setArmor(2, "amber_card")
-    -- end
+    self:setWeapon("bounceblade")
+    self:setArmor(1, "amber_card")
+    self:setArmor(2, "amber_card")
 
     self.lw_weapon_default = "light/pencil"
     self.lw_armor_default = "light/bandage"
@@ -107,37 +105,6 @@ function character:onLevelUp(level)
     self:increaseStat("health", 2)
     if level % 10 == 0 then
         self:increaseStat("attack", 1)
-    end
-end
-
-function character:onPowerSelect(menu)
-    if MathUtils.random() < ((Game.chapter == 1) and 0.02 or 0.04) then
-        menu.kris_dog = true
-    else
-        menu.kris_dog = false
-    end
-end
-
-function character:drawPowerStat(index, x, y, menu)
-    if index == 1 and menu.kris_dog then
-        local frames = Assets.getFrames("misc/dog_sleep")
-        local frame = math.floor(Kristal.getTime()) % #frames + 1
-        love.graphics.print("Dog:", x, y)
-        Draw.draw(frames[frame], x+120, y+5, 0, 2, 2)
-        return true
-    elseif index == 3 then
-        local icon = Assets.getTexture("ui/menu/icon/fire")
-        Draw.draw(icon, x-26, y+6, 0, 2, 2)
-        love.graphics.print("Guts:", x, y)
-
-        Draw.draw(icon, x+90, y+6, 0, 2, 2)
-        if Game.chapter >= 2 then
-            Draw.draw(icon, x+110, y+6, 0, 2, 2)
-        end
-        if Game.chapter >= 4 then
-            Draw.draw(icon, x+130, y+6, 0, 2, 2)
-        end
-        return true
     end
 end
 

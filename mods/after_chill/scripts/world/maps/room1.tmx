@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" class="scary_room" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="75">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="62">
  <editorsettings>
   <export target="room1.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="music" value="wind"/>
-  <property name="name" value="Frosty Stage "/>
+  <property name="name" value="Test Map - Room 1"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/castle.tsx"/>
- <tileset firstgid="41" source="../../../../prophesied_fight/scripts/world/tilesets/castle.tsx"/>
  <layer id="1" name="tiles" width="20" height="24">
   <data encoding="csv">
 0,22,13,23,23,13,23,23,23,13,23,23,13,24,0,0,0,0,0,0,
@@ -16,20 +14,20 @@
 0,26,27,27,27,27,27,27,27,27,27,27,27,28,0,0,0,0,0,0,
 0,6,7,7,7,7,7,7,7,7,7,7,7,8,0,0,0,0,0,0,
 0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
-0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
-0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
+0,10,11,11,11,11,11,11,11,11,11,11,11,11,7,7,7,7,7,7,
+0,10,11,11,11,11,11,11,11,11,11,11,11,11,15,15,15,15,15,15,
 0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
 0,14,15,15,11,11,11,11,11,11,11,15,15,16,0,0,0,0,0,0,
 0,0,0,0,14,15,11,11,11,15,16,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,
-0,6,7,7,7,7,11,11,11,7,7,7,7,7,7,7,7,7,8,0,
+0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,18,19,20,0,
+0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,22,23,24,0,
+0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,22,9,24,0,
+0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,10,11,12,0,
+0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,10,11,12,0,
+0,6,7,7,7,7,11,11,11,7,7,7,7,7,7,7,11,11,12,0,
 0,10,11,11,11,11,11,11,11,11,11,11,11,11,15,15,15,15,16,0,
 0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
 0,10,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,
@@ -67,6 +65,9 @@
  </layer>
  <objectgroup color="#0000ff" id="3" name="collision" opacity="0.5">
   <object id="1" x="40" y="80" width="327" height="40"/>
+  <object id="2" x="559" y="120" width="40" height="80"/>
+  <object id="3" x="600" y="160" width="200" height="40"/>
+  <object id="4" x="560" y="280" width="40" height="80"/>
   <object id="5" x="600" y="280" width="200" height="40"/>
   <object id="6" x="440" y="360" width="120" height="40"/>
   <object id="7" x="360" y="400" width="80" height="40"/>
@@ -81,32 +82,48 @@
   <object id="17" x="200" y="440" width="40" height="240"/>
   <object id="18" x="360" y="440" width="40" height="240"/>
   <object id="23" x="600" y="640" width="40" height="40"/>
-  <object id="24" x="641.299" y="684.101" width="120" height="40" rotation="90.286"/>
+  <object id="24" x="643" y="599" width="120" height="40"/>
   <object id="25" x="760" y="640" width="40" height="160"/>
   <object id="26" x="600" y="800" width="160" height="40"/>
   <object id="39" x="324.667" y="78.6667" width="236" height="40"/>
-  <object id="67" x="459" y="678" width="280" height="40"/>
-  <object id="68" x="561" y="118" width="26" height="242"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="4" name="objects">
-  <object id="27" name="interactable" x="282" y="81" width="40" height="40">
+  <object id="27" name="savepoint" x="80" y="210" width="40" height="40">
    <properties>
-    <property name="text1" value="* The wall seems cracked."/>
+    <property name="flagcheck" value="legend"/>
+    <property name="text1">* Silence echoes in the darkness
+of this familiar-yet-different
+scenery.</property>
+    <property name="text2">* The power of avoiding copying
+official music shines within
+you.</property>
    </properties>
   </object>
-  <object id="65" name="savepoint" x="96" y="219" width="40" height="40">
+  <object id="40" name="transition" x="790.667" y="193.333" width="40" height="80">
    <properties>
-    <property name="text1" value="* The presence of you in this cold area fills you with a strange power."/>
-    <property name="text2" value="* Determination shines within you."/>
+    <property name="map" value="room2"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="53" name="wind_tunnel" x="157.002" y="789.296" width="366.815" height="104.193">
+   <properties>
+    <property name="side" value="left"/>
+   </properties>
+  </object>
+  <object id="61" name="tornado_spawner" x="523.818" y="729.349" width="61.3738" height="54.2373">
+   <properties>
+    <property name="rate" type="float" value="0.5"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="objects_party"/>
+ <objectgroup color="#c8cbf0" id="6" name="battleareas">
+  <object id="60" x="157.003" y="787.868" width="365.388" height="104.193"/>
+ </objectgroup>
  <objectgroup color="#7f00ff" id="5" name="markers">
-  <object id="52" name="spawn" x="300.054" y="258">
+  <object id="41" name="spawn" x="302.701" y="263.504">
    <point/>
   </object>
-  <object id="60" name="noelle" x="-710.667" y="-318.667">
+  <object id="56" name="entry" x="773.595" y="232.649">
    <point/>
   </object>
  </objectgroup>

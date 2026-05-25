@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="22">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="27">
  <editorsettings>
   <export target="room2.lua" format="lua"/>
  </editorsettings>
@@ -43,29 +43,28 @@
   <object id="2" x="0" y="400" width="760" height="40"/>
   <object id="3" x="498" y="514" width="40" height="280"/>
   <object id="4" x="160" y="80" width="600" height="40"/>
+  <object id="26" x="122.748" y="124.175" width="35.6824" height="276.896"/>
  </objectgroup>
  <objectgroup color="#7f00ff" id="4" name="markers">
-  <object id="15" name="spawn" x="241.776" y="263.829">
-   <point/>
-  </object>
   <object id="18" name="ralsei" x="933.04" y="263.82">
    <point/>
   </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="objects">
-  <object id="19" name="enemy" x="578.037" y="228.35" width="40" height="40">
+  <object id="23" name="wind_tunnel" x="301.16" y="114.184" width="284.032" height="284.032">
    <properties>
-    <property name="actor" value="dummy"/>
-    <property name="chase" value="true"/>
-    <property name="encounter" value="dummy"/>
-    <property name="once" type="bool" value="true"/>
-    <property name="path" value="idk"/>
+    <property name="side" value="left"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup id="6" name="paths">
-  <object id="20" name="idk" x="269.759" y="341.124">
-   <polygon points="0,0 279.75,14.273 42.8189,47.1008"/>
+  <object id="24" name="tornado_spawner" x="652.275" y="0" width="114.184" height="84.2105">
+   <properties>
+    <property name="rate" type="float" value="0.7"/>
+   </properties>
   </object>
+  <object id="25" name="hideparty" x="216.949" y="117.038" width="422.48" height="282.605"/>
  </objectgroup>
+ <objectgroup id="7" name="battleareas">
+  <object id="22" x="301.16" y="121.32" width="282.605" height="278.323"/>
+ </objectgroup>
+ <objectgroup id="6" name="paths"/>
 </map>

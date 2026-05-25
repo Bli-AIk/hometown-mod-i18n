@@ -30,7 +30,7 @@ function MovingArena:update()
     local offset = math.sin(self.siner * 1.5) * 60
 
     -- Move the arena
-    Game.battle.arena:setPosition(self.arena_start_x, self.arena_start_y + offset)
+    Game.battle.arena:setPosition(self.arena_start_x + offset, self.arena_start_y)
 
     super.update(self)
 end

@@ -2,7 +2,7 @@ return {
   version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.11.2",
-  class = "scary_room",
+  class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 20,
@@ -10,10 +10,9 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 75,
+  nextobjectid = 62,
   properties = {
-    ["music"] = "wind",
-    ["name"] = "Frosty Stage"
+    ["name"] = "Test Map - Room 1"
   },
   tilesets = {
     {
@@ -47,20 +46,20 @@ return {
         0, 26, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 28, 0, 0, 0, 0, 0, 0,
         0, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 0, 0, 0, 0, 0, 0,
         0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
-        0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
-        0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
+        0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 7, 7, 7, 7, 7, 7,
+        0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15, 15, 15, 15, 15, 15,
         0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
         0, 14, 15, 15, 11, 11, 11, 11, 11, 11, 11, 15, 15, 16, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 14, 15, 11, 11, 11, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 6, 7, 7, 7, 7, 11, 11, 11, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 0,
+        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 18, 19, 20, 0,
+        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 22, 23, 24, 0,
+        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 22, 9, 24, 0,
+        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 10, 11, 12, 0,
+        0, 0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 10, 11, 12, 0,
+        0, 6, 7, 7, 7, 7, 11, 11, 11, 7, 7, 7, 7, 7, 7, 7, 11, 11, 12, 0,
         0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15, 15, 15, 15, 16, 0,
         0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
         0, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 0, 0, 0, 0, 0, 0,
@@ -135,6 +134,45 @@ return {
           y = 80,
           width = 327,
           height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 2,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 559,
+          y = 120,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 600,
+          y = 160,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 280,
+          width = 40,
+          height = 80,
           rotation = 0,
           visible = true,
           properties = {}
@@ -326,11 +364,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 641.299,
-          y = 684.101,
+          x = 643,
+          y = 599,
           width = 120,
           height = 40,
-          rotation = 90.286,
+          rotation = 0,
           visible = true,
           properties = {}
         },
@@ -372,32 +410,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
-        {
-          id = 67,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 459,
-          y = 678,
-          width = 280,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 68,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 561,
-          y = 118,
-          width = 26,
-          height = 242,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -417,33 +429,65 @@ return {
       objects = {
         {
           id = 27,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 282,
-          y = 81,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["text1"] = "* The wall seems cracked."
-          }
-        },
-        {
-          id = 65,
           name = "savepoint",
           type = "",
           shape = "rectangle",
-          x = 96,
-          y = 219,
+          x = 80,
+          y = 210,
           width = 40,
           height = 40,
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* The presence of you in this cold area fills you with a strange power.",
-            ["text2"] = "* Determination shines within you."
+            ["flagcheck"] = "legend",
+            ["text1"] = "* Silence echoes in the darkness\nof this familiar-yet-different\nscenery.",
+            ["text2"] = "* The power of avoiding copying\nofficial music shines within\nyou."
+          }
+        },
+        {
+          id = 40,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 790.667,
+          y = 193.333,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "room2",
+            ["marker"] = "entry"
+          }
+        },
+        {
+          id = 53,
+          name = "wind_tunnel",
+          type = "",
+          shape = "rectangle",
+          x = 157.002,
+          y = 789.296,
+          width = 366.815,
+          height = 104.193,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["side"] = "left"
+          }
+        },
+        {
+          id = 61,
+          name = "tornado_spawner",
+          type = "",
+          shape = "rectangle",
+          x = 523.818,
+          y = 729.349,
+          width = 61.3738,
+          height = 54.2373,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["rate"] = 0.5
           }
         }
       }
@@ -452,7 +496,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 6,
-      name = "objects_party",
+      name = "battleareas",
       class = "",
       visible = true,
       opacity = 1,
@@ -461,7 +505,21 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 60,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 157.003,
+          y = 787.868,
+          width = 365.388,
+          height = 104.193,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -478,12 +536,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 52,
+          id = 41,
           name = "spawn",
           type = "",
           shape = "point",
-          x = 300.054,
-          y = 258,
+          x = 302.701,
+          y = 263.504,
           width = 0,
           height = 0,
           rotation = 0,
@@ -491,12 +549,12 @@ return {
           properties = {}
         },
         {
-          id = 60,
-          name = "noelle",
+          id = 56,
+          name = "entry",
           type = "",
           shape = "point",
-          x = -710.667,
-          y = -318.667,
+          x = 773.595,
+          y = 232.649,
           width = 0,
           height = 0,
           rotation = 0,
