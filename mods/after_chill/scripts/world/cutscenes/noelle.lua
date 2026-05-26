@@ -7,7 +7,7 @@ return {
             Game:removePartyMember("noelle")
             cutscene:wait(2)
             cutscene:setTextboxTop(true)
-            cutscene:wait(cutscene:mapTransition("room4"))
+            cutscene:wait(cutscene:mapTransition("Noellehallway"))
             Game.world.music:play("wind", 0.3)
             local noelle = cutscene:spawnNPC("noelle", 225, -100)
             Game.world:setCameraTarget(noelle)
