@@ -273,7 +273,7 @@ return {
         --     table.insert(ball_instances, p)
         --     Game.world:addChild(p)
         -- end)
-        -- cutscene:wait(1)
+      --  cutscene:wait(1)
         -- local fog = FMCeilingFog()
         -- fog.layer = 9500
         -- Game.world:addChild(fog)
