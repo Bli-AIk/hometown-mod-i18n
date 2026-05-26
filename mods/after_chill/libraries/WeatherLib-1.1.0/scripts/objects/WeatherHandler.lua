@@ -35,9 +35,9 @@ function WeatherHandler:init(typer, sfx, child, intensity, overlay)
     self.addto = child or Game.stage:getWeatherParent()
     --if type(self.type) == "table" then self.both = true end
     self.weathersounds = Music()
-    if self.type == "thunder" then
-       if self.sfx then self.weathersounds:play("heavy_rain", 2, 1) end
-    end
+    -- if self.type == "thunder" then
+    --    if self.sfx then self.weathersounds:play("heavy_rain", 2, 1) end
+    -- end
     if self.type == "rain" then if self.sfx then self.weathersounds:play("light_rain", 2, 1) end end
     
     self.intensity = intensity or 1
@@ -57,17 +57,17 @@ function WeatherHandler:update()
     end end]]
 
     if not Game.stage.wpaused then
-        if self.type == "rain" or self.type == "thunder" or self.type == "cd" then
+        if self.type == "rain" or self.type == "cd" then
             if self.raintimerreset then
                 self.raintimerreset = false
                 self.raintimerthres = math.random(1, 6)
             elseif self.raintimer >= self.raintimerthres then
 
                 local amount = self.intensity
-                if self.type == "thunder" then amount = amount + 1 end
+             --   if self.type == "thunder" then amount = amount + 1 end
 
                 local speedmult = self.intensity
-                if self.type == "thunder" then speedmult = speedmult + 1 end
+              --  if self.type == "thunder" then speedmult = speedmult + 1 end
 
                 for i = amount, 1, -1 do
                     self.raintimer = 0
@@ -182,14 +182,14 @@ function WeatherHandler:update()
 
             if self.thundertimer <= 0 then
                 Game.stage.timer:script(function(wait)
-
+                    if self.sfx then Assets.stopAndPlaySound("move", 0.5) end
                     local first = self.addto:addChild(ThunderFlash(self))
+                    Game.stage:shake()
                     wait(0.4)
                     first:remove()
-
+                    Game.stage:shake()
+                    if self.sfx then Assets.stopAndPlaySound("move", 0.5) end
                     self.addto:addChild(ThunderFlash(self))
-                    wait(0.5)
-                    if self.sfx then Assets.stopAndPlaySound("thunder", 0.5, 0.6) end
                 end)
                 --self.addto:addChild(ThunderFlash())
                 self.thundertimerreset = true

@@ -11,10 +11,10 @@ return {
         noelle:setFacing("up")
         noelle:setPosition(480, 253)
         cutscene:wait(0.3)
-        local sfx = Assets.playSound("kris_legend")
-        cutscene:wait(16.3)
-        -- cutscene:wait(cutscene:playSound("pianonoise"))
-        -- cutscene:wait(0.2)
+        -- local sfx = Assets.playSound("kris_legend")
+        -- cutscene:wait(16.3)
+        cutscene:wait(cutscene:playSound("pianonoise"))
+        cutscene:wait(0.2)
         cutscene:text("* W[wait:2]-wow,[wait:2] Kris, you've always been good at playing the piano.", "blush_surprise_smile", "noelle")
         cutscene:text("* Ever since we were kids.", "blush_smile_closed", "noelle")
         cutscene:wait(0.5)
@@ -215,16 +215,41 @@ return {
         noelle:setSprite("determined_side")
         Game.world.music:fade(0, 1)
         cutscene:wait(0.1)
-        noelle:setSprite("determined")
         cutscene:text("* This is for you,[wait:5] dad.", "upset_down", "noelle")
+         Assets.playSound("jump")
+        noelle:setAnimation("make_fountain/target")
+        noelle:slideTo(230, 135, 0.2)
+        cutscene:wait(0.2)
+        
+        -- 2. THE EXPLOSIVE PARABOLIC LEAP (TIMING ALIGNED)
+        Assets.playSound("boost", 0.4, 1.8)
         noelle:setAnimation("ball")
-        Assets.playSound("jump")
-        cutscene:wait(cutscene:slideTo(noelle, 230, 135, 0.2))
-        noelle:setSprite("make_fountain/target_1")
-        noelle:slideTo(171, 180, 0.2, "out-sine") -- might try out-expo?
-        cutscene:wait(0.3)
+        cutscene:wait(0.1) 
+        local start_x = noelle.x
+        local start_y = noelle.y
+        local target_x = 202
+        local target_y = 121
+        local arc_height = 40 
+        local duration = 0.4  -- Total air-time
+        local elapsed_time = 0
+        
+        Game.world.timer:during(duration, function()
+            elapsed_time = elapsed_time + DT
+            local progress = Utils.ease(0, 1, math.min(1.0, elapsed_time / duration), "out-expo")
+            
+            noelle.x = Utils.lerp(start_x, target_x, progress)
+            local base_y = Utils.lerp(start_y, target_y, progress)
+            local height_offset = 4 * arc_height * progress * (1 - progress)
+            noelle.y = base_y - height_offset
+        end, function()
+            noelle:setPosition(target_x, target_y)
+        end)
+        cutscene:wait(duration)
+        noelle:setSprite("make_fountain/target_3")
+        noelle:setPosition(202, 169)
+        cutscene:wait(0.1)
         local n_x, n_y = noelle:getRelativePos(0, 0, Game.world)
-        n_y = n_y - 7
+        n_y = n_y + 20
         local total_stars = 14 
         local spacing = 12           
         local wave_height = 6     
@@ -251,12 +276,12 @@ return {
             end)
             cutscene:wait(delay_per_star)
         end
-        cutscene:wait(cutscene:slideTo(noelle, 159, 269, 0.5, "in-expo"))
+        cutscene:wait(cutscene:slideTo(noelle, 184, 269, 0.5, "in-expo"))
         noelle:setSprite("make_fountain/make_1")
         Game.world:shake(10, 10)
         noelle:setAnimation("make_fountain/make_loop")
         Assets.playSound("fountain_make")
-        local pillar = FMPillar(161, 269, noelle)
+        local pillar = FMPillar(183, 269, noelle)
         pillar.layer = noelle.layer - 0.01
         Game.world:addChild(pillar)
         cutscene:wait(7)
@@ -267,7 +292,7 @@ return {
         noelle:setSprite("make_fountain/jump_off_landed")  
         local ball_instances = {}
         local particle_timer = Game.world.timer:every(0.04, function()
-            local p = FMBall(159 + love.math.random(-10, 10), 264)
+            local p = FMBall(183 + love.math.random(-10, 10), 270)
             p.layer = noelle.layer + 5
             table.insert(ball_instances, p)
             Game.world:addChild(p)

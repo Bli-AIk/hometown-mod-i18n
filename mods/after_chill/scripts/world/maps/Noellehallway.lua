@@ -17,7 +17,7 @@ return {
       name = "Receptionist",
       firstgid = 1,
       filename = "../tilesets/Receptionist.tsx",
-      exportfilename = "../tilesets/Receptionist..lua"
+      exportfilename = "../tilesets/Receptionist.lua"
     }
   },
   layers = {
