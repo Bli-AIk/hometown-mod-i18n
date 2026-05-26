@@ -4,7 +4,6 @@ return {
 
     ---@param cutscene WorldCutscene
     piano = function(cutscene)
-        -- -- -- text
         -- cutscene:detachFollowers()
         -- local kris = cutscene:getCharacter("kris")
         -- local noelle = cutscene:getCharacter("noelle") 
@@ -12,10 +11,10 @@ return {
         -- noelle:setFacing("up")
         -- noelle:setPosition(480, 253)
         -- cutscene:wait(0.3)
-        -- -- local sfx = Assets.playSound("kris_legend")
-        -- -- cutscene:wait(16.3s)
-        -- cutscene:wait(cutscene:playSound("pianonoise"))
-        -- cutscene:wait(0.2)
+        -- local sfx = Assets.playSound("kris_legend")
+        -- cutscene:wait(16.3)
+        -- -- cutscene:wait(cutscene:playSound("pianonoise"))
+        -- -- cutscene:wait(0.2)
         -- cutscene:text("* W[wait:2]-wow,[wait:2] Kris, you've always been good at playing the piano.", "blush_surprise_smile", "noelle")
         -- cutscene:text("* Ever since we were kids.", "blush_smile_closed", "noelle")
         -- cutscene:wait(0.5)
@@ -284,7 +283,7 @@ return {
         --         b:remove() 
         --     end
         -- end
-        cutscene:wait(1)
+        -- cutscene:wait(6)
         cutscene:after(function()
             Game.world:removeFX("desat")
             Game.world:startCutscene("noelle.fall")
