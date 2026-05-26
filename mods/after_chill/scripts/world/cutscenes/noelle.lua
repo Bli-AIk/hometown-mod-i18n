@@ -9,13 +9,13 @@ return {
             cutscene:setTextboxTop(true)
             cutscene:wait(cutscene:mapTransition("Noellehallway"))
             Game.world.music:play("wind", 0.3)
-            local noelle = cutscene:spawnNPC("noelle", 225, -100)
+            local noelle = cutscene:spawnNPC("noelle", 170, -100)
             Game.world:setCameraTarget(noelle)
             local kris = cutscene:getCharacter("kris")
             kris.sprite.visible = false 
             cutscene:wait(1)
             noelle:setAnimation("fall")
-            noelle:slideTo(239, 266, 2, "in-cubic")
+            noelle:slideTo(noelle.x, 282, 2, "in-cubic")
             cutscene:wait(2)
             Assets.playSound("dtrans_flip")
             noelle.sprite.scale_x = -1
@@ -31,6 +31,7 @@ return {
             noelle.sprite.scale_x = 1
             noelle.x = noelle.x - 50 
             noelle:setFacing("up")
+            noelle:setPosition(noelle.x, 295)
             cutscene:wait(0.4)
             cutscene:setSpeaker("noelle")
             cutscene:text("* (What is this place...?)")
