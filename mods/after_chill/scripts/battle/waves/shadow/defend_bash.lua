@@ -3,6 +3,8 @@ local defend_bash, super = Class(Wave)
 function defend_bash:init()
     super.init(self)
     self:setArenaPosition(320, 230)
+    self.collided_x = 0 
+    self.collided_y = 0
 end
 
 function defend_bash:onStart()
