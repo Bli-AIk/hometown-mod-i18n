@@ -13,8 +13,15 @@ end
 
 function Mod:postInit(is_new_file)
     if is_new_file then 
+        Game:setFlag("footstep", false)
         Game:setFlag("enemies_killed", 0)
         Game:setFlag("geno", false)
+    end 
+end 
+
+function Mod:onFootstep(chara, num)
+    if Game:getFlag("footstep") then 
+        Assets.playSound("step"..num, 0.8)
     end 
 end 
 

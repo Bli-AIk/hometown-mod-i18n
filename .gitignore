@@ -3,6 +3,7 @@
 
 mods/*
 !mods/example/
+!mods/after_chill/
 
 build/
 output/

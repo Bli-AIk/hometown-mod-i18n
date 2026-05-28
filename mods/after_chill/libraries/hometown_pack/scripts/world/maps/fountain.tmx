@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="11">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="13">
  <editorsettings>
   <export target="fountain.lua" format="lua"/>
  </editorsettings>
@@ -11,6 +11,13 @@
  </objectgroup>
  <objectgroup color="#ff00ff" id="3" name="objects_fountain">
   <object id="4" name="darkfountain" x="320" y="280"/>
+ </objectgroup>
+ <objectgroup id="7" name="objects">
+  <object id="12" name="script" x="202.205" y="414.285" width="233.883" height="25.2972" rotation="0.054219">
+   <properties>
+    <property name="cutscene" value="noelle.ambush"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#000000" id="5" name="markers">
   <object id="7" name="spawn" x="320" y="440">
