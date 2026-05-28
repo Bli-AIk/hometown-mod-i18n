@@ -103,5 +103,104 @@ return {
             cutscene:wait(1)
             cutscene:wait(cutscene:mapTransition("room1"))
             cutscene:fadeIn(0.1)
+    end, 
+
+    ambush = function(cutscene)
+        if Game:hasPartyMember("noelle") then 
+            Game:removePartyMember("noelle")
+            Game:removeFollower("noelle")
+        end 
+        Game:setFlag("footstep", false)
+        cutscene:loadMap("fountain")
+        local kris = cutscene:getCharacter("kris")
+        kris:walkTo(kris.x, kris.y - 80, 2)
+        cutscene:wait(2)
+        local text = DialogueText("[noskip][style:dark][speed:0.3][voice:none](It was as if your very SOUL was glowing...)", 80, 80)
+            text.layer = WORLD_LAYERS["top"]
+            text:setParallax(0, 0)
+            cutscene.world:addChild(text)
+        cutscene:wait(function() return not text:isTyping()        end)
+        text:fadeOutAndRemove(0.5)
+        local noelle = cutscene:spawnNPC("noelle", 700, 364)
+        cutscene:wait(1)
+        cutscene:text("* What do you think you are doing!?", nil, "noelle")
+        cutscene:wait(0.2)
+        local function iceshock(kx, ky)
+    Assets.playSound("icespell")
+    local function createParticle(x, y)
+        local sprite = Sprite("effects/icespell/snowflake", x, y)
+        sprite:setOrigin(0.5, 0.5)
+        sprite:setScale(1.5)
+        sprite.layer = 99999
+        Game.stage:addChild(sprite)
+        return sprite
     end
+
+    local particles = {}
+    particles[1] = createParticle(kx-25, ky-20)
+    cutscene:wait(3/30)
+    particles[2] = createParticle(kx+25, ky-20)
+    cutscene:wait(3/30)
+    particles[3] = createParticle(kx, ky+20)
+    cutscene:wait(3/30)
+
+    local burst = IceSpellBurst(kx, ky)
+    Game.stage:addChild(burst)
+    Game.world:shake(4, 4)
+
+    for _, particle in ipairs(particles) do
+        particle:remove()
+    end
+
+    for _, particle in ipairs(particles) do
+        for i = 0, 5 do
+            local effect = IceSpellEffect(particle.x, particle.y)
+            effect:setScale(0.75)
+            effect.physics.direction = math.rad(60 * i)
+            effect.physics.speed = 8
+            effect.physics.friction = 0.2
+            effect.layer = 99999
+            Game.stage:addChild(effect)
+        end
+    end
+end
+    iceshock(361, 355)
+    kris:setSprite("fell")
+    kris:slideTo(98, 356, 0.8, "out-quad")
+    kris:removeFX()
+    Game.world.music:play("gallery", 0.1)
+    noelle:walkTo(543, 345, 3)
+    cutscene:wait(3)
+    Assets.playSound("bump")
+    kris:shake()
+    cutscene:wait(0.5)
+    cutscene:setSpeaker("noelle")
+    cutscene:text("* Kris.\n* There you are.")
+    cutscene:text("* Trying to seal the fountain...?")
+    cutscene:text("* No,[wait:5] no Kris.")
+    cutscene:text("* How could you?")
+    Assets.playSound("bump")
+    kris:shake()
+    cutscene:wait(0.5)
+    noelle:setFacing("down")
+    cutscene:text("* [shake:1]YOU[shake:0] killed my father, didn't you?")
+    cutscene:wait(1)
+    cutscene:text("* Kris wouldn't do that.")
+    local fx = kris:addFX(ColorMaskFX(COLORS.red, 1))
+    Game.world.timer:tween(0.5, fx, {amount = 0})
+    cutscene:wait(1)
+    cutscene:text("* Kris is my friend.")
+    cutscene:text("* So it must be you... [shake:1]"..Game.save_name..".")
+    Assets.playSound("bump")
+    kris:shake()
+    cutscene:wait(0.5)
+    noelle:setFacing("left")
+    cutscene:text("* And I will not let you seal my only chance at saving my father.")
+    Assets.playSound("wing")
+    kris:shake()
+    cutscene:wait(0.3)
+    kris:resetSprite()
+    kris:setFacing("right")
+    cutscene:text("* And I will not let you seal my only chance at saving my father.")
+    end 
 }

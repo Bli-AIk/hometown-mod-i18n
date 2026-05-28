@@ -2,6 +2,7 @@ local actor, super = Class("noelle_lw", true)
 
 function actor:init()
     super.init(self)
+    self.portrait_offset = {-21, -14}
 
     -- Table of sprite animations
     TableUtils.merge(self.animations, {

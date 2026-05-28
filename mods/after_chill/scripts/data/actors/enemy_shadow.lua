@@ -64,7 +64,7 @@ function actor:init()
         ["battle/defeat"]       = {"battle/defeat", 1/15, false},
         ["battle/swooned"]      = {"battle/defeat", 1/15, false},
 
-        ["battle/transition"]   = {"sword_jump_down", 0.2, false, next="battle/intro"},
+        ["battle/transition"]   = {"sword_jump_down", 1/15, false, next="battle/intro"},
         ["battle/intro"]        = {"battle/attack", 1/15, false, next="idle"},
         ["battle/victory"]      = {"battle/victory", 1/10, false},
         ["battle/transition_out"] = {"battle/transition_out", 1/15, false},

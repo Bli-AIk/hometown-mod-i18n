@@ -96,7 +96,7 @@ cutscene:wait(1.3)
 Assets.playSound("wing")
 shadow:shake()
 shadow.sprite.scale_y = 2
-shadow.y = 248
+shadow.y = 241
 shadow:setSprite("left")
 local function bumpshake()
 kris:shake()
@@ -120,6 +120,7 @@ cutscene:text("* Berdly, Spamton, [shake:1]Noel[shake:0]-[next]")
 local fx = kris:addFX(ColorMaskFX(COLORS.red, 1))
 Assets.playSound("weaponpull_fast")
 kris:setAnimation("battle/attack_ready")
+shadow.y = 246
 Game.world.timer:tween(0.5, fx, {amount = 0})
 cutscene:wait(1.8)
 cutscene:text("* You're so desperate to break free,[wait:5] huh?")
