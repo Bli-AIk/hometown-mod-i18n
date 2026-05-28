@@ -3,8 +3,10 @@ local defend_bash, super = Class(Wave)
 function defend_bash:init()
     super.init(self)
     self:setArenaPosition(320, 230)
-    self.time = 12
+    self.time = 14
     self.bullets = {}
+    self.cycles = 0 
+    self.max_cycles = 8 
 end
 
 function defend_bash:onStart()
@@ -14,8 +16,13 @@ function defend_bash:onStart()
     self.timer:after(0.5, function()
         self.timer:tween(0.5, shadow, {alpha = 1}, "linear", function()
              shadow:setLayer(BATTLE_LAYERS["above_ui"])
-             self.timer:everyInstant(1.6, function()
-                 self:defend(shadow)
+             self.cycles = self.cycles + 1
+            self:defend(shadow)
+             self.timer:every(1.6, function()
+                self.cycles = self.cycles + 1
+                if not (self.cycles >= self.max_cycles) then 
+                self:hitArena()
+                end 
              end)
         end)
     end)
@@ -64,6 +71,7 @@ function defend_bash:calculateRandom()
 end 
 
 function defend_bash:beforeEnd()
+    self.timer:remove()
     for _, bullet in ipairs(self.bullets) do
         bullet:remove()
     end
@@ -72,7 +80,7 @@ function defend_bash:beforeEnd()
     Game.battle.timer:tween(0.5, shadow, {alpha = 0}, "linear", function()
        shadow:setLayer(-100)
        shadow:resetSprite()
-        shadow:setPosition(516, 292)
+       shadow:setPosition(516, 292)
        Game.battle.timer:tween(0.5, shadow, {alpha = 1}, "linear", function()
          shadow:setPosition(516, 292)
        end)
