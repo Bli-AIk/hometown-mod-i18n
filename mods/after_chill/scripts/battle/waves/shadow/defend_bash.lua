@@ -3,10 +3,10 @@ local defend_bash, super = Class(Wave)
 function defend_bash:init()
     super.init(self)
     self:setArenaPosition(320, 230)
-    self.time = 14
+    self.time = 19
     self.bullets = {}
     self.cycles = 0 
-    self.max_cycles = 8 
+    self.max_cycles = 9
 end
 
 function defend_bash:onStart()
@@ -18,7 +18,7 @@ function defend_bash:onStart()
              shadow:setLayer(BATTLE_LAYERS["above_ui"])
              self.cycles = self.cycles + 1
             self:defend(shadow)
-             self.timer:every(1.6, function()
+             self.timer:every(2, function()
                 self.cycles = self.cycles + 1
                 if not (self.cycles >= self.max_cycles) then 
                 self:hitArena()
@@ -53,6 +53,7 @@ function defend_bash:hitArena()
                  bullet.physics.speed_x = love.math.random(-6, -2)
                  bullet.physics.speed_y = love.math.random(-5, 1)
                  bullet.physics.gravity = 0.2
+                 bullet.remove_offscreen = true
                  bullet.spin_speed = love.math.random(-10, 10) / 100
                  bullet.graphics.spin = love.math.random(-10, 10) / 100
              end
@@ -66,7 +67,8 @@ function defend_bash:calculateRandom()
     local shadow = Game.battle:getEnemyBattler("shadow")
     local x = arena:getRight()  
     local y = shadow.y 
-    local rand_y = love.math.random(210, 300)
+    local raw_y = love.math.random(Game.battle.soul.y, Game.battle.soul.y + love.math.random(-20, 20))
+    local rand_y = MathUtils.clamp(raw_y, 214, 295)
     return x, rand_y 
 end 
 
@@ -76,14 +78,11 @@ function defend_bash:beforeEnd()
         bullet:remove()
     end
     local shadow = Game.battle:getEnemyBattler("shadow")
-    shadow:setPosition(516, 292)
     Game.battle.timer:tween(0.5, shadow, {alpha = 0}, "linear", function()
        shadow:setLayer(-100)
        shadow:resetSprite()
        shadow:setPosition(516, 292)
-       Game.battle.timer:tween(0.5, shadow, {alpha = 1}, "linear", function()
-         shadow:setPosition(516, 292)
-       end)
+       Game.battle.timer:tween(0.5, shadow, {alpha = 1})
     end)
 end 
 

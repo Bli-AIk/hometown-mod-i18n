@@ -5,6 +5,7 @@ function shadow:init()
 
     self.name = "Shadow"
     self:setActor("enemy_shadow")
+    self.disable_mercy = true 
 
     self.max_health = 2500
     self.health = 2500
