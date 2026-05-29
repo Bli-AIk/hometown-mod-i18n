@@ -8,7 +8,7 @@ function peonie:init()
 
     self.max_health = 340
     self.health = 340
-    self.attack = 10
+    self.attack = 7  
     self.defense = 7
     self.money = 100
 

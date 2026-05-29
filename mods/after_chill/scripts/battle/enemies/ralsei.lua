@@ -12,6 +12,9 @@ function ralsei:init()
     self.ui_modified = false
     self.defense = 12
     self.money = 100
+    self.apologize = 0 
+    self.tired_percentage = 0
+    self.disable_mercy = true    
 
     self.spare_points = 20 
 
@@ -32,16 +35,45 @@ function ralsei:init()
         "* Smells like cardboard.",
     }
     self:registerAct("Apologize")
-            self:registerAct("???", "...")
-        self.acts[3].color = {COLORS.red}
+    -- self:registerAct("???", "...")
+    -- self.acts[3].color = {COLORS.red}
 end
 
 function ralsei:onAct(battler, name)
     if name == "Apologize" then
+        local ap = self.apologize 
+        if ap == 0 then  
+        self.apologize = ap + 1 
         return {
-            "* You try apologizing.",
+            "* You apologized to Ralsei.",
             "* Nothing happened."
         }
+    elseif ap == 1 then 
+        self.apologize = ap + 1 
+        return { 
+            "* You apologized about starting a battle with him.", 
+            "* Ralsei looks at you.", 
+            "* (Nothing seems to happen...)[wait:5]\n* (Try apologizing again!)"
+        }
+    elseif ap == 2 then 
+        Game.battle:startActCutscene(function(cutscene)
+            cutscene:text("* Kris sincerely apologized to\nRalsei.")
+            Game.battle.music:fade(0, 0.5)
+            cutscene:wait(0.5)
+            Assets.playSound("mercyadd")
+            self:mercyFlash()
+            cutscene:text("* Kris tried to spare Ralsei.")
+            cutscene:wait(0.5)
+            cutscene:text("* K[wait:2]-Kris?\n* You are...[wait:5] sparing me...?", "blush", "ralsei")
+            self:addMercy(100)
+            cutscene:text("* W[wait:2]-well,[wait:2] that was unexpected...", "blush_pleased_open", "ralsei")
+            cutscene:after(function()
+                Game.battle:setState("VICTORY")
+            end)
+        end) 
+    end 
+
+
     elseif name == "???" then 
         Game.battle:startActCutscene(function(cutscene)
             Game.battle.music:play("d")
@@ -53,7 +85,8 @@ function ralsei:onAct(battler, name)
             battler:shake(3, 0)
             cutscene:wait(25/30)      
             Assets.playSound("boost")
-            battler:flash()
+            local fx = battler:addFX(ColorMaskFX(COLORS.white))
+            Game.battle.timer:tween(0.5, fx, {amount = 0})
             for i = 1, 2 do 
                 battler:addFX(OutlineFX(COLORS.maroon)) 
             end 
@@ -85,22 +118,17 @@ function ralsei:onAct(battler, name)
 end
 
 function ralsei:onHurt(damage, battler)
-    super.onHurt(self, damage, battler)
-    
-    self:stopShake()
-    self:setAnimation("hurt")
-    
     for _, child in ipairs(Game.battle.children) do 
         if child:includes(DamageNumber) then 
             child.x = child.x - 22
             child.y = child.y + 20 
         end 
     end 
-    
-    if self.health <= (self.max_health * 0.4) then 
+    if self.health <= (self.max_health * 0.4) and Game:getFlag("geno") then 
         self:registerAct("???", "...")
         self.acts[3].color = {COLORS.red}
-    end 
+    end
+    super.onHurt(self, damage, battler)
 end 
 
 return ralsei
