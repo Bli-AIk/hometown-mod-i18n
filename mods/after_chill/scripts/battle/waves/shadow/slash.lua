@@ -22,6 +22,12 @@ function slash:hitSlash(x, y)
     bullet.destroy_on_hit = false
     local damage = bullet:getDamage()
     bullet.damage = damage + 30
+   bullet.collider = PolygonCollider(bullet, {
+        {-2, -7},  
+        {16, 9},  
+        {42, 45},
+        {5, 17}
+    })
     local shadow = self:getAttackers()[1]
     Assets.playSound("laz_c", 0.4, 0.8)
     Assets.playSound("scytheburst", 1.5)
