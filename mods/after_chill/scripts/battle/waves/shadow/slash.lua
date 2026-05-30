@@ -20,6 +20,8 @@ function slash:hitSlash(x, y)
     local sx, sy = x, y
     local bullet = self:spawnBullet("effects/attack/shard", sx, sy)
     bullet.destroy_on_hit = false
+    local damage = bullet:getDamage()
+    bullet.damage = damage + 30
     local shadow = self:getAttackers()[1]
     Assets.playSound("laz_c", 0.4, 0.8)
     Assets.playSound("scytheburst", 1.5)

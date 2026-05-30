@@ -8,6 +8,7 @@ function shadow:init()
     self.disable_mercy = true 
     self.max_health = 2500
     self.health = 2500
+    self.wave_index = 1
     self.tired_percentage = 0
     local kris = Game.battle:getPartyBattler("kris")
     self.attack = kris.chara:getStat("attack") - 2 
@@ -17,7 +18,10 @@ function shadow:init()
     self.fx1 = self:addFX(ColorMaskFX(COLORS.black))
     self.fx2 = self:addFX(OutlineFX())
 
-    self.waves = {}
+    self.waves = {
+       "shadow/slash", 
+       "shadow/defend_bash"
+    }
     self.dialogue = {} 
     self.check = "AT ??? DF ???\n* Your worst nightmare."
 
@@ -28,6 +32,15 @@ function shadow:init()
     }
     self:registerAct("Plead")
 end 
+
+function shadow:getNextWaves()
+    local wave = self.waves[self.wave_index]
+    self.wave_index = self.wave_index + 1
+    if self.wave_index > #self.waves then
+        self.wave_index = 1
+    end
+    return { wave }
+end
 
 function shadow:onAct(battler, name)
     if name == "Plead" then 
