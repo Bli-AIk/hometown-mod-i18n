@@ -11,7 +11,7 @@ end
 function EnemyBattler:init()
     super.init(self)
     -- make sure to change the value here when the time comes 
-    if (Game:getFlag("enemies_killed") >= 10) and Game:getFlag("ralsei_flee") then
+    if (Game:getFlag("enemies_killed", 0) >= 10) and Game:getFlag("ralsei_flee") then
         local kills = Game:getFlag("enemies_killed", 0)
     local dynamic_tp = 0
 

@@ -96,7 +96,7 @@ cutscene:wait(1.3)
 Assets.playSound("wing")
 shadow:shake()
 shadow.sprite.scale_y = 2
-shadow.y = 241
+shadow.y = 248
 shadow:setSprite("left")
 local function bumpshake()
 kris:shake()
@@ -113,7 +113,7 @@ cutscene:wait(0.5)
 cutscene:text("* Controlling you like a puppet...")
 bumpshake()
 cutscene:wait(0.5)
-cutscene:text("*[noskip] Your actions don't matter,[wait:5] do they?[next]")
+cutscene:text("*[noskip] Your actions don't matter,[wait:5] do they?[wait:8][next]")
 bumpshake()
 cutscene:wait(0.5)
 cutscene:text("* Berdly, Spamton, [shake:1]Noel[shake:0]-[next]")
@@ -135,7 +135,6 @@ storm_overlay.alpha = 0
 Game.world.timer:tween(0.5, storm_overlay, {alpha = 1})
 cutscene:wait(0.5)
 cutscene:text("* Heh.[wait:5]\n* But you can try getting rid\nof me.")
-Game:setFlag("music", Game.world.music:tell())
 cutscene:startEncounter("shadow", nil, {{"shadow", shadow}}, {
     on_start = function()
         Game.stage:setWeather("thunder")

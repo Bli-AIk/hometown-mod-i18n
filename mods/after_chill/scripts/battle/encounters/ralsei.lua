@@ -12,7 +12,7 @@ function ralsei:init()
     self.background = true 
 
     -- Add the dummy enemy to the encounter
-    self:addEnemy("ralsei", 549, 208)
+    self:addEnemy("ralsei", 518, 207)
 
 
     --- Uncomment this line to add another!
@@ -103,5 +103,12 @@ end
 --         end)
 --     end
 -- end
+
+function ralsei:getPartyPosition(index)
+    if index == 1 then 
+        return 146, 216 
+    end 
+    return super.getPartyPosition(self, index)
+end 
 
 return ralsei

@@ -44,10 +44,9 @@ function spell:onCast(user, target)
         Assets.playSound("break1", 0.6, 0.8)
         user:shake(3, 0) 
         wait(12/30)
-
         Assets.playSound("boost")
-        user:flash()
-        
+        local fx = user:addFX(ColorMaskFX(COLORS.white))
+        Game.battle.timer:tween(0.5, fx, {amount = 0})    
         for i = 1, 2 do 
             local fx = user:addFX(OutlineFX(COLORS.maroon))
             fx.thickness = 0 

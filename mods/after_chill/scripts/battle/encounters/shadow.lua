@@ -15,18 +15,16 @@ function shadow:init()
     -- Enables the purple grid battle background
     self.background = false 
     self.hide_world = false 
-
-    -- Add the dummy enemy to the encounter
     self.enemy = self:addEnemy("shadow", 516, 292)
-    --- Uncomment this line to add another!
-    --self:addEnemy("dummy")
 end
 
 function shadow:getPartyPosition(index) 
     if index == 1 then 
         return 137, 293
     end 
-    super.getPartyPosition(self, index)
+    return super.getPartyPosition(self, index)
 end 
+
+
 
 return shadow
