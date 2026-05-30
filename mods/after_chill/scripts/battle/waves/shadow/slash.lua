@@ -8,7 +8,7 @@ end
 
 function slash:onStart()
     local shadow = self:getAttackers()[1]
-    self.timer:everyInstant(1.2, function()
+    self.timer:everyInstant(1, function()
     shadow:setAnimation("battle/act")
     self.timer:after(0.1, function()
         self:alertSlash()
@@ -22,7 +22,7 @@ function slash:hitSlash(x, y)
     bullet.destroy_on_hit = false
     local damage = bullet:getDamage()
     bullet.damage = damage + 30
-   bullet.collider = PolygonCollider(bullet, {
+    bullet.collider = PolygonCollider(bullet, {
         {-2, -7},  
         {16, 9},  
         {42, 45},
@@ -32,10 +32,11 @@ function slash:hitSlash(x, y)
     Assets.playSound("laz_c", 0.4, 0.8)
     Assets.playSound("scytheburst", 1.5)
     shadow:setAnimation("battle/attack", function()
+        Game.stage:shake()
         shadow:shake(2)
         shadow:resetSprite()
     end)
-    bullet.sprite:play(0.15, false, function()
+    bullet.sprite:play(0.1, false, function()
           bullet:remove()
     end)
 end 
