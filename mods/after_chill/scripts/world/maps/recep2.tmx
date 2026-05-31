@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="8" nextobjectid="24">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="8" nextobjectid="25">
  <editorsettings>
   <export target="recep2.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
- <imagelayer id="2" name="bg" offsetx="0" offsety="-200" parallaxx="0.1" parallaxy="0.5" repeatx="1">
+ <imagelayer id="2" name="bg" offsetx="61" offsety="69" parallaxx="0.05" parallaxy="0.05" repeatx="1">
   <image source="../../../assets/sprites/tilesets/receptionist bg.png" width="640" height="480"/>
  </imagelayer>
  <layer id="1" name="Tile Layer 1" width="30" height="30">
@@ -58,6 +58,11 @@
    </properties>
    <point/>
   </object>
+  <object id="24" name="script" x="80" y="400" width="80" height="80">
+   <properties>
+    <property name="cutscene" value="musicnotif.recep"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers">
   <object id="2" name="entranceA" x="128.61" y="445.384">
@@ -108,9 +113,9 @@
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-321,321,321,321,321,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-321,321,321,321,321,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-321,321,321,321,321,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

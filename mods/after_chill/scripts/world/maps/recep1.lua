@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,18 +9,64 @@ return {
   height = 17,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
+  nextlayerid = 11,
   nextobjectid = 20,
   properties = {},
   tilesets = {
     {
       name = "Receptionist",
       firstgid = 1,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 19,
+      image = "../../../assets/sprites/tilesets/Receptionist.png",
+      imagewidth = 318,
+      imageheight = 308,
+      objectalignment = "unspecified",
+      tilerendersize = "grid",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 361,
+      tiles = {}
+    },
+    {
+      name = "Receptionist",
+      firstgid = 362,
       filename = "../tilesets/Receptionist.tsx",
       exportfilename = "../tilesets/Receptionist..lua"
     }
   },
   layers = {
+    {
+      type = "imagelayer",
+      image = "../../../assets/sprites/tilesets/indoors recep bg_1.png",
+      id = 10,
+      name = "Image Layer 1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = -23,
+      offsety = 533,
+      parallaxx = 0.3,
+      parallaxy = 0.3,
+      tintcolor = { 100, 101, 120 },
+      repeatx = true,
+      repeaty = true,
+      properties = {}
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -36,6 +82,7 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
+      tintcolor = { 175, 175, 209 },
       properties = {},
       encoding = "lua",
       data = {
@@ -55,7 +102,7 @@ return {
         0, 0, 0, 0, 0, 282, 283, 284, 321, 317, 321, 321, 321, 321, 317, 321, 321, 321, 321, 317, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321,
         0, 0, 0, 0, 0, 282, 283, 284, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321,
         0, 0, 0, 0, 0, 282, 283, 284, 321, 317, 321, 321, 321, 321, 317, 321, 321, 321, 321, 317, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321, 321,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 643, 644, 645, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -85,6 +132,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -98,6 +146,7 @@ return {
           width = 82.8111,
           height = 82.8111,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -114,6 +163,7 @@ return {
           width = 124.217,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "krisspawn",
@@ -134,6 +184,7 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
+      tintcolor = { 175, 175, 209 },
       properties = {},
       objects = {
         {
@@ -146,6 +197,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -154,11 +206,12 @@ return {
           name = "entrance2",
           type = "",
           shape = "point",
-          x = 977.089,
-          y = 373.317,
+          x = 1149.09,
+          y = 375.317,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -172,6 +225,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -201,6 +255,7 @@ return {
           width = 41.4056,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -214,6 +269,7 @@ return {
           width = 41.4056,
           height = 414.056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -227,6 +283,7 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -240,6 +297,7 @@ return {
           width = 1035.14,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -253,6 +311,7 @@ return {
           width = 697.894,
           height = 37.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -266,6 +325,7 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -279,6 +339,7 @@ return {
           width = 41.4056,
           height = 197.028,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -292,6 +353,7 @@ return {
           width = 280.506,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -305,6 +367,7 @@ return {
           width = 289.839,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -318,6 +381,7 @@ return {
           width = 41.4056,
           height = 82.8111,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -331,6 +395,7 @@ return {
           width = 455.461,
           height = 41.4056,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -351,11 +416,11 @@ return {
       offsety = 0,
       parallaxx = 1.3,
       parallaxy = 1,
-      tintcolor = { 163, 163, 163 },
+      tintcolor = { 121, 126, 163 },
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321,

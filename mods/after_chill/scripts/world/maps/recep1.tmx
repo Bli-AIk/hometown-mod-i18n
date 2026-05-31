@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="20">
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
- <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
- <layer id="3" name="Tile Layer 3" width="34" height="17">
+ <tileset firstgid="1" name="Receptionist" tilewidth="16" tileheight="16" tilecount="361" columns="19" tilerendersize="grid">
+  <image source="../../../assets/sprites/tilesets/Receptionist.png" width="318" height="308"/>
+ </tileset>
+ <tileset firstgid="362" source="../tilesets/Receptionist.tsx"/>
+ <imagelayer id="10" name="Image Layer 1" tintcolor="#646578" offsetx="-23" offsety="533" parallaxx="0.3" parallaxy="0.3" repeatx="1" repeaty="1">
+  <image source="../../../assets/sprites/tilesets/indoors recep bg_1.png" width="972" height="848"/>
+ </imagelayer>
+ <layer id="3" name="Tile Layer 3" width="34" height="17" tintcolor="#afafd1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,263,264,264,264,264,264,264,264,264,264,265,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -22,7 +28,7 @@
 0,0,0,0,0,282,283,284,321,317,321,321,321,321,317,321,321,321,321,317,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
 0,0,0,0,0,282,283,284,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
 0,0,0,0,0,282,283,284,321,317,321,321,321,321,317,321,321,321,321,317,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,643,644,645,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup color="#ff00ff" id="4" name="objects">
@@ -46,11 +52,11 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#aa00ff" id="6" name="markers">
+ <objectgroup color="#aa00ff" id="6" name="markers" tintcolor="#afafd1">
   <object id="3" name="entranceA" x="255.978" y="583.75">
    <point/>
   </object>
-  <object id="16" name="entrance2" x="977.089" y="373.317">
+  <object id="16" name="entrance2" x="1149.09" y="375.317">
    <point/>
   </object>
   <object id="18" name="spawn" x="360" y="86">
@@ -70,9 +76,9 @@
   <object id="13" x="201.239" y="38.7389" width="41.4056" height="82.8111"/>
   <object id="14" x="220.645" y="-3.33337" width="455.461" height="41.4056"/>
  </objectgroup>
- <layer id="5" name="Tile Layer 2" width="34" height="17" tintcolor="#a3a3a3" offsetx="250" offsety="0" parallaxx="1.3">
+ <layer id="5" name="Tile Layer 2" width="34" height="17" tintcolor="#797ea3" offsetx="250" offsety="0" parallaxx="1.3">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
