@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
-  nextobjectid = 25,
+  nextlayerid = 9,
+  nextobjectid = 27,
   backgroundcolor = { 1, 1, 16 },
   properties = {},
   tilesets = {
@@ -115,7 +115,6 @@ return {
           width = 79.5175,
           height = 119.276,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep1",
@@ -132,7 +131,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["money"] = "64"
@@ -148,10 +146,28 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "musicnotif.recep"
+          }
+        },
+        {
+          id = 25,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 445,
+          y = 976,
+          width = 54,
+          height = 44,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "virovirokun",
+            ["encounter"] = "virovirokun",
+            ["enemy"] = "virovirokun",
+            ["path"] = "virovirokun",
+            ["speed"] = 15
           }
         }
       }
@@ -180,21 +196,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 20,
-          name = "enemy",
-          type = "",
-          shape = "point",
-          x = 486.438,
-          y = 1002.01,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -224,7 +225,6 @@ return {
           width = 675.898,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -238,7 +238,6 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -252,7 +251,6 @@ return {
           width = 267.052,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -266,7 +264,6 @@ return {
           width = 39.7587,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -280,7 +277,6 @@ return {
           width = 79.5175,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -294,7 +290,6 @@ return {
           width = 79.5175,
           height = 159.035,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -308,7 +303,6 @@ return {
           width = 119.276,
           height = 79.5175,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -322,7 +316,6 @@ return {
           width = 79.5175,
           height = 79.5175,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -336,7 +329,6 @@ return {
           width = 506.438,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -350,7 +342,6 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -364,7 +355,6 @@ return {
           width = 516.863,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -378,7 +368,6 @@ return {
           width = 39.7587,
           height = 238.552,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -392,7 +381,6 @@ return {
           width = 278.311,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -406,7 +394,6 @@ return {
           width = 39.7587,
           height = 318.07,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -420,7 +407,35 @@ return {
           width = 437.346,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "paths",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 26,
+          name = "virovirokun",
+          type = "",
+          shape = "rectangle",
+          x = 473,
+          y = 891,
+          width = 0,
+          height = 226,
+          rotation = 0,
           visible = true,
           properties = {}
         }
