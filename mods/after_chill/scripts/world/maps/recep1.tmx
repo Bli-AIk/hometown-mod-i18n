@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="20">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="16" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="20">
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="wind"/>
+  <property name="name" value="Hospital Entrance "/>
+ </properties>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
- <layer id="3" name="Tile Layer 3" width="34" height="17">
+ <imagelayer id="8" name="image" offsetx="0" offsety="4" repeatx="1" repeaty="1">
+  <image source="../../../assets/sprites/tilesets/receptionist bg.png" width="640" height="480"/>
+ </imagelayer>
+ <layer id="3" name="Tile Layer 3" width="34" height="16" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,263,264,264,264,264,264,264,264,264,264,265,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -21,16 +28,21 @@
 0,0,0,0,0,282,283,284,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
 0,0,0,0,0,282,283,284,321,317,321,321,321,321,317,321,321,321,321,317,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
 0,0,0,0,0,282,283,284,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
-0,0,0,0,0,282,283,284,321,317,321,321,321,321,317,321,321,321,321,317,321,321,321,321,321,321,321,321,321,321,321,321,321,321,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,282,283,284,321,317,321,321,321,321,317,321,321,321,321,317,321,321,321,321,321,321,321,321,321,321,321,321,321,321
 </data>
  </layer>
- <objectgroup color="#ff00ff" id="4" name="objects">
+ <objectgroup color="#ff00ff" id="4" name="objects" visible="0">
   <properties>
    <property name="text1" value="* With a new darkworld appearing out of seemingly no where..."/>
    <property name="text2" value="* The power of mystery shines within you"/>
   </properties>
-  <object id="1" name="savepoint" x="271.383" y="84.1445">
+  <object id="1" name="savepoint" x="298" y="79">
+   <properties>
+    <property name="text1">* A cold breezes rushes through.[wait:5]
+* You remember playing piano,[wait:5] then suddenly appearing here.</property>
+    <property name="text2">* The power of sudden
+transitions shine within you.</property>
+   </properties>
    <point/>
   </object>
   <object id="2" name="transition" x="1306.52" y="317.911" width="82.8111" height="82.8111">
@@ -39,7 +51,7 @@
     <property name="marker" value="entranceA"/>
    </properties>
   </object>
-  <object id="17" name="transition" x="188.572" y="607.75" width="124.217" height="41.4056">
+  <object id="17" name="transition" x="203.572" y="640.75" width="124.217" height="41.4056">
    <properties>
     <property name="map" value="krisspawn"/>
     <property name="marker" value="entranceA"/>
@@ -47,13 +59,13 @@
   </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers">
-  <object id="3" name="entranceA" x="255.978" y="583.75">
+  <object id="3" name="entranceA" x="255.978" y="599.75">
    <point/>
   </object>
   <object id="16" name="entrance2" x="977.089" y="373.317">
    <point/>
   </object>
-  <object id="18" name="spawn" x="360" y="86">
+  <object id="18" name="spawn" x="377" y="92">
    <point/>
   </object>
  </objectgroup>
@@ -65,12 +77,12 @@
   <object id="8" x="672.772" y="281.839" width="697.894" height="37.4056"/>
   <object id="9" x="673.439" y="33.4056" width="41.4056" height="248.433"/>
   <object id="10" x="519.817" y="120.883" width="41.4056" height="197.028"/>
-  <object id="11" x="239.311" y="276.506" width="280.506" height="41.4056"/>
-  <object id="12" x="230.645" y="118.217" width="289.839" height="41.4056"/>
-  <object id="13" x="201.239" y="38.7389" width="41.4056" height="82.8111"/>
-  <object id="14" x="220.645" y="-3.33337" width="455.461" height="41.4056"/>
+  <object id="11" x="240.311" y="276.506" width="279.506" height="41.4056"/>
+  <object id="12" x="238.645" y="121.217" width="289.839" height="41.4056"/>
+  <object id="13" x="221.239" y="38.7389" width="24.4056" height="82.8111"/>
+  <object id="14" x="220.645" y="-0.33337" width="455.461" height="41.4056"/>
  </objectgroup>
- <layer id="5" name="Tile Layer 2" width="34" height="17" tintcolor="#a3a3a3" offsetx="250" offsety="0" parallaxx="1.3">
+ <layer id="5" name="Tile Layer 2" width="34" height="16" tintcolor="#a3a3a3" offsetx="250" offsety="0" parallaxx="1.3">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
@@ -87,8 +99,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,321,321,321
 </data>
  </layer>
 </map>

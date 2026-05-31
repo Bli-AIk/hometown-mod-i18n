@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
-  nextobjectid = 24,
+  nextlayerid = 9,
+  nextobjectid = 28,
   backgroundcolor = { 19, 19, 43 },
   properties = {},
   tilesets = {
@@ -135,6 +135,54 @@ return {
           properties = {
             ["money"] = "64"
           }
+        },
+        {
+          id = 26,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 452,
+          y = 972,
+          width = 54,
+          height = 44,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "virovirokun",
+            ["encounter"] = "virovirokun",
+            ["enemy"] = "virovirokun",
+            ["path"] = "virovirokun",
+            ["speed"] = 15
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "paths",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 27,
+          name = "virovirokun",
+          type = "",
+          shape = "rectangle",
+          x = 481,
+          y = 887,
+          width = 0,
+          height = 226,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -159,19 +207,6 @@ return {
           shape = "point",
           x = 128.61,
           y = 445.384,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 20,
-          name = "enemy",
-          type = "",
-          shape = "point",
-          x = 486.438,
-          y = 1002.01,
           width = 0,
           height = 0,
           rotation = 0,
