@@ -12,7 +12,10 @@ return {
   nextlayerid = 7,
   nextobjectid = 34,
   backgroundcolor = { 1, 1, 16 },
-  properties = {},
+  properties = {
+    ["music"] = "wind",
+    ["name"] = "Receptionist Entrance"
+  },
   tilesets = {
     {
       name = "Receptionist",
@@ -193,8 +196,8 @@ return {
           name = "savepoint",
           type = "",
           shape = "point",
-          x = 190.667,
-          y = 328,
+          x = 168,
+          y = 319,
           width = 0,
           height = 0,
           rotation = 0,

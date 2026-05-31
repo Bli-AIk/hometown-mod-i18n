@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 27,
+  nextobjectid = 29,
   backgroundcolor = { 1, 1, 16 },
   properties = {},
   tilesets = {
@@ -166,8 +166,7 @@ return {
             ["actor"] = "virovirokun",
             ["encounter"] = "virovirokun",
             ["enemy"] = "virovirokun",
-            ["path"] = "virovirokun",
-            ["speed"] = 15
+            ["path"] = "virovirokun"
           }
         }
       }
@@ -427,16 +426,23 @@ return {
       properties = {},
       objects = {
         {
-          id = 26,
+          id = 28,
           name = "virovirokun",
           type = "",
-          shape = "rectangle",
-          x = 473,
-          y = 891,
+          shape = "polygon",
+          x = 440,
+          y = 883.5,
           width = 0,
-          height = 226,
+          height = 0,
           rotation = 0,
           visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0.5, y = 236 },
+            { x = 40.5, y = 236 },
+            { x = 39.5, y = 0 },
+            { x = 39.5, y = -4.5 }
+          },
           properties = {}
         }
       }

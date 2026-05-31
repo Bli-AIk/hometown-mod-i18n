@@ -3,6 +3,10 @@
  <editorsettings>
   <export target="krisspawn.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="wind"/>
+  <property name="name" value="Receptionist Entrance"/>
+ </properties>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
  <imagelayer id="3" name="bg" offsetx="-1.33333" offsety="72.6667" parallaxx="0.05" parallaxy="0.05" repeatx="1">
   <image source="../../../assets/sprites/tilesets/receptionist bg.png" width="640" height="480"/>
@@ -102,7 +106,7 @@
     <property name="marker" value="entranceA"/>
    </properties>
   </object>
-  <object id="33" name="savepoint" x="190.667" y="328">
+  <object id="33" name="savepoint" x="168" y="319">
    <properties>
     <property name="text1">* A breeze rushes past you.[wait:5]
 * Your last memory was playing piano.</property>
