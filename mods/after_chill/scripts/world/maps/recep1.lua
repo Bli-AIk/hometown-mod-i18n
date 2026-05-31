@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -127,12 +127,11 @@ return {
           name = "savepoint",
           type = "",
           shape = "point",
-          x = 271.383,
-          y = 84.1445,
+          x = 298,
+          y = 79,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -146,7 +145,6 @@ return {
           width = 82.8111,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -158,12 +156,11 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 188.572,
-          y = 607.75,
+          x = 197.572,
+          y = 682.75,
           width = 124.217,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "krisspawn",
@@ -197,7 +194,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -211,7 +207,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -220,12 +215,11 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 360,
-          y = 86,
+          x = 377,
+          y = 92,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -255,7 +249,6 @@ return {
           width = 41.4056,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -269,7 +262,6 @@ return {
           width = 41.4056,
           height = 414.056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -283,7 +275,6 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -297,7 +288,6 @@ return {
           width = 1035.14,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -311,7 +301,6 @@ return {
           width = 697.894,
           height = 37.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -325,7 +314,6 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -339,7 +327,6 @@ return {
           width = 41.4056,
           height = 197.028,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -353,7 +340,6 @@ return {
           width = 280.506,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -367,7 +353,6 @@ return {
           width = 289.839,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -381,7 +366,6 @@ return {
           width = 41.4056,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -395,7 +379,6 @@ return {
           width = 455.461,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

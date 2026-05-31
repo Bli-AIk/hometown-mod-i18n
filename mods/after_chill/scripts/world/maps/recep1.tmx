@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="20">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="20">
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
@@ -36,7 +36,7 @@
    <property name="text1" value="* With a new darkworld appearing out of seemingly no where..."/>
    <property name="text2" value="* The power of mystery shines within you"/>
   </properties>
-  <object id="1" name="savepoint" x="271.383" y="84.1445">
+  <object id="1" name="savepoint" x="298" y="79">
    <point/>
   </object>
   <object id="2" name="transition" x="1306.52" y="317.911" width="82.8111" height="82.8111">
@@ -45,7 +45,7 @@
     <property name="marker" value="entranceA"/>
    </properties>
   </object>
-  <object id="17" name="transition" x="188.572" y="607.75" width="124.217" height="41.4056">
+  <object id="17" name="transition" x="197.572" y="682.75" width="124.217" height="41.4056">
    <properties>
     <property name="map" value="krisspawn"/>
     <property name="marker" value="entranceA"/>
@@ -59,7 +59,7 @@
   <object id="16" name="entrance2" x="1149.09" y="375.317">
    <point/>
   </object>
-  <object id="18" name="spawn" x="360" y="86">
+  <object id="18" name="spawn" x="377" y="92">
    <point/>
   </object>
  </objectgroup>
