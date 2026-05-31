@@ -11,7 +11,10 @@ return {
   tileheight = 40,
   nextlayerid = 11,
   nextobjectid = 20,
-  properties = {},
+  properties = {
+    ["music"] = "wind",
+    ["name"] = "Receptionist Bridge"
+  },
   tilesets = {
     {
       name = "Receptionist",
@@ -133,7 +136,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["text1"] = "* The power of never-ending room numbers shine within you."
+          }
         },
         {
           id = 2,

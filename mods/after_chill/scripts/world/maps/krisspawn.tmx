@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="40" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="7" nextobjectid="32">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="40" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="7" nextobjectid="34">
  <editorsettings>
   <export target="krisspawn.lua" format="lua"/>
  </editorsettings>
@@ -101,6 +101,14 @@
     <property name="map" value="recep1"/>
     <property name="marker" value="entranceA"/>
    </properties>
+  </object>
+  <object id="33" name="savepoint" x="190.667" y="328">
+   <properties>
+    <property name="text1">* A breeze rushes past you.[wait:5]
+* Your last memory was playing piano.</property>
+    <property name="text2" value="* The power of sudden transitions shine within you."/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup color="#aa55ff" id="6" name="markers">

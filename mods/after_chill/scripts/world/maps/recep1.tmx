@@ -3,6 +3,10 @@
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="wind"/>
+  <property name="name" value="Receptionist Bridge"/>
+ </properties>
  <tileset firstgid="1" name="Receptionist" tilewidth="16" tileheight="16" tilecount="361" columns="19" tilerendersize="grid">
   <image source="../../../assets/sprites/tilesets/Receptionist.png" width="318" height="308"/>
  </tileset>
@@ -37,6 +41,9 @@
    <property name="text2" value="* The power of mystery shines within you"/>
   </properties>
   <object id="1" name="savepoint" x="298" y="79">
+   <properties>
+    <property name="text1" value="* The power of never-ending room numbers shine within you."/>
+   </properties>
    <point/>
   </object>
   <object id="2" name="transition" x="1306.52" y="317.911" width="82.8111" height="82.8111">
