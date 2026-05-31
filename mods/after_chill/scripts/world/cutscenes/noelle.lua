@@ -101,7 +101,9 @@ return {
             cutscene:wait(1)
             Game:setFlag("footstep", false)
             cutscene:wait(1)
-            cutscene:wait(cutscene:mapTransition("room1"))
+            cutscene:wait(cutscene:mapTransition("krisspawn"))
+            local kris1 = cutscene:getCharacter("kris")
+            kris:setFacing("up")
             cutscene:fadeIn(0.1)
     end, 
 
