@@ -42,8 +42,19 @@ function dusteer:onAct(battler, name)
             cutscene:text("* Reinfrost is embarassed that they left snow tracks![wait:5]\n* They appreciate the gesture!")
             self:addMercy(50)
         end)
-    end 
-    return super.onAct(self, battler, name)
+        elseif name == "Standard" then
+         Game.battle:startActCutscene(function(cutscene)
+            self:setSprite("sweep")
+            battler:setAnimation("sweep")
+            cutscene:text("* Noelle pick up some snowflakes that drifted into the arena.")
+            self:addMercy(25)
+            battler:setAnimation("battle/idle")
+            cutscene:text("* Reinfrost is embarassed that they left snow tracks![wait:5]\n* They appreciate the gesture!")
+            self:resetSprite()
+            
+         end)
+     end 
+     return super.onAct(self, battler, name)
 end
 
 return dusteer
