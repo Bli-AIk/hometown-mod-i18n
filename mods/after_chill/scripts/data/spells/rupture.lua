@@ -72,8 +72,8 @@ function spell:onCast(user, target)
 
                 user:setAnimation("battle/attack")
                 wait(4/30) 
-
-                local pitch_shift = 1.0 - ((strike - 1) * 0.1)
+                local raw_pitch = 1.0 - ((strike - 1) * 0.1)
+                local pitch_shift = MathUtils.clamp(raw_pitch, 0.2, 1.0)
                 Assets.playSound("laz_c", 1.2, pitch_shift) 
                 Assets.playSound("scytheburst", 1.0, pitch_shift)
 
