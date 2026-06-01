@@ -54,8 +54,10 @@ function actor:init()
     }
 end
 
-function actor:onSpriteUpdate(sprite)
-end
+function actor:onSpriteInit(sprite)
+    sprite:setScale(1.3)
+    super.onSpriteInit(self, sprite)
+end 
 
 
 return actor
