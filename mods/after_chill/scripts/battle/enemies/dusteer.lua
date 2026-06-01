@@ -22,8 +22,8 @@ function dusteer:init()
 
     self.text = {
         "* A cold breeze runs through.\n* Reinfrost shakes a little.", 
-        "* It resembles a bunny. Just without the bunny features.", 
-        "* Smells like deer.", 
+        "* Smells like trampled snow.", 
+        "* Reinfrost trots and kicks some snow.", 
     }
     self.low_health_percentage = 0.25
     self.spare_text = "* You sneeze. Dusteer seemed satisfied it did its job."
@@ -42,19 +42,8 @@ function dusteer:onAct(battler, name)
             cutscene:text("* Reinfrost is embarassed that they left snow tracks![wait:5]\n* They appreciate the gesture!")
             self:addMercy(50)
         end)
-        elseif name == "Standard" then
-         Game.battle:startActCutscene(function(cutscene)
-            self:setSprite("sweep")
-            battler:setAnimation("sweep")
-            cutscene:text("* Noelle pick up some snowflakes that drifted into the arena.")
-            self:addMercy(25)
-            battler:setAnimation("battle/idle")
-            cutscene:text("* Reinfrost is embarassed that they left snow tracks![wait:5]\n* They appreciate the gesture!")
-            self:resetSprite()
-            
-         end)
-     end 
-     return super.onAct(self, battler, name)
+    end 
+    return super.onAct(self, battler, name)
 end
 
 return dusteer
