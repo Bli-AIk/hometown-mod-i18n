@@ -12,7 +12,9 @@ return {
   nextlayerid = 9,
   nextobjectid = 29,
   backgroundcolor = { 1, 1, 16 },
-  properties = {},
+  properties = {
+    ["music"] = "hallway"
+  },
   tilesets = {
     {
       name = "Receptionist",
@@ -110,7 +112,7 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 9.33333,
+          x = 6.33333,
           y = 405.625,
           width = 79.5175,
           height = 119.276,
