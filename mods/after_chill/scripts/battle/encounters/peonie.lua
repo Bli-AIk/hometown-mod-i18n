@@ -17,4 +17,15 @@ function peonie:init()
     self:addEnemy("peonie")
 end
 
+function peonie:onStateChange(old, new, reason) 
+   if old == "INTRO" and new == "ACTIONSELECT" then
+    self.bg = SnowflakeBG()
+    Game.battle:addChild(self.bg)
+   elseif new == "TRANSITIONOUT" then 
+    self.bg:remove()
+   end 
+    super.onStateChange(self, old, new, reason)
+end 
+
+
 return peonie
