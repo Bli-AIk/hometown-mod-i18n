@@ -4,27 +4,7 @@ return {
 
     ---@param cutscene WorldCutscene
     recep = function(cutscene, event)
-        Game.world:spawnObject(musiclogo("field", 180, 120, 160, 120, 140, 120), 9999)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Game.world:spawnObject(musiclogo("hallway", 180, 120, 160, 120, 140, 120), 9999)
     end
 
 
