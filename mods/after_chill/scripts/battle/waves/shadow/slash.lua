@@ -3,7 +3,7 @@ local slash, super = Class(Wave)
 function slash:init()
     super.init(self)
     self:setArenaPosition(320, 230)
-    self.time = 13
+    self.time = 13.5
 end
 
 function slash:onStart()

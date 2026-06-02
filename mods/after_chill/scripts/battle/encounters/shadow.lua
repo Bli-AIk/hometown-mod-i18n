@@ -25,6 +25,14 @@ function shadow:getPartyPosition(index)
     return super.getPartyPosition(self, index)
 end 
 
+function shadow:onBattleEnd()
+        super.onBattleEnd(self)
+        if Game:getFlag("shadow_v") then
+       local kris = Game.battle:getPartyBattler("kris")
+       kris:resetSprite()
+       kris:setSprite("fell")
+        end
+end
 
 
 return shadow

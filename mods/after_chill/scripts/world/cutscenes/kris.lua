@@ -37,11 +37,11 @@ return {
         k:walkTo(559, k.y, 6)
         noelle:walkTo(623, noelle.y, 6)
         cutscene:wait(0.5)
-        cutscene:text("*[noskip] Kris..[wait:2] where are we going...?[wait:5]", "afraid", "noelle", {auto = true}) 
+        cutscene:text("*[noskip] Kris..[wait:2] where are we going...?[wait:5][next]", "afraid", "noelle") 
         cutscene:wait(1)
         kris.alpha = 1
         kris.layer = effect.layer - 0.001
-        cutscene:text("*[noskip] To...[wait:2] get stronger?[wait:5]", "sad_side", "noelle", {auto = true})
+        cutscene:text("*[noskip] To...[wait:2] get stronger?[wait:5][next]", "sad_side", "noelle")
         cutscene:wait(0.5)
         effect:remove()
         Game.world.music:pause()
@@ -142,10 +142,26 @@ cutscene:startEncounter("shadow", nil, {{"shadow", shadow}}, {
         shadow:remove()
     end
 })
-cutscene:attachCamera()
 Game.stage:resetWeather()
-Game.world.music:pause()
+Game.world.music:stop()
+if Game:getFlag("shadow_v") then 
+    kris:setSprite("fell")
+    cutscene:wait(0.5)
+    local function bumpshake()
+    kris:shake(2)
+    Assets.playSound("wing")
+    end 
+    bumpshake()
+    cutscene:wait(0.2)
+    bumpshake()
+    cutscene:wait(0.2)
+    kris:resetSprite()
+    kris:setFacing("right")
+    cutscene:attachCamera(1)
+else 
+cutscene:attachCamera(1)
 kris:resetSprite()
-kris:setFacing("right")
+kris:setFacing("left")
+end 
     end 
 }
