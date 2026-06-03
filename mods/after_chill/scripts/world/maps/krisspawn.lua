@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 34,
+  nextobjectid = 35,
   backgroundcolor = { 1, 1, 16 },
   properties = {
     ["music"] = "wind",
@@ -203,6 +203,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["marker"] = "save_spawn",
             ["text1"] = "* A breeze rushes past you.[wait:5]\n* Your last memory was playing piano.",
             ["text2"] = "* The power of sudden transitions shine within you."
           }
@@ -243,6 +244,19 @@ return {
           shape = "point",
           x = 400.121,
           y = 1464.12,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "save_spawn",
+          type = "",
+          shape = "point",
+          x = 224.758,
+          y = 331,
           width = 0,
           height = 0,
           rotation = 0,
