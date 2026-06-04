@@ -42,6 +42,7 @@ function actor:init()
         ["slide"]               = {"slide", 4/30, true},
 
         -- Battle animations
+        ["swing"]               = {"swing/swing", 1/12, false}, 
         ["battle/idle"]         = {"battle/idle", 1/6, true},
         ["idle"]                = {"battle/idle", 1/6, true},
 
@@ -93,6 +94,7 @@ function actor:init()
         ["walk_blush/down"] = {0, 0},
 
         ["slide"] = {0, 0},
+        ["swing/swing"] = {-30, -8}, 
 
         -- Battle offsets
         ["battle/idle"] = {-5, -1},
