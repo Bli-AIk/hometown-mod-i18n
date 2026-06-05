@@ -4,119 +4,231 @@ function swing_arena:init()
     super.init(self)
     self.time = -1 
     self.arenas = {}
-   -- self:setArenaPosition(320, 230)
+    self.cycles = 0 
+    self.max_cycles = 6
 end
 
 function swing_arena:onStart()
-    self.width = Game.battle.arena.height
+    self.orig_width = Game.battle.arena.width
+    self.orig_height = Game.battle.arena.height
     local shadow = self:getAttackers()[1]
-    self:swing(shadow)
+    self:moveShadow(shadow)
 end 
 
+function swing_arena:moveShadow(shadow)
+    self.timer:tween(0.5, shadow, {alpha = 0}, "linear", function()
+        self.timer:tween(0.5, shadow, {alpha = 1}, "linear", function()
+             shadow:setLayer(BATTLE_LAYERS["above_ui"])
+             self:swing(shadow)
+        end) 
+    end)
+end 
+
+function swing_arena:resetEverything()
+    local shadow = self:getAttackers()[1]
+    Game.battle.timer:tween(0.5, shadow, {alpha = 0}, "linear", function()
+       shadow:setLayer(-100)
+       shadow:resetSprite()
+       shadow:setPosition(516, 292)
+       Game.battle.timer:tween(0.5, shadow, {alpha = 1})
+    end)
+    self:setFinished(true)
+end 
+
+
 function swing_arena:swing(shadow)
-    local options = {"horizontal"}
+    self.cycles = self.cycles + 1 
+    if self.cycles >= self.max_cycles then 
+        self:resetEverything()
+    else 
+    local options = {"horizontal", "vertical"}
     local hv = TableUtils.pick(options)
     shadow:setAnimation("swing", function()
         self.timer:after(0.2, function()
-        Assets.playSound("wing")
-        shadow:shake(2)
-        shadow:resetSprite()
+            Assets.playSound("wing")
+            shadow:shake(2)
+            shadow:resetSprite()
         end)
     end)
+    
     self.timer:after(0.1, function()
         Assets.playSound("scytheburst", 2, 1.4)
         self.timer:after(0.1, function()
-        self:drawLineToSplit(hv, 229, 174)
+            self:drawLineToSplit(hv, 320, 172)
         end)
     end)
 end 
+end 
 
 function swing_arena:drawLineToSplit(hv, rx, ry)
-    local length = Game.battle.arena.width + 48
     if hv == "horizontal" then 
-    local rect = Rectangle(rx, ry, length, 7)
-    rect:setColor(COLORS.white)
-    Game.battle:addChild(rect)
-    rect.layer = 9999
-    rect.alpha = 0 
-    rect.height = 0
-    local snd = Assets.playSound("flower", 0.6, 2)
-    self.timer:tween(0.3, rect, {alpha = 1, height = 7}, "out-cubic", function()
-        self:startSplit(hv, rect)
-    end)
+        local length = Game.battle.arena.width + 48
+        local rect = Rectangle(rx - length/2, ry - 3.5, length, 7)
+        rect:setColor(COLORS.white)
+        Game.battle:addChild(rect)
+        rect.layer = 9999
+        rect.alpha = 0 
+        rect.height = 0
+        
+        local snd = Assets.playSound("flower", 0.6, 2)
+        self.timer:tween(0.3, rect, {alpha = 1, height = 7}, "out-cubic", function()
+            self:startSplit(hv, rect)
+        end)
     else 
-    local rect = Rectangle(rx, ry, 7, Game.battle.arena.height + 48)
-    rect:setColor(COLORS.white)
-    Game.battle:addChild(rect)
-    rect.layer = 9999
-    rect.rotation = math.rad(90)
-    rect:setPosition(235, 227) -- change depending on where it is
-    rect.alpha = 0 
-    rect.width = 0
-    Assets.playSound("appear", 0.6, 1.4)
-    self.timer:tween(0.2, rect, {alpha = 1, width = 7}, "out-cubic", function()
-        self:startSplit(hv, rect)
-    end)
+        local length = Game.battle.arena.height + 48
+        local rect = Rectangle(rx - 3.5, ry - length/2, 7, length)
+        rect:setColor(COLORS.white)
+        Game.battle:addChild(rect)
+        rect.layer = 9999
+        rect.alpha = 0 
+        rect.width = 0
+        
+        local snd = Assets.playSound("flower", 0.6, 2)
+        self.timer:tween(0.3, rect, {alpha = 1, width = 7}, "out-cubic", function()
+            self:startSplit(hv, rect)
+        end)
     end 
 end 
 
 function swing_arena:startSplit(hv, rect)
-    if hv == "horizontal" then 
-        rect:fadeOutAndRemove(0.2)
-        self.timer:after(0.1, function()
-        local amount = TableUtils.pick({10, 12})
+    rect:fadeOutAndRemove(0.2)
+    self.timer:after(0.1, function()
+        local amount = TableUtils.pick({7, 9})
         self:spawnStars(hv, amount)
+        
         local arena = Game.battle.arena
         Game.stage:shake(4, 4) 
-        arena:setSize(arena.width, arena.height / 2)
-        self.timer:tween(0.5, arena, {y = arena.y - 50}, "out-expo")
+        
+        if hv == "horizontal" then
+            arena:setSize(arena.width, arena.height / 2)
+            self.timer:tween(0.5, arena, {y = arena.y - 75}, "out-expo")
+        else
+            arena:setSize(arena.width / 2, arena.height)
+            self.timer:tween(0.5, arena, {x = arena.x - 75}, "out-expo")
+        end    
         self:spawnArenaDir(hv)
-        end)
-    else 
-    end 
+    end)
 end
 
 function swing_arena:spawnArenaDir(dir)
+    local main_arena = Game.battle.arena
+    local arena2 = Arena()
+    table.insert(self.arenas, arena2)
+    
+    arena2.onAdd = function()
+        arena2.sprite:setScale(1)
+        arena2.sprite.alpha = 1
+    end
+    arena2.onRemove = function()
+        arena2.sprite:remove()
+    end
+    local target_x = 320
+    local target_y = 172
+
     if dir == "horizontal" then 
-        local arena2 = Arena()
-        table.insert(self.arenas, arena2)
-        arena2.height = self.width / 2
-        arena2.onAdd = function()
-            arena2.sprite:setScale(1)
-            arena2.sprite.alpha = 1
-        end
-        arena2.onRemove = function()
-            arena2.sprite:remove()
-        end
-        arena2:setPosition(Game.battle.arena.x, Game.battle.arena.y + Game.battle.arena.height/2)
+        arena2.width = self.orig_width
+        arena2.height = self.orig_height / 2
+        arena2:setPosition(target_x, target_y)
+        Game.battle:addChild(arena2) 
+        self.timer:tween(0.5, arena2, {y = arena2.y + 75}, "out-expo")
+    else 
+        arena2.width = self.orig_width / 2
+        arena2.height = self.orig_height
+        arena2:setPosition(target_x, target_y) 
         Game.battle:addChild(arena2)
-        arena2.motion = true
-        self.timer:tween(0.5, arena2, {y = arena2.y + 50}, "out-expo")
-        self:callWait(1, Game.battle.arena, arena2)
+        
+        self.timer:tween(0.5, arena2, {x = arena2.x + 75}, "out-expo")
     end 
+    
+    arena2.motion = true
+    self:callWait(1, main_arena, arena2, dir)
 end 
 
 function swing_arena:spawnStars(hv, amount)
-    local stars = amount / 2 
-    -- spawn stars here 
+    local arena = Game.battle.arena
+    if amount % 2 ~= 0 then amount = amount + 1 end 
+    local direction_toggle = love.math.random(1, 2)  
+    
+    if hv == "horizontal" then 
+        local left_bound = arena:getLeft()
+        local right_bound = arena:getRight()
+        local arena_width = right_bound - left_bound
+        local spacing = arena_width / (amount + 1)
+        
+        for i = 1, amount do 
+            local bullet = self:spawnBullet("effects/criticalswing/sparkle")
+            bullet.sprite:play(0.1, true)
+            bullet:setScale(1.3)
+            bullet:addFX(ColorMaskFX(COLORS.black))
+            bullet:addFX(OutlineFX())
+            bullet.destroy_on_hit = true 
+            bullet.graphics.spin = 0.3
+            
+            local x_fuzz = love.math.random(-4, 4)
+            bullet.x = left_bound + (i * spacing) + x_fuzz
+            bullet.y = 172 + love.math.random(-6, 6)
+            
+            local random_speed = TableUtils.pick({-2, 2})
+            if direction_toggle == 1 then
+                bullet.physics.speed_y = random_speed
+                bullet.physics.gravity = 0.4
+                direction_toggle = 2 
+            else
+                bullet.physics.speed_y = -random_speed
+                bullet.physics.gravity = -0.4
+                direction_toggle = 1 
+            end  
+        end 
+    else
+        local top_bound = arena:getTop()
+        local bottom_bound = arena:getBottom()
+        local arena_height = bottom_bound - top_bound
+        local spacing = arena_height / (amount + 1)
+        
+        for i = 1, amount do 
+            local bullet = self:spawnBullet("effects/criticalswing/sparkle")
+            bullet.sprite:play(0.1, true)
+            bullet:setScale(1.3)
+            bullet:addFX(ColorMaskFX(COLORS.black))
+            bullet:addFX(OutlineFX())
+            bullet.destroy_on_hit = true 
+            bullet.graphics.spin = 0.3            
+            local y_fuzz = love.math.random(-4, 4)
+            bullet.x = 320 + love.math.random(-6, 6)
+            bullet.y = top_bound + (i * spacing) + y_fuzz         
+            local random_speed = TableUtils.pick({-2, 2})
+            if direction_toggle == 1 then
+                bullet.physics.speed_x = random_speed
+                bullet.physics.gravity = 0.4 
+                bullet.physics.gravity_direction = 0
+                direction_toggle = 2 
+            else
+                bullet.physics.speed_x = -random_speed
+                bullet.physics.gravity = 0.4
+                bullet.physics.gravity_direction = math.pi
+                direction_toggle = 1 
+            end  
+        end
+    end 
 end 
 
-function swing_arena:callWait(time, arena, arena2)
+
+function swing_arena:callWait(time, arena, arena2, dir)
     if time then  
         self.timer:after(time, function()
-             self:combine(arena, arena2)
+             self:combine(arena, arena2, dir)
         end)
     end 
 end 
 
-function swing_arena:combine(fir, sec)
+function swing_arena:combine(fir, sec, dir)
     local target_x = 320
     local target_y = 172
-    local half_height = fir.height
     fir.visible = false 
+    
     local third = Arena(fir.x, fir.y)
     third.width = fir.width 
-    third.height = half_height 
+    third.height = fir.height 
     third.onAdd = function()
         third.sprite:setScale(1)
         third.sprite.alpha = 1
@@ -126,25 +238,39 @@ function swing_arena:combine(fir, sec)
     end
     table.insert(self.arenas, third)
     Game.battle:addChild(third)
-    self.timer:tween(0.5, third, {y = target_y - half_height/2}, "in-cubic")
-    self.timer:tween(0.5, sec, {y = target_y + half_height/2}, "in-cubic", function()
-        Assets.playSound("impact", 1, love.math.random(90, 110) / 100)
-        Game.stage:shake(4)
-        for _, arena in ipairs(self.arenas) do 
-            if arena then arena:remove() end
-        end 
-        self.arenas = {} 
-        local main_arena = Game.battle.arena
-        main_arena:setSize(main_arena.width, self.width)    
-        main_arena:setPosition(target_x, target_y)
-        main_arena.visible = true
-        local shadow = self:getAttackers()[1]
-        if shadow then
-            self:swing(shadow)
-        end
-    end)
+    
+    if dir == "horizontal" then
+        local half_height = fir.height
+        self.timer:tween(0.5, third, {y = target_y - half_height/2}, "in-cubic")
+        self.timer:tween(0.5, sec, {y = target_y + half_height/2}, "in-cubic", function()
+            self:finalizeCombine(target_x, target_y)
+        end)
+    else
+        local half_width = fir.width
+        self.timer:tween(0.5, third, {x = target_x - half_width/2}, "in-cubic")
+        self.timer:tween(0.5, sec, {x = target_x + half_width/2}, "in-cubic", function()
+            self:finalizeCombine(target_x, target_y)
+        end)
+    end
 end
 
+function swing_arena:finalizeCombine(target_x, target_y)
+    Assets.playSound("impact", 1, love.math.random(90, 110) / 100)
+    Game.stage:shake(4)
+    
+    for _, arena in ipairs(self.arenas) do 
+        if arena then arena:remove() end
+    end 
+    self.arenas = {} 
+    local main_arena = Game.battle.arena
+    main_arena:setSize(self.orig_width, self.orig_height)    
+    main_arena:setPosition(target_x, target_y)
+    main_arena.visible = true
+    local shadow = self:getAttackers()[1]
+    if shadow then
+        self:swing(shadow)
+    end
+end
 
 function swing_arena:beforeEnd()
     for _, arena in ipairs(self.arenas) do 
