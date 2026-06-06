@@ -20,7 +20,8 @@ function shadow:init()
 
     self.waves = {
        "shadow/slash", 
-       "shadow/defend_bash"
+       "shadow/defend_bash", 
+       "shadow/swing_arena"
     }
     self.dialogue = {} 
     self.check = "AT ??? DF ???\n* Your worst nightmare."

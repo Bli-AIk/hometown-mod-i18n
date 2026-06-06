@@ -166,7 +166,7 @@ function swing_arena:spawnStars(hv, amount)
             bullet.x = left_bound + (i * spacing) + x_fuzz
             bullet.y = 172 + love.math.random(-6, 6)   
             bullet.alpha = 0 
-            Assets.playSound("bell_bounce_short", 0.6, 1.2)
+            Assets.playSound("halberd_flash", 0.05, 0.9)
             Game.battle.timer:tween(0.2, bullet, {alpha = 1}, "in-cubic", function()
                 bullet.graphics.spin = 0.3  
                 local random_speed = love.math.random(-2, 2)
@@ -198,7 +198,7 @@ function swing_arena:spawnStars(hv, amount)
             bullet.x = 320 + love.math.random(-6, 6)
             bullet.y = top_bound + (i * spacing) + y_fuzz    
             bullet.alpha = 0 
-            Assets.playSound("bell_bounce_short", 1, 1.2)
+            Assets.playSound("halberd_flash", 0.05, 0.9)
             self.timer:tween(0.2, bullet, {alpha = 1}, "in-cubic", function()
                 bullet.graphics.spin = 0.3            
                 local random_speed = love.math.random(-2, 2)
