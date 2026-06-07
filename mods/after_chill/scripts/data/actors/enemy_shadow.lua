@@ -45,6 +45,7 @@ function actor:init()
         ["swing"]               = {"swing/swing", 1/12, false}, 
         ["battle/idle"]         = {"battle/idle", 1/6, true},
         ["idle"]                = {"battle/idle", 1/6, true},
+        ["no_heart"]            = {"no_heart", 1/15, false}, 
 
         ["battle/attack"]       = {"battle/attack", 1/15, false},
         ["battle/act"]          = {"battle/act", 1/15, false},
@@ -103,6 +104,7 @@ function actor:init()
         ["battle/attack"] = {-8, -6},
         ["battle/attackready"] = {-8, -6},
         ["battle/act"] = {-6, -6},
+        ["no_heart"] = {-6, -6},
         ["battle/actend"] = {-6, -6},
         ["battle/actready"] = {-6, -6},
         ["battle/item"] = {-6, -6},

@@ -20,10 +20,11 @@ function Virovirokun:init()
         "virovirokun/invader"
     }
 
-    self.check = "AT II DEF -V\nThis virus has travelled through their air to block your way!"
+    self.check = "AT II DEF -V\nThis virus is sentient b"
 
     self.text = {
         "* Virovirokun is sweating\nsuspiciously.",
+        "* Virovirokun uses a text\ndocument as a tissue.",
         "* Virovirokun is poking round\nthings with a spear.",
         "* Virovirokun is beeping a\ncriminal tune."
     }

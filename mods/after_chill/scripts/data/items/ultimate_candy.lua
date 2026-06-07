@@ -30,7 +30,7 @@ function item:init()
     self.can_sell = true
 
     -- Consumable target mode (ally, party, enemy, enemies, or none)
-    self.target = "party"
+    self.target = "ally"
     -- Where this item can be used (world, battle, all, or none)
     self.usable_in = "all"
     -- Item this item will get turned into when consumed
@@ -54,5 +54,29 @@ function item:init()
         noelle = "That was underwhelming...",
     }
 end
+
+-- function item:onBattleUse(user, target)
+--     if #target > 1 then 
+--     for _, battler in ipairs(target) do
+--         local hp = 0
+--         if battler.chara then
+--             hp = battler.chara:getStat("health", 0, false)
+--         else
+--             hp = 0 
+--         end
+--         local individual_heal = math.floor(hp / 2)
+--         battler:heal(individual_heal)
+--     end 
+--         self.heal_amount = 0
+--         return true 
+--     else 
+--         local hp = target.chara:getStat("health", 0, false)
+--         local individual_heal = math.floor(hp / 2)
+--         self.heal_amount = individual_heal
+--         return super.onBattleUse(self, user, target)
+--     end 
+-- end
+
+
 
 return item
