@@ -49,6 +49,8 @@ function sword_star:spawnStars(amount, sword)
             else 
                 bullet = self:spawnBullet("effects/criticalswing/sparkle", x, 230 + i * 5) 
             end 
+            bullet:addFX(ColorMaskFX(COLORS.black))
+            bullet:addFX(OutlineFX())
             bullet:setScale(1.5)
             bullet.sprite:play(0.1, true)
             local speeds = {love.math.random(-6, -9), love.math.random(-4, -7), love.math.random(-5, -8)} 
