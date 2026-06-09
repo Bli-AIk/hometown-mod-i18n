@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="9" nextobjectid="70">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="9" nextobjectid="70">
  <editorsettings>
   <export target="recep3b.lua" format="lua"/>
  </editorsettings>
@@ -7,6 +7,9 @@
   <property name="music" value="hallway"/>
  </properties>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
+ <objectgroup color="#55aa00" id="6" name="battleareas">
+  <object id="69" x="1080" y="400" width="80" height="840"/>
+ </objectgroup>
  <imagelayer id="7" name="Image Layer 1" parallaxx="0.05" parallaxy="0.025" repeatx="1">
   <image source="../../../assets/sprites/tilesets/receptionist bg.png" width="640" height="480"/>
   <properties>
@@ -122,20 +125,22 @@
 </data>
  </layer>
  <objectgroup color="#ff55ff" id="3" name="objects">
-  <object id="1" name="chest" x="1120" y="320">
+  <object id="1" name="chest" x="1121.33" y="372.333">
    <properties>
-    <property name="&quot;ITEM&quot;" value="blackshard"/>
+    <property name="weapon" value="blackshard"/>
    </properties>
    <point/>
   </object>
-  <object id="38" name="interactable" x="1513" y="1193" width="118" height="40">
+  <object id="38" name="interactable" x="1522" y="1160" width="118" height="40">
    <properties>
-    <property name="text1" value="(* the wall looks almost huggable)"/>
+    <property name="text1">* (The wall looks huggable.)
+* (You resist the urge to hug it.)</property>
    </properties>
   </object>
-  <object id="39" name="interactable" x="1692" y="1195" width="105" height="40">
+  <object id="39" name="interactable" x="1688" y="1162" width="105" height="40">
    <properties>
-    <property name="text1" value="(* the wall looks almost huggable)"/>
+    <property name="text1">* (The wall looks huggable.)
+* (You resist the urge to hug it.)</property>
    </properties>
   </object>
   <object id="41" name="transition" x="1640" y="640" width="40" height="40">
@@ -264,8 +269,5 @@
   <object id="66" x="0" y="1404.66" width="80" height="600"/>
   <object id="67" x="-40" y="1204.66" width="40" height="200"/>
   <object id="68" x="0" y="1164.66" width="320" height="40"/>
- </objectgroup>
- <objectgroup color="#55aa00" id="6" name="battlearea">
-  <object id="69" x="1080" y="400" width="80" height="840"/>
  </objectgroup>
 </map>

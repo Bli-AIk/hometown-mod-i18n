@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="20">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="21">
  <editorsettings>
   <export target="recep2a.lua" format="lua"/>
  </editorsettings>
@@ -29,35 +29,8 @@
 0,0,0,0,0,0,0,0,282,283,283,283,284,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="6" name="chest" width="20" height="15" tintcolor="#afafd1">
-  <properties>
-   <property name="flag" value=""/>
-  </properties>
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,264,264,264,265,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,283,283,283,284,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,302,302,302,303,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,340,340,340,341,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
  <objectgroup color="#0000ff" id="3" name="collision">
   <object id="1" x="200" y="240" width="440" height="40"/>
-  <object id="2" x="640" y="280" width="40" height="160">
-   <properties>
-    <property name="flag" value=""/>
-   </properties>
-  </object>
   <object id="3" x="520" y="440" width="120" height="40"/>
   <object id="4" x="520" y="480" width="40" height="120"/>
   <object id="5" x="280" y="440" width="40" height="160"/>
@@ -68,7 +41,7 @@
   <object id="17" x="640" y="400" width="160" height="40"/>
  </objectgroup>
  <objectgroup color="#ff55ff" id="4" name="objects">
-  <object id="9" name="transition" x="320" y="560" width="200" height="40">
+  <object id="9" name="transition" x="320" y="595" width="200" height="40">
    <properties>
     <property name="map" value="recep2"/>
     <property name="marker" value="entranceB"/>
@@ -84,9 +57,10 @@
   <object id="18" name="heart_puzzle" x="421" y="159">
    <point/>
   </object>
+  <object id="20" name="forcefield" x="637.472" y="285.262" width="45.1179" height="155.73"/>
  </objectgroup>
  <objectgroup color="#aa55ff" id="5" name="markers">
-  <object id="8" name="entranceA" x="415" y="511">
+  <object id="8" name="entranceA" x="422" y="543">
    <point/>
   </object>
  </objectgroup>

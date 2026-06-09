@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 73,
+  nextobjectid = 77,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -24,6 +24,35 @@ return {
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "battleareas",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 60,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 725,
+          width = 741,
+          height = 67,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
     {
       type = "imagelayer",
       image = "../../../assets/sprites/tilesets/receptionist bg.png",
@@ -202,14 +231,13 @@ return {
           type = "",
           shape = "point",
           x = 1120,
-          y = 320,
+          y = 361,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["\"ITEM\""] = "blackshard"
+            ["weapon"] = "blackshard"
           }
         },
         {
@@ -217,15 +245,14 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 1513,
-          y = 1193,
+          x = 1521,
+          y = 1200,
           width = 118,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "(* the wall looks almost huggable)"
+            ["text1"] = "* (The wall looks huggable.)\n* (You resist the urge to hug it.)"
           }
         },
         {
@@ -233,15 +260,14 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 1692,
-          y = 1195,
+          x = 1685,
+          y = 1199,
           width = 105,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "(* the wall looks almost huggable)"
+            ["text1"] = "* (The wall looks huggable.)\n* (You resist the urge to hug it.)"
           }
         },
         {
@@ -254,7 +280,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep3b",
@@ -271,7 +296,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep3a",
@@ -288,7 +312,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -321,7 +344,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -335,7 +357,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -349,7 +370,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -363,7 +383,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -393,7 +412,6 @@ return {
           width = 560,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -407,7 +425,6 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -421,7 +438,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -435,7 +451,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -449,7 +464,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -463,7 +477,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -477,7 +490,6 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -491,7 +503,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -505,7 +516,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -519,7 +529,6 @@ return {
           width = 480,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -533,7 +542,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -547,7 +555,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -561,7 +568,6 @@ return {
           width = 720,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -571,11 +577,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 760,
-          y = 800,
+          y = 790,
           width = 760,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -589,7 +594,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -603,7 +607,6 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -617,7 +620,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -631,7 +633,6 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -645,7 +646,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -659,7 +659,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -673,7 +672,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -687,7 +685,6 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -701,7 +698,6 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -711,11 +707,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 1160,
-          y = 840,
+          y = 832,
           width = 40,
-          height = 400,
+          height = 408,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -725,11 +720,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 1040,
-          y = 840,
+          y = 831.5,
           width = 40,
-          height = 400,
+          height = 408.5,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -743,7 +737,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -757,7 +750,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -771,7 +763,6 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -785,7 +776,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -799,7 +789,6 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -813,7 +802,6 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -827,7 +815,6 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -841,7 +828,6 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -855,7 +841,6 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -869,7 +854,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -883,7 +867,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -897,7 +880,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -911,7 +893,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -925,7 +906,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -939,7 +919,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -953,7 +932,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -967,7 +945,6 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -981,7 +958,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -995,7 +971,6 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1009,7 +984,6 @@ return {
           width = 680,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1023,7 +997,6 @@ return {
           width = 720,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1037,7 +1010,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1049,9 +1021,8 @@ return {
           x = 200,
           y = 1440,
           width = 40,
-          height = 600,
+          height = 562,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1065,7 +1036,6 @@ return {
           width = 80,
           height = 600,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1079,7 +1049,6 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1093,37 +1062,6 @@ return {
           width = 320,
           height = 40,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 6,
-      name = "battlearea",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 60,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 760,
-          y = 720,
-          width = 741,
-          height = 67,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
