@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
-  nextobjectid = 21,
+  nextlayerid = 9,
+  nextobjectid = 24,
   properties = {
     ["music"] = "hallway"
   },
@@ -29,7 +29,7 @@ return {
       id = 2,
       name = "bg",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = -68,
       offsety = -82,
@@ -186,10 +186,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 800,
-          y = 320,
+          x = 763.615,
+          y = 280,
           width = 40,
-          height = 80,
+          height = 155,
           rotation = 0,
           visible = true,
           properties = {}
@@ -199,10 +199,39 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 640,
-          y = 400,
+          x = 642.25,
+          y = 413.5,
           width = 160,
           height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 8,
+          name = "entranceA",
+          type = "",
+          shape = "point",
+          x = 422,
+          y = 543,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}
@@ -244,15 +273,15 @@ return {
           name = "chest",
           type = "",
           shape = "point",
-          x = 761,
-          y = 364,
+          x = 739,
+          y = 358,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["flag"] = "",
-            ["item"] = "revivemint"
+            ["item"] = "revivemint",
+            ["layer"] = 9999
           }
         },
         {
@@ -269,43 +298,14 @@ return {
           properties = {}
         },
         {
-          id = 20,
-          name = "forcefield",
+          id = 21,
+          name = "magicglass",
           type = "",
           shape = "rectangle",
-          x = 637.472,
-          y = 285.262,
-          width = 45.1179,
-          height = 155.73,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 5,
-      name = "markers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 8,
-          name = "entranceA",
-          type = "",
-          shape = "point",
-          x = 422,
-          y = 543,
-          width = 0,
-          height = 0,
+          x = 639.428,
+          y = 299.513,
+          width = 122.551,
+          height = 133.226,
           rotation = 0,
           visible = true,
           properties = {}
