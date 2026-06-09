@@ -9,8 +9,8 @@ return {
   height = 50,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 9,
-  nextobjectid = 70,
+  nextlayerid = 10,
+  nextobjectid = 72,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -49,6 +49,39 @@ return {
           height = 840,
           rotation = 0,
           visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 9,
+      name = "paths",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 70,
+          name = "dusteeer",
+          type = "",
+          shape = "polyline",
+          x = 33.9087,
+          y = 1319.8,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 279, y = 0 }
+          },
           properties = {}
         }
       }
@@ -300,6 +333,24 @@ return {
           properties = {
             ["map"] = "recep3",
             ["marker"] = "entranceC"
+          }
+        },
+        {
+          id = 71,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 165.083,
+          y = 1303.67,
+          width = 31.5,
+          height = 28.5,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "dusteer",
+            ["encounter"] = "dusteer",
+            ["enemy"] = "dusteer",
+            ["path"] = "dusteeer"
           }
         }
       }
