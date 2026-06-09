@@ -1,4 +1,4 @@
-local actor, super = Class(Actor, "noelle")
+local actor, super = Class(Actor, "enemy_noelle")
 
 function actor:init()
     super.init(self)
@@ -16,6 +16,7 @@ function actor:init()
     -- A table that defines where the Soul should be placed on this actor if they are a player.
     -- First value is x, second value is y.
     self.soul_offset = {11.5, 28}
+    self.flip = "left"
 
     -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = {1, 1, 0}
@@ -23,7 +24,7 @@ function actor:init()
     -- Path to this actor's sprites (defaults to "")
     self.path = "party/noelle/dark"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
-    self.default = "walk"
+    self.default = "idle"
 
     -- Sound to play when this actor speaks (optional)
     self.voice = "noelle"
@@ -38,11 +39,11 @@ function actor:init()
     -- Table of sprite animations
     self.animations = {
         -- Battle animations
-        ["battle/idle"]         = {"battle/idle", 1/6, true},
-
+        ["idle"]                = {"battle/idle", 1/6, true},
+        ["float"]               = {"battle_alt/float", 1/8, true}, -- is there something i can put that like dictates the amount of time it repeats?
         ["battle/attack"]       = {"battle/attack", 1/15, false},
         ["battle/act"]          = {"battle/act", 1/15, false},
-        ["battle/spell"]        = {"battle/spell", 1/15, false, next="battle/idle"},
+        ["spell"]        = {"battle/spell", 1/15, false, next="battle/idle"},
         ["battle/item"]         = {"battle/item", 1/12, false, next="battle/idle"},
         ["battle/spare"]        = {"battle/spell", 1/15, false, next="battle/idle"},
 
@@ -50,7 +51,7 @@ function actor:init()
         ["battle/act_ready"]    = {"battle/actready", 0.2, true},
         ["battle/spell_ready"]  = {"battle/spellready", 0.2, true},
         ["battle/item_ready"]   = {"battle/itemready", 0.2, true},
-        ["battle/defend_ready"] = {"battle/defend", 1/15, false},
+        ["hurt"]                = {"battle_alt/defend", 1/15, false},
 
         ["battle/act_end"]      = {"battle/actend", 1/15, false, next="battle/idle"},
 
@@ -219,28 +220,6 @@ function actor:init()
         ["head_lowered_look_left"] = {0, 0},
         ["head_lowered_look_right"] = {0, 0},
     }
-end
-
-function actor:getAnimation(anim)
-    -- If the weird route flag is set and an alt animation is defined, use it instead
-    if Game:getPartyMember("noelle"):getFlag("weird", false) and self.animations_alt[anim] ~= nil then
-        return self.animations_alt[anim] or nil
-    else
-        return super.getAnimation(self, anim)
-    end
-end
-
-function actor:onSetAnimation(sprite, anim, keep_anim)
-    if anim[1] == "battle_alt/pray" then
-        local background = SnowglobeEffect(0, 0, false)
-        local foreground = SnowglobeEffect(0, 0, true)
-        sprite.parent:addChild(background)
-        sprite.parent:addChild(foreground)
-        background.layer = sprite.layer - 1
-        foreground.layer = sprite.layer + 1
-        background:setScale(0.5)
-        foreground:setScale(0.5)
-    end
 end
 
 return actor

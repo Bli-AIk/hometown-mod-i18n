@@ -11,7 +11,7 @@ function actor:init()
 
     TableUtils.merge(self.offsets, {
         ["sweep"] = {-6, 7}, 
-        ["swing"] = {-35, 11}
+        ["swing/swing"] = {-30, -8}, 
     }, false)
 end
 
