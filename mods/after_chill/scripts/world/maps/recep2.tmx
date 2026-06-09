@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="9" nextobjectid="29">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="9" nextobjectid="32">
  <editorsettings>
   <export target="recep2.lua" format="lua"/>
  </editorsettings>
@@ -74,9 +74,24 @@
     <property name="path" value="virovirokun"/>
    </properties>
   </object>
+  <object id="29" name="transition" x="1160" y="680" width="38" height="202">
+   <properties>
+    <property name="map" value="recep3"/>
+    <property name="marker" value="entranceA"/>
+   </properties>
+  </object>
+  <object id="30" name="transition" x="1040" y="600" width="40" height="40">
+   <properties>
+    <property name="map" value="recep2a"/>
+    <property name="marker" value="entranceA"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers">
   <object id="2" name="entranceA" x="128.61" y="445.384">
+   <point/>
+  </object>
+  <object id="31" name="entranceB" x="1086" y="744">
    <point/>
   </object>
  </objectgroup>

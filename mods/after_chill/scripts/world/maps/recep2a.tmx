@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="19">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="20">
  <editorsettings>
   <export target="recep2a.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="hallway"/>
+ </properties>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
  <imagelayer id="2" name="bg" tintcolor="#646578" offsetx="-68" offsety="-82">
   <image source="../../../assets/sprites/tilesets/indoors recep bg_1.png" width="972" height="848"/>
@@ -65,7 +68,12 @@
   <object id="17" x="640" y="400" width="160" height="40"/>
  </objectgroup>
  <objectgroup color="#ff55ff" id="4" name="objects">
-  <object id="9" name="transition" x="320" y="560" width="200" height="40"/>
+  <object id="9" name="transition" x="320" y="560" width="200" height="40">
+   <properties>
+    <property name="map" value="recep2"/>
+    <property name="marker" value="entranceB"/>
+   </properties>
+  </object>
   <object id="10" name="chest" x="761" y="364">
    <properties>
     <property name="flag" value=""/>

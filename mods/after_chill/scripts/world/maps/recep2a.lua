@@ -10,8 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 19,
-  properties = {},
+  nextobjectid = 20,
+  properties = {
+    ["music"] = "hallway"
+  },
   tilesets = {
     {
       name = "Receptionist",
@@ -296,7 +298,10 @@ return {
           rotation = 0,
           opacity = 1,
           visible = true,
-          properties = {}
+          properties = {
+            ["map"] = "recep2",
+            ["marker"] = "entranceB"
+          }
         },
         {
           id = 10,

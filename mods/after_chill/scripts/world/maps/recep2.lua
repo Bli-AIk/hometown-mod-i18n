@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 29,
+  nextobjectid = 32,
   backgroundcolor = { 1, 1, 16 },
   properties = {
     ["music"] = "hallway"
@@ -117,6 +117,7 @@ return {
           width = 79.5175,
           height = 119.276,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep1",
@@ -133,6 +134,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["money"] = "64"
@@ -148,6 +150,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "musicnotif.recep"
@@ -163,12 +166,47 @@ return {
           width = 54,
           height = 44,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
             ["encounter"] = "virovirokun",
             ["enemy"] = "virovirokun",
             ["path"] = "virovirokun"
+          }
+        },
+        {
+          id = 29,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1160,
+          y = 680,
+          width = 38,
+          height = 202,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "recep3",
+            ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 30,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1040,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "recep2a",
+            ["marker"] = "entranceA"
           }
         }
       }
@@ -197,6 +235,21 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "entranceB",
+          type = "",
+          shape = "point",
+          x = 1086,
+          y = 744,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -226,6 +279,7 @@ return {
           width = 675.898,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -239,6 +293,7 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -252,6 +307,7 @@ return {
           width = 267.052,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -265,6 +321,7 @@ return {
           width = 39.7587,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -278,6 +335,7 @@ return {
           width = 79.5175,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -291,6 +349,7 @@ return {
           width = 79.5175,
           height = 159.035,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -304,6 +363,7 @@ return {
           width = 119.276,
           height = 79.5175,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -317,6 +377,7 @@ return {
           width = 79.5175,
           height = 79.5175,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -330,6 +391,7 @@ return {
           width = 506.438,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -343,6 +405,7 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -356,6 +419,7 @@ return {
           width = 516.863,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -369,6 +433,7 @@ return {
           width = 39.7587,
           height = 238.552,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -382,6 +447,7 @@ return {
           width = 278.311,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -395,6 +461,7 @@ return {
           width = 39.7587,
           height = 318.07,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -408,6 +475,7 @@ return {
           width = 437.346,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -437,6 +505,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
