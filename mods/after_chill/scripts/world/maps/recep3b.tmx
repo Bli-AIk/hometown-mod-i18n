@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="72">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="73">
  <editorsettings>
   <export target="recep3b.lua" format="lua"/>
  </editorsettings>
@@ -10,11 +10,7 @@
  <objectgroup color="#55aa00" id="6" name="battleareas">
   <object id="69" x="1080" y="400" width="80" height="840"/>
  </objectgroup>
- <objectgroup id="9" name="paths">
-  <object id="70" name="dusteeer" x="33.9087" y="1319.8">
-   <polyline points="0,0 279,0"/>
-  </object>
- </objectgroup>
+ <objectgroup id="9" name="paths"/>
  <imagelayer id="7" name="Image Layer 1" parallaxx="0.05" parallaxy="0.025" repeatx="1">
   <image source="../../../assets/sprites/tilesets/receptionist bg.png" width="640" height="480"/>
   <properties>
@@ -160,12 +156,13 @@
     <property name="marker" value="entranceC"/>
    </properties>
   </object>
-  <object id="71" name="enemy" x="165.083" y="1303.67" width="31.5" height="28.5">
+  <object id="72" name="enemy" x="129.25" y="1292.33" width="31.5" height="28.5">
    <properties>
     <property name="actor" value="dusteer"/>
+    <property name="animation" value="walk"/>
+    <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer"/>
     <property name="enemy" value="dusteer"/>
-    <property name="path" value="dusteeer"/>
    </properties>
   </object>
  </objectgroup>

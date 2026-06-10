@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 72,
+  nextobjectid = 73,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -66,25 +66,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 70,
-          name = "dusteeer",
-          type = "",
-          shape = "polyline",
-          x = 33.9087,
-          y = 1319.8,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = 279, y = 0 }
-          },
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "imagelayer",
@@ -336,21 +318,22 @@ return {
           }
         },
         {
-          id = 71,
+          id = 72,
           name = "enemy",
           type = "",
           shape = "rectangle",
-          x = 165.083,
-          y = 1303.67,
+          x = 129.25,
+          y = 1292.33,
           width = 31.5,
           height = 28.5,
           rotation = 0,
           visible = true,
           properties = {
             ["actor"] = "dusteer",
+            ["animation"] = "walk",
+            ["chase"] = true,
             ["encounter"] = "dusteer",
-            ["enemy"] = "dusteer",
-            ["path"] = "dusteeer"
+            ["enemy"] = "dusteer"
           }
         }
       }
