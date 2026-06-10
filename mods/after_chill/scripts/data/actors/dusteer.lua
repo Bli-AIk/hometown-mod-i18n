@@ -11,7 +11,7 @@ function actor:init()
     self.height = 45
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
-    self.hitbox = { 0, 25, 19, 14 }
+    self.hitbox = {10, 18, 30, 30}
 
     -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = { 1, 0, 0 }
@@ -45,6 +45,7 @@ function actor:init()
         ["spared"] = {"spared", 0.25, true},
         ["hurt"]= {"hurt", 0.25, true},
         ["sweep"]={"sweep", 0.25, true},
+        ["walk"] = {"walk", 0.25, true}
     }
 
     -- Table of sprite offsets (indexed by sprite name)
