@@ -366,7 +366,6 @@ function ChaserEnemy:chaseMovement()
         end
         self:move(math.cos(angle), math.sin(angle), self.chase_speed * DTMULT)
     end
-
 end
 
 --- *(Override)* Responsible for movement of the `ChaserEnemy` when idle. Only called if `pace_type` is set. \

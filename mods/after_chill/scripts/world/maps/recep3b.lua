@@ -330,7 +330,6 @@ return {
           visible = true,
           properties = {
             ["actor"] = "dusteer",
-            ["animation"] = "walk",
             ["chase"] = true,
             ["encounter"] = "dusteer",
             ["enemy"] = "dusteer"

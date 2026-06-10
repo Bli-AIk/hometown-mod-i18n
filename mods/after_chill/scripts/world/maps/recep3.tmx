@@ -165,7 +165,6 @@
   <object id="78" name="enemy" x="455.523" y="766.568" width="31.5" height="28.5">
    <properties>
     <property name="actor" value="dusteer"/>
-    <property name="animation" value="walk"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer"/>
     <property name="enemy" value="dusteer"/>
