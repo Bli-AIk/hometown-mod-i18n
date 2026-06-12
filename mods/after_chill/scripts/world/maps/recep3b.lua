@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 73,
+  nextobjectid = 75,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -334,6 +334,22 @@ return {
             ["encounter"] = "dusteer",
             ["enemy"] = "dusteer"
           }
+        },
+        {
+          id = 73,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 87.3333,
+          y = 1961.33,
+          width = 103.333,
+          height = 38.6667,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "recep4",
+            ["marker"] = "entranceA"
+          }
         }
       }
     },
@@ -371,6 +387,19 @@ return {
           shape = "point",
           x = 1660,
           y = 1253,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 74,
+          name = "entranceC",
+          type = "",
+          shape = "point",
+          x = 140.5,
+          y = 1929,
           width = 0,
           height = 0,
           rotation = 0,

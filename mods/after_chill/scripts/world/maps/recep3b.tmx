@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="73">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="75">
  <editorsettings>
   <export target="recep3b.lua" format="lua"/>
  </editorsettings>
@@ -164,12 +164,21 @@
     <property name="enemy" value="dusteer"/>
    </properties>
   </object>
+  <object id="73" name="transition" x="87.3333" y="1961.33" width="103.333" height="38.6667">
+   <properties>
+    <property name="map" value="recep4"/>
+    <property name="marker" value="entranceA"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="4" name="markers">
   <object id="2" name="entranceA" x="52" y="343">
    <point/>
   </object>
   <object id="40" name="entranceB" x="1660" y="1253">
+   <point/>
+  </object>
+  <object id="74" name="entranceC" x="140.5" y="1929">
    <point/>
   </object>
  </objectgroup>
