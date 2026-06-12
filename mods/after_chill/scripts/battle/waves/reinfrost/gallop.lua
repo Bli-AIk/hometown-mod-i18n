@@ -5,7 +5,10 @@ function gallop:init()
     self.time = -1 
     self:setArenaPosition(320, 230) 
     self.original_positions = {}
-    self.attackers_registry = {}
+    self.attackers_registry = {}  
+    self.run_count = 0
+    self.max_runs = 6
+    self.snow_count = 0
 end 
 
 function gallop:checkIfMoreThanTwo()
@@ -14,10 +17,12 @@ function gallop:checkIfMoreThanTwo()
 end 
 
 function gallop:onStart()
-    for i, enemy in ipairs(self:getAttackers()) do
+    local attackers = self:getAttackers()
+    for i, enemy in ipairs(attackers) do
         self.attackers_registry[i] = enemy
         self.original_positions[enemy] = {x = enemy.x, y = enemy.y}
     end
+
     self:sendFirst()
 end 
 
@@ -33,8 +38,9 @@ function gallop:isEnemyAlive(index)
 end
 
 function gallop:triggerNextFrom(currentIndex)
-    if self.time ~= -1 then return end
-
+    if self.run_count >= self.max_runs then
+        return
+    end
     if currentIndex == 1 then
         if self:isEnemyAlive(2) then
             self:sendSecond()
@@ -104,11 +110,9 @@ function gallop:executeGallopRun(deer, deer_index, target_y)
     
     local duration = 2.8
     local elapsed = 0
-    local spawned_snow = false
     local arena = Game.battle.arena
-
+    local snow_cooldown = 0
     deer:fadeTo(1, 0.2)
-
     self.timer:during(duration, function()
         elapsed = elapsed + DT
         local p = math.min(elapsed / duration, 1.0)
@@ -128,10 +132,12 @@ function gallop:executeGallopRun(deer, deer_index, target_y)
         
         local arena_left = arena.x - (arena.width / 2)
         local arena_right = arena.x + (arena.width / 2)
-        if deer.x >= arena_left and deer.x <= arena_right then
-            if not spawned_snow then
-                spawned_snow = true
-                -- self:spawnSnow()
+        
+        if deer.x >= (arena_left - 40) and deer.x <= (arena_right + 20) then
+            snow_cooldown = snow_cooldown - DT
+            if snow_cooldown <= 0 then
+                self:spawnSnow(deer)
+                snow_cooldown = 0.09
             end
         end
     end, function()
@@ -139,8 +145,46 @@ function gallop:executeGallopRun(deer, deer_index, target_y)
         deer.visible = true
         local orig = self.original_positions[deer]
         deer:setPosition(orig.x, orig.y)
-        self:triggerNextFrom(deer_index)
+        
+        self.run_count = self.run_count + 1
+        
+        if self.run_count >= self.max_runs then
+            self:setFinished(true)
+        else
+            self:triggerNextFrom(deer_index)
+        end
     end)
 end
+
+function gallop:spawnSnow(deer)
+    self.snow_count = self.snow_count + 1
+    
+    local rx, ry = deer:getRelativePos(deer.width, deer.height)
+    local bullet = self:spawnBullet("bullets/puff", rx, ry)
+    
+    if bullet then
+        bullet:setScale(1)
+        bullet.alpha = 0.7 
+        bullet.graphics.spin = 0.2
+        bullet.physics.gravity = 0.2
+        if self.snow_count % 3 == 0 then
+            bullet.physics.speed_y = 6
+            bullet.physics.speed_x = -1 -- Moves slightly left into the wind
+        elseif self.snow_count % 3 == 1 then
+            bullet.physics.speed_y = 3
+            bullet.physics.speed_x = 0  -- Drops straight down
+        else
+            bullet.physics.speed_y = 4.5
+            bullet.physics.speed_x = 1  
+        end
+    end
+end
+
+function gallop:beforeEnd()
+    for _, deer in ipairs(self:getAttackers()) do
+        local orig = self.original_positions[deer]
+        deer:setPosition(orig.x, orig.y)
+    end 
+end 
 
 return gallop
