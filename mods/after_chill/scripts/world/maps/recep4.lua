@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 19,
+  nextobjectid = 21,
   properties = {
     ["music"] = "wind_normal",
     ["name"] = "Receptionist Stage"
@@ -114,7 +114,24 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["marker"] = "entranceA",
             ["text1"] = "* The power of emptiness and wind shines within you."
+          }
+        },
+        {
+          id = 19,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 244,
+          y = 124,
+          width = 36,
+          height = 274.667,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "kris.ralsei",
+            ["once"] = false
           }
         }
       }
@@ -206,7 +223,7 @@ return {
       id = 6,
       name = "markers",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -219,8 +236,21 @@ return {
           name = "entranceA",
           type = "",
           shape = "point",
-          x = 103.333,
+          x = 137,
           y = 94,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "kris",
+          type = "",
+          shape = "point",
+          x = 347,
+          y = 264,
           width = 0,
           height = 0,
           rotation = 0,

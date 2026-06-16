@@ -40,11 +40,7 @@ end
 
 function FireGlow:resetParticle(p)
     p.x = love.math.random(0, 640)
-    if p.side == 1 then
-        p.y = love.math.random(-10, 10)
-    else
-        p.y = love.math.random(320, 340)
-    end
+    p.y = love.math.random(320, 340)
     p.start_y = p.y
     
     if p.is_circle then
@@ -79,10 +75,9 @@ function FireGlow:update()
 end
 
 function FireGlow:draw()
-    super.draw(self)
+   -- super.draw(self)
     love.graphics.setColor(1, 1, 1, self.alpha)
-    love.graphics.draw(self.top_mesh, 0, -90)
-    love.graphics.draw(self.bottom_mesh, 0, 0)
+    love.graphics.draw(self.bottom_mesh, 0, -50)
 
     for _, p in ipairs(self.particles) do
         local distance_traveled = math.abs(p.y - p.start_y)

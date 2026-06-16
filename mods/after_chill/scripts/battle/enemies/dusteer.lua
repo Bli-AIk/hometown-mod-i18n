@@ -14,7 +14,8 @@ function dusteer:init()
 
     self.spare_points = 10
 
-    self.waves = {
+    self.waves = { 
+        "reinfrost/gallop"
     }
     self.dialogue = {} 
     self.check = "AT 8 DF 6\n* Get away from it before you sneeze!"

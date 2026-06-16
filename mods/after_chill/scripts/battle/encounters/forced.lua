@@ -12,14 +12,11 @@ function forced:init()
     self.background = true 
     self.dialogue_lines = {
     [1] = {
-        {"Wait, stop!"},
-        {"I'm not an enemy!"},
-        {"Please!"},
-        {"If you attack\nme again..."}, 
-        {"I might..."}
+        {"What's going on...?"},
+        {"Calm down\n[wait:5] please!"},
     },
     [2] = {
-        {"No, I'm not\ngoing to let you..."},
+        {"(Why is she attacking me?)"},
         {"I.. have\nto survive."},
         {"I[wait:2]-I could use\nmy fire magic..."},
         {"If you can hear me,\nthen..."},

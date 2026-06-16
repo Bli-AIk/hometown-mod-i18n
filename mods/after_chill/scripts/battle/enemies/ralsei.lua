@@ -131,4 +131,8 @@ function ralsei:onHurt(damage, battler)
     super.onHurt(self, damage, battler)
 end 
 
+function ralsei:onAdd(parent)
+    self:setAnimation("battle/intro")
+end 
+
 return ralsei

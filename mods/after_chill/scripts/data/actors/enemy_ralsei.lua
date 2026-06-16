@@ -96,6 +96,7 @@ function actor:init()
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
+        ["sing"]      = {0, 4},
         ["walk/down"] = {0, 0},
         ["walk/left"] = {0, 0},
         ["walk/right"] = {0, 0},
