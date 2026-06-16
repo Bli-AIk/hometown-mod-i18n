@@ -18,7 +18,7 @@ function dusteer:init()
         "reinfrost/gallop"
     }
     self.dialogue = {} 
-    self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]cleaning[color:reset] it!"
+    self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
     self.ui_modified = false 
 
     self.text = {

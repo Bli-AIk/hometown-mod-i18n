@@ -161,6 +161,7 @@ function gallop:spawnSnow(deer)
     
     local rx, ry = deer:getRelativePos(deer.width, deer.height)
     local bullet = self:spawnBullet("bullets/puff", rx, ry)
+    bullet.collider = CircleCollider(bullet, 16, 14, 12)
     
     if bullet then
         bullet:setScale(1)
@@ -169,13 +170,13 @@ function gallop:spawnSnow(deer)
         bullet.physics.gravity = 0.2
         if self.snow_count % 3 == 0 then
             bullet.physics.speed_y = 6
-            bullet.physics.speed_x = -1 -- Moves slightly left into the wind
+            bullet.physics.speed_x = love.math.random(-1, -3) -- Moves slightly left into the wind
         elseif self.snow_count % 3 == 1 then
-            bullet.physics.speed_y = 3
-            bullet.physics.speed_x = 0  -- Drops straight down
+            bullet.physics.speed_y = love.math.random(2, 5)
+            bullet.physics.speed_x = love.math.random(-1, 2)
         else
             bullet.physics.speed_y = 4.5
-            bullet.physics.speed_x = 1  
+            bullet.physics.speed_x = MathUtils.random(0, 4)
         end
     end
 end
