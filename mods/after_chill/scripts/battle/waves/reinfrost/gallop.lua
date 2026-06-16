@@ -7,8 +7,9 @@ function gallop:init()
     self.original_positions = {}
     self.attackers_registry = {}  
     self.run_count = 0
-    self.max_runs = 6
+    self.max_runs = 3
     self.snow_count = 0
+    self.last_speed_x = 0
 end 
 
 function gallop:checkIfMoreThanTwo()
@@ -158,25 +159,28 @@ end
 
 function gallop:spawnSnow(deer)
     self.snow_count = self.snow_count + 1
+    if self.snow_count % 6 == 0 then
+        return
+    end
     
     local rx, ry = deer:getRelativePos(deer.width, deer.height)
     local bullet = self:spawnBullet("bullets/puff", rx, ry)
-    bullet.collider = CircleCollider(bullet, 16, 14, 12)
+    bullet.collider = CircleCollider(bullet, 8, 8, 8.5)
     
     if bullet then
         bullet:setScale(1)
         bullet.alpha = 0.7 
         bullet.graphics.spin = 0.2
-        bullet.physics.gravity = 0.2
+        bullet.physics.gravity = 0.16
         if self.snow_count % 3 == 0 then
-            bullet.physics.speed_y = 6
-            bullet.physics.speed_x = love.math.random(-1, -3) -- Moves slightly left into the wind
+            bullet.physics.speed_y = 5.5 
+            bullet.physics.speed_x = love.math.random(-3.0, -1.0)
         elseif self.snow_count % 3 == 1 then
-            bullet.physics.speed_y = love.math.random(2, 5)
-            bullet.physics.speed_x = love.math.random(-1, 2)
+            bullet.physics.speed_y = love.math.random(2.0, 4.0)
+            bullet.physics.speed_x = love.math.random(-1.0, 1.0) 
         else
-            bullet.physics.speed_y = 4.5
-            bullet.physics.speed_x = MathUtils.random(0, 4)
+            bullet.physics.speed_y = 4.0 
+            bullet.physics.speed_x = love.math.random(1.5, 3.5) 
         end
     end
 end
