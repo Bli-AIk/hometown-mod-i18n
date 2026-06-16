@@ -8,7 +8,7 @@ function dusteer:init()
 
     self.max_health = 340
     self.health = 340
-    self.attack = 7  
+    self.attack = 10 
     self.defense = 7
     self.money = 100
 
@@ -18,13 +18,13 @@ function dusteer:init()
         "reinfrost/gallop"
     }
     self.dialogue = {} 
-    self.check = "AT 8 DF 6\n* Get away from it before you sneeze!"
+    self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]cleaning[color:reset] it!"
     self.ui_modified = false 
 
     self.text = {
         "* A cold breeze runs through.\n* Reinfrost shakes a little.", 
         "* Smells like trampled snow.", 
-        "* Reinfrost trots and kicks some snow.", 
+        "* Reinfrost trots and kicks some\nsnow.", 
     }
     self.low_health_percentage = 0.25
     self.spare_text = "* You sneeze. Dusteer seemed satisfied it did its job."

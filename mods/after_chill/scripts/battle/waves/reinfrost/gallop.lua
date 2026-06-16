@@ -183,6 +183,7 @@ end
 function gallop:beforeEnd()
     for _, deer in ipairs(self:getAttackers()) do
         local orig = self.original_positions[deer]
+        deer:resetSprite()
         deer:setPosition(orig.x, orig.y)
     end 
 end 
