@@ -15,7 +15,8 @@ function dusteer:init()
     self.spare_points = 10
 
     self.waves = { 
-        "reinfrost/gallop"
+        "reinfrost/gallop", 
+        "reinfrost/snow_graze"
     }
     self.dialogue = {} 
     self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
