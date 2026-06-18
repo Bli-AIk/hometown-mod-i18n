@@ -18,8 +18,7 @@ return {
             noelle:slideTo(noelle.x, 282, 2, "in-cubic")
             cutscene:wait(2)
             Assets.playSound("dtrans_flip")
-            noelle.sprite.scale_x = -1
-            noelle.x = noelle.x + 50 
+            noelle.scale_x = -2
             noelle:setSprite("collapsed")
             cutscene:wait(2)
             for i = 1, 3 do 
@@ -28,8 +27,7 @@ return {
                 cutscene:wait(0.3)
             end 
             noelle:resetSprite()
-            noelle.sprite.scale_x = 1
-            noelle.x = noelle.x - 50 
+            noelle.scale_x = 2 
             noelle:setFacing("up")
             noelle:setPosition(178, 295)
             cutscene:wait(0.4)
@@ -82,11 +80,13 @@ return {
             noelle:shake(2)
             noelle:resetSprite()
             noelle:setAnimation("pray")
-            cutscene:wait(1.8)
+            cutscene:wait(2.2)
             cutscene:text("* [noskip][speed:0.7][shake:1]...", "down_smile")
             cutscene:wait(1.2)
+            cutscene:choicer({"Proceed", "Proceed"}, {color = COLORS.red, highlight = COLORS.red})
+            cutscene:wait(cutscene:playSound("ominous", 1, 0.7))
             cutscene:text("*[noskip][speed:0.7] Kris...[wait:5] faha...[wait:5]\n* Kris....", "down_smile")
-            cutscene:text("*[noskip][speed:0.7] Their voice... \n* I can hear it telling me to [shake:1]PROCEED[shake:0]...", "down")
+            cutscene:text("*[noskip][speed:0.7] Their voice... \n* I can hear it telling me to [shake:1][color:red]PROCEED[color:reset][shake:0]...", "down")
             cutscene:text("* [noskip][speed:0.7]This thorn...[wait:5] it helps me...[wait:5] to be stronger...", "sad_side")
             cutscene:text("* [noskip][speed:0.7]A-[wait:2]and I need to be strong...[wait:5] for dad...", "upset_down_b")
             cutscene:text("* [noskip][speed:0.7]I need to find more enemies...[wait:5]", "sad")

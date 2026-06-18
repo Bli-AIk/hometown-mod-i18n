@@ -2,7 +2,7 @@ local snow_graze, super = Class(Wave)
 
 function snow_graze:init()
     super.init(self)
-    self.time = 13
+    self.time = 9
     self.original_positions = {}
     self.attackers_registry = {}  
     self.run_count = 0
@@ -98,7 +98,7 @@ function snow_graze:sendSnow(rx, ry, deer)
                 bullet.alpha = 0.85
                 bullet.graphics.spin = math.rad(MathUtils.clamp(love.math.random(-1, 10), 1, 5))
                 local start_scale = 0.2
-                local target_scale = 1.6 - (i * 0.12)           
+                local target_scale = 1.4 - (i * 0.12)           
                 bullet.expansion_elapsed = 0
                 bullet.expansion_duration = 0.65
                 bullet.update = function(b)
