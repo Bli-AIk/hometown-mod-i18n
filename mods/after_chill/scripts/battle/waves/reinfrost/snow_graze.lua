@@ -116,15 +116,18 @@ function snow_graze:sendSnow(rx, ry, deer)
                 bullet.physics.direction = base_angle + spray_spread
                 bullet.rotation = bullet.physics.direction
                 bullet.physics.speed = love.math.random(85, 110) / 10
-                bullet.physics.friction = 0.16 
-                
+                bullet.physics.friction = 0.16            
                 bullet.physics.gravity = 0.05
                 bullet.physics.gravity_direction = math.pi / 2
-                self.timer:after(1.8, function()
+                self.timer:after(1.2, function()
+                    bullet.damage = 0  
+                    bullet.destroy_on_hit = false    
+                self.timer:after(0.6, function()
                     if bullet and bullet.stage then
                         bullet:fadeOutAndRemove(0.2)
                     end
                 end)
+            end)
             end
         end)
     end 
