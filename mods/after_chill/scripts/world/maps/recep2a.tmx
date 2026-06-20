@@ -49,7 +49,8 @@
   </object>
   <object id="10" name="chest" x="739" y="358">
    <properties>
-    <property name="item" value="revivemint"/>
+    <property name="item">coff_syrup
+</property>
     <property name="layer" type="int" value="9999"/>
    </properties>
    <point/>

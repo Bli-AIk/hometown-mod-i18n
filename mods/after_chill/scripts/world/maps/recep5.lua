@@ -12,7 +12,7 @@ return {
   nextlayerid = 10,
   nextobjectid = 30,
   properties = {
-    ["music"] = "wind_normal",
+    ["music"] = "hallway",
     ["name"] = "Receptionist Stage"
   },
   tilesets = {

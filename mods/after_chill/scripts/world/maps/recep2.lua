@@ -181,7 +181,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["money"] = "64"
+            ["money"] = "coff_syrup"
           }
         },
         {
