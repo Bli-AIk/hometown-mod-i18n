@@ -11,10 +11,13 @@ function ralsei:init()
     self.attack = 15
     self.ui_modified = false
     self.defense = 12
-    self.money = 100
-    self.apologize = 0 
+    self.money = 0
     self.tired_percentage = 0
-    self.disable_mercy = true    
+    if Game:getFlag("geno") then 
+    self.disable_mercy = true 
+    else 
+    self.mercy = 100 
+    end   
 
     self.spare_points = 20 
 
@@ -25,7 +28,7 @@ function ralsei:init()
     }
 
     self.dialogue_offset = {-60, 5}
-    self.dialogue = { "..." }
+    self.dialogue = nil 
 
     self.check = "AT "..self.attack.." DF "..self.defense.."\n* Standing in your way. \n* FIGHT him to his demise."
 
@@ -42,6 +45,12 @@ end
 function ralsei:onAct(battler, name)
     if name == "Apologize" then
         local ap = self.apologize 
+        if not Game:getFlag("geno") then 
+            return {
+            "* You apologized to Ralsei.",
+            "* Nothing happened."
+        }
+    end 
         if ap == 0 then  
         self.apologize = ap + 1 
         return {
