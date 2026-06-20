@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="24">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="24">
  <editorsettings>
   <export target="recep2a.lua" format="lua"/>
  </editorsettings>
@@ -40,11 +40,6 @@
   <object id="16" x="763.615" y="280" width="40" height="155"/>
   <object id="17" x="642.25" y="413.5" width="160" height="40"/>
  </objectgroup>
- <objectgroup color="#aa55ff" id="5" name="markers">
-  <object id="8" name="entranceA" x="422" y="543">
-   <point/>
-  </object>
- </objectgroup>
  <objectgroup color="#ff55ff" id="4" name="objects">
   <object id="9" name="transition" x="320" y="595" width="200" height="40">
    <properties>
@@ -63,5 +58,10 @@
    <point/>
   </object>
   <object id="21" name="magicglass" x="639.428" y="299.513" width="122.551" height="133.226"/>
+ </objectgroup>
+ <objectgroup color="#aa55ff" id="5" name="markers">
+  <object id="8" name="entranceA" x="422" y="543">
+   <point/>
+  </object>
  </objectgroup>
 </map>
