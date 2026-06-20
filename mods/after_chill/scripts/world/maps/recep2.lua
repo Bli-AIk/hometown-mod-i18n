@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -93,6 +93,50 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 6,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "entranceA",
+          type = "",
+          shape = "point",
+          x = 128.61,
+          y = 445.384,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "entranceB",
+          type = "",
+          shape = "point",
+          x = 1064,
+          y = 744,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 5,
       name = "objects",
       class = "",
@@ -117,6 +161,7 @@ return {
           width = 79.5175,
           height = 119.276,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep1",
@@ -133,6 +178,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["money"] = "64"
@@ -148,6 +194,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "musicnotif.recep"
@@ -163,6 +210,7 @@ return {
           width = 54,
           height = 44,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
@@ -181,6 +229,7 @@ return {
           width = 38,
           height = 202,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep3",
@@ -197,53 +246,12 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2a",
             ["marker"] = "entranceA"
           }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 6,
-      name = "markers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 2,
-          name = "entranceA",
-          type = "",
-          shape = "point",
-          x = 128.61,
-          y = 445.384,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 31,
-          name = "entranceB",
-          type = "",
-          shape = "point",
-          x = 1064,
-          y = 744,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -271,6 +279,7 @@ return {
           width = 675.898,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -284,6 +293,7 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -297,6 +307,7 @@ return {
           width = 267.052,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -310,6 +321,7 @@ return {
           width = 39.7587,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -323,6 +335,7 @@ return {
           width = 79.5175,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -336,6 +349,7 @@ return {
           width = 79.5175,
           height = 159.035,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -349,6 +363,7 @@ return {
           width = 119.276,
           height = 79.5175,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -362,6 +377,7 @@ return {
           width = 79.5175,
           height = 79.5175,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -375,6 +391,7 @@ return {
           width = 506.438,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -388,6 +405,7 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -401,6 +419,7 @@ return {
           width = 516.863,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -414,6 +433,7 @@ return {
           width = 39.7587,
           height = 238.552,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -427,6 +447,7 @@ return {
           width = 278.311,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -440,6 +461,7 @@ return {
           width = 39.7587,
           height = 318.07,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -453,6 +475,7 @@ return {
           width = 437.346,
           height = 39.7587,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -482,6 +505,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
