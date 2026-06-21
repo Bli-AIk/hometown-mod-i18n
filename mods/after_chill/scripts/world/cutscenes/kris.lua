@@ -166,11 +166,9 @@ end
     end,  
     
     ralsei = function(cutscene)
-
         -- getting markers is a pain 
         local rx, ry = cutscene:getMarker("kris")
         local kris = cutscene:getCharacter("kris")
-        Game.world.music:fade(0, 3)
         cutscene:wait(cutscene:walkTo(kris, rx, ry, 5))
         cutscene:panTo(Game.world.camera.x + 200, Game.world.camera.y, 1, "in-quad")
         cutscene:wait(1)
@@ -209,5 +207,10 @@ end
         cutscene:wait(0.3)
         cutscene:text("* K-[wait:2]Kris??!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
+        if not Game:getFlag("encounter#ralsei:violenced") then 
+        ralsei:resetSprite()
+        end 
+
+
     end
 }
