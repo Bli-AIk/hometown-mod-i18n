@@ -20,17 +20,14 @@ function dusteer:init()
     }
     self.dialogue = {} 
     self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
-    self.ui_modified = false 
 
     self.text = {
         "* A cold breeze runs through.\n* Reinfrost shakes a little.", 
         "* Smells like trampled snow.", 
         "* Reinfrost trots and kicks some\nsnow.", 
     }
-    self.low_health_percentage = 0.25
-    self.spare_text = "* You sneeze. Dusteer seemed satisfied it did its job."
-    self.low_health_text = "* You can see Peonie wilting slowly."
-
+    self.low_health_percentage = 0.2
+    self.low_health_text = "* Reinfrost's antlers look slightly cracked."
     self:registerAct("Sweep", "Get\nMercy")
     self:registerAct("HeatUp", "Lower\nAttack", {"ralsei"}, 8)
     -- Game.battle:registerXAction("N-Sweep", "Get\nMercy")
