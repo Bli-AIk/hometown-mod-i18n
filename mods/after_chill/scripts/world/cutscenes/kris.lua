@@ -167,6 +167,7 @@ end
     
     ralsei = function(cutscene)
         -- getting markers is a pain 
+        Game.world.music:fade(0, 5)
         local rx, ry = cutscene:getMarker("kris")
         local kris = cutscene:getCharacter("kris")
         cutscene:wait(cutscene:walkTo(kris, rx, ry, 5))
@@ -205,12 +206,26 @@ end
         ralsei.sprite:resetSprite()
         ralsei.sprite:setSprite("what")
         cutscene:wait(0.3)
-        cutscene:text("* K-[wait:2]Kris??!", "shock")
+        cutscene:text("* K-[wait:2]Kris?!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
         if not Game:getFlag("encounter#ralsei:violenced") then 
+        kris:resetSprite()
+        ralsei.x = ralsei.x + 200
         ralsei:resetSprite()
+        cutscene:setSpeaker("ralsei")
+        cutscene:wait(0.5)
+        cutscene:text("* Y-[wait:2]you spared me,[wait:5] Kris?", "pleading_closed")
+        ralsei:setSprite("smile")
+        cutscene:text("* I[wait:2]-I knew you would!", "pleased")
+        cutscene:text("* Now,[wait:2] let's go seal the fountain!", "blush_pleased")
+        Game:addPartyMember("ralsei")
+        local follower = Game.world:spawnFollower("ralsei",  {x = ralsei.x, y = ralsei.y, party = "ralsei"})
+        ralsei:remove()
+        follower:setFacing("left")
+        cutscene:interpolateFollowers() 
+        cutscene:attachFollowers()
+        cutscene:attachCamera(1)
+        cutscene:wait(1)
         end 
-
-
     end
 }
