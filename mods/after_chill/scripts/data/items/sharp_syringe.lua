@@ -1,13 +1,11 @@
 -- Instead of Item, create a HealItem, a convenient class for consumable healing items
-local item, super = Class(Item, "venom_syringe")
+local item, super = Class(Item, "sharp_syringe")
 
 function item:init()
     super.init(self)
 
     -- Display name
     self.name = "Venom Syringe"
-    -- Name displayed when used in battle (optional)
-    self.use_name = "ULTIMATE CANDY"
 
     -- Item type (item, key, weapon, armor)
     self.type = "weapon"
@@ -19,7 +17,7 @@ function item:init()
     -- Shop description
     self.shop = "A venom filled shot"
     -- Menu description
-    self.description = "A venom filled shot, you have to poke, then inject it into enemys"
+    self.description = "Syringe filled with bacteria that will "
 
     -- Amount healed (HealItem variable)
     self.heal_amount = 0
