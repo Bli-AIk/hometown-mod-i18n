@@ -781,7 +781,10 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["map"] = "recep3b",
+            ["marker"] = "entranceC"
+          }
         },
         {
           id = 51,

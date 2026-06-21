@@ -119,7 +119,12 @@
   <object id="49" x="720" y="1560" width="40" height="440"/>
  </objectgroup>
  <objectgroup color="#ff55ff" id="3" name="objects">
-  <object id="50" name="transition" x="120" y="0" width="200" height="40"/>
+  <object id="50" name="transition" x="120" y="0" width="200" height="40">
+   <properties>
+    <property name="map" value="recep3b"/>
+    <property name="marker" value="entranceC"/>
+   </properties>
+  </object>
   <object id="51" name="transition" x="680" y="1960" width="40" height="40">
    <properties>
     <property name="map" value="recep5"/>
