@@ -65,7 +65,7 @@
   </object>
   <object id="21" name="chest" x="287.644" y="1002.01">
    <properties>
-    <property name="money" value="64"/>
+    <property name="money" value="coff_syrup"/>
    </properties>
    <point/>
   </object>

@@ -262,7 +262,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["item"] = "revivemint",
+            ["item"] = "coff_syrup\n",
             ["layer"] = 9999
           }
         },
