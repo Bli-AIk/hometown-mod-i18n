@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="66">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="66">
  <editorsettings>
   <export target="recep4.lua" format="lua"/>
  </editorsettings>
@@ -129,6 +129,7 @@
   <object id="52" name="enemy" x="674.333" y="1387.33" width="54" height="44">
    <properties>
     <property name="actor" value="virovirokun"/>
+    <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="virovirokun"/>
     <property name="enemy" value="virovirokun"/>
     <property name="path" value="virovirokun"/>
@@ -137,14 +138,14 @@
   <object id="56" name="enemy" x="1690.33" y="854" width="54" height="44">
    <properties>
     <property name="actor" value="virovirokun"/>
-    <property name="encounter" value="virovirokun"/>
+    <property name="encounter" value="virovirokun2"/>
     <property name="enemy" value="virovirokun"/>
     <property name="path" value="virovirokun2"/>
    </properties>
   </object>
   <object id="57" name="chest" x="1640" y="1080" width="40" height="40">
    <properties>
-    <property name="item" value="pine_needle"/>
+    <property name="item" value="sharp_syringe"/>
    </properties>
   </object>
   <object id="61" name="slidearea" x="1680" y="920" width="40" height="160"/>
@@ -153,7 +154,7 @@
   <object id="64" name="slidearea" x="680" y="1516" width="40" height="478.667"/>
   <object id="65" name="slidearea" x="200" y="160" width="40" height="560"/>
  </objectgroup>
- <objectgroup id="6" name="paths">
+ <objectgroup id="6" name="paths" visible="0">
   <object id="58" name="virovirokun" x="698.667" y="1328">
    <polygon points="0,0 -84,80 -6.66667,166.667 82.6667,80"/>
   </object>
