@@ -1,25 +1,23 @@
 -- Instead of Item, create a HealItem, a convenient class for consumable healing items
-local item, super = Class(Item, "venom_syringe")
+local item, super = Class(Item, "sharp_syringe")
 
 function item:init()
     super.init(self)
 
     -- Display name
-    self.name = "Venom Syringe"
-    -- Name displayed when used in battle (optional)
-    self.use_name = "ULTIMATE CANDY"
+    self.name = "SharpSyringe"
 
     -- Item type (item, key, weapon, armor)
     self.type = "weapon"
     -- Item icon (for equipment)
-    self.icon = nil
+    self.icon = "ui/menu/icon/sword"
 
     -- Battle description
-    self.effect = "Best\nhealing"
+    self.effect = "Hit\nTwice"
     -- Shop description
-    self.shop = "A venom filled shot"
+    self.shop = "Hits\nTwice"
     -- Menu description
-    self.description = "A venom filled shot, you have to poke, then inject it into enemys"
+    self.description = "Syringe that seems to be sharpened. \nAllows two attacks that are faster."
 
     -- Amount healed (HealItem variable)
     self.heal_amount = 0
@@ -34,10 +32,9 @@ function item:init()
         attack = 5
     }
     
-    --bolts
+    -- Bolting it.
     self.bolt_count = 2
-    self.bolt_speed = 8
-    self.multibolt_variance = {{80,160,40},{80,160,40}}
+    self.bolt_speed = 10
 
     -- Bonus name and icon (displayed in equip menu)
     self.bonus_name = "Venom"
@@ -50,9 +47,9 @@ function item:init()
 
     -- Character reactions (key = party member id)
     self.reactions = {
-        susie = "because im SUSIE GASTER",
-        ralsei = "I dont really like needles...",
-        noelle = "Ah i poked myself",
+        susie = "Kris!?",
+        ralsei = "Ow! I poked myself!",
+        noelle = "Can I graze on this?",
     }
 end
 

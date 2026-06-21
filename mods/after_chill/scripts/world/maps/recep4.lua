@@ -880,7 +880,7 @@ return {
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
-            ["encounter"] = "virovirokun",
+            ["encounter"] = "virovirokun2",
             ["enemy"] = "virovirokun",
             ["path"] = "virovirokun2"
           }
@@ -898,7 +898,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["item"] = "pine_needle"
+            ["item"] = "sharp_syringe"
           }
         },
         {

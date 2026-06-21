@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="11" nextobjectid="125">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="11" nextobjectid="125">
  <editorsettings>
   <export target="recep3b.lua" format="lua"/>
  </editorsettings>
@@ -109,7 +109,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,282,283,283,284,81,82,83,83,83,83,83,282,283,283,283,283,283,283,283,284,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,282,283,283,284,0,0,0,0,0,0,0,282,283,283,283,283,283,283,283,284,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,301,302,302,303,0,0,0,0,0,0,0,282,283,283,283,283,283,283,283,284,0,0,0,0,
-88,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,322,0,0,0,0,0,0,0,301,302,302,302,302,302,302,302,303,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,322,0,0,0,0,0,0,0,301,302,302,302,302,302,302,302,303,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,322,0,0,0,0,0,0,0,320,321,321,321,321,321,321,321,322,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,322,0,0,0,0,0,0,0,320,321,321,321,321,321,321,321,322,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,320,321,321,322,0,0,0,0,0,0,0,320,321,321,321,321,321,321,321,322,0,0,0,0,
@@ -128,7 +128,7 @@
  <objectgroup color="#ff55ff" id="3" name="objects">
   <object id="1" name="chest" x="1121.33" y="372.333">
    <properties>
-    <property name="item" value="venom_syringe"/>
+    <property name="weapon" value="blackshard"/>
    </properties>
    <point/>
   </object>
@@ -279,7 +279,7 @@
   <object id="54" x="960" y="0" width="40" height="280"/>
   <object id="55" x="1240" y="0" width="40" height="240"/>
   <object id="56" x="1000" y="280" width="240" height="40"/>
-  <object id="61" x="321.333" y="1131.34" width="40" height="160"/>
+  <object id="61" x="323.776" y="1163.34" width="35.1145" height="140.458"/>
   <object id="62" x="360" y="1244.66" width="680" height="40"/>
   <object id="63" x="318.667" y="1358.66" width="720" height="40"/>
   <object id="64" x="200" y="1400" width="120" height="44.6667"/>
@@ -331,7 +331,7 @@
   <object id="114" x="960" y="0" width="40" height="280"/>
   <object id="115" x="1240" y="0" width="40" height="240"/>
   <object id="116" x="1000" y="280" width="240" height="40"/>
-  <object id="117" x="321.333" y="1131.34" width="40" height="160"/>
+  <object id="117" x="323.776" y="1163.34" width="35.1145" height="230"/>
   <object id="118" x="360" y="1244.66" width="680" height="40"/>
   <object id="119" x="318.667" y="1358.66" width="720" height="40"/>
   <object id="120" x="200" y="1400" width="120" height="44.6667"/>
