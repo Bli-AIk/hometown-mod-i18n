@@ -45,6 +45,7 @@ function actor:init()
         ["sweep"]={"sweep", 0.25, true},
         ["walk"] = {"walk", 0.25, true},
         ["chasing"] = {"walk", 0.25, true},
+        ["gallop"]  = {"gallop", 0.2, true},
     }
 
     -- Table of sprite offsets (indexed by sprite name)
