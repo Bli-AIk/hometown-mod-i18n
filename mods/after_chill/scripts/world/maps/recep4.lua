@@ -898,7 +898,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["item"] = "pine_needle"
+            ["item"] = "sharp_syringe"
           }
         },
         {
