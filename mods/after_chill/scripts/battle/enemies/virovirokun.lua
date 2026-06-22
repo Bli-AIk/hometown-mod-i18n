@@ -29,6 +29,7 @@ function Virovirokun:init()
     }
 
     self.low_health_text = "* Virovirokun looks extra sick."
+    self.dmg_sprite_offset = {37, 14}
 
     self:registerAct("TakeCare")
     self:registerAct("TakeCareX", "All\nMercy", {"ralsei"})
