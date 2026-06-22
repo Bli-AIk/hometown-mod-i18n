@@ -32,54 +32,6 @@ function Virovirokun:init()
 
     self:registerAct("TakeCare")
     self:registerAct("TakeCareX", "All\nMercy", {"ralsei"})
-
-    self.text_override = nil
-end
-
-
-function Virovirokun:onAct(battler, name)
-    if name == "TakeCare" then
-        self:addMercy(50)
-        return "* You took care of the sick virus!"
-    end 
-    return super.onAct(self, battler, name)
-end
-
-local Virovirokun, super = Class(EnemyBattler)
-
-function Virovirokun:init()
-    super.init(self)
-
-    self.name = "Virovirokun"
-    self:setActor("virovirokun")
-
-    self.max_health = 1000
-    self.health = 1000
-    self.attack = 10
-    self.defense = -25
-    self.money = 25
-
-    self.spare_points = 0
-    self.tired_percentage = 0
-
-    self.waves = {
-        "virovirokun/needle",
-        "virovirokun/invader"
-    }
-
-    self.check = "AT II DEF -V\nThis virus has come to life and decided to block your way!"
-
-    self.text = {
-        "* Virovirokun is sweating\nsuspiciously.",
-        "* Virovirokun is poking round\nthings with a spear.",
-        "* Virovirokun is beeping a\ncriminal tune."
-    }
-
-    self.low_health_text = "* Virovirokun looks extra sick."
-
-    self:registerAct("TakeCare")
-    self:registerAct("TakeCareX", "All\nMercy", {"ralsei"})
-
     self.text_override = nil
 end
 
@@ -98,10 +50,39 @@ function Virovirokun:onAct(battler, name)
             end 
         end 
         return "* Everyone took care of the enemies!"
+    elseif name == "Standard" then  
+        if battler.chara.id == "ralsei" then 
+            self:addMercy(50)
+            return "* Ralsei tried to rehabilitate!"
+        end 
     end 
     
     return super.onAct(self, battler, name)
 end 
+
+function Virovirokun:getEnemyDialogue()
+    if self.text_override then
+        local dialogue = self.text_override
+        self.text_override = nil
+        return dialogue
+    end
+
+    local dialogue
+    if self.mercy >= 100 then
+        dialogue = {
+            "Just what the\ndoctor ordered!",
+            "Kindness is\ncontagious!"
+        }
+    else
+        dialogue = {
+            "Don't let\nthis bug ya!",
+            "Happy new\nyear 1997!",
+            "I've got a love\nletter for you.",
+            "I'm the fever,\nI'm the chill."
+        }
+    end
+    return dialogue[love.math.random(#dialogue)]
+end
 
 
 function Virovirokun:onActStart(battler, name)
