@@ -19,6 +19,9 @@ function FileButton:init(list, id, data, x, y, width, height)
     self.prompt = nil
     self.choices = nil
     self.selected_choice = 1
+
+    -- POLISH: Exact cyan/Noelle-blue color mapped from your screenshot header!
+    self.blue_color = {84/255, 196/255, 255/255}
 end
 
 function FileButton:setData(data)
@@ -46,9 +49,9 @@ end
 function FileButton:getDrawColor()
     local r, g, b, a = super.getDrawColor(self)
     if not self.selected then
-        return 0.35, 0.65, 0.85, a
+        return self.blue_color[1] * 0.5, self.blue_color[2] * 0.5, self.blue_color[3] * 0.6, a
     else
-        return 0.70, 0.90, 1.00, a
+        return self.blue_color[1], self.blue_color[2], self.blue_color[3], a
     end
 end
 
@@ -65,7 +68,7 @@ function FileButton:getHeartPos()
 end
 
 function FileButton:draw()
-    Draw.setColor(0.02, 0.08, 0.15, 0.55)
+    Draw.setColor(0, 0, 0, 0.5)
     love.graphics.rectangle("fill", 0, 0, self.width, self.height)
 
     Draw.setColor(self:getDrawColor())
@@ -100,19 +103,21 @@ function FileButton:draw()
     else
         Draw.setColor(0, 0, 0)
         love.graphics.print(self.choices[1], 70 + 2, 44 + 2)
+        
         if self.selected_choice == 1 then
-            Draw.setColor(0.70, 0.90, 1.00)
+            Draw.setColor(1, 1, 1)
         else
-            Draw.setColor(0.35, 0.65, 0.85)
+            Draw.setColor(self.blue_color[1] * 0.7, self.blue_color[2] * 0.7, self.blue_color[3] * 0.8)
         end
         love.graphics.print(self.choices[1], 70, 44)
 
         Draw.setColor(0, 0, 0)
         love.graphics.print(self.choices[2], 250 + 2, 44 + 2)
+        
         if self.selected_choice == 2 then
-            Draw.setColor(0.70, 0.90, 1.00)
+            Draw.setColor(1, 1, 1)
         else
-            Draw.setColor(0.35, 0.65, 0.85)
+            Draw.setColor(self.blue_color[1] * 0.7, self.blue_color[2] * 0.7, self.blue_color[3] * 0.8)
         end
         love.graphics.print(self.choices[2], 250, 44)
     end
