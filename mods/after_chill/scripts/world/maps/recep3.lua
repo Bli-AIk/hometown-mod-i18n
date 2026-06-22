@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 135,
+  nextobjectid = 136,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -30,7 +30,7 @@ return {
       id = 6,
       name = "battleareas",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -350,6 +350,21 @@ return {
             ["encounter"] = "dusteer",
             ["enemy"] = "dusteer"
           }
+        },
+        {
+          id = 135,
+          name = "warning_spawner",
+          type = "",
+          shape = "rectangle",
+          x = 761,
+          y = 728,
+          width = 754,
+          height = 59,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["lanes"] = 7
+          }
         }
       }
     },
@@ -427,7 +442,7 @@ return {
       id = 5,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1106,7 +1121,7 @@ return {
       id = 9,
       name = "enemycollision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1210,7 +1225,7 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 760,
+          x = 759,
           y = 640,
           width = 40,
           height = 188,

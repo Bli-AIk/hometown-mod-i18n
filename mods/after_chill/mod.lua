@@ -8,6 +8,9 @@ function Mod:init()
     Game:registerEvent("tornado_spawner", function(data)
         return TornadoSpawner(data.x, data.y, {data.width, data.height, data.polygon}, data)
     end)
+    Game:registerEvent("warning_spawner", function(data)
+        return WarningSpawner(data.x, data.y, data)
+    end)
     print("Loaded " .. self.info.name .. "!")
 end
 
