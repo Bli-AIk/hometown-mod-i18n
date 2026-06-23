@@ -5,17 +5,9 @@ preview.hide_background = true
 function preview:init(mod, button, menu)
     self.particles = {}
     self.particle_timer = 0
-
-    self.kris = Sprite("party/kris/dark/battle/idle")
-    self.ralsei = Sprite("party/ralsei/dark/battle/idle")
-    self.noelle = Sprite("party/noelle/dark/battle/idle")
-    self.noelle.scale_x = -1 
-    self.ralsei.scale_x = -1
-
-    self.kris:play(1/6, true)
-    self.ralsei:play(1/6, true)
-    self.noelle:play(1/6, true)
-
+    
+    self.snow_group = Object()
+    
     button:setColor(0.6, 0.9, 1.0)
     button:setFavoritedColor(0.8, 0.8, 1)
 end
@@ -23,83 +15,94 @@ end
 function preview:update()
     local dt = DT
 
-    local to_remove = {}
-    for _,p in ipairs(self.particles) do
-        p.timer = (p.timer or 0) + dt
-        p.y = p.y + p.speed * dt
-        p.x = p.x + math.sin(p.timer * 2) * 20 * dt
-        p.rotation = p.rotation + p.spin * dt
-        
-        if p.y > SCREEN_HEIGHT + 20 then table.insert(to_remove, p) end
-    end
+    local target_alpha = self.fade or 0
+    local is_visible = (target_alpha > 0)
     
-    for _,p in ipairs(to_remove) do Utils.removeFromTable(self.particles, p) end
+    if self.snow_group then
+        self.snow_group.visible = is_visible
+        self.snow_group:update()
+    end
+
+    local to_remove = {}
+    for _, p in ipairs(self.particles) do
+        p.timer = (p.timer or 0) + dt
+        
+        p.speed_y = p.speed_y + p.gravity * dt
+        p.speed_x = p.speed_x * math.exp(-p.friction * dt)
+        
+        local sine_wave = math.sin(p.timer * p.wave_speed + p.wave_offset)
+        local drift_x = sine_wave * p.wave_amplitude * (1 - p.sprite.scale_x)
+        
+        local new_y = p.sprite.y + p.speed_y * dt
+        local new_x = p.sprite.x + (p.speed_x + drift_x) * dt
+        local new_rot = p.sprite.rotation + p.spin * dt
+        
+        p.sprite:setPosition(new_x, new_y)
+        p.sprite.rotation = new_rot
+        p.sprite.alpha = target_alpha * 0.6
+        
+        if new_y > SCREEN_HEIGHT + 20 or new_x < -40 or new_x > SCREEN_WIDTH + 400 then 
+            table.insert(to_remove, p) 
+        end
+    end
+    for _, p in ipairs(to_remove) do 
+        p.sprite:remove() 
+        Utils.removeFromTable(self.particles, p)
+    end
 
     self.particle_timer = self.particle_timer + dt
-    if self.particle_timer >= 0.1 then
+    if self.particle_timer >= 0.04 then 
         self.particle_timer = 0
+        
+        local size_mult = math.random() * 0.5 + 0.5
+        
+        local spawn_x = math.random(-40, SCREEN_WIDTH + 350)
+        local spawn_y = -40
+        
+        if spawn_x > SCREEN_WIDTH then
+            spawn_y = math.random(-40, SCREEN_HEIGHT / 2)
+        end
+        
+        local flake_sprite = Sprite("snowflake")
+        flake_sprite:setOrigin(0.5, 0.5)
+        flake_sprite:setScale(size_mult)
+        flake_sprite:setPosition(spawn_x, spawn_y)
+        flake_sprite:setColor(0.7, 0.9, 1)
+        self.snow_group:addChild(flake_sprite)
+        
         table.insert(self.particles, {
-            x = math.random(0, SCREEN_WIDTH),
-            y = -20,
+            sprite = flake_sprite,
             timer = 0,
-            size = math.random(0.4, 0.6),
-            speed = math.random(60, 120),
-            spin = math.random(-2, 2),
-            rotation = math.random(0, 360),
-            color = {0.7, 0.9, 1}
+            speed_y = math.random(140, 240) * (size_mult * 1.5),
+            speed_x = math.random(-260, -140), 
+            gravity = math.random(30, 60),
+            friction = math.random() * 0.4 + 0.1,
+            wave_speed = math.random(2, 5),
+            wave_amplitude = math.random(20, 60),
+            wave_offset = math.random() * math.pi * 2,
+            spin = math.random(-2, 2) * (1 - size_mult)
         })
     end
-
-    if self.kris then self.kris:update(dt) end
-    if self.ralsei then self.ralsei:update(dt) end
-    if self.noelle then self.noelle:update(dt) end
 end
 
 function preview:draw()
     local alpha = self.fade or 0
     if alpha <= 0 then return end
-
+    
     local bg_wave = Assets.getTexture("kristal/title_bg_wave")
     if bg_wave then
-        love.graphics.setColor(0.6, 0.6, 0.8, alpha)
+        Draw.setColor(0.6, 0.6, 0.8, alpha)
         local sx = SCREEN_WIDTH / bg_wave:getWidth()
         local sy = SCREEN_HEIGHT / bg_wave:getHeight()
-        love.graphics.draw(bg_wave, 0, 0, 0, sx, sy) 
+        Draw.draw(bg_wave, 0, 0, 0, sx, sy) 
     end
-
-    love.graphics.setBlendMode("alpha") 
-    local texture = Assets.getTexture("snowflake")
     
-    for _,p in ipairs(self.particles) do
-        love.graphics.setColor(p.color[1], p.color[2], p.color[3], alpha * 0.5)
-        if texture then
-            local ox, oy = texture:getWidth()/2, texture:getHeight()/2
-            love.graphics.draw(texture, p.x, p.y, p.rotation, p.size, p.size, ox, oy)
-        else
-            love.graphics.push()
-            love.graphics.translate(p.x, p.y)
-            love.graphics.rotate(p.rotation)
-            local s = 10 * p.size
-            love.graphics.polygon("fill", 0, -s, s, 0, 0, s, -s, 0)
-            love.graphics.setColor(1, 1, 1, alpha * 0.3)
-            love.graphics.setLineWidth(1)
-            love.graphics.polygon("line", 0, -s, s, 0, 0, s, -s, 0)
-            love.graphics.pop()
-        end
+    if self.snow_group and self.snow_group.visible then
+        self.snow_group:draw()
     end
-
-    love.graphics.setColor(0, 0, 0, alpha)
-    local function drawSil(sprite, x, y, scale_x)
-        if sprite and sprite.frames and sprite.frames[sprite.frame] then
-            love.graphics.draw(sprite.frames[sprite.frame], x, y, 0, scale_x, 2)
-        end
-    end
-
-    drawSil(self.kris, 140, 390, 2)   
-    drawSil(self.noelle, 520, 375, -2) 
-    drawSil(self.ralsei, 460, 375, -2)
-
-    love.graphics.setColor(1, 1, 1, 1)
+    
+    Draw.setColor(0, 0, 0, alpha)
+    Draw.setColor(1, 1, 1, 1)
 end
 
 return preview
