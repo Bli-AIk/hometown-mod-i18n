@@ -15,14 +15,14 @@ function item:init()
     self.icon = nil
 
     -- Battle description
-    self.effect = "Heals/n190HP"
+    self.effect = "Heals\n160HP"
     -- Shop description
     self.shop = "Perfection"
     -- Menu description
-    self.description = "A STRONG tasting jar of syrup from a Coff Tree."
+    self.description = "A STRONG tasting jar of syrup, reminds you of the doctor. Found from a Coff Tree."
 
     -- Amount healed (HealItem variable)
-    self.heal_amount = 190
+    self.heal_amount = 160
 
     -- Default shop price (sell price is halved)
     self.price = 90
@@ -49,8 +49,8 @@ function item:init()
 
     -- Character reactions (key = party member id)
     self.reactions = {
-        susie = "Ew kris what the hell is this?",
-        ralsei = "not really suited for pancakes...",
+        susie = "Do I have to?",
+        ralsei = "I... I like it, Kris!",
         noelle = "kris, this just tastes cough medicine.",
     }
 end
