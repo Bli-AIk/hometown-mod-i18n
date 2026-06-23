@@ -1,13 +1,13 @@
 local warning_line, super = Class(WorldBullet)
 
-function warning_line:init(x, y, width, height, is_even)
+function warning_line:init(x, y, width, height, is_even, degrees_angle)
     super.init(self, x, y)
     self.width = width
     self.height = height
     self.is_even = is_even or false
-    
-    self.rotation = math.rad(-30) 
-    
+    local angle_to_use = degrees_angle or -30
+    Kristal.Console:warn(angle_to_use)
+    self.rotation = math.rad(angle_to_use) 
     self.rect = Rectangle(0, 0, width, height)
     self.rect:setColor(238/255, 210/255, 2/255)
     self.rect.alpha = 0.15 
@@ -17,12 +17,9 @@ function warning_line:init(x, y, width, height, is_even)
     self.dmg = 40
     self.damage = 0 
     
-    local rhythm_time = 1.4
-    
-    -- FIX: Changed initial stagger so odd lanes wait 0.4s to warn you, and even lanes wait 1.1s!
+    local rhythm_time = 1.2
     local initial_stagger = self.is_even and (rhythm_time / 2 + 0.4) or 0.4
     
-    -- PRE-FLASH CONPRO: Visually brighten the line slightly early to alert the player
     Game.world.timer:after(initial_stagger - 0.2, function()
         if not self.parent then return end
         Game.world.timer:tween(0.15, self.rect, {alpha = 0.4})

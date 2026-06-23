@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 125,
+  nextobjectid = 126,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -44,9 +44,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 1080,
-          y = 400,
+          y = 511.333,
           width = 80,
-          height = 840,
+          height = 728.667,
           rotation = 0,
           visible = true,
           properties = {}
@@ -349,6 +349,22 @@ return {
           properties = {
             ["map"] = "recep4",
             ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 125,
+          name = "warning_spawner",
+          type = "",
+          shape = "rectangle",
+          x = 1080.33,
+          y = 510.667,
+          width = 75,
+          height = 719.667,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["lanes"] = 14,
+            ["length"] = 1200
           }
         }
       }
@@ -1325,7 +1341,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["length "] = 1200
+          }
         },
         {
           id = 88,
