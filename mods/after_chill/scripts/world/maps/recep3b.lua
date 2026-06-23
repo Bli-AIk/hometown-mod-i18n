@@ -252,7 +252,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["weapon"] = "blackshard"
+            ["item"] = "pocket_pie"
           }
         },
         {

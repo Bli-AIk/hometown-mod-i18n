@@ -128,7 +128,7 @@
  <objectgroup color="#ff55ff" id="3" name="objects">
   <object id="1" name="chest" x="1121.33" y="372.333">
    <properties>
-    <property name="weapon" value="blackshard"/>
+    <property name="item" value="pocket_pie"/>
    </properties>
    <point/>
   </object>
