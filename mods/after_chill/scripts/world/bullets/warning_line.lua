@@ -6,15 +6,13 @@ function warning_line:init(x, y, width, height, is_even, degrees_angle)
     self.height = height
     self.is_even = is_even or false
     local angle_to_use = degrees_angle or -30
-    Kristal.Console:warn(angle_to_use)
     self.rotation = math.rad(angle_to_use) 
     self.rect = Rectangle(0, 0, width, height)
     self.rect:setColor(238/255, 210/255, 2/255)
     self.rect.alpha = 0.15 
     self.rect:setOrigin(0.5, 0.0)
     self:addChild(self.rect) 
-    
-    self.dmg = 40
+    self.dmg = 34
     self.damage = 0 
     
     local rhythm_time = 1.2
