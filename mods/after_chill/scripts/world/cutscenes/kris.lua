@@ -227,5 +227,59 @@ end
         cutscene:attachCamera(1)
         cutscene:wait(1)
         end 
-    end
+    end, 
+
+    soul = function(cutscene)
+        Game.fader.alpha = 1
+        cutscene:detachCamera()
+        Game.world.fader.alpha = 1
+        local kris = cutscene:getCharacter("kris")
+        Game.world:addFX(ShaderFX("desat", {amount = 1.5}), "desat")
+        Game.world:addFX(ShaderFX("desat", {amount = 1}), "desat2")
+        Game.world.music:play("wind_normal")
+        cutscene:wait(2)  
+        local function resetFader(full)
+            Game.fader.alpha = full
+            Game.world.fader.alpha = full 
+        end 
+        local snd = Assets.playSound("static", 0.4, 1.2)
+        kris:setSprite("soul/dead_2")
+        Game.world.timer:tween(snd:getDuration(), Game.world.fader, {alpha = 0})
+        Game.world.timer:tween(snd:getDuration(), Game.fader, {alpha = 0})
+        cutscene:wait(0.6)
+        resetFader(1)
+        Assets.playSound("step1")
+        kris:setPosition(200, 355)
+        Assets.playSound("step2")
+        cutscene:wait(0.5)
+        -- resetFader(0)
+        kris:setAnimation({"soul/take", 0.2, false})
+        cutscene:wait(0.2)
+        resetFader(0)
+        cutscene:wait(0.1)
+        local snd = Assets.playSound("static", 0.4, 1.2)
+        cutscene:wait(snd:getDuration())
+        resetFader(1)
+        cutscene:wait(0.5)
+        for i = 1, 5 do 
+            Assets.playSound("hurt")
+            cutscene:wait(0.1)
+        end
+        cutscene:wait(cutscene:playSound("break2")) 
+        cutscene:wait(0.3)
+        Assets.playSound("impact")
+        Game.fader.alpha = 0
+        Game.world.alpha = 0 
+        local rect = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+        rect:setColor(COLORS.black)
+        rect.layer = WORLD_LAYERS["below_textbox"]
+        Game.world:addChild(rect)
+        cutscene:wait(0.2)
+        Game.world:removeFX("desat")
+        Game.world:removeFX("desat2")
+        cutscene:wait(0.5)
+        cutscene:text("* Suddenly,[wait:2] the world goes dark around [shake:1]you[shake:0].")
+        cutscene:choicer({"Proceed", "Proceed"}, {color = COLORS.red, highlight = COLORS.red})
+        cutscene:wait(cutscene:playSound("noelle"))
+    end 
 }
