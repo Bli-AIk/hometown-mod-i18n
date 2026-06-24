@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="136">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="137">
  <editorsettings>
   <export target="recep3.lua" format="lua"/>
  </editorsettings>
@@ -175,15 +175,18 @@
     <property name="lanes" type="int" value="7"/>
    </properties>
   </object>
+  <object id="136" name="script" x="81.3333" y="302.333" width="43" height="77">
+   <properties>
+    <property name="cutscene" value="kris.soul"/>
+    <property name="once" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="4" name="markers">
   <object id="2" name="entranceA" x="101.333" y="346">
    <point/>
   </object>
   <object id="40" name="entranceB" x="1660" y="1253">
-   <point/>
-  </object>
-  <object id="63" name="spawn" x="109" y="346">
    <point/>
   </object>
   <object id="64" name="entranceC" x="1661.17" y="752.167">

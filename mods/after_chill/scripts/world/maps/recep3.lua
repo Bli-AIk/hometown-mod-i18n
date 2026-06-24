@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 136,
+  nextobjectid = 137,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -365,6 +365,22 @@ return {
           properties = {
             ["lanes"] = 7
           }
+        },
+        {
+          id = 136,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 81.3333,
+          y = 302.333,
+          width = 43,
+          height = 77,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "kris.soul",
+            ["once"] = false
+          }
         }
       }
     },
@@ -402,19 +418,6 @@ return {
           shape = "point",
           x = 1660,
           y = 1253,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 63,
-          name = "spawn",
-          type = "",
-          shape = "point",
-          x = 109,
-          y = 346,
           width = 0,
           height = 0,
           rotation = 0,
