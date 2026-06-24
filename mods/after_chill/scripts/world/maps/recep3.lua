@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 137,
+  nextobjectid = 138,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -378,8 +378,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["cutscene"] = "kris.soul",
-            ["once"] = false
+            ["cutscene"] = "kris.soul"
           }
         }
       }

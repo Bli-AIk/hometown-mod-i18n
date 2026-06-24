@@ -268,9 +268,9 @@ end
         cutscene:wait(cutscene:playSound("break2")) 
         cutscene:wait(0.3)
         Assets.playSound("impact")
-        Game.fader.alpha = 0
-        Game.world.alpha = 0 
-        local rect = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+        resetFader(0)
+        local rect = Rectangle(0, 0, 9999, 9999)
+        rect:setParallax(0, 0)
         rect:setColor(COLORS.black)
         rect.layer = WORLD_LAYERS["below_textbox"]
         Game.world:addChild(rect)
@@ -281,5 +281,14 @@ end
         cutscene:text("* Suddenly,[wait:2] the world goes dark around [shake:1]you[shake:0].")
         cutscene:choicer({"Proceed", "Proceed"}, {color = COLORS.red, highlight = COLORS.red})
         cutscene:wait(cutscene:playSound("noelle"))
+        cutscene:wait(0.5)
+        kris:resetSprite()
+        kris:setFacing("right")
+        kris:setPosition(43, 350)
+        rect:fadeOutAndRemove(0.5)
+        cutscene:wait(0.8)
+        cutscene:text("* (Nothing seemed to change.)")
+        cutscene:text("* (Or,[wait:2] has it?)")
+        cutscene:wait(cutscene:playSound("ominous"))
     end 
 }

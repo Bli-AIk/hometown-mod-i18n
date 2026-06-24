@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 20,
+  nextobjectid = 21,
   properties = {
     ["music"] = "wind",
     ["name"] = "Receptionist Bridge"
@@ -120,27 +120,8 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {
-        ["text1"] = "* With a new darkworld appearing out of seemingly no where...",
-        ["text2"] = "* The power of mystery shines within you"
-      },
+      properties = {},
       objects = {
-        {
-          id = 1,
-          name = "savepoint",
-          type = "",
-          shape = "point",
-          x = 298,
-          y = 79,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["text1"] = "* The power of never-ending room numbers shine within you."
-          }
-        },
         {
           id = 2,
           name = "transition",
@@ -151,7 +132,6 @@ return {
           width = 82.8111,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -168,11 +148,25 @@ return {
           width = 124.217,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "krisspawn",
             ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 20,
+          name = "chest",
+          type = "",
+          shape = "rectangle",
+          x = 304.667,
+          y = 63.3333,
+          width = 34,
+          height = 34,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["money"] = 64
           }
         }
       }
@@ -202,7 +196,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -216,21 +209,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 18,
-          name = "spawn",
-          type = "",
-          shape = "point",
-          x = 377,
-          y = 92,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -260,7 +238,6 @@ return {
           width = 41.4056,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -274,7 +251,6 @@ return {
           width = 41.4056,
           height = 414.056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -288,7 +264,6 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -302,7 +277,6 @@ return {
           width = 1035.14,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -316,7 +290,6 @@ return {
           width = 697.894,
           height = 37.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -330,7 +303,6 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -344,7 +316,6 @@ return {
           width = 41.4056,
           height = 197.028,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -358,7 +329,6 @@ return {
           width = 280.506,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -372,7 +342,6 @@ return {
           width = 289.839,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -386,7 +355,6 @@ return {
           width = 41.4056,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -400,7 +368,6 @@ return {
           width = 455.461,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

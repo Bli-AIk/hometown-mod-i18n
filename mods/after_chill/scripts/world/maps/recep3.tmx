@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="137">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="10" nextobjectid="138">
  <editorsettings>
   <export target="recep3.lua" format="lua"/>
  </editorsettings>
@@ -178,7 +178,6 @@
   <object id="136" name="script" x="81.3333" y="302.333" width="43" height="77">
    <properties>
     <property name="cutscene" value="kris.soul"/>
-    <property name="once" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>

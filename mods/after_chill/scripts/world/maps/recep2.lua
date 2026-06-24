@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,11 +9,12 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 9,
-  nextobjectid = 32,
+  nextlayerid = 10,
+  nextobjectid = 54,
   backgroundcolor = { 1, 1, 16 },
   properties = {
-    ["music"] = "hallway"
+    ["music"] = "hallway",
+    ["name"] = "Receptionist Hallway"
   },
   tilesets = {
     {
@@ -114,7 +115,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -128,7 +128,71 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "v5",
+          type = "",
+          shape = "point",
+          x = 204,
+          y = 460,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "v1",
+          type = "",
+          shape = "point",
+          x = 266.667,
+          y = 1074.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 36,
+          name = "v3",
+          type = "",
+          shape = "point",
+          x = 925.333,
+          y = 796,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 37,
+          name = "v4",
+          type = "",
+          shape = "point",
+          x = 648,
+          y = 460,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 38,
+          name = "v2",
+          type = "",
+          shape = "point",
+          x = 682.667,
+          y = 1074.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -161,27 +225,10 @@ return {
           width = 79.5175,
           height = 119.276,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep1",
             ["marker"] = "entrance2"
-          }
-        },
-        {
-          id = 21,
-          name = "chest",
-          type = "",
-          shape = "point",
-          x = 287.644,
-          y = 1002.01,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["money"] = "coff_syrup"
           }
         },
         {
@@ -194,7 +241,6 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "musicnotif.recep"
@@ -210,13 +256,22 @@ return {
           width = 54,
           height = 44,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
+            ["chase"] = true,
             ["encounter"] = "virovirokun",
             ["enemy"] = "virovirokun",
-            ["path"] = "virovirokun"
+            ["marker1"] = "v1",
+            ["marker2"] = "v2",
+            ["marker3"] = "v3",
+            ["marker4"] = "v4",
+            ["marker5"] = "v5",
+            ["once"] = true,
+            ["paceinterval"] = 0,
+            ["pacereturn"] = false,
+            ["pacespeed"] = 8,
+            ["pacetype"] = "wander"
           }
         },
         {
@@ -229,7 +284,6 @@ return {
           width = 38,
           height = 202,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep3",
@@ -246,11 +300,25 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2a",
             ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 32,
+          name = "savepoint",
+          type = "",
+          shape = "point",
+          x = 284,
+          y = 998.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* The power of never-ending room numbers shines within you."
           }
         }
       }
@@ -279,7 +347,6 @@ return {
           width = 675.898,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -293,7 +360,6 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -307,7 +373,6 @@ return {
           width = 267.052,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -321,7 +386,6 @@ return {
           width = 39.7587,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -335,7 +399,6 @@ return {
           width = 79.5175,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -349,7 +412,6 @@ return {
           width = 79.5175,
           height = 159.035,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -363,7 +425,6 @@ return {
           width = 119.276,
           height = 79.5175,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -377,7 +438,6 @@ return {
           width = 79.5175,
           height = 79.5175,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -391,7 +451,6 @@ return {
           width = 506.438,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -405,7 +464,6 @@ return {
           width = 39.7587,
           height = 278.311,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -419,7 +477,6 @@ return {
           width = 516.863,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -433,7 +490,6 @@ return {
           width = 39.7587,
           height = 238.552,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -447,7 +503,6 @@ return {
           width = 278.311,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -461,7 +516,6 @@ return {
           width = 39.7587,
           height = 318.07,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -475,7 +529,217 @@ return {
           width = 437.346,
           height = 39.7587,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 9,
+      name = "enemycollision",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 9.33333,
+          y = 365.867,
+          width = 675.898,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 675.232,
+          y = 405.625,
+          width = 39.7587,
+          height = 278.311,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 696.49,
+          y = 644.178,
+          width = 267.052,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 42,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 963.543,
+          y = 644.178,
+          width = 39.7587,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 43,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1122.58,
+          y = 644.178,
+          width = 79.5175,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 44,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1082.82,
+          y = 485.143,
+          width = 79.5175,
+          height = 159.035,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 45,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 963.543,
+          y = 485.143,
+          width = 119.276,
+          height = 79.5175,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 46,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 963.543,
+          y = 564.66,
+          width = 79.5175,
+          height = 79.5175,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 47,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 711.657,
+          y = 882.73,
+          width = 506.438,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 48,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 711.657,
+          y = 922.489,
+          width = 39.7587,
+          height = 278.311,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 49,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 208.127,
+          y = 1121.28,
+          width = 516.863,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 50,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 168.368,
+          y = 882.73,
+          width = 39.7587,
+          height = 238.552,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 51,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 208.127,
+          y = 842.971,
+          width = 278.311,
+          height = 39.7587,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 52,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 446.679,
+          y = 524.902,
+          width = 39.7587,
+          height = 318.07,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 53,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 9.33333,
+          y = 524.902,
+          width = 437.346,
+          height = 39.7587,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -494,29 +758,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 28,
-          name = "virovirokun",
-          type = "",
-          shape = "polygon",
-          x = 440,
-          y = 883.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0.5, y = 236 },
-            { x = 40.5, y = 236 },
-            { x = 39.5, y = 0 },
-            { x = 39.5, y = -4.5 }
-          },
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "tilelayer",

@@ -25,8 +25,8 @@
 
     // The inventory. Contains three darkburgers, a cell phone and a shadow crystal by default.
     "inventory": {
-        "items": ["cd_bagel", "clubbssandwich", "kris_tea", "spagetticode", "tensionbit", "dd_burger", "ralsei_tea"],
-        "key_items": ["cell_phone"]
+      //  "items": ["cd_bagel", "clubssandwich", "kris_tea", "spagetticode", "tensionbit", "dd_burger", "ralsei_tea"],
+        "key_items": ["cell_phone"],
     },
 
     // Equipment for your party. Not specifying equipment defaults to the following.

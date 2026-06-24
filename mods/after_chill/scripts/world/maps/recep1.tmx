@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="20">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="21">
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
@@ -36,16 +36,6 @@
 </data>
  </layer>
  <objectgroup color="#ff00ff" id="4" name="objects">
-  <properties>
-   <property name="text1" value="* With a new darkworld appearing out of seemingly no where..."/>
-   <property name="text2" value="* The power of mystery shines within you"/>
-  </properties>
-  <object id="1" name="savepoint" x="298" y="79">
-   <properties>
-    <property name="text1" value="* The power of never-ending room numbers shine within you."/>
-   </properties>
-   <point/>
-  </object>
   <object id="2" name="transition" x="1306.52" y="317.911" width="82.8111" height="82.8111">
    <properties>
     <property name="map" value="recep2"/>
@@ -58,15 +48,17 @@
     <property name="marker" value="entranceA"/>
    </properties>
   </object>
+  <object id="20" name="chest" x="304.667" y="63.3333" width="34" height="34">
+   <properties>
+    <property name="money" type="int" value="64"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers" tintcolor="#afafd1">
   <object id="3" name="entranceA" x="255.978" y="583.75">
    <point/>
   </object>
   <object id="16" name="entrance2" x="1149.09" y="375.317">
-   <point/>
-  </object>
-  <object id="18" name="spawn" x="377" y="92">
    <point/>
   </object>
  </objectgroup>

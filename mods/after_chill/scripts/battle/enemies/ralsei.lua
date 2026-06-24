@@ -22,9 +22,7 @@ function ralsei:init()
     self.spare_points = 20 
 
     self.waves = {
-        "basic",
-        "aiming",
-        "movingarena"
+        "ralsei/fire_spin"
     }
 
     self.dialogue_offset = {-60, 5}
@@ -33,9 +31,9 @@ function ralsei:init()
     self.check = "AT "..self.attack.." DF "..self.defense.."\n* Standing in your way. \n* FIGHT him to his demise."
 
     self.text = {
-        "* The dummy gives you a soft\nsmile.",
-        "* The power of fluffy boys is\nin the air.",
-        "* Smells like cardboard.",
+        "* Fire emanates from the floor.",
+        "* Smells like burnt friendship.",
+        "* You shiver a little,[wait:2] even though it isn't cold.",
     }
     self:registerAct("Apologize")
     -- self:registerAct("???", "...")
