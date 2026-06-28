@@ -26,7 +26,7 @@ function ralsei:init()
     }
 
     self.dialogue_offset = {-60, 5}
-    self.dialogue = {"..."} 
+    self.dialogue = {}
 
     self.check = "AT "..self.attack.." DF "..self.defense.."\n* Standing in your way. \n* FIGHT him to his demise."
 
