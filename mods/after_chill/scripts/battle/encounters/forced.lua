@@ -5,11 +5,10 @@ function forced:init()
 
     -- Text displayed at the bottom of the screen at the start of the encounter
     self.text = "* Noelle can't stop attacking.\n* (Tension is high.)"
-
-    -- Battle music ("battle" is rude buster)
     self.music = "scary"
     -- Enables the purple grid battle background
-    self.background = true 
+    self.background = false 
+    self.hide_world = false  
     self.dialogue_lines = {
     [1] = {
         {"What's going on...?"},
@@ -24,8 +23,16 @@ function forced:init()
         {"F[wait:2]-fine. Guess I'm forced\nto use my own magic."}
     }
 }
-    self:addEnemy("ralsei_forced", 549, 219)
+    self:addEnemy("ralsei_forced", 543, 264)
 end
+
+function forced:getPartyPosition(i)
+    if i == 1 then 
+        return 101, 267
+    else 
+        return super.getPartyPosition(self, i)
+    end 
+end 
 
 function forced:onBattleStart()
     Game:setTension(32)
@@ -44,6 +51,10 @@ function forced:getDialogueCutscene()
             end
         end 
     end 
+end
+
+function forced:getSoulSpawnLocation()
+    return 0, 0
 end
 
 return forced

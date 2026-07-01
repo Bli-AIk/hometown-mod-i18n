@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="8">
  <editorsettings>
   <export target="recep6.lua" format="lua"/>
  </editorsettings>
@@ -115,4 +115,42 @@
 321,321,321,321,321,321,321,321,321,321,321,321,321,322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="4" name="objects">
+  <object id="1" name="frozenenemy" x="944.121" y="207.394">
+   <properties>
+    <property name="actor" value="dusteer"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2" name="frozenenemy" x="1028" y="396.97">
+   <properties>
+    <property name="actor" value="virovirokun"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3" name="frozenenemy" x="919" y="584">
+   <properties>
+    <property name="actor" value="dusteer"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="4" name="frozenenemy" x="1032" y="790">
+   <properties>
+    <property name="actor" value="virovirokun"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="5" name="frozenenemy" x="932" y="992">
+   <properties>
+    <property name="actor" value="dusteer"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="7" name="frozenenemy" x="1036" y="1134">
+   <properties>
+    <property name="actor" value="virovirokun"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
 </map>
