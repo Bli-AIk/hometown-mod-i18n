@@ -5,22 +5,18 @@ function forced:init()
 
     -- Text displayed at the bottom of the screen at the start of the encounter
     self.text = "* Noelle can't stop attacking.\n* (Tension is high.)"
-    self.music = "scary"
+    self.music = nil
     -- Enables the purple grid battle background
     self.background = false 
     self.hide_world = false  
     self.dialogue_lines = {
     [1] = {
-        {"What's going on...?"},
-        {"Calm down\n[wait:5] please!"},
+        {"Who,[wait:2] why are you attacking me?"},
+        {"Calm down\n[wait:5] please..!"},
     },
     [2] = {
-        {"(Why is she attacking me?)"},
-        {"I.. have\nto survive."},
-        {"I[wait:2]-I could use\nmy fire magic..."},
-        {"If you can hear me,\nthen..."},
-        {"Respond,[wait:10] please."},
-        {"F[wait:2]-fine. Guess I'm forced\nto use my own magic."}
+        {"If you keep attacking me..."},
+        {"I might..."}, 
     }
 }
     self:addEnemy("ralsei_forced", 543, 264)
