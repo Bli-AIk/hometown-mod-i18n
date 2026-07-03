@@ -207,7 +207,7 @@ end
         cutscene:wait(0.3)
         cutscene:text("* K-[wait:2]Kris?!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
-        if not Game:getFlag("encounter#ralsei:violenced") then 
+        if not Game:getFlag("encounter#ralsei:violenced", false) then 
         kris:resetSprite()
         ralsei.x = ralsei.x + 200
         ralsei:resetSprite()
@@ -223,6 +223,18 @@ end
         follower:setFacing("left")
         cutscene:interpolateFollowers() 
         cutscene:attachFollowers()
+        cutscene:attachCamera(1)
+        Game.world.music:setVolume(1)
+        cutscene:wait(1)
+        else 
+        Game.world.music:setVolume(1)
+        kris:resetSprite()
+        kris:setFacing("up")
+        ralsei:remove()
+        cutscene:setSpeaker(nil)
+        cutscene:wait(1)
+        cutscene:wait(cutscene:playSound("ominous", 1, 0.7))
+        cutscene:text("* Kris can now use [color:red]RUPTURE[color:reset]!")
         cutscene:attachCamera(1)
         cutscene:wait(1)
         end 
@@ -281,13 +293,6 @@ end
         cutscene:choicer({"Proceed", "Proceed"}, {color = COLORS.red, highlight = COLORS.red})
         Game.world.music:stop()
         cutscene:wait(cutscene:playSound("noelle"))
-        -- cutscene:attachCamera()
-        -- kris:resetSprite()
-        -- kris:setPosition(110, 342)
-        -- rect:fadeOutAndRemove(0.5)
-        -- cutscene:wait(0.5)
-        -- cutscene:text("* Is everything really fine?")
-    -- marks the start of proper code 
         Game:addPartyMember("noelle")
         Game:removePartyMember("kris")
         cutscene:wait(cutscene:mapTransition("recep6"))

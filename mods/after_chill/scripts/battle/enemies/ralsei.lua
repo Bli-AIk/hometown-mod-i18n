@@ -12,6 +12,7 @@ function ralsei:init()
     self.ui_modified = false
     self.defense = 12
     self.money = 0
+    self.dmg_sprite_offset = {-14, 13}
     self.tired_percentage = 0
     if Game:getFlag("geno") then 
     self.disable_mercy = true 
@@ -27,6 +28,9 @@ function ralsei:init()
 
     self.dialogue_offset = {-60, 5}
     self.dialogue = {}
+    TableUtils.merge(self.actor.animations, {
+        ["hurt"] = {"battle/hurt", 0.1, false}
+    }, false)
 
     self.check = "AT "..self.attack.." DF "..self.defense.."\n* Standing in your way. \n* FIGHT him to his demise."
 
@@ -84,6 +88,7 @@ function ralsei:onAct(battler, name)
     elseif name == "???" then 
         Game.battle:startActCutscene(function(cutscene)
             Game.battle.music:play("d")
+            self.exit_on_defeat = false 
             Game.battle.music:setVolume(0)
             Game.battle.music:fade(1, 0.5)
             cutscene:wait(1)
@@ -95,7 +100,7 @@ function ralsei:onAct(battler, name)
             local fx = battler:addFX(ColorMaskFX(COLORS.white))
             Game.battle.timer:tween(0.5, fx, {amount = 0})
             for i = 1, 2 do 
-                battler:addFX(OutlineFX(COLORS.maroon)) 
+                battler:addFX(OutlineFX(COLORS.maroon), "fx"..i.."") 
             end 
             battler:setAnimation("battle/attack_ready")
             cutscene:wait(15/30)
@@ -106,19 +111,33 @@ function ralsei:onAct(battler, name)
             cutscene:battlerText(ralsei, "I-[wait:2]I...")
             cutscene:battlerText(ralsei, "Kris,[wait:5] please...")
             battler:setAnimation("battle/attack")
-            local pitch_shift = 1.0 - ((2 - 1) * 0.1)
-            local sprite = Sprite("effects/attack/cut", 470, 135)
+            Assets.playSound("scytheburst")
+            local sprite = Sprite("effects/attack/cut", 476, 200)
             Game.battle:addChild(sprite)
             sprite:setScale(2)
             cutscene:wait(0.1)
-            sprite:play(0.1, false, function() sprite:remove() end)
-            Assets.playSound("laz_c", 1.2, pitch_shift) 
-            Assets.playSound("scytheburst", 1.0, pitch_shift)
-            ralsei:setSprite("battle/hurt")
-            ralsei.y = 215
-            ralsei:slideTo(600, ralsei.y, 0.3)
-            cutscene:wait(0.3)
-            cutscene:wait(2) 
+            sprite:play(0.1, false, function() sprite:remove() ralsei:hurt(math.ceil(battler.chara:getStat("attack") * 14 - ralsei.defense), battler, nil, COLORS.red) end)
+            cutscene:wait(0.2)
+            ralsei:resetSprite()
+            battler:removeFX("fx1")
+            battler:removeFX("fx2")
+            battler:resetSprite()
+            cutscene:wait(0.6)
+            cutscene:battlerText(ralsei, "(I-I have to go...)")
+            Assets.playSound("wing")
+            ralsei:resetSprite()
+            ralsei.y = 285 -- 271
+            ralsei:setSprite("walk/left_1")
+            cutscene:wait(0.2)
+            ralsei:setSprite("walk/left")
+            ralsei.sprite:play(0.25, true)
+            ralsei:slideTo(700, ralsei.y, 2)
+            cutscene:wait(2)
+            ralsei.visible = false
+            Game:setFlag("encounter#ralsei:violenced", true) 
+            cutscene:after(function()
+                Game.battle:setState("TRANSITIONOUT")
+            end)
             end)
     end
     return super.onAct(self, battler, name)
@@ -136,6 +155,7 @@ function ralsei:onHurt(damage, battler)
         self.acts[3].color = {COLORS.red}
     end
     super.onHurt(self, damage, battler)
+    self:getActiveSprite():stopShake()
 end 
 
 function ralsei:onAdd(parent)
