@@ -5,14 +5,13 @@ function forced:init()
 
     -- Text displayed at the bottom of the screen at the start of the encounter
     self.text = "* Noelle can't stop attacking.\n* (Tension is high.)"
-    self.music = nil
+    self.music = "scary"
     -- Enables the purple grid battle background
     self.background = false 
     self.hide_world = false  
     self.dialogue_lines = {
     [1] = {
-        {"Who,[wait:2] why are you attacking me?"},
-        {"Calm down\n[wait:5] please..!"},
+        {"Calm down\n[wait:5]please..!"},
     },
     [2] = {
         {"If you keep attacking me..."},
