@@ -13,6 +13,7 @@ function dusteer:init()
     self.money = 100
 
     self.spare_points = 10
+    self.wave_index = 1
 
     self.waves = { 
         "reinfrost/gallop", 
@@ -31,6 +32,15 @@ function dusteer:init()
     self:registerAct("Sweep", "Get\nMercy")
     self:registerAct("HeatUp", "Lower\nAttack", {"ralsei"}, 8)
     -- Game.battle:registerXAction("N-Sweep", "Get\nMercy")
+end
+
+function dusteer:getNextWaves()
+    local wave = self.waves[self.wave_index]
+    self.wave_index = self.wave_index + 1
+    if self.wave_index > #self.waves then
+        self.wave_index = 1
+    end
+    return { wave }
 end
 
 function dusteer:onAct(battler, name)

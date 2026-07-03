@@ -56,7 +56,8 @@ end
 function actor:onSpriteUpdate(sprite)
     sprite:setScale(0.75)
     sprite:setOrigin(-0.2, -0.2)
-        if not sprite.center_x then
+    if Game.battle then 
+    if not sprite.center_x then
         sprite.center_x = sprite.x - 20
         sprite.center_y = sprite.y
         sprite.wave_time = 0
@@ -68,6 +69,7 @@ function actor:onSpriteUpdate(sprite)
         sprite.y = sprite.center_y + (math.cos(2 * sprite.wave_time) * 7.5)
         sprite.rotation = math.cos(sprite.wave_time) * 0.4
     end
+    end 
 end
 
 
