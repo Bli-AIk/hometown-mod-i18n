@@ -88,7 +88,7 @@
    <properties>
     <property name="actor" value="virovirokun"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun"/>
+    <property name="encounter" value="virovirokun3"/>
     <property name="enemy" value="virovirokun"/>
     <property name="marker1" value="v1"/>
     <property name="marker2" value="v2"/>

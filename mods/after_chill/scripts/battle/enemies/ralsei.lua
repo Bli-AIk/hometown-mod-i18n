@@ -136,6 +136,7 @@ function ralsei:onAct(battler, name)
             ralsei.visible = false
             Game:setFlag("encounter#ralsei:violenced", true) 
             cutscene:after(function()
+                Game:setFlag("geno", true)
                 Game.battle:setState("TRANSITIONOUT")
             end)
             end)
@@ -150,7 +151,7 @@ function ralsei:onHurt(damage, battler)
             child.y = child.y + 20 
         end 
     end 
-    if self.health <= (self.max_health * 0.4) and Game:getFlag("geno") then 
+    if self.health <= (self.max_health * 0.4) and Game:getFlag("enemies_killed", 0) >= 10 then 
         self:registerAct("???", "...")
         self.acts[3].color = {COLORS.red}
     end
