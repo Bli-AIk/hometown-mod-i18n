@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 30,
+  nextobjectid = 35,
   properties = {
     ["music"] = "hallway",
     ["name"] = "Receptionist Stage"
@@ -207,6 +207,22 @@ return {
           properties = {
             ["cutscene"] = "kris.ralsei"
           }
+        },
+        {
+          id = 31,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 3188.67,
+          y = 607.333,
+          width = 10.6667,
+          height = 61.3333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "recep7",
+            ["marker"] = "entranceA"
+          }
         }
       }
     },
@@ -373,7 +389,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 1040,
-          y = 680,
+          y = 671,
           width = 2160,
           height = 40,
           rotation = 0,
@@ -416,6 +432,19 @@ return {
           shape = "point",
           x = 1835,
           y = 657.333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 33,
+          name = "entranceC",
+          type = "",
+          shape = "point",
+          x = 3148.67,
+          y = 653,
           width = 0,
           height = 0,
           rotation = 0,

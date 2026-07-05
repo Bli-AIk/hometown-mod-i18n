@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 18,
+  nextobjectid = 20,
   properties = {},
   tilesets = {
     {
@@ -138,12 +138,24 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 100,
-          y = 826,
+          x = 119.333,
+          y = 803.333,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "entranceA",
+          type = "",
+          shape = "point",
+          x = 38,
+          y = 809.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -173,7 +185,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "Forest_1"
@@ -189,9 +200,24 @@ return {
           width = 40,
           height = 365.333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 19,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -0.666667,
+          y = 766.667,
+          width = 16.6667,
+          height = 63.3333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "recep5",
+            ["marker"] = "entranceC"
+          }
         }
       }
     },
@@ -199,7 +225,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 2,
-      name = "Collision",
+      name = "collision",
       class = "",
       visible = true,
       opacity = 1,
@@ -219,7 +245,6 @@ return {
           width = 2640,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -233,7 +258,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -247,7 +271,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -261,7 +284,6 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -275,7 +297,6 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -289,7 +310,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -303,7 +323,6 @@ return {
           width = 2400,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -317,7 +336,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -331,7 +349,6 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -341,11 +358,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 0,
-          y = 840,
+          y = 831,
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
