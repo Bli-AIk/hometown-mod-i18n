@@ -61,7 +61,7 @@
             // Whether the soul invulnerability will carry between waves in battles
             "soulInvBetweenWaves": false,
             // The red aura around enemies
-            "enemyAuras": false,
+            "enemyAuras": true,
             // Seeing +X when an enemy's mercy goes up
             "mercyMessages": true,
             // Whether the mercy bar should appear or not
