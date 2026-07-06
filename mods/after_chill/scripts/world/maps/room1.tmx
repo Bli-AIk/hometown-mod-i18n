@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="62">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="63">
  <editorsettings>
   <export target="room1.lua" format="lua"/>
  </editorsettings>
@@ -113,6 +113,15 @@ you.</property>
   <object id="61" name="tornado_spawner" x="523.818" y="729.349" width="61.3738" height="54.2373">
    <properties>
     <property name="rate" type="float" value="0.5"/>
+   </properties>
+  </object>
+  <object id="62" name="npc" x="692" y="742" width="40" height="40">
+   <properties>
+    <property name="actor" value="starwalker"/>
+    <property name="flagcheck" value="footstep"/>
+    <property name="text1">* These [color:yellow]stairs[color:reset] are [color:yellow]Pissing[color:reset] me
+off...</property>
+    <property name="text2" value="* I'm the original   [color:yellow]Starwalker[color:reset]"/>
    </properties>
   </object>
  </objectgroup>

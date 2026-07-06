@@ -32,7 +32,7 @@ function ralsei:init()
         ["hurt"] = {"battle/hurt", 0.1, false}
     }, false)
 
-    self.check = "AT "..self.attack.." DF "..self.defense.."\n* Standing in your way. \n* FIGHT him to his demise."
+    self.check = "AT "..self.attack.." DF "..self.defense.."\n* The dark prince, seemingly lost in his own dark."
 
     self.text = {
         "* Fire emanates from the floor.",
@@ -157,7 +157,66 @@ function ralsei:onHurt(damage, battler)
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()
+    if self.mercy == 100 then 
+        self.mercy = 0 
+        self.disable_mercy = true 
+        Game.battle.battle_ui:endAttack()
+        Game.battle:startCutscene(function(cutscene)
+            Game.battle.music:fade(0, 2)
+            cutscene:wait(2)
+            cutscene:battlerText("ralsei", "Y-[wait:2]you were\nreally serious..?")
+            cutscene:battlerText("ralsei", "Kris,[wait:2] we can't divert\nfrom the prophecy!")
+            cutscene:wait(2)
+            cutscene:battlerText("ralsei", "If stopping you is\nthe only way to\nsave the prophecy..")
+            cutscene:battlerText("ralsei", "Then so be it!")
+            local snd = Assets.playSound("boost")
+            local fx = self:addFX(ColorMaskFX(COLORS.white))
+            fx.amount = 0 
+            Game:getPartyMember("ralsei"):setFlag("serious", true)
+            self:setAnimation("attack")
+            Game.battle.music:fade(1, 1)
+            Game.battle.timer:tween(0.4, fx, {amount = 1})
+            cutscene:wait(0.4)
+            Game.battle.timer:tween(0.4, fx, {amount = 0})
+            cutscene:wait(0.5)
+            self:setAnimation("spell")
+            self:healEffect()
+            Assets.playSound("spell_cure_slight_smaller")
+            Game.battle.battle_ui.action_boxes[1].buttons[4].disabled=true
+            cutscene:wait(0.5)
+            self:setHardMode()
+            cutscene:after(function()
+                battler:resetSprite()
+                Game.battle:setState("DEFENDINGBEGIN", {"basic"})
+            end)
+        end)
+    end 
 end 
+
+function ralsei:setHardMode()
+    self.waves = {}
+    self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
+    self.health = self.max_health
+    self.defense = self.defense + 5 
+    self.kaboom = true 
+    table.remove(self.acts, 2)
+    local tired = TiredBar(-500, -500)
+    Game.battle:addChild(tired)
+    Game.battle.tired_bar = tired
+    Game.battle.tired_bar:setPosition(Game.battle.tired_bar.x, 6)
+    Game.battle.tired_bar:slideTo(70, 6)
+    self:registerAct("WakeUp", "Stop Tired\nfor 1 Turn", {}, 16)
+end 
+
+function ralsei:getEncounterText()
+    if self.kaboom then 
+        self.kaboom = nil
+        return "* Ralsei's defense went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
+    else 
+        return super.getEncounterText(self)
+    end  
+end 
+      
 
 function ralsei:onAdd(parent)
     self:setAnimation("battle/intro")

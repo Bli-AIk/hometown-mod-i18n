@@ -75,6 +75,13 @@ function actor:init()
         ["wave_down"]           = {"wave_down", 5/30, true}
     }
 
+    self.animations_alt = {
+        ["idle"] = {"battle_alt/idle", 1 / 6, true},
+        ["attack"] = {"battle_alt/attack", 1 / 12, false, next="idle"},
+        ["battle/attack_ready"] = {"battle_alt/attackready", 0.2, true},
+        ["battle/defend_ready"] = {"battle_alt/defend", 1/15, false},
+    }
+
     -- Tables of sprites to change into in mirrors
     self.mirror_sprites = {
         ["walk/down"] = "walk/up",
@@ -117,6 +124,7 @@ function actor:init()
         -- Battle offsets
         ["idle"] = {-2, -6},
         ["battle/attack"] = {-10, 0},
+        ["battle_alt/attack"] = {-10, 0},
         ["battle/attackready"] = {-10, -6},
         ["act"] = {-2, -6},
         ["battle/actend"] = {-2, -6},
@@ -156,5 +164,14 @@ function actor:init()
         ["stool"] = {-11, 18}
     }
 end
+
+function actor:getAnimation(anim)
+    if Game:getPartyMember("ralsei"):getFlag("serious", false) and self.animations_alt[anim] ~= nil then
+        return self.animations_alt[anim] or nil
+    else
+        return super.getAnimation(self, anim)
+    end
+end
+
 
 return actor
