@@ -5,15 +5,15 @@ local TiredBar, super = Class(Object)
 function TiredBar:init(x, y, dont_animate)
     self.target_x = x or 70
     self.target_y = y or 3
-    self.tired_text = Assets.getTexture("ui/battle/tired_text") or Assets.getTexture("ui/battle/tp_text")
     super.init(self, self.target_x, self.target_y)
-    self.layer = BATTLE_LAYERS["ui"] - 1
+    self.layer = BATTLE_LAYERS["ui"]
     self.tp_bar_fill = Assets.getTexture("ui/battle/tp_bar_fill")
     self.tp_bar_outline = Assets.getTexture("ui/battle/tp_bar_outline")
-
+    self.tired_text = Assets.getTexture("ui/battle/tired_text") or Assets.getTexture("ui/battle/tp_text")
     self.width = self.tp_bar_outline:getWidth()
     self.height = self.tp_bar_outline:getHeight()
 
+    self.tiredness = 0
     self.apparent = 0
     self.current = 0
     self.changetimer = 15
@@ -30,14 +30,11 @@ function TiredBar:init(x, y, dont_animate)
     self.timer = self:addChild(Timer())
 end
 
-
 function TiredBar:show()
     if not self.shown then
         self:resetPhysics()
-        -- 3. RESET TO THE HIDE LINE: Force it back behind the left bar before sliding out
         self.x = 0
         self.y = self.target_y
-        
         self.shown = true
         self.animating_in = true
         self.animation_timer = 0
@@ -51,12 +48,9 @@ function TiredBar:processSlideIn()
             self.animation_timer = 12
             self.animating_in = false
         end
-        -- FIXED: Replaced the first '12' with self.animation_timer!
-        self.x = Utils.ease(self.animation_timer, 0, self.target_x, "out-cubic")
+        self.x = Utils.ease(self.animation_timer, 0, self.target_x, 12, "out-cubic")
     end
 end
-
-
 
 function TiredBar:hide()
     if self.shown then
@@ -67,39 +61,30 @@ function TiredBar:hide()
     end
 end
 
-function TiredBar:getDebugInfo()
-    local info = super.getDebugInfo(self)
-    table.insert(info, "Tiredness: " .. MathUtils.round(self:getPercentageFor(Game:getFlag("party_tiredness", 0)) * 100) .. "%")
-    table.insert(info, "Apparent: " .. MathUtils.round(self.apparent / 2.5))
-    table.insert(info, "Current: " .. MathUtils.round(self.current / 2.5))
-    return info
+function TiredBar:addTired(amount)
+    self.tiredness = math.min(100, math.max(0, self.tiredness + (amount or 0)))
+    if self.tiredness >= 100 then
+        self:onMaxTired()
+    end
 end
 
-function TiredBar:getTiredness250()
-    return (Game:getFlag("party_tiredness", 0) / 100) * 250
-end
-
-function TiredBar:getPercentageFor(variable)
-    return variable / 100
-end
-
-function TiredBar:getPercentageFor250(variable)
-    return variable / 250
+function TiredBar:onMaxTired()
+   -- add your code here.
 end
 
 function TiredBar:processTiredness()
-    local target_value = self:getTiredness250()
+    local target_value = self.tiredness
 
-    if (math.abs((self.apparent - target_value)) < 20) then
+    if (math.abs((self.apparent - target_value)) < 8) then
         self.apparent = target_value
     end
 
     if (self.apparent < target_value) then
-        self.apparent = self.apparent + (20 * DTMULT)
+        self.apparent = self.apparent + (8 * DTMULT)
     end
 
     if (self.apparent > target_value) then
-        self.apparent = self.apparent - (20 * DTMULT)
+        self.apparent = self.apparent - (8 * DTMULT)
     end
 
     if (self.apparent ~= self.current) then
@@ -109,13 +94,13 @@ function TiredBar:processTiredness()
             if ((self.apparent - self.current) > 10) then self.current = self.current + (2 * DTMULT) end
             if ((self.apparent - self.current) > 25) then self.current = self.current + (3 * DTMULT) end
             if ((self.apparent - self.current) > 50) then self.current = self.current + (4 * DTMULT) end
-            if ((self.apparent - self.current) > 100) then self.current = self.current + (5 * DTMULT) end
+            if ((self.apparent - self.current) > 75) then self.current = self.current + (5 * DTMULT) end
             if ((self.apparent - self.current) < 0) then self.current = self.current - (2 * DTMULT) end
             if ((self.apparent - self.current) < -10) then self.current = self.current - (2 * DTMULT) end
             if ((self.apparent - self.current) < -25) then self.current = self.current - (3 * DTMULT) end
             if ((self.apparent - self.current) < -50) then self.current = self.current - (4 * DTMULT) end
-            if ((self.apparent - self.current) < -100) then self.current = self.current - (5 * DTMULT) end
-            if (math.abs((self.apparent - self.current)) < 3) then
+            if ((self.apparent - self.current) < -75) then self.current = self.current - (5 * DTMULT) end
+            if (math.abs((self.apparent - self.current)) < 1) then
                 self.current = self.apparent
             end
         end
@@ -129,23 +114,19 @@ function TiredBar:update()
 end
 
 function TiredBar:drawText()
-    -- 1. RIGHT-SIDE SHIFT: Boosted from self.width + 5 to self.width + 12
-    -- This pushes the numbers and the % sign further out to the right!
     local text_x_offset = self.width + 12
-    
     Draw.setColor(1, 1, 1, 1)
     if self.tired_text then
-        Draw.draw(self.tired_text, 32, 5) 
+        Draw.draw(self.tired_text, 32, 5)
     end
-    
-    local tamt = math.floor(self:getPercentageFor250(self.apparent) * 100)
+    local tamt = math.floor(self.apparent)
     self.maxed = false
     love.graphics.setFont(self.font)
     
     if (tamt < 100) then
         Draw.setColor(1, 1, 1, 1)
-        love.graphics.print(tostring(math.floor(self:getPercentageFor250(self.apparent) * 100)), text_x_offset, 50)
-        love.graphics.print("%", text_x_offset + 5, 70)
+        love.graphics.print(tostring(math.floor(self.apparent)), text_x_offset, 40)
+        love.graphics.print("%", text_x_offset + 5, 65)
     else
         self.maxed = true
         self:drawMaxText()
@@ -160,10 +141,9 @@ function TiredBar:drawMaxText()
     love.graphics.print("X", text_x_offset + 8, 80)
 end
 
-
 function TiredBar:drawBack()
     Draw.setColor(20/255, 30/255, 75/255, 1)
-    local fill_y = self.height - (self:getPercentageFor250(self.current) * self.height) + 1
+    local fill_y = self.height - ((self.current / 100) * self.height) + 1
     Draw.drawPart(self.tp_bar_fill, 0, 0, 0, 0, self.width, fill_y)
 end
 
@@ -174,48 +154,45 @@ function TiredBar:drawFill()
 
     if (self.apparent < self.current) then
         Draw.setColor(tired_decrease)
-        local y = MathUtils.clamp(self.height - (self:getPercentageFor250(self.current) * self.height) + 1, 0, self.height)
+        local y = MathUtils.clamp(self.height - ((self.current / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y, 0, y, self.width, self.height)
 
         Draw.setColor(tired_fill)
-        local y2 = MathUtils.clamp(self.height - (self:getPercentageFor250(self.apparent) * self.height) + 1, 0, self.height)
+        local y2 = MathUtils.clamp(self.height - ((self.apparent / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y2, 0, y2, self.width, self.height)
         
     elseif (self.apparent > self.current) then
         Draw.setColor(1, 1, 1, 1)
-        local y = MathUtils.clamp(self.height - (self:getPercentageFor250(self.apparent) * self.height) + 1, 0, self.height)
+        local y = MathUtils.clamp(self.height - ((self.apparent / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y, 0, y, self.width, self.height)
 
         Draw.setColor(tired_fill)
         if (self.maxed) then Draw.setColor(tired_max) end
 
-        local y2 = MathUtils.clamp(self.height - (self:getPercentageFor250(self.current) * self.height) + 1, 0, self.height)
+        local y2 = MathUtils.clamp(self.height - ((self.current / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y2, 0, y2, self.width, self.height)
         
     elseif (self.apparent == self.current) then
         Draw.setColor(tired_fill)
         if (self.maxed) then Draw.setColor(tired_max) end
 
-        local y = MathUtils.clamp(self.height - (self:getPercentageFor250(self.current) * self.height) + 1, 0, self.height)
+        local y = MathUtils.clamp(self.height - ((self.current / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y, 0, y, self.width, self.height)
     end
 
-    if ((self.apparent > 8) and (self.apparent < 250)) then
+    if (self.apparent > 3) then
         Draw.setColor(1, 1, 1, 1)
-        local y = MathUtils.clamp(self.height - (self:getPercentageFor250(self.current) * self.height) + 1, 0, self.height)
+        local y = MathUtils.clamp(self.height - ((self.current / 100) * self.height) + 1, 0, self.height)
         Draw.drawPart(self.tp_bar_fill, 0, y, 0, y, self.width, 3)
     end
 end
 
-
 function TiredBar:draw()
     Draw.setColor(1, 1, 1, 1)
     Draw.draw(self.tp_bar_outline, 0, 0)
-
     self:drawBack()
     self:drawFill()
     self:drawText()
-
     super.draw(self)
 end
 
