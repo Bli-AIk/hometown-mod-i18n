@@ -9,7 +9,6 @@ function TiredBar:init(x, y, dont_animate)
     self.layer = BATTLE_LAYERS["ui"]
     self.tp_bar_fill = Assets.getTexture("ui/battle/tp_bar_fill")
     self.tp_bar_outline = Assets.getTexture("ui/battle/tp_bar_outline")
-    self.tired_text = Assets.getTexture("ui/battle/tired_text") or Assets.getTexture("ui/battle/tp_text")
     self.width = self.tp_bar_outline:getWidth()
     self.height = self.tp_bar_outline:getHeight()
 
@@ -48,7 +47,7 @@ function TiredBar:processSlideIn()
             self.animation_timer = 12
             self.animating_in = false
         end
-        self.x = Utils.ease(self.animation_timer, 0, self.target_x, 12, "out-cubic")
+        self.x = Utils.ease(self.animation_timer, 0, self.target_x, "out-cubic")
     end
 end
 
@@ -69,7 +68,15 @@ function TiredBar:addTired(amount)
 end
 
 function TiredBar:onMaxTired()
-   -- add your code here.
+    -- add code here if wanted.
+end
+
+function TiredBar:getDebugInfo()
+    local info = super.getDebugInfo(self)
+    table.insert(info, "Tiredness: " .. MathUtils.round(self.tiredness) .. "%")
+    table.insert(info, "Apparent: " .. MathUtils.round(self.apparent))
+    table.insert(info, "Current: " .. MathUtils.round(self.current))
+    return info
 end
 
 function TiredBar:processTiredness()
@@ -115,10 +122,6 @@ end
 
 function TiredBar:drawText()
     local text_x_offset = self.width + 12
-    Draw.setColor(1, 1, 1, 1)
-    if self.tired_text then
-        Draw.draw(self.tired_text, 32, 5)
-    end
     local tamt = math.floor(self.apparent)
     self.maxed = false
     love.graphics.setFont(self.font)

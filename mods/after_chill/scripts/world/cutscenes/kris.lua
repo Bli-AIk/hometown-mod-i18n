@@ -232,10 +232,9 @@ end
         kris:setFacing("up")
         ralsei:remove()
         cutscene:setSpeaker(nil)
-        cutscene:wait(1)
-        cutscene:wait(cutscene:playSound("ominous", 1, 0.7))
-        cutscene:text("* Kris can now use [color:red]RUPTURE[color:reset]!")
         cutscene:attachCamera(1)
+        cutscene:wait(1)
+        cutscene:text("* Kris can now use [color:red]RUPTURE[color:reset]!")
         cutscene:wait(1)
         end 
     end, 

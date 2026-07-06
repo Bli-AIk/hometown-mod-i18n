@@ -84,6 +84,11 @@ function ralsei:onAct(battler, name)
         end) 
     end 
 
+elseif name == "WakeUp" then 
+    Game.battle.tired_bar:addTired(-8)
+    Assets.playSound("bell_bounce_short")
+    return "* Kris rubbed their eyes and gripped their sword tighter!\n* [color:blue]TIREDNESS[color:reset] reduced!"
+
 
     elseif name == "???" then 
         Game.battle:startActCutscene(function(cutscene)
@@ -105,11 +110,9 @@ function ralsei:onAct(battler, name)
             battler:setAnimation("battle/attack_ready")
             cutscene:wait(15/30)
             local ralsei = Game.battle:getEnemyBattler("ralsei")
-            cutscene:battlerText(ralsei, "K-[wait:5]Kris?")
-            cutscene:battlerText(ralsei, "K-Kris,[wait:5]what\nare you doing?")
+            cutscene:battlerText(ralsei, "Kris,[wait:5] what\nare you doing?")
             cutscene:battlerText(ralsei, "Your..[wait:5] eyes...")
             cutscene:battlerText(ralsei, "I-[wait:2]I...")
-            cutscene:battlerText(ralsei, "Kris,[wait:5] please...")
             battler:setAnimation("battle/attack")
             Assets.playSound("scytheburst")
             local sprite = Sprite("effects/attack/cut", 476, 200)
@@ -122,8 +125,11 @@ function ralsei:onAct(battler, name)
             battler:removeFX("fx1")
             battler:removeFX("fx2")
             battler:resetSprite()
-            cutscene:wait(0.6)
-            cutscene:battlerText(ralsei, "(I-I have to go...)")
+            Assets.playSound("levelup")
+            Game.battle.music:fade(0, 2)
+            cutscene:wait(2)
+            cutscene:battlerText(ralsei, "(I-I'm still alive..?)")
+            cutscene:battlerText(ralsei, "(...Better go,[wait:2]\nbefore...[wait:2])")
             Assets.playSound("wing")
             ralsei:resetSprite()
             ralsei.y = 285 -- 271
@@ -157,6 +163,7 @@ function ralsei:onHurt(damage, battler)
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()
+    if not Game.battle:hasCutscene() then
     if self.mercy == 100 then 
         self.mercy = 0 
         self.disable_mercy = true 
@@ -192,6 +199,7 @@ function ralsei:onHurt(damage, battler)
         end)
     end 
 end 
+end 
 
 function ralsei:setHardMode()
     self.waves = {}
@@ -200,12 +208,12 @@ function ralsei:setHardMode()
     self.defense = self.defense + 5 
     self.kaboom = true 
     table.remove(self.acts, 2)
-    local tired = TiredBar(-500, -500)
+    local tired = TiredBar(-200, -200)
     Game.battle:addChild(tired)
     Game.battle.tired_bar = tired
     Game.battle.tired_bar:setPosition(Game.battle.tired_bar.x, 6)
-    Game.battle.tired_bar:slideTo(70, 6)
-    self:registerAct("WakeUp", "Stop Tired\nfor 1 Turn", {}, 16)
+    Game.battle.tired_bar:slideTo(70, 6, 0.6)
+    self:registerAct("WakeUp", "Reduce\nTired", {}, 8)
 end 
 
 function ralsei:getEncounterText()
