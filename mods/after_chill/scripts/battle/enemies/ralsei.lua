@@ -24,7 +24,8 @@ function ralsei:init()
 
     self.waves = {
         "ralsei/fire_spin", 
-        "ralsei/manual_throw"
+        "ralsei/manual_throw", 
+        "ralsei/star_bomb"
     }
 
     self.dialogue_offset = {-60, 5}
