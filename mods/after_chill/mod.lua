@@ -22,8 +22,6 @@ function Mod:init()
 end
 
 function Mod:postInit(is_new_file)
-    package.loaded["mods.after_chill.scripts.battle.bullets.darkbullet"] = nil
-    _G.DarkBullet = require("mods.after_chill.scripts.battle.bullets.darkbullet")
     if is_new_file then
         Game:setFlag("footstep", false)
         Game:setFlag("enemies_killed", 0)

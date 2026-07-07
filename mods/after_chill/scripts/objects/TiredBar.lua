@@ -61,6 +61,7 @@ function TiredBar:hide()
 end
 
 function TiredBar:addTired(amount)
+    Assets.playSound("ghostappear", 1.4, 0.9)
     self.tiredness = math.min(100, math.max(0, self.tiredness + (amount or 0)))
     if self.tiredness >= 100 then
         self:onMaxTired()

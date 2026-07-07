@@ -23,7 +23,8 @@ function ralsei:init()
     self.spare_points = 20 
 
     self.waves = {
-        "ralsei/fire_spin"
+        "ralsei/fire_spin", 
+        "ralsei/manual_throw"
     }
 
     self.dialogue_offset = {-60, 5}
@@ -40,8 +41,8 @@ function ralsei:init()
         "* You shiver a little,[wait:2] even though it isn't cold.",
     }
     self:registerAct("Apologize")
-    -- self:registerAct("???", "...")
-    -- self.acts[3].color = {COLORS.red}
+    self:registerAct("???", "...")
+    self.acts[3].color = {COLORS.red}
 end
 
 function ralsei:onAct(battler, name)

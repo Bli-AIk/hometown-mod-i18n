@@ -15,6 +15,18 @@ end
 function manual_throw:spawnManual(enemy)
     local manual = self:spawnBullet("bullets/manual", 472, 187)
     manual.rotation = math.rad(25)
+    manual.trail_timer = 0
+    local original_update = manual.update
+    manual.update = function(bullet_self)
+        original_update(bullet_self)
+        bullet_self.trail_timer = bullet_self.trail_timer + DT
+        if bullet_self.trail_timer >= 0.05 then
+            local afterimage = AfterImage(bullet_self, 0.4)
+            afterimage:setColor(1, 0.6, 0)
+            Game.battle:addChild(afterimage)
+            bullet_self.trail_timer = 0
+        end
+    end
     manual.alpha = 0 
     manual:fadeTo(1, 0.2, function()
         Assets.playSound("grab")
@@ -23,7 +35,8 @@ function manual_throw:spawnManual(enemy)
             self:openBook(manual)
         end)
     end)
-end 
+end
+
 
 function manual_throw:openBook(manual)
     Assets.playSound("book_open")
@@ -51,7 +64,18 @@ function manual_throw:shootBurst(manual)
         bullet.physics.direction = MathUtils.angle(bullet.x, bullet.y, Game.battle.soul.x, Game.battle.soul.y)
         bullet.physics.speed = love.math.random(10, 14)
         bullet.rotation = math.rad(bullet.physics.direction)
-    end 
+        bullet.trail_timer = 0
+        local original_update = bullet.update
+        bullet.update = function(bullet_self)
+        original_update(bullet_self)
+        bullet_self.trail_timer = bullet_self.trail_timer + DT
+        if bullet_self.trail_timer >= 0.05 then
+            local afterimage = AfterImage(bullet_self, 0.4)
+            Game.battle:addChild(afterimage)
+            bullet_self.trail_timer = 0
+        end
+        end
+        end 
     self.timer:after(0.5, function()
         local start_x, start_y = 100, 80 
         local end_x, end_y     = 400, 220

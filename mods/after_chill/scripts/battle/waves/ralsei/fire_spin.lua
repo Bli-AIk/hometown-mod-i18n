@@ -42,17 +42,16 @@ function fire_spin:spawnNewFireballs()
     self.spawning = true
     
     if self.ralsei then          
-        self.ralsei:flash()
+        local fx = self.ralsei:addFX(ColorMaskFX(COLORS.white, 1))
+        self.timer:tween(0.4, fx, {amount = 0})
         Assets.playSound("boost")
     end
 
     self.timer:after(0.3, function()
-        -- 1. Grab positions safely inside the timer block first
         local rx, ry = self.ralsei:getRelativePos(self.ralsei.width/2, self.ralsei.height/2)  
         ry = ry + 40 
         rx = rx - 15 
         
-        -- 2. Move the bullet spawning INSIDE the loop so you get 4 unique fireballs
         for i = 1, 4 do
             local start_angle = (math.pi * 2 / 4) * i
             
@@ -71,7 +70,7 @@ function fire_spin:spawnNewFireballs()
             end
         end
 
-        self.timer:after(0.8, function()
+        self.timer:after(0.6, function()
             self.spawning = false
         end)
     end)
