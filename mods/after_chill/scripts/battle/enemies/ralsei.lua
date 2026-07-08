@@ -104,7 +104,7 @@ function ralsei:onAct(battler, name)
             cutscene:wait(0.5)
             Game:getPartyMember("ralsei"):setFlag("serious", false)
             self:setAnimation("idle")
-            cutscene:text("* K[wait:2]-Kris?\n* You are...[wait:5] sparing me...?", "blush", "ralsei")
+            cutscene:text("* K[wait:2]-Kris?\n* [color:red]YOU[color:black] are...[wait:5] sparing me...?", "blush", "ralsei")
             self:addMercy(100)
             cutscene:text("* W[wait:2]-well,[wait:2] that was unexpected...", "blush_pleased_open", "ralsei")
             cutscene:after(function()
@@ -140,7 +140,7 @@ elseif name == "WakeUp" then
             cutscene:wait(15/30)
             local ralsei = Game.battle:getEnemyBattler("ralsei")
             cutscene:battlerText(ralsei, "Kris,[wait:5] what\nare you doing?")
-            cutscene:battlerText(ralsei, "Your..[wait:5] eyes...")
+            cutscene:battlerText(ralsei, "You cant stop it can you...")
             cutscene:battlerText(ralsei, "I-[wait:2]I...")
             battler:setAnimation("battle/attack")
             Assets.playSound("scytheburst")
@@ -260,7 +260,7 @@ end
 function ralsei:getEncounterText()
     if self.kaboom then 
         self.kaboom = nil
-        return "* Ralsei's defense went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
+        return "* Ralsei's DEF and ATK went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
     else 
         return super.getEncounterText(self)
     end  
