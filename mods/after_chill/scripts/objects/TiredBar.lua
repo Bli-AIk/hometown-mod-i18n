@@ -9,6 +9,8 @@ function TiredBar:init(x, y, dont_animate)
     self.layer = BATTLE_LAYERS["ui"]
     self.tp_bar_fill = Assets.getTexture("ui/battle/tp_bar_fill")
     self.tp_bar_outline = Assets.getTexture("ui/battle/tp_bar_outline")
+    self.tired_text = Assets.getTexture("ui/battle/tired_text")
+    -- we need to make it draw ("ui/battle/tired_text") MAKE SURE TO COMMENT WHAT I MANUALLY NEED TO CHANGE IF IT DOESNT WORK.
     self.width = self.tp_bar_outline:getWidth()
     self.height = self.tp_bar_outline:getHeight()
 
@@ -125,8 +127,9 @@ function TiredBar:drawText()
     local text_x_offset = self.width + 12
     local tamt = math.floor(self.apparent)
     self.maxed = false
-    love.graphics.setFont(self.font)
-    
+    Draw.setColor(1, 1, 1, 1) 
+    Draw.draw(self.tired_text, 30, 10, 0, 1, 1)
+    love.graphics.setFont(self.font) 
     if (tamt < 100) then
         Draw.setColor(1, 1, 1, 1)
         love.graphics.print(tostring(math.floor(self.apparent)), text_x_offset, 40)

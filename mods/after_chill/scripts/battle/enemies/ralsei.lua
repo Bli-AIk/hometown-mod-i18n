@@ -11,15 +11,10 @@ function ralsei:init()
     self.attack = 15
     self.ui_modified = false
     self.defense = 12
-    self.money = 0
+    self.money = 63
     self.dmg_sprite_offset = {-14, 13}
     self.tired_percentage = 0
-    if Game:getFlag("geno") then 
-    self.disable_mercy = true 
-    else 
-    self.mercy = 100 
-    end   
-
+    self.mercy = 100  
     self.spare_points = 20 
 
     self.waves = {
@@ -46,15 +41,36 @@ function ralsei:init()
     -- self.acts[3].color = {COLORS.red}
 end
 
+function ralsei:onDefeat()
+   if self:getFlag("dead") then 
+        Game.battle:startCutscene(function(cutscene)
+            Game.battle.battle_ui:endAttack()
+            self.exit_on_defeat = false 
+            self:setSprite("battle_alt/hurt_1")
+            self:setPosition(533, 284)
+            Game.battle.music:fade(0, 2)
+            cutscene:wait(2)
+            cutscene:text("* K-[wait:2]K-[wait:2]Kris...?", "concern_smile", "ralsei")
+            cutscene:text("* Why...[wait:2] why would you..[wait:2]", "down", "ralsei")
+            self:shake(2)
+            Assets.playSound("damage")
+            Assets.playSound("levelup")
+            self:onDefeatFatal()
+            self.x = self.x + 50 
+            self.scale_x = -2 
+        end)
+   end 
+end       
+
 function ralsei:onAct(battler, name)
     if name == "Apologize" then
-        local ap = self.apologize 
-        if not Game:getFlag("geno") then 
+        local ap = self.apologize or 0 
+        if not self:getFlag("dead") then 
             return {
             "* You apologized to Ralsei.",
             "* Nothing happened."
         }
-    end 
+        end 
         if ap == 0 then  
         self.apologize = ap + 1 
         return {
@@ -77,10 +93,13 @@ function ralsei:onAct(battler, name)
             self:mercyFlash()
             cutscene:text("* Kris tried to spare Ralsei.")
             cutscene:wait(0.5)
+            Game:getPartyMember("ralsei"):setFlag("serious", false)
+            self:setAnimation("idle")
             cutscene:text("* K[wait:2]-Kris?\n* You are...[wait:5] sparing me...?", "blush", "ralsei")
             self:addMercy(100)
             cutscene:text("* W[wait:2]-well,[wait:2] that was unexpected...", "blush_pleased_open", "ralsei")
             cutscene:after(function()
+                Game.battle.tired_bar:slideTo(-300, Game.battle.tired_bar.y, 1)
                 Game.battle:setState("VICTORY")
             end)
         end) 
@@ -89,8 +108,7 @@ function ralsei:onAct(battler, name)
 elseif name == "WakeUp" then 
     Game.battle.tired_bar:addTired(-8)
     Assets.playSound("bell_bounce_short")
-    return "* Kris rubbed their eyes and gripped their sword tighter!\n* [color:blue]TIREDNESS[color:reset] reduced!"
-
+    return "* Kris rubbed their eyes and gripped their sword tighter![wait:5]\n* [color:blue]TIREDNESS[color:reset] reduced!"
 
     elseif name == "???" then 
         Game.battle:startActCutscene(function(cutscene)
@@ -173,6 +191,7 @@ function ralsei:onHurt(damage, battler)
         Game.battle:startCutscene(function(cutscene)
             Game.battle.music:fade(0, 2)
             cutscene:wait(2)
+            self:setFlag("dead", true)
             cutscene:battlerText("ralsei", "Y-[wait:2]you were\nreally serious..?")
             cutscene:battlerText("ralsei", "Kris,[wait:2] we can't divert\nfrom the prophecy!")
             cutscene:wait(2)
@@ -209,7 +228,6 @@ function ralsei:setHardMode()
     self.health = self.max_health
     self.defense = self.defense + 5 
     self.kaboom = true 
-    table.remove(self.acts, 2)
     local tired = TiredBar(-200, -200)
     Game.battle:addChild(tired)
     Game.battle.tired_bar = tired

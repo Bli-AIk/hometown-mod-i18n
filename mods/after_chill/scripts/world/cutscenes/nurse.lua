@@ -28,9 +28,9 @@ return {
                             cutscene:text("* You're always welcome,[wait:2] sweet.")
                         end
                     else 
-                        cutscene:text("* Sweet,[wait:5] you don't have enough money.")
+                        cutscene:text("* Looks like you don't have enough money.")
                         cutscene:text("* Remember,[wait:5] it costs [color:yellow]$140[color:reset].")
-                        cutscene:wait(0.5)
+                        cutscene:wait(0.2)
                         cutscene:text("* I don't make exceptions for any of my customers,[wait:5] sorry!")
                     end
                 else 
@@ -85,5 +85,56 @@ return {
                 cutscene:text("* Take care!")
             end 
         end
-    end
+    end, 
+   
+    bring = function(cutscene)
+        local function checkMoney()
+            if Game.money >= 140 then 
+                Game.money = Game.money - 140
+                return true 
+            else 
+                return false 
+            end 
+        end 
+       local kris = cutscene:getCharacter("kris")
+       cutscene:text("* Hey,[wait:2] over here,[wait:2] blue haired guy!")
+       cutscene:wait(cutscene:walkTo(kris, 1330, kris.y, 0.7, "up"))
+       cutscene:text("* You look really tired...")
+       cutscene:text("* Want a candy to cheer you up?")
+       kris:walkTo(kris.x, 776, 0.5)
+       cutscene:wait(0.5)
+       local choice = cutscene:choicer({"Buy", "Sell", "Who are you?", "Go Back"})
+            if choice == 1 then 
+                local sec = cutscene:textChoicer("* [color:yellow]HoneyDrop[color:reset] costs [color:yellow]$140[color:reset].", {"Buy", "Go Back"})
+                if sec == 1 then 
+                    if checkMoney() then 
+                        Assets.playSound("item")
+                        local success, text = Game.inventory:tryGiveItem("honey_drop")
+                        cutscene:text(text)
+                        if success then
+                            cutscene:text("* You're always welcome,[wait:2] sweet.")
+                        end
+                    else 
+                        cutscene:text("* Sweet,[wait:5] you don't have enough money.")
+                        cutscene:text("* Remember,[wait:5] it costs [color:yellow]$140[color:reset].")
+                        cutscene:wait(0.5)
+                        cutscene:text("* I don't make exceptions for any of my customers,[wait:5] sorry!")
+                    end 
+                else 
+                    cutscene:text("* Oh,[wait:2] you don't want candy?")
+                    cutscene:text("* Smart choice!")
+                end 
+            elseif choice == 2 then 
+                cutscene:text("* Sorry,[wait:2] sweet,[wait:2] but I don't need anything from ya!")
+            elseif choice == 3 then 
+                cutscene:text("* I'm the receptionist at the hospital.")
+                cutscene:text("* It's very boring over there,[wait:5] everyone's so rude and needy.")
+                cutscene:text("* I don't know this place,[wait:5] but I really love the serenity!")
+                cutscene:wait(0.5)
+                cutscene:text("* Oh,[wait:2] don't worry sweet,[wait:2] you're good with me too.")
+            elseif choice == 4 then
+                cutscene:text("* Take care!")
+            end 
+        end 
+
 }

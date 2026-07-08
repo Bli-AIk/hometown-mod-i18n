@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 67,
+  nextobjectid = 68,
   properties = {
     ["music"] = "hallway"
   },
@@ -162,7 +162,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 400,
-          y = 840,
+          y = 832,
           width = 840,
           height = 40,
           rotation = 0,
@@ -933,6 +933,21 @@ return {
           properties = {
             ["actor"] = "nurse_shop",
             ["cutscene"] = "nurse.sell"
+          }
+        },
+        {
+          id = 67,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 1212.67,
+          y = 787.167,
+          width = 29.3333,
+          height = 41.5,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "nurse.bring"
           }
         }
       }

@@ -37,7 +37,7 @@ function actor:init()
     -- Table of sprite animations
     self.animations = {
         ["idle"]         = {"battle/idle", 1/8, true},
-
+        ["defeat"]       = {"battle_alt/hurt", 1/6, false}, 
         ["attack"]       = {"battle/attack", 1/15, false},
         ["act"]          = {"battle/act", 1/15, false},
         ["spell"]        = {"battle/spell", 1/15, false, next="idle"},
@@ -55,7 +55,7 @@ function actor:init()
         ["battle/act_end"]      = {"battle/actend", 1/15, false, next="battle/idle"},
 
         ["ac_hurt"]                 = {"battle/hurt", 1/15, false, temp=true, duration=0.5},
-        ["battle/defeat"]       = {"battle/defeat", 1/15, false},
+    --    ["battle/defeat"]       = {"battle/defeat", 1/15, false},
         ["battle/swooned"]      = {"battle/defeat", 1/15, false},
 
         ["battle/transition"]   = {"walk/right_1", 1/15, false},
@@ -82,6 +82,7 @@ function actor:init()
         ["attack"] = {"battle_alt/attack", 1 / 12, false, next="idle"},
         ["battle/attack_ready"] = {"battle_alt/attackready", 0.2, true},
         ["battle/defend_ready"] = {"battle_alt/defend", 1/15, false},
+         ["defeat"]       = {"battle_alt/hurt", 1/6, false}, 
     }
 
     -- Tables of sprites to change into in mirrors
