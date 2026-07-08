@@ -33,7 +33,7 @@ end
             cutscene:wait(0.3)
             cutscene:battlerText("ralsei", "T-[wait:2]This[wait:2] isn't you!")
             cutscene:wait(1)
-            cutscene:battlerText("ralsei", "Kris,[wait:2] can you\nhear me?")
+            cutscene:battlerText("ralsei", "I-its that thing...")
             cutscene:wait(0.5)
             cutscene:battlerText("ralsei", "M-[wait:2]maybe,[wait:5] you can\nhear this.")
             local ralsei = Game.battle:getEnemyBattler("ralsei")
@@ -86,6 +86,8 @@ end
             cutscene:battlerText("ralsei", "M-maybe,[wait:2] a battle\nwill do.")
             cutscene:wait(0.2)
             cutscene:battlerText("ralsei", "Kris...")
+            cutscene:battlerText("ralsei", "I-I'm sorry... I will stop [color:red]IT[color:black].")
+            cutscene:battlerText("ralsei", "Then we can fix this prophecy...")
               local fire = FireGlow()
               Game.battle:addChild(fire)
             fire.alpha = 0 

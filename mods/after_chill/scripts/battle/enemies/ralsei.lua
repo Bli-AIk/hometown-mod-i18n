@@ -8,7 +8,7 @@ function ralsei:init()
 
     self.max_health = 280
     self.health = 280
-    self.attack = 15
+    self.attack = 7
     self.ui_modified = false
     self.defense = 12
     self.money = 63
@@ -202,9 +202,9 @@ function ralsei:onHurt(damage, battler)
             cutscene:wait(2)
             self:setFlag("dead", true)
             cutscene:battlerText("ralsei", "Y-[wait:2]you were\nreally serious..?")
-            cutscene:battlerText("ralsei", "Kris,[wait:2] we can't divert\nfrom the prophecy!")
+            cutscene:battlerText("ralsei", "[color:red]YOU[color:black] can't divert\nfrom the prophecy!")
             cutscene:wait(2)
-            cutscene:battlerText("ralsei", "If stopping you is\nthe only way to\nsave the prophecy..")
+            cutscene:battlerText("ralsei", "If stopping [color:red]YOU[color:black] is\nthe only way to\nsave the prophecy..")
             cutscene:battlerText("ralsei", "Then so be it!")
             local snd = Assets.playSound("boost")
             local fx = self:addFX(ColorMaskFX(COLORS.white))
@@ -226,6 +226,7 @@ function ralsei:onHurt(damage, battler)
             Game.world:addChild(self.vig)
                 self.vig:fadeTo(0.75, 0.3)
                 self.vig:flash()
+                self.attack = 15
 
             cutscene:after(function()
                 battler:resetSprite()
