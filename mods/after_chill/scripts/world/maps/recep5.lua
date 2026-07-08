@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -376,9 +376,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 1040,
-          y = 560,
+          y = 334.667,
           width = 2160,
-          height = 40,
+          height = 265.333,
           rotation = 0,
           visible = true,
           properties = {}
@@ -391,7 +391,7 @@ return {
           x = 1040,
           y = 671,
           width = 2160,
-          height = 40,
+          height = 374,
           rotation = 0,
           visible = true,
           properties = {}

@@ -10,7 +10,7 @@ function ralsei:init()
     self.health = 280
     self.attack = 7
     self.ui_modified = false
-    self.defense = 12
+    self.defense = 5
     self.money = 63
     self.dmg_sprite_offset = {-14, 13}
     self.tired_percentage = 0
@@ -245,9 +245,9 @@ function ralsei:setHardMode()
         "ralsei/pacify_wave_2",
         "ralsei/angel"
     }
-    self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
+    self.check = "AT "..self.attack.." DF 6\n* Standing in your way. \n* FIGHT him to his demise."
     self.health = self.max_health
-    self.defense = self.defense + 5 
+    self.defense = self.defense + 1 
     self.kaboom = true 
     local tired = TiredBar(-200, -200)
     Game.battle:addChild(tired)
