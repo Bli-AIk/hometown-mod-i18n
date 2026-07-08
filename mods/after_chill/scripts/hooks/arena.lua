@@ -1,11 +1,13 @@
 local arena, super = HookSystem.hookScript(Arena)
 
-function arena:setFire(should)
+function arena:setFire(should, damage)
     if should then 
         self.fiery = true
+        self.damage = damage 
         self:setColor({1, 0.45, 0})
         self.fire_damage_cooldown = 0
     else 
+        self.damage = damage or false 
         self.fiery = should or false 
     end 
 end 
@@ -16,14 +18,13 @@ function arena:update()
         if self.fire_damage_cooldown and self.fire_damage_cooldown > 0 then
             self.fire_damage_cooldown = self.fire_damage_cooldown - DT
         end
-
         local soul = Game.battle.soul
         if soul then
             local s_left   = soul.x - (soul.width / 2)
             local s_right  = soul.x + (soul.width / 2)
             local s_top    = soul.y - (soul.height / 2)
             local s_bottom = soul.y + (soul.height / 2)
-            local danger_distance = 8 
+            local danger_distance = 4
             local dist_to_left   = s_left - self:getLeft()
             local dist_to_right  = self:getRight() - s_right
             local dist_to_top    = s_top - self:getTop()
@@ -36,7 +37,9 @@ function arena:update()
                 Kristal.Console:warn("Too close to the fire!")
                 
                 for _, f in ipairs(Game.battle.party) do 
+                    if self.damage then
                     f:hurt(12, true, {1, 0.45, 0})
+                    end 
                 end 
                 self.fire_damage_cooldown = 0.5
             end

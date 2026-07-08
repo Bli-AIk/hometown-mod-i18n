@@ -11,11 +11,16 @@ function firesnipe:init(x, y)
 end
 
 function firesnipe:update()
-    if self.state == "ROTATE" then 
+    if self.state == "EXPAND_RING" then
+        self.angle = self.angle + (1 * DT)     
+        self.x = self.center_x + math.cos(self.angle) * (self.radius or 0)
+        self.y = self.center_y + math.sin(self.angle) * (self.radius or 0)    
+    elseif self.state == "ROTATE" then 
         self.angle = self.angle + (3 * DT) 
         self.x = self.center_x + math.cos(self.angle) * self.radius
         self.y = self.center_y + math.sin(self.angle) * self.radius
     end
+    
     self.trail_timer = self.trail_timer + DT
     if self.trail_timer >= 0.04 then
         local trail = AfterImage(self, 0.4, 0.08)

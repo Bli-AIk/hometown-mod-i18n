@@ -223,7 +223,9 @@ end
 end 
 
 function ralsei:setHardMode()
-    self.waves = {}
+    self.waves = {
+        "ralsei/fire_circle"
+    }
     self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
     self.health = self.max_health
     self.defense = self.defense + 5 
