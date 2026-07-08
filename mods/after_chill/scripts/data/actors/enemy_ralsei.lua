@@ -41,6 +41,8 @@ function actor:init()
         ["attack"]       = {"battle/attack", 1/15, false},
         ["act"]          = {"battle/act", 1/15, false},
         ["spell"]        = {"battle/spell", 1/15, false, next="idle"},
+        ["battle/fireball"] = {"battle/fireball", 1/9, false, next="idle"},
+        
         ["battle/item"]         = {"battle/item", 1/12, false, next="battle/idle"},
         ["battle/spare"]        = {"battle/spell", 1/15, false, next="battle/idle"},
 
@@ -132,6 +134,8 @@ function actor:init()
         ["battle/spell"] = {-10, 0},
         ["battle/spellend"] = {-11, -6},
         ["battle/spellready"] = {-11, -6},
+        ["battle/fireball"] = {-5, 5},
+        
         ["battle/item"] = {-7, -14},
         ["battle/itemready"] = {-7, -14},
         ["battle/defend"] = {0, 0},
@@ -172,6 +176,5 @@ function actor:getAnimation(anim)
         return super.getAnimation(self, anim)
     end
 end
-
 
 return actor

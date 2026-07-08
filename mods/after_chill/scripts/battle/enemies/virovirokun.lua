@@ -10,10 +10,10 @@ function Virovirokun:init()
     self.health = 1000
     self.attack = 10
     self.defense = -25
-    self.money = 25
+    self.money = 47
 
-    self.spare_points = 0
-    self.tired_percentage = 0
+    self.spare_points = 20
+    self.tired_percentage = 25
 
     self.waves = {
         "virovirokun/needle",

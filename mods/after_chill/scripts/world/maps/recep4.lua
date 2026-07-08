@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 66,
+  nextobjectid = 67,
   properties = {
     ["music"] = "hallway"
   },
@@ -918,6 +918,22 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 66,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 1329,
+          y = 730,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "nurse_shop",
+            ["cutscene"] = "nurse.sell"
+          }
         }
       }
     },

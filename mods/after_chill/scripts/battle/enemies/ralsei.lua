@@ -42,8 +42,8 @@ function ralsei:init()
         "* You shiver a little,[wait:2] even though it isn't cold.",
     }
     self:registerAct("Apologize")
-    self:registerAct("???", "...")
-    self.acts[3].color = {COLORS.red}
+    -- self:registerAct("???", "...")
+    -- self.acts[3].color = {COLORS.red}
 end
 
 function ralsei:onAct(battler, name)
@@ -192,11 +192,11 @@ function ralsei:onHurt(damage, battler)
             self:healEffect()
             Assets.playSound("spell_cure_slight_smaller")
             Game.battle.battle_ui.action_boxes[1].buttons[4].disabled=true
-            cutscene:wait(0.5)
+            cutscene:wait(0.7)
             self:setHardMode()
             cutscene:after(function()
                 battler:resetSprite()
-                Game.battle:setState("DEFENDINGBEGIN", {"basic"})
+                Game.battle:setState("DEFENDINGBEGIN", {"ralsei/fireshock"})
             end)
         end)
     end 

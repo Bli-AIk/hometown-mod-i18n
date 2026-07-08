@@ -4,6 +4,10 @@ return {
 
     ---@param cutscene WorldCutscene
     piano = function(cutscene)
+        local nurse = Sprite("npcs/nurse", 316, 123) 
+        Game.world:addChild(nurse)
+        nurse:setLayer(9999)
+        nurse:setScale(2)
         cutscene:detachFollowers()
         local kris = cutscene:getCharacter("kris")
         local noelle = cutscene:getCharacter("noelle") 
@@ -111,7 +115,8 @@ return {
         Game.world:addChild(monitor)
         cutscene:wait(1)
         Game.fader:fadeOut(nil, {color = COLORS.white, speed = 0.5})
-        local rdy = Sprite("world/npcs/rudy/dead", 300, 168)
+        local rdy = Sprite("world/npcs/rudy/dead", rudy.x, rudy.y)
+        rdy:setOrigin(0.5, 1)
         rdy:setScale(2)
         Game.stage:addChild(rdy)
         rdy.layer = 9999
@@ -181,7 +186,7 @@ return {
             noelle:setSprite("walk_sad/right_1")
             break 
             end
-            rudy:shake(love.math.random(-2, 2))
+            rudy:shake(2)
             cutscene:wait(2/6)
         end 
         noelle:walkTo(245, 265, 0.2, "right", true)

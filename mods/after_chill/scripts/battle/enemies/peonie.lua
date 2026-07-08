@@ -10,9 +10,9 @@ function peonie:init()
     self.health = 340
     self.attack = 7  
     self.defense = 7
-    self.money = 100
+    self.money = 54
 
-    self.spare_points = 10
+    self.spare_points = 20
 
     self.waves = {
         "peonie/flowerspin",
@@ -20,7 +20,6 @@ function peonie:init()
     }
     self.dialogue = {} 
     self.check = "AT 9 DF 10\n* Part of a flower that fell off.[wait:5]\n* Fallen down..."
-    self.ui_modified = false 
 
     self.text = {
         "* The wind sways Peonie around.", 
@@ -92,16 +91,5 @@ function peonie:onSpared(pacified)
 
     return super.onSpared(self, pacified)
 end
-
-function peonie:onDefeat()
-    if Game:getFlag("geno") then 
-    self:statusMessage("msg", "lost", {1, 1, 1})
-    self:onDefeatFatal()
-    else 
-    return super.onDefeat(self)
-    end 
-end 
-
-
 
 return peonie
