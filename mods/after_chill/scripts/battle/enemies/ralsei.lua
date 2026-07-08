@@ -22,7 +22,16 @@ function ralsei:init()
         "ralsei/manual_throw", 
         "ralsei/star_bomb"
     }
-
+        self.vig = Sprite("world/evil_fucking_vignette", self.x + 320, self.y + 240)
+    self.vig.layer = WORLD_LAYERS["top"]
+    self.vig.alpha = 0
+    self.vig.scale = 1
+    self.vig:setOrigin(0.5, 0.5)
+    self.vig:setParallax(0, 0)
+    self.vig:addFX(ShaderFX('pixelate', {
+            size = { SCREEN_WIDTH, SCREEN_HEIGHT },
+            factor = 4
+        }))
     self.dialogue_offset = {-60, 5}
     self.dialogue = {}
     TableUtils.merge(self.actor.animations, {
@@ -213,6 +222,11 @@ function ralsei:onHurt(damage, battler)
             Game.battle.battle_ui.action_boxes[1].buttons[4].disabled=true
             cutscene:wait(0.7)
             self:setHardMode()
+            Game.stage:addFX(HSVShiftFX(false, 99))
+            Game.world:addChild(self.vig)
+                self.vig:fadeTo(0.75, 0.3)
+                self.vig:flash()
+
             cutscene:after(function()
                 battler:resetSprite()
                 Game.battle:setState("DEFENDINGBEGIN", {"ralsei/fireshock"})
@@ -224,7 +238,11 @@ end
 
 function ralsei:setHardMode()
     self.waves = {
-        "ralsei/fire_circle"
+        "ralsei/fire_circle",
+        "ralsei/minishocks",
+        "ralsei/pacify_wave",
+        "ralsei/pacify_wave_2",
+        "ralsei/angel"
     }
     self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
     self.health = self.max_health

@@ -3,7 +3,7 @@
 local FireSpellEffect, super = Class(Sprite)
 
 function FireSpellEffect:init(x, y, hexagon, flame)
-    local spell = "effects/icespell/snowflake"
+    local spell = "effects/firespell/smallflame"
     if flame then
         spell = "effects/firespell/smallflame"
     end

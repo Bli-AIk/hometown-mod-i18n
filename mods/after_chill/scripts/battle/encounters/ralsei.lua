@@ -20,8 +20,8 @@ function ralsei:init()
     --self:addEnemy("dummy")
 end
 
--- function ralsei:onStateChange(old, new) 
---     if old == "INTRO" and new == "ACTIONSELECT" then
+ function ralsei:onStateChange(old, new) 
+     if old == "INTRO" and new == "ACTIONSELECT" then
 --         Game.battle.music:stop()
 --         Game.battle.battle_ui:clearEncounterText()
 --         Game.battle.seen_encounter_text = false
@@ -86,8 +86,8 @@ end
 --             cutscene:battlerText("ralsei", "M-maybe,[wait:2] a battle\nwill do.")
 --             cutscene:wait(0.2)
 --             cutscene:battlerText("ralsei", "Kris...")
---             local fire = FireGlow()
---             Game.battle:addChild(fire)
+             local fire = FireGlow()
+             Game.battle:addChild(fire)
 --             fire.alpha = 0 
 --             local sfx = Assets.playSound("boost", 0.4, 0.8)
 --             Game.battle.timer:tween(sfx:getDuration(), fire, {alpha = 1})
@@ -95,8 +95,8 @@ end
 --             cutscene:wait(cutscene:setAnimation(ralsei, "battle/intro"))
 --             ralsei:setAnimation("idle")
 --         end)
---     end
--- end
+     end
+ end
 
 function ralsei:getPartyPosition(index)
     if index == 1 then 

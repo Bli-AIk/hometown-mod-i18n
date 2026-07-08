@@ -11,6 +11,8 @@ function pacify_z_bullet:init(x, y)
     self.lifetime = 0
     self.destroy_on_hit = true 
     self.tiredness = 12 
+    self.damage = 0
+    self.tp = 0
     self.is_fading = false
 end
 

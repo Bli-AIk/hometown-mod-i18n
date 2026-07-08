@@ -8,7 +8,7 @@ function Xture:init(x, y, dir, speed)
 
     -- Move the bullet in dir radians (0 = right, pi = left, clockwise rotation)
     self.physics.direction = dir
-
+    self.tp = 0.5
     -- Speed the bullet moves (pixels per frame at 30FPS)
     self.physics.speed = speed
 
@@ -23,7 +23,7 @@ can_hurt = false
 local x, y = Game.battle.soul:getRelativePos(Game.battle.soul.width/2, Game.battle.soul.height/2, Game.battle)
 
     local function createParticle(x, y)
-        local sprite = Sprite("effects/icespell/snowflake", x, y)
+        local sprite = Sprite("effects/firespell/flame", x, y)
         sprite:setOrigin(0.5, 0.5)
         sprite:setScale(1.5)
         sprite.layer = BATTLE_LAYERS["top"]+10
@@ -34,7 +34,7 @@ local x, y = Game.battle.soul:getRelativePos(Game.battle.soul.width/2, Game.batt
     local particles = {}
     Game.battle.timer:script(function(wait)
         wait(1/30)
-        Assets.playSound("icespell")
+        Assets.stopAndPlaySound("firespell_original")
         particles[1] = createParticle(x-25, y-20)
         wait(3/30)
         particles[2] = createParticle(x+25, y-20)
@@ -42,10 +42,10 @@ local x, y = Game.battle.soul:getRelativePos(Game.battle.soul.width/2, Game.batt
         particles[3] = createParticle(x, y+20)
         wait(3/30)
         can_hurt = true
-        Game.battle:addChild(IceSpellBurst(x, y))
+        Game.battle:addChild(FireSpellEffect(x, y))
         for _,particle in ipairs(particles) do
             for i = 0, 5 do
-                local effect = IceSpellEffect(particle.x, particle.y)
+                local effect = FireSpellEffect(particle.x, particle.y)
                 effect:setScale(0.75)
                 effect.physics.direction = math.rad(60 * i)
                 effect.physics.speed = 8
