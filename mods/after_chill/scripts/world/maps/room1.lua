@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 62,
+  nextobjectid = 63,
   properties = {
     ["name"] = "Test Map - Room 1"
   },
@@ -488,6 +488,24 @@ return {
           visible = true,
           properties = {
             ["rate"] = 0.5
+          }
+        },
+        {
+          id = 62,
+          name = "npc",
+          type = "",
+          shape = "rectangle",
+          x = 692,
+          y = 742,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "starwalker",
+            ["flagcheck"] = "footstep",
+            ["text1"] = "* These [color:yellow]stairs[color:reset] are [color:yellow]Pissing[color:reset] me\noff...",
+            ["text2"] = "* I'm the original   [color:yellow]Starwalker[color:reset]"
           }
         }
       }

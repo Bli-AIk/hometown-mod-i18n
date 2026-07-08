@@ -5,7 +5,6 @@ function dusteer:init()
 
     self.name = "Reinfrost"
     self:setActor("dusteer")
-
     self.max_health = 340
     self.health = 340
     self.attack = 10 
@@ -13,12 +12,13 @@ function dusteer:init()
     self.money = 100
 
     self.spare_points = 10
+    self.wave_index = 1
 
     self.waves = { 
         "reinfrost/gallop", 
         "reinfrost/snow_graze"
     }
-    self.dialogue = {} 
+    self.dialogue = {"*neigh*", "Don't slip on the tracks.", "Snow problem."} 
     self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
 
     self.text = {
@@ -33,6 +33,15 @@ function dusteer:init()
     -- Game.battle:registerXAction("N-Sweep", "Get\nMercy")
 end
 
+function dusteer:getNextWaves()
+    local wave = self.waves[self.wave_index]
+    self.wave_index = self.wave_index + 1
+    if self.wave_index > #self.waves then
+        self.wave_index = 1
+    end
+    return { wave }
+end
+
 function dusteer:onAct(battler, name)
     if name == "Sweep" then    
         Game.battle:startActCutscene(function(cutscene)
@@ -40,6 +49,7 @@ function dusteer:onAct(battler, name)
             cutscene:text("* You pick up some snowflakes that drifted into the arena.")
             battler:setAnimation("battle/idle")
             cutscene:text("* Reinfrost is embarassed that they left snow tracks![wait:5]\n* They appreciate the gesture!")
+            self.dialogue_override = "Thanks for\ntidying up."
             self:addMercy(50)
         end)
     elseif name == "HeatUp" then 

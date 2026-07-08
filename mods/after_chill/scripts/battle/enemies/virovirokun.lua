@@ -6,14 +6,14 @@ function Virovirokun:init()
     self.name = "Virovirokun"
     self:setActor("virovirokun")
 
-    self.max_health = 1000
-    self.health = 1000
+    self.max_health = 600
+    self.health = 600
     self.attack = 10
     self.defense = -25
-    self.money = 25
+    self.money = 47
 
-    self.spare_points = 0
-    self.tired_percentage = 0
+    self.spare_points = 20
+    self.tired_percentage = 25
 
     self.waves = {
         "virovirokun/needle",

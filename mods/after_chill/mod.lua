@@ -11,11 +11,18 @@ function Mod:init()
     Game:registerEvent("warning_spawner", function(data)
         return WarningSpawner(data.x, data.y, data)
     end)
+    Game:registerEvent("frozenenemy", function(data)
+    return FrozenEnemy(data.properties["actor"], data.x, data.y, {
+        facing = data.properties.facing,
+        solid = data.properties.solid,
+        encounter = data.properties.encounter
+    })
+    end)
     print("Loaded " .. self.info.name .. "!")
 end
 
 function Mod:postInit(is_new_file)
-    if is_new_file then 
+    if is_new_file then
         Game:setFlag("footstep", false)
         Game:setFlag("enemies_killed", 0)
         Game:setFlag("geno", false)

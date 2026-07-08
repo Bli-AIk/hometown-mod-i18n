@@ -1,24 +1,14 @@
 ---@class SmallBullet : Bullet
-local SmallBullet, super = Class(Bullet)
+local SmallBullet, super = Class("DarkBullet")
 
----@param x number # The X position of the bullet
----@param y number # The Y position of the bullet
----@param dir number # The dir (in radians) of the bullet
----@param speed number # The speed the bullet will move at in the specified direction
 function SmallBullet:init(x, y, dir, speed)
-    -- Last argument = sprite path
     super.init(self, x, y, "bullets/smallbullet")
-
-    -- Move the bullet in dir radians (0 = right, pi = left, clockwise rotation)
-    self.physics.direction = dir
-    -- Speed the bullet moves (pixels per frame at 30FPS)
-    self.physics.speed = speed
-end
-
-function SmallBullet:update()
-    -- For more complicated bullet behaviours, code here gets called every update
-
-    super.update(self)
+    self.tiredness = 40
+    self.remove_offscreen = false
+    if self.physics then 
+    self.physics.direction = dir 
+    self.physics.speed = self:getTired()
+    end 
 end
 
 return SmallBullet

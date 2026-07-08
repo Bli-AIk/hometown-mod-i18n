@@ -1,0 +1,26 @@
+{
+    "id": "fireshockch5",
+
+    "version": "v1",
+    "engineVer": "v0.10.0-dev",
+
+    "authors": [
+        "SuperOfSrb2"
+    ],
+
+    "config": {
+        // Change Ralsei's animation when casting this spell to be the same as his other spells, similar to Noelle's IceShock animation?
+        "ralsei_defaultanimation": false,
+
+        //      VFX
+        // Enable Sparkly rings?
+        "sparklyrings": true,
+        // Enable Huge explosion?
+        "hugeexplosion": true,
+        // Enable Fire rain?
+        "firerain": true,
+
+        // Play the original firespell SFX from CH5? (It's really quiet for some reason, default has been normalized to be as loud as IceShock)
+        "ogsound": false,
+    }
+}

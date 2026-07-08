@@ -195,7 +195,6 @@ function snow_graze:sendSnow(rx, ry, deer, wave_attack_data)
                 
                 self.timer:after(1.2, function()
                     if bullet and bullet.stage then
-                        bullet.damage = 0  
                         bullet.destroy_on_hit = false    
                     end
                     self.timer:after(0.6, function()

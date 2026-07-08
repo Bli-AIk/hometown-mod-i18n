@@ -92,12 +92,11 @@ function spell:onCast(user, target)
                             target:removeFX(mask)
                         end
                     end)
-
-                    -- If this specific strike drops them to 0 or below, kill them violently!
                     if target.health <= 0 then
                         Assets.stopSound("defeatrun")
+                        Game:addFlag("enemies_killed", 1)
                         target:onDefeatFatal(user)
-                        break -- Snap out of the slash loop instantly
+                        break
                     end
                 end
 

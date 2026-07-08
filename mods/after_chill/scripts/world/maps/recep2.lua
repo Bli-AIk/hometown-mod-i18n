@@ -260,7 +260,7 @@ return {
           properties = {
             ["actor"] = "virovirokun",
             ["chase"] = true,
-            ["encounter"] = "virovirokun",
+            ["encounter"] = "virovirokun3",
             ["enemy"] = "virovirokun",
             ["marker1"] = "v1",
             ["marker2"] = "v2",

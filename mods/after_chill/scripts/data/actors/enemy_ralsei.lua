@@ -37,10 +37,12 @@ function actor:init()
     -- Table of sprite animations
     self.animations = {
         ["idle"]         = {"battle/idle", 1/8, true},
-
+        ["defeat"]       = {"battle_alt/hurt", 1/6, false}, 
         ["attack"]       = {"battle/attack", 1/15, false},
         ["act"]          = {"battle/act", 1/15, false},
         ["spell"]        = {"battle/spell", 1/15, false, next="idle"},
+        ["battle/fireball"] = {"battle/fireball", 1/9, false, next="idle"},
+        
         ["battle/item"]         = {"battle/item", 1/12, false, next="battle/idle"},
         ["battle/spare"]        = {"battle/spell", 1/15, false, next="battle/idle"},
 
@@ -48,12 +50,12 @@ function actor:init()
         ["battle/act_ready"]    = {"battle/actready", 0.2, true},
         ["battle/spell_ready"]  = {"battle/spellready", 0.2, true},
         ["battle/item_ready"]   = {"battle/itemready", 0.2, true},
-        ["battle/defend_ready"] = {"battle/defend", 1/15, false},
+        ["hurt"]                = {"battle/defend", 1/15, false},
 
         ["battle/act_end"]      = {"battle/actend", 1/15, false, next="battle/idle"},
 
-        ["hurt"]         = {"battle/hurt", 1/15, false, temp=true, duration=0.5},
-        ["battle/defeat"]       = {"battle/defeat", 1/15, false},
+        ["ac_hurt"]                 = {"battle/hurt", 1/15, false, temp=true, duration=0.5},
+    --    ["battle/defeat"]       = {"battle/defeat", 1/15, false},
         ["battle/swooned"]      = {"battle/defeat", 1/15, false},
 
         ["battle/transition"]   = {"walk/right_1", 1/15, false},
@@ -73,6 +75,14 @@ function actor:init()
 
         ["wave_start"]          = {"wave_start", 5/30, false, next="wave_down"},
         ["wave_down"]           = {"wave_down", 5/30, true}
+    }
+
+    self.animations_alt = {
+        ["idle"] = {"battle_alt/idle", 1 / 6, true},
+        ["attack"] = {"battle_alt/attack", 1 / 12, false, next="idle"},
+        ["battle/attack_ready"] = {"battle_alt/attackready", 0.2, true},
+        ["battle/defend_ready"] = {"battle_alt/defend", 1/15, false},
+         ["defeat"]       = {"battle_alt/hurt", 1/6, false}, 
     }
 
     -- Tables of sprites to change into in mirrors
@@ -116,7 +126,8 @@ function actor:init()
 
         -- Battle offsets
         ["idle"] = {-2, -6},
-        ["attack"] = {-10, -6},
+        ["battle/attack"] = {-10, 0},
+        ["battle_alt/attack"] = {-10, 0},
         ["battle/attackready"] = {-10, -6},
         ["act"] = {-2, -6},
         ["battle/actend"] = {-2, -6},
@@ -124,6 +135,8 @@ function actor:init()
         ["battle/spell"] = {-10, 0},
         ["battle/spellend"] = {-11, -6},
         ["battle/spellready"] = {-11, -6},
+        ["battle/fireball"] = {-5, 5},
+        
         ["battle/item"] = {-7, -14},
         ["battle/itemready"] = {-7, -14},
         ["battle/defend"] = {0, 0},
@@ -155,6 +168,14 @@ function actor:init()
         ["splat"] = {-15, 21},
         ["stool"] = {-11, 18}
     }
+end
+
+function actor:getAnimation(anim)
+    if Game:getPartyMember("ralsei"):getFlag("serious", false) and self.animations_alt[anim] ~= nil then
+        return self.animations_alt[anim] or nil
+    else
+        return super.getAnimation(self, anim)
+    end
 end
 
 return actor
