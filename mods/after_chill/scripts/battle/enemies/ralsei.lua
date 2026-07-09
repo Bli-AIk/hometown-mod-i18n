@@ -180,6 +180,19 @@ elseif name == "WakeUp" then
     return super.onAct(self, battler, name)
 end
 
+function ralsei:spellEffectHeal()
+    self:resetSprite()
+    self:setAnimation("spell")
+    self.hit_count = 0 
+    self:heal(45)
+     for _, child in ipairs(Game.battle.children) do 
+        if child:includes(DamageNumber) then 
+            child.x = child.x - 22
+            child.y = child.y + 20 
+        end 
+    end 
+end 
+
 function ralsei:onHurt(damage, battler)
     for _, child in ipairs(Game.battle.children) do 
         if child:includes(DamageNumber) then 
@@ -193,6 +206,11 @@ function ralsei:onHurt(damage, battler)
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()
+    if self:getFlag("dead") and self.health <= (self.max_health * 0.3) then 
+        self:getActiveSprite():resetSprite()
+        self:getActiveSprite():setAnimation("spell")
+        self:spellEffectHeal()
+    end 
     if not Game.battle:hasCutscene() then
     if self.mercy == 100 then 
         self.mercy = 0 
@@ -218,15 +236,15 @@ function ralsei:onHurt(damage, battler)
             Game.battle.timer:tween(0.4, fx, {amount = 0})
             cutscene:wait(0.5)
             self:setAnimation("spell")
+            Game.stage:addFX(HSVShiftFX(false, 99))
+            Game.world:addChild(self.vig)
+            self.vig:fadeTo(0.75, 0.3)
+            self.vig:flash()
             self:healEffect()
             Assets.playSound("spell_cure_slight_smaller")
             Game.battle.battle_ui.action_boxes[1].buttons[4].disabled=true
             cutscene:wait(0.7)
             self:setHardMode()
-            Game.stage:addFX(HSVShiftFX(false, 99))
-            Game.world:addChild(self.vig)
-            self.vig:fadeTo(0.75, 0.3)
-            self.vig:flash()
             cutscene:after(function()
                 battler:resetSprite()
                 Game.battle:setState("DEFENDINGBEGIN", {"ralsei/fireshock"})

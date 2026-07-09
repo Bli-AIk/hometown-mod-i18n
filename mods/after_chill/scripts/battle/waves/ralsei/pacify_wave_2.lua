@@ -17,9 +17,9 @@ function Basic:onStart()
 
         ralsei:setAnimation("spell", function()
         Assets.playSound("alert")
-        self.timer:after(0.2, function()       
-        Assets.stopAndPlaySound("spell_pacify")
         local pacify_x, pacify_y = Game.battle.soul:getRelativePos(Game.battle.soul.width/2, Game.battle.soul.height/2, Game.battle)
+        self.timer:after(0.13, function()       
+        Assets.stopAndPlaySound("spell_pacify")
         local z_count = 0
         self.timer:every(1/20, function ()
             z_count = z_count + 1
