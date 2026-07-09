@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 35,
+  nextobjectid = 37,
   properties = {
     ["music"] = "hallway",
     ["name"] = "Receptionist Stage"
@@ -187,6 +187,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["marker"] = "entranceA",
@@ -199,10 +200,11 @@ return {
           type = "",
           shape = "rectangle",
           x = 1040,
-          y = 498.667,
+          y = 599.667,
           width = 36,
-          height = 274.667,
+          height = 78.667,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "kris.ralsei"
@@ -218,6 +220,7 @@ return {
           width = 10.6667,
           height = 61.3333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep7",
@@ -250,6 +253,7 @@ return {
           width = 40,
           height = 481.333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -263,6 +267,7 @@ return {
           width = 772.167,
           height = 114.333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -276,6 +281,7 @@ return {
           width = 1004,
           height = 73.3333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -289,6 +295,7 @@ return {
           width = 36.6667,
           height = 41,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -302,6 +309,7 @@ return {
           width = 42,
           height = 40.3333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -315,6 +323,7 @@ return {
           width = 40,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -328,6 +337,7 @@ return {
           width = 126,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -341,6 +351,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -354,6 +365,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -367,6 +379,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -380,6 +393,7 @@ return {
           width = 2160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -393,6 +407,35 @@ return {
           width = 2160,
           height = 40,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1040,
+          y = 480,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 36,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1040,
+          y = 680,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -422,6 +465,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -430,11 +474,12 @@ return {
           name = "kris",
           type = "",
           shape = "point",
-          x = 1835,
-          y = 657.333,
+          x = 1604,
+          y = 652.333,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -448,6 +493,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

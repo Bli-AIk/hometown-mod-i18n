@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="35">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="80" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="37">
  <editorsettings>
   <export target="recep5.lua" format="lua"/>
  </editorsettings>
@@ -81,7 +81,7 @@
    </properties>
    <point/>
   </object>
-  <object id="19" name="script" x="1040" y="498.667" width="36" height="274.667">
+  <object id="19" name="script" x="1040" y="599.667" width="36" height="78.667">
    <properties>
     <property name="cutscene" value="kris.ralsei"/>
    </properties>
@@ -106,12 +106,14 @@
   <object id="26" x="160" y="0" width="40" height="320"/>
   <object id="28" x="1040" y="560" width="2160" height="40"/>
   <object id="29" x="1040" y="671" width="2160" height="40"/>
+  <object id="35" x="1040" y="480" width="40" height="120"/>
+  <object id="36" x="1040" y="680" width="40" height="80"/>
  </objectgroup>
  <objectgroup color="#aa55ff" id="6" name="markers">
   <object id="14" name="entranceA" x="144" y="407">
    <point/>
   </object>
-  <object id="20" name="kris" x="1835" y="657.333">
+  <object id="20" name="kris" x="1604" y="652.333">
    <point/>
   </object>
   <object id="33" name="entranceC" x="3148.67" y="653">
