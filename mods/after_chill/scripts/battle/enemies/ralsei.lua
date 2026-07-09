@@ -244,8 +244,9 @@ function ralsei:getNextWaves()
         self.wave_index = 1
     end
     return { wave }
-else 
+    else 
     return super.getNextWaves(self)
+    end 
 end
 
 
