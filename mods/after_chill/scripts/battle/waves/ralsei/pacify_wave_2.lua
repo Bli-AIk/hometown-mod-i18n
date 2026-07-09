@@ -2,7 +2,7 @@ local Basic, super = Class(Wave)
 
 function Basic:init()
     super.init(self)
-    self.time = 15.5
+    self.time = 15.8
 end 
 
 function Basic:onArenaEnter()
@@ -12,7 +12,7 @@ end
 
 function Basic:onStart()
     Game.battle.arena:setFire(true, true)
-    self.timer:everyInstant(2, function()
+    self.timer:everyInstant(1.8, function()
         local ralsei = self:getAttackers()[1]
 
         ralsei:setAnimation("spell", function()
@@ -24,7 +24,9 @@ function Basic:onStart()
         self.timer:every(1/20, function ()
             z_count = z_count + 1
             local z = self:spawnBullet("pacify_z_noncool", pacify_x, pacify_y, z_count * -40)
+            z:setHitbox(2, 2, 18, 18)
             z.layer = Game.battle.soul.layer + 0.002
+            z.tiredness = 24 
         end, 8)
     end) 
 end)

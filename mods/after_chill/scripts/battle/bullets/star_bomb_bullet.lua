@@ -59,20 +59,7 @@ function star_bomb_bullet:explode()
         local fb = self.wave:spawnBullet("firesnipe", self.x, self.y)
         fb.physics.speed = love.math.random(6, 10) 
         fb.physics.direction = angle_to_soul + (i - 2) * 0.1
-        fb:addFX(ColorMaskFX({1, 0.6, 0}, 0.5), "agh")
-        if love.math.random(1, 3) == 2 then 
-            local bullet = fb 
-            bullet:removeFX("agh")
-            bullet:addFX(ColorMaskFX(COLORS.lime))
-            bullet.alpha = 0.7
-            bullet.physics.speed = 5 
-            bullet.onCollide = function(bs) 
-              bs:remove()
-              for _, follower in ipairs(Game.battle.party) do 
-              follower:heal(bs:getDamage()/2)
-              end 
-            end 
-        end 
+        fb:addFX(ColorMaskFX({1, 0.6, 0}, 0.5))
         table.insert(self.wave.bullet_table, fb)
     end
     

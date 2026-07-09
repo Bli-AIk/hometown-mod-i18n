@@ -8,19 +8,20 @@ function ralsei:init()
 
     self.max_health = 280
     self.health = 280
-    self.attack = 7
+    self.attack = 15
     self.ui_modified = false
-    self.defense = 5
+    self.defense = 12
     self.money = 63
     self.dmg_sprite_offset = {-14, 13}
     self.tired_percentage = 0
     self.mercy = 100  
     self.spare_points = 20 
+    self.wave_index = 1
 
     self.waves = {
         "ralsei/fire_spin", 
         "ralsei/manual_throw", 
-        "ralsei/star_bomb"
+        "ralsei/star_rain"
     }
     self.vig = Sprite("world/evil_fucking_vignette", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     self.vig.layer = WORLD_LAYERS["top"]
@@ -104,7 +105,7 @@ function ralsei:onAct(battler, name)
             cutscene:wait(0.5)
             Game:getPartyMember("ralsei"):setFlag("serious", false)
             self:setAnimation("idle")
-            cutscene:text("* K[wait:2]-Kris?\n* [color:red]YOU[color:black] are...[wait:5] sparing me...?", "blush", "ralsei")
+            cutscene:text("* K[wait:2]-Kris?\n* You are...[wait:5] sparing me...?", "blush", "ralsei")
             self:addMercy(100)
             cutscene:text("* W[wait:2]-well,[wait:2] that was unexpected...", "blush_pleased_open", "ralsei")
             cutscene:after(function()
@@ -140,7 +141,7 @@ elseif name == "WakeUp" then
             cutscene:wait(15/30)
             local ralsei = Game.battle:getEnemyBattler("ralsei")
             cutscene:battlerText(ralsei, "Kris,[wait:5] what\nare you doing?")
-            cutscene:battlerText(ralsei, "You cant stop it can you...")
+            cutscene:battlerText(ralsei, "Your..[wait:5] eyes...")
             cutscene:battlerText(ralsei, "I-[wait:2]I...")
             battler:setAnimation("battle/attack")
             Assets.playSound("scytheburst")
@@ -202,9 +203,9 @@ function ralsei:onHurt(damage, battler)
             cutscene:wait(2)
             self:setFlag("dead", true)
             cutscene:battlerText("ralsei", "Y-[wait:2]you were\nreally serious..?")
-            cutscene:battlerText("ralsei", "[color:red]YOU[color:black] can't divert\nfrom the prophecy!")
+            cutscene:battlerText("ralsei", "Kris,[wait:2] we can't divert\nfrom the prophecy!")
             cutscene:wait(2)
-            cutscene:battlerText("ralsei", "If stopping [color:red]YOU[color:black] is\nthe only way to\nsave the prophecy..")
+            cutscene:battlerText("ralsei", "If stopping you is\nthe only way to\nsave the prophecy..")
             cutscene:battlerText("ralsei", "Then so be it!")
             local snd = Assets.playSound("boost")
             local fx = self:addFX(ColorMaskFX(COLORS.white))
@@ -224,9 +225,8 @@ function ralsei:onHurt(damage, battler)
             self:setHardMode()
             Game.stage:addFX(HSVShiftFX(false, 99))
             Game.world:addChild(self.vig)
-                self.vig:fadeTo(0.75, 0.3)
-                self.vig:flash()
-
+            self.vig:fadeTo(0.75, 0.3)
+            self.vig:flash()
             cutscene:after(function()
                 battler:resetSprite()
                 Game.battle:setState("DEFENDINGBEGIN", {"ralsei/fireshock"})
@@ -236,17 +236,32 @@ function ralsei:onHurt(damage, battler)
 end 
 end 
 
+function ralsei:getNextWaves()
+    if self:getFlag("dead") then
+    local wave = self.waves[self.wave_index]
+    self.wave_index = self.wave_index + 1
+    if self.wave_index > #self.waves then
+        self.wave_index = 1
+    end
+    return { wave }
+else 
+    return super.getNextWaves(self)
+end
+
+
 function ralsei:setHardMode()
     self.waves = {
         "ralsei/fire_circle",
         "ralsei/solar_pulse",
         "ralsei/pacify_wave",
         "ralsei/pacify_wave_2",
-        "ralsei/angel"
+        "ralsei/angel", 
+        "ralsei/star_bomb", 
+        "ralsei/z_rainstorm"
     }
-    self.check = "AT "..self.attack.." DF 6\n* Standing in your way. \n* FIGHT him to his demise."
+    self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
     self.health = self.max_health
-    self.defense = self.defense + 1 
+    self.defense = self.defense + 5 
     self.kaboom = true 
     local tired = TiredBar(-200, -200)
     Game.battle:addChild(tired)
@@ -259,7 +274,7 @@ end
 function ralsei:getEncounterText()
     if self.kaboom then 
         self.kaboom = nil
-        return "* Ralsei's DEF and ATK went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
+        return "* Ralsei's defense went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
     else 
         return super.getEncounterText(self)
     end  

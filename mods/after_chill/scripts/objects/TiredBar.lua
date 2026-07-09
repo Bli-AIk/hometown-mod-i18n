@@ -71,9 +71,7 @@ function TiredBar:addTired(amount)
 end
 
 function TiredBar:onMaxTired()
-    Kristal.Console:warn("Ima Tired!")
-    Game.battle.music:stop()
-    Game.battle:startCutscene("tired")
+    -- add code here if wanted.
 end
 
 function TiredBar:getDebugInfo()
