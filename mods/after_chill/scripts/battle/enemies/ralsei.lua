@@ -52,21 +52,23 @@ function ralsei:init()
 end
 
 function ralsei:onDefeat()
-if not Game.battle:hasCutscene() then 
    if self:getFlag("dead") then 
-    self:getActiveSprite():resetSprite()
-    self:setSprite("battle_alt/hurt_1")
         Game.battle:startCutscene(function(cutscene)
             Game.battle.battle_ui:endAttack()
             self.exit_on_defeat = false 
             self:setSprite("battle_alt/hurt_1")
             self:setPosition(533, 284)
-            self.vig:fadeOutAndRemove(2)
-            Game.stage:removeFX("shiftfx")
             Game.battle.music:fade(0, 2)
             cutscene:wait(2)
-            cutscene:text("* K-[wait:2]K-[wait:2]Kris...?", "concern_smile", "ralsei")
-            cutscene:text("* Why...[wait:2] why would you..[wait:2]", "down", "ralsei")
+            cutscene:text("* Even when I tried to fight against it", "down", "ralsei")
+            cutscene:text("* It didn't matter in the end,[wait:5]did it?", "down_alt", "ralsei")
+            cutscene:text("* I was right about the prophecy I guess", "down_alt", "ralsei")
+            cutscene:text("* Everything written in it,[wait:2] will come to pass.", "down_alt", "ralsei")
+            cutscene:text("* Yet,[wait:5] the life I got to live, the memories I made", "disappointed_smile", "ralsei")
+            cutscene:text("* Meeting you and susie?", "disappointed_side", "ralsei")
+            cutscene:text("* Was the best part about it.", "down_smile", "ralsei")
+            cutscene:text("* And If I had 100 more lives.?", "pleased", "ralsei")
+            cutscene:text("* I would choose to be meet you guys again, in every single one of them.", "pleading_closed", "ralsei")
             self:shake(2)
             Assets.playSound("damage")
             Assets.playSound("levelup")
@@ -75,8 +77,7 @@ if not Game.battle:hasCutscene() then
             self.scale_x = -2 
         end)
    end 
-end 
-end       
+end    
 
 function ralsei:onAct(battler, name)
     if name == "Apologize" then
