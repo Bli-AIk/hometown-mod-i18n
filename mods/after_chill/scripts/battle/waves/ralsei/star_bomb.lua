@@ -6,8 +6,14 @@ function star_bomb:init()
     self.bullet_table = {}
 end
 
+function star_bomb:onArenaEnter()
+    super.onArenaEnter(self)
+    Game.battle.arena:setFire(true, false)
+end 
+
 function star_bomb:onStart()
-    self.timer:everyInstant(2, function()
+    Game.battle.arena:setFire(true, true)
+    self.timer:everyInstant(1.6, function()
     self:spawnBomb()
     end)
 end 
