@@ -65,6 +65,16 @@ function manual_throw:shootBurst(manual)
         bullet.physics.speed = love.math.random(10, 14)
         bullet.rotation = math.rad(bullet.physics.direction)
         bullet.trail_timer = 0
+        if love.math.random(1, 3) == 2 then 
+            bullet:addFX(ColorMaskFX(COLORS.lime))
+            bullet.alpha = 0.7
+            bullet.onCollide = function(bs) 
+              bs:remove()
+              for _, follower in ipairs(Game.battle.party) do 
+              follower:heal(bs:getDamage()/2)
+              end 
+            end 
+        end 
         local original_update = bullet.update
         bullet.update = function(bullet_self)
         original_update(bullet_self)
