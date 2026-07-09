@@ -13,6 +13,7 @@ end
 
 function DarkBullet:update()
     super.update(self)
+    
     if self.safe > 3 then
         self.safe = self.safe + 1
     end
@@ -20,15 +21,25 @@ end
 
 function DarkBullet:onCollide(soul)
     super.onCollide(self, soul)
+    
     if self.safe > 3 then
-    if Game.battle.tired_bar then 
-    Game.battle.tired_bar:addTired(self:getTired())
-    end 
-    for _, follower in ipairs(Game.battle.party) do 
-        local status = follower:statusMessage("mercy", self:getTired() or 5)
-        status:addFX(HueShift(math.rad(90)))
-    end 
-end
+        if not Game.battle.tired_on_cooldown then
+            Game.battle.tired_on_cooldown = true
+            Game.battle.timer:after(0.5, function()
+                Game.battle.tired_on_cooldown = false
+            end)
+            if Game.battle.tired_bar then 
+                Game.battle.tired_bar:addTired(self:getTired())
+            end        
+            for _, follower in ipairs(Game.battle.party) do 
+                follower.hit_count = 0 
+                local status = follower:statusMessage("mercy", self:getTired() or 5)
+                if status then
+                    status:addFX(HueShift(math.rad(90)))
+                end
+            end 
+        end
+    end
 end 
 
 return DarkBullet

@@ -5,13 +5,8 @@ function pacify_wave:init()
     self.time = 11.5
     self.pacify = {}
 end
-function pacify_wave:onArenaEnter()
-    super.onArenaEnter(self)
-    Game.battle.arena:setFire(true, false)
-end
 
 function pacify_wave:onStart()
-    Game.battle.arena:setFire(true, true)
     local ralsei = self:getAttackers()[1]
     self.timer:everyInstant(1.5, function()
         ralsei:setAnimation("spell", function()

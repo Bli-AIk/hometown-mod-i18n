@@ -86,8 +86,8 @@ end
             cutscene:battlerText("ralsei", "M-maybe,[wait:2] a battle\nwill do.")
             cutscene:wait(0.2)
             cutscene:battlerText("ralsei", "Kris...")
-              local fire = FireGlow()
-              Game.battle:addChild(fire)
+            local fire = FireGlow()
+            Game.battle:addChild(fire)
             fire.alpha = 0 
             local sfx = Assets.playSound("boost", 0.4, 0.8)
             Game.battle.timer:tween(sfx:getDuration(), fire, {alpha = 1})

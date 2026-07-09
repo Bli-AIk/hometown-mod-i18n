@@ -22,7 +22,7 @@ function ralsei:init()
         "ralsei/manual_throw", 
         "ralsei/star_bomb"
     }
-        self.vig = Sprite("world/evil_fucking_vignette", self.x + 320, self.y + 240)
+    self.vig = Sprite("world/evil_fucking_vignette", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     self.vig.layer = WORLD_LAYERS["top"]
     self.vig.alpha = 0
     self.vig.scale = 1
@@ -224,9 +224,8 @@ function ralsei:onHurt(damage, battler)
             self:setHardMode()
             Game.stage:addFX(HSVShiftFX(false, 99))
             Game.world:addChild(self.vig)
-                self.vig:fadeTo(0.75, 0.3)
-                self.vig:flash()
-
+            self.vig:fadeTo(0.75, 0.3)
+            self.vig:flash()
             cutscene:after(function()
                 battler:resetSprite()
                 Game.battle:setState("DEFENDINGBEGIN", {"ralsei/fireshock"})
@@ -239,7 +238,7 @@ end
 function ralsei:setHardMode()
     self.waves = {
         "ralsei/fire_circle",
-        "ralsei/minishocks",
+        "ralsei/solar_pulse",
         "ralsei/pacify_wave",
         "ralsei/pacify_wave_2",
         "ralsei/angel"
