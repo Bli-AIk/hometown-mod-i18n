@@ -70,5 +70,26 @@ return {
             cutscene:attachFollowers()
             Game:setFlag("wall_hit", true)
         end
+    end,
+
+    snow = function(cutscene, event)
+
+        Game.stage:setWeather({{"snow", 50}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     end
 }

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,8 +10,11 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 20,
-  properties = {},
+  nextobjectid = 22,
+  properties = {
+    ["music"] = "wind",
+    ["name"] = "Receptionest - Slide"
+  },
   tilesets = {
     {
       name = "Receptionist",
@@ -143,6 +146,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -156,6 +160,21 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 21,
+          name = "savespawn",
+          type = "",
+          shape = "point",
+          x = 2680,
+          y = 720,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -185,9 +204,11 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "Forest_1"
+            ["map"] = "forest1",
+            ["marker"] = "entranceA"
           }
         },
         {
@@ -200,6 +221,7 @@ return {
           width = 40,
           height = 365.333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -213,10 +235,29 @@ return {
           width = 16.6667,
           height = 63.3333,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep5",
             ["marker"] = "entranceC"
+          }
+        },
+        {
+          id = 20,
+          name = "savepoint",
+          type = "",
+          shape = "point",
+          x = 2800,
+          y = 720,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["marker"] = "savespawn",
+            ["text1"] = "* Ralsei is traveling with you again.",
+            ["text2"] = "* The power of copy and pasted trees shines within you"
           }
         }
       }
@@ -245,6 +286,7 @@ return {
           width = 2640,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -258,6 +300,7 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -271,6 +314,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -284,6 +328,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -297,6 +342,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -310,6 +356,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -323,6 +370,7 @@ return {
           width = 2400,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -336,6 +384,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -349,6 +398,7 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -362,6 +412,7 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="75" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="75" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="22">
  <editorsettings>
   <export target="recep7.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="wind"/>
+  <property name="name" value="Receptionest - Slide"/>
+ </properties>
  <tileset firstgid="1" source="../tilesets/Receptionist.tsx"/>
  <imagelayer id="3" name="bg" offsetx="-1384.24" offsety="-339.394" parallaxx="0.25" parallaxy="0.25">
   <image source="../../../assets/sprites/tilesets/recep+wonderlandbg.png" width="3000" height="1240"/>
@@ -47,18 +51,22 @@
 0,0,0,0,0,0,320,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,321,89,321,321,321,322,0,0,0
 </data>
  </layer>
- <objectgroup id="6" name="markers">
+ <objectgroup color="#aa00ff" id="6" name="markers">
   <object id="17" name="spawn" x="119.333" y="803.333">
    <point/>
   </object>
   <object id="18" name="entranceA" x="38" y="809.667">
    <point/>
   </object>
+  <object id="21" name="savespawn" x="2680" y="720">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="7" name="objects">
+ <objectgroup color="#ff55ff" id="7" name="objects">
   <object id="11" name="transition" x="2680" y="1160" width="40" height="40">
    <properties>
-    <property name="map" value="Forest_1"/>
+    <property name="map" value="forest1"/>
+    <property name="marker" value="entranceA"/>
    </properties>
   </object>
   <object id="14" name="slidearea" x="2680" y="840" width="40" height="365.333"/>
@@ -67,6 +75,14 @@
     <property name="map" value="recep5"/>
     <property name="marker" value="entranceC"/>
    </properties>
+  </object>
+  <object id="20" name="savepoint" x="2800" y="720">
+   <properties>
+    <property name="marker" value="savespawn"/>
+    <property name="text1" value="* Ralsei is traveling with you again."/>
+    <property name="text2" value="* The power of copy and pasted trees shines within you"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup color="#0000ff" id="2" name="collision">
