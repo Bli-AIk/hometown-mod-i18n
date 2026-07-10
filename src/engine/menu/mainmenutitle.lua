@@ -128,7 +128,7 @@ end
 function MainMenuTitle:draw()
     local logo_img = self.menu.selected_mod and self.menu.selected_mod.logo or self.logo
 
-    Draw.draw(logo_img, SCREEN_WIDTH / 2 - logo_img:getWidth() / 2, 105 - logo_img:getHeight() / 2)
+    Draw.draw(logo_img, SCREEN_WIDTH / 2, 105, 0, 1.7, 1.7, logo_img:getWidth() / 2, logo_img:getHeight() / 2)
     --Draw.draw(self.selected_mod and self.selected_mod.logo or self.logo, 160, 70)
 
     for i, option in ipairs(self.options) do
