@@ -5,7 +5,7 @@
     "version": "v1.0.0",
     "engineVer": "v0.10.0-dev",
     "chapter": 2,
-    "map": "light/hometown/interior/hospital_lobby",
+    "map": "room1",
     "party": ["kris", "noelle"],
     "useSaves": true,
     "money": 1800,
