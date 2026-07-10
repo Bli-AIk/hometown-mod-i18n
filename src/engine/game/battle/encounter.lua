@@ -304,7 +304,6 @@ end
 
 --- *(Override)* Called when all the waves of the current turn have finished.
 function Encounter:onWavesDone()
-    Game.battle:setState("DEFENDINGEND", "WAVEENDED")
 end
 
 --- *(Override)* Creates the soul being used this battle (Called at the start of the first wave)
@@ -349,7 +348,7 @@ function Encounter:addFlag(flag, amount)
 end
 
 --- Checks if the encounter has reduced tension.
---- @return boolean reduced Whether the encounter has reduced tension.
+---@return boolean reduced Whether the encounter has reduced tension.
 function Encounter:hasReducedTension()
     return self.reduced_tension
 end

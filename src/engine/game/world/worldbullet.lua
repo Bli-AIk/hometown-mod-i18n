@@ -85,17 +85,29 @@ end
 --- Not calling `super.onDamage()` here will stop the normal damage logic from occurring.
 ---@param soul OverworldSoul
 function WorldBullet:onDamage(soul)
-    if self:getDamage() > 0 then
-        self.world:hurtParty(self.damage)
+    local damage = self:getDamage()
+    if damage > 0 then
+        self.world:hurtParty(damage)
 
-        soul.inv_timer = self.inv_timer
+        local inv_frames = self:getInvulnFrames()
+
+        -- TODO: Option to disable Invuln Bonus accuracy?
+        -- Equipment invulnerability bonuses are only applied for single-target damage as of Chapter 5
+
+        -- inv_frames = Game:applyInvulnBonuses(inv_frames)
+
+        Game:setInvulnFrames(inv_frames)
+
+        soul:onDamage(self, damage)
     end
 end
 
 --- *(Override)* Called when the bullet collides with the player's soul, before invulnerability checks.
 ---@param soul OverworldSoul
 function WorldBullet:onCollide(soul)
-    if not self.world:inBattle() then return end
+    if not self.world:shouldBulletsHurt() then
+        return
+    end
 
     -- TODO: Please dont mix the "collides with Player" and "collides with OverworldSoul" function
     -- Temporarily avoids a bug old behaviour didn't have because it checked a field that was only set on the OverworldSoul
@@ -119,7 +131,7 @@ function WorldBullet:onCollide(soul)
     end
 end
 
----@param texture?      string|love.Image   The new texture or path to the texture to set on the sprite (Removes the bullet's sprite if undefined) 
+---@param texture?      string|love.Image   The new texture or path to the texture to set on the sprite (Removes the bullet's sprite if undefined)
 ---@param speed?        number              The time between frames of the sprite, in seconds (Defaults to 1/30th second)
 ---@param loop?         boolean             Whether the sprite should continuously loop. (Defaults to `true`)
 ---@param on_finished?  fun(Sprite)         A function that is called when the animation finishes.

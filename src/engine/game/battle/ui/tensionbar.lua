@@ -1,5 +1,5 @@
 --- The bar you see on the left of the battle UI.
---- 
+---
 --- This is simply a display for tension, but not where tension itself is stored.
 ---
 --- Does not depend on battle.
@@ -23,7 +23,7 @@ local TensionBar, super = Class(Object)
     Setting it to 1000 will make Heal Prayer cost 3.2% TP (displayed as 3% in the menu.)
     Setting it to 1 will make Heal Prayer cost 3200% TP.
 
-    Tension is no longer stored in the tensionbar, it is now stored in Game. :(
+    Tension is no longer stored in the tensionbar, it is now stored in Game.
 ]]
 
 function TensionBar:init(x, y, dont_animate)

@@ -8,12 +8,19 @@ function Player:init(chara, x, y)
 
     self.is_player = true
 
-    self.slide_sound = Assets.newSound("paper_surf")
-    self.slide_sound:setLooping(true)
+    self.climb_state = PlayerClimbState(self)
+    self.slide_state = PlayerSlideState(self)
+    self.slide_lock_state = PlayerSlideLockState(self)
+    self.slide_free_state = PlayerSlideFreeState(self)
 
     self.state_manager = StateManager("WALK", self, true)
-    self.state_manager:addState("WALK", { update = self.updateWalk })
-    self.state_manager:addState("SLIDE", { update = self.updateSlide, enter = self.beginSlide, leave = self.endSlide })
+    self.state_manager:addState("WALK", { update = self.updateWalk, drawDebug = self.drawDebug })
+    self.state_manager:addState("SLIDE", self.slide_state)
+    self.state_manager:addState("SLIDE_LOCK", self.slide_lock_state)
+    self.state_manager:addState("SLIDE_FREE", self.slide_free_state)
+    self.state_manager:addState("CLIMB_MOUNT", { postJump = self.postJumpClimbMount, enter = self.beginClimbMount })
+    self.state_manager:addState("CLIMB", self.climb_state)
+    self.state_manager:addState("CLIMB_DISMOUNT", { update = self.updateClimbDismount, enter = self.beginClimbDismount, leave = self.endClimbDismount })
 
     self.force_run = false
     self.force_walk = false
@@ -21,12 +28,6 @@ function Player:init(chara, x, y)
     self.run_timer_grace = 0
 
     self.auto_moving = false
-
-    self.current_slide_area = nil
-    self.slide_in_place = false
-    self.slide_lock_movement = false
-    self.slide_dust_timer = 0
-    self.slide_land_timer = 0
 
     self.hurt_timer = 0
 
@@ -50,6 +51,22 @@ function Player:init(chara, x, y)
     outlinefx:setAlpha(self.battle_alpha)
 
     self.outlinefx = self:addFX(outlinefx)
+
+    self.force_climb = false
+    self.climb_facing_direction = nil
+
+    self.climb_mount_target_x = 0
+    self.climb_mount_target_y = 0
+
+    self.climb_mount_callback = nil
+
+    self.climb_exit_landing = false
+    self.climb_exit_target_x = 0
+    self.climb_exit_target_y = 0
+
+    self.climb_exit_timer = 0
+
+    self.follower_tweens = {}
 end
 
 function Player:getBaseWalkSpeed()
@@ -73,27 +90,62 @@ end
 function Player:getDebugInfo()
     local info = super.getDebugInfo(self)
     table.insert(info, "State: " .. self.state_manager.state)
-    table.insert(info, "Walk speed: " .. self:getBaseWalkSpeed())
-    table.insert(info, "Current walk speed: " .. self:getCurrentSpeed(false))
-    table.insert(info, "Current run speed: " .. self:getCurrentSpeed(true))
-    table.insert(info, "Run timer: " .. self.run_timer)
-    table.insert(info, "Hurt timer: " .. self.hurt_timer)
-    table.insert(info, "Slide in place: " .. (self.slide_in_place and "True" or "False"))
-    table.insert(info, "Force run: " .. (self.force_run and "True" or "False"))
-    table.insert(info, "Force walk: " .. (self.force_walk and "True" or "False"))
+
+    self.state_manager:call("getDebugInfo", info)
+
+    if self.state_manager.state == "WALK" then
+        table.insert(info, "Walk speed: " .. self:getBaseWalkSpeed())
+        table.insert(info, "Current walk speed: " .. self:getCurrentSpeed(false))
+        table.insert(info, "Current run speed: " .. self:getCurrentSpeed(true))
+        table.insert(info, "Run timer: " .. self.run_timer)
+        table.insert(info, "Hurt timer: " .. self.hurt_timer)
+        table.insert(info, "Force run: " .. (self.force_run and "True" or "False"))
+        table.insert(info, "Force walk: " .. (self.force_walk and "True" or "False"))
+    end
+
     return info
 end
 
 function Player:getDebugOptions(context)
     context = super.getDebugOptions(self, context)
-    context:addMenuItem(
-        "Toggle force run", "Toggle if the player is forced to run or not",
-        function() self.force_run = not self.force_run end
-    )
-    context:addMenuItem(
-        "Toggle force walk", "Toggle if the player is forced to walk or not",
-        function() self.force_walk = not self.force_walk end
-    )
+
+    if self.state_manager.state == "WALK" then
+        context:addMenuItem(
+            "Toggle force run", "Toggle if the player is forced to run or not",
+            function() self.force_run = not self.force_run end
+        )
+        context:addMenuItem(
+            "Toggle force walk", "Toggle if the player is forced to walk or not",
+            function() self.force_walk = not self.force_walk end
+        )
+    elseif self.state_manager.state == "CLIMB" then
+        context:addMenuItem(
+            "Toggle force climb", "Toggle if the player is forced to climb or not",
+            function() self.force_climb = not self.force_climb end
+        )
+    end
+
+    if self.state_manager.state ~= "CLIMB" then
+        context:addMenuItem(
+            "Start climbing", "Start climbing where the player currently is.",
+            function() self:setState("CLIMB") end
+        )
+    end
+
+    if self.state_manager.state ~= "WALK" then
+        context:addMenuItem(
+            "Start walking", "Start walking where the player currently is.",
+            function() self:setState("WALK") end
+        )
+    end
+
+    if self.state_manager.state ~= "SLIDE" then
+        context:addMenuItem(
+            "Start sliding", "Start sliding where the player currently is.",
+            function() self:setState("SLIDE") end
+        )
+    end
+
     return context
 end
 
@@ -110,15 +162,11 @@ end
 function Player:onRemove(parent)
     super.onRemove(self, parent)
 
-    self.slide_sound:stop()
+    self.state_manager:call("remove")
+
     if parent:includes(World) and parent.player == self then
         parent.player = nil
     end
-end
-
-function Player:onRemoveFromStage(stage)
-    super.onRemoveFromStage(self, stage)
-    self.slide_sound:stop()
 end
 
 function Player:setActor(actor)
@@ -141,6 +189,7 @@ function Player:interact()
 
     local col = self.interact_collider[self:getFacing()]
 
+    Object.startCache()
     local interactables = {}
     for _, obj in ipairs(self.world.children) do
         if obj.onInteract and obj:collidesWith(col) then
@@ -148,6 +197,8 @@ function Player:interact()
             table.insert(interactables, { obj = obj, dist = MathUtils.dist(self.x, self.y, rx, ry) })
         end
     end
+    Object.endCache()
+
     table.sort(interactables, function(a, b) return a.dist < b.dist end)
     for _, v in ipairs(interactables) do
         if v.obj:onInteract(self, self:getFacing()) then
@@ -217,7 +268,23 @@ function Player:interpolateFollowers()
 end
 
 function Player:isCameraAttachable()
-    return not (self.state_manager.state == "SLIDE" and self.slide_in_place)
+    if self.state_manager.state == "CLIMB" then
+        return false
+    end
+
+    if self.state_manager.state == "CLIMB_MOUNT" then
+        return false
+    end
+
+    if self.state_manager.state == "CLIMB_DISMOUNT" then
+        return false
+    end
+
+    if self.state_manager.state == "SLIDE_FREE" then
+        return false
+    end
+
+    return true
 end
 
 --- Whether the player should decrease the invulnerability timer.
@@ -231,7 +298,7 @@ end
 function Player:isMovementEnabled()
     return not OVERLAY_OPEN
         and not Game.lock_movement
-        and not self.slide_lock_movement
+        and self.state ~= "SLIDE_LOCK"
         and Game.state == "OVERWORLD"
         and self.world.state == "GAMEPLAY"
         and self.hurt_timer == 0
@@ -292,68 +359,334 @@ function Player:updateWalk()
     end
 end
 
+function Player:onMapLoad()
+    if self:isClimbing() then
+        Game.world:detachFollowers()
+        self:cancelFollowerTweens()
+        for _, follower in ipairs(Game.world.followers) do
+            follower.alpha = 0
+            follower.visible = false
+        end
+
+        self.climb_state:setDirection(self:getFacing())
+    end
+end
+
 function Player:isMoving()
     return self.moving_x ~= 0 or self.moving_y ~= 0
 end
 
-function Player:beginSlide(last_state, in_place, lock_movement)
-    self.slide_sound:play()
-    self.auto_moving = true
-    self.slide_in_place = in_place or false
-    self.slide_lock_movement = lock_movement or false
-    self.slide_land_timer = 0
-    self.sprite:setAnimation("slide")
+function Player:isClimbing()
+    return self.state_manager.state == "CLIMB"
 end
 
-function Player:updateSlideDust()
-    self.slide_dust_timer = MathUtils.approach(self.slide_dust_timer, 0, DTMULT)
+function Player:isClimbJumping()
+    return self:isClimbing() and self.climb_state.jumping and self.climb_state.state == 2
+end
 
-    if self.slide_dust_timer == 0 then
-        self.slide_dust_timer = 3
+function Player:isSliding()
+    local state = self.state_manager.state
+    return state == "SLIDE" or state == "SLIDE_LOCK" or state == "SLIDE_FREE"
+end
 
-        local dust = Sprite("effects/slide_dust")
-        dust:play(1 / 15, false, function() dust:remove() end)
-        dust:setOrigin(0.5, 0.5)
-        dust:setScale(2, 2)
-        dust:setPosition(self.x, self.y)
-        dust.layer = self.layer - 0.01
-        dust.physics.speed_y = -6
-        dust.physics.speed_x = MathUtils.random(-1, 1)
-        self.world:addChild(dust)
+function Player:cancelFollowerTweens()
+    for _, tween in ipairs(self.follower_tweens) do
+        Game.world.timer:cancel(tween)
+    end
+    self.follower_tweens = {}
+end
+
+---@class ClimbMountSettings
+---@field target_x number? The x position that the player will jump to.
+---@field target_y number? The y position that the player will jump to.
+---@field facing_direction FacingDirection? The climb direction the player will face after mounting.
+---@field post_jump fun():nil? A function that will be called after the player finishes the jump, before they enter the CLIMB state.
+
+function Player:beginClimbMount(last_state, settings)
+    settings = settings or {}
+
+    Game.lock_movement = true
+
+    Game.world:detachFollowers()
+
+    self.climb_mount_target_x = settings.target_x or self.x
+    self.climb_mount_target_y = settings.target_y or self.y
+
+    self.climb_facing_direction = settings.facing_direction
+
+    if self.climb_facing_direction == nil then
+        -- If a facing direction isn't supplied, let's try to guess one...
+        self.climb_facing_direction = Utils.facingFromAngle(MathUtils.angle(self.x, self.y, self.climb_mount_target_x, self.climb_mount_target_y))
+    end
+
+    self:jumpTo(self.climb_mount_target_x, self.climb_mount_target_y + self:getScaledHeight() / 2, 8, 8 / 30, "jump_ball_slow")
+
+    self:cancelFollowerTweens()
+
+    for _, follower in ipairs(Game.world.followers) do
+        follower.alpha = 1
+        follower.visible = true
+        table.insert(self.follower_tweens, Game.world.timer:tween(7 / 30, follower.color, { [1] = 0.5, [2] = 0.5, [3] = 0.5 }))
+        table.insert(self.follower_tweens, Game.world.timer:tween(7 / 30, follower, { alpha = 0 }))
+    end
+
+    Assets.playSound("wing")
+
+    self.climb_mount_callback = settings.post_jump
+end
+
+function Player:postJumpClimbMount()
+    Assets.playSound("noise")
+
+    self.x = self.climb_mount_target_x
+    self.y = self.climb_mount_target_y
+
+    Game.lock_movement = false
+    self:setState("CLIMB", { starting_direction = self.climb_facing_direction })
+
+    if self.climb_mount_callback then
+        self.climb_mount_callback()
+        self.climb_mount_callback = nil
     end
 end
 
-function Player:updateSlide()
-    local slide_x = 0
-    local slide_y = 0
+---@class ClimbFallSettings
+---@field direction "up"|"down"|"left"|"right"? The direction the player falls. Defaults to "down".
+---@field recover_from_fall boolean? Whether the player should be teleported back to the last safe position after falling. Defaults to true.
+---@field max_speed number? The maximum speed the player can reach while falling. Defaults to 10.
 
-    if self:isMovementEnabled() then
-        if Input.down("right") then slide_x = slide_x + 1 end
-        if Input.down("left") then slide_x = slide_x - 1 end
-        if Input.down("down") then slide_y = slide_y + 1 end
-        if Input.down("up") then slide_y = slide_y - 1 end
+--- Make the player fall while in the climb state. Does nothing if the player is not climbing.
+---@param time integer The amount of time (in frames) that it takes the player to attempt to re-grab the wall. Defaults to 20. Common values are 10, 15, 20, 24, 30, 34, and 80.
+---@param settings ClimbFallSettings? The settings for the climb fall. Optional.
+function Player:climbFall(time, settings)
+    if not self:isClimbing() then
+        return
     end
 
-    if not self.slide_in_place then
-        slide_y = 2
-    end
-
-    self.run_timer = 50
-    local speed = self:getBaseWalkSpeed() + 4
-
-    self:move(slide_x, slide_y, speed * DTMULT)
-
-    self:updateSlideDust()
+    self.climb_state:fall(time, settings)
 end
 
-function Player:endSlide(next_state)
-    if self.slide_lock_movement then
-        self.slide_land_timer = 4
+--- Requests that the player exits the climb state, jumping to a defined location.
+---@param settings ClimbDismountSettings The settings for the climb dismount.
+function Player:queueClimbDismount(settings)
+    if not self:isClimbing() then
+        return
+    end
+
+    self.climb_state:queueExit(settings)
+end
+
+---@class ClimbDismountSettings
+---@field obj ClimbExit|ClimbLanding?
+---@field landing boolean?
+---@field x number?
+---@field y number?
+---@field facing FacingDirection?
+
+function Player:beginClimbDismount(last_state, settings)
+    Game.lock_movement = true
+
+    local landing = settings.landing
+
+    local target_x = settings.x
+    local target_y = settings.y
+
+    if settings.facing ~= nil then
+        self:setFacing(settings.facing)
+    end
+
+    if settings.obj ~= nil then
+        if landing then
+            local landing_strip = settings.obj --[[@as ClimbLanding]]
+
+            target_x, target_y = self.x, landing_strip.y
+        else
+            local exit = settings.obj --[[@as ClimbExit]]
+
+            target_x, target_y = exit:getExitPosition()
+        end
+    end
+
+    if target_x == nil or target_y == nil then
+        target_x, target_y = self.x, self.y
+    end
+
+    self.climb_exit_landing = landing
+    self.climb_exit_target_x = target_x
+    self.climb_exit_target_y = target_y
+
+    self.climb_exit_timer = 0
+
+
+    if landing then
+        Assets.playSound("noise")
+        self:shake(5, 0, 1)
+        self.sprite:setSprite("landed")
+        self.sprite:setFrame(1)
+        self:setFacing("down")
+
+        self.x = target_x
+        self.y = target_y
+
+        -- TODO: Look into multiple party members, one party member, etc
+        -- Susie prefers left, Ralsei prefers right
+
+        local positions = {
+            { self.x - 40, self.y - 10 },
+            { self.x + 40, self.y - 10 }
+        }
+
+        for i, follower in ipairs(Game.world.followers) do
+            local pos = positions[i]
+            if pos then
+                follower.x = pos[1]
+                follower.y = pos[2]
+            else
+                follower.x = self.x
+                follower.y = self.y - 20
+            end
+            follower:interpolateHistory()
+        end
     else
-        self.slide_sound:stop()
-        self.sprite:resetSprite()
+        Assets.playSound("wing")
+        self.auto_moving = true
     end
+
+    if Game.world.camera ~= nil then
+
+        local old_x, old_y = self.x, self.y
+        self.x, self.y = target_x, target_y
+
+        local ox, oy = self:getCameraOriginExact()
+        local camera_x, camera_y = self:getRelativePos(ox, oy, Game.world)
+
+        Game.world.camera:panTo(camera_x, camera_y, 15 / 30, "linear")
+
+        self.x, self.y = old_x, old_y
+    end
+
+    if not landing then
+        local jump_strength = 8
+        if self:getFacing() == "up" then
+            jump_strength = 12
+        end
+
+        self:jumpTo(target_x, target_y, jump_strength, 16 / 30, "jump_ball_slow")
+
+
+        -- TODO: Look into multiple party members, one party member, etc
+        -- Susie prefers left, Ralsei prefers right
+
+        local facing = self:getFacing()
+
+        for i, follower in ipairs(Game.world.followers) do
+            if facing == "down" then
+                if i == 1 then
+                    follower.x = target_x - 20
+                    follower.y = target_y - 10
+                elseif i == 2 then
+                    follower.x = target_x + 20
+                    follower.y = target_y - 10
+                else
+                    follower.x = target_x
+                    follower.y = target_y - 20
+                end
+            elseif facing == "up" then
+                if i == 1 then
+                    follower.x = target_x - 20
+                    follower.y = target_y + 10
+                elseif i == 2 then
+                    follower.x = target_x + 20
+                    follower.y = target_y + 10
+                else
+                    follower.x = target_x
+                    follower.y = target_y + 20
+                end
+            elseif facing == "left" then
+                follower.x = target_x + 20 * i
+                follower.y = target_y
+            elseif facing == "right" then
+                follower.x = target_x - 20 * i
+                follower.y = target_y
+            end
+
+            follower:interpolateHistory()
+        end
+    end
+end
+
+function Player:updateClimbDismount()
+    self.climb_exit_timer = self.climb_exit_timer + DTMULT
+
+    if self.climb_exit_timer >= 16 then
+        local blend_time = 12
+        if not self.climb_exit_landing then
+            blend_time = 8
+
+            Assets.playSound("noise")
+        end
+
+        self:cancelFollowerTweens()
+
+        for _, follower in ipairs(Game.world.followers) do
+            follower.alpha = 0
+            follower.visible = true
+            table.insert(self.follower_tweens, Game.world.timer:tween(blend_time / 30, follower.color, { [1] = 1, [2] = 1, [3] = 1 }))
+            table.insert(self.follower_tweens, Game.world.timer:tween(blend_time / 30, follower, { alpha = 1 }))
+        end
+
+        self:interpolateFollowers()
+        Game.world:attachFollowersImmediate()
+
+        for _, follower in ipairs(Game.world.followers) do
+            for _, history in ipairs(follower.history) do
+                history.facing = self:getFacing()
+            end
+            follower:setFacing(self:getFacing())
+        end
+
+        self:setState("WALK")
+    end
+end
+
+function Player:endClimbDismount()
     self.auto_moving = false
+    Game.lock_movement = false
+    Game.world.camera:setAttached(true, true)
+    self:resetSprite()
+
+    if self.climb_exit_timer < 16 then
+        -- IF the end state was interrupted, forcibly show followers
+
+        local blend_time = self.climb_exit_landing and 12 or 8
+
+        self:cancelFollowerTweens()
+
+        for _, follower in ipairs(Game.world.followers) do
+            follower.alpha = 0
+            follower.visible = true
+            table.insert(self.follower_tweens, Game.world.timer:tween(blend_time / 30, follower.color, { [1] = 1, [2] = 1, [3] = 1 }))
+            table.insert(self.follower_tweens, Game.world.timer:tween(blend_time / 30, follower, { alpha = 1 }))
+        end
+
+        self:interpolateFollowers()
+        Game.world:attachFollowersImmediate()
+
+        for _, follower in ipairs(Game.world.followers) do
+            for _, history in ipairs(follower.history) do
+                history.facing = self:getFacing()
+            end
+            follower:setFacing(self:getFacing())
+        end
+    end
+end
+
+function Player:getSoulOffset()
+    if self.state == "CLIMB" then
+        return self.width / 2, self.height / 2
+    else
+        return self.actor:getSoulOffset()
+    end
 end
 
 function Player:updateHistory()
@@ -395,18 +728,18 @@ function Player:updateHistory()
     self.last_move_y = self.y
 end
 
+function Player:processJump()
+    super.processJump(self)
+
+    if (self.jump_progress == 3) and (not self.jumping) then
+        -- A jump was just finished. Slightly hardcoded behavior for now...
+        self.state_manager:call("postJump")
+    end
+end
+
 function Player:update()
     if self.hurt_timer > 0 then
         self.hurt_timer = MathUtils.approach(self.hurt_timer, 0, DTMULT)
-    end
-
-    if self.slide_land_timer > 0 and self.state_manager.state ~= "SLIDE" then
-        self.slide_land_timer = MathUtils.approach(self.slide_land_timer, 0, DTMULT)
-        if self.slide_land_timer == 0 then
-            self.slide_sound:stop()
-            self.sprite:resetSprite()
-            self.slide_lock_movement = false
-        end
     end
 
     self.state_manager:update()
@@ -439,14 +772,45 @@ function Player:update()
     super.update(self)
 end
 
+function Player:preDraw(dont_transform)
+    super.preDraw(self, dont_transform)
+
+    self.state_manager:call("preDraw", dont_transform)
+end
+
+function Player:drawDebug()
+    local col = self.interact_collider[self:getFacing()]
+    col:draw(1, 1, 0, 0.5)
+end
+
 function Player:draw()
+    self.state_manager:call("drawUnderPlayer")
+
+    local r, g, b, a = self:getColor()
+    local use_alpha = a
+
+    if self.state == "CLIMB" and Game.inv_frames > 0 then
+        use_alpha = a * 0.5
+    end
+
+    self:setColor(r, g, b, use_alpha)
+
     -- Draw the player
     super.draw(self)
 
-    local col = self.interact_collider[self:getFacing()]
+    self:setColor(r, g, b, a)
+
+    self.state_manager:call("drawOverPlayer")
+
     if DEBUG_RENDER then
-        col:draw(1, 0, 0, 0.5)
+        self.state_manager:call("drawDebug")
     end
+end
+
+function Player:postDraw()
+    super.postDraw(self)
+
+    self.state_manager:call("postDraw")
 end
 
 return Player

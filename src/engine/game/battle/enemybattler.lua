@@ -1,5 +1,5 @@
 --- `EnemyBattler`s are a type of `Battler` that represent enemies, defining all their properties and behaviours. \
---- Every enemy defined in a mod should be located in its own file in `scripts/battle/enemies/`, and should extend this class. \
+--- Every enemy defined in a project should be located in its own file in `scripts/battle/enemies/`, and should extend this class. \
 --- Each enemy is assigned an id that defaults to their filepath starting from `scripts/battle/enemies`, unless an id is specified as an argument to `Class()`. \
 --- Enemies are added to battles in the encounter, with [`Encounter:addEnemy(enemy, x, y, ...)`](lua://Encounter.addEnemy), where `enemy` is their unique id, and all enemies for the current battle reside in [`Game.battle.enemies`](lua://Battle.enemies)
 ---
@@ -56,7 +56,7 @@
 ---@field acts              table<table>        *(Used internally)* Stores the data of all ACTs available on this enemy
 ---
 ---@field hurt_timer        number              How long this enemy's hurt sprite should be displayed for when hit
----@field comment           string              The text displayed next to this enemy's name in menu's (such as "(Tired)" in DELTARUNE) 
+---@field comment           string              The text displayed next to this enemy's name in menu's (such as "(Tired)" in DELTARUNE)
 ---@field defeated          boolean             Whether this enemy has been defeated
 ---
 ---@field temporary_mercy           number              The current amount of temporary mercy
@@ -170,6 +170,12 @@ function EnemyBattler:getMercyDisplay()
     return math.ceil(self.mercy) .. "%"
 end
 
+--- *(Override)* Get what color this enemy's MERCY should use in the enemy select menu.
+---@return Color
+function EnemyBattler:getMercyColor()
+    return PALETTE["battle_mercy_text"]
+end
+
 --- *(Override)* Get the default graze tension for this enemy.
 --- Any bullets which don't specify graze tension will use this value.
 ---@return number tension The tension to gain when bullets spawned by this enemy are grazed.
@@ -178,7 +184,7 @@ function EnemyBattler:getGrazeTension()
 end
 
 ---@param bool          boolean New tired state
----@param hide_message? boolean Hides the "TIRED" or "AWAKE" message (if it would otherwise have been shown) if set to `true`. 
+---@param hide_message? boolean Hides the "TIRED" or "AWAKE" message (if it would otherwise have been shown) if set to `true`.
 function EnemyBattler:setTired(bool, hide_message)
     local old_tired = self.tired
     self.tired = bool
@@ -186,7 +192,7 @@ function EnemyBattler:setTired(bool, hide_message)
         self.comment = "(Tired)"
         if Game:getConfig("tiredMessages") and not old_tired and not hide_message then
             -- Enemies can't spawn TIRED messages safely until fully initialised and parented.
-            -- To keep this function safe to use in `init()`, we must therefore check `self.parent` exists before trying to spawn the message. 
+            -- To keep this function safe to use in `init()`, we must therefore check `self.parent` exists before trying to spawn the message.
             if self.parent then
                 self:statusMessage("msg", "tired")
                 Assets.playSound("spellcast", 0.5, 0.9)
@@ -206,7 +212,7 @@ end
 ---@param description?  string          The short description of the act that appears in the menu
 ---@param party?        string[]|string A list of party member ids required to use this act. Alternatively, the keyword `"all"` can be used to insert the entire current party
 ---@param tp?           number          An amount of TP required to use this act
----@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic             
+---@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic
 ---@param icons?        string[]        A list of texture paths to icons that will display next to the name of this act (party member heads are drawn automatically as required)
 ---@return table act    The data of the act, also added to the `acts` table
 function EnemyBattler:registerAct(name, description, party, tp, highlight, icons)
@@ -246,7 +252,7 @@ end
 ---@param description?  string          The short description of the act that appears in the menu
 ---@param party?        string[]|string A list of party member ids required to use this act. Alternatively, the keyword `"all"` can be used to insert the entire current party
 ---@param tp?           number          An amount of TP required to use this act
----@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic             
+---@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic
 ---@param icons?        string[]        A list of texture paths to icons that will display next to the name of this act (party member heads are drawn automatically as required)
 ---@return table act    The data of the act, also added to the `acts` table
 function EnemyBattler:registerShortAct(name, description, party, tp, highlight, icons)
@@ -287,7 +293,7 @@ end
 ---@param description?  string          The short description of the act that appears in the menu
 ---@param party?        string[]|string A list of party member ids required to use this act. Alternatively, the keyword `"all"` can be used to insert the entire current party
 ---@param tp?           number          An amount of TP required to use this act
----@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic             
+---@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic
 ---@param icons?        string[]        A list of texture paths to icons that will display next to the name of this act (party member heads are drawn automatically as required)
 function EnemyBattler:registerActFor(char, name, description, party, tp, highlight, icons)
     if type(party) == "string" then
@@ -326,7 +332,7 @@ end
 ---@param description?  string          The short description of the act that appears in the menu
 ---@param party?        string[]|string A list of party member ids required to use this act. Alternatively, the keyword `"all"` can be used to insert the entire current party
 ---@param tp?           number          An amount of TP required to use this act
----@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic             
+---@param highlight?    Battler[]       A list of battlers that will be highlighted when the act is used, overriding default highlighting logic
 ---@param icons?        string[]        A list of texture paths to icons that will display next to the name of this act (party member heads are drawn automatically as required)
 function EnemyBattler:registerShortActFor(char, name, description, party, tp, highlight, icons)
     if type(party) == "string" then
@@ -523,8 +529,6 @@ function EnemyBattler:addTemporaryMercy(amount, play_sound, clamp, kill_conditio
                 self.temporary_mercy_percent = self:statusMessage("msg", "miss")
                 self.temporary_mercy_percent.kill_condition = kill_condition
                 self.temporary_mercy_percent.kill_others = true
-                -- In Deltarune, the mercy percent takes a bit more time to start to fade out after the enemy's turn ends
-                self.temporary_mercy_percent.kill_delay = 30
             else
                 self.temporary_mercy_percent:setDisplay("msg", "miss")
             end
@@ -533,7 +537,6 @@ function EnemyBattler:addTemporaryMercy(amount, play_sound, clamp, kill_conditio
                 self.temporary_mercy_percent = self:statusMessage("mercy", self.temporary_mercy)
                 self.temporary_mercy_percent.kill_condition = kill_condition
                 self.temporary_mercy_percent.kill_others = true
-                self.temporary_mercy_percent.kill_delay = 30
 
                 -- Only play the mercyadd sound when the DamageNumber is first shown
                 if play_sound ~= false then
@@ -613,7 +616,7 @@ function EnemyBattler:getNameColors()
                 end
             end
             if can_pacify then
-                tiredcol = Utils.mergeColor(tiredcol, COLORS.white, 0.5 + math.sin(Game.battle.pacify_glow_timer / 4) * 0.5)
+                tiredcol = ColorUtils.mergeColor(tiredcol, COLORS.white, 0.5 + math.sin(Game.battle.pacify_glow_timer / 4) * 0.5)
             end
         end
         table.insert(result, tiredcol)
@@ -1099,7 +1102,7 @@ function EnemyBattler:update()
         end
     end
 
-    if self.temporary_mercy_percent and self.temporary_mercy_percent.kill_condition_succeed then
+    if self.temporary_mercy_percent and (self.temporary_mercy_percent.kill_condition_succeed or self.temporary_mercy_percent:isRemoved()) then
         self.mercy = MathUtils.clamp(self.mercy + self.temporary_mercy, 0, 100)
         self.temporary_mercy = 0
         self.temporary_mercy_percent = nil
