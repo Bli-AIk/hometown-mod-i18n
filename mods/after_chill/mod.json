@@ -15,11 +15,10 @@
     "equipment": {},
     "hardReset": false,
     "hidden": false,
-    "dev": false, 
+    "dev": false , 
     "setWindowTitleAndIcon": null,
     "config": {
         "kristal": {
-            "dev": false, 
             "storageSlots": 12,
             "growStronger": false,
             "growStrongerChara": false,
@@ -31,7 +30,9 @@
             "tiredMessages": false,
             "awakeMessages": false,
             "checkActDescription": true,
-            "useSaves": true
+            "useSaves": true, 
+            "lightTextboxStyle": "light",
+            "darkTextboxStyle": "dark"
         }
     }
 }
