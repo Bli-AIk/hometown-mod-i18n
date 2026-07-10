@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="15">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="15">
  <editorsettings>
   <export target="forest1.lua" format="lua"/>
  </editorsettings>
@@ -152,9 +152,10 @@
  <objectgroup color="#ff55ff" id="13" name="objects">
   <object id="10" name="savepoint" x="402" y="319">
    <properties>
-    <property name="text1" value="* The Forest is beyond freezeing,"/>
-    <property name="text2" value="* your legs feel nothing short of numb,"/>
-    <property name="text3" value="* your filled with the power of perseverance"/>
+    <property name="text1">* The forest is beyond freezing.[wait:5]
+* Your legs feel nothing short
+of numb.</property>
+    <property name="text2" value="* Somehow,[wait:5] the cold fuels your determination."/>
    </properties>
    <point/>
   </object>

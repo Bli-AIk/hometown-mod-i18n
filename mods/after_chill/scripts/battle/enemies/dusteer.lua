@@ -7,7 +7,7 @@ function dusteer:init()
     self:setActor("dusteer")
     self.max_health = 340
     self.health = 340
-    self.attack = 10 
+    self.attack = 8
     self.defense = 7
     self.money = 100
 
@@ -19,7 +19,7 @@ function dusteer:init()
         "reinfrost/snow_graze"
     }
     self.dialogue = {"*neigh*", "Don't slip on the tracks.", "Snow problem."} 
-    self.check = "AT 10 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
+    self.check = "AT 8 DF 7\n* A deer that likes the way you smell.\n* Tramples snow, try [color:yellow]sweeping[color:reset] it!"
 
     self.text = {
         "* A cold breeze runs through.\n* Reinfrost shakes a little.", 

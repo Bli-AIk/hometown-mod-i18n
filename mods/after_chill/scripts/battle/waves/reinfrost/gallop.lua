@@ -165,7 +165,7 @@ function gallop:spawnSnow(deer)
     
     local rx, ry = deer:getRelativePos(deer.width, deer.height)
     local bullet = self:spawnBullet("bullets/puff", rx, ry)
-    bullet.collider = CircleCollider(bullet, 8, 8, 8.5)
+    bullet.collider = CircleCollider(bullet, 13, 13, 12)
     
     if bullet then
         bullet:setScale(1)

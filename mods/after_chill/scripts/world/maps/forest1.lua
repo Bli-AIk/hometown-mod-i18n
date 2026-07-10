@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -326,7 +326,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -340,7 +339,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -370,12 +368,10 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* The Forest is beyond freezeing,",
-            ["text2"] = "* your legs feel nothing short of numb,",
-            ["text3"] = "* your filled with the power of perseverance"
+            ["text1"] = "* The forest is beyond freezing.[wait:5]\n* Your legs feel nothing short\nof numb.",
+            ["text2"] = "* Somehow,[wait:5] the cold fuels your determination."
           }
         }
       }
@@ -404,7 +400,6 @@ return {
           width = 1678,
           height = 29,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -418,7 +413,6 @@ return {
           width = 2000,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -432,7 +426,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -446,7 +439,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -460,7 +452,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -474,7 +465,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -488,7 +478,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
