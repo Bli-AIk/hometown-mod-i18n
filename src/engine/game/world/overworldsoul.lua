@@ -26,7 +26,6 @@ function OverworldSoul:init(x, y)
 
     self.collider = CircleCollider(self, 0, 0, 8)
 
-    self.inv_timer = 0
     self.inv_flash_timer = 0
 
     self.target_lerp = 0
@@ -45,11 +44,6 @@ function OverworldSoul:onCollide(bullet)
 end
 
 function OverworldSoul:update()
-    -- Bullet collision !!! Yay
-    if self.inv_timer > 0 then
-        self.inv_timer = MathUtils.approach(self.inv_timer, 0, DT)
-    end
-
     self.sprite.alpha = 1 -- ??????
 
     Object.startCache()
@@ -60,7 +54,7 @@ function OverworldSoul:update()
     end
     Object.endCache()
 
-    if self.inv_timer > 0 then
+    if Game.inv_frames > 0 then
         self.inv_flash_timer = self.inv_flash_timer + DT
         local amt = math.floor(self.inv_flash_timer / (4 / 30))
         if (amt % 2) == 1 then

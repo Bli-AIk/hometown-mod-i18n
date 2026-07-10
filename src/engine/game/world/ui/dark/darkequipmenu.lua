@@ -119,7 +119,7 @@ function DarkEquipMenu:getStatsPreview()
         local equipment = self:getEquipPreview()
         for i = 1, 3 do
             if equipment[i] then
-                for stat, amount in pairs(equipment[i].bonuses) do
+                for stat, amount in pairs(equipment[i]:getStatBonuses()) do
                     if preview_stats[stat] then
                         preview_stats[stat] = preview_stats[stat] + amount
                     end
@@ -137,12 +137,12 @@ function DarkEquipMenu:getAbilityPreview()
     local current_abilities = {}
     local weapon = party.equipped.weapon
     if weapon and weapon:getBonusName() then
-        current_abilities[1] = { name = weapon:getBonusName(), icon = weapon.bonus_icon, color = weapon.bonus_color }
+        current_abilities[1] = { name = weapon:getBonusName(), icon = weapon:getBonusIcon(), color = weapon:getBonusColor() }
     end
     for i = 1, 2 do
         local armor = party.equipped.armor[i]
         if armor and armor:getBonusName() then
-            current_abilities[i + 1] = { name = armor:getBonusName(), icon = armor.bonus_icon, color = armor.bonus_color }
+            current_abilities[i + 1] = { name = armor:getBonusName(), icon = armor:getBonusIcon(), color = armor:getBonusColor() }
         end
     end
     if self.state == "ITEMS" and self:canEquipSelected() then
@@ -152,8 +152,8 @@ function DarkEquipMenu:getAbilityPreview()
             if equipment[i] and equipment[i]:getBonusName() then
                 preview_abilities[i] = {
                     name = equipment[i]:getBonusName(),
-                    icon = equipment[i].bonus_icon,
-                    color = equipment[i].bonus_color
+                    icon = equipment[i]:getBonusIcon(),
+                    color = equipment[i]:getBonusColor()
                 }
             end
         end
@@ -386,8 +386,8 @@ function DarkEquipMenu:drawEquippedItem(index, x, y)
     end
     if item then
         Draw.setColor(1, 1, 1)
-        if item.icon and Assets.getTexture(item.icon) then
-            Draw.draw(Assets.getTexture(item.icon), x, y, 0, 2, 2)
+        if item:getEquipIcon() and Assets.getTexture(item:getEquipIcon()) then
+            Draw.draw(Assets.getTexture(item:getEquipIcon()), x, y, 0, 2, 2)
         end
         love.graphics.print(item:getName(), x + 22, y - 6)
     else
@@ -420,8 +420,8 @@ function DarkEquipMenu:drawItems()
             else
                 Draw.setColor(0.5, 0.5, 0.5)
             end
-            if item.icon and Assets.getTexture(item.icon) then
-                Draw.draw(Assets.getTexture(item.icon), x, y + (offset * 27), 0, 2, 2)
+            if item:getEquipIcon() and Assets.getTexture(item:getEquipIcon()) then
+                Draw.draw(Assets.getTexture(item:getEquipIcon()), x, y + (offset * 27), 0, 2, 2)
             end
             love.graphics.print(item:getName(), x + 20, y + (offset * 27) - 6)
         else

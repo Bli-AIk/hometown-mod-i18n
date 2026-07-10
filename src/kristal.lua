@@ -1121,7 +1121,6 @@ end
 function Kristal.setVolume(volume)
     Kristal.Config["masterVolume"] = MathUtils.clamp(volume, 0, 1)
     love.audio.setVolume(volume)
-    Kristal.saveConfig()
 end
 
 --- Called internally to make sure the correct cursor is displayed.

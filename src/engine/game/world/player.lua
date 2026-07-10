@@ -220,6 +220,14 @@ function Player:isCameraAttachable()
     return not (self.state_manager.state == "SLIDE" and self.slide_in_place)
 end
 
+--- Whether the player should decrease the invulnerability timer.
+---
+--- This returns `true` if the state's `shouldDecreaseInvuln` callback returns `true`, or if [`World:shouldBulletsHurt()`](lua://World.shouldBulletsHurt) returns `true`.
+---@return boolean? decrease_invuln # `true` if the invulnerability timer should decrease.
+function Player:shouldDecreaseInvuln()
+    return Game.world:shouldBulletsHurt() or self.state_manager:call("shouldDecreaseInvuln")
+end
+
 function Player:isMovementEnabled()
     return not OVERLAY_OPEN
         and not Game.lock_movement
