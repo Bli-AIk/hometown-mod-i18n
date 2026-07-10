@@ -16,7 +16,7 @@ local MainMenuCredits, super = Class(StateClass)
 function MainMenuCredits:init(menu)
     self.menu = menu
 
-       self.pages = {
+    self.pages = {
         {
             "Kristal Engine",
             {
@@ -29,36 +29,78 @@ function MainMenuCredits:init(menu)
                 "Toby Fox",
                 "Temmie Chang",
                 "DELTARUNE team",
+                "",
+                "",
             },
             {
-                { "Libraries by:", COLORS.silver },
+                { "GitHub Contributors", COLORS.silver },
+                "Abbe",
                 "AcousticJamm",
-                "MCMicDrop",
-                "Hyperboid", 
+                "Agent 7",
+                "AlexGamingSW",
+                "Archie-osu",
+                "Azrael",
+                "Bor",
+                "CosmicPikachu001",
+                "DiamondDeltahedron"
             }
         },
         {
-            "Distant Grief",
+            "Kristal Engine",
             {
-                { "Contributors:", COLORS.silver },
-                "Charlie Emily",
-                "Mr_Vespara",
-                "hybridcenentri",
-                "Epic", 
-                "PainfullyLemon"
+                { "GitHub Contributors", COLORS.silver },
+                "Dobby233Liu",
+                "Elioze",
+                "Eribetra",
+                "FireRainV",
+                "Gabrielcito",
+                "HmmNoPls",
+                "HUECYCLES",
+                "Hyperboid",
+                "isakube"
             },
             {
-                -- You can leave this empty or add more names later
+                { "GitHub Contributors", COLORS.silver },
+                "J.A.R.U.",
+                "Lionmeow",
+                "Luna",
+                "Maks7594",
+                "MaybeSamo",
+                "MCdeDaxia",
+                "MrOinky",
+                "NakuAutumn",
+                "NelleMonelle"
+            }
+        },
+        {
+            "Kristal Engine",
+            {
+                { "GitHub Contributors", COLORS.silver },
+                "Nextop",
+                "nightpool",
+                "prokube",
+                "rfrx",
+                "Simbel",
+                "sjl057",
+                "skarph",
+                "SuperOfSrb2",
+                "SweetSylveon"
+            },
+            {
+                { "GitHub Contributors", COLORS.silver },
+                "TFLTV",
+                "TheSkerch",
+                "Verozity",
+                "WIL-TZY",
+                "YeetusSnoopy"
             }
         }
     }
-
     self.selected_page = 1
 
     self.scroll_direction = "right"
     self.scroll_timer = 0
 end
-
 
 function MainMenuCredits:registerEvents(master)
     self:registerEvent("enter", self.onEnter)

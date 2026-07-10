@@ -177,7 +177,7 @@ end
 --- Utils.hook(Object, "setPosition", function(orig, obj, x, y)
 ---     -- calls the original code (setting its position as normal)
 ---     orig(obj, x, y)
----     
+---
 ---     -- sets 'new_x' and 'new_y' variables for the object instance
 ---     obj.new_x = x
 ---     obj.new_y = y
@@ -936,7 +936,7 @@ function Utils.isPolygonClockwise(points)
     return sum > 0
 end
 
---- @alias linefailure
+---@alias linefailure
 ---| "The lines are parallel."
 ---| "The lines don't intersect."
 ---| "The lines are the same."
@@ -1438,7 +1438,7 @@ end
 
 ---
 --- Attempts to resolve a relative path from a Tiled export to a valid asset id, given it points to a path inside the
---- `target_dir` of the current mod.
+--- `target_dir` of the current project.
 ---
 --- Relative directories (`..`) of the asset path are resolved by starting from the `source_dir`, which should match the
 --- directory the Tiled data was exported to. Exporting to a different directory and copying/moving the exported data will

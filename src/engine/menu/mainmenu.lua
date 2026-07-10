@@ -17,7 +17,7 @@ MainMenu.BACKGROUND_SHADER = love.graphics.newShader([[
     }
 ]])
 
-function MainMenu:init()   
+function MainMenu:init()
 end
 
 function MainMenu:enter()
@@ -26,7 +26,7 @@ function MainMenu:enter()
 
     Kristal.showBorder(0.5)
 
-    MainMenuAchievements = require("src/engine/menu/MainMenuAchievements")
+    -- Initialize variables for the background animation
     self.fader_alpha = 1
     self.animation_sine = 0
     self.background_alpha = 0
@@ -50,7 +50,6 @@ function MainMenu:enter()
     self.file_name_screen = MainMenuFileName(self)
     self.default_name_screen = MainMenuDefaultName(self)
     self.controls = MainMenuControls(self)
-    self.achievements = MainMenuAchievements(self)
     self.deadzone_config = MainMenuDeadzone(self)
 
     -- Register states
@@ -63,7 +62,6 @@ function MainMenu:enter()
     self.state_manager:addState("MODCREATE", self.mod_create)
     self.state_manager:addState("MODCONFIG", self.mod_config)
     self.state_manager:addState("MODERROR", self.mod_error)
-    self.state_manager:addState("ACHIEVEMENTS", self.achievements)
     self.state_manager:addState("FILESELECT", self.file_select)
     self.state_manager:addState("FILENAME", self.file_name_screen)
     self.state_manager:addState("DEFAULTNAME", self.default_name_screen)
@@ -123,19 +121,22 @@ function MainMenu:enter()
         instance = 1
     })
 
-    GitFinder:fetchLatestCommit(function(status, body, headers)
-        if status == nil then return end -- request failed somehow (no SSL?)
-        if status < 200 or status >= 300 then return end -- non-success status code
+    if not RELEASE_MODE then
+        -- We're in an interm build, so check updates
+        GitFinder:fetchLatestCommit(function(status, body, headers)
+            if status == nil then return end -- request failed somehow (no SSL?)
+            if status < 200 or status >= 300 then return end -- non-success status code
 
-        local current_commit = GitFinder:fetchCurrentCommit()
-        if current_commit ~= body then
-            self.ver_string = "v" .. tostring(Kristal.Version)
-            if trimmed_commit then
-                self.ver_string = self.ver_string .. " (" .. trimmed_commit .. ")"
+            local current_commit = GitFinder:fetchCurrentCommit()
+            if current_commit ~= body then
+                self.ver_string = "v" .. tostring(Kristal.Version)
+                if trimmed_commit then
+                    self.ver_string = self.ver_string .. " (" .. trimmed_commit .. ")"
+                end
+                self.ver_string = self.ver_string .. " (outdated!)"
             end
-            self.ver_string = self.ver_string .. " (outdated!)"
-        end
-    end)
+        end)
+    end
 
     if TARGET_MOD then
         self.selected_mod = self.mod_list:getSelectedMod()
@@ -471,12 +472,12 @@ function MainMenu:drawVersion()
 
         if self.selected_mod.version then
             ver_y = ver_y - self.small_font:getHeight()
-           -- full_ver = self.selected_mod.name .. ": " .. self.selected_mod.version .. "\n" .. full_ver
+            full_ver = self.selected_mod.name .. ": " .. self.selected_mod.version .. "\n" .. full_ver
         end
 
         love.graphics.setFont(self.small_font)
         Draw.setColor(1, 1, 1, 0.5)
-      --  love.graphics.print(full_ver, 4, ver_y)
+        love.graphics.print(full_ver, 4, ver_y)
     end
 
     Draw.setColor(1, 1, 1)

@@ -132,7 +132,7 @@ local palette_data = {
     ["tension_maxtext_reduced"] = { 1, 1, 0, 1 },
     ["tension_desc_reduced"] = { 255 / 255, 160 / 255, 64 / 255, 1 }
 }
----@type table<PaletteIndex, number[]>
+---@type table<PaletteIndex, Color>
 PALETTE = {}
 setmetatable(PALETTE, {
     __index = function(t, i) return Kristal.callEvent(KRISTAL_EVENT.getPaletteColor, i) or palette_data[i] end,
@@ -204,8 +204,10 @@ KRISTAL_EVENT = {
     --menu events--
     createMenu = "createMenu", -- returns optional custom overworld menu / at: World:createMenu() / passes: NONE / returns: nil|Object
     getDarkMenuButtons = "getDarkMenuButtons", -- optional creation of buttons for custom dark world menu / at: DarkMenu:init() / passes: table:buttons, DarkMenu:self / returns: nil|table
-    getUISkin = "getUISkin", --optional default UI skin key / at: UIBox:init(x, y, width, height, skin) / passes: NONE / returns: nil|string
+    getUISkin = "getUISkin", --optional default UI skin key / at: UIBox:init(x, y, width, height, skin) / passes: skin:string / returns: nil|string
     onDarkMenuOpen = "onDarkMenuOpen",  -- dark world menu is opened / at: DarkMenu:onAdd(parent) / passes: DarkMenu:self / returns: NONE
+    getConfigOptions = "getConfigOptions", -- dark world config menu is opened, while registering config options / at: DarkConfigMenu:init() / passes: DarkConfigMenu:self, table:options / returns: NONE
+    postConfigOptions = "postConfigOptions", -- dark world config menu is opened, after registering all config options / at: DarkConfigMenu:init() / passes: DarkConfigMenu:self, table:options / returns: NONE
 
     --discordrpc events--
     getPresenceDetails = "getPresenceDetails", -- optional discordRPC detail message at mod start / at: Game:enter(previous_state, save_id, save_name, fade) / passes: NONE / returns: nil|string
@@ -268,7 +270,7 @@ KRISTAL_EVENT = {
 
     --map events--
     loadLayer = "loadLayer", -- overrides the map loading the tile layer data on layer depth, when true / at: Map:loadMapData(data) / passes: Map:self, table:layer, number:depth / returns: bool
-    onMapBorder = "onMapBorder", -- intercept game border for this map / at: World:setupMap(map, ...), World:mapTransition(...) / passes: Map:map, string:map_music/ returns: string
+    onMapBorder = "onMapBorder", -- intercept game border for this map / at: World:setupMap(map, ...), World:mapTransition(...) / passes: Map:map, string:map_border / returns: string
     onMapMusic = "onMapMusic", -- intercept game border for this map / at: World:setupMap(map, ...), World:mapTransition(...) / passes: Map:map, string:map_music / returns: string
     loadObject = "loadObject", -- overrides loading an object / at: Map:loadObjects(data) / passes: World:self, name:string, table:data / returns: Event?
 

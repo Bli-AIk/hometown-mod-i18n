@@ -20,37 +20,44 @@
 ---@field noise_timer number
 ---
 ---@overload fun(menu:MainMenu) : MainMenuOptions
----@class MainMenuOptions : StateClass, StateManagedClass
 local MainMenuOptions, super = Class(StateClass)
 
--- Initialize options with a restricted state manager (only general/graphics)
 function MainMenuOptions:init(menu)
     self.menu = menu
 
-    -- 1. Initialize ALL numeric variables to 0 immediately
-    self.selected_option = 1
-    self.selected_page = 1
-    self.heart_x = 0
-    self.scroll_target_y = 0
-    self.scroll_y = 0
-    self.page_scroll_timer = 0
-    self.noise_timer = 0
+    self.state_manager = StateManager("MENU", self, true)
+    self.state_manager:addState("MENU", { enter = self.onEnterMenu, keypressed = self.onKeyPressedMenu })
+    self.state_manager:addState("VOLUME",
+                                {
+                                    enter = self.onEnterSubOption,
+                                    keypressed = self.onKeyPressedVolume,
+                                    update = self.updateVolume
+                                })
+    self.state_manager:addState("BORDER", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedBorder })
+    self.state_manager:addState("FPS", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedFPS })
+    self.state_manager:addState("WINDOWSCALE", {
+        enter = self.onEnterSubOption,
+        keypressed = self
+            .onKeyPressedWindowScale
+    })
+
     self.options = {}
     self.pages = {}
 
-    -- 2. Set up the state manager
-    self.state_manager = StateManager("MENU", self, true)
-    self.state_manager:addState("MENU", { enter = self.onEnterMenu, keypressed = self.onKeyPressedMenu })
-    self.state_manager:addState("VOLUME", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedVolume, update = self.updateVolume })
-    self.state_manager:addState("BORDER", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedBorder })
-    self.state_manager:addState("FPS", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedFPS })
-    self.state_manager:addState("WINDOWSCALE", { enter = self.onEnterSubOption, keypressed = self.onKeyPressedWindowScale })
-
-    -- 3. Build the content last
     self:initializeOptions()
+
+    self.selected_option = 1
+    self.selected_page = 1
+
+    self.heart_x = 0
+    self.scroll_target_y = 0
+    self.scroll_y = 0
+    self.page_scroll_direction = "right"
+    self.page_scroll_timer = 0
+
+    self.noise_timer = 0
 end
 
--- State handling, input, and basic UI setup
 function MainMenuOptions:registerEvents()
     self:registerEvent("enter", self.onEnter)
     self:registerEvent("keypressed", self.onKeyPressed)
@@ -58,52 +65,54 @@ function MainMenuOptions:registerEvents()
     self:registerEvent("draw", self.draw)
 end
 
+-------------------------------------------------------------------------------
+-- Callbacks
+-------------------------------------------------------------------------------
+
 function MainMenuOptions:onEnter(old_state)
-    self.selected_option, self.selected_page = 1, 1
-    self.scroll_target_y, self.scroll_y = 0, 0
+    self.selected_option = 1
+    self.selected_page = 1
+
+    self.scroll_target_y = 0
+    self.scroll_y = 0
+
     self:setState("MENU")
 end
 
-function MainMenuOptions:onLeave() self:setState("NONE") end
-function MainMenuOptions:onKeyPressed(key, is_repeat) self.state_manager:call("keypressed", key, is_repeat) end
+function MainMenuOptions:onLeave()
+    self:setState("NONE")
+end
 
--- dfh
+function MainMenuOptions:onKeyPressed(key, is_repeat)
+    self.state_manager:call("keypressed", key, is_repeat)
+end
+
 function MainMenuOptions:update()
-    local page_id = self.pages[self.selected_page]
-    -- If there's no page yet, don't do any math!
-    if not page_id or not self.options[page_id] then
-        self.state_manager:update()
-        return 
-    end
-
-    local options = self.options[page_id].options
+    local page = self.pages[self.selected_page]
+    local options = self.options[page].options
     local max_option = #options + 1
-    
-    -- Ensure variables are numbers before comparing
-    local target_y = self.scroll_target_y or 0 
 
     if self.selected_option < max_option then
         local y_off = (self.selected_option - 1) * 32
 
-        if y_off + target_y < 0 then
-            self.scroll_target_y = target_y + (0 - (y_off + target_y))
+        if y_off + self.scroll_target_y < 0 then
+            self.scroll_target_y = self.scroll_target_y + (0 - (y_off + self.scroll_target_y))
         end
+
         if y_off + self.scroll_target_y > (9 * 32) then
             self.scroll_target_y = self.scroll_target_y + ((9 * 32) - (y_off + self.scroll_target_y))
         end
     end
 
-    -- Smooth scrolling math
     if (math.abs((self.scroll_target_y - self.scroll_y)) <= 2) then
         self.scroll_y = self.scroll_target_y
     end
-    self.scroll_y = self.scroll_y + ((self.scroll_target_y - self.scroll_y) / 2) * (DTMULT or 1)
+    self.scroll_y = self.scroll_y + ((self.scroll_target_y - self.scroll_y) / 2) * DTMULT
 
     if self.page_scroll_timer > 0 then
         self.page_scroll_timer = MathUtils.approach(self.page_scroll_timer, 0, DT)
     end
 
-    -- Update heart position
     self.menu.heart_target_x, self.menu.heart_target_y = self:getHeartPos()
 
     self.state_manager:update()
@@ -375,11 +384,47 @@ function MainMenuOptions:onKeyPressedFPS(key, is_repeat)
     end
 end
 
-function MainMenuOptions:onKeyPressedVolume(key, is_repeat)
+function MainMenuOptions:onKeyPressedWindowScale(key, is_repeat)
     if Input.isCancel(key) or Input.isConfirm(key) then
-        Kristal.setVolume(MathUtils.round(Kristal.getVolume() * 100) / 100)
         Assets.stopAndPlaySound("ui_select")
         self:setState("MENU")
+    end
+
+    local old_scale = Kristal.getWindowScale()
+    local scale = old_scale
+
+    if Input.is("right", key) then
+        if scale < 1 then
+            scale = scale * 2
+        else
+            scale = scale + 1
+        end
+    elseif Input.is("left", key) then
+        if scale > 0.125 then
+            if scale <= 1 then
+                scale = scale / 2
+            else
+                scale = scale - 1
+            end
+        else
+            Kristal.Config["windowScale"] = 1
+            Assets.stopAndPlaySound("ui_move")
+            love.event.quit()
+            return
+        end
+    end
+
+    if old_scale ~= scale then
+        Assets.stopAndPlaySound("ui_move")
+
+        Kristal.Config["fullscreen"] = false
+        Kristal.Config["windowScale"] = scale
+
+        if Kristal.Config["autoWindowScale"] then
+            Kristal.Config["autoWindowScale"] = false
+        end
+
+        Kristal.resetWindow()
     end
 end
 
@@ -492,6 +537,7 @@ end
 function MainMenuOptions:initializeOptions()
     self:registerOptionsPage("general", "GENERAL")
     self:registerOptionsPage("graphics", "GRAPHICS")
+    self:registerOptionsPage("engine", "ENGINE")
 
     ---------------------
     -- General Options
@@ -516,17 +562,65 @@ function MainMenuOptions:initializeOptions()
 
     self:registerConfigOption("general", "Auto-Run", "autoRun")
 
-    self:registerConfigOption("general", "Discord RPC", "discordRPC", function(toggled)
-        if DISCORD_RPC_AVAILABLE then
+    if DISCORD_RPC_AVAILABLE then
+        self:registerConfigOption("general", "Discord RPC", "discordRPC", function(toggled)
             if toggled then
                 DiscordRPC.initialize(DISCORD_RPC_ID, true)
                 DiscordRPC.updatePresence(Kristal.getPresence())
             else
                 DiscordRPC.shutdown()
             end
+        end)
+    end
+
+    ---------------------
+    -- Graphics Options
+    ---------------------
+
+    if not Kristal.isForcedFullscreen() then
+        self:registerConfigOption({ "general", "graphics" }, "Fullscreen", "fullscreen", function(toggled)
+            love.window.setFullscreen(toggled)
+        end)
+
+        self:registerOption(
+            { "general", "graphics" },
+            "Window Scale",
+            function()
+                return tostring(Kristal.getWindowScale()) .. "x"
+            end,
+            function()
+                self:setState("WINDOWSCALE")
+            end
+        )
+
+        self:registerOption({ "general", "graphics" }, "Auto Scale Window", function()
+                return Kristal.Config["autoWindowScale"] and "ON" or "OFF"
+            end, function()
+                local old_scale = Kristal.getWindowScale()
+                Kristal.Config["autoWindowScale"] = not Kristal.Config["autoWindowScale"]
+                if old_scale ~= Kristal.getWindowScale() then
+                    if Kristal.Config["fullscreen"] then
+                        love.window.setFullscreen(false)
+                        Kristal.Config["fullscreen"] = false
+                    end
+                    Kristal.resetWindow()
+                end
+            end
+        )
+    end
+
+    self:registerOption(
+        { "general", "graphics" },
+        "Border",
+        function()
+            return Kristal.getBorderName()
+        end,
+        function()
+            self:setState("BORDER")
         end
-    end)
-    self:registerConfigOption({"graphics" }, "Simplify VFX", "simplifyVFX")
+    )
+
+    self:registerConfigOption({ "general", "graphics" }, "Simplify VFX", "simplifyVFX")
 
     self:registerOption(
         "graphics",
@@ -535,7 +629,6 @@ function MainMenuOptions:initializeOptions()
             if Kristal.Config["fps"] > 0 then
                 return Kristal.Config["fps"]
             else
-                -- Drawing the infinity symbol for uncapped FPS
                 Draw.setColor(0, 0, 0)
                 Draw.draw(Assets.getTexture("kristal/menu_infinity"), x + 2, y + 11, 0, 2, 2)
                 Draw.setColor(1, 1, 1)
@@ -552,7 +645,34 @@ function MainMenuOptions:initializeOptions()
         "vSync",
         function(toggled)
             love.window.setVSync(toggled and 1 or 0)
-        end)
-    end
+        end
+    )
+
+    self:registerConfigOption("graphics", "Frame Skip", "frameSkip")
+
+    ---------------------
+    -- Engine Options
+    ---------------------
+
+    self:registerConfigOption("engine", "Skip Intro", "skipIntro")
+    self:registerConfigOption("engine", "Display FPS", "showFPS")
+
+    self:registerOption(
+        "engine",
+        "Default Name",
+        function()
+            return Kristal.Config["defaultName"]
+        end,
+        function()
+            self.menu:pushState("DEFAULTNAME")
+        end
+    )
+
+    self:registerConfigOption("engine", "Skip Name Entry", "skipNameEntry")
+    self:registerConfigOption("engine", "Verbose Loader", "verboseLoader")
+    self:registerConfigOption("engine", "Use System Mouse", "systemCursor", function() Kristal.updateCursor() end)
+    self:registerConfigOption("engine", "Always Show Mouse", "alwaysShowCursor", function() Kristal.updateCursor() end)
+    self:registerConfigOption("engine", "Instant Quit", "instantQuit")
+end
 
 return MainMenuOptions
