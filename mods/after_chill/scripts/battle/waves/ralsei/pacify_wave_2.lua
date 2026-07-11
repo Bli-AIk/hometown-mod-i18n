@@ -2,7 +2,7 @@ local Basic, super = Class(Wave)
 
 function Basic:init()
     super.init(self)
-    self.time = 12.5
+    self.time = 12.3
 end 
 
 function Basic:onArenaEnter()
