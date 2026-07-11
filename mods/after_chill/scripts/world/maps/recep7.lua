@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -146,7 +146,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -160,7 +159,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -174,7 +172,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -204,7 +201,6 @@ return {
           width = 118.667,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "forest1",
@@ -221,7 +217,6 @@ return {
           width = 118.667,
           height = 365.333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -235,7 +230,6 @@ return {
           width = 16.6667,
           height = 63.3333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep5",
@@ -252,7 +246,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["marker"] = "savespawn",
@@ -286,7 +279,6 @@ return {
           width = 2640,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -300,7 +292,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -314,7 +305,6 @@ return {
           width = 122,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -328,7 +318,6 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -342,7 +331,6 @@ return {
           width = 40,
           height = 359.333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -356,7 +344,6 @@ return {
           width = 2400,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -370,7 +357,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -384,7 +370,6 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -398,7 +383,6 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

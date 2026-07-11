@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 15,
+  nextobjectid = 17,
   properties = {
     ["has_tile_sounds"] = true,
     ["name"] = "Blooming Forest - Cliff",
@@ -373,6 +373,19 @@ return {
             ["text1"] = "* The forest is beyond freezing.[wait:5]\n* Your legs feel nothing short\nof numb.",
             ["text2"] = "* Somehow,[wait:5] the cold fuels your determination."
           }
+        },
+        {
+          id = 16,
+          name = "shadow",
+          type = "",
+          shape = "point",
+          x = 984,
+          y = 348,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
