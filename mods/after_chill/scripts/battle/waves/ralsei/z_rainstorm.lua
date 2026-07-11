@@ -17,7 +17,7 @@ end
 
 function z_rainstorm:onStart()
     Game.battle.arena:setFire(true, true)
-    local ralsei = self:getAttackers()
+    local ralsei = self:getAttackers()[1]
         self.timer:everyInstant(0.5, function()
             local soul = Game.battle and Game.battle.soul
             if not soul then return end
