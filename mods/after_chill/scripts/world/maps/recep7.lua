@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 22,
+  nextobjectid = 23,
   properties = {
     ["music"] = "wind",
     ["name"] = "Receptionest - Slide"
@@ -237,20 +237,23 @@ return {
           }
         },
         {
-          id = 20,
-          name = "savepoint",
+          id = 22,
+          name = "dynapoint",
           type = "",
           shape = "point",
-          x = 2800,
-          y = 720,
+          x = 2807.33,
+          y = 720.667,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
+            ["flag"] = "encounter#ralsei:violenced",
+            ["flagged_text1"] = "* The trees seem to be sprawled around the area. ",
+            ["flagged_text2"] = "* It's very quiet.[wait:5]\n* The power of loud silence shines within you.",
             ["marker"] = "savespawn",
-            ["text1"] = "* Ralsei is traveling with you again.",
-            ["text2"] = "* The power of copy and pasted trees shines within you"
+            ["text1"] = "* Ralsei has now joined your party.",
+            ["text2"] = "* The power of fluffyboys shines within you. "
           }
         }
       }

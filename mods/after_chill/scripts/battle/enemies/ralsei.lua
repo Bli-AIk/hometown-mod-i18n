@@ -75,6 +75,7 @@ if not Game.battle:hasCutscene() then
             cutscene:text("* And if I had 100 more lives..?", "pleased", "ralsei")
             cutscene:text("*[shake:1] I would choose to be meet you guys again,[wait:2] in every single one of them.", "pleading_closed", "ralsei")
             self:shake(2)
+            Game:setFlag("encounter#ralsei:violenced", true) 
             Assets.playSound("damage")
             Assets.playSound("levelup")
             self:onDefeatFatal()

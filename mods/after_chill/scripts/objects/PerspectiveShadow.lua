@@ -30,7 +30,7 @@ function PerspectiveShadow:drawCharacterShadow(chara)
     end
 
     local rel_x, rel_y = chara:getRelativePos(ox + (w / 2), oy + h, self)
-    love.graphics.translate(rel_x, rel_y)
+    love.graphics.translate(rel_x, rel_y - 2)
 
     love.graphics.scale(self.shadow_scale, -self.shadow_scale)
     love.graphics.shear(self.shear, 0)
