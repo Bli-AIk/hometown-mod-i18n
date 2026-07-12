@@ -28,6 +28,7 @@ function WarningSpawner:onEnter(player)
             local centered_offset_x = raw_offset - half_width
             
             local is_even_lane = (i % 2 == 0)
+
             local line = Game.world:spawnBullet("warning_line", center_x + centered_offset_x, center_y, 8, self.used_length, is_even_lane, self.custom_angle)
             if line then
                 table.insert(self.spawned_lanes, line)

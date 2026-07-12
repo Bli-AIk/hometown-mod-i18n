@@ -24,15 +24,18 @@ function ralsei:init()
         "ralsei/star_rain"
     }
     self.vig = Sprite("world/evil_fucking_vignette", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    self.vig.layer = WORLD_LAYERS["top"]
+    self.vig.layer = 10000
     self.vig.alpha = 0
     self.vig.scale = 1
     self.vig:setOrigin(0.5, 0.5)
     self.vig:setParallax(0, 0)
-    self.vig:addFX(ShaderFX('pixelate', {
-            size = { SCREEN_WIDTH, SCREEN_HEIGHT },
-            factor = 4
-        }))
+    self.vig:addFX(ShaderFX(Mod.wave_shader, {
+            ["wave_sine"] = function () return Kristal.getTime() * 100 end,
+            ["wave_mag"] = 2,
+            ["wave_height"] = 10,
+            ["texsize"] = { SCREEN_WIDTH, SCREEN_HEIGHT }
+        }), "funky_mode")
+
     self.dialogue_offset = {-60, 5}
     self.dialogue = {}
     TableUtils.merge(self.actor.animations, {
@@ -248,6 +251,7 @@ function ralsei:onHurt(damage, battler)
             cutscene:wait(0.5)
             self:setAnimation("spell")
             Game.stage:addFX(HSVShiftFX(false, 99), "shiftfx")
+            self.vig.layer = BATTLE_LAYERS["above_battlers"]
             Game.world:addChild(self.vig)
             self.vig:fadeTo(0.75, 0.3)
             self.vig:flash()

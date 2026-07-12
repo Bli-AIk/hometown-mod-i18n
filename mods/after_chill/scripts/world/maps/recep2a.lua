@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -9,7 +9,7 @@ return {
   height = 15,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 9,
+  nextlayerid = 10,
   nextobjectid = 24,
   properties = {
     ["music"] = "hallway"
@@ -295,6 +295,21 @@ return {
           properties = {}
         }
       }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 9,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
     },
     {
       type = "objectgroup",

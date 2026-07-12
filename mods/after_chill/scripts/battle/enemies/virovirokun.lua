@@ -3,7 +3,7 @@ local Virovirokun, super = Class(EnemyBattler)
 function Virovirokun:init()
     super.init(self)
 
-    self.name = "Virovirokun"
+    self.name = "Virovirovirus"
     self:setActor("virovirokun")
 
     self.max_health = 600
@@ -23,12 +23,12 @@ function Virovirokun:init()
     self.check = "AT II DEF -V\nThis virus has come to life and decided to block your way!"
 
     self.text = {
-        "* Virovirokun is sweating\nsuspiciously.",
-        "* Virovirokun is poking round\nthings with a spear.",
-        "* Virovirokun is beeping a\ncriminal tune."
+        "* Virovirovirus is sweating\nsuspiciously.",
+        "* Virovirovirus is poking round\nthings with a spear.",
+        "* Virovirovirus is beeping a\ncriminal tune."
     }
 
-    self.low_health_text = "* Virovirokun looks extra sick."
+    self.low_health_text = "* Virovirovirus looks extra sick."
     self.dmg_sprite_offset = {37, 14}
 
     self:registerAct("TakeCare")
@@ -77,7 +77,7 @@ function Virovirokun:getEnemyDialogue()
     else
         dialogue = {
             "Don't let\nthis bug ya!",
-            "Happy new\nyear 1997!",
+            "Happy new\nyear!",
             "I've got a love\nletter for you.",
             "I'm the fever,\nI'm the chill."
         }

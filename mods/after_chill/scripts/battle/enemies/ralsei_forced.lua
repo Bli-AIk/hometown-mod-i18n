@@ -22,7 +22,9 @@ function ralsei_forced:init()
     self.spare_points = 0
 
     -- List of possible wave ids, randomly picked each turn
-    self.waves = {}
+    self.waves = {
+        "hidden"
+    }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
     self.dialogue_offset = {-60, 5}
