@@ -166,7 +166,10 @@ end
     
     ralsei = function(cutscene)
         -- getting markers is a pain 
+        if not Game:getFlag("has_seen_ralsei") then 
         Game.world.music:fade(0, 5)
+        Game:setFlag("has_seen_ralsei", true)
+        Game:save()
         local rx, ry = cutscene:getMarker("kris")
         local kris = cutscene:getCharacter("kris")
         cutscene:wait(cutscene:walkTo(kris, rx, ry, 5))
@@ -207,9 +210,25 @@ end
         cutscene:wait(0.3)
         cutscene:text("* K-[wait:2]Kris?!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
+        elseif Game:getFlag("has_seen_ralsei") then
+        -- THIS IS THE END; PLEASE NOTICe ofghugh
+        local kris = cutscene:getCharacter("kris")
+        local rx, ry = cutscene:getMarker("kris")
+        cutscene:wait(cutscene:walkTo(kris, rx, ry, 2))
+        cutscene:panTo(Game.world.camera.x + 200, Game.world.camera.y, 1, "in-quad")
+        cutscene:wait(1)
+        local ralsei = Game.world:spawnNPC("ralsei", 2000, kris.y + 6)
+        ralsei:setFacing("left")
+        ralsei.alpha = 0
+        cutscene:wait(cutscene:playSound("awkward")) 
+        ralsei.alpha = 1
+        cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
+        end 
         if not Game:getFlag("encounter#ralsei:violenced", false) then 
+        local kris = cutscene:getCharacter("kris")
+        local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
-        ralsei.x = ralsei.x + 200
+       -- ralsei.x = ralsei.x + 200
         ralsei:resetSprite()
         cutscene:setSpeaker("ralsei")
         cutscene:wait(0.5)
