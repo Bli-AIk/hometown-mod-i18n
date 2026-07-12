@@ -224,7 +224,24 @@ end
         ralsei.alpha = 1
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
         end 
-        if not Game:getFlag("encounter#ralsei:violenced", false) then 
+        if Game:getFlag("enemy#ralsei:spared") then 
+        local kris = cutscene:getCharacter("kris")
+        local ralsei = cutscene:getCharacter("ralsei")
+        kris:resetSprite()
+       -- ralsei.x = ralsei.x + 200
+        ralsei:resetSprite()
+        cutscene:setSpeaker("ralsei")
+        cutscene:wait(0.5)
+        cutscene:text("* Kris,[wait:2] let's go now!", "blush_pleased")
+        Game:addPartyMember("ralsei")
+        local follower = Game.world:spawnFollower("ralsei",  {x = ralsei.x, y = ralsei.y, party = "ralsei"})
+        ralsei:remove()
+        follower:setFacing("left")
+        cutscene:interpolateFollowers() 
+        cutscene:attachFollowers()
+        cutscene:attachCamera(1)
+        Game.world.music:setVolume(1)
+        elseif not Game:getFlag("encounter#ralsei:violenced", false) then
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
@@ -235,7 +252,7 @@ end
         cutscene:text("* Y-[wait:2]you spared me,[wait:5] Kris?", "pleading_closed")
         ralsei:setSprite("smile")
         cutscene:text("* I[wait:2]-I knew you would!", "pleased")
-        cutscene:text("* Now,[wait:2] let's go seal the fountain!", "blush_pleased")
+        cutscene:text("* Now,[wait:2] let's hurry!", "blush_pleased")
         Game:addPartyMember("ralsei")
         local follower = Game.world:spawnFollower("ralsei",  {x = ralsei.x, y = ralsei.y, party = "ralsei"})
         ralsei:remove()
@@ -246,6 +263,7 @@ end
         Game.world.music:setVolume(1)
         cutscene:wait(1)
         else 
+        cutscene:wait(1)
         Game.world.music:setVolume(1)
         kris:resetSprite()
         kris:setFacing("up")
