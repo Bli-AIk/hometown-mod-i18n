@@ -42,6 +42,7 @@ function warning_line:executeConveyorLoop(time)
 end
 
 function warning_line:pulseAndHit(on_complete)
+                Assets.stopAndPlaySound("appear")
     self.rect.scale_x = 1.0
     self.rect.alpha = 1.0
     self:setHitbox(-(self.width * 1.3)/2, 0, self.width * 1.3, self.height)
