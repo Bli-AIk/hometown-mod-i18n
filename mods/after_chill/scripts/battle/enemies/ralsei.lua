@@ -33,6 +33,10 @@ function ralsei:init()
             size = { SCREEN_WIDTH, SCREEN_HEIGHT },
             factor = 4
         }))
+            self.vig:addFX(ShaderFX('water', {
+                ["time"] = function () return Kristal.getTime() / 5 end,
+                ["wooblyfactor"] = 0.05
+        }))
     self.dialogue_offset = {-60, 5}
     self.dialogue = {}
     TableUtils.merge(self.actor.animations, {
