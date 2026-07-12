@@ -30,6 +30,7 @@ function peonie:init()
     self.low_health_text = "* You can see Peonie wilting slowly."
 
     self:registerAct("Bloom", "Get\nMercy")
+    self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 24)
 end
 
 function peonie:onAct(battler, name)
@@ -39,12 +40,28 @@ function peonie:onAct(battler, name)
             cutscene:text("* Doesn't mean it can't bloom into a new, even more wonderful one!")
             self:addMercy(100)
             for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
-        if enemy ~= self and enemy.id == "peonie" then
+            if enemy ~= self and enemy.id == "peonie" then
             enemy:addMercy(25)
-        end
-    end
+            end
+            end
             cutscene:text("* It and its friends feel happier!")
         end)
+    elseif name == "BloomX" then 
+        Game.battle:startActCutscene(function(cutscene)
+            cutscene:text("* You and Ralsei encourage the enemy to bloom once again into a\nbeautiful flower!")
+            self:addMercy(100)
+            self:spare()
+            cutscene:wait(0.5)
+            cutscene:text("* The enemy seemed to leave in a joyful rush!")
+        end)
+    elseif name == "Standard" then 
+        if battler.chara.id == "ralsei" then 
+            self:addMercy(50)
+            return {
+            "* Ralsei tried to gently brush dirt off the enemy!", 
+            "* The enemy feels cared for\nand happy!", 
+            }
+        end 
     end 
     return super.onAct(self, battler, name)
 end
