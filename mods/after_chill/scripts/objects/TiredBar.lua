@@ -71,8 +71,68 @@ function TiredBar:addTired(amount)
 end
 
 function TiredBar:onMaxTired()
-    -- add code here if wanted.
+    Game.battle:endWaves()
+    Game.battle.timer:after(0, function()
+        Game.battle:startCutscene(function(cutscene)
+            local kris = Game.battle:getPartyBattler("kris")
+            Game.battle.music:stop()
+            Game.battle.battle_ui:clearEncounterText()
+            Game.battle.seen_encounter_text = false
+            Game.battle.current_selecting = 0 
+            cutscene:wait(cutscene:playSound("ghostappear", 2, 1.2)) 
+            kris:setSprite("sit")
+            Assets.playSound("break2")
+            cutscene:wait(1)
+            local ralsei = Game.battle:getEnemyBattler("ralsei")
+            ralsei:setAnimation("spell")  
+            Assets.playSound("spell_pacify")
+            local target = kris 
+            local pacify_x, pacify_y = target:getRelativePos(target.width/2, target.height/2)
+            local z_count = 0
+            local z_parent = target.parent
+            
+            Game.battle.timer:every(1/15, function()
+                z_count = z_count + 1
+                local z = SpareZ(z_count * -40, pacify_x, pacify_y)
+                z.layer = target.layer + 0.002
+                z_parent:addChild(z)
+            end, 8)
+            cutscene:wait(5/15)  
+            local spare_flash = kris:addFX(ColorMaskFX())
+            spare_flash.amount = 0
+            local sparkle_timer = 0
+            local parent = kris.parent
+            local spell_finished = false
+            Game.battle.timer:during(5/30, function()
+                spare_flash.amount = spare_flash.amount + 0.2 * DTMULT
+                sparkle_timer = sparkle_timer + DTMULT
+                if sparkle_timer >= 0.5 then
+                    local x, y = MathUtils.random(0, kris.width), MathUtils.random(0, kris.height)
+                    local sparkle = SpareSparkle(kris:getRelativePos(x, y))
+                    sparkle.layer = kris.layer + 0.001
+                    parent:addChild(sparkle)
+                    sparkle_timer = sparkle_timer - 0.5
+                end
+            end, function()
+                spell_finished = true
+            end)
+            cutscene:wait(function() return spell_finished end)
+            spare_flash.amount = 1
+            local img1 = AfterImage(kris, 0.7, (1 / 25) * 0.7)
+            local img2 = AfterImage(kris, 0.4, (1 / 30) * 0.4)
+            img1:addFX(ColorMaskFX())
+            img2:addFX(ColorMaskFX())
+            local gx, gy = kris:getRelativePos(kris.width/2, kris.height/2)
+            img1.physics.speed_x = -4
+            img2.physics.speed_x = -8
+            parent:addChild(img1)
+            parent:addChild(img2) 
+            kris.physics.speed_x = -8
+            Game:gameOver(gx, gy) 
+        end)
+    end)
 end
+
 
 function TiredBar:getDebugInfo()
     local info = super.getDebugInfo(self)
