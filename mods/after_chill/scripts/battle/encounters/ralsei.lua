@@ -21,7 +21,7 @@ function ralsei:init()
 end
 
 function ralsei:onStateChange(old, new) 
-    if not Game:getFlag("has_seen_ralsei") then 
+    if Game:getFlag("has_seen_ralsei") == false then 
      if old == "INTRO" and new == "ACTIONSELECT" then
         Game.battle.music:stop()
         Game.battle.battle_ui:clearEncounterText()

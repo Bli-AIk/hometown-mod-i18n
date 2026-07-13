@@ -220,7 +220,8 @@ end
         local ralsei = Game.world:spawnNPC("ralsei", 2000, kris.y + 6)
         ralsei:setFacing("left")
         ralsei.alpha = 0
-        cutscene:wait(cutscene:playSound("awkward")) 
+        cutscene:text("* The wind blows fiercely.")
+        cutscene:text("* You can sense a fiery presence.")
         ralsei.alpha = 1
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
         end 
