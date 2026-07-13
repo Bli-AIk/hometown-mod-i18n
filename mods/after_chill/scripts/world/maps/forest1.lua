@@ -13,6 +13,7 @@ return {
   nextobjectid = 17,
   properties = {
     ["has_tile_sounds"] = true,
+    ["music"] = "bloom_f",
     ["name"] = "Blooming Forest - Cliff",
     ["step_sound"] = "assets/sounds/step/snow"
   },

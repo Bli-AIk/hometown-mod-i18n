@@ -5,6 +5,7 @@
  </editorsettings>
  <properties>
   <property name="has_tile_sounds" type="bool" value="true"/>
+  <property name="music" value="bloom_f"/>
   <property name="name" value="Blooming Forest - Cliff"/>
   <property name="step_sound" value="assets/sounds/step/snow"/>
  </properties>
