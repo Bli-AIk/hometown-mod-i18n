@@ -180,7 +180,7 @@
   </object>
   <object id="57" name="chest" x="1640" y="1080" width="40" height="40">
    <properties>
-    <property name="item" value="sharp_syringe"/>
+    <property name="item" value="honey_drop"/>
    </properties>
   </object>
   <object id="63" name="slidearea" x="1368.67" y="919.364" width="62.3333" height="403.636"/>

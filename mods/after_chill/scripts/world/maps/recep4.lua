@@ -1029,7 +1029,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["item"] = "sharp_syringe"
+            ["item"] = "honey_drop"
           }
         },
         {

@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 25,
+  nextobjectid = 22,
   properties = {
     ["music"] = "wind",
     ["name"] = "Receptionist Bridge"
@@ -132,7 +132,6 @@ return {
           width = 82.8111,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -149,7 +148,6 @@ return {
           width = 124.217,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "krisspawn",
@@ -166,10 +164,28 @@ return {
           width = 34,
           height = 34,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["money"] = 64
+            ["item"] = "sharp_syringe"
+          }
+        },
+        {
+          id = 21,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 396,
+          y = 57,
+          width = 54,
+          height = 44,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "virovirokun",
+            ["chase"] = true,
+            ["encounter"] = "virovirokun3",
+            ["enemy"] = "virovirokun",
+            ["once"] = true
           }
         }
       }
@@ -199,7 +215,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -213,7 +228,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -243,7 +257,6 @@ return {
           width = 41.4056,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -257,7 +270,6 @@ return {
           width = 41.4056,
           height = 414.056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -271,7 +283,6 @@ return {
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -285,7 +296,6 @@ return {
           width = 1035.14,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -299,7 +309,6 @@ return {
           width = 697.894,
           height = 37.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -308,12 +317,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 673.439,
+          x = 678.439,
           y = 33.4056,
           width = 41.4056,
           height = 248.433,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -324,10 +332,9 @@ return {
           shape = "rectangle",
           x = 239.311,
           y = 276.506,
-          width = 280.506,
+          width = 318.506,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -338,10 +345,9 @@ return {
           shape = "rectangle",
           x = 230.645,
           y = 118.217,
-          width = 289.839,
+          width = 327.839,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -355,7 +361,6 @@ return {
           width = 41.4056,
           height = 82.8111,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -369,49 +374,6 @@ return {
           width = 455.461,
           height = 41.4056,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 21,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 560,
-          y = 120,
-          width = 120,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 22,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 560,
-          y = 280,
-          width = 120,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 23,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 560,
-          y = 160,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -420,12 +382,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 480,
-          y = 160,
+          x = 522,
+          y = 158,
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

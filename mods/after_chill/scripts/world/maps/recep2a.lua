@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 24,
+  nextobjectid = 25,
   properties = {
     ["music"] = "hallway"
   },
@@ -66,12 +66,12 @@ return {
         0, 0, 0, 0, 0, 0, 320, 321, 317, 321, 321, 321, 317, 321, 322, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321, 321, 321, 322, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 320, 321, 321, 321, 321, 321, 321, 321, 322, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 263, 264, 264, 264, 264, 264, 264, 264, 264, 264, 265, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 301, 302, 302, 282, 283, 283, 283, 284, 302, 302, 303, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 339, 340, 340, 282, 283, 283, 283, 284, 340, 340, 341, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 263, 264, 264, 264, 264, 264, 264, 264, 264, 264, 32, 32, 32, 33, 0,
+        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 51, 51, 51, 52, 0,
+        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 51, 51, 51, 52, 0,
+        0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 283, 283, 51, 51, 51, 284, 0,
+        0, 0, 0, 0, 0, 301, 302, 302, 282, 283, 283, 283, 284, 302, 302, 302, 302, 302, 71, 0,
+        0, 0, 0, 0, 0, 339, 340, 340, 282, 283, 283, 283, 284, 340, 340, 226, 226, 226, 109, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 284, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 284, 0, 0, 0, 0, 0, 0, 0
       }
@@ -100,7 +100,6 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -114,7 +113,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -128,7 +126,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -142,7 +139,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -156,7 +152,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -170,7 +165,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -179,12 +173,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 640,
-          y = 280,
+          x = 642,
+          y = 239.667,
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -193,12 +186,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 763.615,
-          y = 280,
+          x = 760.615,
+          y = 284,
           width = 40,
           height = 155,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -208,11 +200,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 642.25,
-          y = 413.5,
+          y = 441.5,
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -242,7 +233,6 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep2",
@@ -255,11 +245,10 @@ return {
           type = "",
           shape = "point",
           x = 739,
-          y = 358,
+          y = 376,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["item"] = "coff_syrup",
@@ -276,21 +265,19 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
         {
-          id = 21,
-          name = "magicglass",
+          id = 24,
+          name = "forcefield",
           type = "",
           shape = "rectangle",
-          x = 639.428,
-          y = 299.513,
-          width = 122.551,
-          height = 133.226,
+          x = 643,
+          y = 279,
+          width = 38,
+          height = 159,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -335,7 +322,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
