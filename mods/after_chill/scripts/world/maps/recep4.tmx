@@ -104,15 +104,15 @@
   <object id="38" x="800" y="1440" width="360" height="40"/>
   <object id="39" x="800" y="1480" width="40" height="40"/>
   <object id="40" x="725.167" y="1520" width="74.8333" height="40"/>
-  <object id="41" x="600" y="1520" width="72.1667" height="40"/>
+  <object id="41" x="600" y="1520" width="76.1667" height="40"/>
   <object id="42" x="560" y="1320" width="40" height="200"/>
   <object id="43" x="600" y="1280" width="200" height="40"/>
   <object id="44" x="800" y="1320" width="400" height="40"/>
   <object id="45" x="1160" y="1280" width="40" height="40"/>
   <object id="46" x="1200" y="1240" width="40" height="40"/>
   <object id="47" x="1431.67" y="960" width="33.3333" height="320"/>
-  <object id="48" x="640" y="1560" width="34.5" height="440"/>
-  <object id="49" x="728" y="1560" width="32" height="440"/>
+  <object id="48" x="640" y="1560" width="37" height="440"/>
+  <object id="49" x="725" y="1560" width="35" height="440"/>
   <object id="89" x="1721" y="961.333" width="38" height="119.333"/>
   <object id="90" x="1641.67" y="960.667" width="38" height="119.333"/>
   <object id="95" x="1681.27" y="920.545" width="40.1818" height="9.27273"/>
@@ -154,7 +154,7 @@
     <property name="marker" value="entranceC"/>
    </properties>
   </object>
-  <object id="51" name="transition" x="673.5" y="1960" width="51" height="40">
+  <object id="51" name="transition" x="673.5" y="1960" width="54.5" height="40">
    <properties>
     <property name="map" value="recep5"/>
     <property name="marker" value="entranceA"/>
@@ -184,7 +184,7 @@
    </properties>
   </object>
   <object id="63" name="slidearea" x="1368.67" y="919.364" width="62.3333" height="403.636"/>
-  <object id="64" name="slidearea" x="673.5" y="1495.5" width="50" height="499.167"/>
+  <object id="64" name="slidearea" x="678.5" y="1521" width="46" height="473.667"/>
   <object id="65" name="slidearea" x="200" y="142" width="40" height="578"/>
   <object id="66" name="npc" x="1329" y="730">
    <properties>
