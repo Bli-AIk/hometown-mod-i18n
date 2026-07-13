@@ -313,7 +313,7 @@ end
 function ralsei:getEncounterText()
     if self.kaboom then 
         self.kaboom = nil
-        return "* Ralsei's defense went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]tired[color:reset]."
+        return "* Ralsei's [color:yellow]defense[color:reset] went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]TIRED[color:reset]."
     else 
         return super.getEncounterText(self)
     end  
