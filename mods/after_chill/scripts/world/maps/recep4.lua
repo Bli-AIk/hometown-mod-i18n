@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 50,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
-  nextobjectid = 68,
+  nextlayerid = 11,
+  nextobjectid = 103,
   properties = {
     ["music"] = "hallway"
   },
@@ -166,7 +166,6 @@ return {
           width = 840,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -180,7 +179,6 @@ return {
           width = 842.667,
           height = 25.3333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -194,7 +192,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -208,7 +205,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -222,7 +218,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -236,7 +231,6 @@ return {
           width = 71.6667,
           height = 520,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -250,7 +244,6 @@ return {
           width = 73,
           height = 520,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -264,7 +257,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -278,7 +270,6 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -292,7 +283,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -306,7 +296,6 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -316,11 +305,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 1200,
-          y = 872.667,
+          y = 880,
           width = 40,
-          height = 47.3333,
+          height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -331,10 +319,9 @@ return {
           shape = "rectangle",
           x = 1240,
           y = 920,
-          width = 114.667,
+          width = 127.667,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -343,12 +330,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1406.33,
+          x = 1432.33,
           y = 920,
-          width = 264.667,
+          width = 248,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -357,12 +343,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1725,
+          x = 1722,
           y = 920,
-          width = 115,
+          width = 118,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -376,7 +361,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -390,7 +374,6 @@ return {
           width = 600,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -404,7 +387,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -413,12 +395,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1320,
+          x = 1332,
           y = 960,
           width = 35,
           height = 360,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -429,10 +410,9 @@ return {
           shape = "rectangle",
           x = 1240,
           y = 1280,
-          width = 80,
+          width = 92,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -441,12 +421,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1406.5,
+          x = 1432,
           y = 1280,
-          width = 233.5,
+          width = 208,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -457,10 +436,9 @@ return {
           shape = "rectangle",
           x = 1640,
           y = 1160,
-          width = 36,
+          width = 43.8182,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -469,12 +447,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1724,
+          x = 1715.82,
           y = 1160,
-          width = 36,
+          width = 44.1818,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -488,35 +465,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 28,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1723.5,
-          y = 1040,
-          width = 36.5,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 29,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1640,
-          y = 1040,
-          width = 33.25,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -530,35 +478,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 31,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1723,
-          y = 960,
-          width = 37,
-          height = 80,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 32,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1640,
-          y = 960,
-          width = 33.5,
-          height = 80,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -572,7 +491,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -586,7 +504,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -600,7 +517,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -614,7 +530,6 @@ return {
           width = 680,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -628,7 +543,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -642,7 +556,6 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -656,7 +569,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -670,7 +582,6 @@ return {
           width = 74.8333,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -684,7 +595,6 @@ return {
           width = 72.1667,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -698,7 +608,6 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -712,7 +621,6 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -726,7 +634,6 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -740,7 +647,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -754,7 +660,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -763,12 +668,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1406.67,
+          x = 1431.67,
           y = 960,
           width = 33.3333,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -782,7 +686,6 @@ return {
           width = 34.5,
           height = 440,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -796,7 +699,235 @@ return {
           width = 32,
           height = 440,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 89,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1721,
+          y = 961.333,
+          width = 38,
+          height = 119.333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 90,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1641.67,
+          y = 960.667,
+          width = 38,
+          height = 119.333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 95,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1681.27,
+          y = 920.545,
+          width = 40.1818,
+          height = 9.27273,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 102,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1684.33,
+          y = 1159,
+          width = 33,
+          height = 12,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "paths",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 58,
+          name = "virovirokun",
+          type = "",
+          shape = "polygon",
+          x = 698.667,
+          y = 1328,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = -84, y = 80 },
+            { x = -6.66667, y = 166.667 },
+            { x = 82.6667, y = 80 }
+          },
+          properties = {}
+        },
+        {
+          id = 94,
+          name = "virovirokun2",
+          type = "",
+          shape = "polygon",
+          x = 1641.33,
+          y = 720.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = -1.33333, y = 119.333 },
+            { x = 120, y = 121.333 },
+            { x = 120, y = -0.666667 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 10,
+      name = "climbing",
+      class = "objects",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 84,
+          name = "",
+          type = "climbarea",
+          shape = "rectangle",
+          x = 1685.37,
+          y = 919.086,
+          width = 31.427,
+          height = 120.911,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 99,
+          name = "",
+          type = "climbarea",
+          shape = "rectangle",
+          x = 1684.67,
+          y = 1159.31,
+          width = 30.6667,
+          height = 197.357,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 54,
+          name = "entranceA",
+          type = "",
+          shape = "point",
+          x = 217.333,
+          y = 89.3333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 85,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1702,
+          y = 1114.54,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 93,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1701,
+          y = 896.182,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 96,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1701.33,
+          y = 1386,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 101,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1700.15,
+          y = 1150.23,
+          width = 0,
+          height = 0,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -826,7 +957,6 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep3",
@@ -843,7 +973,6 @@ return {
           width = 51,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "recep5",
@@ -860,7 +989,6 @@ return {
           width = 54,
           height = 44,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
@@ -875,15 +1003,15 @@ return {
           name = "enemy",
           type = "",
           shape = "rectangle",
-          x = 1690.33,
-          y = 854,
+          x = 1686,
+          y = 742.333,
           width = 54,
           height = 44,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "virovirokun",
+            ["chase"] = true,
             ["encounter"] = "virovirokun2",
             ["enemy"] = "virovirokun",
             ["path"] = "virovirokun2"
@@ -899,7 +1027,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["item"] = "sharp_syringe"
@@ -910,12 +1037,11 @@ return {
           name = "slidearea",
           type = "",
           shape = "rectangle",
-          x = 1360,
-          y = 915.364,
-          width = 84,
-          height = 407.636,
+          x = 1368.67,
+          y = 919.364,
+          width = 62.3333,
+          height = 403.636,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -929,7 +1055,6 @@ return {
           width = 50,
           height = 499.167,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -943,7 +1068,6 @@ return {
           width = 40,
           height = 578,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -957,7 +1081,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "nurse_shop",
@@ -974,97 +1097,100 @@ return {
           width = 29.3333,
           height = 41.5,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "nurse.bring"
           }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 6,
-      name = "paths",
-      class = "",
-      visible = false,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 58,
-          name = "virovirokun",
-          type = "",
-          shape = "polygon",
-          x = 698.667,
-          y = 1328,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = -84, y = 80 },
-            { x = -6.66667, y = 166.667 },
-            { x = 82.6667, y = 80 }
-          },
-          properties = {}
         },
         {
-          id = 60,
-          name = "virovirokun2",
+          id = 86,
+          name = "climbexit",
           type = "",
-          shape = "polygon",
-          x = 1598.67,
-          y = 902.667,
-          width = 0,
-          height = 0,
+          shape = "rectangle",
+          x = 1684.58,
+          y = 1171.18,
+          width = 30.6875,
+          height = 12,
           rotation = 0,
-          opacity = 1,
           visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 180, y = 2.66667 },
-            { x = 178.667, y = -6.66667 },
-            { x = 0, y = -12 }
-          },
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 5,
-      name = "markers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
+          properties = {
+            ["target"] = { id = 101 }
+          }
+        },
         {
-          id = 54,
-          name = "entranceA",
+          id = 87,
+          name = "climbentry",
           type = "",
-          shape = "point",
-          x = 217.333,
-          y = 89.3333,
-          width = 0,
-          height = 0,
+          shape = "rectangle",
+          x = 1681.33,
+          y = 1040.54,
+          width = 40,
+          height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
-          properties = {}
+          properties = {
+            ["target"] = { id = 98 }
+          }
+        },
+        {
+          id = 91,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1682.91,
+          y = 919.606,
+          width = 39.3333,
+          height = 11.8788,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["target"] = { id = 93 }
+          }
+        },
+        {
+          id = 97,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 1683.88,
+          y = 1316.67,
+          width = 32.1818,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["target"] = { id = 100 }
+          }
+        },
+        {
+          id = 98,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1683,
+          y = 993.333,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["target"] = { id = 85 }
+          }
+        },
+        {
+          id = 100,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1684.21,
+          y = 1272.67,
+          width = 31.2727,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["target"] = { id = 96 }
+          }
         }
       }
     }
