@@ -7,7 +7,14 @@ return {
         Game.world:spawnObject(musiclogo("hallway", 180, 120, 160, 120, 140, 120), 9999)
         Game.world.music:setVolume(0)
         Game.world.music:fade(1, 0.5)
-    end
+    end, 
+    
+    forest = function(cutscene, event)
+        Game.world:spawnObject(musiclogo("bloomforest", 180, 120, 160, 120, 140, 120), 9999)
+        Game.world.music:setVolume(0)
+        Game.world.music:fade(1, 0.5)
+
+    end, 
 
 
 

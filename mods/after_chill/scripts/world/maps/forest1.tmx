@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="17">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="18">
  <editorsettings>
   <export target="forest1.lua" format="lua"/>
  </editorsettings>
@@ -162,6 +162,11 @@ of numb.</property>
   </object>
   <object id="16" name="shadow" x="984" y="348">
    <point/>
+  </object>
+  <object id="17" name="script" x="193" y="415.667" width="48.6667" height="36">
+   <properties>
+    <property name="cutscene" value="musicnotif.forest"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup color="#0000ff" id="15" name="collision">

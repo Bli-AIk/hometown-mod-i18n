@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 17,
+  nextobjectid = 18,
   properties = {
     ["has_tile_sounds"] = true,
     ["music"] = "bloom_f",
@@ -387,6 +387,21 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 17,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 193,
+          y = 415.667,
+          width = 48.6667,
+          height = 36,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "musicnotif.forest"
+          }
         }
       }
     },
