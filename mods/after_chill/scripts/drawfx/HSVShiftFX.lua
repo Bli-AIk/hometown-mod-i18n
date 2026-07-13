@@ -28,9 +28,9 @@ end
 function HSVShiftFX:update()
     super.update(self)
     if (self.wave_time > 0) then
-        self.hue = Ch4Lib.scr_wave(self.hue_start, self.hue_target, self.wave_time, 0);
-        self.sat = Ch4Lib.scr_wave(self.sat_start, self.sat_target, self.wave_time, 0);
-        self.val = Ch4Lib.scr_wave(self.val_start, self.val_target, self.wave_time, 0);
+        self.hue = Mod.scr_wave(self.hue_start, self.hue_target, self.wave_time, 0);
+        self.sat = Mod.scr_wave(self.sat_start, self.sat_target, self.wave_time, 0);
+        self.val = Mod.scr_wave(self.val_start, self.val_target, self.wave_time, 0);
     end
 
     if (self.heartbeat_mode) then

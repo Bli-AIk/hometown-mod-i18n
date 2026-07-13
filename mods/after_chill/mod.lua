@@ -27,6 +27,12 @@ function Mod:init()
     print("Loaded " .. self.info.name .. "!")
 end
 
+function Mod.scr_wave(arg0, arg1, speed_seconds, phase)
+    local a4 = (arg1 - arg0) * 0.5;
+    return arg0 + a4 + (math.sin((((Kristal.getTime()) + (speed_seconds * phase)) / speed_seconds) * (2 * math.pi)) * a4);
+end
+
+
 Mod.wave_shader = love.graphics.newShader([[
     extern number wave_sine;
     extern number wave_mag;
