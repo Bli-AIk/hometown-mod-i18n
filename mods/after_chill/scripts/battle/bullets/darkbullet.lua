@@ -32,7 +32,6 @@ function DarkBullet:onCollide(soul)
                 Game.battle.tired_bar:addTired(self:getTired())
             end        
             for _, follower in ipairs(Game.battle.party) do 
-                follower.hit_count = 0 
                 local status = follower:statusMessage("mercy", self:getTired() or 5)
                 if status then
                     status:addFX(HueShift(math.rad(90)))

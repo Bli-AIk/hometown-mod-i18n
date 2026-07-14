@@ -2,7 +2,7 @@ local solar_pulse, super = Class(Wave)
 
 function solar_pulse:init()
     super.init(self)
-    self.time = 13.3
+    self.time = 13
     self.pulse_timer = 0
     self.core_flame = nil
     self.start_w = 0
@@ -16,6 +16,10 @@ function solar_pulse:onArenaEnter()
     self.start_h = Game.battle.arena.height
     self.timer:tween(0.5, Game.battle.arena, {width = 240, height = 240}, "out-cubic")
 end
+function solar_pulse:onEnd()
+    super.onEnd(self)
+    Assets.stopSound("spell_pacify")
+end
 
 function solar_pulse:onStart()
     Game.battle.arena:setFire(true, true)
@@ -25,9 +29,12 @@ function solar_pulse:onStart()
         self.core_flame = self:spawnBullet("effects/firespell/flame", cx, cy)
         self.core_flame:setScale(1.5)
         self.core_flame.alpha = 0 
+        local orig = self.core_flame:getDamage()
+        self.core_flame.damage = 0 
         self.core_flame.destroy_on_hit = false
         self.core_flame.graphics.spin = 0.1
         self.core_flame:fadeTo(1, 0.3, function()
+            self.core_flame.damage = orig 
         self.timer:everyInstant(1, function()
             ralsei:setAnimation("spell", function()
             self:executeCorePulseEffect()

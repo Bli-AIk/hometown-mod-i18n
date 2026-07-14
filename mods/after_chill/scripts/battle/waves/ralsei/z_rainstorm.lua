@@ -31,6 +31,8 @@ function z_rainstorm:onStart()
                     local base_angle = MathUtils.angle(rx, ry, soul.x, soul.y)
                     local angle_offset = math.rad(love.math.random(-12, 12))            
                     z.physics.speed = love.math.random(6.5, 8.5)
+                    z.tiredness = 16 
+                    z.damage = 18 
                     z.physics.direction = base_angle + angle_offset
                 end
             end
