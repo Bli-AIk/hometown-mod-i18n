@@ -168,8 +168,6 @@ end
         -- getting markers is a pain 
         if not Game:getFlag("has_seen_ralsei") then 
         Game.world.music:fade(0, 5)
-        Game:setFlag("has_seen_ralsei", true)
-        Game:save()
         local rx, ry = cutscene:getMarker("kris")
         local kris = cutscene:getCharacter("kris")
         cutscene:wait(cutscene:walkTo(kris, rx, ry, 5))
