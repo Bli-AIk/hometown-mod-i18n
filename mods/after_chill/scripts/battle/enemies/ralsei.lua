@@ -44,11 +44,22 @@ function ralsei:init()
 
     self.check = "AT "..self.attack.." DF "..self.defense.."\n* The dark prince, seemingly lost in his own dark."
 
-    self.text = {
+    self.text_alt = {
         "* Fire emanates from the floor.",
         "* Smells like burnt friendship.",
-        "* You shiver a little,[wait:2] even though it isn't cold.",
+        "* You shiver a little,[wait:2] even though it isn't cold.", 
+        "* Hospital alarms seem to blare even louder,[wait:5] seemingly closer.", 
+        "* Is it too late go back.[wait:2].[wait:2].[wait:2]?", 
+        "* The heat is unsettling.[wait:5]\n* You start to feel dizzy."
     }
+
+    self.text = {
+        "* Ralsei looks at you nervously.", 
+        "* Hospital alarms seem to blare\nin the distance.", 
+        "* A tingling feeling in your stomach starts to rise.", 
+        "* Smells like charcoal."
+    }
+
     self:registerAct("Apologize")
     -- self:registerAct("???", "...")
     -- self.acts[3].color = {COLORS.red}
@@ -314,6 +325,8 @@ function ralsei:getEncounterText()
     if self.kaboom then 
         self.kaboom = nil
         return "* Ralsei's [color:yellow]defense[color:reset] went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]TIRED[color:reset]."
+    elseif self:getFlag("dead") then 
+        return TableUtils.pick(self.text_alt)
     else 
         return super.getEncounterText(self)
     end  
