@@ -24,7 +24,7 @@ function arena:update()
             local s_right  = soul.x + (soul.width / 2)
             local s_top    = soul.y - (soul.height / 2)
             local s_bottom = soul.y + (soul.height / 2)
-            local danger_distance = 4
+            local danger_distance = 0
             local dist_to_left   = s_left - self:getLeft()
             local dist_to_right  = self:getRight() - s_right
             local dist_to_top    = s_top - self:getTop()
@@ -34,8 +34,6 @@ function arena:update()
                                   (dist_to_top    <= danger_distance) or
                                   (dist_to_bottom <= danger_distance)
             if close_to_wall and (not self.fire_damage_cooldown or self.fire_damage_cooldown <= 0) then
-                Kristal.Console:warn("Too close to the fire!")
-                
                 for _, f in ipairs(Game.battle.party) do 
                     if self.damage then
                     f:hurt(12, true, {1, 0.45, 0})
