@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="11" nextobjectid="126">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#13132b" nextlayerid="11" nextobjectid="126">
  <editorsettings>
   <export target="recep3b.lua" format="lua"/>
  </editorsettings>
@@ -242,7 +242,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup color="#0000ff" id="5" name="collision">
+ <objectgroup color="#0000ff" id="5" name="collision" visible="0">
   <object id="3" x="0" y="280" width="560" height="40"/>
   <object id="4" x="0" y="360" width="400" height="40"/>
   <object id="5" x="520" y="360" width="40" height="40"/>
@@ -294,7 +294,7 @@
   <object id="67" x="-40" y="1204.66" width="40" height="200"/>
   <object id="68" x="0" y="1164.66" width="320" height="40"/>
  </objectgroup>
- <objectgroup color="#55ffff" id="10" name="enemycollision">
+ <objectgroup color="#55ffff" id="10" name="enemycollision" visible="0">
   <object id="75" x="0" y="280" width="560" height="40"/>
   <object id="76" x="0" y="360" width="400" height="40"/>
   <object id="77" x="520" y="360" width="40" height="40"/>

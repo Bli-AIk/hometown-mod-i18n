@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="22">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="23">
  <editorsettings>
   <export target="recep1.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="music" value="wind"/>
+  <property name="music" value="hallway"/>
   <property name="name" value="Receptionist Bridge"/>
  </properties>
  <tileset firstgid="1" name="Receptionist" tilewidth="16" tileheight="16" tilecount="361" columns="19" tilerendersize="grid">
@@ -36,7 +36,7 @@
 </data>
  </layer>
  <objectgroup color="#ff00ff" id="4" name="objects">
-  <object id="2" name="transition" x="1306.52" y="317.911" width="82.8111" height="82.8111">
+  <object id="2" name="transition" x="1320.27" y="317.911" width="39.8111" height="123.311">
    <properties>
     <property name="map" value="recep2"/>
     <property name="marker" value="entranceA"/>
@@ -62,6 +62,11 @@
     <property name="once" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="22" name="script" x="221.333" y="522.333" width="80" height="80">
+   <properties>
+    <property name="cutscene" value="musicnotif.recep"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers" tintcolor="#afafd1">
   <object id="3" name="entranceA" x="255.978" y="583.75">
@@ -75,7 +80,7 @@
   <object id="4" x="203.239" y="239.1" width="41.4056" height="41.4056"/>
   <object id="5" x="161.833" y="239.1" width="41.4056" height="414.056"/>
   <object id="6" x="320" y="440" width="41.4056" height="248.433"/>
-  <object id="7" x="360" y="440" width="1035.14" height="41.4056"/>
+  <object id="7" x="360" y="440" width="1001.14" height="41.4056"/>
   <object id="8" x="672.772" y="281.839" width="697.894" height="37.4056"/>
   <object id="9" x="678.439" y="33.4056" width="41.4056" height="248.433"/>
   <object id="11" x="239.311" y="276.506" width="318.506" height="41.4056"/>

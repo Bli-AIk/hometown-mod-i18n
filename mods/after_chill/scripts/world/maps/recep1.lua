@@ -10,9 +10,9 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 22,
+  nextobjectid = 23,
   properties = {
-    ["music"] = "wind",
+    ["music"] = "hallway",
     ["name"] = "Receptionist Bridge"
   },
   tilesets = {
@@ -127,10 +127,10 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 1306.52,
+          x = 1320.27,
           y = 317.911,
-          width = 82.8111,
-          height = 82.8111,
+          width = 39.8111,
+          height = 123.311,
           rotation = 0,
           visible = true,
           properties = {
@@ -186,6 +186,21 @@ return {
             ["encounter"] = "virovirokun3",
             ["enemy"] = "virovirokun",
             ["once"] = true
+          }
+        },
+        {
+          id = 22,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 221.333,
+          y = 522.333,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "musicnotif.recep"
           }
         }
       }
@@ -293,7 +308,7 @@ return {
           shape = "rectangle",
           x = 360,
           y = 440,
-          width = 1035.14,
+          width = 1001.14,
           height = 41.4056,
           rotation = 0,
           visible = true,

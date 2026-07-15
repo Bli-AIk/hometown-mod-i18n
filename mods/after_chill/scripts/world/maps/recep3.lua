@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 138,
+  nextobjectid = 140,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -199,9 +199,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 1080,
-          y = 400,
+          y = 478,
           width = 80,
-          height = 320,
+          height = 242,
           rotation = 0,
           visible = true,
           properties = {}
@@ -342,7 +342,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 103, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320, 321, 274, 275, 276, 321, 322, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 103, 105, 0, 0, 0, 0, 0, 0, 0, 0, 263, 225, 340, 293, 294, 295, 340, 227, 265, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 103, 105, 0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 263, 283, 283, 265, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 263, 264, 264, 265, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 284, 62, 63, 64, 64, 64, 64, 64, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 284, 81, 82, 83, 83, 83, 83, 83, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 284, 0, 0, 0, 0, 0, 0, 0, 282, 283, 283, 283, 283, 283, 283, 283, 284, 0, 0, 0, 0,
@@ -389,7 +389,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["weapon"] = "blackshard"
+            ["item"] = "pocket_pie"
           }
         },
         {
@@ -573,63 +573,21 @@ return {
           }
         },
         {
-          id = 156,
-          name = "warning_spawner",
-          type = "",
-          shape = "polygon",
-          x = 1080,
-          y = 400,
-          width = 80,
-          height = 320,
-          rotation = 0,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 80, y = 0 },
-            { x = 80, y = 320 },
-            { x = 0, y = 320 }
-          },
-          properties = {
-            ["lanes"] = 7
-          }
-        },
-        {
-          id = 157,
-          name = "warning_spawner",
-          type = "",
-          shape = "polygon",
-          x = 1080,
-          y = 400,
-          width = 80,
-          height = 320,
-          rotation = 0,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 80, y = 0 },
-            { x = 80, y = 320 },
-            { x = 0, y = 320 }
-          },
-          properties = {
-            ["lanes"] = 7
-          }
-        },
-        {
           id = 158,
           name = "warning_spawner",
           type = "",
           shape = "polygon",
           x = 1080,
-          y = 400,
+          y = 480,
           width = 80,
-          height = 320,
+          height = 240,
           rotation = 0,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
             { x = 80, y = 0 },
-            { x = 80, y = 320 },
-            { x = 0, y = 320 }
+            { x = 80, y = 240 },
+            { x = 0, y = 240 }
           },
           properties = {
             ["lanes"] = 7
@@ -698,7 +656,7 @@ return {
       id = 5,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1370,19 +1328,6 @@ return {
           properties = {}
         },
         {
-          id = 149,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1080,
-          y = 1200,
-          width = 80,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 150,
           name = "",
           type = "",
@@ -1443,6 +1388,19 @@ return {
           y = 440,
           width = 40,
           height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 138,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1070,
+          y = 1198.5,
+          width = 91.5,
+          height = 40.5,
           rotation = 0,
           visible = true,
           properties = {}
@@ -1614,19 +1572,6 @@ return {
           x = 280,
           y = 600,
           width = 80,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 96,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 800,
-          y = 680,
-          width = 720,
           height = 40,
           rotation = 0,
           visible = true,

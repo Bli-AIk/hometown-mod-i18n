@@ -13,7 +13,7 @@
  <imagelayer id="8" name="bg2" tintcolor="#000000" offsetx="-54.5455" offsety="290.909" parallaxx="0.25" parallaxy="0.1" repeatx="1">
   <image source="../../../assets/sprites/tilesets/buildings.png" width="631" height="594"/>
  </imagelayer>
- <imagelayer id="9" name="bg2" offsetx="58.5758" offsety="357.576" parallaxx="0.35" parallaxy="0.1" repeatx="1">
+ <imagelayer id="9" name="bg2" visible="0" offsetx="58.5758" offsety="357.576" parallaxx="0.35" parallaxy="0.1" repeatx="1">
   <image source="../../../assets/sprites/tilesets/buildings.png" width="631" height="594"/>
  </imagelayer>
  <layer id="1" name="Tile Layer 1" width="50" height="50">
@@ -118,7 +118,7 @@
   <object id="95" x="1681.27" y="920.545" width="40.1818" height="9.27273"/>
   <object id="102" x="1684.33" y="1159" width="33" height="12"/>
  </objectgroup>
- <objectgroup id="6" name="paths">
+ <objectgroup id="6" name="paths" visible="0">
   <object id="58" name="virovirokun" x="698.667" y="1328">
    <polygon points="0,0 -84,80 -6.66667,166.667 82.6667,80"/>
   </object>
@@ -203,7 +203,7 @@
     <property name="target" type="object" value="101"/>
    </properties>
   </object>
-  <object id="87" name="climbentry" x="1681.33" y="1040.54" width="40" height="40">
+  <object id="87" name="climbentry" x="1681.08" y="1040.79" width="40" height="40">
    <properties>
     <property name="target" type="object" value="98"/>
    </properties>

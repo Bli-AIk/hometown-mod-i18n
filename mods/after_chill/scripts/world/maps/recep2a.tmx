@@ -47,7 +47,7 @@
     <property name="marker" value="entranceB"/>
    </properties>
   </object>
-  <object id="10" name="chest" x="739" y="376">
+  <object id="10" name="chest" x="723" y="359">
    <properties>
     <property name="item" value="coff_syrup"/>
     <property name="layer" type="int" value="9999"/>

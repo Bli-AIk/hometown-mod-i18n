@@ -82,11 +82,6 @@
     <property name="marker" value="entrance2"/>
    </properties>
   </object>
-  <object id="24" name="script" x="80" y="400" width="80" height="80">
-   <properties>
-    <property name="cutscene" value="musicnotif.recep"/>
-   </properties>
-  </object>
   <object id="25" name="enemy" x="445" y="976" width="54" height="44">
    <properties>
     <property name="actor" value="virovirokun"/>

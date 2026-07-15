@@ -245,21 +245,6 @@ return {
           }
         },
         {
-          id = 24,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 80,
-          y = 400,
-          width = 80,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["cutscene"] = "musicnotif.recep"
-          }
-        },
-        {
           id = 25,
           name = "enemy",
           type = "",
