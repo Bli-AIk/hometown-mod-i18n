@@ -38,6 +38,7 @@ function HeartScreen:update()
         
         if Utils.equal(self.current_pattern, self.target_pattern) then
             self.is_solved = true
+            self.current_pattern = TableUtils.copy(self.target_pattern)
             self:setFlag("solved", true)
             Assets.playSound("locker")
             for _, thing in ipairs(Game.stage:getObjects()) do 

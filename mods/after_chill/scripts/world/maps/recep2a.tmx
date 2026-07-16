@@ -49,8 +49,7 @@
   </object>
   <object id="10" name="chest" x="723" y="359">
    <properties>
-    <property name="item" value="coff_syrup"/>
-    <property name="layer" type="int" value="9999"/>
+    <property name="item" value="honey_drop"/>
    </properties>
    <point/>
   </object>
@@ -74,7 +73,7 @@
     <property name="button_id" type="int" value="3"/>
    </properties>
   </object>
-  <object id="28" name="heartscreen" x="349.667" y="135" width="30" height="10"/>
+  <object id="28" name="heartscreen" x="351.66" y="136" width="30" height="10"/>
   <object id="31" name="hideparty" x="237" y="280" width="363" height="158"/>
  </objectgroup>
  <objectgroup id="9" name="objects_party"/>

@@ -251,8 +251,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["item"] = "coff_syrup",
-            ["layer"] = 9999
+            ["item"] = "honey_drop"
           }
         },
         {
@@ -320,8 +319,8 @@ return {
           name = "heartscreen",
           type = "",
           shape = "rectangle",
-          x = 349.667,
-          y = 135,
+          x = 351.66,
+          y = 136,
           width = 30,
           height = 10,
           rotation = 0,
