@@ -20,6 +20,14 @@ function HeartScreen:init(data)
     end
 end
 
+function HeartScreen:onAdd(parent)
+    super.onAdd(self, parent)
+    if self:getFlag("solved", false) then
+        self.is_solved = true
+        self.current_pattern = TableUtils.copy(self.target_pattern)
+    end
+end
+
 function HeartScreen:update()
     super.update(self)
     if not self.is_solved then
@@ -30,11 +38,13 @@ function HeartScreen:update()
         
         if Utils.equal(self.current_pattern, self.target_pattern) then
             self.is_solved = true
+            self:setFlag("solved", true)
             Assets.playSound("locker")
             for _, thing in ipairs(Game.stage:getObjects()) do 
                 if thing.id == "heartbutton" then 
                     thing.sprite:setSprite("world/events/glowtile/pressed")
                     thing.can_be_pressed = false 
+                    thing:setFlag("depressed", true)
                 end 
                 if thing:includes(Forcefield) then 
                     thing:init()

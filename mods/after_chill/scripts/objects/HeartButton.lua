@@ -12,6 +12,15 @@ function HeartButton:init(data)
     self.can_be_pressed = true 
 end
 
+function HeartButton:onAdd(parent)
+    super.onAdd(self, parent)
+    if self:getFlag("depressed") then
+        self.sprite:stop()
+        self.sprite:setSprite("world/events/glowtile/pressed")
+        self.can_be_pressed = false
+    end
+end
+
 function HeartButton:onEnter(player)
     if self.can_be_pressed and player == Game.world.player then 
         self.sprite:flash()
@@ -28,5 +37,7 @@ function HeartButton:onEnter(player)
     end 
     super.onEnter(self, player)
 end
+
+
 
 return HeartButton
