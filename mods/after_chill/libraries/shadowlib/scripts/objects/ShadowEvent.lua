@@ -43,6 +43,7 @@ end
 
 function ShadowEvent:drawCharacterShadow(chara)
     if self.current_opacity <= 0 or not chara.sprite then return end
+    if Game.state == "BATTLE" then return end 
     
     love.graphics.push()
     local w = chara.sprite.width or 0

@@ -63,9 +63,9 @@ function actor:onSpriteUpdate(sprite)
     end
     self.siner = self.siner + (DT * 3)
     sprite.y = sprite.base_y + (math.sin(self.siner) * 3.2)
-else 
+    else 
     sprite.alpha = 0.8 
-end 
+    end 
 end
 
 

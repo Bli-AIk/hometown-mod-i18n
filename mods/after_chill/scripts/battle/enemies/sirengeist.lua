@@ -15,6 +15,12 @@ function sirengeist:init()
     self.spare_points = 20
     self.tired_percentage = 25
 
+    self.dialogue = {
+        "Code Green!", 
+        "Aren't I loud?", 
+        "You look quite blue."
+    }
+
     self.waves = {
         "sirengeist/cross_throw", 
         "sirengeist/crossrain"
@@ -25,7 +31,6 @@ function sirengeist:init()
         "This ghost can only be hit through [color:yellow]MAGIC[color:reset]."
     } 
     self.wave_index = 1 
-
     self.experience = 20 
 
     self.text = {
@@ -36,7 +41,6 @@ function sirengeist:init()
     self:registerAct("Mute", "Get\nMercy")
     self:registerAct("MuteX", "Full\nMercy", {"ralsei"}, 8)
     self:registerAct("TryMagic", "Learn\nMagic", {}, 16)
-    -- self:registerAct("TakeCareX", "All\nMercy", {"ralsei"})
 end
 
 function sirengeist:getNextWaves()
@@ -109,6 +113,7 @@ function sirengeist:onAct(battler, name)
                 cutscene:text("* You really shouldn't be [color:yellow]alarmed[color:reset]![wait:10]\n* We're very friendly!", "blush_pleased", "ralsei")
                 self:addMercy(25)
                 cutscene:text("* The enemy didn't get the joke...[wait:5]\n* But they giggled nevertheless!")
+                self.dialogue_override = "Code Red!\nBad Joke!"
             end)
         end 
     end   

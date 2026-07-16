@@ -7,6 +7,8 @@ function Shadow:init(options)
     self.opacity = options.opacity or 0.5
     self.shear = options.shear or -0.5
     self.shadow_scale = options.scale or 1
+    self.x_offset = options.off_x or 0 
+    self.y_offset = options.off_y or 0 
 end
 
 function Shadow:draw()
@@ -28,7 +30,7 @@ function Shadow:draw()
         end
     end
     local rel_x, rel_y = chara:getRelativePos(ox + (w / 2), oy + h, self)
-    love.graphics.translate(rel_x, rel_y)
+    love.graphics.translate(rel_x + self.x_offset, rel_y + self.y_offset)
     love.graphics.scale(self.shadow_scale, -self.shadow_scale)
     love.graphics.shear(self.shear, 0)
     love.graphics.translate(-w / 2, -h)

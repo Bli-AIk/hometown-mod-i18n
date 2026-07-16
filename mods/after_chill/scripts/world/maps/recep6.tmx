@@ -124,7 +124,7 @@
   </object>
   <object id="2" name="frozenenemy" x="1028" y="396.97">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
    </properties>
    <point/>
   </object>
@@ -136,7 +136,7 @@
   </object>
   <object id="4" name="frozenenemy" x="1032" y="790">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
    </properties>
    <point/>
   </object>
@@ -148,7 +148,7 @@
   </object>
   <object id="7" name="frozenenemy" x="1036" y="1134">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
    </properties>
    <point/>
   </object>

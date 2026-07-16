@@ -1010,10 +1010,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actor"] = "virovirokun",
+            ["actor"] = "sirengeist",
             ["chase"] = true,
-            ["encounter"] = "virovirokun2",
-            ["enemy"] = "virovirokun",
+            ["encounter"] = "sirengeist2",
+            ["enemy"] = "sirengeist",
             ["path"] = "virovirokun2"
           }
         },

@@ -14,6 +14,7 @@ end
 
 function PerspectiveShadow:drawCharacterShadow(chara)
     if not chara.sprite then return end
+    if Game.state == "BATTLE" then return end 
     love.graphics.push()
     local w = chara.sprite.width or 0
     local h = chara.sprite.height or 0

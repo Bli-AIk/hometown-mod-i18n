@@ -15,7 +15,7 @@
     "equipment": {},
     "hardReset": false,
     "hidden": false,
-    "dev":  false, 
+    "dev":  true, 
     "setWindowTitleAndIcon": null,
     "config": {
         "kristal": {

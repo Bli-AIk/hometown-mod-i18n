@@ -171,10 +171,10 @@
   </object>
   <object id="56" name="enemy" x="1686" y="742.333" width="54" height="44">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun2"/>
-    <property name="enemy" value="virovirokun"/>
+    <property name="encounter" value="sirengeist2"/>
+    <property name="enemy" value="sirengeist"/>
     <property name="path" value="virovirokun2"/>
    </properties>
   </object>

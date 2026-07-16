@@ -55,10 +55,10 @@
   </object>
   <object id="21" name="enemy" x="396" y="57" width="54" height="44">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun3"/>
-    <property name="enemy" value="virovirokun"/>
+    <property name="encounter" value="sirengeist3"/>
+    <property name="enemy" value="sirengeist"/>
     <property name="once" type="bool" value="true"/>
    </properties>
   </object>

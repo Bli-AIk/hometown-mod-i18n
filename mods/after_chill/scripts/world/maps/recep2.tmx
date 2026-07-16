@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="10" nextobjectid="62">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="10" nextobjectid="63">
  <editorsettings>
   <export target="recep2.lua" format="lua"/>
  </editorsettings>
@@ -52,25 +52,28 @@
   <object id="31" name="entranceB" x="1061.33" y="688.333">
    <point/>
   </object>
-  <object id="34" name="v5" x="204" y="460">
+  <object id="34" name="v5" x="308" y="721.333">
    <point/>
   </object>
-  <object id="35" name="v1" x="266.667" y="1074.67">
+  <object id="35" name="v1" x="113.334" y="1186.67">
    <point/>
   </object>
   <object id="36" name="v3" x="925.333" y="796">
    <point/>
   </object>
-  <object id="37" name="v4" x="648" y="460">
+  <object id="37" name="v4" x="772" y="532">
    <point/>
   </object>
-  <object id="38" name="v2" x="682.667" y="1074.67">
+  <object id="38" name="v2" x="824" y="1149.34">
    <point/>
   </object>
   <object id="60" name="entrance" x="1158.67" y="782.333">
    <point/>
   </object>
   <object id="61" name="savespoint" x="358.667" y="1017">
+   <point/>
+  </object>
+  <object id="62" name="v6" x="264" y="292">
    <point/>
   </object>
  </objectgroup>
@@ -89,13 +92,14 @@
    <properties>
     <property name="actor" value="sirengeist"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun3"/>
+    <property name="encounter" value="sirengeist2"/>
     <property name="enemy" value="sirengeist"/>
     <property name="marker1" value="v1"/>
     <property name="marker2" value="v2"/>
     <property name="marker3" value="v3"/>
     <property name="marker4" value="v4"/>
     <property name="marker5" value="v5"/>
+    <property name="marker6" value="v6"/>
     <property name="once" type="bool" value="true"/>
     <property name="paceinterval" type="int" value="0"/>
     <property name="pacereturn" type="bool" value="false"/>
