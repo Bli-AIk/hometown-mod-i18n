@@ -1,0 +1,118 @@
+local sirengeist, super = Class(EnemyBattler)
+
+function sirengeist:init()
+    super.init(self)
+
+    self.name = "Sirengeist"
+    self:setActor("sirengeist")
+
+    self.max_health = 50
+    self.health = 50
+    self.attack = 9
+    self.defense = 9999
+    self.money = 78
+
+    self.spare_points = 20
+    self.tired_percentage = 25
+
+    self.waves = {
+        "sirengeist/cross_throw", 
+        "sirengeist/crossrain"
+    }
+
+    self.check = {
+        "AT 9 DEF ?\n* Ghost with a blaring alert above it?[wait:5]\n* The sound seems to be from afar.", 
+        "This ghost can only be hit through [color:yellow]MAGIC[color:reset]."
+    } 
+    self.wave_index = 1 
+
+    self.experience = 20 
+
+    self.text = {
+        "* Sirengeist floats along with the wind.",
+        "* Aren't sirens meant to be attractive?",
+        "* You can hear whispers.\n* They seem loud in your ears."
+    }
+    self:registerAct("Mute", "Get\nMercy")
+    self:registerAct("MuteX", "Full\nMercy", {"ralsei"}, 8)
+    self:registerAct("TryMagic", "Learn\nMagic", {}, 16)
+    -- self:registerAct("TakeCareX", "All\nMercy", {"ralsei"})
+end
+
+function sirengeist:getNextWaves()
+    local wave = self.waves[self.wave_index]
+    self.wave_index = self.wave_index + 1
+    if self.wave_index > #self.waves then
+        self.wave_index = 1
+    end
+    return { wave }
+end
+
+function sirengeist:getCheckText(battler)
+    if self:canSpare() then 
+    local base_text = "AT 9 DEF ?\n* A ghost with a blaring alert on its head."
+    return base_text .. "\n* It seems to be completely silent now."
+    else 
+    return super.getCheckText(self, battler)
+    end 
+end 
+
+function sirengeist:onAct(battler, name)
+    if name == "TryMagic" then
+        Game.battle:startActCutscene(function(cutscene)
+            cutscene:text("* Kris tried to channel their magic and attack into a \"spell\"!")
+            cutscene:wait(1)
+            battler:resetSprite()
+            cutscene:wait(cutscene:playSound("boost"))
+            cutscene:text("* Kris learnt a new \"spell\"\ntemporarily!")
+            self:removeAct("TryMagic")
+            self:registerAct("SwordButt", "Attack\nGhost", {}, 8)
+        end)
+    elseif name == "SwordButt" then
+        Game.battle:startActCutscene(function(cutscene)
+            local return_text = "* The enemy was slightly hurt...[wait:5]\n* The pain made them giggle?"
+            battler:setAnimation("swing", function() 
+                Assets.playSound("scytheburst")
+                battler:resetSprite() 
+                local dmg = (battler.chara:getStat("attack")/2) * 3
+                self:hurt(MathUtils.round(dmg), battler, function() 
+                    return_text = "* The enemy ran away in fright..."
+                    self:onDefeatRun()
+                end) 
+            end)
+            cutscene:wait(1) 
+            cutscene:text(return_text)
+        end)
+    elseif name == "Mute" then
+        self:addMercy(40)
+        self:flash()
+        return {
+            "* Kris tried to get the enemy to be quiet!", 
+            "* The enemy's alert flashed and went even louder!" 
+        }
+    elseif name == "MuteX" then 
+    Game.battle:startActCutscene(function(cutscene)
+        cutscene:text("* You and Ralsei tried to get the enemy to be quiet.")
+        cutscene:text("* Hey,[wait:2] I know you like blaring...", "pleased", "ralsei")
+        cutscene:text("* But could you please tone\nit down?", "stressed", "ralsei")
+        cutscene:wait(0.5)
+        cutscene:text("* The enemy couldn't hear Ralsei\nover the noise.")
+        self:addMercy(100)
+        cutscene:text("* The enemy laughed at Ralsei![react:ralsei]", {reactions ={
+            ralsei = {"H-Hey! It's not\nmy fault!", "right", "mid", "owo_angry", "ralsei"}
+        }})
+    end)
+    elseif name == "Standard" then  
+        if battler.chara.id == "ralsei" then 
+            Game.battle:startActCutscene(function(cutscene)
+                cutscene:text("* Ralsei told a joke to the enemy.")
+                cutscene:text("* You really shouldn't be [color:yellow]alarmed[color:reset]![wait:10]\n* We're very friendly!", "blush_pleased", "ralsei")
+                self:addMercy(25)
+                cutscene:text("* The enemy didn't get the joke...[wait:5]\n* But they giggled nevertheless!")
+            end)
+        end 
+    end   
+    return super.onAct(self, battler, name)
+end 
+
+return sirengeist

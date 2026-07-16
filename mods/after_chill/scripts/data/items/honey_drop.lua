@@ -22,7 +22,7 @@ function item:init()
     self.description = "Looks like a giant block of caramel.\nYou feel the urge to lick it. +120HP."
 
     -- Amount healed (HealItem variable)
-    self.heal_amount = 160
+    self.heal_amount = 120 
 
     -- Default shop price (sell price is halved)
     self.price = 90

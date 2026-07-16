@@ -2,7 +2,7 @@ local flowerspin, super = Class(Wave)
 
 function flowerspin:init()
     super.init(self)
-    self.time = 12
+    self.time = 8
     self.siner = 0
     self.flower = nil
 end 

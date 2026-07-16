@@ -15,13 +15,13 @@
     "equipment": {},
     "hardReset": false,
     "hidden": false,
-    "dev": false, 
+    "dev":  true, 
     "setWindowTitleAndIcon": null,
     "config": {
         "kristal": {
             "storageSlots": 12,
-            "growStronger": false,
-            "growStrongerChara": false,
+            "growStronger": true,
+            "growStrongerChara": "kris",
             "targetSystem": false,
             "soulInvBetweenWaves": false,
             "enemyAuras": true,

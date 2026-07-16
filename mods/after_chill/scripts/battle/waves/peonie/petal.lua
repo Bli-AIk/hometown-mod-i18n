@@ -2,7 +2,7 @@ local petal, super = Class(Wave)
 
 function petal:init()
     super.init(self)
-    self.time = 12
+    self.time = 7
     self.siner = 0
     self.enemy = nil 
     self.nullified = false 
@@ -49,8 +49,7 @@ function petal:update()
         local offset = math.sin(self.siner * 1.5) * 60
         Game.battle.arena:setPosition(self.arena_start_x + offset, self.arena_start_y)    
         self.arena_rotation = math.sin(self.siner * 2.5) * math.rad(5)
-        local arena = Game.battle.arena
-        arena.rotation = self.arena_rotation
+        Game.battle.arena.rotation = self.arena_rotation
     elseif self.nullified and Game.battle.arena then 
         self.siner = self.siner + DT      
         local offset = math.sin(self.siner * 1.5) * 20

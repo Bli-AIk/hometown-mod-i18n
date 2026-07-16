@@ -26,6 +26,8 @@ function dusteer:init()
         "* Smells like trampled snow.", 
         "* Reinfrost trots and kicks some\nsnow.", 
     }
+
+    self.experience = 24
     self.low_health_percentage = 0.2
     self.low_health_text = "* Reinfrost's antlers look slightly cracked."
     self:registerAct("Sweep", "Get\nMercy")

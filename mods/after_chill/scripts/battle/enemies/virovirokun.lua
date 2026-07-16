@@ -16,8 +16,8 @@ function Virovirokun:init()
     self.tired_percentage = 25
 
     self.waves = {
-        "virovirokun/needle",
-        "virovirokun/invader"
+        -- "virovirokun/needle",
+        -- "virovirokun/invader"
     }
 
     self.check = "AT II DEF -V\nThis virus has come to life and decided to block your way!"

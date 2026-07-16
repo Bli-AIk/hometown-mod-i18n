@@ -9,9 +9,7 @@ function virovirokun3:init()
     self.music = "snowstorm"
     -- Enables the purple grid battle background
     self.background = true
-    self:addEnemy("virovirokun")
-    self:addEnemy("virovirokun")
-    self:addEnemy("virovirokun")
+    self:addEnemy("sirengeist")
 end
 
 function virovirokun3:onStateChange(old, new, reason) 

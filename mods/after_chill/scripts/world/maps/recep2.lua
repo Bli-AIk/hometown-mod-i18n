@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 61,
+  nextobjectid = 62,
   backgroundcolor = { 1, 1, 16 },
   properties = {
     ["music"] = "hallway",
@@ -208,6 +208,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 61,
+          name = "savespoint",
+          type = "",
+          shape = "point",
+          x = 358.667,
+          y = 1017,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -249,17 +262,17 @@ return {
           name = "enemy",
           type = "",
           shape = "rectangle",
-          x = 445,
-          y = 976,
+          x = 555.667,
+          y = 636,
           width = 54,
           height = 44,
           rotation = 0,
           visible = true,
           properties = {
-            ["actor"] = "virovirokun",
+            ["actor"] = "sirengeist",
             ["chase"] = true,
-            ["encounter"] = "virovirokun2",
-            ["enemy"] = "virovirokun",
+            ["encounter"] = "virovirokun3",
+            ["enemy"] = "sirengeist",
             ["marker1"] = "v1",
             ["marker2"] = "v2",
             ["marker3"] = "v3",
@@ -316,6 +329,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["marker"] = "savespoint",
             ["text1"] = "* The power of never-ending room numbers shines within you."
           }
         }

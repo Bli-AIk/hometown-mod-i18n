@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="10" nextobjectid="61">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#010110" nextlayerid="10" nextobjectid="62">
  <editorsettings>
   <export target="recep2.lua" format="lua"/>
  </editorsettings>
@@ -70,6 +70,9 @@
   <object id="60" name="entrance" x="1158.67" y="782.333">
    <point/>
   </object>
+  <object id="61" name="savespoint" x="358.667" y="1017">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="objects">
   <properties>
@@ -82,12 +85,12 @@
     <property name="marker" value="entrance2"/>
    </properties>
   </object>
-  <object id="25" name="enemy" x="445" y="976" width="54" height="44">
+  <object id="25" name="enemy" x="555.667" y="636" width="54" height="44">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun2"/>
-    <property name="enemy" value="virovirokun"/>
+    <property name="encounter" value="virovirokun3"/>
+    <property name="enemy" value="sirengeist"/>
     <property name="marker1" value="v1"/>
     <property name="marker2" value="v2"/>
     <property name="marker3" value="v3"/>
@@ -114,6 +117,7 @@
   </object>
   <object id="32" name="savepoint" x="284" y="998.667">
    <properties>
+    <property name="marker" value="savespoint"/>
     <property name="text1" value="* The power of never-ending room numbers shines within you."/>
    </properties>
    <point/>

@@ -18,8 +18,14 @@ function peonie:init()
         "peonie/flowerspin",
         "peonie/petal"
     }
+
+    self.experience = 34 
+
     self.dialogue = {} 
-    self.check = "AT 9 DF 10\n* Part of a flower that fell off.[wait:5]\n* Fallen down..."
+    self.check = {
+        "AT 9 DF 10\n* Once part of a bouquet.\n* It fell off a flower.", 
+        "It has lost the path it was meant\nto follow,[wait:5] and has now found its\nway into the arena."
+    }
 
     self.text = {
         "* The wind sways Peonie around.", 
@@ -30,7 +36,8 @@ function peonie:init()
     self.low_health_text = "* You can see Peonie wilting slowly."
 
     self:registerAct("Bloom", "Get\nMercy")
-    self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 24)
+    self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 18)
+    self:registerAct("Tap", "Lower\nDF", {}, 12)
 end
 
 function peonie:onAct(battler, name)
@@ -46,6 +53,11 @@ function peonie:onAct(battler, name)
             end
             cutscene:text("* It and its friends feel happier!")
         end)
+    elseif name == "Tap" then 
+        self.defense = self.defense - 1
+        battler:setAnimation("battle/attack", function() battler:resetSprite()  self:shake() end)
+        Assets.playSound("laz_c")
+        return "[wait:20]* You gently hit the enemy.[wait:5]\n* It got scared of you,[wait:2] and its [color:yellow]defense[color:reset] dropped!"
     elseif name == "BloomX" then 
         Game.battle:startActCutscene(function(cutscene)
             cutscene:text("* You and Ralsei encourage the enemy to bloom once again into a\nbeautiful flower!")
@@ -73,21 +85,17 @@ function peonie:onSpared(pacified)
     for i = 1, 8 do
         local stacked_y = (spawn_y - 48) + ((i - 1) * 12)
         local addon = MathUtils.round(MathUtils.random(1, 2))
-        local sprite = Sprite("effects/petal_" .. addon, line_x, stacked_y)
-        
+        local sprite = Sprite("effects/petal_" .. addon, line_x, stacked_y)     
         sprite:setScale(2)
         sprite:setOrigin(0.5)
         sprite:setLayer(self.layer + 0.001)
-
         sprite.start_x = line_x
         sprite.wave_time = love.math.random() * 10
         sprite.fall_progress = 0
         sprite.fall_speed = 120    
         sprite.sway_speed = 5.0    
         sprite.sway_width = 15     
-
         Game.battle:addChild(sprite)
-
         Game.battle.timer:every(0, function()
             if not sprite or not sprite.stage then return false end
 
