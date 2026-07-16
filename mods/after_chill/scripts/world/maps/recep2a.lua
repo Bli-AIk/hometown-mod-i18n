@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 25,
+  nextobjectid = 29,
   properties = {
     ["music"] = "hallway"
   },
@@ -256,19 +256,6 @@ return {
           }
         },
         {
-          id = 18,
-          name = "heart_puzzle",
-          type = "",
-          shape = "point",
-          x = 421,
-          y = 159,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 24,
           name = "forcefield",
           type = "",
@@ -277,6 +264,64 @@ return {
           y = 279,
           width = 38,
           height = 159,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 25,
+          name = "heartbutton",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 339.5,
+          width = 37,
+          height = 38,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["button_id"] = 1
+          }
+        },
+        {
+          id = 26,
+          name = "heartbutton",
+          type = "",
+          shape = "rectangle",
+          x = 420,
+          y = 339.5,
+          width = 37,
+          height = 38,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["button_id"] = 2
+          }
+        },
+        {
+          id = 27,
+          name = "heartbutton",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 339.5,
+          width = 40,
+          height = 40.5,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["button_id"] = 3
+          }
+        },
+        {
+          id = 28,
+          name = "heartscreen",
+          type = "",
+          shape = "rectangle",
+          x = 349.667,
+          y = 135,
+          width = 30,
+          height = 10,
           rotation = 0,
           visible = true,
           properties = {}

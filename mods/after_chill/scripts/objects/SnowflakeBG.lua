@@ -19,6 +19,7 @@ end
 
 function SnowflakeBG:spawnFlake(init)
     local f = Sprite("effects/icespell/snowflake")
+    f.debug_select = false 
     f.x = love.math.random(-50, 690)
     f.y = init and love.math.random(-50, 480) or love.math.random(-100, -20)
     local scale = love.math.random(8, 12) / 10
