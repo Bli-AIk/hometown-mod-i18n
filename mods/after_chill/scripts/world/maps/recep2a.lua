@@ -9,8 +9,8 @@ return {
   height = 15,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
-  nextobjectid = 29,
+  nextlayerid = 12,
+  nextobjectid = 32,
   properties = {
     ["music"] = "hallway"
   },
@@ -266,7 +266,9 @@ return {
           height = 159,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["cond"] = "not (Game:getFlag(\"heart_solved\", 0) >= 1)"
+          }
         },
         {
           id = 25,
@@ -325,6 +327,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 31,
+          name = "hideparty",
+          type = "",
+          shape = "rectangle",
+          x = 237,
+          y = 280,
+          width = 363,
+          height = 158,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -333,6 +348,21 @@ return {
       draworder = "topdown",
       id = 9,
       name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "controllers",
       class = "",
       visible = true,
       opacity = 1,

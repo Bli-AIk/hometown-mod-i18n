@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="29">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="40" tileheight="40" infinite="0" nextlayerid="12" nextobjectid="32">
  <editorsettings>
   <export target="recep2a.lua" format="lua"/>
  </editorsettings>
@@ -54,7 +54,11 @@
    </properties>
    <point/>
   </object>
-  <object id="24" name="forcefield" x="643" y="279" width="38" height="159"/>
+  <object id="24" name="forcefield" x="643" y="279" width="38" height="159">
+   <properties>
+    <property name="cond" value="not (Game:getFlag(&quot;heart_solved&quot;, 0) &gt;= 1)"/>
+   </properties>
+  </object>
   <object id="25" name="heartbutton" x="320" y="339.5" width="37" height="38">
    <properties>
     <property name="button_id" type="int" value="1"/>
@@ -71,8 +75,10 @@
    </properties>
   </object>
   <object id="28" name="heartscreen" x="349.667" y="135" width="30" height="10"/>
+  <object id="31" name="hideparty" x="237" y="280" width="363" height="158"/>
  </objectgroup>
  <objectgroup id="9" name="objects_party"/>
+ <objectgroup color="#55ff7f" id="11" name="controllers"/>
  <objectgroup color="#aa55ff" id="5" name="markers">
   <object id="8" name="entranceA" x="422" y="543">
    <point/>

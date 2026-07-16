@@ -7,20 +7,24 @@ function HeartButton:init(data)
     self:addChild(self.sprite)
     self.sprite:play(0.1, true)
     self.sprite:setScale(2)
+    self:setHitbox(0, 0, self.sprite.width*2, self.sprite.height*2)
     self.id = "heartbutton"
     self.can_be_pressed = true 
 end
 
 function HeartButton:onEnter(player)
-    if self.can_be_pressed then 
+    if self.can_be_pressed and player == Game.world.player then 
         self.sprite:flash()
-        Assets.playSound("bell", 0.4, 1.2)
-        local current_states = Game:getFlag("heart_puzzle_state", {1, 1, 1})
-        current_states[self.button_id] = current_states[self.button_id] + 1
-        if current_states[self.button_id] > 3 then
-            current_states[self.button_id] = 1
+        Assets.playSound("bell", 0.4, 1.2) 
+        for _, thing in ipairs(Game.stage:getObjects()) do
+            if thing.id == "heart_screen" then
+                thing.current_pattern[self.button_id] = thing.current_pattern[self.button_id] + 1
+                if thing.current_pattern[self.button_id] > 3 then
+                    thing.current_pattern[self.button_id] = 1
+                end
+                break
+            end
         end
-        Game:setFlag("heart_puzzle_state", current_states)
     end 
     super.onEnter(self, player)
 end

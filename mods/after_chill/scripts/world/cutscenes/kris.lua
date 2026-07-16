@@ -439,7 +439,7 @@ end
     ralsei:setFacing("left")
     ralsei:alert(0.5)
     cutscene:wait(0.5)
-        cutscene:detachCamera()
+    cutscene:detachCamera()
     cutscene:panTo(noelle, 0.6, "out-back")
     cutscene:wait(0.6)
     cutscene:wait(1.5)
