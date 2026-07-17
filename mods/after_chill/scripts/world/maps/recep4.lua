@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 103,
+  nextobjectid = 105,
   properties = {
     ["music"] = "hallway"
   },
@@ -762,7 +762,7 @@ return {
       id = 6,
       name = "paths",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -829,9 +829,9 @@ return {
           name = "",
           type = "climbarea",
           shape = "rectangle",
-          x = 1685.37,
+          x = 1680.67,
           y = 919.086,
-          width = 31.427,
+          width = 28,
           height = 120.911,
           rotation = 0,
           visible = true,
@@ -844,7 +844,7 @@ return {
           shape = "rectangle",
           x = 1684.67,
           y = 1159.31,
-          width = 30.6667,
+          width = 24.3031,
           height = 197.357,
           rotation = 0,
           visible = true,
@@ -930,6 +930,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 104,
+          name = "warpdoorpath",
+          type = "",
+          shape = "point",
+          x = 1482,
+          y = 753,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -991,10 +1004,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actor"] = "virovirokun",
+            ["actor"] = "sirengeist",
             ["chase"] = true,
-            ["encounter"] = "virovirokun",
-            ["enemy"] = "virovirokun",
+            ["encounter"] = "sirengeist2",
+            ["enemy"] = "sirengeist",
             ["path"] = "virovirokun"
           }
         },
@@ -1010,10 +1023,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actor"] = "sirengeist",
+            ["actor"] = "dusteer",
             ["chase"] = true,
-            ["encounter"] = "sirengeist2",
-            ["enemy"] = "sirengeist",
+            ["encounter"] = "dusteer",
+            ["enemy"] = "dusteer",
             ["path"] = "virovirokun2"
           }
         },
@@ -1029,7 +1042,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["item"] = "honey_drop"
+            ["item"] = "revivemint"
           }
         },
         {
@@ -1167,7 +1180,7 @@ return {
           name = "climbexit",
           type = "",
           shape = "rectangle",
-          x = 1683,
+          x = 1672.21,
           y = 993.333,
           width = 40,
           height = 40,
@@ -1182,7 +1195,7 @@ return {
           name = "climbexit",
           type = "",
           shape = "rectangle",
-          x = 1684.21,
+          x = 1676.21,
           y = 1272.67,
           width = 31.2727,
           height = 40,
@@ -1190,6 +1203,24 @@ return {
           visible = true,
           properties = {
             ["target"] = { id = 96 }
+          }
+        },
+        {
+          id = 103,
+          name = "warpdoor",
+          type = "",
+          shape = "point",
+          x = 1484.5,
+          y = 683.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["flag1"] = "encounter#ralsei:done",
+            ["map1"] = "forest1",
+            ["marker1"] = "spawn",
+            ["openflag"] = "encounter#ralsei:done"
           }
         }
       }

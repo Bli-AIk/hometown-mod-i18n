@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="103">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="105">
  <editorsettings>
   <export target="recep4.lua" format="lua"/>
  </editorsettings>
@@ -118,7 +118,7 @@
   <object id="95" x="1681.27" y="920.545" width="40.1818" height="9.27273"/>
   <object id="102" x="1684.33" y="1159" width="33" height="12"/>
  </objectgroup>
- <objectgroup id="6" name="paths" visible="0">
+ <objectgroup id="6" name="paths">
   <object id="58" name="virovirokun" x="698.667" y="1328">
    <polygon points="0,0 -84,80 -6.66667,166.667 82.6667,80"/>
   </object>
@@ -127,8 +127,8 @@
   </object>
  </objectgroup>
  <objectgroup color="#55ffff" id="10" name="climbing" class="objects">
-  <object id="84" type="climbarea" x="1685.37" y="919.086" width="31.427" height="120.911"/>
-  <object id="99" type="climbarea" x="1684.67" y="1159.31" width="30.6667" height="197.357"/>
+  <object id="84" type="climbarea" x="1680.67" y="919.086" width="28" height="120.911"/>
+  <object id="99" type="climbarea" x="1684.67" y="1159.31" width="24.3031" height="197.357"/>
  </objectgroup>
  <objectgroup color="#aa00ff" id="5" name="markers">
   <object id="54" name="entranceA" x="217.333" y="89.3333">
@@ -144,6 +144,9 @@
    <point/>
   </object>
   <object id="101" x="1700.15" y="1150.23">
+   <point/>
+  </object>
+  <object id="104" name="warpdoorpath" x="1482" y="753">
    <point/>
   </object>
  </objectgroup>
@@ -162,25 +165,25 @@
   </object>
   <object id="52" name="enemy" x="674.333" y="1387.33" width="54" height="44">
    <properties>
-    <property name="actor" value="virovirokun"/>
+    <property name="actor" value="sirengeist"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="virovirokun"/>
-    <property name="enemy" value="virovirokun"/>
+    <property name="encounter" value="sirengeist2"/>
+    <property name="enemy" value="sirengeist"/>
     <property name="path" value="virovirokun"/>
    </properties>
   </object>
   <object id="56" name="enemy" x="1686" y="742.333" width="54" height="44">
    <properties>
-    <property name="actor" value="sirengeist"/>
+    <property name="actor" value="dusteer"/>
     <property name="chase" type="bool" value="true"/>
-    <property name="encounter" value="sirengeist2"/>
-    <property name="enemy" value="sirengeist"/>
+    <property name="encounter" value="dusteer"/>
+    <property name="enemy" value="dusteer"/>
     <property name="path" value="virovirokun2"/>
    </properties>
   </object>
   <object id="57" name="chest" x="1640" y="1080" width="40" height="40">
    <properties>
-    <property name="item" value="honey_drop"/>
+    <property name="item" value="revivemint"/>
    </properties>
   </object>
   <object id="63" name="slidearea" x="1368.67" y="919.364" width="62.3333" height="403.636"/>
@@ -218,15 +221,24 @@
     <property name="target" type="object" value="100"/>
    </properties>
   </object>
-  <object id="98" name="climbexit" x="1683" y="993.333" width="40" height="40">
+  <object id="98" name="climbexit" x="1672.21" y="993.333" width="40" height="40">
    <properties>
     <property name="target" type="object" value="85"/>
    </properties>
   </object>
-  <object id="100" name="climbexit" x="1684.21" y="1272.67" width="31.2727" height="40">
+  <object id="100" name="climbexit" x="1676.21" y="1272.67" width="31.2727" height="40">
    <properties>
     <property name="target" type="object" value="96"/>
    </properties>
+  </object>
+  <object id="103" name="warpdoor" x="1484.5" y="683.5">
+   <properties>
+    <property name="flag1" value="encounter#ralsei:done"/>
+    <property name="map1" value="forest1"/>
+    <property name="marker1" value="spawn"/>
+    <property name="openflag" value="encounter#ralsei:done"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
 </map>

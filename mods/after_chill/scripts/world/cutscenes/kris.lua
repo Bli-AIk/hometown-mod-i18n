@@ -264,6 +264,7 @@ end
         else 
         cutscene:wait(1)
         Game.world.music:setVolume(1)
+        local kris = cutscene:getCharacter("kris")
         kris:resetSprite()
         kris:setFacing("up")
         ralsei:remove()

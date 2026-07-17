@@ -7,7 +7,6 @@ local ShadowEvent, super = Class(Event)
 function ShadowEvent:init(x, y, data)
     super.init(self, x, y, data)
     self:setHitbox(0, 0, data.width, data.height)
-    self.solid = true 
     local properties = data.properties or {}
     self.fade_out = properties["fade"] or false 
     self.target_opacity = properties["target_opacity"] or 0

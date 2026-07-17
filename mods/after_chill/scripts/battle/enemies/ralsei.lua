@@ -77,6 +77,11 @@ if not Game.battle:hasCutscene() then
             self:setPosition(533, 284)
             self.vig:fadeOutAndRemove(2)
             Game.stage:removeFX("shiftfx")
+            for _, idk in ipairs(Game.stage:getObjects()) do 
+                if idk:includes(FireGlow) then 
+                    idk:remove()
+                end 
+            end 
             Game.battle.music:fade(0, 2)
             cutscene:wait(2)
             cutscene:text("* Even when I tried to fight against it...", "down", "ralsei")

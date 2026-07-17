@@ -10,9 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 34,
+  nextobjectid = 35,
   properties = {
     ["has_tile_sounds"] = true,
+    ["music"] = "bloom_f",
     ["name"] = "Blooming Forest - Cliff",
     ["step_sound"] = "assets/sounds/step/snow"
   },
@@ -385,7 +386,7 @@ return {
           properties = {
             ["text1"] = "* The forest is beyond freezing.[wait:5]\nYour legs feel nothing short\nof numb.",
             ["text2"] = "* Somehow,[wait:5] the cold fuels your will.",
-            ["text3"] = "* The power of negative tempatures shines within you"
+            ["text3"] = "* The power of below zero temperatures shine within you."
           }
         },
         {
@@ -459,6 +460,22 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "musicnotif.forest"
+          }
+        },
+        {
+          id = 34,
+          name = "warpdoor",
+          type = "",
+          shape = "point",
+          x = 469,
+          y = 289,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map1"] = "recep4",
+            ["marker1"] = "warpdoorpath"
           }
         }
       }
@@ -611,7 +628,7 @@ return {
       id = 17,
       name = "Image Layer 2",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 2,
       offsety = -141,

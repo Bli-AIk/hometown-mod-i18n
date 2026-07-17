@@ -4,7 +4,7 @@ function PerspectiveShadow:init(data)
     super.init(self, 0, 0)
     self.opacity = data.properties["opacity"] or 0.4
     self.shear = data.properties["shear"] or -0.5
-    self.shadow_scale_x = data.properties["scale_x"] or -2
+    self.shadow_scale_x = data.properties["scale_x"] or -1.7
     self.shadow_scale_y = data.properties["scale_y"] or 1
     self.layer = WORLD_LAYERS["below_ui"]
     self.canvas = love.graphics.newCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)

@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 113,
-  nextobjectid = 38,
+  nextlayerid = 116,
+  nextobjectid = 90,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -20,6 +20,11 @@ return {
       firstgid = 1,
       filename = "../tilesets/Forest.tsx",
       exportfilename = "../tilesets/Forest.lua"
+    },
+    {
+      name = "trees",
+      firstgid = 1201,
+      filename = "../tilesets/trees.tsx"
     }
   },
   layers = {
@@ -71,115 +76,6 @@ return {
         0, 0, 573, 574, 575, 576, 577, 578, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 19, 0, 0, 0, 0, 18,
         0, 0, 613, 614, 615, 616, 617, 618, 0, 99, 0, 0, 0, 0, 0, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 20, 0, 20, 0, 0, 0, 0, 0, 19, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0,
         0, 0, 653, 654, 655, 656, 657, 658, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 19, 0
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 108,
-      name = "objects",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 1,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1983,
-          y = 810.667,
-          width = 40,
-          height = 280,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "forest3",
-            ["marker"] = "entranceA"
-          }
-        },
-        {
-          id = 2,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -18,
-          y = 120,
-          width = 40,
-          height = 280,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "forest1",
-            ["marker"] = "entranceB"
-          }
-        },
-        {
-          id = 27,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 440.182,
-          y = 481.417,
-          width = 120.788,
-          height = 44.6364,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
-            ["text2"] = "* (For a moment,[wait:5]\nyou thought yousaw your hand disappear.)"
-          }
-        },
-        {
-          id = 33,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 878.356,
-          y = 475.182,
-          width = 120.788,
-          height = 44.6364,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
-            ["text2"] = "* (For a moment,[wait:5]\nyou thought yousaw your hand disappear.)"
-          }
-        },
-        {
-          id = 35,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1242,
-          y = -1,
-          width = 197,
-          height = 31,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "forest2a",
-            ["marker"] = "entranceA"
-          }
-        },
-        {
-          id = 36,
-          name = "shadow",
-          type = "",
-          shape = "point",
-          x = 213.333,
-          y = 236,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
       }
     },
     {
@@ -427,7 +323,7 @@ return {
           shape = "rectangle",
           x = 800,
           y = 479,
-          width = 400,
+          width = 246,
           height = 40,
           rotation = 0,
           visible = true,
@@ -447,27 +343,66 @@ return {
           properties = {}
         },
         {
-          id = 30,
+          id = 77,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1204.33,
-          y = 906,
-          width = 40,
-          height = 80,
+          x = 1157.45,
+          y = 717.364,
+          width = 44.1818,
+          height = 37.1818,
           rotation = 0,
           visible = true,
           properties = {}
         },
         {
-          id = 31,
+          id = 78,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1084.33,
-          y = 547.5,
-          width = 38.6667,
-          height = 84,
+          x = 1248.62,
+          y = 959.788,
+          width = 44.1818,
+          height = 34.9091,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 82,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1917.33,
+          y = 839.333,
+          width = 44.6667,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 88,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1119.67,
+          y = 480,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 89,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1042,
+          y = 439.333,
+          width = 80,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {}
@@ -499,23 +434,23 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 613, 614, 615, 616, 617, 618, 0, 647, 648, 649, 650, 651, 652, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 567, 568, 569, 570, 571, 572, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 653, 654, 655, 656, 657, 658, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 607, 608, 609, 610, 611, 612, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 694, 695, 696, 697, 698, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 647, 648, 649, 650, 651, 652, 0, 0, 0, 0, 0,
-        455, 456, 457, 458, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        495, 496, 497, 498, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        535, 536, 537, 538, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 501, 502, 0, 0, 0, 0,
-        575, 576, 577, 578, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 540, 541, 542, 0, 0, 0, 0,
-        615, 616, 617, 618, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 580, 581, 582, 0, 0, 0, 0,
-        655, 656, 657, 658, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 175, 176, 177, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 620, 621, 622, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 215, 216, 217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 662, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 256, 257, 0, 0, 0, 0, 0, 0, 0, 0, 500, 501, 502, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 458, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 501, 502, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 540, 541, 542, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 580, 581, 582, 0, 0, 0, 0,
+        0, 0, 657, 658, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 620, 621, 622, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 53, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 662, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 91, 93, 94, 0, 0, 0, 0, 0, 0, 0, 0, 500, 501, 502, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 540, 541, 542, 0, 0, 0, 453, 454, 455, 456, 457, 458, 459,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 580, 581, 582, 0, 0, 0, 493, 494, 495, 496, 497, 498, 499,
-        0, 0, 0, 0, 0, 453, 454, 455, 456, 457, 458, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 620, 621, 622, 0, 0, 0, 533, 534, 535, 536, 537, 538, 539,
-        0, 0, 0, 0, 0, 493, 494, 495, 496, 497, 498, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 662, 0, 0, 0, 573, 574, 575, 576, 577, 578, 579,
-        0, 0, 0, 0, 0, 533, 534, 535, 536, 537, 538, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 613, 614, 615, 616, 617, 618, 619,
-        0, 0, 0, 0, 0, 573, 574, 575, 576, 577, 578, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 653, 654, 655, 656, 657, 658, 659,
-        0, 0, 0, 0, 0, 613, 614, 615, 616, 617, 618, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 175, 176, 177, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 653, 654, 655, 656, 657, 658, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 215, 216, 217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 256, 257, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 453, 0, 0, 0, 0, 458, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 620, 621, 622, 0, 0, 0, 533, 534, 535, 536, 537, 538, 539,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 662, 0, 0, 0, 573, 574, 575, 576, 577, 578, 579,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 613, 614, 615, 616, 617, 618, 619,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 653, 654, 655, 656, 657, 658, 659,
+        0, 0, 0, 0, 0, 613, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 653, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -525,12 +460,257 @@ return {
       }
     },
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 108,
+      name = "objects",
+      class = "",
+      visible = true,
+      opacity = 0.94,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1983,
+          y = 810.667,
+          width = 40,
+          height = 280,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "forest3",
+            ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 2,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -18,
+          y = 120,
+          width = 40,
+          height = 280,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "forest1",
+            ["marker"] = "entranceB"
+          }
+        },
+        {
+          id = 27,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 440.182,
+          y = 481.417,
+          width = 120.788,
+          height = 39.9697,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
+            ["text2"] = "* (For a moment,[wait:5] you thought you saw your hand disappear.)"
+          }
+        },
+        {
+          id = 33,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 878.356,
+          y = 475.182,
+          width = 120.788,
+          height = 44.6364,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
+            ["text2"] = "* (For a moment,[wait:5] you thought you saw your hand disappear.)"
+          }
+        },
+        {
+          id = 35,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1242,
+          y = -1,
+          width = 197,
+          height = 31,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "forest2a",
+            ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 36,
+          name = "shadow",
+          type = "",
+          shape = "point",
+          x = 213.333,
+          y = 236,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 76,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1095,
+          y = 755,
+          width = 158,
+          height = 180,
+          rotation = 0,
+          gid = 1201,
+          visible = true,
+          properties = {
+            ["solid"] = true
+          }
+        },
+        {
+          id = 79,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1186.17,
+          y = 995.151,
+          width = 158,
+          height = 180,
+          rotation = 0,
+          gid = 1201,
+          visible = true,
+          properties = {
+            ["solid"] = true
+          }
+        },
+        {
+          id = 80,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 1157.73,
+          y = 726,
+          width = 44.1818,
+          height = 29.1818,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* It's a tree.[wait:5]\n* You wish there was candy on it."
+          }
+        },
+        {
+          id = 81,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 1248.91,
+          y = 965.742,
+          width = 44.1818,
+          height = 29.1818,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* It's a tree.[wait:5]\n* You wish there was candy on it."
+          }
+        },
+        {
+          id = 83,
+          name = "enemy",
+          type = "",
+          shape = "point",
+          x = 597,
+          y = 528,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "peonie",
+            ["aura"] = false,
+            ["encounter"] = "peonie",
+            ["enemy"] = "peonie"
+          }
+        },
+        {
+          id = 84,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 661.333,
+          y = 1262.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 85,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 559.667,
+          y = 520.667,
+          width = 39.5,
+          height = 279.333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "peonie.appear"
+          }
+        },
+        {
+          id = 86,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -24.3333,
+          y = 521.667,
+          width = 158,
+          height = 180,
+          rotation = 0,
+          gid = 1201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 87,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 153.667,
+          y = 920.667,
+          width = 158,
+          height = 180,
+          rotation = 0,
+          gid = 1201,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
       type = "imagelayer",
       image = "../../../assets/sprites/world/Forest Roof.png",
       id = 112,
       name = "Image Layer 1",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = -1.33333,
       offsety = -173.333,

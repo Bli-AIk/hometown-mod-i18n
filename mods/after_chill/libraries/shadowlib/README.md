@@ -14,7 +14,7 @@ This object takes four properties. You should add them all as `float`.
 
 `opacity` - How light/dark should the shadows be? Defaults to `0.5`. 
 `shear` - Slants the shadow at an angle. Defaults to `-0.5`. 
-`scale_x` - How big should the shadow be, on the x axis. A negative value will make it go right, and a positive value left. Defaults to `-2`. 
+`scale_x` - How big should the shadow be, on the x axis. A negative value will make it go right, and a positive value left. Defaults to `-1.7`. 
 `scale_y` - How big should the shadow be, on the y axis. Defaults to `1`. 
 
 
