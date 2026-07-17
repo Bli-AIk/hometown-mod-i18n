@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 27,
+  nextobjectid = 34,
   properties = {
     ["has_tile_sounds"] = true,
     ["name"] = "Blooming Forest - Cliff",
@@ -406,7 +406,7 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 1960,
+          x = 1979,
           y = 280,
           width = 40,
           height = 240,
@@ -418,35 +418,19 @@ return {
           }
         },
         {
-          id = 23,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 731,
-          y = 280,
-          width = 1149,
-          height = 20,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["text1"] = "* (The leaves on these trees seem to be clustered together.)",
-            ["text2"] = "* (The wood looks...[wait:5] blurry?)"
-          }
-        },
-        {
           id = 24,
           name = "interactable",
           type = "",
           shape = "rectangle",
           x = 120,
-          y = 360,
+          y = 338,
           width = 199,
           height = 25,
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "(* It was a pretty long fall)",
-            ["text2"] = "(* your unsure if you are able to climb back up)"
+            ["text1"] = "* (What a fun slide!)",
+            ["text2"] = "* (Doesn't seem like you can climb back up,[wait:3] though.)"
           }
         },
         {
@@ -461,6 +445,21 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 27,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 185,
+          y = 404,
+          width = 71,
+          height = 34,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "musicnotif.forest"
+          }
         }
       }
     },

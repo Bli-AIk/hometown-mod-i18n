@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 16,
+  nextobjectid = 17,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -93,16 +93,28 @@ return {
           type = "",
           shape = "rectangle",
           x = 440,
-          y = 1160,
+          y = 1186,
           width = 320,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "forest2",
             ["marker"] = "entranceB"
           }
+        },
+        {
+          id = 16,
+          name = "shadow",
+          type = "",
+          shape = "point",
+          x = 479.572,
+          y = 1104.73,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -126,11 +138,10 @@ return {
           type = "",
           shape = "point",
           x = 600,
-          y = 1080,
+          y = 1097,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -160,7 +171,6 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -174,7 +184,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -188,7 +197,6 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -202,7 +210,6 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -216,7 +223,6 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -230,7 +236,6 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -244,7 +249,6 @@ return {
           width = 40,
           height = 360,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -258,7 +262,6 @@ return {
           width = 320,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -272,7 +275,6 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -286,7 +288,6 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -300,7 +301,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

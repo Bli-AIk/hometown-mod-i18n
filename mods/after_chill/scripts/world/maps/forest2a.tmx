@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="16">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="17">
  <editorsettings>
   <export target="forest2a.lua" format="lua"/>
  </editorsettings>
@@ -42,15 +42,18 @@
 </data>
  </layer>
  <objectgroup color="#ff55ff" id="2" name="objects">
-  <object id="2" name="transition" x="440" y="1160" width="320" height="40">
+  <object id="2" name="transition" x="440" y="1186" width="320" height="40">
    <properties>
     <property name="map" value="forest2"/>
     <property name="marker" value="entranceB"/>
    </properties>
   </object>
+  <object id="16" name="shadow" x="479.572" y="1104.73">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#aa00ff" id="3" name="markers">
-  <object id="3" name="entranceA" x="600" y="1080">
+  <object id="3" name="entranceA" x="600" y="1097">
    <point/>
   </object>
  </objectgroup>

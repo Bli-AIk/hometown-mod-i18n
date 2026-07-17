@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 113,
-  nextobjectid = 34,
+  nextobjectid = 38,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -150,6 +150,35 @@ return {
             ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
             ["text2"] = "* (For a moment,[wait:5]\nyou thought yousaw your hand disappear.)"
           }
+        },
+        {
+          id = 35,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1242,
+          y = -1,
+          width = 197,
+          height = 31,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "forest2a",
+            ["marker"] = "entranceA"
+          }
+        },
+        {
+          id = 36,
+          name = "shadow",
+          type = "",
+          shape = "point",
+          x = 213.333,
+          y = 236,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -187,6 +216,19 @@ return {
           shape = "point",
           x = 120,
           y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "entranceB",
+          type = "",
+          shape = "point",
+          x = 1343,
+          y = 93,
           width = 0,
           height = 0,
           rotation = 0,
@@ -412,7 +454,7 @@ return {
           x = 1204.33,
           y = 906,
           width = 40,
-          height = 91,
+          height = 80,
           rotation = 0,
           visible = true,
           properties = {}
@@ -425,7 +467,7 @@ return {
           x = 1084.33,
           y = 547.5,
           width = 38.6667,
-          height = 77.5,
+          height = 84,
           rotation = 0,
           visible = true,
           properties = {}
