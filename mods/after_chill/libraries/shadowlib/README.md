@@ -10,11 +10,13 @@ I will explain what each does.
 
 Add a point on the `objects` layer, and name it `full_shadow`. 
 
-This object takes three properties. You should add them all as `float`. 
+This object takes four properties. You should add them all as `float`. 
 
 `opacity` - How light/dark should the shadows be? Defaults to `0.5`. 
 `shear` - Slants the shadow at an angle. Defaults to `-0.5`. 
-`scale` - How big should the shadow be, affects scale_x and scale_y. Defaults to `1.5`. 
+`scale_x` - How big should the shadow be, on the x axis. A negative value will make it go right, and a positive value left. Defaults to `-2`. 
+`scale_y` - How big should the shadow be, on the y axis. Defaults to `1`. 
+
 
 # Shadow Event 
 
@@ -30,7 +32,9 @@ A normal object that isn't registered through Tiled. This exists for cutscenes, 
 
 To spawn it and store it in a variable, do 
 
-`local shadow = Shadow({opacity = 1, scale = 1, shear = 1})` - The options table isn't needed, as it will default to the values as shown above. This is just to showcase how you would tweak the values when spawning the object. 
+`local shadow = Shadow({opacity = 1, scale = 1, shear = 1})` - The options table isn't needed, as it will default to the values as shown above. This is just to showcase how you would tweak the values when spawning the object. This object also supports two extra arguments not supported in any other. 
+
+`off_x` and `off_y` -- This offsets the shadow. `off_x` is the x offset, and `off_y` is the y offset. 
 
 And yeah, that's it. Hope you have fun with the library! 
 

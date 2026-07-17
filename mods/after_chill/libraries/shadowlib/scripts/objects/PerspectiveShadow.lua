@@ -1,54 +1,59 @@
----@class PerspectiveShadow : Object
-
 local PerspectiveShadow, super = Class(Object)
----@param opacity? How light/dark should the shadows be? Defaults to `0.5`.
----@param shear? Slants the shadow at an angle. Defaults to `-0.5`. 
----@param scale? How big should the shadow be, affects scale_x and scale_y. Defaults to `1.5`. 
 
 function PerspectiveShadow:init(data)
-    super.init(self, data.x, data.y, data.w, data.h)
-    self.opacity = data.properties["opacity"] or 0.5
+    super.init(self, 0, 0)
+    self.opacity = data.properties["opacity"] or 0.4
     self.shear = data.properties["shear"] or -0.5
-    self.shadow_scale = data.properties["scale"] or 1.5
+    self.shadow_scale_x = data.properties["scale_x"] or -2
+    self.shadow_scale_y = data.properties["scale_y"] or 1
+    self.layer = WORLD_LAYERS["below_ui"]
+    self.canvas = love.graphics.newCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+    self.canvas:setFilter("nearest", "nearest")
 end
 
 function PerspectiveShadow:drawCharacterShadow(chara)
-    if not chara.sprite then return end
-    if Game.state == "BATTLE" then return end 
     love.graphics.push()
-    local w = chara.sprite.width or 0
-    local h = chara.sprite.height or 0
-    local ox, oy = 0, 0
-    if chara.sprite.getOffset then
-        local offset_table = chara.sprite:getOffset()
-        if type(offset_table) == "table" then
-            ox = offset_table[1] or offset_table.x or 0
-            oy = offset_table[2] or offset_table.y or 0
-        end
-    end
-    local rel_x, rel_y = chara:getRelativePos(ox + (w / 2), oy + h, self)
-    love.graphics.translate(rel_x, rel_y - 2)
-    love.graphics.scale(self.shadow_scale, -self.shadow_scale)
+    local last_scale_y = chara.scale_y
+    local last_scale_x = chara.scale_x
+    chara.scale_y = -self.shadow_scale_y  
+    chara.scale_x = -self.shadow_scale_x
+    chara:preDraw()
+    love.graphics.translate(-chara.height * self.shear, 0)
     love.graphics.shear(self.shear, 0)
-    love.graphics.translate(-w / 2, -h)
-    Draw.setColor(0, 0, 0, self.opacity)
-    love.graphics.setShader(Kristal.Shaders["AddColor"])
-    Kristal.Shaders["AddColor"]:send("inputcolor", {0, 0, 0, self.opacity})
-    Kristal.Shaders["AddColor"]:send("amount", 1)
-    Draw.draw(chara.sprite.texture, 0, 0)
-    love.graphics.setShader()
+    chara:draw()
+    chara:postDraw() 
+    chara.scale_y = last_scale_y
+    chara.scale_x = last_scale_x
     love.graphics.pop()
 end
 
 function PerspectiveShadow:draw()
-    local r, g, b, a = love.graphics.getColor()
-    Draw.setColor(0, 0, 0, self.opacity)
+    if Game.state == "BATTLE" then 
+        super.draw(self)
+        return 
+    end
+
+    local r, g, b, a = love.graphics.getColor() 
+    Draw.pushCanvas(self.canvas, {clear = true})
+    love.graphics.translate(-Game.world.camera.x + (SCREEN_WIDTH / 2), -Game.world.camera.y + (SCREEN_HEIGHT / 2))
+    love.graphics.setShader(Kristal.Shaders["AddColor"])
+    Kristal.Shaders["AddColor"]:send("inputcolor", {0, 0, 0, 1})
+    Kristal.Shaders["AddColor"]:send("amount", 1)
+
     for _, party_chara in ipairs(Game.party) do
         local chara_obj = Game.world:getPartyCharacter(party_chara)
         if chara_obj then
             self:drawCharacterShadow(chara_obj)
         end
     end
+    
+    love.graphics.setShader()
+    Draw.popCanvas()
+    love.graphics.push()
+    love.graphics.origin()
+    Draw.setColor(0, 0, 0, self.opacity)
+    love.graphics.draw(self.canvas, 0, 0)
+    love.graphics.pop()
     Draw.setColor(r, g, b, a)
     super.draw(self)
 end
