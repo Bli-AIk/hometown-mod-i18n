@@ -10,7 +10,11 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 113,
+<<<<<<< Updated upstream
   nextobjectid = 33,
+=======
+  nextobjectid = 36,
+>>>>>>> Stashed changes
   properties = {
     ["music"] = "bloom_f"
   },
@@ -137,6 +141,7 @@ return {
         },
         {
           id = 32,
+<<<<<<< Updated upstream
           name = "interactable",
           type = "",
           shape = "rectangle",
@@ -149,6 +154,21 @@ return {
           properties = {
             ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
             ["text2"] = "* (For a moment,[wait:5]\nyou saw your hand disappear.)"
+=======
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1240,
+          y = 0,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "forest2a",
+            ["marker"] = "entranceA"
+>>>>>>> Stashed changes
           }
         }
       }
@@ -190,6 +210,34 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "entranceB",
+          type = "",
+          shape = "point",
+          x = 1337.33,
+          y = 137.333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "entranceC",
+          type = "",
+          shape = "point",
+          x = 1866.67,
+          y = 948,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
