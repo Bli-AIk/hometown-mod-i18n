@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 113,
-  nextobjectid = 32,
+  nextobjectid = 33,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -97,7 +97,6 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "forest3",
@@ -114,7 +113,6 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "forest1",
@@ -122,36 +120,35 @@ return {
           }
         },
         {
-          id = 24,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 101.333,
-          y = 185.333,
-          width = 74.6667,
-          height = 77.3333,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "musicnotif.forest"
-          }
-        },
-        {
           id = 27,
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 432,
-          y = 486.667,
-          width = 137.333,
-          height = 48,
+          x = 440.182,
+          y = 481.417,
+          width = 120.788,
+          height = 44.6364,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (You try to poke your hand at the missing side of the bush)",
             ["text2"] = "* (For a moment,[wait:5]\nyou saw your hand disappear)"
+          }
+        },
+        {
+          id = 32,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 879.606,
+          y = 476.348,
+          width = 120.788,
+          height = 44.6364,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
+            ["text2"] = "* (For a moment,[wait:5]\nyou saw your hand disappear.)"
           }
         }
       }
@@ -180,7 +177,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -194,7 +190,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -224,7 +219,6 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -238,7 +232,6 @@ return {
           width = 40,
           height = 400,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -252,7 +245,6 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -266,7 +258,6 @@ return {
           width = 680,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -280,7 +271,6 @@ return {
           width = 40,
           height = 400,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -294,7 +284,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -308,7 +297,6 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -322,7 +310,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -336,7 +323,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -350,7 +336,6 @@ return {
           width = 1000,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -364,7 +349,6 @@ return {
           width = 520,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -374,11 +358,10 @@ return {
           type = "",
           shape = "rectangle",
           x = 1440,
-          y = -40,
+          y = 2.66667,
           width = 40,
-          height = 840,
+          height = 797.333,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -392,7 +375,6 @@ return {
           width = 40,
           height = 520,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -406,7 +388,6 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -420,7 +401,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -429,12 +409,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1201.33,
-          y = 956,
+          x = 1204.33,
+          y = 906,
           width = 40,
           height = 56,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -443,12 +422,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1081.33,
-          y = 596,
+          x = 1084.33,
+          y = 536,
           width = 38.6667,
           height = 64,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

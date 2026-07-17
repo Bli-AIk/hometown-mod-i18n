@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -326,7 +326,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -340,7 +339,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -354,7 +352,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -384,7 +381,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* The forest is beyond freezing.[wait:5]\nYour legs feel nothing short\nof numb.",
@@ -402,7 +398,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -416,7 +411,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "forest2",
@@ -428,16 +422,15 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 835,
+          x = 731,
           y = 280,
-          width = 1045,
+          width = 1149,
           height = 20,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (These trees look not nearly as tree like as they should)",
-            ["text2"] = "(* You rate this 0 out of trees"
+            ["text1"] = "* (The leaves on these trees seem to be clustered together.)",
+            ["text2"] = "* (The wood looks...[wait:5] blurry?)"
           }
         },
         {
@@ -450,7 +443,6 @@ return {
           width = 199,
           height = 25,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "(* It was a pretty long fall)",
@@ -467,7 +459,6 @@ return {
           width = 1,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -479,7 +470,7 @@ return {
       id = 15,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -497,7 +488,6 @@ return {
           width = 1678,
           height = 29,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -511,7 +501,6 @@ return {
           width = 2000,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -525,7 +514,6 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -539,7 +527,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -553,7 +540,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -567,7 +553,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -581,7 +566,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -596,7 +580,7 @@ return {
       id = 8,
       name = "Tile Layer 7",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 300,
       offsety = 0,
@@ -628,7 +612,7 @@ return {
       id = 17,
       name = "Image Layer 2",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 2,
       offsety = -141,

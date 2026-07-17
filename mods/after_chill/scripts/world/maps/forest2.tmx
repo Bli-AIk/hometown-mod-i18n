@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="113" nextobjectid="32">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="113" nextobjectid="33">
  <editorsettings>
   <export target="forest2.lua" format="lua"/>
  </editorsettings>
@@ -54,16 +54,18 @@
     <property name="marker" value="entranceB"/>
    </properties>
   </object>
-  <object id="24" name="script" x="101.333" y="185.333" width="74.6667" height="77.3333">
-   <properties>
-    <property name="cutscene" value="musicnotif.forest"/>
-   </properties>
-  </object>
-  <object id="27" name="interactable" x="432" y="486.667" width="137.333" height="48">
+  <object id="27" name="interactable" x="440.182" y="481.417" width="120.788" height="44.6364">
    <properties>
     <property name="text1" value="* (You try to poke your hand at the missing side of the bush)"/>
     <property name="text2">* (For a moment,[wait:5]
 you saw your hand disappear)</property>
+   </properties>
+  </object>
+  <object id="32" name="interactable" x="879.606" y="476.348" width="120.788" height="44.6364">
+   <properties>
+    <property name="text1" value="* (You try to poke your hand at the missing side of the bush.)"/>
+    <property name="text2">* (For a moment,[wait:5]
+you saw your hand disappear.)</property>
    </properties>
   </object>
  </objectgroup>
@@ -87,12 +89,12 @@ you saw your hand disappear)</property>
   <object id="17" x="1000" y="920" width="40" height="120"/>
   <object id="18" x="1040" y="1040" width="1000" height="40"/>
   <object id="19" x="1480" y="800" width="520" height="40"/>
-  <object id="20" x="1440" y="-40" width="40" height="840"/>
+  <object id="20" x="1440" y="2.66667" width="40" height="797.333"/>
   <object id="21" x="1200" y="0" width="40" height="520"/>
   <object id="22" x="800" y="480" width="400" height="40"/>
   <object id="23" x="800" y="800" width="40" height="40"/>
-  <object id="30" x="1201.33" y="956" width="40" height="56"/>
-  <object id="31" x="1081.33" y="596" width="38.6667" height="64"/>
+  <object id="30" x="1204.33" y="906" width="40" height="56"/>
+  <object id="31" x="1084.33" y="536" width="38.6667" height="64"/>
  </objectgroup>
  <layer id="107" name="Tile Layer 2" width="50" height="30">
   <data encoding="csv">
