@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="113" nextobjectid="33">
-=======
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="113" nextobjectid="36">
->>>>>>> Stashed changes
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="113" nextobjectid="34">
  <editorsettings>
   <export target="forest2.lua" format="lua"/>
  </editorsettings>
@@ -46,13 +42,13 @@
 </data>
  </layer>
  <objectgroup color="#ff55ff" id="108" name="objects">
-  <object id="1" name="transition" x="1960" y="810.667" width="40" height="280">
+  <object id="1" name="transition" x="1983" y="810.667" width="40" height="280">
    <properties>
     <property name="map" value="forest3"/>
     <property name="marker" value="entranceA"/>
    </properties>
   </object>
-  <object id="2" name="transition" x="0" y="120" width="40" height="280">
+  <object id="2" name="transition" x="-18" y="120" width="40" height="280">
    <properties>
     <property name="map" value="forest1"/>
     <property name="marker" value="entranceB"/>
@@ -60,23 +56,16 @@
   </object>
   <object id="27" name="interactable" x="440.182" y="481.417" width="120.788" height="44.6364">
    <properties>
-    <property name="text1" value="* (You try to poke your hand at the missing side of the bush)"/>
+    <property name="text1" value="* (You try to poke your hand at the missing side of the bush.)"/>
     <property name="text2">* (For a moment,[wait:5]
-you saw your hand disappear)</property>
+you thought yousaw your hand disappear.)</property>
    </properties>
   </object>
-<<<<<<< Updated upstream
-  <object id="32" name="interactable" x="879.606" y="476.348" width="120.788" height="44.6364">
+  <object id="33" name="interactable" x="878.356" y="475.182" width="120.788" height="44.6364">
    <properties>
     <property name="text1" value="* (You try to poke your hand at the missing side of the bush.)"/>
     <property name="text2">* (For a moment,[wait:5]
-you saw your hand disappear.)</property>
-=======
-  <object id="32" name="transition" x="1240" y="0" width="200" height="40">
-   <properties>
-    <property name="map" value="forest2a"/>
-    <property name="marker" value="entranceA"/>
->>>>>>> Stashed changes
+you thought yousaw your hand disappear.)</property>
    </properties>
   </object>
  </objectgroup>
@@ -85,12 +74,6 @@ you saw your hand disappear.)</property>
    <point/>
   </object>
   <object id="10" name="entranceA" x="120" y="240">
-   <point/>
-  </object>
-  <object id="34" name="entranceB" x="1337.33" y="137.333">
-   <point/>
-  </object>
-  <object id="35" name="entranceC" x="1866.67" y="948">
    <point/>
   </object>
  </objectgroup>
@@ -108,10 +91,10 @@ you saw your hand disappear.)</property>
   <object id="19" x="1480" y="800" width="520" height="40"/>
   <object id="20" x="1440" y="2.66667" width="40" height="797.333"/>
   <object id="21" x="1200" y="0" width="40" height="520"/>
-  <object id="22" x="800" y="480" width="400" height="40"/>
+  <object id="22" x="800" y="479" width="400" height="40"/>
   <object id="23" x="800" y="800" width="40" height="40"/>
-  <object id="30" x="1204.33" y="906" width="40" height="56"/>
-  <object id="31" x="1084.33" y="536" width="38.6667" height="64"/>
+  <object id="30" x="1204.33" y="906" width="40" height="91"/>
+  <object id="31" x="1084.33" y="547.5" width="38.6667" height="77.5"/>
  </objectgroup>
  <layer id="107" name="Tile Layer 2" width="50" height="30">
   <data encoding="csv">

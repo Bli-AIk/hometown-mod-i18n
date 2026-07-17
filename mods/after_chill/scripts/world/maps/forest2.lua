@@ -10,11 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 113,
-<<<<<<< Updated upstream
-  nextobjectid = 33,
-=======
-  nextobjectid = 36,
->>>>>>> Stashed changes
+  nextobjectid = 34,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -96,7 +92,7 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 1960,
+          x = 1983,
           y = 810.667,
           width = 40,
           height = 280,
@@ -112,7 +108,7 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 0,
+          x = -18,
           y = 120,
           width = 40,
           height = 280,
@@ -135,40 +131,24 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (You try to poke your hand at the missing side of the bush)",
-            ["text2"] = "* (For a moment,[wait:5]\nyou saw your hand disappear)"
+            ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
+            ["text2"] = "* (For a moment,[wait:5]\nyou thought yousaw your hand disappear.)"
           }
         },
         {
-          id = 32,
-<<<<<<< Updated upstream
+          id = 33,
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 879.606,
-          y = 476.348,
+          x = 878.356,
+          y = 475.182,
           width = 120.788,
           height = 44.6364,
           rotation = 0,
           visible = true,
           properties = {
             ["text1"] = "* (You try to poke your hand at the missing side of the bush.)",
-            ["text2"] = "* (For a moment,[wait:5]\nyou saw your hand disappear.)"
-=======
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1240,
-          y = 0,
-          width = 200,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "forest2a",
-            ["marker"] = "entranceA"
->>>>>>> Stashed changes
+            ["text2"] = "* (For a moment,[wait:5]\nyou thought yousaw your hand disappear.)"
           }
         }
       }
@@ -210,34 +190,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 34,
-          name = "entranceB",
-          type = "",
-          shape = "point",
-          x = 1337.33,
-          y = 137.333,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 35,
-          name = "entranceC",
-          type = "",
-          shape = "point",
-          x = 1866.67,
-          y = 948,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -432,7 +384,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 800,
-          y = 480,
+          y = 479,
           width = 400,
           height = 40,
           rotation = 0,
@@ -460,7 +412,7 @@ return {
           x = 1204.33,
           y = 906,
           width = 40,
-          height = 56,
+          height = 91,
           rotation = 0,
           visible = true,
           properties = {}
@@ -471,9 +423,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 1084.33,
-          y = 536,
+          y = 547.5,
           width = 38.6667,
-          height = 64,
+          height = 77.5,
           rotation = 0,
           visible = true,
           properties = {}
