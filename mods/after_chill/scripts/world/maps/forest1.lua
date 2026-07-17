@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,10 +10,9 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 18,
+  nextobjectid = 27,
   properties = {
     ["has_tile_sounds"] = true,
-    ["music"] = "bloom_f",
     ["name"] = "Blooming Forest - Cliff",
     ["step_sound"] = "assets/sounds/step/snow"
   },
@@ -327,6 +326,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -340,6 +340,21 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 21,
+          name = "entranceB",
+          type = "",
+          shape = "point",
+          x = 1920,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -369,10 +384,12 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* The forest is beyond freezing.[wait:5]\n* Your legs feel nothing short\nof numb.",
-            ["text2"] = "* Somehow,[wait:5] the cold fuels your determination."
+            ["text1"] = "* The forest is beyond freezing.[wait:5]\nYour legs feel nothing short\nof numb.",
+            ["text2"] = "* Somehow,[wait:5] the cold fuels your will.",
+            ["text3"] = "* The power of negative tempatures shines within you"
           }
         },
         {
@@ -385,23 +402,74 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
         {
-          id = 17,
-          name = "script",
+          id = 18,
+          name = "transition",
           type = "",
           shape = "rectangle",
-          x = 193,
-          y = 415.667,
-          width = 48.6667,
-          height = 36,
+          x = 1960,
+          y = 280,
+          width = 40,
+          height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["cutscene"] = "musicnotif.forest"
+            ["map"] = "forest2",
+            ["marker"] = "entranceA"
           }
+        },
+        {
+          id = 23,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 835,
+          y = 280,
+          width = 1045,
+          height = 20,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1"] = "* (These trees look not nearly as tree like as they should)",
+            ["text2"] = "(* You rate this 0 out of trees"
+          }
+        },
+        {
+          id = 24,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 360,
+          width = 199,
+          height = 25,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1"] = "(* It was a pretty long fall)",
+            ["text2"] = "(* your unsure if you are able to climb back up)"
+          }
+        },
+        {
+          id = 25,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -97,
+          y = -52,
+          width = 1,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -429,6 +497,7 @@ return {
           width = 1678,
           height = 29,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -442,6 +511,7 @@ return {
           width = 2000,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -455,6 +525,7 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -468,6 +539,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -481,6 +553,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -494,6 +567,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -507,6 +581,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

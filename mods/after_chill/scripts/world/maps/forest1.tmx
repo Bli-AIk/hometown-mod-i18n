@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="18">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="27">
  <editorsettings>
   <export target="forest1.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="has_tile_sounds" type="bool" value="true"/>
-  <property name="music" value="bloom_f"/>
   <property name="name" value="Blooming Forest - Cliff"/>
   <property name="step_sound" value="assets/sounds/step/snow"/>
  </properties>
@@ -149,25 +148,43 @@
   <object id="11" name="spawn" x="362" y="395">
    <point/>
   </object>
+  <object id="21" name="entranceB" x="1920" y="400">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#ff55ff" id="13" name="objects">
   <object id="10" name="savepoint" x="402" y="319">
    <properties>
     <property name="text1">* The forest is beyond freezing.[wait:5]
-* Your legs feel nothing short
+Your legs feel nothing short
 of numb.</property>
-    <property name="text2" value="* Somehow,[wait:5] the cold fuels your determination."/>
+    <property name="text2" value="* Somehow,[wait:5] the cold fuels your will."/>
+    <property name="text3" value="* The power of negative tempatures shines within you"/>
    </properties>
    <point/>
   </object>
   <object id="16" name="shadow" x="984" y="348">
    <point/>
   </object>
-  <object id="17" name="script" x="193" y="415.667" width="48.6667" height="36">
+  <object id="18" name="transition" x="1960" y="280" width="40" height="240">
    <properties>
-    <property name="cutscene" value="musicnotif.forest"/>
+    <property name="map" value="forest2"/>
+    <property name="marker" value="entranceA"/>
    </properties>
   </object>
+  <object id="23" name="interactable" x="835" y="280" width="1045" height="20">
+   <properties>
+    <property name="text1" value="* (These trees look not nearly as tree like as they should)"/>
+    <property name="text2" value="(* You rate this 0 out of trees"/>
+   </properties>
+  </object>
+  <object id="24" name="interactable" x="120" y="360" width="199" height="25">
+   <properties>
+    <property name="text1" value="(* It was a pretty long fall)"/>
+    <property name="text2" value="(* your unsure if you are able to climb back up)"/>
+   </properties>
+  </object>
+  <object id="25" x="-97" y="-52" width="1"/>
  </objectgroup>
  <objectgroup color="#0000ff" id="15" name="collision">
   <object id="3" x="320" y="240" width="1678" height="29"/>
