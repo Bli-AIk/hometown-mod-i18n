@@ -5,7 +5,7 @@ function firesnipe:init(x, y)
     self:addFX(ColorMaskFX({1, 0.6, 0}, 0.5))
     self.destroy_on_hit = true
     self.remove_offscreen = true
-    self.graphics.spin = 0.1
+ --   self.graphics.spin = 0.1
     self.trail_timer = 0
     self.state = "NORMAL" 
 end

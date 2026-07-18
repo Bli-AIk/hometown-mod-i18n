@@ -122,7 +122,7 @@
   <object id="105" x="400" y="832" width="840" height="40"/>
   <object id="106" x="397.333" y="760" width="842.667" height="25.3333"/>
   <object id="107" x="400" y="720" width="40" height="40"/>
-  <object id="108" x="259.5" y="680" width="140.5" height="40"/>
+  <object id="108" x="266.167" y="680" width="133.833" height="40"/>
   <object id="109" x="40" y="680" width="138" height="40"/>
   <object id="110" x="120" y="160" width="57.6667" height="520"/>
   <object id="111" x="264.5" y="160" width="55.5" height="520"/>
@@ -223,6 +223,7 @@
   <object id="56" name="enemy" x="1686" y="742.333" width="54" height="44">
    <properties>
     <property name="actor" value="dusteer"/>
+    <property name="animation" value="walk"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer"/>
     <property name="enemy" value="dusteer"/>

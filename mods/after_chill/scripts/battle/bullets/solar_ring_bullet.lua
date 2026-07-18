@@ -8,7 +8,7 @@ function solar_ring_bullet:init(x, y, dir, speed)
     self.physics.speed = speed or 4
     self.destroy_on_hit = true
     self.remove_offscreen = true
-    self.graphics.spin = 0.1
+   -- self.graphics.spin = 0.1
     self.trail_timer = 0
 end
 
