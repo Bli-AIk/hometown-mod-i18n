@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 17,
+  nextlayerid = 8,
+  nextobjectid = 33,
   properties = {
     ["music"] = "bloom_f"
   },
@@ -52,9 +52,9 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 53, 54, 54, 54, 54, 54, 54, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 54, 54, 54, 54, 54, 54, 54, 55, 0, 0,
         0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
-        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
-        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
-        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
+        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 86, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
+        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 86, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
+        0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 86, 86, 86, 86, 86, 86, 86, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
         0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
         0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
         0, 0, 93, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 95, 0, 0,
@@ -71,80 +71,6 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 93, 94, 94, 94, 94, 94, 94, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 500, 501, 502, 0, 93, 94, 94, 94, 94, 94, 94, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 540, 541, 542, 0, 93, 94, 94, 94, 94, 94, 94, 95, 0, 500, 501, 502, 0, 0, 0, 0, 0, 0, 0
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 2,
-      name = "objects",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 2,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 1186,
-          width = 320,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "forest2",
-            ["marker"] = "entranceB"
-          }
-        },
-        {
-          id = 16,
-          name = "shadow",
-          type = "",
-          shape = "point",
-          x = 479.572,
-          y = 1104.73,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 3,
-      name = "markers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 3,
-          name = "entranceA",
-          type = "",
-          shape = "point",
-          x = 600,
-          y = 1097,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
       }
     },
     {
@@ -303,8 +229,276 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 31,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 763.045,
+          y = 520,
+          width = 37.4545,
+          height = 40.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "blockcollision",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 19,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 600.125,
+          y = 400.252,
+          width = 39.5,
+          height = 39.9979,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 639.875,
+          y = 399.876,
+          width = 40,
+          height = 119.009,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 22,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 558,
+          y = 400.495,
+          width = 40,
+          height = 119.009,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 518.333,
+          y = 479.829,
+          width = 40,
+          height = 39.6757,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 479.333,
+          y = 519.495,
+          width = 40,
+          height = 39.6757,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 25,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 682.917,
+          y = 479.334,
+          width = 117.5,
+          height = 39.9979,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 26,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 799.902,
+          y = 520.146,
+          width = 39.8478,
+          height = 40.5196,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 560.667,
+          width = 322,
+          height = 39.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 3,
+          name = "entranceA",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 1097,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 2,
+      name = "objects",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 1186,
+          width = 320,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "forest2",
+            ["marker"] = "entranceB"
+          }
+        },
+        {
+          id = 16,
+          name = "shadow",
+          type = "",
+          shape = "point",
+          x = 479.572,
+          y = 1104.73,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 17,
+          name = "pushblock",
+          type = "",
+          shape = "rectangle",
+          x = 600.5,
+          y = 440.083,
+          width = 39.25,
+          height = 39.9167,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["inputlock"] = false,
+            ["lock"] = true
+          }
+        },
+        {
+          id = 27,
+          name = "tilebutton",
+          type = "",
+          shape = "rectangle",
+          x = 760.303,
+          y = 519.667,
+          width = 39.5455,
+          height = 41.0909,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 30,
+          name = "tilebutton",
+          type = "",
+          shape = "rectangle",
+          x = 519.977,
+          y = 519.705,
+          width = 39.5455,
+          height = 41.0909,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["blocks"] = true,
+            ["cutscene"] = "peonie.puzzle",
+            ["once"] = true
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
     },
     {
       type = "imagelayer",
@@ -312,7 +506,7 @@ return {
       id = 5,
       name = "Image Layer 1",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 0.44,
       offsetx = 0,
       offsety = 0,

@@ -79,8 +79,8 @@ function character:init()
     self.weapon_icon = "ui/menu/equip/sword"
 
     self:setWeapon("bounceblade")
-    self:setArmor(1, "amber_card")
-    self:setArmor(2, "amber_card")
+    self:setArmor(1, "ironshackle")
+    self:setArmor(2, "royalpin")
 
     self.lw_weapon_default = "light/pencil"
     self.lw_armor_default = "light/bandage"
