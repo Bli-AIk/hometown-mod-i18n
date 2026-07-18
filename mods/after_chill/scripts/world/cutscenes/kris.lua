@@ -354,7 +354,7 @@ end
         Assets.playSound("alert")
         local viro = Game.world:spawnNPC("sirengeist", 1500, 1400)
         cutscene:panTo(Game.world.camera.x + 150, Game.world.camera.y, 0.8, "in-out-sine")
-        viro:slideTo(1127, 1396, 1.5)
+        viro:slideTo(1250, 1396, 1.5)
         cutscene:text("* Another one...", "down", "noelle")
         cutscene:wait(0.7)
         viro:resetPhysics()

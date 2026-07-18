@@ -12,16 +12,7 @@
     "inventory": {
         "key_items": ["cell_phone"]
     },
-    "equipment": {
-        // "kris": {
-        //     "weapon": "bounceblade",
-        //     "armor": ["ironshackle", "royalpin"]
-        // },
-        // "ralsei": {
-        //     "weapon": "fiberscarf",
-        //     "armor": ["glowwrist", "silvercard"]
-        // },
-    },
+    "equipment": {},
     "hardReset": false,
     "hidden": false,
     "dev":  false, 

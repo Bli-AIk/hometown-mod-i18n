@@ -86,7 +86,7 @@ return {
             cutscene:choicer({"Proceed", "Proceed"}, {color = COLORS.red, highlight = COLORS.red})
             cutscene:wait(cutscene:playSound("ominous", 1, 0.7))
             cutscene:text("*[noskip][speed:0.7] Kris...[wait:5] faha...[wait:5]\n* Kris....", "down_smile")
-            cutscene:text("*[noskip][speed:0.7] Their voice... \n* I can hear it telling me to [color:red]PROCEED[color:reset]...", "down")
+            cutscene:text("*[noskip][speed:0.7] Their voice... \n* It's everywhere...", "down")
             cutscene:text("* [noskip][speed:0.7]This thorn...[wait:5] it helps me...[wait:5] to be stronger...", "sad_side")
             cutscene:text("* [noskip][speed:0.7]A-[wait:2]and I need to be strong...[wait:5] for dad...", "upset_down_b")
             cutscene:text("* [noskip][speed:0.7]I need to find more enemies...[wait:5]", "sad")
