@@ -25,13 +25,6 @@ function snow_graze:onStart()
     self:sendFirst()
 end
 
-function snow_graze:onArenaEnter()
-    for _, arena in ipairs(Game.stage:getObjects(Arena)) do 
-        arena:setColor(120/255, 200/255, 240/255)
-    end 
-    super.onArenaEnter(self)
-end 
-
 function snow_graze:isEnemyAlive(index)
     local target = self.attackers_registry[index]
     if not target then return false end
