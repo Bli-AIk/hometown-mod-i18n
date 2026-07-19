@@ -27,7 +27,7 @@ function sirengeist:init()
     }
 
     self.check = {
-        "AT 9 DEF ?\n* Ghost with a blaring alert above it?[wait:5]\n* The sound seems to be from afar.", 
+        "AT 9 DEF ?\n* A silly ghost with a blaring alert.[wait:5]\n* The sound seems to be from afar.", 
         "This ghost can only be hit through [color:yellow]MAGIC[color:reset]."
     } 
     self.wave_index = 1 

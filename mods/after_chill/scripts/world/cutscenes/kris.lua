@@ -110,7 +110,7 @@ cutscene:text("* That [color:red][shake:1]SOUL[color:reset][shake:0] of yours...
 bumpshake()
 cutscene:wait(0.5)
 cutscene:text("* Controlling you like a puppet...")
-bumpshake()
+bumpshake() -- me when helper functions :3 
 cutscene:wait(0.5)
 cutscene:text("*[noskip] Your actions don't matter,[wait:5] do they?[wait:8][next]")
 bumpshake()
@@ -166,7 +166,10 @@ end
     
     ralsei = function(cutscene)
         -- getting markers is a pain 
-        if not Game:getFlag("has_seen_ralsei") then 
+        if Game:getFlag("encounter#ralsei:done") then 
+            return -- Hah. Bye. Nothing. Return and NO EARN.
+        end 
+        if Game:getFlag("encounter#ralsei:ralsei", false) == false then 
         Game.world.music:fade(0, 5)
         local rx, ry = cutscene:getMarker("kris")
         local kris = cutscene:getCharacter("kris")
@@ -208,7 +211,7 @@ end
         cutscene:wait(0.3)
         cutscene:text("* K-[wait:2]Kris?!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
-        elseif Game:getFlag("has_seen_ralsei") then
+        elseif Game:getFlag("encounter#ralsei:ralsei", false) then
         -- THIS IS THE END; PLEASE NOTICe ofghugh
         local kris = cutscene:getCharacter("kris")
         local rx, ry = cutscene:getMarker("kris")

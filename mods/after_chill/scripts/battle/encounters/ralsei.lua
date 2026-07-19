@@ -22,13 +22,13 @@ end
 
 function ralsei:onStateChange(old, new) 
     if old == "INTRO" and new == "ACTIONSELECT" then
-        if Game:getFlag("has_seen_ralsei") == false then 
+        if self:getFlag("ralsei", false) == false then 
+            self:setFlag("ralsei", true)
             Game.battle.music:stop()
+            Game:saveQuick(141, 435)
             Game.battle.battle_ui:clearEncounterText()
             Game.battle.seen_encounter_text = false
-            Game.battle.current_selecting = 0     
-            Game:setFlag("has_seen_ralsei", true)
-            Game:save(975, 658)     
+            Game.battle.current_selecting = 0         
             Game.battle:startCutscene(function(cutscene)
                 cutscene:wait(0.3)
                 cutscene:battlerText("ralsei", "K-[wait:2]Kris...?")
@@ -111,7 +111,7 @@ function ralsei:onStateChange(old, new)
                 cutscene:wait(cutscene:setAnimation(ralsei, "battle/intro"))
                 ralsei:setAnimation("idle")
             end)
-        else
+        else 
             Game.battle:addChild(FireGlow())
         end 
     end
