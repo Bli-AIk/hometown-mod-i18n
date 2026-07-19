@@ -227,7 +227,7 @@ end
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
-       -- ralsei.x = ralsei.x + 200
+        ralsei.x = ralsei.x + 200
         ralsei:resetSprite()
         cutscene:setSpeaker("ralsei")
         cutscene:wait(0.5)
@@ -244,7 +244,7 @@ end
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
-       -- ralsei.x = ralsei.x + 200
+        ralsei.x = ralsei.x + 200
         ralsei:resetSprite()
         cutscene:setSpeaker("ralsei")
         cutscene:wait(0.5)
