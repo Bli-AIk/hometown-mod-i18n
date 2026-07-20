@@ -69,8 +69,12 @@ function sirengeist:onAct(battler, name)
             battler:resetSprite()
             cutscene:wait(cutscene:playSound("boost"))
             cutscene:text("* Kris learnt a new \"spell\"\ntemporarily!")
-            self:removeAct("TryMagic")
-            self:registerAct("SwordButt", "Attack\nGhost", {}, 8)
+            for _, enemy in ipairs(Game.battle:getActiveEnemies()) do 
+                enemy:removeAct("TryMagic")
+                enemy:registerAct("SwordButt", "Attack\nGhost", {}, 8)
+            end 
+            -- self:removeAct("TryMagic")
+            -- self:registerAct("SwordButt", "Attack\nGhost", {}, 8)
         end)
     elseif name == "SwordButt" then
         Game.battle:startActCutscene(function(cutscene)

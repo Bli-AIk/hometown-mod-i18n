@@ -142,7 +142,12 @@ function gallop:executeGallopRun(deer, deer_index, target_y)
             end
         end
     end, function()
+        if deer:canSpare() then 
         deer:resetSprite()
+        deer:setAnimation("spared")
+        else  
+        deer:resetSprite()
+        end 
         deer.visible = true
         local orig = self.original_positions[deer]
         deer:setPosition(orig.x, orig.y)
@@ -188,8 +193,13 @@ end
 function gallop:beforeEnd()
     for _, deer in ipairs(self:getAttackers()) do
         local orig = self.original_positions[deer]
-        deer:resetSprite()
         deer:setPosition(orig.x, orig.y)
+        if deer:canSpare() then 
+        deer:resetSprite()
+        deer:setAnimation("spared")
+        else 
+        deer:resetSprite()
+        end 
     end 
 end 
 

@@ -50,8 +50,9 @@ function cross_throw:throwCross(enemy)
          bullet:setHitbox(1, 1, 8, 8)    
          Assets.playSound("bigcut")
          self.timer:after(0.5, function()
-             enemy:setAnimation("idle")
-             self:send()
+            enemy:resetSprite()
+            if enemy:canSpare() then enemy:setAnimation("spared") end 
+            self:send()
          end)
     end)
 end 
@@ -59,7 +60,12 @@ end
 function cross_throw:beforeEnd()
      for i, enemy in ipairs(self.wave_attackers) do
         if enemy and enemy.stage then 
-            enemy:resetSprite()
+            if enemy:canSpare() then 
+               enemy:resetSprite()
+               enemy:setAnimation("spared")
+            else 
+                enemy:resetSprite()
+            end 
         end
     end 
 end 

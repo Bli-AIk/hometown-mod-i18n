@@ -2,7 +2,7 @@ local snow_graze, super = Class(Wave)
 
 function snow_graze:init()
     super.init(self)
-    self.time = 9
+    self.time = 7
     self.original_positions = {}
     self.attackers_registry = {}  
     self.run_count = 0
@@ -64,6 +64,7 @@ function snow_graze:sendThird()
 end
 
 function snow_graze:executeGrazeAction(deer, index)
+    deer:setAnimation("idle")
     self.timer:afterCond(function()
         return deer.sprite.frame == 2 
     end, function()
@@ -74,15 +75,12 @@ end
 
 function snow_graze:alertTheSnowflakes(rx, ry, deer, index)
     if not Game.battle.soul then return end
-
     local soul_x = Game.battle.soul.x
     local soul_y = Game.battle.soul.y
-    local base_angle = Utils.angle(rx, ry, soul_x, soul_y)
+    local base_angle = MathUtils.angle(rx, ry, soul_x, soul_y)
     local wave_attack_data = {}
-    local active_alerts = {}
-    
-    Assets.playSound("alert")
-    
+    local active_alerts = {} 
+    Assets.playSound("alert") 
     for i = 1, 6 do
         local spray_spread = (love.math.random() * 0.36) - 0.18
         local direction = base_angle + spray_spread
@@ -142,20 +140,16 @@ function snow_graze:alertTheSnowflakes(rx, ry, deer, index)
         self:sendSnow(rx, ry, deer, wave_attack_data)
         
         self.timer:after(1.4, function()
+            if deer:canSpare() then 
             deer:resetSprite()
-            self.run_count = self.run_count + 1
-            if self.run_count >= self.max_runs then
-                self:setFinished(true)
-            else
-                self.timer:after(0.2, function()
-                    self:triggerNextFrom(index)
-                end)
+            deer:setAnimation("spared")
+            else 
+            deer:resetSprite()
             end
+            self:triggerNextFrom(index)
         end)
     end)
 end
-
-
 
 function snow_graze:sendSnow(rx, ry, deer, wave_attack_data)
     for i, data in ipairs(wave_attack_data) do
@@ -232,8 +226,13 @@ end
 function snow_graze:beforeEnd()
     for _, deer in ipairs(self:getAttackers()) do
         local orig = self.original_positions[deer]
-        deer:resetSprite()
         deer:setPosition(orig.x, orig.y)
+        if deer:canSpare() then 
+        deer:resetSprite()
+        deer:setAnimation("spared")
+        else  
+        deer:resetSprite()
+        end 
     end 
 end 
 
