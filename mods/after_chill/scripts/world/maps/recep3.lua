@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 141,
+  nextobjectid = 151,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -21,6 +21,12 @@ return {
       firstgid = 1,
       filename = "../tilesets/Receptionist.tsx",
       exportfilename = "../tilesets/Receptionist..lua"
+    },
+    {
+      name = "cones",
+      firstgid = 362,
+      filename = "../tilesets/cones.tsx",
+      exportfilename = "../tilesets/cones.lua"
     }
   },
   layers = {
@@ -598,15 +604,57 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 1082,
-          y = 1198.67,
-          width = 75.3333,
-          height = 40,
+          x = 1080.27,
+          y = 1201.19,
+          width = 81.8333,
+          height = 38.9091,
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* Seems the path is blocked.[wait:5]\n* You wonder why...[wait:3] seems it was bad design choices."
+            ["text1"] = "* Seems the path is blocked by dog cones."
           }
+        },
+        {
+          id = 144,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1078.45,
+          y = 1240,
+          width = 28,
+          height = 38,
+          rotation = 0,
+          gid = 362,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 146,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1106.64,
+          y = 1240,
+          width = 28,
+          height = 38,
+          rotation = 0,
+          gid = 362,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 148,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1133,
+          y = 1240,
+          width = 28,
+          height = 38,
+          rotation = 0,
+          gid = 362,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1408,14 +1456,14 @@ return {
           properties = {}
         },
         {
-          id = 138,
+          id = 150,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1070,
-          y = 1198.5,
-          width = 91.5,
-          height = 40.5,
+          x = 1078.55,
+          y = 1201.45,
+          width = 84,
+          height = 38.5455,
           rotation = 0,
           visible = true,
           properties = {}
