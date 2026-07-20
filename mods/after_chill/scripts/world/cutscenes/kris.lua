@@ -247,7 +247,7 @@ end
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
-        ralsei.x = ralsei.x + 200
+        ralsei.x = ralsei.x + 170 
         ralsei:resetSprite()
         cutscene:setSpeaker("ralsei")
         cutscene:wait(0.5)
@@ -418,7 +418,7 @@ end
     Game.world.timer:tween(0.2, viro, {rotation = math.rad(25)}, "in-cubic")
     cutscene:wait(0.2)
     snd = Assets.playSound("fall")
-    viro:slideTo(viro.x, viro.y + 300, 1.1, "in-quart")
+    viro:slideTo(viro.x, viro.y + 400, 1.1, "in-quart")
     cutscene:wait(1.8)
     snd:stop()
     Assets.playSound("deathnoise")

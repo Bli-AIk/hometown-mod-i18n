@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 140,
+  nextobjectid = 141,
   backgroundcolor = { 19, 19, 43 },
   properties = {
     ["music"] = "hallway"
@@ -592,6 +592,21 @@ return {
           properties = {
             ["lanes"] = 7
           }
+        },
+        {
+          id = 140,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 1082,
+          y = 1198.67,
+          width = 75.3333,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* Seems the path is blocked.[wait:5]\n* You wonder why...[wait:3] seems it was bad design choices."
+          }
         }
       }
     },
@@ -601,7 +616,7 @@ return {
       id = 4,
       name = "markers",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -656,7 +671,7 @@ return {
       id = 5,
       name = "collision",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

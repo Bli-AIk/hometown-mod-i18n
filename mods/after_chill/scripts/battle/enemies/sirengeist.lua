@@ -88,7 +88,7 @@ function sirengeist:onAct(battler, name)
             cutscene:text(return_text)
         end)
     elseif name == "Mute" then
-        self:addMercy(40)
+        self:addMercy(60)
         self:flash()
         return {
             "* Kris tried to get the enemy to be quiet!", 

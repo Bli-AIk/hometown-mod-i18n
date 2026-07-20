@@ -1,8 +1,9 @@
-local firesnipe, super = Class(Bullet)
+local firesnipe, super = Class("DarkBullet")
 
 function firesnipe:init(x, y)
     super.init(self, x, y, "bullets/fire")
-    self:addFX(ColorMaskFX({1, 0.6, 0}, 0.5))
+    self.tiredness = 24
+    self:addFX(ColorMaskFX({0.4, 0.6, 1.0}, 0.4))
     self.destroy_on_hit = true
     self.remove_offscreen = true
  --   self.graphics.spin = 0.1

@@ -32,22 +32,17 @@ function ralsei:onStateChange(old, new)
             Game.battle:startCutscene(function(cutscene)
                 cutscene:wait(0.3)
                 cutscene:battlerText("ralsei", "K-[wait:2]Kris...?")
-                cutscene:battlerText("ralsei", "W-[wait:2]what are\nyou doing?")
+                cutscene:battlerText("ralsei", "W-[wait:2]what's wrong?")
                 cutscene:wait(0.3)
-                cutscene:battlerText("ralsei", "T-[wait:2]This[wait:2] isn't you!")
-                cutscene:wait(1)
                 cutscene:battlerText("ralsei", "Kris,[wait:2] can you\nhear me?")
                 cutscene:wait(0.5)
-                cutscene:battlerText("ralsei", "M-[wait:2]maybe,[wait:5] you can\nhear this.")
-                
+                cutscene:battlerText("ralsei", "You...[wait:2] you'll respond\nto this,[wait:2] right?")
                 local ralsei = Game.battle:getEnemyBattler("ralsei")
                 ralsei:setAnimation("sing")
                 cutscene:wait(0.6)
-                
                 local snd = Assets.playSound("snd_vsral")
                 Game.fader:fadeOut(nil, {speed = 1})
-                cutscene:wait(1)
-                
+                cutscene:wait(1)     
                 local mask = ColorMaskFX({1, 1, 1}, 1)
                 mask.amount = 0 
                 local sprite = Sprite("party/kris/dark/sit", 75, 150)
@@ -60,7 +55,7 @@ function ralsei:onStateChange(old, new)
                 Game.battle.timer:tween(0.5, sprite, {alpha = 1}, "in-out-sine")
                 Game.battle.timer:tween(0.5, mask, {amount = 1}, "in-out-sine")       
                 
-                local melody_text = DialogueText("[noskip][shake:0.6][speed:0.10][spacing:6][voice:none]A melody you once knew.", 160, 240, {
+                local melody_text = DialogueText("[noskip][shake:0.6][speed:0.10][spacing:3][voice:none]A melody you once played.", 160, 240, {
                     style = "none",
                     align = "center"
                 })
@@ -100,14 +95,12 @@ function ralsei:onStateChange(old, new)
                 cutscene:battlerText("ralsei", "M-maybe,[wait:2] a battle\nwill do.")
                 cutscene:wait(0.2)
                 cutscene:battlerText("ralsei", "Kris...")
-                
                 local fire = FireGlow()
                 Game.battle:addChild(fire)
                 fire.alpha = 0 
                 local sfx = Assets.playSound("boost", 0.4, 0.8)
                 Game.battle.timer:tween(sfx:getDuration(), fire, {alpha = 1})
-                Assets.playSound("weaponpull_fast")
-                
+                Assets.playSound("weaponpull_fast")  
                 cutscene:wait(cutscene:setAnimation(ralsei, "battle/intro"))
                 ralsei:setAnimation("idle")
             end)

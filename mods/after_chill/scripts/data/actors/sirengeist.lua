@@ -57,7 +57,7 @@ end
 
 function actor:onSpriteUpdate(sprite)
     sprite:setScale(1.8)
-    if Game.battle then 
+    if Game.battle and Game.battle.encounter.id ~= "forced" then 
     if not sprite.base_y then
         sprite.base_y = sprite.y
     end

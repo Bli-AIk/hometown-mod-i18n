@@ -65,45 +65,6 @@ function ralsei:init()
     -- self.acts[3].color = {COLORS.red}
 end
 
-function ralsei:onDefeat()
-if not Game.battle:hasCutscene() then 
-   if self:getFlag("dead") then 
-    self:getActiveSprite():resetSprite()
-    self:setSprite("battle_alt/hurt_1")
-        Game.battle:startCutscene(function(cutscene)
-            Game.battle.battle_ui:endAttack()
-            self.exit_on_defeat = false 
-            self:setSprite("battle_alt/hurt_1")
-            self:setPosition(533, 284)
-            self.vig:fadeOutAndRemove(2)
-            Game.stage:removeFX("shiftfx")
-            for _, idk in ipairs(Game.stage:getObjects()) do 
-                if idk:includes(FireGlow) then 
-                    idk:remove()
-                end 
-            end 
-            Game.battle.music:fade(0, 2)
-            cutscene:wait(2)
-            cutscene:text("* Even when I tried to fight against it...", "down", "ralsei")
-            cutscene:text("* It didn't matter in the end,[wait:5]did it?", "down_alt", "ralsei")
-            cutscene:text("* The prophecy couldn't do anything to change my fate...", "down_alt", "ralsei")
-            cutscene:text("* Everything written in it,[wait:2] will come to pass.", "down_alt", "ralsei")
-            cutscene:text("* Yet,[wait:5] the life I got to live, the memories I made.[wait:2].[wait:2].[wait:2]", "disappointed_smile", "ralsei")
-            cutscene:text("* Meeting you and Susie?", "disappointed_side", "ralsei")
-            cutscene:text("* Was the best part about it.", "down_smile", "ralsei")
-            cutscene:text("* And if I had 100 more lives..?", "pleased", "ralsei")
-            cutscene:text("*[shake:1] I would choose to be meet you guys again,[wait:2] in every single one of them.", "pleading_closed", "ralsei")
-            self:shake(2)
-            Game:setFlag("encounter#ralsei:violenced", true) 
-            Assets.playSound("damage")
-            Assets.playSound("levelup")
-            self:onDefeatFatal()
-            self.x = self.x + 50 
-            self.scale_x = -2 
-        end)
-   end 
-end 
-end       
 
 function ralsei:onAct(battler, name)
     if name == "Apologize" then
@@ -138,6 +99,9 @@ function ralsei:onAct(battler, name)
             cutscene:wait(0.5)
             self.vig:fadeTo(0, 0.5)
             Game.stage:removeFX("shiftfx")
+            for _, idk in ipairs(Game.stage:getObjects(FireGlow)) do 
+                idk:remove()
+            end 
             cutscene:wait(0.5)
             Game:getPartyMember("ralsei"):setFlag("serious", false)
             self:setAnimation("idle")
@@ -153,11 +117,19 @@ function ralsei:onAct(battler, name)
         end) 
     end 
 
-elseif name == "WakeUp" then 
+    elseif name == "WakeUp" then 
     Game.battle.tired_bar:addTired(-16)
     Assets.playSound("bell_bounce_short")
     return "* Kris rubbed their eyes and gripped their sword tighter![wait:5]\n* [color:blue]TIREDNESS[color:reset] reduced!"
 
+    elseif name == "CallOut" then  
+        Game.battle:startActCutscene(function(cutscene)
+        cutscene:text("* Kris screamed out across the fire\nin agony.")
+        self:sendAngel()
+        cutscene:wait(3.5)
+        cutscene:text("* ...", "disappointed_down", "ralsei")
+    end)
+    
     elseif name == "???" then 
         Game.battle:startActCutscene(function(cutscene)
             Game.battle.music:play("d")
@@ -213,6 +185,85 @@ elseif name == "WakeUp" then
     return super.onAct(self, battler, name)
 end
 
+function ralsei:sendAngel()
+    self:setAnimation("spell", function()
+        local sx, sy = self:getRelativePos(0, 0, Game.battle)
+        local sprite = Sprite("effects/angelmove", sx - 72, sy - 40)
+        sprite:setScale(2)
+        Game.battle:addChild(sprite)
+        local snd = Assets.playSound("spell_cure_slight_smaller")
+        sprite.alpha = 0
+        sprite:fadeTo(1, 0.2, function()
+        local old_update = sprite.update
+        local wave_offset = love.math.random() * math.pi * 2
+        local start_y = sprite.y
+        local timealive = 0 
+        sprite:setSprite("effects/angel")
+        sprite:play(0.08, true)
+        sprite.update = function(spelf)
+            old_update(spelf)
+            timealive = timealive + DT 
+            local wave_movement = math.sin((timealive * 6) + wave_offset) * 9
+            spelf.y = start_y + wave_movement
+        end 
+        sprite:slideTo(114, 151, 1.8, "linear", function()
+            Assets.playSound("sparkle_glock")
+            Game.battle.tired_bar:addTired(-32)
+            for _, mem in ipairs(Game.battle.party) do 
+                mem:healEffect()
+                mem:heal(MathUtils.round(mem.chara:getStat("health")/3))
+            end 
+            sprite.physics.speed_y = -4 
+            sprite:fadeTo(0, 0.5)
+            sprite.update = function(spelf)
+            old_update(spelf)
+            end 
+        end)
+        end) 
+    end)
+end  
+
+
+function ralsei:onDefeat()
+if not Game.battle:hasCutscene() then 
+   if self:getFlag("dead") then 
+    self:getActiveSprite():resetSprite()
+    self:setSprite("battle_alt/hurt_1")
+        Game.battle:startCutscene(function(cutscene)
+            Game.battle.battle_ui:endAttack()
+            self.exit_on_defeat = false 
+            self:setSprite("battle_alt/hurt_1")
+            self:setPosition(533, 284)
+            self.vig:fadeOutAndRemove(2)
+            Game.stage:removeFX("shiftfx")
+            for _, idk in ipairs(Game.stage:getObjects()) do 
+                if idk:includes(FireGlow) then 
+                    idk:remove()
+                end 
+            end 
+            Game.battle.music:fade(0, 2)
+            cutscene:wait(2)
+            cutscene:text("* Even when I tried to fight against it...", "down", "ralsei")
+            cutscene:text("* It didn't matter in the end,[wait:5]did it?", "down_alt", "ralsei")
+            cutscene:text("* The prophecy couldn't do anything to change my fate...", "down_alt", "ralsei")
+            cutscene:text("* Everything written in it,[wait:2] will come to pass.", "down_alt", "ralsei")
+            cutscene:text("* Yet,[wait:5] the life I got to live, the memories I made.[wait:2].[wait:2].[wait:2]", "disappointed_smile", "ralsei")
+            cutscene:text("* Meeting you and Susie?", "disappointed_side", "ralsei")
+            cutscene:text("* Was the best part about it.", "down_smile", "ralsei")
+            cutscene:text("* And if I had 100 more lives..?", "pleased", "ralsei")
+            cutscene:text("*[shake:1] I would choose to be meet you guys again,[wait:2] in every single one of them.", "pleading_closed", "ralsei")
+            self:shake(2)
+            Game:setFlag("encounter#ralsei:violenced", true) 
+            Assets.playSound("damage")
+            Assets.playSound("levelup")
+            self:onDefeatFatal()
+            self.x = self.x + 50 
+            self.scale_x = -2 
+        end)
+   end 
+end 
+end       
+
 function ralsei:spellEffectHeal()
     self:resetSprite()
     self:setAnimation("spell")
@@ -256,8 +307,9 @@ function ralsei:onHurt(damage, battler)
             self:setFlag("dead", true)
             cutscene:battlerText("ralsei", "Y-[wait:2]you were\nreally serious..?")
             cutscene:wait(1)
-            cutscene:battlerText("ralsei", "[shake:0.7][speed:0.7][noskip]After everything,\n[wait:5]and you just.[wait:2].[wait:2].[wait:2]")
+            cutscene:battlerText("ralsei", "[shake:0.7][speed:0.7][noskip]After everything,\n[wait:5]and [color:red]you[color:reset] just.[wait:2].[wait:2].[wait:2]")
             battler:shake()
+            Assets.playSound("bump")
             cutscene:wait(1)
             cutscene:battlerText("ralsei", "[noskip][speed:0.7]...Forgive me,[wait:2] Kris.")
             local snd = Assets.playSound("boost")
@@ -265,6 +317,7 @@ function ralsei:onHurt(damage, battler)
             fx.amount = 0 
             Game:getPartyMember("ralsei"):setFlag("serious", true)
             self:setAnimation("attack")
+            Game.battle.music:seek(20)
             Game.battle.music:fade(1, 1)
             Game.battle.timer:tween(0.4, fx, {amount = 1})
             cutscene:wait(0.4)
@@ -323,7 +376,8 @@ function ralsei:setHardMode()
     Game.battle.tired_bar = tired
     Game.battle.tired_bar:setPosition(Game.battle.tired_bar.x, 6)
     Game.battle.tired_bar:slideTo(70, 6, 0.6)
-    self:registerAct("WakeUp", "Reduce Tired\nBy 16%", {}, 8)
+    self:registerAct("WakeUp", "Reduce\nTired 16%", {}, 8)
+    self:registerAct("CallOut", "Heal &\n-32% Tired", {}, 36)
 end 
 
 function ralsei:getEncounterText()
