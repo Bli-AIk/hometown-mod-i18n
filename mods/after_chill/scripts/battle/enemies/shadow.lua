@@ -2,7 +2,6 @@ local shadow, super = Class(EnemyBattler)
 
 function shadow:init()
     super.init(self)
-
     self.name = "Shadow"
     self:setActor("enemy_shadow")
     self.disable_mercy = true 
@@ -10,9 +9,12 @@ function shadow:init()
     self.health = 2500
     self.wave_index = 1
     self.tired_percentage = 0
-    local kris = Game.battle:getPartyBattler("kris")
-    self.attack = kris.chara:getStat("attack") - 2 
-    self.defense = kris.chara:getStat("defense") - 2
+    local ralsei = Game.battle:getPartyBattler("ralsei")
+    ralsei:addFX(ColorMaskFX(COLORS.black)) 
+    ralsei:addFX(OutlineFX(Game:getPartyMember("ralsei").color))
+    local kris = Game:getPartyMember("kris")
+    self.attack = kris:getStat("attack") - 2 
+    self.defense = kris:getStat("defense") - 2
     self.money = 100
     self.spare_points = 0
     self.fx1 = self:addFX(ColorMaskFX(COLORS.black))

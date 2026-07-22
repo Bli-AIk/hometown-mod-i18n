@@ -2,6 +2,7 @@ function Mod:init()
     MUSIC_VOLUMES = {
         ["battle"] = 0.7, 
         ["bloom_f"] = 0.4,
+        ["fate"]    = 3, 
     }
     Game:registerEvent("squeak", function(data)
         return Squeak(data.x, data.y, {data.width, data.height, data.polygon})

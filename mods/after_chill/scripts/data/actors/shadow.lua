@@ -22,7 +22,7 @@ function actor:init()
     -- Path to this actor's sprites (defaults to "")
     self.path = "enemies/shadow"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
-    self.default = "idle"
+    self.default = "left"
 
     -- Sound to play when this actor speaks (optional)
     self.voice = "shadow"
