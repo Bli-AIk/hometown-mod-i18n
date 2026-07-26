@@ -4,6 +4,23 @@ function Mod:init()
         ["bloom_f"] = 0.4,
         ["fate"]    = 3, 
     }
+    Kristal.Shaders["SoulFireCharge"] = love.graphics.newShader([[
+    extern float progress; // Manually controlled by Lua (0.0 to 1.0)
+
+    vec4 effect(vec4 color, Image tex, vec2 texture_coords, vec2 screen_coords) {
+        vec4 tex_color = Texel(tex, texture_coords);
+        if (tex_color.a == 0.0) return tex_color;
+
+        // If the pixel is below the fill line dictated by progress
+        if (texture_coords.y > (1.0 - progress)) {
+            vec3 flat_orange = vec3(1.0, 0.45, 0.0);
+            vec3 final_rgb = mix(tex_color.rgb, flat_orange, 0.85);
+            return vec4(final_rgb, tex_color.a) * color;
+        }
+
+        return tex_color * color;
+    }
+]])
     Game:registerEvent("squeak", function(data)
         return Squeak(data.x, data.y, {data.width, data.height, data.polygon})
     end)
