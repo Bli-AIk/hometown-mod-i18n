@@ -65,6 +65,7 @@ function ralsei_forced:onHurt(damage, battler)
 end 
 
 function ralsei_forced:startSequence()
+    Game.battle:setState("CUTSCENE")
     Game.battle:startCutscene(function(cutscene)
         local ralsei = Game.battle:getEnemyBattler("ralsei_forced")
         ralsei.sprite.frozen = true 
@@ -107,10 +108,12 @@ function ralsei_forced:startSequence()
         Game.stage:addChild(soul)
         cutscene:wait(1.5)
         gonerText("WILL YOU OFFER[wait:10]\nSOME OF YOUR[wait:10]\nSENTIENCE TO RESTORE HIM?")
-        cutscene:wait(1.5)
-        Assets.playSound("ui_spooky_action")
-        soul:hide()
-        cutscene:wait(1.5)
+        local bx, by = sprite:getRelativePos(sprite.width/2, sprite.height/2)
+        local snd = Assets.playSound("ui_spooky_action")
+        soul:slideTo(bx, by, snd:getDuration())
+        soul.graphics.grow = -0.05
+        soul.graphics.remove_shrunk = true 
+        cutscene:wait(snd:getDuration())
         gonerText("EXCELLENT.[wait:10]\nVERY EXCELLENT.")
         gonerText("WE SHALL NOW\nRESUME WITH THE STORY.")
         Game.battle.music:fade(0, 1)
