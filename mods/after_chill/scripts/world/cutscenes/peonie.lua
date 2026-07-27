@@ -28,6 +28,7 @@ return {
 
     puzzle = function(cutscene)
     cutscene:wait(cutscene:playSound("won"))
+    if Game:hasPartyMember("ralsei") then 
     local ralsei = cutscene:getCharacter("ralsei")
     local kris = cutscene:getCharacter("kris")
     cutscene:wait(cutscene:walkTo(ralsei, ralsei.x, kris.y, 0.4, "left"))
@@ -107,5 +108,12 @@ return {
         cutscene:attachCamera(0.5)
         cutscene:wait(0.5)
         cutscene:text("* Okay.", "neutral", "ralsei")
+    else 
+        cutscene:text("* (The puzzle isn't finished yet.)")
+        cutscene:text("* (Seems nothing more will happen,[wait:5] might as well leave...)")
+        cutscene:wait(0.5)
+        cutscene:text("* (Nothing...)")
+        cutscene:wait(0.5)
+        cutscene:text("* (Still nothing...)")
     end 
 }
