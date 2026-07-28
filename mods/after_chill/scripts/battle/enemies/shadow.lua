@@ -49,7 +49,9 @@ end
 function shadow:onAct(battler, name)
     if name == "Plead" then 
         return "* You begged for mercy.[wait:10]\n* Nothing happened."
-    end
+    elseif name == "Standard" then 
+        return "* "..battler.chara:getName().." tried to reason.[wait:5]\n* Nothing happened."
+    end 
     return super.onAct(self, battler, name)
 end
 

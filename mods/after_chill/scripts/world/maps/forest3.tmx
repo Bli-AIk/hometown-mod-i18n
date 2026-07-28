@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="221">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="224">
  <editorsettings>
   <export target="forest3.lua" format="lua"/>
  </editorsettings>
@@ -33,9 +33,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,94,94,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,53,54,55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,94,94,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,53,54,54,54,54,94,94,94,54,54,54,54,54,54,54,54,55,0,0,53,54,54,54,54,54,54,54,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,53,54,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,54,54,94,94,94,94,94,94,94,94,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,94,94,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,53,54,54,54,54,55,0,0,53,54,54,54,54,54,54,54,55,0,0,53,54,54,54,54,54,54,54,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,53,54,94,94,94,94,94,94,54,54,94,94,94,94,94,94,94,94,94,54,54,94,94,94,94,94,94,94,94,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,93,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,93,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,93,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,134,134,134,134,134,134,134,94,94,94,94,94,134,134,135,0,0,0,0,0,0,0,0,0,
@@ -89,7 +89,7 @@
 0,0,222,223,224,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,20,0,0,0,0,0,0,85,86,86,82,86,82,86,87,0,0,0,0,0,0,
 0,0,222,223,224,0,0,0,0,58,0,0,0,0,0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,85,86,86,86,86,86,86,87,0,0,0,0,0,0,
 0,0,262,263,264,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,85,86,86,86,82,86,86,87,0,0,0,0,0,0,
-0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,49,50,50,50,50,50,50,51,0,0,0,0,0,0,0,0,0,0,0,0,85,86,82,86,86,86,86,87,0,0,0,0,0,0,
+0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,45,50,50,50,50,50,50,51,0,0,0,0,0,0,0,0,0,0,0,0,85,86,82,86,86,86,86,87,0,0,0,0,0,0,
 58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,129,82,90,90,90,82,90,91,0,0,0,0,0,0,0,0,0,0,0,0,85,86,86,86,86,86,86,87,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,129,90,90,82,90,90,131,0,0,0,0,0,0,0,0,0,0,0,0,125,126,126,126,126,126,126,127,0,0,0,0,0,0,
 0,0,62,63,64,0,0,0,0,0,0,0,0,0,0,0,0,0,130,130,130,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -170,7 +170,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup color="#0000ff" id="3" name="collision" tintcolor="#0000ff">
+ <objectgroup color="#0000ff" id="3" name="collision" visible="0" tintcolor="#0000ff">
   <object id="1" x="0" y="160" width="360" height="40"/>
   <object id="2" x="360" y="200" width="40" height="40"/>
   <object id="3" x="400" y="240" width="80" height="40"/>
@@ -230,7 +230,12 @@
   <object id="62" x="2186" y="178"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="objects">
-  <object id="64" name="transition" x="0" y="200" width="40" height="200"/>
+  <object id="64" name="transition" x="-14" y="200" width="40" height="200">
+   <properties>
+    <property name="map" value="forest2"/>
+    <property name="marker" value="exitA"/>
+   </properties>
+  </object>
   <object id="65" name="transition" x="1960" y="1720" width="40" height="160"/>
   <object id="67" gid="1201" x="660" y="908.722" width="153.122" height="174.443">
    <properties>
@@ -377,11 +382,6 @@
     <property name="solid" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="96" gid="1201" x="534.438" y="236.779" width="153.122" height="174.443">
-   <properties>
-    <property name="solid" type="bool" value="true"/>
-   </properties>
-  </object>
   <object id="97" gid="1201" x="738.439" y="228.779" width="153.122" height="174.443">
    <properties>
     <property name="solid" type="bool" value="true"/>
@@ -398,11 +398,6 @@
    </properties>
   </object>
   <object id="100" gid="1201" x="672.439" y="222.779" width="153.122" height="174.443">
-   <properties>
-    <property name="solid" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="101" gid="1201" x="570.438" y="188.779" width="153.122" height="174.443">
    <properties>
     <property name="solid" type="bool" value="true"/>
    </properties>
@@ -840,21 +835,34 @@
   <object id="215" name="shadow" x="153.333" y="157.333">
    <point/>
   </object>
+  <object id="221" name="shooter" x="1080.25" y="990.875">
+   <point/>
+  </object>
+  <object id="223" name="shooter" x="634" y="990.88">
+   <point/>
+  </object>
+  <object id="96" gid="1201" x="534.438" y="236.779" width="153.122" height="174.443">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="101" gid="1201" x="570.438" y="188.779" width="153.122" height="174.443">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup color="#55aa00" id="8" name="battleareas">
+ <objectgroup color="#55aa00" id="8" name="battleareas" visible="0">
   <object id="217" x="280" y="920" width="1160" height="280"/>
  </objectgroup>
  <objectgroup color="#aa00ff" id="6" name="markers" tintcolor="#aa00ff">
-  <object id="63" name="entranceA" x="86" y="334">
+  <object id="63" name="entranceA" x="86" y="306">
    <point/>
   </object>
   <object id="66" name="entranceB" x="1920" y="1800">
    <point/>
   </object>
   <object id="213" name="spawn" x="261.333" y="305.333">
-   <point/>
-  </object>
-  <object id="219" name="Put Pitcher Petals here" x="1080" y="990.667">
    <point/>
   </object>
  </objectgroup>

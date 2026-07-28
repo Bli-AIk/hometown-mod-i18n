@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="116" nextobjectid="91">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="116" nextobjectid="91">
  <editorsettings>
   <export target="forest2.lua" format="lua"/>
  </editorsettings>
@@ -52,7 +52,7 @@
   <object id="34" name="entranceB" x="1343" y="93">
    <point/>
   </object>
-  <object id="90" name="entranceC" x="1880" y="920">
+  <object id="90" name="exitA" x="1942.67" y="938.667">
    <point/>
   </object>
  </objectgroup>
@@ -74,7 +74,6 @@
   <object id="23" x="800" y="800" width="40" height="40"/>
   <object id="77" x="1157.45" y="717.364" width="44.1818" height="37.1818"/>
   <object id="78" x="1248.62" y="959.788" width="44.1818" height="34.9091"/>
-  <object id="82" x="1917.33" y="839.333" width="44.6667" height="200"/>
   <object id="88" x="1119.67" y="480" width="80" height="40"/>
   <object id="89" x="1042" y="439.333" width="80" height="40"/>
  </objectgroup>
@@ -113,7 +112,7 @@
 </data>
  </layer>
  <objectgroup color="#ff55ff" id="108" name="objects" opacity="0.94">
-  <object id="1" name="transition" x="1983" y="810.667" width="40" height="280">
+  <object id="1" name="transition" x="1982" y="810.667" width="40" height="280">
    <properties>
     <property name="map" value="forest3"/>
     <property name="marker" value="entranceA"/>

@@ -348,7 +348,7 @@ return {
         cutscene:setTextboxTop(false)
         cutscene:text("* ...", "determined_up", "ralsei")
         cutscene:text("* I don't care what you think...[wait:5]", "angry", "ralsei")
-        cutscene:text("* And I won't let you hurt my friend!", "no_glasses_closed", "ralsei")
+        cutscene:text("* And I won't let you\nhurt my friend!", "no_glasses_closed", "ralsei")
         Assets.playSound("weaponpull_fast")
         ralsei:setAnimation("battle/attack_ready")
         cutscene:wait(0.5)
@@ -358,10 +358,9 @@ return {
         local shadow = Game.world:spawnNPC("shadow", kris.x + 150, kris.y - 15)  
         shadow:setAnimation("ball")
         shadow:setScale(1)
-        kris:shake()
         Assets.playSound("grab")
         Assets.playSound("jump")
-        local start_x = shadow.x
+        local start_x = shadow.x - 100
         local start_y = shadow.y
         local target_x = ralsei.x + 400 
         local target_y = 314
@@ -374,7 +373,6 @@ Game.world.timer:during(duration, function()
     shadow.x = Utils.lerp(start_x, target_x, progress)
     local base_y = Utils.lerp(start_y, target_y, progress)
     local height_offset = 4 * arc_height * progress * (1 - progress)
-    
     shadow.y = base_y - height_offset
 end, function()
     shadow:setSprite("landed")

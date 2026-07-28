@@ -71,14 +71,11 @@ function shadow:onBattleStart()
             end
         end
     end
-
-    -- 2. Grab your pre-existing stars array and cycle them
-    local stars = {self.star2, self.star1} -- star2 matches shadow (i=1), star1 matches ralsei (i=2)
-    
+    local stars = {self.star2, self.star1}
     for i = 1, 2 do 
         local star = stars[i]
         star:play(0.1, true)
-        star:setScale(2.6)
+        star:setScale(3)
         
         local target = ralsei
         if i == 1 then target = shadow end 
@@ -93,42 +90,46 @@ function shadow:onBattleStart()
             makeFloat(target, star, 3, 12)
         end)
     end 
-    local max_stars = 45 
+
+    local start_x, end_x = -100, 780
+    local start_y, end_y = -50, 160
+    local spacing = 56
     local star_table = {}
 
-    for i = 1, max_stars do
-        local star = Sprite("effects/sparkle_1")
-        
-        local rand_x = love.math.random(-100, 780)
-        local rand_y = love.math.random(-50, 160)
-        star:setPosition(rand_x, rand_y)  
-        
-        local rand_scale = love.math.random(10, 25) / 10 
-        star:setScale(rand_scale)
-        
-        table.insert(star_table, star)
-        Game.battle:addChild(star) 
-        star.alpha = 0 
-        local random_speed = love.math.random(40, 160) / 200   
-        Game.world.timer:every(random_speed, function()
-            if star.texture_path == "effects/sparkle_1" then
-                star:setSprite("effects/sparkle_2")
-            else
-                star:setSprite("effects/sparkle_1")
-            end
-        end)
+    for x = start_x, end_x, spacing do
+        for y = start_y, end_y, spacing do
+            local star = Sprite("effects/sparkle_1")
+            star:setScale(2)
+            table.insert(star_table, star)
+            
+            local rand_x = x + love.math.random(-4, 4)
+            local rand_y = y + love.math.random(-4, 4)
+            star:setPosition(rand_x, rand_y)  
+            
+            Game.battle:addChild(star) 
+            star.alpha = 0         
+            
+            local random_speed = love.math.random(40, 160) / 200   
+            Game.world.timer:every(random_speed, function()
+                if star.texture_path == "effects/sparkle_1" then
+                    star:setSprite("effects/sparkle_2")
+                else
+                    star:setSprite("effects/sparkle_1")
+                end
+            end)
+        end
     end
+    
     Game.battle.timer:afterCond(function()
         if Game.battle.music and Game.battle.music:isPlaying() then
-            return Game.battle.music:tell() >= 5
+            return Game.battle.music:tell() >= 3
         end
         return false
     end, function()
         for _, star in ipairs(star_table) do 
-            star.layer = shadow.layer - 0.00001
             star:fadeTo(1, 0.5)
         end 
     end)
-end
+end 
 
 return shadow
