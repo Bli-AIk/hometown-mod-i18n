@@ -162,6 +162,7 @@
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer"/>
     <property name="enemy" value="dusteer"/>
+    <property name="once" type="bool" value="true"/>
    </properties>
   </object>
   <object id="73" name="transition" x="87.3333" y="1961.33" width="103.333" height="38.6667">

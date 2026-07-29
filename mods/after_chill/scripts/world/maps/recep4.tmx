@@ -188,6 +188,7 @@
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="sirengeist2"/>
     <property name="enemy" value="sirengeist"/>
+    <property name="once" type="bool" value="true"/>
     <property name="path" value="virovirokun"/>
    </properties>
   </object>

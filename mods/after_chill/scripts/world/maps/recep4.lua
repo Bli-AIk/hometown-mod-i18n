@@ -1381,6 +1381,7 @@ return {
             ["chase"] = true,
             ["encounter"] = "sirengeist2",
             ["enemy"] = "sirengeist",
+            ["once"] = true,
             ["path"] = "virovirokun"
           }
         },

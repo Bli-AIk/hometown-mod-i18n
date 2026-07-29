@@ -273,6 +273,7 @@
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer"/>
     <property name="enemy" value="dusteer"/>
+    <property name="once" type="bool" value="true"/>
    </properties>
   </object>
   <object id="136" name="script" x="0" y="280" width="43" height="77">
@@ -301,6 +302,7 @@
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="dusteer1"/>
     <property name="enemy" value="dusteer"/>
+    <property name="once" type="bool" value="true"/>
    </properties>
   </object>
   <object id="158" name="warning_spawner" x="1080" y="480" width="80" height="240">

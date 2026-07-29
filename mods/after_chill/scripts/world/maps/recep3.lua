@@ -25,8 +25,7 @@ return {
     {
       name = "cones",
       firstgid = 362,
-      filename = "../tilesets/cones.tsx",
-      exportfilename = "../tilesets/cones.lua"
+      filename = "../tilesets/cones.tsx"
     }
   },
   layers = {
@@ -492,7 +491,8 @@ return {
             ["actor"] = "dusteer",
             ["chase"] = true,
             ["encounter"] = "dusteer",
-            ["enemy"] = "dusteer"
+            ["enemy"] = "dusteer",
+            ["once"] = true
           }
         },
         {
@@ -575,7 +575,8 @@ return {
             ["actor"] = "dusteer",
             ["chase"] = true,
             ["encounter"] = "dusteer1",
-            ["enemy"] = "dusteer"
+            ["enemy"] = "dusteer",
+            ["once"] = true
           }
         },
         {

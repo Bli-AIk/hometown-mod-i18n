@@ -332,7 +332,8 @@ return {
             ["actor"] = "dusteer",
             ["chase"] = true,
             ["encounter"] = "dusteer",
-            ["enemy"] = "dusteer"
+            ["enemy"] = "dusteer",
+            ["once"] = true
           }
         },
         {
