@@ -95,17 +95,16 @@ function ralsei:onStateChange(old, new)
                 cutscene:battlerText("ralsei", "M-maybe,[wait:2] a battle\nwill do.")
                 cutscene:wait(0.2)
                 cutscene:battlerText("ralsei", "Kris...")
-                local fire = FireGlow()
-                Game.battle:addChild(fire)
-                fire.alpha = 0 
                 local sfx = Assets.playSound("boost", 0.4, 0.8)
-                Game.battle.timer:tween(sfx:getDuration(), fire, {alpha = 1})
+                local bg = Game.battle:addChild(FireGlow())
+                Game.battle.background = bg 
                 Assets.playSound("weaponpull_fast")  
                 cutscene:wait(cutscene:setAnimation(ralsei, "battle/intro"))
                 ralsei:setAnimation("idle")
             end)
         else 
-            Game.battle:addChild(FireGlow())
+            local bg = Game.battle:addChild(FireGlow())
+            Game.battle.background = bg  
         end 
     end
 end

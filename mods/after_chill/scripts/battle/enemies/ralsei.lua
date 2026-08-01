@@ -99,9 +99,7 @@ function ralsei:onAct(battler, name)
             cutscene:wait(0.5)
             self.vig:fadeTo(0, 0.5)
             Game.stage:removeFX("shiftfx")
-            for _, idk in ipairs(Game.stage:getObjects(FireGlow)) do 
-                idk:remove()
-            end 
+            Game.battle.background:remove()
             cutscene:wait(0.5)
             Game:getPartyMember("ralsei"):setFlag("serious", false)
             self:setAnimation("idle")
@@ -228,40 +226,89 @@ function ralsei:onDefeat()
 if not Game.battle:hasCutscene() then 
    if self:getFlag("dead") then 
     self:getActiveSprite():resetSprite()
-    self:setSprite("battle_alt/hurt_1")
+    self.y = self.y + 20 
+    self:getActiveSprite():setSprite("battle_alt/hurt_1")
         Game.battle:startCutscene(function(cutscene)
             Game.battle.battle_ui:endAttack()
             self.exit_on_defeat = false 
             self:setSprite("battle_alt/hurt_1")
-            self:setPosition(533, 284)
-            self.vig:fadeOutAndRemove(2)
-            Game.stage:removeFX("shiftfx")
-            for _, idk in ipairs(Game.stage:getObjects()) do 
-                if idk:includes(FireGlow) then 
-                    idk:remove()
-                end 
-            end 
+            Game.battle.background:remove()
             Game.battle.music:fade(0, 2)
+            local current_color = {self.vig:getDrawColor()}
+            local shifted_color = ColorUtils.mergeColor(current_color, COLORS.gray, 0.5)
+            local fx = ColorMaskFX(shifted_color, 0)
+            self.vig:addFX(fx)
+            Game.battle.timer:tween(2, fx, {amount = 1})
             cutscene:wait(2)
-            cutscene:text("* Even when I tried to fight against it...", "down", "ralsei")
-            cutscene:text("* It didn't matter in the end,[wait:5]did it?", "down_alt", "ralsei")
-            cutscene:text("* The prophecy couldn't do anything to change my fate...", "down_alt", "ralsei")
-            cutscene:text("* Everything written in it,[wait:2] will come to pass.", "down_alt", "ralsei")
-            cutscene:text("* Yet,[wait:5] the life I got to live, the memories I made.[wait:2].[wait:2].[wait:2]", "disappointed_smile", "ralsei")
-            cutscene:text("* Meeting you and Susie?", "disappointed_side", "ralsei")
-            cutscene:text("* Was the best part about it.", "down_smile", "ralsei")
-            cutscene:text("* And if I had 100 more lives..?", "pleased", "ralsei")
-            cutscene:text("*[shake:1] I would choose to be meet you guys again,[wait:2] in every single one of them.", "pleading_closed", "ralsei")
-            self:shake(2)
+            cutscene:setSpeaker("ralsei")
+            cutscene:text("* Y-[wait:2]you really think you won,[wait:5] don't you?", "roaring")
+            cutscene:text("* Not Kris,[wait:5] you, the [color:red]SOUL[color:reset].", "roaring", "ralsei")
+            Game.fader:fadeOut(nil, {speed = 0.5})
+            Game.battle.music:play("deltarune/flashback_excerpt")
+            Game.battle.music:setPitch(0.8)
+            Game.battle.music:fade(1, 0.5)
+            local sprite = Sprite("party/ralsei/dark/walk/down_1", SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+            sprite.alpha = 0 
+            sprite:fadeTo(1, 0.5)
+            sprite:setScale(2)
+            sprite:setOrigin(0.5, 0.5)
+            sprite:addFX(ColorMaskFX())
+            Game.stage:addChild(sprite)
+            sprite.layer = 9999
+            cutscene:wait(0.5)
+            local function gonerTextFade(text)
+            Game.stage.timer:tween(1, text, { alpha = 0 }, "linear", function() text:remove() end)
+            cutscene:wait(1) 
+            end   
+            local function rtext(str, x, y)
+            local txt = DialogueText("[noskip][voice:ralsei]" ..str, x or 110, y or 345) 
+            txt:setParallax(0, 0)
+            txt.layer = 9999
+            Game.stage:addChild(txt)
+            cutscene:wait(function() return not txt:isTyping() end)
+            gonerTextFade(txt)
+            end 
+            Game.stage:removeFX("shiftfx")
+            self.vig:remove()
+            cutscene:wait(1)
+            rtext("You see, I knew exactly what\nyou were doing to her.")
+            rtext("Everything...[wait:5]\ncovered in a blanket of ice.")
+            rtext("But seeing Kris safe...\n[wait:10]that was all that mattered\nto me.")
+            sprite:slideTo(sprite.x - 70, sprite.y, 0.5)
+            local n_sprite = Sprite("party/noelle/dark/head_lowered", SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+            n_sprite.alpha = 0 
+            n_sprite:fadeTo(1, 0.5)
+            n_sprite:setScale(2)
+            n_sprite:setOrigin(0.5, 0.5)
+            n_sprite:addFX(ColorMaskFX())
+            n_sprite.layer = 9999
+            Game.stage:addChild(n_sprite)
+            cutscene:wait(0.5)
+            rtext("Yet,[wait:5] poor Noelle was\ntrapped in an eternal nightmare.")
+            rtext("Attacking everything,[wait:5] even me!", 80)
+            n_sprite:fadeOutAndRemove(0.5)
+            sprite:slideTo(sprite.x + 70, sprite.y, 0.5)
+            cutscene:wait(0.5)
+            rtext("I tried so hard to change your\nfate,[wait:5] Kris.[wait:10]\nI really did.")
+            rtext("So...[wait:3] Kris?[wait:5] Please hear me.")
+            rtext("I don't blame you for any of this.", 64)
+            cutscene:wait(1)
+            rtext("Keep fighting,[wait:5] Kris.\n[wait:5]Don't let your own voice\ngo completely quiet.", 147, 319)
+            Game.battle.music:fade(0, 0.5)
+            Game.fader:fadeIn(nil, {speed = 0.5})
+            sprite:fadeOutAndRemove(0.5)
+            cutscene:wait(1)
             Game:setFlag("encounter#ralsei:violenced", true) 
+            self:shake(2)
             Assets.playSound("damage")
             Assets.playSound("levelup")
+            Game.battle.tired_bar:slideTo(-300, Game.battle.tired_bar.y, 1)
             self:onDefeatFatal()
             self.x = self.x + 50 
             self.scale_x = -2 
-        end)
-   end 
-end 
+        end) 
+   end
+end
 end       
 
 function ralsei:spellEffectHeal()

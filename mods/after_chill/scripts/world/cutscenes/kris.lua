@@ -311,7 +311,9 @@ end
         cutscene:wait(snd:getDuration())
         resetFader(1)
         cutscene:wait(0.5)
-        for i = 1, 5 do 
+        Assets.playSound("hurt")
+        cutscene:wait(cutscene:playSound("damage"))
+        for i = 1, 4 do 
             Assets.playSound("hurt")
             cutscene:wait(0.1)
         end

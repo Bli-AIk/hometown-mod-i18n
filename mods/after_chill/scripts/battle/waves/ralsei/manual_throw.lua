@@ -64,7 +64,9 @@ function manual_throw:startBookRoutine(manual)
         if not Game.battle.soul then return end    
         local bx, by = manual:getRelativePos(manual.width/2, manual.height/2)
         local bullet = self:spawnBullet("bullets/page", bx, by)
-        
+        bullet.layer = manual.layer - 0.0001
+        bullet.physics.gravity = 0.4 
+        bullet.graphics.spin = love.math.random(0.2, 0.4)
         bullet.physics.direction = math.rad(90)
         bullet:setHitbox(0, 0, 12, 18)
         bullet.physics.speed = 4.5  

@@ -53,13 +53,13 @@ function star_bomb_bullet:explode()
     end
 
     local soul = Game.battle.soul
-    local angle_to_soul = Utils.angle(self.x, self.y, soul.x, soul.y)
+    local angle_to_soul = MatgUtils.angle(self.x, self.y, soul.x, soul.y)
 
     for i = 1, 3 do
         local fb = self.wave:spawnBullet("firesnipe", self.x, self.y)
+        fb:addFX(ColorMaskFX({0.4, 0.6, 1.0}, 0.4))
         fb.physics.speed = love.math.random(6, 10) 
         fb.physics.direction = angle_to_soul + (i - 2) * 0.1
-        fb:addFX(ColorMaskFX({1, 0.6, 0}, 0.5))
         table.insert(self.wave.bullet_table, fb)
     end
     
