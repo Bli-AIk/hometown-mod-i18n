@@ -80,7 +80,7 @@ function TiredBar:onMaxTired()
             Game.battle.seen_encounter_text = false
             Game.battle.current_selecting = 0 
             cutscene:wait(cutscene:playSound("ghostappear", 2, 1.2)) 
-            kris:setSprite("sit")
+            kris:setSleeping(true)
             Assets.playSound("break2")
             cutscene:wait(1)
             local ralsei = Game.battle:getEnemyBattler("ralsei")
