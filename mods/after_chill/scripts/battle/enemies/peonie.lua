@@ -28,16 +28,15 @@ function peonie:init()
     }
 
     self.text = {
-        "* The wind sways Peonie around.", 
+        "* The wind sways Peonie around.",
         "* Smells like pollen.", 
-        "* A cold draft passes through.", 
+        "* A cold draft passess through.", 
     }
     self.low_health_percentage = 0.25
     self.low_health_text = "* You can see Peonie wilting slowly."
-
+    self:registerAct("Prune", "Lower\nDF", {}, 12)
     self:registerAct("Bloom", "Get\nMercy")
     self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 18)
-    self:registerAct("Prune", "Lower\nDF", {}, 12)
 end
 
 function peonie:onAct(battler, name)
