@@ -63,6 +63,11 @@ function Mod.scr_wave(arg0, arg1, speed_seconds, phase)
     return arg0 + a4 + (math.sin((((Kristal.getTime()) + (speed_seconds * phase)) / speed_seconds) * (2 * math.pi)) * a4);
 end
 
+function Mod:onMapMusic(...)
+    if Game:getFlag("geno") then 
+    Game:getActiveMusic():setPitch(0.8) 
+    end 
+end 
 
 Mod.wave_shader = love.graphics.newShader([[
     extern number wave_sine;

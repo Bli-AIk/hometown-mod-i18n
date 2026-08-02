@@ -148,6 +148,10 @@ function ralsei:onAct(battler, name)
             battler:setAnimation("battle/attack_ready")
             cutscene:wait(15/30)
             local ralsei = Game.battle:getEnemyBattler("ralsei")
+            ralsei:setSprite("what")
+            ralsei.scale_x = -2 
+            ralsei.y = ralsei.y + 14
+            ralsei.dialogue_offset = {0, -5}
             cutscene:battlerText(ralsei, "Kris,[wait:5] why are you...?")
             cutscene:battlerText(ralsei, "Let's just... talk-[next]")
             battler:shake()
@@ -159,6 +163,7 @@ function ralsei:onAct(battler, name)
             cutscene:battlerText(ralsei, "(I can't let them...)")
             Assets.playSound("wing")
             ralsei:resetSprite()
+            ralsei.scale_x = 2 
             ralsei.y = 285 -- 271
             ralsei.x = ralsei.x 
             ralsei:setSprite("walk/left_1")

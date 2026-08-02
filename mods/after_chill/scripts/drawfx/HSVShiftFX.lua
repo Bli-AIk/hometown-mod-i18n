@@ -47,4 +47,4 @@ function HSVShiftFX:draw(texture)
     super.draw(self, texture)
 end
 
-return HSVShiftFX
+return HSVShiftFX 

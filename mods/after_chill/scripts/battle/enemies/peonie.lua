@@ -37,7 +37,7 @@ function peonie:init()
 
     self:registerAct("Bloom", "Get\nMercy")
     self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 18)
-    self:registerAct("Tap", "Lower\nDF", {}, 12)
+    self:registerAct("Prune", "Lower\nDF", {}, 12)
 end
 
 function peonie:onAct(battler, name)
@@ -53,11 +53,9 @@ function peonie:onAct(battler, name)
             end
             cutscene:text("* It and its friends feel happier!")
         end)
-    elseif name == "Tap" then 
+    elseif name == "Prune" then 
         self.defense = self.defense - 1
-        battler:setAnimation("battle/attack", function() battler:resetSprite()  self:shake() end)
-        Assets.playSound("laz_c")
-        return "[wait:20]* You gently hit the enemy.[wait:5]\n* It got scared of you,[wait:2] and its [color:yellow]defense[color:reset] dropped!"
+        return "* You ripped off a few dirty petals\nfrom the enemy.[wait:10]\n* It's [color:yellow]defense[color:reset] lowered!"
     elseif name == "BloomX" then 
         Game.battle:startActCutscene(function(cutscene)
             cutscene:text("* You and Ralsei encourage the enemy to bloom once again into a\nbeautiful flower!")

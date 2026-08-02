@@ -29,6 +29,7 @@ function dusteer:init()
 
     self.experience = 24
     self.low_health_percentage = 0.2
+    self.dmg_sprite_offset = {30, 10}
     self.low_health_text = "* Reinfrost's antlers look slightly cracked."
     self:registerAct("Sweep", "Get\nMercy")
     self:registerAct("HeatUp", "Lower\nAttack", {"ralsei"}, 8)
