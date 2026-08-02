@@ -187,7 +187,9 @@ function TiredBar:drawText()
     local text_x_offset = self.width + 12
     local tamt = math.floor(self.apparent)
     self.maxed = false
-    Draw.setColor(1, 1, 1, 1) 
+    local index = (Game.battle.current_selecting and Game.battle.current_selecting > 0) and Game.battle.current_selecting or 1
+    local per = Game.battle.party[index]
+    Draw.setColor(per.chara.color) 
     Draw.draw(self.tired_text, 30, 10, 0, 1, 1)
     love.graphics.setFont(self.font) 
     if (tamt < 100) then
