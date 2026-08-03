@@ -1,6 +1,6 @@
 {
     "id": "after_chill",
-    "name": "Deltarune: AfterChill",
+    "name": "AfterChill",
     "subtitle": "",
     "version": "v1.0.0",
     "engineVer": "v0.10.0-dev",
@@ -24,7 +24,7 @@
     },
     "hardReset": false,
     "hidden": false,
-    "dev":  true, 
+    "dev":  false, 
     "setWindowTitleAndIcon": null,
     "config": {
         "kristal": {
