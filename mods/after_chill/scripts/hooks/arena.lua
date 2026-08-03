@@ -1,12 +1,29 @@
 local arena, super = HookSystem.hookScript(Arena)
 
+local fire_shader = love.graphics.newShader([[
+    extern float progress; // Manually controlled by Lua (0.0 to 1.0)
+
+    vec4 effect(vec4 color, Image tex, vec2 texture_coords, vec2 screen_coords) {
+        vec4 tex_color = Texel(tex, texture_coords);
+        if (tex_color.a == 0.0) return tex_color;
+
+        // If the pixel is below the fill line dictated by progress
+        if (texture_coords.y > (1.0 - progress)) {
+            vec3 flat_orange = vec3(1.0, 0.45, 0.0);
+            vec3 final_rgb = mix(tex_color.rgb, flat_orange, 0.85);
+            return vec4(final_rgb, tex_color.a) * color;
+        }
+
+        return tex_color * color;
+    }
+]])
 local function addFireorDrain(self, should_charge, multiplier)
     local soul = Game.battle.soul
     if not soul or self.is_frozen then return end
     self.fire_charge = self.fire_charge or 0
     if should_charge then
         if not soul:getFX("soul_fire") then
-            local fx = ShaderFX(Kristal.Shaders["SoulFireCharge"])
+            local fx = ShaderFX(fire_shader)
             soul:addFX(fx, "soul_fire")
         end
         self.fire_charge = math.min(1.0, self.fire_charge + (DT * multiplier))
