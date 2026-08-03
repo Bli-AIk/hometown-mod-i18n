@@ -133,7 +133,7 @@ function MainMenu:enter()
                 if trimmed_commit then
                     self.ver_string = self.ver_string .. " (" .. trimmed_commit .. ")"
                 end
-                self.ver_string = self.ver_string .. " (outdated!)"
+                self.ver_string = nil 
             end
         end)
     end
@@ -452,7 +452,7 @@ function MainMenu:drawVersion()
 
         love.graphics.setFont(self.small_font)
         Draw.setColor(1, 1, 1, 0.5)
-        love.graphics.print(ver_string, 4, ver_y)
+     --   love.graphics.print(ver_string, 4, ver_y)
 
         if self.selected_mod then
             local compatible, mod_version = self.mod_list:checkCompatibility()
@@ -468,7 +468,7 @@ function MainMenu:drawVersion()
             end
         end
     else
-        local full_ver = "Kristal: " .. self.ver_string
+    local full_ver = "Kristal"-- .. self.ver_string
 
         if self.selected_mod.version then
             ver_y = ver_y - self.small_font:getHeight()
@@ -477,7 +477,7 @@ function MainMenu:drawVersion()
 
         love.graphics.setFont(self.small_font)
         Draw.setColor(1, 1, 1, 0.5)
-        love.graphics.print(full_ver, 4, ver_y)
+     --   love.graphics.print(full_ver, 4, ver_y)
     end
 
     Draw.setColor(1, 1, 1)
