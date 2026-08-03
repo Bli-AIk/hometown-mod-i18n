@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="224">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="224">
  <editorsettings>
   <export target="forest3.lua" format="lua"/>
  </editorsettings>
@@ -372,7 +372,7 @@
     <property name="solid" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="94" gid="1201" x="170.438" y="838.779" width="153.122" height="174.443">
+  <object id="94" gid="1201" x="278.438" y="914.779" width="153.122" height="174.443">
    <properties>
     <property name="solid" type="bool" value="true"/>
    </properties>
