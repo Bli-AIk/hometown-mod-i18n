@@ -158,6 +158,7 @@ function ralsei:onAct(battler, name)
             cutscene:wait(cutscene:playSound("break1"))
             Game.battle.music:fade(0, 1)
             self.vig:fadeOutAndRemove(1)
+            Game.battle.background:remove()
             Game.stage:removeFX("shiftfx")
             cutscene:wait(1)
             cutscene:battlerText(ralsei, "(I can't let them...)")
@@ -338,7 +339,7 @@ function ralsei:onHurt(damage, battler)
     end 
     if self.health <= (self.max_health * 0.4) and Game:getFlag("enemies_killed", 0) >= 10 then 
         self:registerAct("???", "...")
-        self.acts[4].color = {COLORS.red}
+        self.acts[5].color = {COLORS.red}
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()

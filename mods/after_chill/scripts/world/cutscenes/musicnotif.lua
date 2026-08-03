@@ -13,14 +13,12 @@ return {
         Game.world:spawnObject(musiclogo("bloomforest", 180, 120, 160, 120, 140, 120), 9999)
         Game.world.music:setVolume(0)
         Game.world.music:fade(1, 0.5)
+        Game.lock_movement = false 
         cutscene:wait(2)
+        cutscene:setTextboxTop(false)
         cutscene:text("[noskip]* (You swear you can hear a voice saying \"Winter blooms in your heart\".)")
         cutscene:wait(0.5)
         cutscene:text("[noskip]* (But,[wait:5] it was just your imagination...)")
     end, 
-
-
-
-
 
 }

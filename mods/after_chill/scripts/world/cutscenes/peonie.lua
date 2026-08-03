@@ -2,28 +2,18 @@ return {
     -- The inclusion of the below line tells the language server that the first parameter of the cutscene is `WorldCutscene`.
     -- This allows it to fetch us useful documentation that shows all of the available cutscene functions while writing our cutscenes!
 
-    appear = function(cutscene)        
-    local peonies = {}
-    for _, peonie in ipairs(Game.stage:getObjects(ChaserEnemy)) do 
-        if peonie.actor and peonie.actor.id == "peonie" then 
-           table.insert(peonies, peonie)
-        end
-    end 
-    local sfx 
-    local enemy = peonies[1]
-    if enemy then 
-    enemy.actor.visible = true 
-    enemy.visible = true
-    enemy.alpha = 0
-    sfx = Assets.playSound("grab")
-    enemy:fadeTo(1, sfx:getDuration())
+    appear = function(cutscene)  
+    cutscene:wait(cutscene:playSound("rustle"))  
+    local peonie = ChaserEnemy("peonie", 597, 528)   
+    Game.world:spawnObject(peonie, 9999)
+    peonie.aura = false 
+    peonie.alpha = 0 
+    local sfx = Assets.playSound("grab")
+    peonie:fadeTo(1, sfx:getDuration())
     cutscene:wait(sfx:getDuration())
-    Assets.playSound("wing")
-    enemy:shake(2)
-    cutscene:wait(0.3)
-    cutscene:startEncounter("peonie", nil, {{"peonie", enemy}})
-    enemy:remove()
-    end 
+    peonie:shake(2)
+    cutscene:startEncounter("peonie", nil, {{"peonie", peonie}})
+    peonie:remove()
     end, 
 
     puzzle = function(cutscene)
@@ -99,7 +89,9 @@ return {
         local success, text = Game.inventory:tryGiveItem("cross_bow")
         Assets.playSound("item")
         cutscene:setTextboxTop(false)
+        if success then 
         cutscene:text("* You got the [color:yellow]CrossBow[color:reset]!")
+        end 
         cutscene:text(text)
         ghost:fadeOutAndRemove(0.5)
         cutscene:wait(0.5)

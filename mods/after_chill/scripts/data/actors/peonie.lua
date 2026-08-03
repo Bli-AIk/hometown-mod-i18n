@@ -4,10 +4,9 @@ function actor:init()
     super.init(self)
 
     self.name = "Peonie"
-    self.width = 27
-    self.height = 45
-    self.visible = false 
-    self.hitbox = { 0, 25, 19, 14 }
+    self.width = 34
+    self.height = 32
+    self.hitbox = {0, 0,45, 34}
     self.color = { 1, 0, 0 }
     self.flip = nil
     self.path = "enemies/peonie"
@@ -31,10 +30,8 @@ end
 
 function actor:onSpriteUpdate(sprite)
     sprite:setScale(0.75)
-    sprite.visible = self.visible
     sprite:setOrigin(-0.2, -0.2)
     if Game.battle then  
-        sprite.visible = true 
         if not sprite.center_x then
             sprite.center_x = sprite.x - 20
             sprite.center_y = sprite.y

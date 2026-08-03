@@ -85,6 +85,7 @@ function sirengeist:onAct(battler, name)
                 local dmg = (battler.chara:getStat("attack")/2) * 3
                 self:hurt(MathUtils.round(dmg), battler, function() 
                     return_text = "* The enemy ran away in fright..."
+                    Game:addFlag("enemies_killed", 1)
                     self:onDefeatRun()
                 end) 
             end)

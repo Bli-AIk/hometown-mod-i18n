@@ -37,6 +37,15 @@ function peonie:init()
     self:registerAct("Prune", "Lower\nDF", {}, 12)
     self:registerAct("Bloom", "Get\nMercy")
     self:registerAct("BloomX", "Spare\nEnemy", {"ralsei"}, 18)
+    self.prune = 0 
+end
+
+function peonie:update()
+    super.update(self)
+    if self.sprite then
+        local center_x, center_y = self.sprite:getRelativePos(0, 0)
+        self.dmg_sprite_offset = {center_x, center_y}
+    end 
 end
 
 function peonie:onAct(battler, name)
@@ -52,9 +61,14 @@ function peonie:onAct(battler, name)
             end
             cutscene:text("* It and its friends feel happier!")
         end)
-    elseif name == "Prune" then 
-        self.defense = self.defense - 1
-        return "* You ripped off a few dirty petals\nfrom the enemy.[wait:10]\n* It's [color:yellow]defense[color:reset] lowered!"
+    elseif name == "Prune" then
+    if self.prune == 0 then  
+        self.defense = self.defense - 3
+        self.prune = self.prune + 1 
+        return "* You ripped off a few dirty petals\nfrom the enemy.[wait:10]\n* Its [color:yellow]defense[color:reset] lowered!"
+    else 
+        return "* There weren't many petals to rip off,[wait:5] as most were being ripped off by the wind itself."
+    end 
     elseif name == "BloomX" then 
         Game.battle:startActCutscene(function(cutscene)
             cutscene:text("* You and Ralsei encourage the enemy to bloom once again into a\nbeautiful flower!")

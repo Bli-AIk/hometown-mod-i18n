@@ -629,24 +629,6 @@ return {
           }
         },
         {
-          id = 83,
-          name = "enemy",
-          type = "",
-          shape = "point",
-          x = 597,
-          y = 528,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "peonie",
-            ["aura"] = false,
-            ["encounter"] = "peonie",
-            ["enemy"] = "peonie"
-          }
-        },
-        {
           id = 84,
           name = "",
           type = "",

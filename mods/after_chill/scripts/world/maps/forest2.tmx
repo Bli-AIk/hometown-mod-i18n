@@ -167,15 +167,6 @@
 * You wish there was candy on it.</property>
    </properties>
   </object>
-  <object id="83" name="enemy" x="597" y="528">
-   <properties>
-    <property name="actor" value="peonie"/>
-    <property name="aura" type="bool" value="false"/>
-    <property name="encounter" value="peonie"/>
-    <property name="enemy" value="peonie"/>
-   </properties>
-   <point/>
-  </object>
   <object id="84" x="661.333" y="1262.67">
    <point/>
   </object>
