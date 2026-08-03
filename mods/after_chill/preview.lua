@@ -7,13 +7,15 @@ function preview:init(mod, button, menu)
     self.particle_timer = 0
     
     self.snow_group = Object()
+    self.ambient_timer = 0
+    Kristal.Console:warn("sfhjdfg")
     
     button:setColor(0.6, 0.9, 1.0)
     button:setFavoritedColor(0.8, 0.8, 1)
 end
 
 function preview:update()
-    local dt = DT
+    self.ambient_timer = self.ambient_timer + DT
 
     local target_alpha = self.fade or 0
     local is_visible = (target_alpha > 0)
@@ -25,22 +27,20 @@ function preview:update()
 
     local to_remove = {}
     for _, p in ipairs(self.particles) do
-        p.timer = (p.timer or 0) + dt
-        
-        p.speed_y = p.speed_y + p.gravity * dt
-        p.speed_x = p.speed_x * math.exp(-p.friction * dt)
+        p.timer = (p.timer or 0) + DT
+        p.speed_y = p.speed_y + p.gravity * DT
+        p.speed_x = p.speed_x * math.exp(-p.friction * DT)
         
         local sine_wave = math.sin(p.timer * p.wave_speed + p.wave_offset)
         local drift_x = sine_wave * p.wave_amplitude * (1 - p.sprite.scale_x)
         
-        local new_y = p.sprite.y + p.speed_y * dt
-        local new_x = p.sprite.x + (p.speed_x + drift_x) * dt
-        local new_rot = p.sprite.rotation + p.spin * dt
+        local new_y = p.sprite.y + p.speed_y * DT
+        local new_x = p.sprite.x + (p.speed_x + drift_x) * DT
+        local new_rot = p.sprite.rotation + p.spin * DT
         
         p.sprite:setPosition(new_x, new_y)
         p.sprite.rotation = new_rot
         p.sprite.alpha = target_alpha * 0.6
-        
         if new_y > SCREEN_HEIGHT + 20 or new_x < -40 or new_x > SCREEN_WIDTH + 400 then 
             table.insert(to_remove, p) 
         end
@@ -50,12 +50,11 @@ function preview:update()
         Utils.removeFromTable(self.particles, p)
     end
 
-    self.particle_timer = self.particle_timer + dt
+    self.particle_timer = self.particle_timer + DT
     if self.particle_timer >= 0.04 then 
         self.particle_timer = 0
         
         local size_mult = math.random() * 0.5 + 0.5
-        
         local spawn_x = math.random(-40, SCREEN_WIDTH + 350)
         local spawn_y = -40
         
@@ -88,6 +87,9 @@ end
 function preview:draw()
     local alpha = self.fade or 0
     if alpha <= 0 then return end
+    local pulse = 0.15 + (math.sin(self.ambient_timer * 1.5) * 0.05)
+    Draw.setColor(0, 0.4, 0.8, alpha * pulse) 
+    love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
     
     local bg_wave = Assets.getTexture("kristal/title_bg_wave")
     if bg_wave then
