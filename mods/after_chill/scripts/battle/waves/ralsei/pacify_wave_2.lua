@@ -2,7 +2,7 @@ local Basic, super = Class(Wave)
 
 function Basic:init()
     super.init(self)
-    self.time = 12.3
+    self.time = 12.5
 end 
 
 function Basic:onArenaEnter()
@@ -18,7 +18,12 @@ function Basic:onStart()
         ralsei:setAnimation("spell", function()
         Assets.playSound("alert")
         local pacify_x, pacify_y = Game.battle.soul:getRelativePos(Game.battle.soul.width/2, Game.battle.soul.height/2, Game.battle)
-        self.timer:after(0.13, function()   
+        local z = self:spawnSprite("effects/spare/z", pacify_x, pacify_y, Game.battle.soul.layer + 0.01)
+        z.alpha = 0.7 
+        z:setScale(1)
+        z:addFX(ColorMaskFX(COLORS.red, 0.7))
+        self.timer:after(0.15, function()   
+        z:fadeOutSpeedAndRemove(0.2)
         if not Game.battle.soul then return end    
         Assets.stopAndPlaySound("spell_pacify")
         local z_count = 0

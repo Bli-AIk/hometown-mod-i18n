@@ -337,9 +337,11 @@ function ralsei:onHurt(damage, battler)
         end 
     end 
     if self.health <= (self.max_health * 0.5) and Game:getFlag("enemies_killed", 0) >= 10 then 
+        if not self.acts[5] then 
         self:registerAct("???", "...")
         self.geno_text_now = true 
-        self.acts[5].color = {COLORS.red}
+        self.acts[5].color = COLORS.red
+        end 
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()
