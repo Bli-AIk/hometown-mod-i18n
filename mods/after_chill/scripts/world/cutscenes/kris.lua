@@ -186,19 +186,25 @@ end
         ralsei:alert(0.5)
         cutscene:wait(0.5)
         cutscene:setSpeaker("ralsei")
-        cutscene:text("* Oh,[wait:2] Kris,[wait:2] there you are!", "blush_surprise")
-        cutscene:text("* Wait...[wait:10] where's Susie?", "surprise_confused")
-        cutscene:wait(0.3)
+        cutscene:text("* Oh,[wait:2] Kris,[wait:2] there you are!", "blush_surprise") -- he was looking for kris earlier
+        cutscene:wait(0.4)
+        cutscene:text("* Wait,[wait:2] Kris,[wait:5] where's Susie...?", "small_smile_side")
+        cutscene:text("* (If Noelle is here...)", "disappointed_side")
+        cutscene:wait(0.5)
+        cutscene:look(ralsei, "right")
+        cutscene:wait(0.5)
+        cutscene:look(ralsei, "left")
         cutscene:text("* W-[wait:2]well, I'm just glad I found you,[wait:5] Kris!", "blush_smile")
         cutscene:wait(0.3)
+        cutscene:text("* Anyway...", "surprise_neutral_side")
         ralsei:setSprite("walk/left")
         ralsei.sprite:play(0.1, true)
         cutscene:text("[noskip]* This dark world is so empty...[next]", "small_smile_side")
         ralsei:resetSprite()
         ralsei:setFacing("left")
         ralsei:walkTo(ralsei.x - 200, ralsei.y, 3)
-        cutscene:text("[speed:1.2][noskip]* Anyways,[wait:2] I believe if we continue to the right.[next]", "small_smile")
-        cutscene:text("[speed:1.2][noskip]* We should be at the fountain in no time! and-[next]", "small_smile")
+        cutscene:text("[speed:1.2][noskip]* I believe if we continue to the right...[wait:5][next]", "small_smile")
+        cutscene:text("[speed:1.2][noskip]* We should be at the fountain in no time! And-[next]", "small_smile")
         ralsei:resetPhysics()
         Assets.playSound("break1")
         local fx = kris:addFX(ColorMaskFX(COLORS.red, 1))
@@ -212,7 +218,7 @@ end
         cutscene:text("* K-[wait:2]Kris?!", "shock")
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
         elseif Game:getFlag("encounter#ralsei:ralsei", false) then
-        -- THIS IS THE END; PLEASE NOTICe ofghugh
+        -- the restart scene
         local kris = cutscene:getCharacter("kris")
         local rx, ry = cutscene:getMarker("kris")
         cutscene:wait(cutscene:walkTo(kris, rx, ry, 2))
@@ -227,6 +233,7 @@ end
         cutscene:startEncounter("ralsei", nil, {{"ralsei", ralsei}})
         end 
         if Game:getFlag("enemy#ralsei:spared_but_not", false) then -- Game:getFlag("enemy#ralsei:spared_but_not", false)
+            -- the spared after being hit
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
@@ -248,6 +255,7 @@ end
         Game.world.music:setVolume(1)
         cutscene:wait(1)
         elseif Game:getFlag("enemy#ralsei:spared") then
+            -- straight up Being spared
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
         kris:resetSprite()
@@ -265,6 +273,7 @@ end
         cutscene:attachCamera(1)
         Game.world.music:setVolume(1)
         elseif Game:getFlag("enemy#ralsei:violenced_not_geno", false) then 
+        -- you killed him but not through rupture
         Game.world.music:setVolume(1)
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
@@ -275,6 +284,7 @@ end
         cutscene:attachCamera(1)
         cutscene:wait(1)
         else 
+        -- ralsei flees (rupture)
         Game.world.music:setVolume(1)
         local kris = cutscene:getCharacter("kris")
         local ralsei = cutscene:getCharacter("ralsei")
