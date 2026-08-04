@@ -9,9 +9,9 @@ function shadow:init()
     self.health = 2500
     self.wave_index = 1
     self.tired_percentage = 0
-    local ralsei = Game.battle:getPartyBattler("ralsei")
+    local ralsei = Game.battle.party[1]
     ralsei:addFX(ColorMaskFX(COLORS.black)) 
-    ralsei:addFX(OutlineFX(Game:getPartyMember("ralsei").color))
+    ralsei:addFX(OutlineFX(Game.battle.party[1].chara.color))
     local kris = Game:getPartyMember("kris")
     self.attack = kris:getStat("attack") - 2 
     self.defense = kris:getStat("defense") - 2

@@ -17,7 +17,7 @@ function EnemyBattler:init()
 
     if kills >= 10 then
         local scaling_kills = kills - 5
-        dynamic_tp = MathUtils.clamp(2 + (scaling_kills * 1.5), 10, 50)
+        dynamic_tp = MathUtils.clamp(MathUtils.roundFromZero((scaling_kills * 1.5)), 10, 50)
     end
 
     self:registerAct("Rupture", "Bonus DMG\nwhen TIRED", {}, dynamic_tp) 

@@ -11,7 +11,7 @@ function spell:init()
 
     self.cost = 2
     self.target = "enemy"
-    self.tags = {"blade"}
+    self.tags = {"blade", "fatal"}
 end
 
 function spell:getCastMessage(user, target)
@@ -83,10 +83,9 @@ function spell:onCast(user, target)
 
                 if target and target.stage and target.health > 0 then
                     target:hurt(current_damage, user)
-                    Game.battle:shake(8, 8)
+                    Game.battle:shakeCamera(8, 8)
 
-                    local mask = target:addFX(ColorMaskFX(COLORS.red))
-                    mask.amount = 1
+                    local mask = target:addFX(ColorMaskFX(COLORS.red, 1))
                     Game.battle.timer:tween(15/30, mask, {amount = 0}, "out-quad", function()
                         if target and target.stage then
                             target:removeFX(mask)

@@ -8,7 +8,7 @@ function ralsei:init()
 
     self.max_health = 280
     self.health = 280
-    self.attack = 15
+    self.attack = 13
     self.ui_modified = false
     self.defense = 12
     self.money = 63
@@ -17,7 +17,7 @@ function ralsei:init()
     self.mercy = 100  
     self.spare_points = 20 
     self.wave_index = 1
-
+    self.geno_text_now = false 
     self.waves = {
         "ralsei/fire_spin", 
         "ralsei/manual_throw", 
@@ -30,12 +30,11 @@ function ralsei:init()
     self.vig:setOrigin(0.5, 0.5)
     self.vig:setParallax(0, 0)
     self.vig:addFX(ShaderFX(Mod.wave_shader, {
-            ["wave_sine"] = function () return Kristal.getTime() * 100 end,
+            ["wave_sine"] = function() return Kristal.getTime() * 100 end,
             ["wave_mag"] = 2,
             ["wave_height"] = 10,
             ["texsize"] = { SCREEN_WIDTH, SCREEN_HEIGHT }
         }), "funky_mode")
-
     self.dialogue_offset = {-60, 5}
     self.dialogue = {}
     TableUtils.merge(self.actor.animations, {
@@ -109,7 +108,7 @@ function ralsei:onAct(battler, name)
             cutscene:after(function()
                 Game.battle.tired_bar:slideTo(-300, Game.battle.tired_bar.y, 1)
                 self:spare()
-                self:setFlag("spared", true)
+                self:setFlag("spared_but_not", true)
                 Game.battle:setState("VICTORY")
             end)
         end) 
@@ -304,7 +303,7 @@ if not Game.battle:hasCutscene() then
             Game.fader:fadeIn(nil, {speed = 0.5})
             sprite:fadeOutAndRemove(0.5)
             cutscene:wait(1)
-            Game:setFlag("encounter#ralsei:violenced", true) 
+            Game:setFlag("encounter#ralsei:violenced_not_geno", true) 
             self:shake(2)
             Assets.playSound("damage")
             Assets.playSound("levelup")
@@ -315,7 +314,7 @@ if not Game.battle:hasCutscene() then
         end) 
    end
 end
-end       
+end   
 
 function ralsei:spellEffectHeal()
     self:resetSprite()
@@ -337,13 +336,14 @@ function ralsei:onHurt(damage, battler)
             child.y = child.y + 20 
         end 
     end 
-    if self.health <= (self.max_health * 0.4) and Game:getFlag("enemies_killed", 0) >= 10 then 
+    if self.health <= (self.max_health * 0.5) and Game:getFlag("enemies_killed", 0) >= 10 then 
         self:registerAct("???", "...")
+        self.geno_text_now = true 
         self.acts[5].color = {COLORS.red}
     end
     super.onHurt(self, damage, battler)
     self:getActiveSprite():stopShake()
-    if self:getFlag("dead") and self.health <= (self.max_health * 0.3) and self.health >= (self.max_health * 0.1) then 
+    if self:getFlag("dead") and self.health <= (self.max_health * 0.4) and self.health >= (self.max_health * 0.1) then 
         self:getActiveSprite():resetSprite()
         self:getActiveSprite():setAnimation("spell")
         self:spellEffectHeal()
@@ -366,8 +366,7 @@ function ralsei:onHurt(damage, battler)
             cutscene:wait(1)
             cutscene:battlerText("ralsei", "[noskip][speed:0.7]...Forgive me,[wait:2] Kris.")
             local snd = Assets.playSound("boost")
-            local fx = self:addFX(ColorMaskFX(COLORS.white))
-            fx.amount = 0 
+            local fx = self:addFX(ColorMaskFX(COLORS.white, 0))
             Game:getPartyMember("ralsei"):setFlag("serious", true)
             self:setAnimation("attack")
             Game.battle.music:seek(20)
@@ -382,6 +381,8 @@ function ralsei:onHurt(damage, battler)
             self.vig:fadeTo(0.75, 0.3)
             self.vig:setPosition(322, 165)
             self.vig:flash()
+            self.max_health = 500 
+            self.health = 500
             self:healEffect()
             Assets.playSound("spell_cure_slight_smaller")
             Game.battle.battle_ui.action_boxes[1].buttons[4].disabled=true
@@ -394,6 +395,10 @@ function ralsei:onHurt(damage, battler)
         end)
     end 
 end 
+end 
+
+function ralsei:onSpared()
+    self:setFlag("spared", true)
 end 
 
 function ralsei:getNextWaves()
@@ -417,16 +422,21 @@ function ralsei:setHardMode()
         "ralsei/pacify_wave",
         "ralsei/pacify_wave_2",
         "ralsei/angel", 
-        "ralsei/star_bomb", 
+    -- "ralsei/star_bomb", 
         "ralsei/z_rainstorm"
     }
     self.check = "AT "..self.attack.." DF 12\n* Standing in your way. \n* FIGHT him to his demise."
-    self.health = self.max_health
-    self.defense = self.defense + 5 
+    self.health = 500 
+    self.max_health = 500
+    local kris = Game:getPartyMember("kris")
+    if kris:checkWeapon("sharp_syringe") then  
+    self.defense = self.defense + 17
+    self.attack = self.attack + 3
+    else 
+    self.defense = self.defense + 4
+    end 
     self.kaboom = true 
-    local tired = TiredBar(-200, -200)
-    Game.battle:addChild(tired)
-    Game.battle.tired_bar = tired
+    Game.battle.tired_bar = Game.battle:addChild(TiredBar(-200, -200))
     Game.battle.tired_bar:setPosition(Game.battle.tired_bar.x, 6)
     Game.battle.tired_bar:slideTo(70, 6, 0.6)
     self:registerAct("WakeUp", "Reduce\nTired 16%", {}, 8)
@@ -437,6 +447,9 @@ function ralsei:getEncounterText()
     if self.kaboom then 
         self.kaboom = nil
         return "* Ralsei's [color:yellow]defense[color:reset] went up.[wait:5]\n* Ralsei can heal himself.[wait:5]\n* Ralsei will attempt to induce [color:blue]TIRED[color:reset]."
+    elseif self.geno_text_now then 
+        self.geno_text_now = false 
+        return "* A new [color:red]ACT[color:reset] appeared...!"
     elseif self:getFlag("dead") then 
         return TableUtils.pick(self.text_alt)
     else 
@@ -444,7 +457,6 @@ function ralsei:getEncounterText()
     end  
 end 
       
-
 function ralsei:onAdd(parent)
     self:setAnimation("battle/intro")
 end 

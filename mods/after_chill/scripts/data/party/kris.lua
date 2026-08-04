@@ -81,7 +81,6 @@ function character:init()
     self:setWeapon("bounceblade")
     self:setArmor(1, "ironshackle")
     self:setArmor(2, "royalpin")
-
     self.lw_weapon_default = "light/pencil"
     self.lw_armor_default = "light/bandage"
 
@@ -100,6 +99,14 @@ function character:init()
 
     self.gameover_message = nil
 end
+
+function character:getTitle(...)
+    if Game:getFlag("geno") then 
+        return "LV ? Vessel\nHelpless against\nyour will."
+    else 
+        return super.getTitle(self, ...)
+    end 
+end 
 
 function character:onLevelUp(level)
     self:increaseStat("health", 2)

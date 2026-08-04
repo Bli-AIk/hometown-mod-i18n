@@ -16,7 +16,7 @@ function shadow:init()
     for _, after in ipairs(Game.stage:getObjects(AfterImage)) do 
         if not after.custom_fx_applied then 
             after:addFX(ColorMaskFX(COLORS.black), "black_mask")
-            after:addFX(OutlineFX(Game:getPartyMember("ralsei").color), "green_outline")
+            after:addFX(OutlineFX(Game.battle.party[1].chara.color), "green_outline")
             after.custom_fx_applied = true 
         end 
     end 
@@ -38,7 +38,7 @@ end
 
 function shadow:onBattleStart()
     super.onBattleStart(self)  
-    local ralsei = Game.battle:getPartyBattler("ralsei")
+    local ralsei = Game.battle.party[1]
     local shadow = Game.battle:getEnemyBattler("shadow")
     
     local function makeFloat(battler, linked_star, speed, height)
@@ -82,8 +82,8 @@ function shadow:onBattleStart()
         local dest_x, dest_y = target:getRelativePos(target.width/2, target.height, target.parent)
         if i == 1 then dest_x = dest_x - 8 end 
         if i == 2 then dest_x = dest_x - 4 end 
-        
-        star:setOrigin(0.3, 0.6)
+        local ox, oy = target:getOrigin()
+        star:setOrigin(ox - 0.1, 0.6)
         star.layer = target.layer - 0.0001
         target.parent:addChild(star)
         Game.battle.timer:tween(0.6, star, {x = dest_x, y = dest_y}, "out-sine", function()

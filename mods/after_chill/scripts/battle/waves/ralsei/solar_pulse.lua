@@ -14,8 +14,9 @@ function solar_pulse:onArenaEnter()
     Game.battle.arena:setFire(true, false)
     self.start_w = Game.battle.arena.width
     self.start_h = Game.battle.arena.height
-    self.timer:tween(0.5, Game.battle.arena, {width = 240, height = 240}, "out-cubic")
+    self.timer:tween(0.5, Game.battle.arena, {width = 220, height = 220}, "out-cubic")
 end
+
 function solar_pulse:onEnd()
     super.onEnd(self)
     Assets.stopSound("spell_pacify")
@@ -61,6 +62,7 @@ function solar_pulse:spawnExpandingSolarRing(center_x, center_y, bullet_count)
         local angle = ((math.pi * 2) / bullet_count) * i + ring_twist
         local shard = self:spawnBullet("solar_ring_bullet", center_x, center_y)
         if shard then
+            shard.tiredness = 16
             shard.layer = self.core_flame.layer - 1
             shard.physics.direction = angle
             shard.physics.speed = 3.8

@@ -17,19 +17,20 @@ function item:init()
     -- Shop description
     self.shop = "Cool\nBow"
     -- Menu description
-    self.description = "A cute bow that Susie would refuse to wear.\nIs shaped like a cross."
+    self.description = "A bow that almost strangles the wearer, tight enough to increase TP gain!"
 
     -- Amount healed (HealItem variable)
     self.heal_amount = 0
 
     -- Default shop price (sell price is halved)
-    self.price = 350
+    self.price = 200
     -- Whether the item can be sold
     self.can_sell = true
 
     -- Equip bonuses (for weapons and armor)
     self.bonuses = {
-        defense = 5
+        defense = 5,
+        graze_tp = 0.8
     }
 
     self.bonus_icon = nil
