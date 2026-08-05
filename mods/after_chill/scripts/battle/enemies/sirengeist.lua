@@ -6,8 +6,8 @@ function sirengeist:init()
     self.name = "Sirengeist"
     self:setActor("sirengeist")
 
-    self.max_health = 70
-    self.health = 70
+    self.max_health = 60
+    self.health = 60 
     self.attack = 9
     self.defense = 9999
     self.money = 78
