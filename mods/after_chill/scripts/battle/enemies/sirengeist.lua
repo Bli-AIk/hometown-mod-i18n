@@ -6,8 +6,8 @@ function sirengeist:init()
     self.name = "Sirengeist"
     self:setActor("sirengeist")
 
-    self.max_health = 50
-    self.health = 50
+    self.max_health = 70
+    self.health = 70
     self.attack = 9
     self.defense = 9999
     self.money = 78
@@ -66,9 +66,15 @@ function sirengeist:onAct(battler, name)
         Game.battle:startActCutscene(function(cutscene)
             cutscene:text("* Kris tried to channel their magic and attack into a \"spell\"!")
             cutscene:wait(1)
-            battler:resetSprite()
-            cutscene:wait(cutscene:playSound("boost"))
+            battler:setAnimation("battle/attack_ready")
+            local snd = Assets.playSound("boost")
+            local fx = battler:addFX(ColorMaskFX(COLORS.white, 0))
+            Game.battle.timer:tween(0.4, fx, {amount = 1}, "linear", function()
+            Game.battle.timer:tween(0.4, fx, {amount = 0})
+            end)
+            cutscene:wait(0.8)
             cutscene:text("* Kris learnt a new \"spell\"\ntemporarily!")
+            battler:resetSprite()
             for _, enemy in ipairs(Game.battle:getActiveEnemies()) do 
                 enemy:removeAct("TryMagic")
                 enemy:registerAct("SwordButt", "Attack\nGhost", {}, 8)
@@ -82,7 +88,7 @@ function sirengeist:onAct(battler, name)
             battler:setAnimation("swing", function() 
                 Assets.playSound("scytheburst")
                 battler:resetSprite() 
-                local dmg = (battler.chara:getStat("attack")/2) * 3
+                local dmg = (battler.chara:getStat("attack")/1.5) * 5
                 self:hurt(MathUtils.round(dmg), battler, function() 
                     return_text = "* The enemy ran away in fright..."
                     Game:addFlag("enemies_killed", 1)
