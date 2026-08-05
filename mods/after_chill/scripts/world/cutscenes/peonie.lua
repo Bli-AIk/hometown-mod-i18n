@@ -4,7 +4,7 @@ return {
 
     appear = function(cutscene)  
     cutscene:wait(cutscene:playSound("rustle"))  
-    local peonie = ChaserEnemy("peonie", 597, 528)   
+    local peonie = ChaserEnemy("peonie", 596, 503)   
     Game.world:spawnObject(peonie, 9999)
     peonie.aura = false 
     peonie.alpha = 0 
