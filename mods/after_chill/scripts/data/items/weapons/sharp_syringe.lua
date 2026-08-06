@@ -37,7 +37,7 @@ function item:init()
 
     -- Bonus name and icon (displayed in equip menu)
     self.bonus_name = "Venom"
-    self.bonus_icon = nil -- we need 
+    self.bonus_icon = "ui/menu/icon/demon"
 
     -- Equippable characters (default true for armors, false for weapons)
     self.can_equip = {
@@ -46,9 +46,9 @@ function item:init()
 
     -- Character reactions (key = party member id)
     self.reactions = {
-        susie = "Kris!?",
+        susie = "Doctor, doctor.",
         ralsei = "Ow! I poked myself!",
-        noelle = "Can I graze on this?",
+        noelle = "I'm scared of needles...",
     }
 end
 
