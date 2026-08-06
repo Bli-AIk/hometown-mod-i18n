@@ -1,4 +1,3 @@
--- Instead of Item, create a HealItem, a convenient class for consumable healing items
 local item, super = Class(Item, "sharp_syringe")
 
 function item:init()
@@ -17,7 +16,7 @@ function item:init()
     -- Shop description
     self.shop = "Hits\nTwice"
     -- Menu description
-    self.description = "Syringe that seems to be sharpened. \nAllows two attacks that are faster."
+    self.description = "Syringe that seems to be sharpened?\nAllows two attacks that are faster."
 
     -- Amount healed (HealItem variable)
     self.heal_amount = 0
@@ -29,7 +28,7 @@ function item:init()
 
     -- Equip bonuses (for weapons and armor)
     self.bonuses = {
-        attack = 5
+        attack = 6
     }
     
     -- Bolting it.
@@ -38,7 +37,7 @@ function item:init()
 
     -- Bonus name and icon (displayed in equip menu)
     self.bonus_name = "Venom"
-    self.bonus_icon = nil
+    self.bonus_icon = nil -- we need 
 
     -- Equippable characters (default true for armors, false for weapons)
     self.can_equip = {

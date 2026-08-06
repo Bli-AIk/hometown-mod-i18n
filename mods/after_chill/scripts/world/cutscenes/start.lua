@@ -15,12 +15,12 @@ return {
         noelle:setFacing("up")
         noelle:setPosition(480, 253)
         cutscene:wait(0.3)
-        local sfx = Assets.playSound("kris_legend")
-        cutscene:wait(16.3)
-        -- cutscene:wait(cutscene:playSound("pianonoise"))
-        -- cutscene:wait(0.2)
+        -- local sfx = Assets.playSound("kris_legend")
+        -- cutscene:wait(16.3)
+        cutscene:wait(cutscene:playSound("pianonoise"))
+        cutscene:wait(0.2)
         cutscene:text("* W[wait:2]-wow,[wait:2] Kris, you've always been good at playing the piano.", "blush_surprise_smile", "noelle")
-        cutscene:text("* Ever since we were kids.", "blush_smile_closed", "noelle")
+        cutscene:text("* Ever since we were\nkids.", "blush_smile_closed", "noelle")
         cutscene:wait(0.5)
         cutscene:text("* Those were good times.", "question", "noelle")
         cutscene:wait(0.3)
@@ -145,7 +145,7 @@ return {
         snd:setVolume(vol)
         end, function() snd:stop() end)
         cutscene:wait(cutscene:playSound("break2"))
-        cutscene:wait(0.3)
+        cutscene:wait(0.7)
         Game.fader:fadeIn(nil, {speed = 0.5})
         rdy:removeFX()
         rdy:remove()
@@ -161,15 +161,19 @@ return {
         cutscene:text("[noskip]* One of the nurses will be he-", "blush_smile", "noelle", {auto = true})
         noelle:setSprite("shocked_behind")
         cutscene:text("* [noskip][sound:ahh]DAD!?", "shock", "noelle")
-        local fx = Game.world:addFX(ShaderFX("desat", {amount = 0.0}), "desat")
+        local fade_overlay = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+        fade_overlay.color = COLORS.black
+        fade_overlay.layer = 100 
+        fade_overlay.alpha = 0
+        Game.world:addChild(fade_overlay)
         local snd = Assets.playSound("wind", 0.5, 1.5)
-        Game.world.timer:tween(4.0, fx.vars, { amount = 1.0 }, "in-out-quad")
+        Game.world.timer:tween(4.0, fade_overlay, { alpha = 0.7 }, "in-out-quad")
         cutscene:wait(2)
-        Game.world.music:play("noelle_fountain")
-        Game.world.music:setVolume(0)
+        Game.world.music:play("noelle_fountain", 0)
         Game.world.music:fade(0.5, 2)
         cutscene:wait(2)
-        cutscene:text("* Y-you're just resting,[wait:5] right?", "terrified", "noelle")
+        cutscene:wait(2)
+        cutscene:text("* Y[wait:2]-you're just resting,[wait:5] right?", "terrified", "noelle")
         cutscene:wait(0.2)
         noelle:resetSprite()
         cutscene:wait(cutscene:walkTo(noelle, 245, 265, 1.2, "right", false))
@@ -190,21 +194,39 @@ return {
             cutscene:wait(2/6)
         end 
         noelle:walkTo(245, 265, 0.2, "right", true)
+        Game.world.music:fade(0.7, 1)
+        cutscene:wait(0.2)
+        local sx, sy = Game.stage:screenToLocalPos(noelle.x, noelle.y)
+        local thing = Game.stage:addChild(Spotlight(sx, sy + 5, {
+        width = 60,
+        beam_height = 300,
+        base_color = {1, 1, 1, 0.7},
+        top_color = {1, 1, 1, 0},
+        bottom_color = {1, 1, 1, 0.6} 
+        }))
+        cutscene:wait(cutscene:playSound("locker", 0.7, 1))
         cutscene:wait(0.8)
         cutscene:text("* Please. Y[wait:2]-you can't be gone now...", "terrified_side", "noelle")
-        Game.world.music:fade(0.7, 1)
         cutscene:wait(1)
         noelle:setFacing("up")
-        cutscene:text("* N-no, there has to be some way...[wait:10]I-I can't afford to lose you too.", "surprise_smile", "noelle")
+        cutscene:text("* N-no,[wait:5] there has to be some way...[wait:10]I-I can't afford to lose you too.", "surprise_smile", "noelle")
         noelle:setSprite("head_lowered")
         cutscene:wait(0.5)
         cutscene:setSpeaker("noelle")
-        cutscene:text("* (In that dream...[wait:10] \n* I had healing magic.)")
+        cutscene:text("* (That dream...[wait:10] what if it was real?)")
+        cutscene:wait(0.5)
+        cutscene:text("* (...it can't be,[wait:5]\nBerdly wouldn't be...)")
+        noelle:resetSprite()
+        noelle:setSprite("walk_sad")
+        noelle:setFacing("left")
+        cutscene:wait(0.5)
+        cutscene:text("* (I..[wait:3] I have to,[wait:5] for dad.)")
+        cutscene:text("* (After all,[wait:7] I did have some\nsort of magic.)")
         cutscene:wait(1)
-        cutscene:text("* (What if,[wait:5] Queen was right?)")
+        cutscene:text("* (So,[wait:5] if Queen was really right...)")
         cutscene:wait(1)
-        cutscene:text("* (Concentrate my will into a blade...)")
-        cutscene:text("* (Blade... blade.\n* Something sharp could do,[wait:5] right?)")
+        cutscene:text("* (Then if I concentrate my will into a blade...)")
+        cutscene:text("* (Blade...[wait:5] blade.\n* Something sharp could do,[wait:5] right?)")
         noelle:setSprite("reach")
         cutscene:wait(0.2)
         noelle:setAnimation("rummage")
@@ -215,23 +237,20 @@ return {
         cutscene:text("* (And stab the ground with all your will and determination.)")
         noelle:setSprite("determined_side")
         Game.world.music:fade(0, 1)
-        cutscene:wait(0.1)
+        thing:remove()
+        cutscene:wait(cutscene:playSound("locker", 0.7, 1))
         cutscene:text("* This is for you,[wait:5] dad.", "upset_down", "noelle")
-         Assets.playSound("jump")
-        noelle:setAnimation("make_fountain/target")
+        Assets.playSound("jump")
+    --    noelle:setAnimation("make_fountain/target")
+        noelle:setAnimation("ball")
         noelle:slideTo(230, 135, 0.2)
         cutscene:wait(0.2)
-        
-        -- 2. THE EXPLOSIVE PARABOLIC LEAP (TIMING ALIGNED)
-        Assets.playSound("boost", 0.4, 1.8)
-        noelle:setAnimation("ball")
-        cutscene:wait(0.1) 
         local start_x = noelle.x
         local start_y = noelle.y
         local target_x = 202
         local target_y = 121
         local arc_height = 40 
-        local duration = 0.4  -- Total air-time
+        local duration = 0.8  -- Total air-time
         local elapsed_time = 0
         
         Game.world.timer:during(duration, function()
@@ -271,9 +290,7 @@ return {
             sprite:play(0.5, true) 
             Assets.playSound("fountain_target")
             Game.world.timer:after(life_time, function()
-                if sprite and sprite.stage then
-                    sprite:fadeOutAndRemove(0.15)
-                end
+            if sprite.stage then sprite:fadeOutAndRemove(0.15) end 
             end)
             cutscene:wait(delay_per_star)
         end
@@ -294,7 +311,7 @@ return {
         local ball_instances = {}
         local particle_timer = Game.world.timer:every(0.04, function()
             local p = FMBall(183 + love.math.random(-10, 10), 270)
-            p.layer = noelle.layer + 5
+            p.layer = noelle.layer + 5 
             table.insert(ball_instances, p)
             Game.world:addChild(p)
         end)
@@ -304,11 +321,13 @@ return {
         Game.world:addChild(fog)
         cutscene:wait(12)
         Game.world.timer:cancel(particle_timer)
-        for _, b in ipairs(ball_instances) do
-            if b.stage then 
-                b:remove() 
-            end
+        TableUtils.filterInPlace(ball_instances, function(ball)
+        if ball.stage then 
+        ball:remove() 
+        return false 
         end
+        return true
+        end)
         cutscene:wait(6)
         cutscene:after(function()
             Game.world:removeFX("desat")
