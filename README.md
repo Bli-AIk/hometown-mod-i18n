@@ -8,13 +8,15 @@
 ![Hometown Pack 截图](./screenshot.png)
 
 <details>
-<summary>更多截图（深夜雨中漫步 / 城堡镇 / 变身动画）</summary>
+<summary>更多截图（深夜雨中漫步 / 城堡镇 / 变身动画 / 诺艾尔家）</summary>
 
 ![深夜雨中漫步](./screenshot-night-rain.png)
 
 ![城堡镇](./screenshot-castletown.png)
 
 ![变身动画](./screenshot-transform.png)
+
+![诺艾尔家](./screenshot-noelle-house.png)
 
 </details>
 

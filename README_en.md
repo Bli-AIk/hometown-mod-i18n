@@ -8,13 +8,15 @@
 ![Hometown Pack screenshot](./screenshot.png)
 
 <details>
-<summary>More screenshots (night walk in the rain / castletown / transformation)</summary>
+<summary>More screenshots (night walk in the rain / castletown / transformation / Noelle's house)</summary>
 
 ![Night walk in the rain](./screenshot-night-rain.png)
 
 ![Castletown](./screenshot-castletown.png)
 
 ![Transformation](./screenshot-transform.png)
+
+![Noelle's house](./screenshot-noelle-house.png)
 
 </details>
 
