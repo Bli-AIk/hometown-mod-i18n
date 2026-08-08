@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
-  nextobjectid = 13,
+  nextlayerid = 7,
+  nextobjectid = 11,
   properties = {
     ["inside"] = true
   },
@@ -71,37 +71,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 7,
-      name = "objects",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 12,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 202.205,
-          y = 414.285,
-          width = 233.883,
-          height = 25.2972,
-          rotation = 0.054219,
-          visible = true,
-          properties = {
-            ["cutscene"] = "noelle.ambush"
-          }
         }
       }
     },

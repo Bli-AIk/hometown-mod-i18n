@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="35" height="12" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#000000" nextlayerid="9" nextobjectid="21">
+ <editorsettings>
+  <export target="tutorial_room.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="inside" type="bool" value="true"/>
+  <property name="music" value="castletown"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/castle.tsx"/>
+ <tileset firstgid="41" source="../../../tilesets/castle_checkerboard.tsx"/>
+ <layer id="1" name="tiles" width="35" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,22,23,23,23,23,23,23,23,23,23,23,23,23,23,24,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,22,23,23,23,23,23,23,23,23,23,23,23,23,23,24,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,26,27,27,27,27,27,27,27,27,27,27,27,27,27,28,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,6,7,7,7,7,7,7,7,7,7,7,7,7,7,8,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,10,11,11,11,11,11,11,11,11,11,11,11,11,11,12,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,10,11,11,11,11,11,30,31,32,11,11,11,11,11,12,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,10,11,11,11,11,11,34,35,36,11,11,11,11,11,12,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,10,11,11,11,11,11,38,39,40,11,11,11,11,11,12,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,7,7,7,7,7,7,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,7,7,7,7,7,7,7,7,7,7,
+15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="tiles_checkerboard" width="35" height="12" offsetx="2" offsety="2">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,49,50,51,52,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,52,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#0000ff" id="6" name="collision">
+  <object id="2" x="360" y="80" width="680" height="40"/>
+  <object id="3" x="1000" y="120" width="40" height="160"/>
+  <object id="5" x="1000" y="280" width="400" height="40"/>
+  <object id="6" x="360" y="120" width="40" height="160"/>
+  <object id="8" x="0" y="280" width="400" height="40"/>
+  <object id="9" x="0" y="400" width="1400" height="40"/>
+ </objectgroup>
+ <objectgroup color="#5500ff" id="7" name="markers">
+  <object id="11" name="spawn" x="109" y="384">
+   <point/>
+  </object>
+  <object id="12" name="entry" x="29" y="384">
+   <point/>
+  </object>
+  <object id="13" name="entry_e" x="1369" y="374">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="8" name="objects">
+  <object id="16" name="transition" x="-40" y="320" width="40" height="80">
+   <properties>
+    <property name="map" value="dark/castletown/area_2_new"/>
+    <property name="marker" value="entry_e"/>
+   </properties>
+  </object>
+  <object id="18" name="transition" x="1400" y="320" width="40" height="80">
+   <properties>
+    <property name="map" value="dark/castletown/east_door"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="19" name="npc" x="684" y="266">
+   <properties>
+    <property name="actor" value="castle_town/coody"/>
+    <property name="text" value="* I'm a worm. I don't understand taxes and values."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="20" name="npc" x="436" y="148">
+   <properties>
+    <property name="actor" value="castle_town/mrelegance"/>
+    <property name="text1" value="* We're'n building up the area to be a bit'n more board-like."/>
+    <property name="text2" value="* The ponmen'll be happy,[wait:5] too."/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

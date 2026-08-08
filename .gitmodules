@@ -1,0 +1,19 @@
+[submodule "libraries/weatherlib"]
+	path = libraries/weatherlib
+	url = git@github.com:MrFukuo/WeatherLib.git
+[submodule "libraries/object-editor"]
+	path = libraries/object-editor
+	url = git@github.com:Bli-AIk/object-editor.git
+[submodule "libraries/terminal-cli"]
+	path = libraries/terminal-cli
+	url = git@github.com:Bli-AIk/kristal-terminal-cli.git
+[submodule "libraries/kristal-debug-tools"]
+	path = libraries/kristal-debug-tools
+	url = git@github.com:Bli-AIk/kristal-debug-tools.git
+[submodule ".emacs"]
+	path = .emacs
+	url = git@github.com:Bli-AIk/kristal-emacs-config.git
+	branch = stable/lua
+[submodule ".helix"]
+	path = .helix
+	url = git@github.com:Bli-AIk/kristal-helix-config.git

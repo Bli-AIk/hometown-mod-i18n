@@ -2,9 +2,19 @@ function Mod:init()
     self:setMusicVolumes()
 end
 
+
 function Mod:postInit(newfile)
     print("Loaded "..self.info.name.."!")
+    if os.getenv("KRISTAL_MOD_SMOKE") == "1" then
+        print("EL_LANG=" .. tostring(Game.lang))
+        print("EL_T1=" .. tostring(Game:hasStr("* (It's a door.)") and Game:loc("* (It's a door.)") or "NO"))
+        print("EL_T2=" .. tostring(Game:hasStr("* (Documents...)") and Game:loc("* (Documents...)") or "NO"))
+        print("EL_T4=" .. tostring(Game:hasStr("* The name's Seam.\n[wait:5]* Pronounced \"Shawm.\"") and Game:loc("* The name's Seam.\n[wait:5]* Pronounced \"Shawm.\"") or "NO"))
+        print("EL_T3=" .. tostring(Game:hasStr("untranslated_stuff_xyz") and Game:loc("untranslated_stuff_xyz") or "FALLBACK_OK"))
+        love.event.quit()
+    end
 end
+
 
 function Mod:setMusicVolumes()
     MUSIC_VOLUMES["deltarune/noelle_house_wip"] = 0.9
@@ -27,7 +37,7 @@ function Mod:onMapMusic(map, music)
 		else
 			return "deltarune/church_lw"
 		end
-	end	
+	end
 	if music == "deltarune/mus_school" then
 		if Game:getFlag("hometown_time", "day") == "sunset" then
 			return "deltarune/mus_birdnoise"

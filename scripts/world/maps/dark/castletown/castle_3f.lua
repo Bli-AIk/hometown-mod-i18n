@@ -1,0 +1,402 @@
+return {
+  version = "1.11",
+  luaversion = "5.1",
+  tiledversion = "1.11.2",
+  class = "",
+  orientation = "orthogonal",
+  renderorder = "right-down",
+  width = 52,
+  height = 12,
+  tilewidth = 40,
+  tileheight = 40,
+  nextlayerid = 8,
+  nextobjectid = 24,
+  backgroundcolor = { 0, 0, 0 },
+  properties = {
+    ["inside"] = true,
+    ["music"] = "castletown"
+  },
+  tilesets = {
+    {
+      name = "castle_inside",
+      firstgid = 1,
+      filename = "../../../tilesets/castle_inside.tsx",
+      exportfilename = "../../../tilesets/castle_inside.lua"
+    },
+    {
+      name = "castle_town_bg",
+      firstgid = 129,
+      filename = "../../../tilesets/castle_town_bg.tsx",
+      exportfilename = "../../../tilesets/castle_town_bg.lua"
+    }
+  },
+  layers = {
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 52,
+      height = 12,
+      id = 1,
+      name = "Tile Layer 1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 4, 54, 54, 54, 54, 54, 54, 6, 54, 54, 54, 4, 54, 54, 54, 4, 54, 54, 54, 54, 54, 4, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 4, 5, 0,
+        0, 3, 54, 54, 54, 54, 54, 54, 54, 54, 4, 54, 54, 22, 54, 54, 54, 4, 54, 54, 54, 54, 54, 54, 4, 54, 54, 54, 54, 54, 54, 6, 54, 54, 54, 54, 4, 54, 6, 54, 54, 54, 4, 54, 54, 7, 8, 9, 10, 11, 5, 0,
+        0, 3, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 22, 54, 54, 54, 54, 6, 54, 54, 54, 54, 4, 54, 54, 54, 54, 54, 54, 54, 22, 54, 54, 54, 54, 54, 6, 23, 24, 25, 26, 27, 18, 0,
+        0, 3, 54, 54, 54, 54, 54, 54, 54, 4, 54, 54, 4, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 22, 54, 54, 54, 54, 54, 54, 54, 4, 54, 54, 54, 54, 54, 4, 54, 54, 40, 41, 42, 22, 5, 0,
+        0, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 36, 20, 20, 20, 20, 20, 36, 20, 20, 20, 20, 20, 20, 36, 20, 20, 20, 20, 36, 20, 20, 20, 20, 20, 20, 20, 20, 36, 20, 56, 57, 58, 20, 21, 0,
+        0, 51, 82, 82, 82, 82, 82, 82, 82, 82, 52, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 52, 82, 82, 82, 52, 82, 82, 82, 82, 82, 82, 82, 66, 82, 82, 82, 82, 82, 82, 52, 66, 82, 82, 82, 82, 50, 53, 0,
+        0, 67, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 66, 82, 82, 82, 50, 82, 82, 82, 52, 82, 82, 82, 82, 52, 82, 82, 82, 82, 82, 82, 82, 66, 52, 82, 69, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "objects_doors",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1548,
+          y = 280,
+          width = 158,
+          height = 156,
+          rotation = 0,
+          gid = 186,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 2,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1242,
+          y = 280,
+          width = 192,
+          height = 192,
+          rotation = 0,
+          gid = 188,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 280,
+          width = 86,
+          height = 122,
+          rotation = 0,
+          gid = 187,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "objects",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 4,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1270,
+          y = 234,
+          width = 132,
+          height = 38,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["facing"] = "up",
+            ["map"] = "dark/castletown/castle_room_tenna",
+            ["marker"] = "spawn",
+            ["sound"] = "tenna_door_open"
+          }
+        },
+        {
+          id = 17,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 234,
+          width = 84.5,
+          height = 38,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["exit_delay"] = 0.4,
+            ["exit_sound"] = "doorclose",
+            ["map"] = "dark/castletown/castle_room_ralsei",
+            ["marker"] = "spawn",
+            ["sound"] = "dooropen"
+          }
+        },
+        {
+          id = 14,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1560,
+          y = 234,
+          width = 132,
+          height = 38,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["facing"] = "up",
+            ["map"] = "dark/castletown/castle_room_queen",
+            ["marker"] = "spawn",
+            ["sound"] = "queen_laugh_bitcrush"
+          }
+        },
+        {
+          id = 20,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1850.33,
+          y = 240,
+          width = 102.333,
+          height = 30,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["facing"] = "down",
+            ["map"] = "dark/castletown/castle_2f",
+            ["marker"] = "entry_3f",
+            ["sound"] = "escaped"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 18,
+          name = "entry_queen",
+          type = "",
+          shape = "point",
+          x = 1625,
+          y = 315,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 19,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 1900,
+          y = 315,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 22,
+          name = "entry_tenna",
+          type = "",
+          shape = "point",
+          x = 1334,
+          y = 315,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "entry_ralsei",
+          type = "",
+          shape = "point",
+          x = 480,
+          y = 315,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "collision",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2040,
+          y = 80,
+          width = 40,
+          height = 280,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 6,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1952.33,
+          y = 80,
+          width = 87.6667,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 7,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 360,
+          width = 2040,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 80,
+          width = 40,
+          height = 320,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 80,
+          width = 400,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 525.5,
+          y = 80,
+          width = 744.424,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1400,
+          y = 80,
+          width = 160,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 16,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1692,
+          y = 80,
+          width = 158,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    }
+  }
+}

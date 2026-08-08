@@ -1,2 +1,10 @@
+.build/
+dist/
+.worktrees/
 .vscode/
+*.luac
+*.log
 *.tiled-session
+.DS_Store
+__pycache__/
+*.pyc
