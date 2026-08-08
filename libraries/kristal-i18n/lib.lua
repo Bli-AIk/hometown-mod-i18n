@@ -3287,6 +3287,7 @@ function Game:locText(text, var)
 end
 
 function Game:locRaw(id)
+
     if Game.langStr and Game.langStr[id] ~= nil then
         return Game.langStr[id]
     end
