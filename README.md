@@ -52,7 +52,6 @@ cp -r hometown-pack-i18n /path/to/kristal/mods/hometown_pack
 
 ```bash
 just run             # 用本地 Kristal 检出运行（支持 --encounter / --wave 等调试参数）
-just install-stock   # 同步到 $KRISTAL_ROOT/mods/（LÖVE 不跟随符号链接）
 just test            # make test：静态断言 + luajit 语法检查 + 调试工具 dry-run
 ```
 
