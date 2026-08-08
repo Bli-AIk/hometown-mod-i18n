@@ -5,6 +5,19 @@
 <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" />
 <img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
 
+![Hometown Pack 截图](./screenshot.png)
+
+<details>
+<summary>更多截图（深夜雨中漫步 / 城堡镇 / 变身动画）</summary>
+
+![深夜雨中漫步](./screenshot-night-rain.png)
+
+![城堡镇](./screenshot-castletown.png)
+
+![变身动画](./screenshot-transform.png)
+
+</details>
+
 **Hometown Pack（i18n）** — Hometown（光世界）内容包的简体中文汉化 fork，内置
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) 多语言本地化库。
 
