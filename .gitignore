@@ -1,13 +1,2 @@
 .vscode/
-.DS_Store
-
-mods/*
-!mods/example/
-!mods/after_chill/
-
-build/
-output/
-
 *.tiled-session
-
-docs.json
