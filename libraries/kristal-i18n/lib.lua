@@ -907,10 +907,33 @@ local function localizeStaticTextValue(value)
         return out
     end
     local static = localizeStaticText(value)
-    -- Hometown Pack extension: raw-string dictionary lookup, so that mod
-    -- dialogue/shop/battle strings are translated without changing call sites.
-    if type(static) == "string" and Game and Game.lang == "zh_hans" and Game:hasStr(static) then
-        return Game:loc(static)
+    -- Raw-string dictionary lookup, so that mod dialogue/shop/battle strings
+    -- are translated without changing call sites.
+    if type(static) == "string" and Game and Game.lang == "zh_hans" then
+        if Game:hasStr(static) then
+            return Game:loc(static)
+        end
+        -- Combined messages (e.g. World:heal prefixes): localize line by line.
+        if static:find("\n", 1, true) then
+            local out = {}
+            local matched = false
+            for line in static:gmatch("[^\n]+") do
+                line = line:gsub("%s+$", "")
+                local localized = localizeStaticTextValue(line)
+                if localized ~= line then
+                    matched = true
+                end
+                out[#out + 1] = localized
+            end
+            if matched then
+                return table.concat(out, "\n")
+            end
+        end
+        -- Dynamic messages (e.g. heal amount) via pattern.
+        local recovered = static:match("^%* You recovered (%d+) HP!$")
+        if recovered then
+            return Game:loc("heal_recovered", { amount = recovered })
+        end
     end
     return static
 end
@@ -1740,6 +1763,13 @@ local POWER_STAT_LABELS = {
 
 local ITEM_BONUS_NAMES = {
     ["GrazeTime"] = "graze_time_bonus",
+    ["Money Earned UP"] = "bonus_money_up",
+    ["Spookiness UP"] = "bonus_spookiness_up",
+    ["Defense"] = "bonus_defense",
+    ["Festive"] = "bonus_festive",
+    ["Annoying"] = "bonus_annoying",
+    ["SlayDark"] = "bonus_slaydark",
+    ["$ +5%"] = "bonus_money_5",
 }
 
 local NOELLE_SPECIAL_TITLE_KEYS = {
