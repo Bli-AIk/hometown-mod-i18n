@@ -31,10 +31,13 @@ just run        # 自动定位父引擎
 - `lang/en.json` + `lang/zh_hans.json`：521 条全量，键为运行时原文（含真实换行）；
   系统语言为中文时自动生效（`kristalI18n` 配置 `defaultLanguage: "auto"`）
 - `lang/names.json`：13 个演员中文名
-- 译文以 Deltarune 中文翻译草稿为信源（165 条直接取自草稿），其余人工翻译
+- 译文信源：[好人汉化组](https://github.com/gm3dr/DeltaruneChinese)
+  （gm3dr/DeltaruneChinese 工作区文本，行宽按其标准 ≤19 字/行断行）；
+  未命中语料的条目人工翻译并同样按 19 字/行断行，避免触发引擎自动换行
 - 机制：`libraries/kristal-i18n`（内联补丁副本）在 `zh_hans` 下对
   `DialogueText/TextChoicebox/SpeechBubble` 等显示路径做原文查表，
-  对话/商店/战斗文本零脚本改动自动翻译
+  对话/商店/战斗文本零脚本改动自动翻译；`DialogueText` 另有 CJK 断行安全网
+  （超长行按标点自动断行），兜底未覆盖文本
 
 ## 开发
 
