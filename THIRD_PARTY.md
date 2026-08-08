@@ -1,0 +1,32 @@
+# Third-party notices
+
+## Mod content
+
+- Forked from [`sekalisukarumah-boop/deltarune-AC`](https://github.com/sekalisukarumah-boop/deltarune-AC)
+  (AfterChill fangame code, BSD-3-Clause, Copyright (c) 2021 SylviBlossom), keeping the
+  `mods/after_chill/libraries/hometown_pack` subtree. The upstream `LICENSE` file is
+  retained at the repository root.
+- Original pack lineage: `hometown_recreation` (distributed via the AfterChill Discord),
+  weather-coupled version posted by fluffyboy [DR: AfterChill].
+- The dark-world (`dark/castletown/...`) maps and extra face assets come from the
+  full Discord release of the pack, which is a superset of the upstream subtree.
+
+## Libraries
+
+- `libraries/weatherlib` — [MrFukuo/WeatherLib](https://github.com/MrFukuo/WeatherLib)
+  v1.1.0 by crocokuo. Bundled as a git submodule (pinned commit). **No LICENSE** in the
+  upstream repository; referenced as a gitlink rather than vendored.
+- `libraries/kristal-i18n` — [Bli-AIk/kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)
+  (MIT/Apache-2.0 dual). Vendored inline with a mod-specific extension
+  (raw-string dictionary lookup in `localizeStaticTextValue`, gated to `zh_hans`);
+  the extension is intentionally not upstreamed.
+- `libraries/object-editor`, `libraries/terminal-cli`, `libraries/kristal-debug-tools`,
+  `libraries/virtualkeyboard`, `.emacs`, `.helix` — git submodules of
+  [Bli-AIk](https://github.com/Bli-AIk) repositories (template dev toolchain,
+  see [thrash-machine](https://github.com/Bli-AIk/thrash-machine)).
+
+## IP notice
+
+This mod is a fan recreation of the Hometown (light world) of
+[DELTARUNE](https://deltarune.com/). DELTARUNE is the property of Toby Fox. This
+project is not affiliated with or endorsed by Toby Fox.

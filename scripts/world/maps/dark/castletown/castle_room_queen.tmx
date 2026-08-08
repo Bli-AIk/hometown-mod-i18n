@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="29" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="49">
+ <editorsettings>
+  <export target="castle_room_queen.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="inside" type="bool" value="true"/>
+  <property name="music" value="queen_car_radio"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/castle_town_bg.tsx"/>
+ <imagelayer id="2" name="bg">
+  <image source="../../../../../assets/sprites/world/castle_town/room_queen.png" width="640" height="480"/>
+ </imagelayer>
+ <imagelayer id="3" name="bg2" offsetx="520" offsety="0">
+  <image source="../../../../../assets/sprites/world/castle_town/room_queen_side.png" width="640" height="480"/>
+ </imagelayer>
+ <objectgroup id="10" name="objects_decobelow">
+  <object id="44" gid="62" x="680" y="180" width="400" height="60"/>
+  <object id="45" gid="63" x="170" y="225" width="104" height="186"/>
+  <object id="46" gid="65" x="375" y="225" width="104" height="186"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="5" name="markers">
+  <object id="6" name="spawn" x="320" y="440">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="6" name="objects">
+  <object id="7" name="transition" x="280" y="480" width="80" height="40">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="map" value="dark/castletown/castle_3f"/>
+    <property name="marker" value="entry_queen"/>
+    <property name="sound" value="queen_laugh_bitcrush_reverse"/>
+   </properties>
+  </object>
+  <object id="47" name="interactable" x="710" y="310" width="104" height="64">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text" value="* (It's just a computer.)"/>
+   </properties>
+  </object>
+  <object id="48" name="interactable" x="950" y="310" width="104" height="64">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text" value="* (It's just a computer.)"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="objects_deco">
+  <object id="1" gid="61" x="710" y="375" width="106" height="104"/>
+  <object id="2" gid="61" x="950" y="375" width="106" height="104"/>
+ </objectgroup>
+ <objectgroup color="#5500ff" id="7" name="collision">
+  <object id="8" x="240" y="400" width="40" height="80"/>
+  <object id="9" x="120" y="400" width="120" height="40"/>
+  <object id="11" x="80" y="80" width="40" height="360"/>
+  <object id="12" x="120" y="80" width="400" height="40"/>
+  <object id="13" x="520" y="80" width="40" height="160"/>
+  <object id="14" x="520" y="320" width="40" height="120"/>
+  <object id="16" x="400" y="400" width="120" height="40"/>
+  <object id="17" x="360" y="400" width="40" height="80"/>
+  <object id="18" x="560" y="200" width="80" height="40"/>
+  <object id="19" x="560" y="320" width="80" height="40"/>
+  <object id="20" x="640" y="320" width="40" height="120"/>
+  <object id="21" x="680" y="400" width="400" height="40"/>
+  <object id="24" x="1080" y="40" width="40" height="400"/>
+  <object id="25" x="680" y="40" width="400" height="40"/>
+  <object id="27" x="640" y="40" width="40" height="200"/>
+  <object id="28" x="680" y="80" width="400" height="100"/>
+  <object id="33" x="385.5" y="224">
+   <polygon points="0,0 -12.5,-45 -11.5,-105.5 93.5,-104 92.5,1"/>
+  </object>
+  <object id="34" x="171" y="223.5">
+   <polygon points="0,0 93.5,0.5 102,-33.5 103,-102.5 -1.5,-103.5"/>
+  </object>
+ </objectgroup>
+</map>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="27">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="26">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -59,14 +59,9 @@
     <property name="solid" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="26" name="script" x="462.333" y="189" width="39" height="24.3333">
-   <properties>
-    <property name="cutscene" value="start.piano"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="markers">
-  <object id="21" name="spawn" x="480.708" y="204.441">
+  <object id="21" name="spawn" x="320" y="440">
    <point/>
   </object>
   <object id="22" name="entryhallway" x="180" y="240">

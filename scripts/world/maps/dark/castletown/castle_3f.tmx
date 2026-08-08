@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="52" height="12" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#000000" nextlayerid="8" nextobjectid="24">
+ <editorsettings>
+  <export target="castle_3f.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="inside" type="bool" value="true"/>
+  <property name="music" value="castletown"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/castle_inside.tsx"/>
+ <tileset firstgid="129" source="../../../tilesets/castle_town_bg.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="52" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,2,54,54,54,54,54,54,54,54,54,54,54,54,54,54,4,54,54,54,54,54,54,6,54,54,54,4,54,54,54,4,54,54,54,54,54,4,54,54,54,54,54,54,54,54,54,54,54,4,5,0,
+0,3,54,54,54,54,54,54,54,54,4,54,54,22,54,54,54,4,54,54,54,54,54,54,4,54,54,54,54,54,54,6,54,54,54,54,4,54,6,54,54,54,4,54,54,7,8,9,10,11,5,0,
+0,3,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,22,54,54,54,54,6,54,54,54,54,4,54,54,54,54,54,54,54,22,54,54,54,54,54,6,23,24,25,26,27,18,0,
+0,3,54,54,54,54,54,54,54,4,54,54,4,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,22,54,54,54,54,54,54,54,4,54,54,54,54,54,4,54,54,40,41,42,22,5,0,
+0,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,36,20,20,20,20,20,36,20,20,20,20,20,20,36,20,20,20,20,36,20,20,20,20,20,20,20,20,36,20,56,57,58,20,21,0,
+0,51,82,82,82,82,82,82,82,82,52,82,82,82,82,82,82,82,82,82,82,82,82,82,52,82,82,82,52,82,82,82,82,82,82,82,66,82,82,82,82,82,82,52,66,82,82,82,82,50,53,0,
+0,67,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,66,82,82,82,50,82,82,82,52,82,82,82,82,52,82,82,82,82,82,82,82,66,52,82,69,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="objects_doors">
+  <object id="1" gid="186" x="1548" y="280" width="158" height="156"/>
+  <object id="2" gid="188" x="1242" y="280" width="192" height="192"/>
+  <object id="3" gid="187" x="440" y="280" width="86" height="122"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="5" name="objects">
+  <object id="4" name="transition" x="1270" y="234" width="132" height="38">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="map" value="dark/castletown/castle_room_tenna"/>
+    <property name="marker" value="spawn"/>
+    <property name="sound" value="tenna_door_open"/>
+   </properties>
+  </object>
+  <object id="17" name="transition" x="440" y="234" width="84.5" height="38">
+   <properties>
+    <property name="exit_delay" type="float" value="0.4"/>
+    <property name="exit_sound" value="doorclose"/>
+    <property name="map" value="dark/castletown/castle_room_ralsei"/>
+    <property name="marker" value="spawn"/>
+    <property name="sound" value="dooropen"/>
+   </properties>
+  </object>
+  <object id="14" name="transition" x="1560" y="234" width="132" height="38">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="map" value="dark/castletown/castle_room_queen"/>
+    <property name="marker" value="spawn"/>
+    <property name="sound" value="queen_laugh_bitcrush"/>
+   </properties>
+  </object>
+  <object id="20" name="transition" x="1850.33" y="240" width="102.333" height="30">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="map" value="dark/castletown/castle_2f"/>
+    <property name="marker" value="entry_3f"/>
+    <property name="sound" value="escaped"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="7" name="markers">
+  <object id="18" name="entry_queen" x="1625" y="315">
+   <point/>
+  </object>
+  <object id="19" name="spawn" x="1900" y="315">
+   <point/>
+  </object>
+  <object id="22" name="entry_tenna" x="1334" y="315">
+   <point/>
+  </object>
+  <object id="23" name="entry_ralsei" x="480" y="315">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#5500ff" id="6" name="collision">
+  <object id="5" x="2040" y="80" width="40" height="280"/>
+  <object id="6" x="1952.33" y="80" width="87.6667" height="200"/>
+  <object id="7" x="40" y="360" width="2040" height="40"/>
+  <object id="8" x="0" y="80" width="40" height="320"/>
+  <object id="10" x="40" y="80" width="400" height="200"/>
+  <object id="11" x="525.5" y="80" width="744.424" height="200"/>
+  <object id="13" x="1400" y="80" width="160" height="200"/>
+  <object id="16" x="1692" y="80" width="158" height="200"/>
+ </objectgroup>
+</map>

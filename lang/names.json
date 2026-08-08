@@ -1,0 +1,54 @@
+{
+ "burgerpants": {
+  "en": "Pizzapants",
+  "zh_hans": "披萨裤"
+ },
+ "sans": {
+  "en": "sans.",
+  "zh_hans": "sans."
+ },
+ "toriel": {
+  "en": "Toriel",
+  "zh_hans": "托丽尔"
+ },
+ "undyne": {
+  "en": "Undyne",
+  "zh_hans": "安蒂因"
+ },
+ "rudy": {
+  "en": "Rudy",
+  "zh_hans": "鲁迪"
+ },
+ "asgore": {
+  "en": "Asgore",
+  "zh_hans": "艾斯戈尔"
+ },
+ "catti": {
+  "en": "Catti",
+  "zh_hans": "卡蒂"
+ },
+ "jockington": {
+  "en": "Jockington",
+  "zh_hans": "乔金顿"
+ },
+ "carol": {
+  "en": "Carol",
+  "zh_hans": "卡罗尔"
+ },
+ "catty": {
+  "en": "Catty",
+  "zh_hans": "凯蒂"
+ },
+ "bratty": {
+  "en": "Bratty",
+  "zh_hans": "布拉蒂"
+ },
+ "napstablook": {
+  "en": "Napstablook",
+  "zh_hans": "纳普斯特布路克"
+ },
+ "alphys": {
+  "en": "Alphys",
+  "zh_hans": "艾尔菲斯"
+ }
+}
