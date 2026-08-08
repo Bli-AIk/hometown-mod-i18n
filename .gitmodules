@@ -17,3 +17,6 @@
 [submodule ".helix"]
 	path = .helix
 	url = git@github.com:Bli-AIk/kristal-helix-config.git
+[submodule "libraries/kristal-i18n"]
+	path = libraries/kristal-i18n
+	url = git@github.com:Bli-AIk/kristal-i18n.git
