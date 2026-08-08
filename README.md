@@ -8,8 +8,8 @@
 **Hometown Pack（i18n）** — Hometown（光世界）内容包的简体中文汉化 fork，内置
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) 多语言本地化库。
 
-| 简体中文 | English |
-|---------|---------|
+| 简体中文 | English                   |
+| -------- | ------------------------- |
 | 简体中文 | [English](./README_en.md) |
 
 ## 这是什么
@@ -23,14 +23,15 @@
 
 ## 做了多少汉化
 
-| 内容 | 数量 | 说明 |
-|---|---|---|
-| 对话/物品/界面字符串 | **550 条** | `lang/zh_hans.json`，键为运行时原文；行宽按好人组标准 ≤19 字/行 |
-| 角色名 | **24 个** | `lang/names.json`，含全名（鲁道夫"鲁迪"假日、艾斯戈尔·逐梦、诺艾尔…），经 `[name:xxx]` 引用 |
-| 地图贴图变体 | **20 张** | `assets/sprites/lang/zh_hans/`，招牌/建筑中文贴图（sansstore、医院、学校、Librarby、冰E披萨…） |
-| sans 中文字体 | 1 组 | 方正卡通简体（27/24），sans 对话专用 |
+| 内容                 | 数量       | 说明                                                                                           |
+| -------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
+| 对话/物品/界面字符串 | **550 条** | `lang/zh_hans.json`，键为运行时原文；行宽按好人组标准 ≤19 字/行                                |
+| 角色名               | **24 个**  | `lang/names.json`，含全名（鲁道夫"鲁迪"假日、艾斯戈尔·逐梦、诺艾尔…），经 `[name:xxx]` 引用    |
+| 地图贴图变体         | **20 张**  | `assets/sprites/lang/zh_hans/`，招牌/建筑中文贴图（sansstore、医院、学校、Librarby、冰E披萨…） |
+| sans 中文字体        | 1 组       | 方正卡通简体（27/24），sans 对话专用                                                           |
 
 **机制**（kristal-i18n）：
+
 - **原文查表**：`zh_hans` 下对 `DialogueText/TextChoicebox/SpeechBubble` 等显示路径做原文→译文查找，对话/商店/战斗文本零脚本改动自动翻译
 - **CJK 断行安全网**：超长行按标点自动断行（兜底未覆盖文本）
 - **人名引用**：`[name:kris]` 等经 names.json 解析，可配置 `defaultNameLanguage` 独立显示中/英文名
@@ -88,6 +89,19 @@ Game.stage:setWeather()            -- 清空（晴天）
 - 与天气联动的系统：`beachwater`（雨时水位上涨）、`leaves` 边框（雨幕叠加层）、
   `Interactable`（`rain_text` 雨天交互文本）、`town_mid` 物件显隐条件
 - 进阶：`setWeatherParent` / `setWeatherLayer` / `resetWeather` / `WeatherRegistry`
+
+## 上游来源与参考
+
+本 mod 的内容、译文与依赖库均非自创，来源与参考如下（致谢格式同
+[kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) README）：
+
+| 项目 | 作者/组织 |
+|------|-----------|
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（`hometown_pack` 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
+| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源） | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
+| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0） | [Bli-AIk](https://github.com/Bli-AIk) |
+| [WeatherLib](https://github.com/MrFukuo/WeatherLib)（天气系统） | [MrFukuo](https://github.com/MrFukuo)（crocokuo） |
+| [thrash-machine](https://github.com/Bli-AIk/thrash-machine)（开发工具链） | [Bli-AIk](https://github.com/Bli-AIk) |
 
 ## 许可
 
