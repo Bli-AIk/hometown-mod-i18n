@@ -35,3 +35,8 @@ project is not affiliated with or endorsed by Toby Fox.
 
 简体中文译文以[好人汉化组](https://github.com/gm3dr/DeltaruneChinese)
 （gm3dr/DeltaruneChinese）的 Deltarune 官方级汉化文本为信源，行宽按其排版标准处理。
+
+sans 对话字体 `assets/fonts/sans.ttf`（方正少儿体，FZSJ-SHAOET）取自该仓库
+`workspace/global/font/sans.ttf`，配置对齐其 `fonts.cfg` 的 `fnt_comicsans`
+（`char_size` 14）；
+方正字体为商业字体，仅按汉化用途随包分发，与上游项目一致。
