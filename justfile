@@ -1,8 +1,8 @@
 default: test
 
-# Run this Mod through the parent Kristal EL checkout.
+# Run the Mod with a local Kristal checkout and shared debug tools.
 run *args:
-    @.github/scripts/run-el.sh {{ args }}
+    @just --justfile libraries/kristal-debug-tools/justfile run {{ args }}
 
 test:
     @make test

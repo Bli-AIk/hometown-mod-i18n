@@ -10,20 +10,18 @@ Hometown（光世界）内容包的中文汉化 fork，fork 自
 
 ## 安装
 
-以 git 子模块挂进 Kristal EL 引擎的 `el-mods/`（mod.json 带 `"engine": "kristal-el"`）：
+把整个目录放进 Kristal 引擎的 `mods/` 文件夹即可（或做成 mod ZIP）：
 
 ```bash
-cd /path/to/kristal-el
-git submodule add -f git@github.com:Bli-AIk/hometown-pack-i18n.git el-mods/hometown_pack
-git submodule update --init --recursive
-just run-mod hometown_pack
+git clone --recurse-submodules git@github.com:Bli-AIk/hometown-pack-i18n.git
+cp -r hometown-pack-i18n /path/to/kristal/mods/hometown_pack
 ```
 
-引擎根目录也可以用：
+## 开发
 
 ```bash
-cd /path/to/kristal-el/el-mods/hometown_pack
-just run        # 自动定位父引擎
+KRISTAL_ROOT=/path/to/kristal just run   # 用本地 Kristal 检出运行（支持 --encounter / --wave 等调试参数）
+just test                                 # make test：静态断言 + luajit 语法检查 + 调试工具 dry-run
 ```
 
 ## 汉化

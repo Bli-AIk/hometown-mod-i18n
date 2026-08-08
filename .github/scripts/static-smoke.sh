@@ -6,7 +6,6 @@ root=$(CDPATH='' cd -- "$(dirname -- "$0")/../.." && pwd -P)
 test -f "$root/mod.lua"
 test -f "$root/mod.json"
 grep -Fqx '    "id": "hometown_pack",' "$root/mod.json"
-grep -Fqx '    "engine": "kristal-el",' "$root/mod.json"
 test -f "$root/lang/en.json"
 test -f "$root/lang/zh_hans.json"
 test -f "$root/lang/names.json"
