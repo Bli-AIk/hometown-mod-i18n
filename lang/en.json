@@ -535,5 +535,9 @@
  "Dig through": "Dig through",
  "Don't dig through": "Don't dig through",
  "* Your \"friend\",[wait:5] as well![react:1][wait:5][react:2]": "* Your \"friend\",[wait:5] as well![react:1][wait:5][react:2]",
- "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]": "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]"
+ "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]": "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]",
+ "* Hey...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey...[wait:10] Don't tell that to Noelle,[wait:5] but...",
+ "* Hey,[wait:5] Kris...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Kris...[wait:10] Don't tell that to Noelle,[wait:5] but...",
+ "* Hey,[wait:5] Kris,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Kris,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...",
+ "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but..."
 }

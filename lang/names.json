@@ -8,8 +8,8 @@
   "zh_hans": "sans."
  },
  "toriel": {
-  "en": "Toriel",
-  "zh_hans": "托丽尔"
+  "en": "Toriel Dreemurr",
+  "zh_hans": "托丽尔·逐梦"
  },
  "undyne": {
   "en": "Undyne",
@@ -20,8 +20,8 @@
   "zh_hans": "鲁道夫\"鲁迪\"假日"
  },
  "asgore": {
-  "en": "Asgore",
-  "zh_hans": "艾斯戈尔"
+  "en": "Asgore Dreemurr",
+  "zh_hans": "艾斯戈尔·逐梦"
  },
  "catti": {
   "en": "Catti",
@@ -52,8 +52,8 @@
   "zh_hans": "艾尔菲斯"
  },
  "gerson": {
-  "en": "Gerson",
-  "zh_hans": "葛森"
+  "en": "Gerson Boom",
+  "zh_hans": "葛森·布姆"
  },
  "shyra": {
   "en": "Shyra",
@@ -77,6 +77,26 @@
  },
  "noelle_dark_transition": {
   "en": "Noelle",
-  "zh_hans": "诺艾儿"
+  "zh_hans": "诺艾尔"
+ },
+ "kris": {
+  "en": "Kris",
+  "zh_hans": "克里斯"
+ },
+ "susie": {
+  "en": "Susie",
+  "zh_hans": "苏西"
+ },
+ "ralsei": {
+  "en": "Ralsei",
+  "zh_hans": "利艾尔斯"
+ },
+ "noelle": {
+  "en": "Noelle",
+  "zh_hans": "诺艾尔"
+ },
+ "krismas": {
+  "en": "Krismas",
+  "zh_hans": "克里斯玛斯"
  }
 }
