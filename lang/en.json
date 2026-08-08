@@ -539,5 +539,14 @@
  "* Hey...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey...[wait:10] Don't tell that to Noelle,[wait:5] but...",
  "* Hey,[wait:5] Kris...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Kris...[wait:10] Don't tell that to Noelle,[wait:5] but...",
  "* Hey,[wait:5] Kris,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Kris,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...",
- "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but..."
+ "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...",
+ "[font:sans]* heya.": "[font:sans]* heya.",
+ "[font:sans]* you need somethin'?": "[font:sans]* you need somethin'?",
+ "[font:sans]* you wanna see my brother,[wait:5] huh?": "[font:sans]* you wanna see my brother,[wait:5] huh?",
+ "[font:sans]* hmm...": "[font:sans]* hmm...",
+ "[font:sans]* yeah you can see him.": "[font:sans]* yeah you can see him.",
+ "[font:sans]* as for when?": "[font:sans]* as for when?",
+ "[font:sans]* tomorrow.": "[font:sans]* tomorrow.",
+ "[font:sans]* give or take three years.": "[font:sans]* give or take three years.",
+ "[font:sans]* seeya.": "[font:sans]* seeya."
 }

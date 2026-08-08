@@ -539,5 +539,14 @@
  "* Hey...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* 嘿...[wait:10] 别把这事告诉[name:noelle]，[wait:5] 但是...",
  "* Hey,[wait:5] Kris...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* 嘿，[wait:5] [name:kris]...[wait:10] 别把这事告诉[name:noelle]，[wait:5] 但是...",
  "* Hey,[wait:5] Kris,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* 嘿，[wait:5] [name:kris]，[wait:5] [name:susie]...[wait:10] 别把这事告诉[name:noelle]，[wait:5] 但是...",
- "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* 嘿，[wait:5] [name:susie]...[wait:10] 别把这事告诉[name:noelle]，[wait:5] 但是..."
+ "* Hey,[wait:5] Susie...[wait:10] Don't tell that to Noelle,[wait:5] but...": "* 嘿，[wait:5] [name:susie]...[wait:10] 别把这事告诉[name:noelle]，[wait:5] 但是...",
+ "[font:sans]* heya.": "[font:sans]* 嘿呀。",
+ "[font:sans]* you need somethin'?": "[font:sans]* 需要点什么吗？",
+ "[font:sans]* you wanna see my brother,[wait:5] huh?": "[font:sans]* 想见我弟弟，[wait:5] 哈？",
+ "[font:sans]* hmm...": "[font:sans]* 嗯...",
+ "[font:sans]* yeah you can see him.": "[font:sans]* 是啊，你随时可以见他。",
+ "[font:sans]* as for when?": "[font:sans]* 至于什么时候？",
+ "[font:sans]* tomorrow.": "[font:sans]* 明天。",
+ "[font:sans]* give or take three years.": "[font:sans]* 前后差个三年吧。",
+ "[font:sans]* seeya.": "[font:sans]* 回头见。"
 }
