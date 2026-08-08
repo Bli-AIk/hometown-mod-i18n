@@ -50,7 +50,9 @@
         },
         "kristalI18n": {
             "defaultLanguage": "auto",
-            "defaultNameLanguage": "zh_hans",
+            // 默认角色名称语言：英文。玩家可在运行时切换（Game:setNameLanguage），
+            // 选择会存入存档并在读档后优先。
+            "defaultNameLanguage": "en",
             "languages": ["en", "zh_hans"],
             "languageNames": {
                 "en": "English",
