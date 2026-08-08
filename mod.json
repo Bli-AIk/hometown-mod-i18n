@@ -50,6 +50,7 @@
         },
         "kristalI18n": {
             "defaultLanguage": "auto",
+            "defaultNameLanguage": "zh_hans",
             "languages": ["en", "zh_hans"],
             "languageNames": {
                 "en": "English",
