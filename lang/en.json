@@ -519,5 +519,21 @@
  "[emote:talk]Don't have\nanything\nbetter\nto do.": "[emote:talk]Don't have\nanything\nbetter\nto do.",
  "[emote:talk]What\nshould\nI sell?": "[emote:talk]What\nshould\nI sell?",
  "[emote:talk]What do\nyou like\nto buy?": "[emote:talk]What do\nyou like\nto buy?",
- "[emote:talk]What kind\nof junk\nyou got?": "[emote:talk]What kind\nof junk\nyou got?"
+ "[emote:talk]What kind\nof junk\nyou got?": "[emote:talk]What kind\nof junk\nyou got?",
+ "Sickness": "Sickness",
+ "Leave": "Leave",
+ "Yes": "Yes",
+ "No": "No",
+ "Don't": "Don't",
+ "See photos": "See photos",
+ "Look inside": "Look inside",
+ "Read": "Read",
+ "Inspect": "Inspect",
+ "Not": "Not",
+ "Promise": "Promise",
+ "Nothing": "Nothing",
+ "Dig through": "Dig through",
+ "Don't dig through": "Don't dig through",
+ "* Your \"friend\",[wait:5] as well![react:1][wait:5][react:2]": "* Your \"friend\",[wait:5] as well![react:1][wait:5][react:2]",
+ "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]": "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]"
 }
