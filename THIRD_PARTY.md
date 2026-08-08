@@ -30,3 +30,8 @@
 This mod is a fan recreation of the Hometown (light world) of
 [DELTARUNE](https://deltarune.com/). DELTARUNE is the property of Toby Fox. This
 project is not affiliated with or endorsed by Toby Fox.
+
+## 翻译
+
+简体中文译文以[好人汉化组](https://github.com/gm3dr/DeltaruneChinese)
+（gm3dr/DeltaruneChinese）的 Deltarune 官方级汉化文本为信源，行宽按其排版标准处理。

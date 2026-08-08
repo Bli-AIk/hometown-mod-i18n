@@ -561,6 +561,79 @@ local function addCjkTextSpacing(text, spacing_value, offset_y)
     return table.concat(out)
 end
 
+-- Hometown Pack extension: wrap over-long CJK dialogue lines at natural
+-- punctuation boundaries, so the engine's latin-word auto-wrap never kicks in.
+local function utf8Chars(s)
+    local chars = {}
+    local i = 1
+    while i <= #s do
+        local b = s:byte(i)
+        local len
+        if b < 0x80 then len = 1
+        elseif b < 0xE0 then len = 2
+        elseif b < 0xF0 then len = 3
+        elseif b < 0xF8 then len = 4
+        else len = 1 end
+        chars[#chars + 1] = s:sub(i, i + len - 1)
+        i = i + len
+    end
+    return chars
+end
+
+local function wrapCjkText(text, limit)
+    if type(text) ~= "string" or Game.lang ~= "zh_hans" or not hasCjkText(text) then
+        return text
+    end
+    limit = limit or 19
+    local out_lines = {}
+    for line in text:gmatch("[^\n]+") do
+        local chars = utf8Chars(line)
+        local cur, cur_core = {}, 0
+        local i = 1
+        while i <= #chars do
+            local c = chars[i]
+            if c == "[" then
+                local close = line:find("]", i, true)
+                if close then
+                    cur[#cur + 1] = line:sub(i, close)
+                    i = close + 1
+                else
+                    cur[#cur + 1] = c
+                    i = i + 1
+                end
+            else
+                cur[#cur + 1] = c
+                if c ~= "*" and c ~= " " then
+                    cur_core = cur_core + 1
+                end
+                if c:match("[，。！？、；：—]") and cur_core >= 12 then
+                    out_lines[#out_lines + 1] = table.concat(cur)
+                    cur, cur_core = {}, 0
+                elseif cur_core >= limit then
+                    out_lines[#out_lines + 1] = table.concat(cur)
+                    cur, cur_core = {}, 0
+                end
+                i = i + 1
+            end
+        end
+        if #cur > 0 then
+            out_lines[#out_lines + 1] = table.concat(cur)
+        end
+    end
+    return table.concat(out_lines, "\n")
+end
+
+local function wrapCjkTextValue(value, limit)
+    if type(value) == "table" then
+        local out = {}
+        for key, item in pairs(value) do
+            out[key] = wrapCjkTextValue(item, limit)
+        end
+        return out
+    end
+    return wrapCjkText(value, limit)
+end
+
 local function addCjkTextSpacingValue(value, spacing_value, offset_y)
     if type(value) == "table" then
         if type(isClass) == "function" and isClass(value) then
@@ -2603,6 +2676,7 @@ function kristalI18n:postInit()
     HookSystem.hook(Text, "setText", function(orig, self, text)
         text = resolveTextInput(text)
         text = localizeStaticTextValue(text)
+        text = wrapCjkTextValue(text)
         return orig(self, addCjkTextSpacingValue(text, cjkFixedTextSpacing))
     end)
 
