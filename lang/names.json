@@ -5,7 +5,7 @@
  },
  "sans": {
   "en": "sans.",
-  "zh_hans": "sans."
+  "zh_hans": "杉斯"
  },
  "toriel": {
   "en": "Toriel Dreemurr",
@@ -13,7 +13,7 @@
  },
  "undyne": {
   "en": "Undyne",
-  "zh_hans": "安蒂因"
+  "zh_hans": "安黛因"
  },
  "rudy": {
   "en": "Rudolph \"Rudy\" Holiday",
@@ -25,7 +25,7 @@
  },
  "catti": {
   "en": "Catti",
-  "zh_hans": "卡蒂"
+  "zh_hans": "凯迪"
  },
  "jockington": {
   "en": "Jockington",
@@ -41,27 +41,27 @@
  },
  "bratty": {
   "en": "Bratty",
-  "zh_hans": "布拉蒂"
+  "zh_hans": "布莱蒂"
  },
  "napstablook": {
   "en": "Napstablook",
-  "zh_hans": "纳普斯特布路克"
+  "zh_hans": "纳普斯特"
  },
  "alphys": {
   "en": "Alphys",
-  "zh_hans": "艾尔菲斯"
+  "zh_hans": "艾菲斯"
  },
  "gerson": {
   "en": "Gerson Boom",
-  "zh_hans": "葛森·布姆"
+  "zh_hans": "葛森·爆烈"
  },
  "shyra": {
   "en": "Shyra",
-  "zh_hans": "希拉"
+  "zh_hans": "塞拉"
  },
  "seam": {
   "en": "Seam",
-  "zh_hans": "西姆"
+  "zh_hans": "桑恩"
  },
  "mrelegance": {
   "en": "Mr. Elegance",
@@ -70,10 +70,6 @@
  "coody": {
   "en": "Coody",
   "zh_hans": "库迪"
- },
- "shelter": {
-  "en": "Shelter",
-  "zh_hans": "庇护所"
  },
  "noelle_dark_transition": {
   "en": "Noelle",
@@ -97,6 +93,6 @@
  },
  "krismas": {
   "en": "Krismas",
-  "zh_hans": "克里斯玛斯"
+  "zh_hans": "巧克里斯"
  }
 }
