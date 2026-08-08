@@ -9,14 +9,23 @@ if [ -z "$engine_root" ] && [ "${KRISTAL_DEBUG_TOOLS_DRY_RUN:-0}" = "1" ]; then
 fi
 
 if [ -z "$engine_root" ]; then
-    candidate="$root/../.."
-    if [ -f "$candidate/main.lua" ]; then
-        engine_root=$(CDPATH='' cd -- "$candidate" && pwd -P)
-    fi
+    for candidate in \
+        "$root/../.." \
+        "$root/.." \
+        "$HOME/Projects/LuaProjects/kristal-el" \
+        "$HOME/Projects/kristal-el" \
+        "$HOME/kristal-el"
+    do
+        if [ -f "$candidate/main.lua" ]; then
+            engine_root=$(CDPATH='' cd -- "$candidate" && pwd -P)
+            break
+        fi
+    done
 fi
 
 if [ -z "$engine_root" ] || [ ! -f "$engine_root/main.lua" ]; then
-    printf '%s\n' 'Kristal EL engine not found. Set KRISTAL_EL_ROOT=/path/to/kristal-el.' >&2
+    printf '%s\n' 'Kristal EL engine not found. Set KRISTAL_EL_ROOT=/path/to/kristal-el,' >&2
+    printf '%s\n' 'or run from a checkout inside the engine (el-mods/hometown_pack).' >&2
     exit 1
 fi
 
