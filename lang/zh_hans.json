@@ -519,5 +519,21 @@
  "* You looked inside the sink cupboard.\n[wait:5]* There's...": "* 你往水槽下面的柜子里看了看。\n[wait:5]* 里面有...",
  "* Your \"": "* 你的\"",
  "???\nKris???": "？？？\n克里斯？？？",
- "AT 4 DF 0\n* Cotton heart and button eye\n* Looks just like a fluffy guy.": "AT 4 DF 0\n* 棉质的心和纽扣眼睛\n* 看起来就像一个毛茸茸的家伙。"
+ "AT 4 DF 0\n* Cotton heart and button eye\n* Looks just like a fluffy guy.": "AT 4 DF 0\n* 棉质的心和纽扣眼睛\n* 看起来就像一个毛茸茸的家伙。",
+ "Sickness": "病情",
+ "Leave": "离开",
+ "Yes": "是",
+ "No": "不",
+ "Don't": "不",
+ "See photos": "看照片",
+ "Look inside": "看里面",
+ "Read": "读",
+ "Inspect": "查看",
+ "Not": "不",
+ "Promise": "承诺",
+ "Nothing": "没什么",
+ "Dig through": "翻翻看",
+ "Don't dig through": "不翻",
+ "* Your \"friend\",[wait:5] as well![react:1][wait:5][react:2]": "* 你的\"朋友\"，[wait:5] 也一样！[react:1][wait:5][react:2]",
+ "* Your \"friends\",[wait:5] as well![react:1][wait:5][react:2]": "* 你的\"朋友们\"，[wait:5] 也一样！[react:1][wait:5][react:2]"
 }

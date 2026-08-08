@@ -16,8 +16,8 @@
   "zh_hans": "安蒂因"
  },
  "rudy": {
-  "en": "Rudy",
-  "zh_hans": "鲁迪"
+  "en": "Rudolph \"Rudy\" Holiday",
+  "zh_hans": "鲁道夫\"鲁迪\"假日"
  },
  "asgore": {
   "en": "Asgore",
@@ -50,5 +50,33 @@
  "alphys": {
   "en": "Alphys",
   "zh_hans": "艾尔菲斯"
+ },
+ "gerson": {
+  "en": "Gerson",
+  "zh_hans": "葛森"
+ },
+ "shyra": {
+  "en": "Shyra",
+  "zh_hans": "希拉"
+ },
+ "seam": {
+  "en": "Seam",
+  "zh_hans": "西姆"
+ },
+ "mrelegance": {
+  "en": "Mr. Elegance",
+  "zh_hans": "优雅先生"
+ },
+ "coody": {
+  "en": "Coody",
+  "zh_hans": "库迪"
+ },
+ "shelter": {
+  "en": "Shelter",
+  "zh_hans": "庇护所"
+ },
+ "noelle_dark_transition": {
+  "en": "Noelle",
+  "zh_hans": "诺艾儿"
  }
 }
