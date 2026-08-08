@@ -5,6 +5,17 @@ end
 
 function Mod:postInit(newfile)
     print("Loaded "..self.info.name.."!")
+
+    -- Sans dialogue font: rasterize at 14px (DeltaruneChinese char_size 14, keeps the
+    -- pixelated DR look via mono hinting) and draw at 2x scale instead of re-rasterizing
+    -- at 28px. [font:sans] has no size argument, so font_size is nil here.
+    HookSystem.hook(Assets, "getFontScale", function(orig, path, size)
+        if path == "sans" and size == nil then
+            return 2
+        end
+        return orig(path, size)
+    end)
+
     if os.getenv("KRISTAL_MOD_SMOKE") == "1" then
         print("EL_LANG=" .. tostring(Game.lang))
         print("EL_T1=" .. tostring(Game:hasStr("* (It's a door.)") and Game:loc("* (It's a door.)") or "NO"))

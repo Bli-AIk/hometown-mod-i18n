@@ -1,3 +1,4 @@
 {
-    "defaultSize": 14
+    "defaultSize": 14,
+    "autoScale": true
 }
