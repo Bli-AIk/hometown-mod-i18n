@@ -2,54 +2,64 @@ local SeamShop, super = Class(Shop)
 
 function SeamShop:init()
     super.init(self)
-    self.encounter_text = "* Hee hee...[wait:5]\n* Welcome,[wait:5] travellers."
-    self.shop_text = "[emote:talk]* Take your time...[wait:5]\n* Ain't like it's\nbetter spent."
-    self.leaving_text = "* See you again.[wait:5]\n* Or not.\n* Ha ha ha ha..."
+    self.encounter_text = "{shop_seam_encounter}"
+    self.shop_text = "{shop_seam_main}"
+    self.leaving_text = "{shop_seam_leaving}"
     -- Shown when you're in the BUY menu
-    self.buy_menu_text = "[emote:talk]What do\nyou like\nto buy?"
+    self.buy_menu_text = "{shop_seam_buy_menu}"
     -- Shown when you're about to buy something.
-    self.buy_confirmation_text = "Buy it for\n%s ?"
+    self.buy_confirmation_text = "{shop_seam_buy_confirmation}"
     -- Shown when you refuse to buy something
-    self.buy_refuse_text = "What,\nnot good\nenough?"
+    self.buy_refuse_text = "{shop_seam_buy_refuse}"
     -- Shown when you buy something
-    self.buy_text = "[emote:laugh]Thanks for\nthat."
+    self.buy_text = "{shop_seam_buy}"
     -- Shown when you buy something and it goes in your storage
-    self.buy_storage_text = "[emote:laugh]Thanks, it'll\nbe in your\nSTORAGE."
+    self.buy_storage_text = "{shop_seam_buy_storage}"
     -- Shown when you don't have enough money to buy something
-    self.buy_too_expensive_text = "[emote:impatient]Not\nenough\nmoney."
+    self.buy_too_expensive_text = "{shop_seam_buy_too_expensive}"
     -- Shown when you don't have enough space to buy something.
-    self.buy_no_space_text = "[emote:impatient]You're\ncarrying\ntoo much."
+    self.buy_no_space_text = "{shop_seam_buy_no_space}"
     -- Shown when something doesn't have a sell price
-    self.sell_no_price_text = "[emote:impatient]Why would\nYou sell\nthis?"
+    self.sell_no_price_text = "{shop_seam_sell_no_price}"
     -- Shown when you're in the SELL menu
-    self.sell_menu_text = "[emote:talk]What kind\nof junk\nyou got?"
+    self.sell_menu_text = "{shop_seam_sell_menu}"
     -- Shown when you try to sell an empty spot
-    self.sell_nothing_text = "That's\nnothing."
+    self.sell_nothing_text = "{shop_seam_sell_nothing}"
     -- Shown when you're about to sell something.
-    self.sell_confirmation_text = "Sell it for\n%s ?"
+    self.sell_confirmation_text = "{shop_seam_sell_confirmation}"
     -- Shown when you refuse to sell something
-    self.sell_refuse_text = "No?"
+    self.sell_refuse_text = "{shop_seam_sell_refuse}"
     -- Shown when you sell something
-    self.sell_text = "That's it\nfor that."
+    self.sell_text = "{shop_seam_sell}"
+    self.sell_everything_text = "{shop_seam_sell_everything}"
     -- Shown when you have nothing in a storage
-    self.sell_no_storage_text = "[emote:impatient]You don't\nhave\nanything!"
+    self.sell_no_storage_text = "{shop_seam_sell_no_storage}"
     -- Shown when you enter the talk menu.
-    self.talk_text = "[emote:talk]Don't have\nanything\nbetter\nto do."
+    self.talk_text = "{shop_seam_talk_menu}"
 
-    self.sell_options_text["item"]   = "[emote:talk]What\nshould\nI sell?"
-    self.sell_options_text["weapon"] = "[emote:talk]What\nshould\nI sell?"
-    self.sell_options_text["armor"]  = "[emote:talk]What\nshould\nI sell?"
-    self.sell_options_text["pocket"] = "[emote:talk]What\nshould\nI sell?"
+    local sell_items_text = "{shop_seam_sell_items_prompt}"
+    local sell_weapons_text = "{shop_seam_sell_weapons_prompt}"
+    local sell_armors_text = "{shop_seam_sell_armors_prompt}"
+    local sell_storage_text = "{shop_seam_sell_storage_prompt}"
+    self.sell_options_text["items"] = sell_items_text
+    self.sell_options_text["weapons"] = sell_weapons_text
+    self.sell_options_text["armors"] = sell_armors_text
+    self.sell_options_text["storage"] = sell_storage_text
+    -- Keep the singular keys for older Kristal Shop implementations.
+    self.sell_options_text["item"] = sell_items_text
+    self.sell_options_text["weapon"] = sell_weapons_text
+    self.sell_options_text["armor"] = sell_armors_text
+    self.sell_options_text["pocket"] = sell_storage_text
 
     self:registerItem("cd_bagel")
     self:registerItem("darkburger")
     self:registerItem("amber_card")
     self:registerItem("spookysword")
 
-    self:registerTalk("About yourself")
-    self:registerTalk("Lightners")
-    self:registerTalk("Kingdom")
-    self:registerTalk("We're legendary")
+    self:registerTalk("{shop_seam_talk_about}")
+    self:registerTalk("{shop_seam_talk_lightners}")
+    self:registerTalk("{shop_seam_talk_kingdom}")
+    self:registerTalk("{shop_seam_talk_legendary}")
 
     self.shopkeeper:setActor("shopkeepers/seam")
     self.shopkeeper.sprite:setPosition(-24, 12)
@@ -61,35 +71,35 @@ function SeamShop:init()
 end
 
 function SeamShop:startTalk(talk)
-    if talk == "About yourself" then
+    if talk == Game:loc("shop_seam_talk_about") then
         self:startDialogue({
-            "* The name's Seam.\n[wait:5]* Pronounced \"Shawm.\"",
-            "* And this is my little Seap.\n[wait:5]* Ha ha ha ha...",
-            "* Over the years, I've collected\nodds and ends.",
-            "* 'Course, I've no attachment to\nany of it\n[wait:5]* It's just a hobby of mine.",
-            "* Around here, you learn to find\nways to pass the time...\n[wait:5]* ... or go mad like everyone else."
+            "{shop_seam_about_1}",
+            "{shop_seam_about_2}",
+            "{shop_seam_about_3}",
+            "{shop_seam_about_4}",
+            "{shop_seam_about_5}"
         })
-    elseif talk == "Lightners" then
+    elseif talk == Game:loc("shop_seam_talk_lightners") then
         self:startDialogue({
-            "[emote:oh]* Long ago, the Darkners lived in\nharmony with the Lightners.",
-            "[emote:talk]* They were like Gods to us.\n* Our protectors.\n* Our creators.\n* Those who gave us purpose...",
-            "[emote:impatient]* Then, one day we were all\nlocked away in this prison..\n* And the Lightners never returned.",
-            "[emote:oh]* Embittered, the King took up\narms, and aims to take revenge\nupon the Lightners that left us\nbehind.",
-            "[emote:talk]* 'Course, even among his troops,\nsome still distantly hope the\nLightners will return..."
+            "{shop_seam_lightners_1}",
+            "{shop_seam_lightners_2}",
+            "{shop_seam_lightners_3}",
+            "{shop_seam_lightners_4}",
+            "{shop_seam_lightners_5}"
         })
-    elseif talk == "Kingdom" then
+    elseif talk == Game:loc("shop_seam_talk_kingdom") then
         self:startDialogue({
-            "* Historically, this land was\nruled by the Four Kings, from\n[color:yellow]CARD CASTLE[color:reset] to the East.",
-            "[emote:oh]* But, recently, a [color:red]strange knight[color:reset]\nappeared..\n* And three of the kings were\nlocked away.",
-            "[emote:talk]* The remaining king put him and\nhis strange son into power.",
-            "[emote:oh]* This land hasn't seen THIS much\nchaos since...",
-            "[emote:laugh]* Ha ha ha..\n* Well, you don't need to know\nabout THAT."
+            "{shop_seam_kingdom_1}",
+            "{shop_seam_kingdom_2}",
+            "{shop_seam_kingdom_3}",
+            "{shop_seam_kingdom_4}",
+            "{shop_seam_kingdom_5}"
         })
-    elseif talk == "We're legendary" then
+    elseif talk == Game:loc("shop_seam_talk_legendary") then
         self:startDialogue({
-            "[emote:laugh]* Ha ha ha ..\n* So you are the \"heroes\" who are\ngoing to seal our Fountain?",
-            "[emote:talk]* Ha, good luck.\n* It makes no difference to me.",
-            "[emote:impatient]* Neither Light nor Dark hold a\nfuture for a Darkner in my\ncondition."
+            "{shop_seam_legendary_1}",
+            "{shop_seam_legendary_2}",
+            "{shop_seam_legendary_3}"
         })
     end
 end
