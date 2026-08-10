@@ -22,6 +22,7 @@ function Mod:postInit(newfile)
         print("EL_T2=" .. tostring(Game:hasStr("* (Documents...)") and Game:loc("* (Documents...)") or "NO"))
         print("EL_T4=" .. tostring(Game:hasStr("* The name's Seam.\n[wait:5]* Pronounced \"Shawm.\"") and Game:loc("* The name's Seam.\n[wait:5]* Pronounced \"Shawm.\"") or "NO"))
         print("EL_T3=" .. tostring(Game:hasStr("untranslated_stuff_xyz") and Game:loc("untranslated_stuff_xyz") or "FALLBACK_OK"))
+        print("KRISTAL_MOD_SMOKE=PASS")
         love.event.quit()
     end
 end

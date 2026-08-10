@@ -1,6 +1,8 @@
 {
     // The ID of your mod. Should be unique!!
     "id": "hometown_pack",
+    // Whether development-only features are enabled.
+    "dev": true,
     // Displays on the main menu.
     "name": "Hometown Pack",
     // Displays underneath the name. Optional.
