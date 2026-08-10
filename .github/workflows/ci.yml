@@ -40,20 +40,20 @@ jobs:
         run: |
           set -euo pipefail
           files=(
-            dist/hometown-pack-release.love
-            dist/hometown-pack-debug.love
-            dist/hometown-pack-release-win64.zip
-            dist/hometown-pack-debug-win64.zip
-            dist/hometown-pack-mod.zip
+            dist/hometown-mod-i18n-release.love
+            dist/hometown-mod-i18n-debug.love
+            dist/hometown-mod-i18n-release-win64.zip
+            dist/hometown-mod-i18n-debug-win64.zip
+            dist/hometown-mod-i18n-mod.zip
           )
           for file in "${files[@]}"; do
             test -s "$file"
             unzip -t "$file" >/dev/null
           done
-          unzip -Z1 dist/hometown-pack-mod.zip | grep -Fx mod.json >/dev/null
-          test -z "$(unzip -Z1 dist/hometown-pack-mod.zip | grep '^libraries/object-editor/' || true)"
-          test -z "$(unzip -Z1 dist/hometown-pack-mod.zip | grep '^libraries/terminal-cli/' || true)"
-          test -z "$(unzip -Z1 dist/hometown-pack-mod.zip | grep '^libraries/kristal-debug-tools/' || true)"
+          unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep -Fx mod.json >/dev/null
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/object-editor/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/terminal-cli/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/kristal-debug-tools/' || true)"
       - name: Generate and verify SHA-256 manifest
         run: |
           .github/scripts/generate_sha256sums.sh dist
@@ -61,6 +61,6 @@ jobs:
           (cd dist && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@v4
         with:
-          name: hometown-pack-${{ github.sha }}
+          name: hometown-mod-i18n-${{ github.sha }}
           path: dist/
           if-no-files-found: error

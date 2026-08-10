@@ -2,27 +2,27 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-HOMETOWN_PACK_MOD_DIR="${HOMETOWN_PACK_MOD_DIR:-$SCRIPT_DIR}"
-HOMETOWN_PACK_MOD_DIR="$(CDPATH= cd -- "$HOMETOWN_PACK_MOD_DIR" && pwd -P)"
-HOMETOWN_PACK_BUILD_ROOT="${HOMETOWN_PACK_BUILD_ROOT:-$HOMETOWN_PACK_MOD_DIR/.build/standalone}"
-HOMETOWN_PACK_OUTPUT_DIR="${HOMETOWN_PACK_OUTPUT_DIR:-$HOMETOWN_PACK_MOD_DIR/dist}"
-HOMETOWN_PACK_CACHE_DIR="${HOMETOWN_PACK_CACHE_DIR:-$HOMETOWN_PACK_MOD_DIR/.build/cache}"
+HOMETOWN_MOD_I18N_MOD_DIR="${HOMETOWN_MOD_I18N_MOD_DIR:-$SCRIPT_DIR}"
+HOMETOWN_MOD_I18N_MOD_DIR="$(CDPATH= cd -- "$HOMETOWN_MOD_I18N_MOD_DIR" && pwd -P)"
+HOMETOWN_MOD_I18N_BUILD_ROOT="${HOMETOWN_MOD_I18N_BUILD_ROOT:-$HOMETOWN_MOD_I18N_MOD_DIR/.build/standalone}"
+HOMETOWN_MOD_I18N_OUTPUT_DIR="${HOMETOWN_MOD_I18N_OUTPUT_DIR:-$HOMETOWN_MOD_I18N_MOD_DIR/dist}"
+HOMETOWN_MOD_I18N_CACHE_DIR="${HOMETOWN_MOD_I18N_CACHE_DIR:-$HOMETOWN_MOD_I18N_MOD_DIR/.build/cache}"
 
-HOMETOWN_PACK_KRISTAL_REPO="${HOMETOWN_PACK_KRISTAL_REPO:-https://github.com/KristalTeam/Kristal.git}"
-HOMETOWN_PACK_KRISTAL_REF="${HOMETOWN_PACK_KRISTAL_REF:-v0.10.0}"
-HOMETOWN_PACK_KRISTAL_EXPECTED_VERSION="${HOMETOWN_PACK_KRISTAL_EXPECTED_VERSION:-0.10.0}"
-HOMETOWN_PACK_KRISTAL_DIR="${HOMETOWN_PACK_KRISTAL_DIR:-${KRISTAL_ROOT:-$HOMETOWN_PACK_MOD_DIR/.build/Kristal}}"
+HOMETOWN_MOD_I18N_KRISTAL_REPO="${HOMETOWN_MOD_I18N_KRISTAL_REPO:-https://github.com/KristalTeam/Kristal.git}"
+HOMETOWN_MOD_I18N_KRISTAL_REF="${HOMETOWN_MOD_I18N_KRISTAL_REF:-v0.10.0}"
+HOMETOWN_MOD_I18N_KRISTAL_EXPECTED_VERSION="${HOMETOWN_MOD_I18N_KRISTAL_EXPECTED_VERSION:-0.10.0}"
+HOMETOWN_MOD_I18N_KRISTAL_DIR="${HOMETOWN_MOD_I18N_KRISTAL_DIR:-${KRISTAL_ROOT:-$HOMETOWN_MOD_I18N_MOD_DIR/.build/Kristal}}"
 
-HOMETOWN_PACK_MOD_ID="${HOMETOWN_PACK_MOD_ID:-hometown-pack}"
-HOMETOWN_PACK_PROJECT_TITLE="${HOMETOWN_PACK_PROJECT_TITLE:-Hometown Pack}"
-HOMETOWN_PACK_OUTPUT_BASENAME="${HOMETOWN_PACK_OUTPUT_BASENAME:-hometown-pack}"
-HOMETOWN_PACK_EXE_BASENAME="${HOMETOWN_PACK_EXE_BASENAME:-HOMETOWN-PACK}"
-HOMETOWN_PACK_LOVE_VERSION="${HOMETOWN_PACK_LOVE_VERSION:-11.5}"
-HOMETOWN_PACK_LOVE_ARCH="${HOMETOWN_PACK_LOVE_ARCH:-win64}"
-HOMETOWN_PACK_LOVE_WINDOWS_ZIP_URL="${HOMETOWN_PACK_LOVE_WINDOWS_ZIP_URL:-https://github.com/love2d/love/releases/download/${HOMETOWN_PACK_LOVE_VERSION}/love-${HOMETOWN_PACK_LOVE_VERSION}-${HOMETOWN_PACK_LOVE_ARCH}.zip}"
-HOMETOWN_PACK_BUILD_VARIANTS="${HOMETOWN_PACK_BUILD_VARIANTS:-release debug}"
-HOMETOWN_PACK_BUILD_WINDOWS_EXE="${HOMETOWN_PACK_BUILD_WINDOWS_EXE:-1}"
-HOMETOWN_PACK_UPDATE_REPOS="${HOMETOWN_PACK_UPDATE_REPOS:-0}"
+HOMETOWN_MOD_I18N_MOD_ID="${HOMETOWN_MOD_I18N_MOD_ID:-hometown-mod-i18n}"
+HOMETOWN_MOD_I18N_PROJECT_TITLE="${HOMETOWN_MOD_I18N_PROJECT_TITLE:-Hometown Mod}"
+HOMETOWN_MOD_I18N_OUTPUT_BASENAME="${HOMETOWN_MOD_I18N_OUTPUT_BASENAME:-hometown-mod-i18n}"
+HOMETOWN_MOD_I18N_EXE_BASENAME="${HOMETOWN_MOD_I18N_EXE_BASENAME:-HOMETOWN-MOD-I18N}"
+HOMETOWN_MOD_I18N_LOVE_VERSION="${HOMETOWN_MOD_I18N_LOVE_VERSION:-11.5}"
+HOMETOWN_MOD_I18N_LOVE_ARCH="${HOMETOWN_MOD_I18N_LOVE_ARCH:-win64}"
+HOMETOWN_MOD_I18N_LOVE_WINDOWS_ZIP_URL="${HOMETOWN_MOD_I18N_LOVE_WINDOWS_ZIP_URL:-https://github.com/love2d/love/releases/download/${HOMETOWN_MOD_I18N_LOVE_VERSION}/love-${HOMETOWN_MOD_I18N_LOVE_VERSION}-${HOMETOWN_MOD_I18N_LOVE_ARCH}.zip}"
+HOMETOWN_MOD_I18N_BUILD_VARIANTS="${HOMETOWN_MOD_I18N_BUILD_VARIANTS:-release debug}"
+HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE="${HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE:-1}"
+HOMETOWN_MOD_I18N_UPDATE_REPOS="${HOMETOWN_MOD_I18N_UPDATE_REPOS:-0}"
 
 log() {
     printf '[build] %s\n' "$*" >&2
@@ -36,25 +36,25 @@ need_cmd() {
 }
 
 ensure_kristal() {
-    if [ -d "$HOMETOWN_PACK_KRISTAL_DIR/.git" ]; then
-        if [ "$HOMETOWN_PACK_UPDATE_REPOS" = "1" ]; then
-            git -C "$HOMETOWN_PACK_KRISTAL_DIR" fetch --tags origin
+    if [ -d "$HOMETOWN_MOD_I18N_KRISTAL_DIR/.git" ]; then
+        if [ "$HOMETOWN_MOD_I18N_UPDATE_REPOS" = "1" ]; then
+            git -C "$HOMETOWN_MOD_I18N_KRISTAL_DIR" fetch --tags origin
         fi
-    elif [ -e "$HOMETOWN_PACK_KRISTAL_DIR" ]; then
-        printf 'Kristal path exists but is not a Git checkout: %s\n' "$HOMETOWN_PACK_KRISTAL_DIR" >&2
+    elif [ -e "$HOMETOWN_MOD_I18N_KRISTAL_DIR" ]; then
+        printf 'Kristal path exists but is not a Git checkout: %s\n' "$HOMETOWN_MOD_I18N_KRISTAL_DIR" >&2
         exit 1
     else
-        mkdir -p "$(dirname "$HOMETOWN_PACK_KRISTAL_DIR")"
-        git clone --filter=blob:none "$HOMETOWN_PACK_KRISTAL_REPO" "$HOMETOWN_PACK_KRISTAL_DIR"
+        mkdir -p "$(dirname "$HOMETOWN_MOD_I18N_KRISTAL_DIR")"
+        git clone --filter=blob:none "$HOMETOWN_MOD_I18N_KRISTAL_REPO" "$HOMETOWN_MOD_I18N_KRISTAL_DIR"
     fi
 
-    if ! git -C "$HOMETOWN_PACK_KRISTAL_DIR" rev-parse --verify --quiet "${HOMETOWN_PACK_KRISTAL_REF}^{commit}" >/dev/null; then
-        git -C "$HOMETOWN_PACK_KRISTAL_DIR" fetch --depth 1 origin "refs/tags/${HOMETOWN_PACK_KRISTAL_REF}:refs/tags/${HOMETOWN_PACK_KRISTAL_REF}"
+    if ! git -C "$HOMETOWN_MOD_I18N_KRISTAL_DIR" rev-parse --verify --quiet "${HOMETOWN_MOD_I18N_KRISTAL_REF}^{commit}" >/dev/null; then
+        git -C "$HOMETOWN_MOD_I18N_KRISTAL_DIR" fetch --depth 1 origin "refs/tags/${HOMETOWN_MOD_I18N_KRISTAL_REF}:refs/tags/${HOMETOWN_MOD_I18N_KRISTAL_REF}"
     fi
 
-    version="$(git -C "$HOMETOWN_PACK_KRISTAL_DIR" show "${HOMETOWN_PACK_KRISTAL_REF}:VERSION" | tr -d '\r\n')"
-    if [ "$version" != "$HOMETOWN_PACK_KRISTAL_EXPECTED_VERSION" ]; then
-        printf 'Kristal %s reports VERSION=%s, expected %s\n' "$HOMETOWN_PACK_KRISTAL_REF" "$version" "$HOMETOWN_PACK_KRISTAL_EXPECTED_VERSION" >&2
+    version="$(git -C "$HOMETOWN_MOD_I18N_KRISTAL_DIR" show "${HOMETOWN_MOD_I18N_KRISTAL_REF}:VERSION" | tr -d '\r\n')"
+    if [ "$version" != "$HOMETOWN_MOD_I18N_KRISTAL_EXPECTED_VERSION" ]; then
+        printf 'Kristal %s reports VERSION=%s, expected %s\n' "$HOMETOWN_MOD_I18N_KRISTAL_REF" "$version" "$HOMETOWN_MOD_I18N_KRISTAL_EXPECTED_VERSION" >&2
         exit 1
     fi
 }
@@ -63,7 +63,7 @@ export_kristal() {
     stage_dir="$1"
     rm -rf "$stage_dir"
     mkdir -p "$stage_dir"
-    git -C "$HOMETOWN_PACK_KRISTAL_DIR" archive --format=tar "$HOMETOWN_PACK_KRISTAL_REF" | tar -x -C "$stage_dir"
+    git -C "$HOMETOWN_MOD_I18N_KRISTAL_DIR" archive --format=tar "$HOMETOWN_MOD_I18N_KRISTAL_REF" | tar -x -C "$stage_dir"
     rm -rf "$stage_dir/.github" "$stage_dir/mods" "$stage_dir/build" "$stage_dir/output"
 }
 
@@ -97,7 +97,7 @@ copy_mod() {
         --exclude='/.gitignore' \
         --exclude='*.tiled-project' \
         --exclude='*.tiled-session' \
-        "$HOMETOWN_PACK_MOD_DIR/" "$stage_mod/"
+        "$HOMETOWN_MOD_I18N_MOD_DIR/" "$stage_mod/"
 
     if [ "$variant" = "release" ]; then
         rm -rf "$stage_mod/libraries/object-editor"
@@ -119,7 +119,7 @@ zip_dir() {
             (cd "$source" && zip -9 -q -r "$output" .)
         fi
     else
-        python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" zip-dir "$output" "$source" "$prefix"
+        python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" zip-dir "$output" "$source" "$prefix"
     fi
 }
 
@@ -142,39 +142,39 @@ prepare_stage() {
             ;;
     esac
 
-    stage_dir="$HOMETOWN_PACK_BUILD_ROOT/$variant/source"
+    stage_dir="$HOMETOWN_MOD_I18N_BUILD_ROOT/$variant/source"
     export_kristal "$stage_dir"
-    stage_mod="$stage_dir/mods/$HOMETOWN_PACK_MOD_ID"
+    stage_mod="$stage_dir/mods/$HOMETOWN_MOD_I18N_MOD_ID"
     copy_mod "$stage_mod" "$variant"
     if [ "$variant" = "release" ]; then
-        identity="$HOMETOWN_PACK_MOD_ID"
-        title="$HOMETOWN_PACK_PROJECT_TITLE"
+        identity="$HOMETOWN_MOD_I18N_MOD_ID"
+        title="$HOMETOWN_MOD_I18N_PROJECT_TITLE"
     else
-        identity="${HOMETOWN_PACK_MOD_ID}_debug"
-        title="${HOMETOWN_PACK_PROJECT_TITLE} Debug"
+        identity="${HOMETOWN_MOD_I18N_MOD_ID}_debug"
+        title="${HOMETOWN_MOD_I18N_PROJECT_TITLE} Debug"
     fi
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-lua-config \
-        "$stage_dir" "$HOMETOWN_PACK_MOD_ID" "$release_mode" \
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-lua-config \
+        "$stage_dir" "$HOMETOWN_MOD_I18N_MOD_ID" "$release_mode" \
         "$identity" "$title"
-    if [ "${HOMETOWN_PACK_ANDROID_TOUCH_SKIP_INTRO:-0}" = "1" ]; then
-        python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-android-loading-touch \
+    if [ "${HOMETOWN_MOD_I18N_ANDROID_TOUCH_SKIP_INTRO:-0}" = "1" ]; then
+        python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-android-loading-touch \
             "$stage_dir/src/engine/loadstate.lua"
     fi
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-mod-manifest \
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-mod-manifest \
         "$stage_mod/mod.json" "$mod_dev" "$object_editor"
     printf '%s\n' "$stage_dir"
 }
 
 ensure_love_windows() {
-    [ "$HOMETOWN_PACK_BUILD_WINDOWS_EXE" = "1" ] || return 0
-    mkdir -p "$HOMETOWN_PACK_CACHE_DIR"
-    love_zip="$HOMETOWN_PACK_CACHE_DIR/love-${HOMETOWN_PACK_LOVE_VERSION}-${HOMETOWN_PACK_LOVE_ARCH}.zip"
-    love_dir="$HOMETOWN_PACK_CACHE_DIR/love-${HOMETOWN_PACK_LOVE_VERSION}-${HOMETOWN_PACK_LOVE_ARCH}"
+    [ "$HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE" = "1" ] || return 0
+    mkdir -p "$HOMETOWN_MOD_I18N_CACHE_DIR"
+    love_zip="$HOMETOWN_MOD_I18N_CACHE_DIR/love-${HOMETOWN_MOD_I18N_LOVE_VERSION}-${HOMETOWN_MOD_I18N_LOVE_ARCH}.zip"
+    love_dir="$HOMETOWN_MOD_I18N_CACHE_DIR/love-${HOMETOWN_MOD_I18N_LOVE_VERSION}-${HOMETOWN_MOD_I18N_LOVE_ARCH}"
     if [ ! -f "$love_zip" ]; then
-        curl --fail --location --output "$love_zip" "$HOMETOWN_PACK_LOVE_WINDOWS_ZIP_URL"
+        curl --fail --location --output "$love_zip" "$HOMETOWN_MOD_I18N_LOVE_WINDOWS_ZIP_URL"
     fi
     if [ ! -d "$love_dir" ]; then
-        extract_dir="$HOMETOWN_PACK_CACHE_DIR/love-${HOMETOWN_PACK_LOVE_VERSION}-${HOMETOWN_PACK_LOVE_ARCH}.extract"
+        extract_dir="$HOMETOWN_MOD_I18N_CACHE_DIR/love-${HOMETOWN_MOD_I18N_LOVE_VERSION}-${HOMETOWN_MOD_I18N_LOVE_ARCH}.extract"
         rm -rf "$extract_dir"
         mkdir -p "$extract_dir"
         unzip -q "$love_zip" -d "$extract_dir"
@@ -192,20 +192,20 @@ ensure_love_windows() {
 build_variant() {
     variant="$1"
     stage_dir="$(prepare_stage "$variant")"
-    love_file="$HOMETOWN_PACK_OUTPUT_DIR/${HOMETOWN_PACK_OUTPUT_BASENAME}-${variant}.love"
+    love_file="$HOMETOWN_MOD_I18N_OUTPUT_DIR/${HOMETOWN_MOD_I18N_OUTPUT_BASENAME}-${variant}.love"
     zip_dir "$love_file" "$stage_dir"
 
-    if [ "$HOMETOWN_PACK_BUILD_WINDOWS_EXE" = "1" ]; then
-        love_dir="$HOMETOWN_PACK_CACHE_DIR/love-${HOMETOWN_PACK_LOVE_VERSION}-${HOMETOWN_PACK_LOVE_ARCH}"
-        package_name="${HOMETOWN_PACK_OUTPUT_BASENAME}-${variant}-${HOMETOWN_PACK_LOVE_ARCH}"
-        package_dir="$HOMETOWN_PACK_OUTPUT_DIR/$package_name"
-        exe_name="${HOMETOWN_PACK_EXE_BASENAME}-${variant}.exe"
+    if [ "$HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE" = "1" ]; then
+        love_dir="$HOMETOWN_MOD_I18N_CACHE_DIR/love-${HOMETOWN_MOD_I18N_LOVE_VERSION}-${HOMETOWN_MOD_I18N_LOVE_ARCH}"
+        package_name="${HOMETOWN_MOD_I18N_OUTPUT_BASENAME}-${variant}-${HOMETOWN_MOD_I18N_LOVE_ARCH}"
+        package_dir="$HOMETOWN_MOD_I18N_OUTPUT_DIR/$package_name"
+        exe_name="${HOMETOWN_MOD_I18N_EXE_BASENAME}-${variant}.exe"
         rm -rf "$package_dir"
         mkdir -p "$package_dir"
         cat "$love_dir/love.exe" "$love_file" > "$package_dir/$exe_name"
         cp "$love_dir"/*.dll "$package_dir/"
         test ! -f "$love_dir/license.txt" || cp "$love_dir/license.txt" "$package_dir/"
-        zip_dir "$HOMETOWN_PACK_OUTPUT_DIR/${package_name}.zip" "$package_dir" "$package_name"
+        zip_dir "$HOMETOWN_MOD_I18N_OUTPUT_DIR/${package_name}.zip" "$package_dir" "$package_name"
     fi
 }
 
@@ -217,8 +217,8 @@ need_cmd unzip
 need_cmd curl
 need_cmd zip
 ensure_kristal
-mkdir -p "$HOMETOWN_PACK_OUTPUT_DIR"
+mkdir -p "$HOMETOWN_MOD_I18N_OUTPUT_DIR"
 ensure_love_windows
-for variant in $HOMETOWN_PACK_BUILD_VARIANTS; do
+for variant in $HOMETOWN_MOD_I18N_BUILD_VARIANTS; do
     build_variant "$variant"
 done

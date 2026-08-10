@@ -19,7 +19,7 @@ run_dry() {
 
 output=$(run_dry --wave 2 --tp 50 --mercy 100)
 printf '%s\n' "$output" | grep -Fqx "mod_root=$root"
-printf '%s\n' "$output" | grep -Fqx 'mod_id=hometown_pack'
+printf '%s\n' "$output" | grep -Fqx 'mod_id=hometown-mod-i18n'
 printf '%s\n' "$output" | grep -F -- '--wave 2' >/dev/null
 printf '%s\n' "$output" | grep -F -- '--tp 50' >/dev/null
 printf '%s\n' "$output" | grep -F -- '--mercy 100' >/dev/null

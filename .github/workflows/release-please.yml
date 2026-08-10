@@ -72,7 +72,7 @@ jobs:
           (cd dist && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@v4
         with:
-          name: hometown-pack-${{ needs.release.outputs.tag_name }}
+          name: hometown-mod-i18n-${{ needs.release.outputs.tag_name }}
           path: dist/
           if-no-files-found: error
       - name: Upload release assets
