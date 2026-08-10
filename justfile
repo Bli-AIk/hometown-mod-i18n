@@ -1,10 +1,9 @@
 default: test
 
 # Run the Mod with a local Kristal checkout and shared debug tools.
-# KRISTAL_ROOT pins the EL engine: kristal-run's own search list doesn't
-# know about the "kristal-el" checkout and would pick the upstream Kristal.
+# kristal-run walks up to find the nearest Kristal engine automatically.
 run *args:
-    @KRISTAL_ROOT="{{ invocation_directory() }}/../.." just --justfile libraries/kristal-debug-tools/justfile run {{ args }}
+    @just --justfile libraries/kristal-debug-tools/justfile run {{ args }}
 
 test:
     @make test
