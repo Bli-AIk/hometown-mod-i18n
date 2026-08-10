@@ -1,11 +1,11 @@
-# Hometown Pack (i18n)
+# Hometown Mod (i18n)
 
 [![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE)
 <br>
 <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" />
 <img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
 
-![Hometown Pack 截图](./screenshot.png)
+![Hometown Mod 截图](./screenshot.png)
 
 <details>
 <summary>更多截图（深夜雨中漫步 / 城堡镇 / 变身动画 / 诺艾尔家）</summary>
@@ -20,7 +20,7 @@
 
 </details>
 
-**Hometown Pack（i18n）** — Hometown（光世界）内容包的简体中文汉化 fork，内置
+**Hometown Mod（i18n）** — Hometown（光世界）Mod 的简体中文汉化 fork，内置
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) 多语言本地化库。
 
 | 简体中文 | English                   |
@@ -30,7 +30,7 @@
 ## 这是什么
 
 基于 AfterChill 的 [`sekalisukarumah-boop/deltarune-AC`](https://github.com/sekalisukarumah-boop/deltarune-AC)
-（BSD-3-Clause）中 `hometown_pack` 子树的中文汉化 fork：
+（BSD-3-Clause）中 Hometown Mod 子树的中文汉化 fork：
 
 - 完整 Hometown 光世界（torielhouse / town / school / hospital / 图书馆 / 便利店…）+ 暗世界城堡区（`dark/castletown/...`）
 - 内置 **kristal-i18n**（MIT/Apache-2.0，[Bli-AIk/kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)）—— Kristal 的多语言本地化库，游戏内可切换 `en` / `zh_hans`
@@ -58,8 +58,8 @@
 把整个目录放进 Kristal 引擎的 `mods/` 文件夹（或做成 mod ZIP）：
 
 ```bash
-git clone --recurse-submodules git@github.com:Bli-AIk/hometown-pack-i18n.git
-cp -r hometown-pack-i18n /path/to/kristal/mods/hometown_pack
+git clone --recurse-submodules git@github.com:Bli-AIk/hometown-mod-i18n.git
+cp -r hometown-mod-i18n /path/to/kristal/mods/hometown-mod-i18n
 ```
 
 ## 开发
@@ -112,7 +112,7 @@ Game.stage:setWeather()            -- 清空（晴天）
 
 | 项目 | 作者/组织 |
 |------|-----------|
-| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（`hometown_pack` 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（Hometown Mod 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
 | [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源） | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
 | [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0） | [Bli-AIk](https://github.com/Bli-AIk) |
 | [WeatherLib](https://github.com/MrFukuo/WeatherLib)（天气系统） | [MrFukuo](https://github.com/MrFukuo)（crocokuo） |

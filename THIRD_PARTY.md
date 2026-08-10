@@ -4,7 +4,7 @@
 
 - Forked from [`sekalisukarumah-boop/deltarune-AC`](https://github.com/sekalisukarumah-boop/deltarune-AC)
   (AfterChill fangame code, BSD-3-Clause, Copyright (c) 2021 SylviBlossom), keeping the
-  `mods/after_chill/libraries/hometown_pack` subtree. The upstream `LICENSE` file is
+  Hometown Mod subtree. The upstream `LICENSE` file is
   retained at the repository root.
 - Original pack lineage: `hometown_recreation` (distributed via the AfterChill Discord),
   weather-coupled version posted by fluffyboy [DR: AfterChill].

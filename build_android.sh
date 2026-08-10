@@ -2,22 +2,22 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-HOMETOWN_PACK_MOD_DIR="${HOMETOWN_PACK_MOD_DIR:-$SCRIPT_DIR}"
-HOMETOWN_PACK_MOD_DIR="$(CDPATH= cd -- "$HOMETOWN_PACK_MOD_DIR" && pwd -P)"
-HOMETOWN_PACK_OUTPUT_DIR="${HOMETOWN_PACK_OUTPUT_DIR:-$HOMETOWN_PACK_MOD_DIR/dist}"
-HOMETOWN_PACK_ANDROID_WORK_DIR="${HOMETOWN_PACK_ANDROID_WORK_DIR:-$HOMETOWN_PACK_MOD_DIR/.build/android}"
-HOMETOWN_PACK_ANDROID_CACHE_DIR="${HOMETOWN_PACK_ANDROID_CACHE_DIR:-$HOMETOWN_PACK_MOD_DIR/.build/cache/love-android-11.5}"
+HOMETOWN_MOD_I18N_MOD_DIR="${HOMETOWN_MOD_I18N_MOD_DIR:-$SCRIPT_DIR}"
+HOMETOWN_MOD_I18N_MOD_DIR="$(CDPATH= cd -- "$HOMETOWN_MOD_I18N_MOD_DIR" && pwd -P)"
+HOMETOWN_MOD_I18N_OUTPUT_DIR="${HOMETOWN_MOD_I18N_OUTPUT_DIR:-$HOMETOWN_MOD_I18N_MOD_DIR/dist}"
+HOMETOWN_MOD_I18N_ANDROID_WORK_DIR="${HOMETOWN_MOD_I18N_ANDROID_WORK_DIR:-$HOMETOWN_MOD_I18N_MOD_DIR/.build/android}"
+HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR="${HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR:-$HOMETOWN_MOD_I18N_MOD_DIR/.build/cache/love-android-11.5}"
 
-HOMETOWN_PACK_ANDROID_REPO="${HOMETOWN_PACK_ANDROID_REPO:-https://github.com/love2d/love-android.git}"
-HOMETOWN_PACK_ANDROID_REF="${HOMETOWN_PACK_ANDROID_REF:-11.5}"
-HOMETOWN_PACK_ANDROID_APPLICATION_ID="${HOMETOWN_PACK_ANDROID_APPLICATION_ID:-org.hometownpack.i18n}"
-HOMETOWN_PACK_ANDROID_NAME="${HOMETOWN_PACK_ANDROID_NAME:-Hometown Pack}"
-HOMETOWN_PACK_ANDROID_ORIENTATION="${HOMETOWN_PACK_ANDROID_ORIENTATION:-landscape}"
-HOMETOWN_PACK_ANDROID_VERSION_CODE="${HOMETOWN_PACK_ANDROID_VERSION_CODE:-1}"
-HOMETOWN_PACK_ANDROID_VERSION_NAME="${HOMETOWN_PACK_ANDROID_VERSION_NAME:-}"
-HOMETOWN_PACK_ANDROID_ICON="${HOMETOWN_PACK_ANDROID_ICON:-}"
-HOMETOWN_PACK_ANDROID_NDK_DIR="${HOMETOWN_PACK_ANDROID_NDK_DIR:-}"
-HOMETOWN_PACK_OUTPUT_BASENAME="${HOMETOWN_PACK_OUTPUT_BASENAME:-hometown-pack}"
+HOMETOWN_MOD_I18N_ANDROID_REPO="${HOMETOWN_MOD_I18N_ANDROID_REPO:-https://github.com/love2d/love-android.git}"
+HOMETOWN_MOD_I18N_ANDROID_REF="${HOMETOWN_MOD_I18N_ANDROID_REF:-11.5}"
+HOMETOWN_MOD_I18N_ANDROID_APPLICATION_ID="${HOMETOWN_MOD_I18N_ANDROID_APPLICATION_ID:-org.hometown.mod.i18n}"
+HOMETOWN_MOD_I18N_ANDROID_NAME="${HOMETOWN_MOD_I18N_ANDROID_NAME:-Hometown Mod}"
+HOMETOWN_MOD_I18N_ANDROID_ORIENTATION="${HOMETOWN_MOD_I18N_ANDROID_ORIENTATION:-landscape}"
+HOMETOWN_MOD_I18N_ANDROID_VERSION_CODE="${HOMETOWN_MOD_I18N_ANDROID_VERSION_CODE:-1}"
+HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME="${HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME:-}"
+HOMETOWN_MOD_I18N_ANDROID_ICON="${HOMETOWN_MOD_I18N_ANDROID_ICON:-}"
+HOMETOWN_MOD_I18N_ANDROID_NDK_DIR="${HOMETOWN_MOD_I18N_ANDROID_NDK_DIR:-}"
+HOMETOWN_MOD_I18N_OUTPUT_BASENAME="${HOMETOWN_MOD_I18N_OUTPUT_BASENAME:-hometown-mod-i18n}"
 
 log() {
     printf '[android-build] %s\n' "$*" >&2
@@ -33,7 +33,7 @@ need_cmd() {
 }
 
 read_mod_version() {
-    python3 - "$HOMETOWN_PACK_MOD_DIR/mod.json" <<'PY'
+    python3 - "$HOMETOWN_MOD_I18N_MOD_DIR/mod.json" <<'PY'
 import re
 import sys
 from pathlib import Path
@@ -56,7 +56,7 @@ check_inputs() {
     need_cmd rsync
     need_cmd find
 
-    java_home="${HOMETOWN_PACK_ANDROID_JAVA_HOME:-${JAVA_HOME:-}}"
+    java_home="${HOMETOWN_MOD_I18N_ANDROID_JAVA_HOME:-${JAVA_HOME:-}}"
     if [ -n "$java_home" ]; then
         [ -x "$java_home/bin/java" ] || fail \
             "Configured Java home does not contain a Java executable: $java_home"
@@ -66,7 +66,7 @@ check_inputs() {
 
     java_version="$(java -version 2>&1 | sed -n 's/.*version "\([0-9][0-9]*\).*/\1/p' | head -n 1)"
     [ "$java_version" = "17" ] || fail \
-        "LÖVE Android 11.5 requires JDK 17; detected ${java_version:-unknown}. Set JAVA_HOME or HOMETOWN_PACK_ANDROID_JAVA_HOME to a JDK 17 installation."
+        "LÖVE Android 11.5 requires JDK 17; detected ${java_version:-unknown}. Set JAVA_HOME or HOMETOWN_MOD_I18N_ANDROID_JAVA_HOME to a JDK 17 installation."
 
     android_sdk="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
     [ -n "$android_sdk" ] || fail \
@@ -77,7 +77,7 @@ check_inputs() {
     [ -d "$ANDROID_SDK_ROOT/build-tools/34.0.0" ] || fail \
         "Missing Android Build Tools 34.0.0 under $ANDROID_SDK_ROOT"
 
-    ndk_dir="${HOMETOWN_PACK_ANDROID_NDK_DIR:-$ANDROID_SDK_ROOT/ndk/25.2.9519653}"
+    ndk_dir="${HOMETOWN_MOD_I18N_ANDROID_NDK_DIR:-$ANDROID_SDK_ROOT/ndk/25.2.9519653}"
     [ -d "$ndk_dir" ] || fail \
         "Missing Android NDK 25.2.9519653 under $ndk_dir"
     [ -f "$ndk_dir/source.properties" ] || fail \
@@ -85,115 +85,115 @@ check_inputs() {
     grep -Eq '^Pkg\.Revision[[:space:]]*=[[:space:]]*25\.2\.9519653[[:space:]]*$' \
         "$ndk_dir/source.properties" || fail \
         "Android NDK under $ndk_dir is not version 25.2.9519653"
-    HOMETOWN_PACK_ANDROID_NDK_DIR="$ndk_dir"
+    HOMETOWN_MOD_I18N_ANDROID_NDK_DIR="$ndk_dir"
 
-    if [ -n "${HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE:-}" ]; then
-        [ -f "$HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE" ] || fail \
-            "Android signing keystore does not exist: $HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE"
-        [ -n "${HOMETOWN_PACK_ANDROID_SIGNING_STORE_PASSWORD:-}" ] || fail \
-            "HOMETOWN_PACK_ANDROID_SIGNING_STORE_PASSWORD is required with a custom Android keystore"
-        [ -n "${HOMETOWN_PACK_ANDROID_SIGNING_KEY_ALIAS:-}" ] || fail \
-            "HOMETOWN_PACK_ANDROID_SIGNING_KEY_ALIAS is required with a custom Android keystore"
-        [ -n "${HOMETOWN_PACK_ANDROID_SIGNING_KEY_PASSWORD:-}" ] || fail \
-            "HOMETOWN_PACK_ANDROID_SIGNING_KEY_PASSWORD is required with a custom Android keystore"
+    if [ -n "${HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE:-}" ]; then
+        [ -f "$HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE" ] || fail \
+            "Android signing keystore does not exist: $HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE"
+        [ -n "${HOMETOWN_MOD_I18N_ANDROID_SIGNING_STORE_PASSWORD:-}" ] || fail \
+            "HOMETOWN_MOD_I18N_ANDROID_SIGNING_STORE_PASSWORD is required with a custom Android keystore"
+        [ -n "${HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_ALIAS:-}" ] || fail \
+            "HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_ALIAS is required with a custom Android keystore"
+        [ -n "${HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_PASSWORD:-}" ] || fail \
+            "HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_PASSWORD is required with a custom Android keystore"
 
-        HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE="$(CDPATH= cd -- "$(dirname -- "$HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE")" && pwd -P)/$(basename -- "$HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE")"
-        export HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE
+        HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE="$(CDPATH= cd -- "$(dirname -- "$HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE")" && pwd -P)/$(basename -- "$HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE")"
+        export HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE
     fi
 
-    printf '%s' "$HOMETOWN_PACK_ANDROID_APPLICATION_ID" \
+    printf '%s' "$HOMETOWN_MOD_I18N_ANDROID_APPLICATION_ID" \
         | grep -Eq '^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$' || fail \
-        "Invalid Android application id: $HOMETOWN_PACK_ANDROID_APPLICATION_ID"
-    [ -n "$HOMETOWN_PACK_ANDROID_NAME" ] || fail "Android application name cannot be empty"
-    case "$HOMETOWN_PACK_ANDROID_ORIENTATION" in
+        "Invalid Android application id: $HOMETOWN_MOD_I18N_ANDROID_APPLICATION_ID"
+    [ -n "$HOMETOWN_MOD_I18N_ANDROID_NAME" ] || fail "Android application name cannot be empty"
+    case "$HOMETOWN_MOD_I18N_ANDROID_ORIENTATION" in
         landscape|portrait|sensorLandscape|sensorPortrait) ;;
-        *) fail "Unsupported Android orientation: $HOMETOWN_PACK_ANDROID_ORIENTATION" ;;
+        *) fail "Unsupported Android orientation: $HOMETOWN_MOD_I18N_ANDROID_ORIENTATION" ;;
     esac
-    printf '%s' "$HOMETOWN_PACK_ANDROID_VERSION_CODE" | grep -Eq '^[1-9][0-9]*$' || fail \
+    printf '%s' "$HOMETOWN_MOD_I18N_ANDROID_VERSION_CODE" | grep -Eq '^[1-9][0-9]*$' || fail \
         "Android version code must be a positive integer"
 
-    if [ -z "$HOMETOWN_PACK_ANDROID_VERSION_NAME" ]; then
-        HOMETOWN_PACK_ANDROID_VERSION_NAME="$(read_mod_version)"
+    if [ -z "$HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME" ]; then
+        HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME="$(read_mod_version)"
     fi
-    [ -n "$HOMETOWN_PACK_ANDROID_VERSION_NAME" ] || fail "Android version name cannot be empty"
+    [ -n "$HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME" ] || fail "Android version name cannot be empty"
 }
 
 ensure_android_source() {
-    if [ -d "$HOMETOWN_PACK_ANDROID_CACHE_DIR/.git" ]; then
-        if ! git -C "$HOMETOWN_PACK_ANDROID_CACHE_DIR" rev-parse --verify --quiet \
-            "${HOMETOWN_PACK_ANDROID_REF}^{commit}" >/dev/null; then
-            git -C "$HOMETOWN_PACK_ANDROID_CACHE_DIR" fetch --depth 1 origin \
-                "refs/tags/${HOMETOWN_PACK_ANDROID_REF}:refs/tags/${HOMETOWN_PACK_ANDROID_REF}"
+    if [ -d "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR/.git" ]; then
+        if ! git -C "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR" rev-parse --verify --quiet \
+            "${HOMETOWN_MOD_I18N_ANDROID_REF}^{commit}" >/dev/null; then
+            git -C "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR" fetch --depth 1 origin \
+                "refs/tags/${HOMETOWN_MOD_I18N_ANDROID_REF}:refs/tags/${HOMETOWN_MOD_I18N_ANDROID_REF}"
         fi
-    elif [ -e "$HOMETOWN_PACK_ANDROID_CACHE_DIR" ]; then
-        fail "Android cache path exists but is not a Git checkout: $HOMETOWN_PACK_ANDROID_CACHE_DIR"
+    elif [ -e "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR" ]; then
+        fail "Android cache path exists but is not a Git checkout: $HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR"
     else
-        mkdir -p "$(dirname "$HOMETOWN_PACK_ANDROID_CACHE_DIR")"
-        log "Cloning LÖVE Android ${HOMETOWN_PACK_ANDROID_REF}"
-        git clone --recurse-submodules --depth 1 --branch "$HOMETOWN_PACK_ANDROID_REF" \
-            "$HOMETOWN_PACK_ANDROID_REPO" "$HOMETOWN_PACK_ANDROID_CACHE_DIR"
+        mkdir -p "$(dirname "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR")"
+        log "Cloning LÖVE Android ${HOMETOWN_MOD_I18N_ANDROID_REF}"
+        git clone --recurse-submodules --depth 1 --branch "$HOMETOWN_MOD_I18N_ANDROID_REF" \
+            "$HOMETOWN_MOD_I18N_ANDROID_REPO" "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR"
     fi
 
-    git -C "$HOMETOWN_PACK_ANDROID_CACHE_DIR" checkout --detach "$HOMETOWN_PACK_ANDROID_REF" >/dev/null
-    git -C "$HOMETOWN_PACK_ANDROID_CACHE_DIR" submodule update --init --recursive
+    git -C "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR" checkout --detach "$HOMETOWN_MOD_I18N_ANDROID_REF" >/dev/null
+    git -C "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR" submodule update --init --recursive
 }
 
 stage_android_source() {
-    local stage_dir="$HOMETOWN_PACK_ANDROID_WORK_DIR/project"
+    local stage_dir="$HOMETOWN_MOD_I18N_ANDROID_WORK_DIR/project"
 
     rm -rf "$stage_dir"
     mkdir -p "$stage_dir"
     rsync -a --delete \
         --exclude='/.git' \
         --exclude='/.git/' \
-        "$HOMETOWN_PACK_ANDROID_CACHE_DIR/" "$stage_dir/"
+        "$HOMETOWN_MOD_I18N_ANDROID_CACHE_DIR/" "$stage_dir/"
     mkdir -p "$stage_dir/app/src/embed/assets"
-    cp "$HOMETOWN_PACK_ANDROID_WORK_DIR/love/${HOMETOWN_PACK_OUTPUT_BASENAME}-release.love" \
+    cp "$HOMETOWN_MOD_I18N_ANDROID_WORK_DIR/love/${HOMETOWN_MOD_I18N_OUTPUT_BASENAME}-release.love" \
         "$stage_dir/app/src/embed/assets/game.love"
 
-    if [ -n "$HOMETOWN_PACK_ANDROID_ICON" ]; then
-        [ -f "$HOMETOWN_PACK_ANDROID_ICON" ] || fail \
-            "Android icon does not exist: $HOMETOWN_PACK_ANDROID_ICON"
+    if [ -n "$HOMETOWN_MOD_I18N_ANDROID_ICON" ]; then
+        [ -f "$HOMETOWN_MOD_I18N_ANDROID_ICON" ] || fail \
+            "Android icon does not exist: $HOMETOWN_MOD_I18N_ANDROID_ICON"
         for density in ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi; do
             mkdir -p "$stage_dir/app/src/main/res/drawable-$density"
-            cp "$HOMETOWN_PACK_ANDROID_ICON" \
+            cp "$HOMETOWN_MOD_I18N_ANDROID_ICON" \
                 "$stage_dir/app/src/main/res/drawable-$density/love.png"
         done
     fi
 
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-android-properties \
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-android-properties \
         "$stage_dir/gradle.properties" \
-        "$HOMETOWN_PACK_ANDROID_APPLICATION_ID" \
-        "$HOMETOWN_PACK_ANDROID_NAME" \
-        "$HOMETOWN_PACK_ANDROID_ORIENTATION" \
-        "$HOMETOWN_PACK_ANDROID_VERSION_CODE" \
-        "$HOMETOWN_PACK_ANDROID_VERSION_NAME"
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-android-gradle \
+        "$HOMETOWN_MOD_I18N_ANDROID_APPLICATION_ID" \
+        "$HOMETOWN_MOD_I18N_ANDROID_NAME" \
+        "$HOMETOWN_MOD_I18N_ANDROID_ORIENTATION" \
+        "$HOMETOWN_MOD_I18N_ANDROID_VERSION_CODE" \
+        "$HOMETOWN_MOD_I18N_ANDROID_VERSION_NAME"
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-android-gradle \
         "$stage_dir/app/build.gradle"
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-android-game-activity \
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-android-game-activity \
         "$stage_dir/love/src/main/java/org/love2d/android/GameActivity.java"
-    python3 "$HOMETOWN_PACK_MOD_DIR/build_standalone.py" patch-android-local-properties \
+    python3 "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.py" patch-android-local-properties \
         "$stage_dir/local.properties" \
         "$ANDROID_SDK_ROOT"
 }
 
 build_love_archive() {
-    local love_output="$HOMETOWN_PACK_ANDROID_WORK_DIR/love"
+    local love_output="$HOMETOWN_MOD_I18N_ANDROID_WORK_DIR/love"
 
     rm -rf "$love_output"
     mkdir -p "$love_output"
-    HOMETOWN_PACK_MOD_DIR="$HOMETOWN_PACK_MOD_DIR" \
-        HOMETOWN_PACK_ANDROID_TOUCH_SKIP_INTRO=1 \
-        HOMETOWN_PACK_BUILD_VARIANTS=release \
-        HOMETOWN_PACK_BUILD_WINDOWS_EXE=0 \
-        HOMETOWN_PACK_OUTPUT_DIR="$love_output" \
-        "$HOMETOWN_PACK_MOD_DIR/build_standalone.sh"
-    [ -s "$love_output/${HOMETOWN_PACK_OUTPUT_BASENAME}-release.love" ] || fail \
+    HOMETOWN_MOD_I18N_MOD_DIR="$HOMETOWN_MOD_I18N_MOD_DIR" \
+        HOMETOWN_MOD_I18N_ANDROID_TOUCH_SKIP_INTRO=1 \
+        HOMETOWN_MOD_I18N_BUILD_VARIANTS=release \
+        HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=0 \
+        HOMETOWN_MOD_I18N_OUTPUT_DIR="$love_output" \
+        "$HOMETOWN_MOD_I18N_MOD_DIR/build_standalone.sh"
+    [ -s "$love_output/${HOMETOWN_MOD_I18N_OUTPUT_BASENAME}-release.love" ] || fail \
         "The release .love archive was not created"
 }
 
 build_apk() {
-    local stage_dir="$HOMETOWN_PACK_ANDROID_WORK_DIR/project"
+    local stage_dir="$HOMETOWN_MOD_I18N_ANDROID_WORK_DIR/project"
     local apk_source apk_output apksigner
 
     (cd "$stage_dir" && ./gradlew --no-daemon assembleEmbedNoRecordRelease)
@@ -202,8 +202,8 @@ build_apk() {
         -path '*/embedNoRecord/release/*' | sort | tail -n 1)"
     [ -n "$apk_source" ] || fail "Gradle completed without producing an APK"
 
-    apk_output="$HOMETOWN_PACK_OUTPUT_DIR/${HOMETOWN_PACK_OUTPUT_BASENAME}-android.apk"
-    mkdir -p "$HOMETOWN_PACK_OUTPUT_DIR"
+    apk_output="$HOMETOWN_MOD_I18N_OUTPUT_DIR/${HOMETOWN_MOD_I18N_OUTPUT_BASENAME}-android.apk"
+    mkdir -p "$HOMETOWN_MOD_I18N_OUTPUT_DIR"
     cp "$apk_source" "$apk_output"
     test -s "$apk_output"
     apksigner="$ANDROID_SDK_ROOT/build-tools/34.0.0/apksigner"

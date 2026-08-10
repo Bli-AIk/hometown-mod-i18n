@@ -140,11 +140,11 @@ def patch_android_gradle(args: argparse.Namespace) -> None:
         }
     }
 """
-    replacement = """    def signingKeystore = System.getenv("HOMETOWN_PACK_ANDROID_SIGNING_KEYSTORE")
+    replacement = """    def signingKeystore = System.getenv("HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEYSTORE")
     def hasCustomSigning = signingKeystore != null && !signingKeystore.isEmpty()
-    def signingStorePassword = System.getenv("HOMETOWN_PACK_ANDROID_SIGNING_STORE_PASSWORD")
-    def signingKeyAlias = System.getenv("HOMETOWN_PACK_ANDROID_SIGNING_KEY_ALIAS")
-    def signingKeyPassword = System.getenv("HOMETOWN_PACK_ANDROID_SIGNING_KEY_PASSWORD")
+    def signingStorePassword = System.getenv("HOMETOWN_MOD_I18N_ANDROID_SIGNING_STORE_PASSWORD")
+    def signingKeyAlias = System.getenv("HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_ALIAS")
+    def signingKeyPassword = System.getenv("HOMETOWN_MOD_I18N_ANDROID_SIGNING_KEY_PASSWORD")
 
     signingConfigs {
         if (hasCustomSigning) {

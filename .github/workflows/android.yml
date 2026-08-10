@@ -31,6 +31,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: hometown-pack-android-${{ github.sha }}
-          path: dist/hometown-pack-android.apk
+          name: hometown-mod-i18n-android-${{ github.sha }}
+          path: dist/hometown-mod-i18n-android.apk
           if-no-files-found: error

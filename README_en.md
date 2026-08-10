@@ -1,11 +1,11 @@
-# Hometown Pack (i18n)
+# Hometown Mod (i18n)
 
 [![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE)
 <br>
 <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" />
 <img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
 
-![Hometown Pack screenshot](./screenshot.png)
+![Hometown Mod screenshot](./screenshot.png)
 
 <details>
 <summary>More screenshots (night walk in the rain / castletown / transformation / Noelle's house)</summary>
@@ -20,8 +20,8 @@
 
 </details>
 
-**Hometown Pack (i18n)** — a Simplified Chinese localization fork of the Hometown
-(light world) content pack, bundling the [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)
+**Hometown Mod (i18n)** — a Simplified Chinese localization fork of the Hometown
+(light world) mod, bundling the [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)
 multilingual localization library.
 
 | English | 简体中文                |
@@ -30,7 +30,7 @@ multilingual localization library.
 
 ## What is this
 
-A Simplified Chinese localization fork of the `hometown_pack` subtree in AfterChill's
+A Simplified Chinese localization fork of the Hometown Mod subtree in AfterChill's
 [`sekalisukarumah-boop/deltarune-AC`](https://github.com/sekalisukarumah-boop/deltarune-AC)
 (BSD-3-Clause):
 
@@ -60,8 +60,8 @@ A Simplified Chinese localization fork of the `hometown_pack` subtree in AfterCh
 Drop the whole directory into Kristal's `mods/` folder (or package it as a mod ZIP):
 
 ```bash
-git clone --recurse-submodules git@github.com:Bli-AIk/hometown-pack-i18n.git
-cp -r hometown-pack-i18n /path/to/kristal/mods/hometown_pack
+git clone --recurse-submodules git@github.com:Bli-AIk/hometown-mod-i18n.git
+cp -r hometown-mod-i18n /path/to/kristal/mods/hometown-mod-i18n
 ```
 
 ## Development
@@ -116,7 +116,7 @@ references are listed below (attribution format follows the
 
 | Project | Author/Organization |
 |---------|---------------------|
-| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (`hometown_pack` subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
 | [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source) | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/) |
 | [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0) | [Bli-AIk](https://github.com/Bli-AIk) |
 | [WeatherLib](https://github.com/MrFukuo/WeatherLib) (weather system) | [MrFukuo](https://github.com/MrFukuo) (crocokuo) |

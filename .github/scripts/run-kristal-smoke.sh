@@ -4,7 +4,7 @@ set -eu
 : "${KRISTAL:?set KRISTAL to a clean Kristal v0.10 checkout}"
 
 root=$(CDPATH='' cd -- "$(dirname -- "$0")/../.." && pwd -P)
-mod_id=hometown_pack
+mod_id=hometown-mod-i18n
 mod_path="$KRISTAL/mods/$mod_id"
 log=$(mktemp)
 sandbox=$(mktemp -d)
