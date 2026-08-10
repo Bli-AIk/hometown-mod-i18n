@@ -1,4 +1,9 @@
 {
+ "map_dark_castletown_area_2_new_name": "我的城堡镇",
+ "map_dark_castletown_tv_studio_name": "城堡镇 - TV之家",
+ "map_light_hometown_noellehouse_kitchen_name": "[name:noelle]的家",
+ "map_light_hometown_torielhouse_kris_room_name": "[name:kris]的房间",
+ "map_light_hometown_town_mid_name": "家乡镇",
  "\nOpen\nFridge\n": "打开冰箱",
  "* \"Take a rest here.[wait:5] If anyone asks -- you're writing!\"": "* “在这儿稍事休息吧。[wait:5]\n若有人问起--你就说是在写作！”",
  "* \"Throughout my career, some of my best ideas came from dreams.\"": "“* 纵观写作一生，\n 不知我有多少绝妙文思自梦泉涌。”",
