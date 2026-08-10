@@ -22,7 +22,7 @@
     "map": "light/hometown/torielhouse/kris_room",
 
     // The party. The first character is the player.
-    "party": ["kris"],
+    "party": ["mainchara"],
 
     // The inventory. Contains three darkburgers, a cell phone and a shadow crystal by default.
     "inventory": {

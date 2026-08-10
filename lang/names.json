@@ -102,5 +102,9 @@
  "krismas": {
   "en": "Krismas",
   "zh_hans": "巧克里斯"
+ },
+ "mainchara": {
+  "en": "MC",
+  "zh_hans": "主角"
  }
 }
