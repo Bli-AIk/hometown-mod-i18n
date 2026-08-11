@@ -25,6 +25,18 @@ function Mod:postInit(newfile)
         print("KRISTAL_MOD_SMOKE=PASS")
         love.event.quit()
     end
+
+    -- 临时 hook
+    -- Keep the Hometown north gate open for testing. The initial map is not
+    -- town_north, so its noellegate event may not exist yet.
+    Game:setFlag("noelle_gate_open", true)
+    if Game.world and Game.world.map and Game.world.map.id == "light/hometown/town_north" then
+        local gate = Game.world.map:getEvent("noellegate")
+        if gate then
+            gate:open()
+        end
+    end
+
 end
 
 
