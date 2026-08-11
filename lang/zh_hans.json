@@ -217,7 +217,7 @@
  "* (It says \"NGAHHHH!!![wait:5] I MEAN IT!!!\")": "* （上面写着\"啊啊啊啊！！！\n[wait:5] 我是认真的！！！\"）",
  "* (It seems to be a bit of a cat-sty...)": "* （这里似乎有点像个猫窝...）",
  "* (It seems to be locked.)[wait:5]\n* (It may never open again.)": "* （似乎锁着。）[wait:5]\n* （可能再也打不开了。）",
- "* (It's Dess's bed. Underneath are army rations,[wait:5] guitar picks,[wait:5] paintball gear,[wait:5] ice skates...)": "* （这是黛丝的床。底下有军粮，\n[wait:5] 拨片，[wait:5] 彩弹装备，[wait:5] 溜冰鞋...）",
+ "* (It's Dess's bed. Underneath are army rations,[wait:5] guitar picks,[wait:5] paintball gear,[wait:5] ice skates...)": "* （这是[name:dess]的床。底下有军粮，\n[wait:5] 拨片，[wait:5] 彩弹装备，[wait:5] 溜冰鞋...）",
  "* (It's Noelle's absurdly dangerous ninja weapon collection.)": "* （这是[name:noelle]的危险忍者武器收藏。）",
  "* (It's Noelle's bed. There's ample space to hide underneath.)": "* （这是[name:noelle]的床。底下有充足的空间\n可以藏身。）",
  "* (It's Noelle's computer. The cycling wallpaper is...)": "* （这是[name:noelle]的电脑。\n循环播放的壁纸是...）",
