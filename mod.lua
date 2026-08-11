@@ -53,6 +53,8 @@ function Mod:onMapMusic(map, music)
 			return "deltarune/town"
 		elseif Game:getFlag("hometown_time", "day") == "night" then
 			return "forecasted_hometown_night"
+		elseif Game:getFlag("hometown_time", "day") == "sunrise" then
+			return "deltarune/mus_birdnoise"
 		end
 	end
 	if music == "church" then
