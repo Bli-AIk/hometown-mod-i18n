@@ -33,18 +33,18 @@
   <object id="21" name="interactable" x="470" y="104" width="98" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (It's full of many backup devices,[wait:5] like extra mice,[wait:5] extra keyboards,[wait:5] or extra maracas.)"/>
+    <property name="text" value="{hometown.text.it_s_full_of_many_backup_devices_wait_5_like_ext_aaffe0b0ed}"/>
    </properties>
   </object>
   <object id="22" name="interactable" x="100" y="86" width="42" height="40">
    <properties>
-    <property name="text1" value="* (The closet is spacious and full of old electronics.)"/>
-    <property name="text2" value="* (A large person could easily fit inside.)"/>
+    <property name="text1" value="{hometown.text.the_closet_is_spacious_and_full_of_old_electroni_c265038580}"/>
+    <property name="text2" value="{hometown.text.a_large_person_could_easily_fit_inside_ed370994a4}"/>
    </properties>
   </object>
   <object id="23" name="interactable" x="256" y="86" width="144" height="40">
    <properties>
-    <property name="text" value="* (Various posters talking about Internet safety.)"/>
+    <property name="text" value="{hometown.text.various_posters_talking_about_internet_safety_9c44161560}"/>
    </properties>
   </object>
   <object id="25" name="transition" x="280" y="480" width="80" height="40">

@@ -187,7 +187,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (BF : LIVING QUARTERS FOR BAD GUYS)"
+            ["text"] = "{hometown.text.bf_living_quarters_for_bad_guys_06e5945156}"
           }
         },
         {
@@ -202,7 +202,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The door is locked.)"
+            ["text"] = "{hometown.text.the_door_is_locked_40c4b0c9dc}"
           }
         },
         {
@@ -217,7 +217,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (2F : LIVING QUARTERS)"
+            ["text"] = "{hometown.text.2f_living_quarters_18502175b0}"
           }
         },
         {

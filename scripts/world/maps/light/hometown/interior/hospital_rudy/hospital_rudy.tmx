@@ -40,17 +40,17 @@
   </object>
   <object id="14" name="interactable" x="478" y="290" width="44" height="48">
    <properties>
-    <property name="text" value="* (It's a chair.)"/>
+    <property name="text" value="{hometown.text.it_s_a_chair_10976e57a6}"/>
    </properties>
   </object>
   <object id="15" name="interactable" x="400" y="250" width="82" height="40">
    <properties>
-    <property name="text" value="* (It's a bouquet of flowers in a glass container.)"/>
+    <property name="text" value="{hometown.text.it_s_a_bouquet_of_flowers_in_a_glass_container_5bf47bcd04}"/>
    </properties>
   </object>
   <object id="16" name="interactable" x="122.5" y="344" width="40" height="56">
    <properties>
-    <property name="text" value="* (It's a sink.)"/>
+    <property name="text" value="{hometown.text.it_s_a_sink_70b61bc3d8}"/>
    </properties>
   </object>
   <object id="17" name="transition" x="282" y="480" width="80" height="40">

@@ -1,14 +1,14 @@
 return {
     manual_stand = function(cutscene, me, chara, facing)
-        cutscene:text("* It's a stand for your Manual.")
+        cutscene:text("{hometown.text.it_s_a_stand_for_your_manual_34960470b7}")
         if cutscene:getCharacter("ralsei") then
-            cutscene:text("* I thought you might want to keep it here in case you want to read it!", "blush_smile", "ralsei")
+            cutscene:text("{hometown.text.i_thought_you_might_want_to_keep_it_here_in_case_d3bab1869a}", "blush_smile", "ralsei")
         end
     end,
     moss = function(cutscene, me, chara, facing)
-        cutscene:text("* It's some decorative moss. Looks delicious.")
+        cutscene:text("{hometown.text.it_s_some_decorative_moss_looks_delicious_d4786dd6e0}")
         if cutscene:getCharacter("susie") then
-            cutscene:text("* Why the hell does YOUR room get moss!?", "nervous_side", "susie")
+            cutscene:text("{hometown.text.why_the_hell_does_your_room_get_moss_474fbb4a4f}", "nervous_side", "susie")
         end
     end,
 }

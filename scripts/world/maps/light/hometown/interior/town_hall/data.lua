@@ -226,7 +226,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a chair.)"
+            ["text"] = "{hometown.text.it_s_a_chair_10976e57a6}"
           }
         },
         {
@@ -241,7 +241,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a painting of the town.)"
+            ["text"] = "{hometown.text.it_s_a_painting_of_the_town_21927e2766}"
           }
         },
         {
@@ -256,7 +256,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a small pine tree.)"
+            ["text"] = "{hometown.text.it_s_a_small_pine_tree_9e833f6e43}"
           }
         },
         {

@@ -184,7 +184,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* A cactus.\n[wait:5]* There's not much to say about it."
+            ["text"] = "{hometown.text.a_cactus_wait_5_there_s_not_much_to_say_about_it_1bbfd199f4}"
           }
         },
         {
@@ -200,10 +200,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (...[wait:5] How to Draw Dragons is at the bottom of the drawer.",
-            ["text2"] = "* (The purple character on the cover is dressed...[wait:5] immodestly.)",
-            ["text3"] = "* (...)",
-            ["text4"] = "* (Your brother will never return this book.)"
+            ["text1"] = "{hometown.text.wait_5_how_to_draw_dragons_is_at_the_bottom_of_t_506f137a1e}",
+            ["text2"] = "{hometown.text.the_purple_character_on_the_cover_is_dressed_wai_f2dc60e615}",
+            ["text3"] = "{hometown.text.text_9727d4d874}",
+            ["text4"] = "{hometown.text.your_brother_will_never_return_this_book_5a4fc5dae4}"
           }
         },
         {
@@ -218,7 +218,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's what they call \"you.\")"
+            ["text"] = "{hometown.text.it_s_what_they_call_you_39c07d3b4d}"
           }
         },
         {
@@ -234,7 +234,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* The door is locked."
+            ["text"] = "{hometown.text.the_door_is_locked_7b35d07eca}"
           }
         },
         {
@@ -250,7 +250,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (There's no time to read books. Just generally.)"
+            ["text"] = "{hometown.text.there_s_no_time_to_read_books_just_generally_5e204904c2}"
           }
         },
         {

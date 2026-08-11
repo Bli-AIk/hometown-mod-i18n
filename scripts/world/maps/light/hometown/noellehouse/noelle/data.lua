@@ -285,7 +285,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's Noelle's bed. There's ample space to hide underneath.)"
+            ["text"] = "{hometown.text.it_s_noelle_s_bed_there_s_ample_space_to_hide_un_1f0b8db894}"
           }
         },
         {
@@ -315,7 +315,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a state of the art high-definition TV with old game consoles under it.)"
+            ["text"] = "{hometown.text.it_s_a_state_of_the_art_high_definition_tv_with__464f726d7e}"
           }
         },
         {
@@ -330,7 +330,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a couch,[wait:5] for watching the TV.)"
+            ["text"] = "{hometown.text.it_s_a_couch_wait_5_for_watching_the_tv_8ce4e1af7f}"
           }
         },
         {
@@ -360,7 +360,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's Noelle's homework desk.)"
+            ["text"] = "{hometown.text.it_s_noelle_s_homework_desk_24e7f14650}"
           }
         },
         {
@@ -375,7 +375,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (A clothes wardrobe. A pair of small angel wings are inside...[wait:5] worn out and tattered.)"
+            ["text"] = "{hometown.text.a_clothes_wardrobe_a_pair_of_small_angel_wings_a_c5eebc17fe}"
           }
         }
       }

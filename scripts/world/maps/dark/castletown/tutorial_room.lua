@@ -301,7 +301,7 @@ return {
           visible = true,
           properties = {
             ["actor"] = "castle_town/coody",
-            ["text"] = "* I'm a worm. I don't understand taxes and values."
+            ["text"] = "{hometown.text.i_m_a_worm_i_don_t_understand_taxes_and_values_63d39eaa99}"
           }
         },
         {
@@ -317,8 +317,8 @@ return {
           visible = true,
           properties = {
             ["actor"] = "castle_town/mrelegance",
-            ["text1"] = "* We're'n building up the area to be a bit'n more board-like.",
-            ["text2"] = "* The ponmen'll be happy,[wait:5] too."
+            ["text1"] = "{hometown.text.we_re_n_building_up_the_area_to_be_a_bit_n_more__dea8f57017}",
+            ["text2"] = "{hometown.text.the_ponmen_ll_be_happy_wait_5_too_e866a7b416}"
           }
         }
       }

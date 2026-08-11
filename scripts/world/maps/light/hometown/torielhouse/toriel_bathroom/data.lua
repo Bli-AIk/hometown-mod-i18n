@@ -216,8 +216,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* On the shower ledge,[wait:5] there's a small container of apple-scented shampoo.",
-            ["text2"] = "* ... and a gallon-sized container of pet shampoo."
+            ["text1"] = "{hometown.text.on_the_shower_ledge_wait_5_there_s_a_small_conta_52822089e2}",
+            ["text2"] = "{hometown.text.and_a_gallon_sized_container_of_pet_shampoo_791f2be0a8}"
           }
         },
         {
@@ -247,9 +247,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* You looked inside the sink cupboard.\n[wait:5]* There's...",
-            ["text2"] = "* A can of Ice-E's Cool Boys Body Spray \"Spray For The Boys,\" Flamin' Hot Pizza Flavor.",
-            ["text3"] = "* It seems to be almost entirely full."
+            ["text1"] = "{hometown.text.you_looked_inside_the_sink_cupboard_wait_5_there_3d4c7c2c30}",
+            ["text2"] = "{hometown.text.a_can_of_ice_e_s_cool_boys_body_spray_spray_for__ed46212e83}",
+            ["text3"] = "{hometown.text.it_seems_to_be_almost_entirely_full_9cd0e0ad53}"
           }
         }
       }

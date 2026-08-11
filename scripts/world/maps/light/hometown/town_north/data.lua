@@ -1069,8 +1069,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's a broken grill.)",
-            ["text2"] = "* (... It smells like burnt cat food.)"
+            ["text1"] = "{hometown.text.it_s_a_broken_grill_c7d8a06426}",
+            ["text2"] = "{hometown.text.it_smells_like_burnt_cat_food_2bbd5ea797}"
           }
         },
         {
@@ -1153,7 +1153,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (There's some kind of scratching and hissing from inside.)"
+            ["text"] = "{hometown.text.there_s_some_kind_of_scratching_and_hissing_from_96bb852904}"
           }
         },
         {
@@ -1183,9 +1183,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (There's a cat flap.)",
-            ["text2"] = "* (It's locked.)",
-            ["text3"] = "* (Somehow.)"
+            ["text1"] = "{hometown.text.there_s_a_cat_flap_3fe4dfdda4}",
+            ["text2"] = "{hometown.text.it_s_locked_827a359a7f}",
+            ["text3"] = "{hometown.text.somehow_cc2a79c4f9}"
           }
         },
         {
@@ -1200,8 +1200,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (Various cat-themed junk is piled up inside the house.)",
-            ["text2"] = "* (It seems to be a bit of a cat-sty...)"
+            ["text1"] = "{hometown.text.various_cat_themed_junk_is_piled_up_inside_the_h_88adbcae9f}",
+            ["text2"] = "{hometown.text.it_seems_to_be_a_bit_of_a_cat_sty_2d4ca93224}"
           }
         },
         {
@@ -1216,8 +1216,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
+            ["text2"] = "{hometown.text.wait_5_the_town_it_s_pretty_empty_today_fa5dd2f6c7}"
           }
         },
         {
@@ -1232,8 +1232,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
+            ["text2"] = "{hometown.text.wait_5_the_town_it_s_pretty_empty_today_fa5dd2f6c7}"
           }
         },
         {

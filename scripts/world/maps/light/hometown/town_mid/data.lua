@@ -795,7 +795,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Here at ICE-E'S PEZZA, You're Family.)"
+            ["text"] = "{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"
           }
         },
         {
@@ -810,7 +810,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Here at ICE-E'S PEZZA, You're Family.)"
+            ["text"] = "{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"
           }
         },
         {
@@ -825,7 +825,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's locked...)"
+            ["text"] = "{hometown.text.it_s_locked_be68bf3c90}"
           }
         },
         {
@@ -840,8 +840,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5]The town is pretty empty today.)"
+            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
+            ["text2"] = "{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"
           }
         },
         {
@@ -856,8 +856,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5]The town is pretty empty today.)"
+            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
+            ["text2"] = "{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"
           }
         },
         {

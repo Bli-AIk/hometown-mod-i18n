@@ -183,27 +183,27 @@
  <objectgroup color="#ff00ff" id="7" name="objects">
   <object id="112" name="interactable" x="756" y="636" width="50" height="56">
    <properties>
-    <property name="text" value="* (It's Noelle's absurdly dangerous ninja weapon collection.)"/>
+    <property name="text" value="{hometown.text.it_s_noelle_s_absurdly_dangerous_ninja_weapon_co_779979deec}"/>
    </properties>
   </object>
   <object id="114" name="interactable" x="1034" y="254" width="40" height="40">
    <properties>
-    <property name="text" value="* (It's a heart or human-soul shaped pillow,[wait:5] depending on your opinion.)"/>
+    <property name="text" value="{hometown.text.it_s_a_heart_or_human_soul_shaped_pillow_wait_5__dd73b57541}"/>
    </properties>
   </object>
   <object id="115" name="interactable" x="870" y="962" width="52" height="40">
    <properties>
-    <property name="text" value="* (It's a thermostat. The only option is cold.)"/>
+    <property name="text" value="{hometown.text.it_s_a_thermostat_the_only_option_is_cold_51854b73f6}"/>
    </properties>
   </object>
   <object id="116" name="interactable" x="406" y="942" width="68" height="52">
    <properties>
-    <property name="text" value="* (It's a fridge containing lots of greens and bottled water.)"/>
+    <property name="text" value="{hometown.text.it_s_a_fridge_containing_lots_of_greens_and_bott_8210899506}"/>
    </properties>
   </object>
   <object id="117" name="interactable" x="906" y="1168" width="94" height="66">
    <properties>
-    <property name="text" value="* (Just an empty table.)"/>
+    <property name="text" value="{hometown.text.just_an_empty_table_a493cafeca}"/>
    </properties>
   </object>
   <object id="118" name="interactable" x="202" y="998" width="32" height="60">
@@ -214,12 +214,12 @@
   </object>
   <object id="119" name="interactable" x="1156" y="648" width="54" height="54">
    <properties>
-    <property name="text" value="* (It's a tree that would potentially fall down if you climbed it.)"/>
+    <property name="text" value="{hometown.text.it_s_a_tree_that_would_potentially_fall_down_if__3b4827efa7}"/>
    </properties>
   </object>
   <object id="122" name="interactable" x="1010" y="960" width="40" height="40">
    <properties>
-    <property name="text" value="* (The auto-treat-catcher is ready to nab anything in range.)"/>
+    <property name="text" value="{hometown.text.the_auto_treat_catcher_is_ready_to_nab_anything__8106040117}"/>
    </properties>
   </object>
  </objectgroup>

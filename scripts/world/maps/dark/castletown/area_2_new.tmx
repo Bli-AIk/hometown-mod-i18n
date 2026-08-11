@@ -403,7 +403,7 @@
   <object id="120" name="interactable" x="529" y="560.5" width="70.375" height="46.1667">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's locked.)"/>
+    <property name="text1" value="{hometown.text.it_s_locked_827a359a7f}"/>
    </properties>
   </object>
   <object id="121" name="transition" x="960" y="560" width="56.5" height="26">
@@ -416,8 +416,8 @@
   <object id="122" name="interactable" x="1236.5" y="568" width="56.5" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* Mama Miba![wait:5] Welcome to TOP Bakery!"/>
-    <property name="text2" value="* Our special chefs spin baked goods at the TOP of their class!"/>
+    <property name="text1" value="{hometown.text.mama_miba_wait_5_welcome_to_top_bakery_dfd69054a9}"/>
+    <property name="text2" value="{hometown.text.our_special_chefs_spin_baked_goods_at_the_top_of_18ede19b48}"/>
    </properties>
   </object>
   <object id="123" name="transition" x="903.25" y="999.25" width="54.25" height="30.3333">

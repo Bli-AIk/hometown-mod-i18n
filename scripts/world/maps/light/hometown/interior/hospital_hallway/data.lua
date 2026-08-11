@@ -254,7 +254,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a diagram showing a bunch of lines and a circle.)"
+            ["text"] = "{hometown.text.it_s_a_diagram_showing_a_bunch_of_lines_and_a_ci_d1ff329eed}"
           }
         }
       }

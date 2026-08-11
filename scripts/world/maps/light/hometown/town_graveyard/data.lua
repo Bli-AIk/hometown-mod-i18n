@@ -410,9 +410,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "* (It's a gravestone. It's kind of hard to read in the dark.)",
+            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
             ["solid"] = true,
-            ["text"] = "* SHYRA\n[wait:5]* A KARAOKE MICROPHONE FOR A BRAVE SINGER"
+            ["text"] = "{hometown.text.shyra_wait_5_a_karaoke_microphone_for_a_brave_si_829c89d86b}"
           }
         },
         {
@@ -427,9 +427,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "* (It's a gravestone. It's kind of hard to read in the dark.)",
+            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
             ["solid"] = true,
-            ["text"] = "* MUTTLER\n[wait:5]* A BIG BONE FOR THE LEADER OF THE PACK"
+            ["text"] = "{hometown.text.muttler_wait_5_a_big_bone_for_the_leader_of_the__25bef1c830}"
           }
         },
         {
@@ -444,9 +444,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "* (It's a gravestone. It's kind of hard to read in the dark.)",
+            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
             ["solid"] = true,
-            ["text"] = "* CRYSTAL\n[wait:5]* A SNOWY GEMSTONE FOR A PROUD MOTHER"
+            ["text"] = "{hometown.text.crystal_wait_5_a_snowy_gemstone_for_a_proud_moth_90251bdb6b}"
           }
         },
         {
@@ -462,7 +462,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* GERSON\n[wait:5]* RENOWNED HISTORIAN,[wait:5] AUTHOR,[wait:5] AND TEACHER"
+            ["text"] = "{hometown.text.gerson_wait_5_renowned_historian_wait_5_author_w_be7d7f529d}"
           }
         },
         {
@@ -478,10 +478,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (Gerson Boom Memorial Bench)",
-            ["text2"] = "* \"Throughout my career, some of my best ideas came from dreams.\"",
-            ["text3"] = "* \"Take a rest here.[wait:5] If anyone asks -- you're writing!\"",
-            ["text4"] = "* (You decided not to sit.)"
+            ["text1"] = "{hometown.text.gerson_boom_memorial_bench_b8103bc947}",
+            ["text2"] = "{hometown.text.throughout_my_career_some_of_my_best_ideas_came__28a778123c}",
+            ["text3"] = "{hometown.text.take_a_rest_here_wait_5_if_anyone_asks_you_re_wr_4bad94a1a3}",
+            ["text4"] = "{hometown.text.you_decided_not_to_sit_232723eadc}"
           }
         },
         {

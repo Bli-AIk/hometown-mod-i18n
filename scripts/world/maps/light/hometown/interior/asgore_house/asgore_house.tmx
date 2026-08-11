@@ -35,7 +35,7 @@
   <object id="21" name="interactable" x="380" y="142" width="60" height="38">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (There is some dirty fur stuck in the drain.)"/>
+    <property name="text" value="{hometown.text.there_is_some_dirty_fur_stuck_in_the_drain_81d9ebabd6}"/>
    </properties>
   </object>
   <object id="22" name="interactable" x="448" y="142" width="68" height="38">
@@ -47,13 +47,13 @@
   <object id="23" name="interactable" x="522" y="136" width="58" height="44">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (It's a small TV.)"/>
+    <property name="text" value="{hometown.text.it_s_a_small_tv_9ecb5b5478}"/>
    </properties>
   </object>
   <object id="24" name="interactable" x="40" y="164" width="100" height="68">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (Various bags of soil.)"/>
+    <property name="text" value="{hometown.text.various_bags_of_soil_d36759f71e}"/>
    </properties>
   </object>
   <object id="25" name="interactable" x="272" y="78" width="84" height="40">
@@ -65,37 +65,37 @@
   </object>
   <object id="26" name="interactable" x="386" y="310" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a green flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_green_flower_wait_5_protected_in_a_contai_5fea796b3f}"/>
    </properties>
   </object>
   <object id="27" name="interactable" x="386" y="260" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a orange flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_orange_flower_wait_5_protected_in_a_conta_b3c3d5d26b}"/>
    </properties>
   </object>
   <object id="28" name="interactable" x="348" y="228" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a yellow flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_yellow_flower_wait_5_protected_in_a_conta_25a72f87b4}"/>
    </properties>
   </object>
   <object id="29" name="interactable" x="292" y="228" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a golden flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_golden_flower_wait_5_protected_in_a_conta_da572c0b14}"/>
    </properties>
   </object>
   <object id="30" name="interactable" x="232" y="228" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a cyan flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_cyan_flower_wait_5_protected_in_a_contain_6f12c48636}"/>
    </properties>
   </object>
   <object id="31" name="interactable" x="192" y="258" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a blue flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_blue_flower_wait_5_protected_in_a_contain_82928720b7}"/>
    </properties>
   </object>
   <object id="32" name="interactable" x="192" y="308" width="42" height="40">
    <properties>
-    <property name="text" value="* (It's a purple flower,[wait:5] protected in a container...)"/>
+    <property name="text" value="{hometown.text.it_s_a_purple_flower_wait_5_protected_in_a_conta_3cdac60359}"/>
    </properties>
   </object>
   <object id="33" name="transition" x="40" y="468" width="80" height="40">
@@ -119,7 +119,7 @@
   <object id="36" name="interactable" x="140" y="164" width="60" height="42">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (It's a dirty watering can.)"/>
+    <property name="text" value="{hometown.text.it_s_a_dirty_watering_can_18aa2b4048}"/>
    </properties>
   </object>
   <object id="37" name="interactable" x="58" y="288" width="68" height="72">

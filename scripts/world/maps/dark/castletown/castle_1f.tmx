@@ -45,17 +45,17 @@
  <objectgroup color="#ff00ff" id="9" name="objects">
   <object id="22" name="interactable" x="968" y="205" width="63" height="74">
    <properties>
-    <property name="text" value="* (BF : LIVING QUARTERS FOR BAD GUYS)"/>
+    <property name="text" value="{hometown.text.bf_living_quarters_for_bad_guys_06e5945156}"/>
    </properties>
   </object>
   <object id="23" name="interactable" x="582" y="126" width="82" height="72">
    <properties>
-    <property name="text" value="* (The door is locked.)"/>
+    <property name="text" value="{hometown.text.the_door_is_locked_40c4b0c9dc}"/>
    </properties>
   </object>
   <object id="24" name="interactable" x="370" y="206" width="58" height="73">
    <properties>
-    <property name="text" value="* (2F : LIVING QUARTERS)"/>
+    <property name="text" value="{hometown.text.2f_living_quarters_18502175b0}"/>
    </properties>
   </object>
   <object id="25" name="transition" x="560" y="480" width="120" height="40">

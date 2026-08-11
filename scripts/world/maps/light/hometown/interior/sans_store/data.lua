@@ -304,7 +304,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (Various frozen bagels and treats.)"
+            ["text"] = "{hometown.text.various_frozen_bagels_and_treats_781b7bd0bf}"
           }
         },
         {
@@ -319,8 +319,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* Ice-E's Pizza Pin-Ups Mangazine.",
-            ["text2"] = "* HOt and fresh chease,[wait:5] pepperonie,[wait:5] Just like in your Dream's..."
+            ["text1"] = "{hometown.text.ice_e_s_pizza_pin_ups_mangazine_fc38c83bd9}",
+            ["text2"] = "{hometown.text.hot_and_fresh_chease_wait_5_pepperonie_wait_5_ju_74a9d265e2}"
           }
         },
         {
@@ -335,9 +335,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* There're some car magazines on the racks.",
-            ["text2"] = "* It might be fun to look at them,",
-            ["text3"] = "* But there's other people around..."
+            ["text1"] = "{hometown.text.there_re_some_car_magazines_on_the_racks_9a7cd452c4}",
+            ["text2"] = "{hometown.text.it_might_be_fun_to_look_at_them_ade6ea9fc5}",
+            ["text3"] = "{hometown.text.but_there_s_other_people_around_73719bb0f7}"
           }
         },
         {
@@ -352,7 +352,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* It's a zine for Jockington fans. Seems popular."
+            ["text"] = "{hometown.text.it_s_a_zine_for_jockington_fans_seems_popular_3039158dc6}"
           }
         },
         {
@@ -367,8 +367,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* It's a bunch of cards and heart shaped chocolates.",
-            ["text2"] = "* \"Get well soon!\"\n* \"I'm glad your bike crashed\""
+            ["text1"] = "{hometown.text.it_s_a_bunch_of_cards_and_heart_shaped_chocolate_b5d36d7398}",
+            ["text2"] = "{hometown.text.get_well_soon_i_m_glad_your_bike_crashed_a61a24a1a2}"
           }
         },
         {
@@ -384,7 +384,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* It's a trash can."
+            ["text"] = "{hometown.text.it_s_a_trash_can_4b208a8154}"
           }
         },
         {
@@ -400,8 +400,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (You can't reach the top,[wait:5] rendering it impossible to get a basket.)",
-            ["text2"] = "* (You'll never be able to buy something in this state...)"
+            ["text1"] = "{hometown.text.you_can_t_reach_the_top_wait_5_rendering_it_impo_9756129751}",
+            ["text2"] = "{hometown.text.you_ll_never_be_able_to_buy_something_in_this_st_d19e1c9965}"
           }
         },
         {
@@ -416,7 +416,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a rack of candy[wait:5], jerky,[wait:5] and various nuts.)"
+            ["text"] = "{hometown.text.it_s_a_rack_of_candy_wait_5_jerky_wait_5_and_var_89fc2493ee}"
           }
         },
         {
@@ -431,8 +431,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* LOOSE EGGS $1",
-            ["text2"] = "* (It's too much responsibility for an egg.)"
+            ["text1"] = "{hometown.text.loose_eggs_1_d8a7efaee0}",
+            ["text2"] = "{hometown.text.it_s_too_much_responsibility_for_an_egg_380c8020c0}"
           }
         },
         {
@@ -447,8 +447,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It looks like a normal basket of fruit,[wait:5] but when you reach in...)",
-            ["text2"] = "* (...[wait:5] It's incredibly deep and holds all sorts of things.)"
+            ["text1"] = "{hometown.text.it_looks_like_a_normal_basket_of_fruit_wait_5_bu_b9b759fb74}",
+            ["text2"] = "{hometown.text.wait_5_it_s_incredibly_deep_and_holds_all_sorts__ed00310da9}"
           }
         },
         {
@@ -463,7 +463,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Grapes,[wait:5] melons,,[wait:5] oranges,,[wait:5] and the scent of fresh pineapples...)"
+            ["text"] = "{hometown.text.grapes_wait_5_melons_wait_5_oranges_wait_5_and_t_5849572366}"
           }
         },
         {
@@ -478,7 +478,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It looks like a normal palm tree,[wait:5] but it's chock-full of useful groceries.)"
+            ["text"] = "{hometown.text.it_looks_like_a_normal_palm_tree_wait_5_but_it_s_97ac8b475b}"
           }
         },
         {

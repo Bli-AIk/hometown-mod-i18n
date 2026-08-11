@@ -355,7 +355,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a bed for three people,[wait:5] or one three-headed person.)"
+            ["text"] = "{hometown.text.it_s_a_bed_for_three_people_wait_5_or_one_three__4e036d8277}"
           }
         }
       }

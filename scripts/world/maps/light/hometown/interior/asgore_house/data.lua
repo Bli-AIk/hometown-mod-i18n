@@ -300,7 +300,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (There is some dirty fur stuck in the drain.)"
+            ["text"] = "{hometown.text.there_is_some_dirty_fur_stuck_in_the_drain_81d9ebabd6}"
           }
         },
         {
@@ -332,7 +332,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a small TV.)"
+            ["text"] = "{hometown.text.it_s_a_small_tv_9ecb5b5478}"
           }
         },
         {
@@ -348,7 +348,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (Various bags of soil.)"
+            ["text"] = "{hometown.text.various_bags_of_soil_d36759f71e}"
           }
         },
         {
@@ -364,7 +364,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a door.)\n[wait:5]* (It's locked.)"
+            ["text"] = "{hometown.text.it_s_a_door_wait_5_it_s_locked_272cc5d565}"
           }
         },
         {
@@ -379,7 +379,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a green flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_green_flower_wait_5_protected_in_a_contai_5fea796b3f}"
           }
         },
         {
@@ -394,7 +394,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a orange flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_orange_flower_wait_5_protected_in_a_conta_b3c3d5d26b}"
           }
         },
         {
@@ -409,7 +409,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a yellow flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_yellow_flower_wait_5_protected_in_a_conta_25a72f87b4}"
           }
         },
         {
@@ -424,7 +424,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a golden flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_golden_flower_wait_5_protected_in_a_conta_da572c0b14}"
           }
         },
         {
@@ -439,7 +439,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a cyan flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_cyan_flower_wait_5_protected_in_a_contain_6f12c48636}"
           }
         },
         {
@@ -454,7 +454,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a blue flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_blue_flower_wait_5_protected_in_a_contain_82928720b7}"
           }
         },
         {
@@ -469,7 +469,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a purple flower,[wait:5] protected in a container...)"
+            ["text"] = "{hometown.text.it_s_a_purple_flower_wait_5_protected_in_a_conta_3cdac60359}"
           }
         },
         {
@@ -523,7 +523,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a dirty watering can.)"
+            ["text"] = "{hometown.text.it_s_a_dirty_watering_can_18aa2b4048}"
           }
         },
         {
@@ -538,9 +538,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's a note.)\n* (It says...)",
-            ["text2"] = "* No rent received.[wait:5] Again.\n[wait:5]* Stop giving away flowers.\n* Start selling them.",
-            ["text3"] = "* You have one month.\n \n         - C"
+            ["text1"] = "{hometown.text.it_s_a_note_it_says_f3caa50c5f}",
+            ["text2"] = "{hometown.text.no_rent_received_wait_5_again_wait_5_stop_giving_63ab8c994e}",
+            ["text3"] = "{hometown.text.you_have_one_month_c_4acbf29f9f}"
           }
         },
         {
@@ -555,7 +555,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's an air mattress.)\n[wait:5]* (It's certainly not king-sized...)"
+            ["text"] = "{hometown.text.it_s_an_air_mattress_wait_5_it_s_certainly_not_k_3ea024b759}"
           }
         }
       }

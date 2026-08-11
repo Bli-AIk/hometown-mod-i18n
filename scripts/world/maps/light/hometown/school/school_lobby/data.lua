@@ -439,9 +439,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* Do you like,[wait:5] breathing?[wait:5] Moving fast,[wait:5] with or without,[wait:5] legs?",
-            ["text2"] = "* But usually,[wait:5] with legs?",
-            ["text3"] = "* Join the Cross Country Team with Jockington,[wait:5] and Noelle!"
+            ["text1"] = "{hometown.text.do_you_like_wait_5_breathing_wait_5_moving_fast__c55599a557}",
+            ["text2"] = "{hometown.text.but_usually_wait_5_with_legs_84b0a2441e}",
+            ["text3"] = "{hometown.text.join_the_cross_country_team_with_jockington_wait_f66f116b0f}"
           }
         },
         {
@@ -456,7 +456,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (You ran the water fountain.)\n[wait:5]* (It's lukewarm.)"
+            ["text"] = "{hometown.text.you_ran_the_water_fountain_wait_5_it_s_lukewarm_d2ddf5d706}"
           }
         },
         {
@@ -471,9 +471,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (Are you ready for the Sadie Hawkman's dance?)",
-            ["text2"] = "* (At this dance,[wait:5] all the chaperones wear giant hawk heads...)",
-            ["text3"] = "* (... and screech at any students that make contact while dancing.)"
+            ["text1"] = "{hometown.text.are_you_ready_for_the_sadie_hawkman_s_dance_18a371c6e1}",
+            ["text2"] = "{hometown.text.at_this_dance_wait_5_all_the_chaperones_wear_gia_cc219b659b}",
+            ["text3"] = "{hometown.text.and_screech_at_any_students_that_make_contact_wh_032865b1fa}"
           }
         },
         {
@@ -488,7 +488,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Locker.[wait:5] It's locked.)"
+            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
           }
         },
         {
@@ -503,7 +503,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Locker.[wait:5] It's locked.)"
+            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
           }
         },
         {
@@ -518,7 +518,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Locker.[wait:5] It's locked.)"
+            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
           }
         },
         {
@@ -533,7 +533,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's your locker.)\n[wait:5]* (It's empty.)"
+            ["text"] = "{hometown.text.it_s_your_locker_wait_5_it_s_empty_0bb3917848}"
           }
         },
         {
@@ -548,7 +548,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (This used to be your brother's locker.)"
+            ["text"] = "{hometown.text.this_used_to_be_your_brother_s_locker_895ff9ba9c}"
           }
         },
         {
@@ -563,7 +563,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* The locker is locked."
+            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
           }
         },
         {
@@ -578,7 +578,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* The locker is locked."
+            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
           }
         },
         {
@@ -593,7 +593,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* The locker is locked."
+            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
           }
         },
         {
@@ -608,7 +608,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* The locker is locked."
+            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
           }
         },
         {
@@ -623,7 +623,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The locker is covered in Jockington memorabilia.)"
+            ["text"] = "{hometown.text.the_locker_is_covered_in_jockington_memorabilia_f4bb7fd7f7}"
           }
         }
       }

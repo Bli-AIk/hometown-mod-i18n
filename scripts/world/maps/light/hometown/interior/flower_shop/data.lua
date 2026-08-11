@@ -240,7 +240,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "\"* (It's an expertly trimmed arrangement.)"
+            ["text"] = "{hometown.text.it_s_an_expertly_trimmed_arrangement_fd85182832}"
           }
         },
         {
@@ -255,7 +255,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (There are various flowers inside.)"
+            ["text"] = "{hometown.text.there_are_various_flowers_inside_672bd56033}"
           }
         },
         {
@@ -270,7 +270,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (There are various flowers inside.)"
+            ["text"] = "{hometown.text.there_are_various_flowers_inside_672bd56033}"
           }
         },
         {
@@ -285,7 +285,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a flower.)"
+            ["text"] = "{hometown.text.it_s_a_flower_9aa54c688a}"
           }
         },
         {
@@ -300,7 +300,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a cash register.)\n[wait:5]* (There's not much change inside.)"
+            ["text"] = "{hometown.text.it_s_a_cash_register_wait_5_there_s_not_much_cha_130cf413c2}"
           }
         },
         {
@@ -315,7 +315,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's some kind of catalogue...[wait:5] There's a car magazine underneath.)"
+            ["text"] = "{hometown.text.it_s_some_kind_of_catalogue_wait_5_there_s_a_car_4531af96fb}"
           }
         },
         {

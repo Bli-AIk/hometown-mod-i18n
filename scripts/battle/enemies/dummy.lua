@@ -34,16 +34,16 @@ function Dummy:init()
     }
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = "AT 4 DF 0\n* Cotton heart and button eye\n* Looks just like a fluffy guy."
+    self.check = "{hometown.text.at_4_df_0_cotton_heart_and_button_eye_looks_just_7f544a450c}"
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
-        "* The dummy gives you a soft\nsmile.",
-        "* The power of fluffy boys is\nin the air.",
-        "* Smells like cardboard.",
+        "{hometown.text.the_dummy_gives_you_a_soft_smile_5218eb57c6}",
+        "{hometown.text.the_power_of_fluffy_boys_is_in_the_air_639644f922}",
+        "{hometown.text.smells_like_cardboard_704d5b3e9a}",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* The dummy looks like it's\nabout to fall over."
+    self.low_health_text = "{hometown.text.the_dummy_looks_like_it_s_about_to_fall_over_bc75e9ef9c}"
 
     -- Register act called "Smile"
     self:registerAct("Smile")
@@ -60,8 +60,8 @@ function Dummy:onAct(battler, name)
         self.dialogue_override = "... ^^"
         -- Act text (since it's a list, multiple textboxes)
         return {
-            "* You smile.[wait:5]\n* The dummy smiles back.",
-            "* It seems the dummy just wanted\nto see you happy."
+            "{hometown.text.you_smile_wait_5_the_dummy_smiles_back_3cfd31dfbb}",
+            "{hometown.text.it_seems_the_dummy_just_wanted_to_see_you_happy_85992f0a68}"
         }
 
     elseif name == "Tell Story" then
@@ -70,21 +70,21 @@ function Dummy:onAct(battler, name)
             -- Make the enemy tired
             enemy:setTired(true)
         end
-        return "* You and Ralsei told the dummy\na bedtime story.\n* The enemies became [color:blue]TIRED[color:reset]..."
+        return "{hometown.text.you_and_ralsei_told_the_dummy_a_bedtime_story_th_bcc5ef33b1}"
 
     elseif name == "Standard" then --X-Action
         -- Give the enemy 50% mercy
         self:addMercy(50)
         if battler.chara.id == "ralsei" then
             -- R-Action text
-            return "* Ralsei bowed politely.\n* The dummy spiritually bowed\nin return."
+            return "{hometown.text.ralsei_bowed_politely_the_dummy_spiritually_bowe_8d448abcde}"
         elseif battler.chara.id == "susie" then
             -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
             Game.battle:startActCutscene("dummy", "susie_punch")
             return
         else
             -- Text for any other character (like Noelle)
-            return "* "..battler.chara:getName().." straightened the\ndummy's hat."
+            return "* "..battler.chara:getName().."{hometown.text.straightened_the_dummy_s_hat_f5e1a99c02}"
         end
     end
 

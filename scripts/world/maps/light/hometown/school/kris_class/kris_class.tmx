@@ -45,28 +45,28 @@
   <object id="17" gid="26" x="200" y="214" width="188" height="88"/>
   <object id="28" name="interactable" x="426" y="104" width="40" height="40">
    <properties>
-    <property name="text1" value="* (You checked the time...)"/>
-    <property name="text2" value="* (It's an enigma.)"/>
+    <property name="text1" value="{hometown.text.you_checked_the_time_e8e22ddbf0}"/>
+    <property name="text2" value="{hometown.text.it_s_an_enigma_cc1c13833e}"/>
    </properties>
   </object>
   <object id="29" name="interactable" x="76" y="104" width="82" height="40">
    <properties>
-    <property name="text1" value="* (Looks like motivational quotes from various literature.)"/>
+    <property name="text1" value="{hometown.text.looks_like_motivational_quotes_from_various_lite_c89ef9582d}"/>
     <property name="text2">* &quot;Try your best,[wait:5] Astral Wolf!&quot;
 [wait:5]* &quot;Even in your darkest hour...!&quot;</property>
-    <property name="text3" value="* (... that one seems to be from a video game.)"/>
+    <property name="text3" value="{hometown.text.that_one_seems_to_be_from_a_video_game_ab9d709258}"/>
    </properties>
   </object>
   <object id="30" name="interactable" x="330" y="170" width="42" height="40">
    <properties>
-    <property name="text1" value="* (The computer wallpaper is updated.)"/>
-    <property name="text2" value="* (... it's from the newely released season of Mew Mew Kissy Cutie.)"/>
-    <property name="text3" value="* (You decide to keep a safe distance.)"/>
+    <property name="text1" value="{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}"/>
+    <property name="text2" value="{hometown.text.it_s_from_the_newely_released_season_of_mew_mew__cad7750121}"/>
+    <property name="text3" value="{hometown.text.you_decide_to_keep_a_safe_distance_0765557bd9}"/>
    </properties>
   </object>
   <object id="31" name="interactable" x="206" y="146" width="40" height="64">
    <properties>
-    <property name="text" value="* (It's a bunch of roses.)"/>
+    <property name="text" value="{hometown.text.it_s_a_bunch_of_roses_c24167f6b7}"/>
    </properties>
   </object>
   <object id="32" name="transition" x="474" y="102" width="62" height="40">
