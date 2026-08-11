@@ -246,8 +246,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_your_bed_7cef8dacdb}",
-            ["text2"] = "{hometown.text.it_feels_incredibly_soft_like_sleeping_on_a_drea_6a38861f7d}"
+            ["text1"] = "{hometown.dark.castletown.bed}",
+            ["text2"] = "{hometown.dark.castletown.feels_incredibly_soft_like_sleeping}"
           }
         },
         {
@@ -277,8 +277,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_shelf_76a512df1b}",
-            ["text2"] = "{hometown.text.all_sorts_of_keepsakes_could_be_put_here_665ca88dac}"
+            ["text1"] = "{hometown.dark.castletown.shelf}",
+            ["text2"] = "{hometown.dark.castletown.all_sorts_keepsakes_could_put}"
           }
         },
         {
@@ -293,8 +293,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_wardrobe_full_of_all_sorts_of_different_c_46ef21e8ab}",
-            ["text2"] = "{hometown.text.you_could_wear_whatever_you_want_f034e07f68}"
+            ["text1"] = "{hometown.dark.castletown.wardrobe_full_all_sorts_different}",
+            ["text2"] = "{hometown.dark.castletown.could_wear_whatever_want}"
           }
         },
         {

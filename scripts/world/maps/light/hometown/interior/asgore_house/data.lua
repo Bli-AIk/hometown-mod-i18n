@@ -300,7 +300,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.there_is_some_dirty_fur_stuck_in_the_drain_81d9ebabd6}"
+            ["text"] = "{hometown.asgore_house.some_dirty_fur_stuck_drain}"
           }
         },
         {
@@ -332,7 +332,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_small_tv_9ecb5b5478}"
+            ["text"] = "{hometown.asgore_house.small_tv}"
           }
         },
         {
@@ -348,7 +348,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.various_bags_of_soil_d36759f71e}"
+            ["text"] = "{hometown.asgore_house.various_bags_soil}"
           }
         },
         {
@@ -364,7 +364,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_door_wait_5_it_s_locked_272cc5d565}"
+            ["text"] = "{hometown.asgore_house.door_locked}"
           }
         },
         {
@@ -379,7 +379,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_green_flower_wait_5_protected_in_a_contai_5fea796b3f}"
+            ["text"] = "{hometown.asgore_house.green_flower_protected_container}"
           }
         },
         {
@@ -394,7 +394,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_orange_flower_wait_5_protected_in_a_conta_b3c3d5d26b}"
+            ["text"] = "{hometown.asgore_house.orange_flower_protected_container}"
           }
         },
         {
@@ -409,7 +409,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_yellow_flower_wait_5_protected_in_a_conta_25a72f87b4}"
+            ["text"] = "{hometown.asgore_house.yellow_flower_protected_container}"
           }
         },
         {
@@ -424,7 +424,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_golden_flower_wait_5_protected_in_a_conta_da572c0b14}"
+            ["text"] = "{hometown.asgore_house.golden_flower_protected_container}"
           }
         },
         {
@@ -439,7 +439,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_cyan_flower_wait_5_protected_in_a_contain_6f12c48636}"
+            ["text"] = "{hometown.asgore_house.cyan_flower_protected_container}"
           }
         },
         {
@@ -454,7 +454,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_blue_flower_wait_5_protected_in_a_contain_82928720b7}"
+            ["text"] = "{hometown.asgore_house.blue_flower_protected_container}"
           }
         },
         {
@@ -469,7 +469,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_purple_flower_wait_5_protected_in_a_conta_3cdac60359}"
+            ["text"] = "{hometown.asgore_house.purple_flower_protected_container}"
           }
         },
         {
@@ -523,7 +523,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_dirty_watering_can_18aa2b4048}"
+            ["text"] = "{hometown.asgore_house.dirty_watering_can}"
           }
         },
         {
@@ -538,9 +538,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_note_it_says_f3caa50c5f}",
-            ["text2"] = "{hometown.text.no_rent_received_wait_5_again_wait_5_stop_giving_63ab8c994e}",
-            ["text3"] = "{hometown.text.you_have_one_month_c_4acbf29f9f}"
+            ["text1"] = "{hometown.asgore_house.note_says}",
+            ["text2"] = "{hometown.asgore_house.rent_received_again_stop_giving}",
+            ["text3"] = "{hometown.asgore_house.one_month_c}"
           }
         },
         {
@@ -555,7 +555,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_an_air_mattress_wait_5_it_s_certainly_not_k_3ea024b759}"
+            ["text"] = "{hometown.asgore_house.air_mattress_certainly_king_sized}"
           }
         }
       }

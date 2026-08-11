@@ -1,81 +1,81 @@
 return {
     ---@param cutscene WorldCutscene
     organ = function(cutscene, event, player)
-        cutscene:text("{hometown.text.a_giant_organ_90cd594e04}")
+        cutscene:text("{hometown.organ.giant_organ}")
     end,
 
     door = function(cutscene, event, player)
-        cutscene:text("{hometown.text.it_s_a_door_a_large_person_could_fit_inside_db8a346666}")
-        local choice = cutscene:choicer({"{hometown.text.turn_the_doorknob_8fe4439e7e}", "Do not"})
+        cutscene:text("{hometown.door.door_large_person_could_fit}")
+        local choice = cutscene:choicer({"{hometown.door.turn_doorknob}", "Do not"})
         if choice == 1 then
-            cutscene:text("{hometown.text.you_turned_the_doorknob_13848e425a}")
-            cutscene:text("{hometown.text.text_9727d4d874}")
+            cutscene:text("{hometown.door.turned_doorknob}")
+            cutscene:text("{hometown.music_player.text}")
             if Game.party[1].id == "kris" then
-                cutscene:text("{hometown.text.wait_5_you_didn_t_do_anything_else_4b5128f493}")
+                cutscene:text("{hometown.door.didnt_anything_else}")
             else
-                cutscene:text("{hometown.text.wait_5_it_s_not_opening_must_be_locked_15d08e0368}")
+                cutscene:text("{hometown.door.opening_must_locked}")
             end
         end
     end,
 
     candles = function(cutscene, event, player)
-        cutscene:text("{hometown.text.it_s_an_altar_full_of_hope_candles_wait_5_each_o_d5d491643b}")
+        cutscene:text("{hometown.candles.altar_full_hope_candles_each}")
     end,
 
     fire_extinguisher = function(cutscene, event, player)
         if cutscene:getCharacter("susie_lw") then
-            cutscene:text("{hometown.text.it_s_a_fire_extinguisher_wait_10_for_some_reason_abecd94789}")
-            cutscene:text("{hometown.text.wait_5_susie_will_say_something_stupid_about_it__007fe5662f}", nil, nil, {reactions={{"{hometown.text.they_should_make_one_of_these_that_shoots_whip_c_4d68a3ba6b}", "mid", "bottom", "smile", "susie"}}})
+            cutscene:text("{hometown.fire_extinguisher.fire_extinguisher_some_reason_feeling}")
+            cutscene:text("{hometown.fire_extinguisher.susie_will_say_something_stupid}", nil, nil, {reactions={{"{hometown.fire_extinguisher.should_make_one_shoots_whip}", "mid", "bottom", "smile", "susie"}}})
         else
-            cutscene:text("{hometown.text.it_s_a_fire_extinguisher_b129291165}")
+            cutscene:text("{hometown.fire_extinguisher.fire_extinguisher}")
         end
     end,
 
     holy_water = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_bowl_of_blessed_water_with_a_motion_senso_ad1563ca86}")
-        cutscene:text("{hometown.text.it_s_not_clear_what_happens_if_you_touch_the_sen_4c3043f2b5}")
+        cutscene:text("{hometown.holy_water.bowl_blessed_water_motion_sensor}")
+        cutscene:text("{hometown.holy_water.clear_what_happens_if_touch}")
     end,
 
     entrance_bookshelf = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_bookshelf_full_of_hymnals_and_scripture_d0bd147352}")
-        cutscene:text("{hometown.text.wait_5_and_some_copies_of_lord_of_the_hammer_5330a5d753}")
+        cutscene:text("{hometown.entrance_bookshelf.bookshelf_full_hymnals_scripture}")
+        cutscene:text("{hometown.entrance_bookshelf.some_copies_lord_hammer}")
     end,
 
     pitcher = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_large_pitcher_of_water_cdade4bf24}")
-        cutscene:text("{hometown.text.cups_are_stored_below_it_a6c5306005}")
+        cutscene:text("{hometown.pitcher.large_pitcher_water}")
+        cutscene:text("{hometown.pitcher.cups_stored_below}")
     end,
 
     drinks = function(cutscene, event)
-        cutscene:text("{hometown.text.juice_wait_5_and_wafer_like_crackers_61346c1610}")
+        cutscene:text("{hometown.drinks.juice_wafer_like_crackers}")
     end,
 
     cupboard = function(cutscene, event)
-        cutscene:text("{hometown.text.documents_87a11b64c8}")
+        cutscene:text("{hometown.smoke.documents}")
     end,
 
     office_bookshelf = function(cutscene, event)
-        cutscene:text("{hometown.text.books_many_copies_of_lord_of_the_hammer_wait_5_a_b87cd7d0a1}")
+        cutscene:text("{hometown.office_bookshelf.books_many_copies_lord_hammer}")
     end,
 
     plaque = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_plaque_bearing_the_words_of_a_famous_writ_f45b6717c2}")
-        cutscene:text("{hometown.text.hope_comes_to_those_who_believe_and_for_those_th_a6896c293f}")
-        cutscene:text("{hometown.text.wait_5_may_our_hope_shine_so_brightly_fadbc18f52}")
-        cutscene:text("{hometown.text.wait_5_that_they_wait_5_too_wait_5_may_keep_shel_838eb83449}")
+        cutscene:text("{hometown.plaque.plaque_bearing_words_famous_writer}")
+        cutscene:text("{hometown.plaque.hope_comes_who_believe_cannot}")
+        cutscene:text("{hometown.plaque.may_hope_shine_brightly}")
+        cutscene:text("{hometown.plaque.may_keep_shelter_dark}")
     end,
 
     hanging = function(cutscene, event)
-        cutscene:text("{hometown.text.seems_to_be_some_sort_of_incense_container_c16d165826}")
+        cutscene:text("{hometown.hanging.seems_some_sort_incense_container}")
     end,
 
     wardrobe = function(cutscene, event)
-        cutscene:text("{hometown.text.the_wardrobe_is_full_of_choir_robes_wait_5_there_214e862262}")
+        cutscene:text("{hometown.wardrobe.wardrobe_full_choir_robes_even}")
     end,
 
     bells = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_set_of_bells_of_different_sizes_14645b27d0}")
-        local dowemess = cutscene:choicer({"{hometown.text.mess_with_them_8ab7caee20}", "{hometown.text.don_t_bfed24b7dd}"})
+        cutscene:text("{hometown.bells.set_bells_different_sizes}")
+        local dowemess = cutscene:choicer({"{hometown.bells.mess}", "{hometown.bells.dont}"})
         if dowemess == 1 then -- I tried to port the thing but it kinda broke. Any help on that?
             local count = 0
             Assets.playSound("churchbell_short", (0.7 - count / 8), 1.17 - count / 40)
@@ -99,6 +99,6 @@ return {
     end,
 
     piano = function(cutscene, event)
-        cutscene:text("{hometown.text.it_s_a_keyboard_it_has_settings_to_sound_like_ei_836de4a6df}")
+        cutscene:text("{hometown.piano.keyboard_settings_sound_like_either}")
     end,
 }

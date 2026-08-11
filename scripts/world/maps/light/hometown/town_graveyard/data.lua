@@ -410,9 +410,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
+            ["nighttext"] = "{hometown.town_graveyard.gravestone_kind_hard_read_dark}",
             ["solid"] = true,
-            ["text"] = "{hometown.text.shyra_wait_5_a_karaoke_microphone_for_a_brave_si_829c89d86b}"
+            ["text"] = "{hometown.town_graveyard.shyra_karaoke_microphone_brave_singer}"
           }
         },
         {
@@ -427,9 +427,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
+            ["nighttext"] = "{hometown.town_graveyard.gravestone_kind_hard_read_dark}",
             ["solid"] = true,
-            ["text"] = "{hometown.text.muttler_wait_5_a_big_bone_for_the_leader_of_the__25bef1c830}"
+            ["text"] = "{hometown.town_graveyard.muttler_big_bone_leader_pack}"
           }
         },
         {
@@ -444,9 +444,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext"] = "{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}",
+            ["nighttext"] = "{hometown.town_graveyard.gravestone_kind_hard_read_dark}",
             ["solid"] = true,
-            ["text"] = "{hometown.text.crystal_wait_5_a_snowy_gemstone_for_a_proud_moth_90251bdb6b}"
+            ["text"] = "{hometown.town_graveyard.crystal_snowy_gemstone_proud_mother}"
           }
         },
         {
@@ -462,7 +462,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.gerson_wait_5_renowned_historian_wait_5_author_w_be7d7f529d}"
+            ["text"] = "{hometown.town_graveyard.gerson_renowned_historian_author_teacher}"
           }
         },
         {
@@ -478,10 +478,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.gerson_boom_memorial_bench_b8103bc947}",
-            ["text2"] = "{hometown.text.throughout_my_career_some_of_my_best_ideas_came__28a778123c}",
-            ["text3"] = "{hometown.text.take_a_rest_here_wait_5_if_anyone_asks_you_re_wr_4bad94a1a3}",
-            ["text4"] = "{hometown.text.you_decided_not_to_sit_232723eadc}"
+            ["text1"] = "{hometown.town_graveyard.gerson_boom_memorial_bench}",
+            ["text2"] = "{hometown.town_graveyard.throughout_career_some_best_ideas}",
+            ["text3"] = "{hometown.town_graveyard.take_rest_here_if_anyone}",
+            ["text4"] = "{hometown.town_graveyard.decided_sit}"
           }
         },
         {

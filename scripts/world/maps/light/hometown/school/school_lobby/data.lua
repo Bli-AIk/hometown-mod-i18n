@@ -439,9 +439,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.do_you_like_wait_5_breathing_wait_5_moving_fast__c55599a557}",
-            ["text2"] = "{hometown.text.but_usually_wait_5_with_legs_84b0a2441e}",
-            ["text3"] = "{hometown.text.join_the_cross_country_team_with_jockington_wait_f66f116b0f}"
+            ["text1"] = "{hometown.school.school_lobby.like_breathing_moving_fast_without}",
+            ["text2"] = "{hometown.school.school_lobby.usually_legs}",
+            ["text3"] = "{hometown.school.school_lobby.join_cross_country_team_jockington}"
           }
         },
         {
@@ -456,7 +456,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.you_ran_the_water_fountain_wait_5_it_s_lukewarm_d2ddf5d706}"
+            ["text"] = "{hometown.school.school_lobby.ran_water_fountain_lukewarm}"
           }
         },
         {
@@ -471,9 +471,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.are_you_ready_for_the_sadie_hawkman_s_dance_18a371c6e1}",
-            ["text2"] = "{hometown.text.at_this_dance_wait_5_all_the_chaperones_wear_gia_cc219b659b}",
-            ["text3"] = "{hometown.text.and_screech_at_any_students_that_make_contact_wh_032865b1fa}"
+            ["text1"] = "{hometown.school.school_lobby.ready_sadie_hawkmans_dance}",
+            ["text2"] = "{hometown.school.school_lobby.dance_all_chaperones_wear_giant}",
+            ["text3"] = "{hometown.school.school_lobby.screech_any_students_make_contact}"
           }
         },
         {
@@ -488,7 +488,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked}"
           }
         },
         {
@@ -503,7 +503,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked}"
           }
         },
         {
@@ -518,7 +518,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked}"
           }
         },
         {
@@ -533,7 +533,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_your_locker_wait_5_it_s_empty_0bb3917848}"
+            ["text"] = "{hometown.school.school_lobby.locker_empty}"
           }
         },
         {
@@ -548,7 +548,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.this_used_to_be_your_brother_s_locker_895ff9ba9c}"
+            ["text"] = "{hometown.school.school_lobby.used_brothers_locker}"
           }
         },
         {
@@ -563,7 +563,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked_2}"
           }
         },
         {
@@ -578,7 +578,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked_2}"
           }
         },
         {
@@ -593,7 +593,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked_2}"
           }
         },
         {
@@ -608,7 +608,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_locker_is_locked_1e94f71ef2}"
+            ["text"] = "{hometown.school.school_lobby.locker_locked_2}"
           }
         },
         {
@@ -623,7 +623,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_locker_is_covered_in_jockington_memorabilia_f4bb7fd7f7}"
+            ["text"] = "{hometown.school.school_lobby.locker_covered_jockington_memorabilia}"
           }
         }
       }

@@ -190,7 +190,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_door_is_locked_40c4b0c9dc}"
+            ["text"] = "{hometown.dark.castletown.door_locked}"
           }
         },
         {
@@ -205,7 +205,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_lightswitch_3f68b7c708}"
+            ["text"] = "{hometown.school.unused_class.lightswitch}"
           }
         },
         {
@@ -220,8 +220,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_yellowed_poorly_drawn_picture_of_a_green__8d61cc7a49}",
-            ["text2"] = "{hometown.text.it_s_signed_alvin_d4ba8d8435}"
+            ["text1"] = "{hometown.school.unused_class.yellowed_poorly_drawn_picture_green}",
+            ["text2"] = "{hometown.school.unused_class.signed_alvin}"
           }
         },
         {

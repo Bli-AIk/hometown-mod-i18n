@@ -47,14 +47,14 @@
   </object>
   <object id="28" name="interactable" x="214" y="104" width="106" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.ms_toriel_is_written_in_cursive_on_the_dry_erase_b1f4d1f8b0}"/>
-    <property name="text2" value="{hometown.text.seems_like_it_hasn_t_been_erased_in_a_very_long__dc2e45e51e}"/>
+    <property name="text1" value="{hometown.school.toriel_class.ms_toriel_written_cursive_dry}"/>
+    <property name="text2" value="{hometown.school.toriel_class.seems_like_hasnt_erased_long}"/>
    </properties>
   </object>
   <object id="29" name="interactable" x="352" y="104" width="40" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.you_uncapped_the_scented_green_marker_2f9c8631bc}"/>
-    <property name="text2" value="{hometown.text.it_s_almost_dry_wait_5_but_that_gives_it_a_refin_cf6364e7f0}"/>
+    <property name="text1" value="{hometown.school.toriel_class.uncapped_scented_green_marker}"/>
+    <property name="text2" value="{hometown.school.toriel_class.almost_dry_gives_refined_aged}"/>
    </properties>
   </object>
   <object id="30" name="interactable" x="452" y="120" width="56" height="38">
@@ -65,7 +65,7 @@
   </object>
   <object id="31" name="interactable" x="518" y="118" width="32" height="40">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_primitive_drawing_of_your_mom_5749bd9e89}"/>
+    <property name="text" value="{hometown.school.toriel_class.primitive_drawing_mom}"/>
    </properties>
   </object>
   <object id="17" name="interactable" x="520" y="390" width="38" height="40">
@@ -77,18 +77,18 @@
   </object>
   <object id="32" name="interactable" x="390" y="176" width="40" height="40">
    <properties>
-    <property name="text" value="{hometown.text.hey_apple_da08088bab}"/>
+    <property name="text" value="{hometown.school.toriel_class.hey_apple}"/>
    </properties>
   </object>
   <object id="33" name="interactable" x="406" y="104" width="42" height="40">
    <properties>
-    <property name="text" value="{hometown.text.hyperdodecahedron_792f52e3d3}"/>
+    <property name="text" value="{hometown.school.toriel_class.hyperdodecahedron}"/>
    </properties>
   </object>
   <object id="34" name="interactable" x="270" y="178" width="38" height="38">
    <properties>
-    <property name="text1" value="{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}"/>
-    <property name="text2" value="{hometown.text.it_s_a_picture_of_your_brother_and_you_playing_v_7ec75b0e9e}"/>
+    <property name="text1" value="{hometown.school.kris_class.computer_wallpaper_updated}"/>
+    <property name="text2" value="{hometown.school.toriel_class.picture_brother_playing_video_games}"/>
    </properties>
   </object>
  </objectgroup>

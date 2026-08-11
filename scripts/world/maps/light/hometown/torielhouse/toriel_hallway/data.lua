@@ -184,7 +184,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.a_cactus_wait_5_there_s_not_much_to_say_about_it_1bbfd199f4}"
+            ["text"] = "{hometown.torielhouse.toriel_hallway.cactus_much_say}"
           }
         },
         {
@@ -200,10 +200,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.wait_5_how_to_draw_dragons_is_at_the_bottom_of_t_506f137a1e}",
-            ["text2"] = "{hometown.text.the_purple_character_on_the_cover_is_dressed_wai_f2dc60e615}",
-            ["text3"] = "{hometown.text.text_9727d4d874}",
-            ["text4"] = "{hometown.text.your_brother_will_never_return_this_book_5a4fc5dae4}"
+            ["text1"] = "{hometown.torielhouse.toriel_hallway.how_draw_dragons_bottom_drawer}",
+            ["text2"] = "{hometown.torielhouse.toriel_hallway.purple_character_cover_dressed}",
+            ["text3"] = "{hometown.music_player.text}",
+            ["text4"] = "{hometown.torielhouse.toriel_hallway.brother_will_never_return_book}"
           }
         },
         {
@@ -218,7 +218,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_what_they_call_you_39c07d3b4d}"
+            ["text"] = "{hometown.torielhouse.toriel_hallway.what_call}"
           }
         },
         {
@@ -234,7 +234,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.the_door_is_locked_7b35d07eca}"
+            ["text"] = "{hometown.torielhouse.toriel_hallway.door_locked}"
           }
         },
         {
@@ -250,7 +250,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.there_s_no_time_to_read_books_just_generally_5e204904c2}"
+            ["text"] = "{hometown.torielhouse.toriel_hallway.time_read_books_generally}"
           }
         },
         {

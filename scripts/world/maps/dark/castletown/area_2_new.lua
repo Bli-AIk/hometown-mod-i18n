@@ -786,7 +786,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_locked_827a359a7f}"
+            ["text1"] = "{hometown.door.locked}"
           }
         },
         {
@@ -819,8 +819,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.mama_miba_wait_5_welcome_to_top_bakery_dfd69054a9}",
-            ["text2"] = "{hometown.text.our_special_chefs_spin_baked_goods_at_the_top_of_18ede19b48}"
+            ["text1"] = "{hometown.dark.castletown.mama_miba_welcome_top_bakery}",
+            ["text2"] = "{hometown.dark.castletown.special_chefs_spin_baked_goods}"
           }
         },
         {

@@ -795,7 +795,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"
+            ["text"] = "{hometown.town_mid.here_ice_es_pezza_family}"
           }
         },
         {
@@ -810,7 +810,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"
+            ["text"] = "{hometown.town_mid.here_ice_es_pezza_family}"
           }
         },
         {
@@ -825,7 +825,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_locked_be68bf3c90}"
+            ["text"] = "{hometown.town_mid.locked}"
           }
         },
         {
@@ -840,8 +840,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
-            ["text2"] = "{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"
+            ["text1"] = "{hometown.town_mid.locked}",
+            ["text2"] = "{hometown.town_mid.town_pretty_empty_today}"
           }
         },
         {
@@ -856,8 +856,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_locked_be68bf3c90}",
-            ["text2"] = "{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"
+            ["text1"] = "{hometown.town_mid.locked}",
+            ["text2"] = "{hometown.town_mid.town_pretty_empty_today}"
           }
         },
         {

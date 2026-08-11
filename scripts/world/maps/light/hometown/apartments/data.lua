@@ -133,7 +133,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"
+            ["text"] = "{hometown.apartments.dirty_trash_can}"
           }
         },
         {
@@ -149,7 +149,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"
+            ["text"] = "{hometown.apartments.dirty_trash_can}"
           }
         },
         {
@@ -165,7 +165,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
+            ["text"] = "{hometown.apartments.trash_can_full_well_kept}"
           }
         },
         {
@@ -181,7 +181,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
+            ["text"] = "{hometown.apartments.trash_can_full_well_kept}"
           }
         },
         {
@@ -197,7 +197,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
+            ["text"] = "{hometown.apartments.trash_can_full_well_kept}"
           }
         },
         {
@@ -213,7 +213,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_saucer_of_milk_b4814dd153}"
+            ["text"] = "{hometown.apartments.saucer_milk}"
           }
         }
       }

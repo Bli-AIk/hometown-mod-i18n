@@ -1293,7 +1293,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_noelle_s_absurdly_dangerous_ninja_weapon_co_779979deec}"
+            ["text"] = "{hometown.noellehouse.main.noelles_absurdly_dangerous_ninja_weapon}"
           }
         },
         {
@@ -1308,7 +1308,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_heart_or_human_soul_shaped_pillow_wait_5__dd73b57541}"
+            ["text"] = "{hometown.noellehouse.main.heart_human_soul_shaped_pillow}"
           }
         },
         {
@@ -1323,7 +1323,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_thermostat_the_only_option_is_cold_51854b73f6}"
+            ["text"] = "{hometown.noellehouse.main.thermostat_only_option_cold}"
           }
         },
         {
@@ -1338,7 +1338,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_fridge_containing_lots_of_greens_and_bott_8210899506}"
+            ["text"] = "{hometown.noellehouse.main.fridge_containing_lots_greens_bottled}"
           }
         },
         {
@@ -1353,7 +1353,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.just_an_empty_table_a493cafeca}"
+            ["text"] = "{hometown.noellehouse.main.empty_table}"
           }
         },
         {
@@ -1368,7 +1368,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_house_s_back_door_wait_5_somehow_wait_5_it_s_878df98f6d}"
+            ["text"] = "{hometown.noellehouse.main.houses_back_door_somehow_locked}"
           }
         },
         {
@@ -1383,7 +1383,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_tree_that_would_potentially_fall_down_if__3b4827efa7}"
+            ["text"] = "{hometown.noellehouse.main.tree_would_potentially_fall_down}"
           }
         },
         {
@@ -1398,7 +1398,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_auto_treat_catcher_is_ready_to_nab_anything__8106040117}"
+            ["text"] = "{hometown.noellehouse.main.auto_treat_catcher_ready_nab}"
           }
         }
       }

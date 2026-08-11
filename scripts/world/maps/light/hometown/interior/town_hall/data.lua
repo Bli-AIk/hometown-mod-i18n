@@ -226,7 +226,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_chair_10976e57a6}"
+            ["text"] = "{hometown.hospital_rudy.chair}"
           }
         },
         {
@@ -241,7 +241,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_painting_of_the_town_21927e2766}"
+            ["text"] = "{hometown.town_hall.painting_town}"
           }
         },
         {
@@ -256,7 +256,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_small_pine_tree_9e833f6e43}"
+            ["text"] = "{hometown.town_hall.small_pine_tree}"
           }
         },
         {

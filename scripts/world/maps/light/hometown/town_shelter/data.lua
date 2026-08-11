@@ -821,7 +821,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_locked_be68bf3c90}"
+            ["text"] = "{hometown.town_mid.locked}"
           }
         },
         {

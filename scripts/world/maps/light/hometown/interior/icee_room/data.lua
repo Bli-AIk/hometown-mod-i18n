@@ -229,8 +229,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.there_s_some_condiments_at_the_table_63544e653d}",
-            ["text2"] = "{hometown.text.ice_e_s_original_parmajohn_che_e_ese_ee36eaee95}"
+            ["text1"] = "{hometown.icee_room.some_condiments_table}",
+            ["text2"] = "{hometown.icee_room.ice_es_original_parmajohn_che}"
           }
         },
         {
@@ -260,8 +260,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.try_our_new_choccolate_pezza_79288c1f70}",
-            ["text2"] = "{hometown.text.melts_in_your_pants_not_in_your_mouth_4bd6b80606}"
+            ["text1"] = "{hometown.icee_room.try_new_choccolate_pezza}",
+            ["text2"] = "{hometown.icee_room.melts_pants_mouth}"
           }
         },
         {

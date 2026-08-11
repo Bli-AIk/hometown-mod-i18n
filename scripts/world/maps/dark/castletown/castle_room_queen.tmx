@@ -36,13 +36,13 @@
   <object id="47" name="interactable" x="710" y="310" width="104" height="64">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_just_a_computer_434fa39112}"/>
+    <property name="text" value="{hometown.dark.castletown.computer}"/>
    </properties>
   </object>
   <object id="48" name="interactable" x="950" y="310" width="104" height="64">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_just_a_computer_434fa39112}"/>
+    <property name="text" value="{hometown.dark.castletown.computer}"/>
    </properties>
   </object>
  </objectgroup>

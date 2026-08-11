@@ -371,8 +371,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.ms_toriel_is_written_in_cursive_on_the_dry_erase_b1f4d1f8b0}",
-            ["text2"] = "{hometown.text.seems_like_it_hasn_t_been_erased_in_a_very_long__dc2e45e51e}"
+            ["text1"] = "{hometown.school.toriel_class.ms_toriel_written_cursive_dry}",
+            ["text2"] = "{hometown.school.toriel_class.seems_like_hasnt_erased_long}"
           }
         },
         {
@@ -387,8 +387,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.you_uncapped_the_scented_green_marker_2f9c8631bc}",
-            ["text2"] = "{hometown.text.it_s_almost_dry_wait_5_but_that_gives_it_a_refin_cf6364e7f0}"
+            ["text1"] = "{hometown.school.toriel_class.uncapped_scented_green_marker}",
+            ["text2"] = "{hometown.school.toriel_class.almost_dry_gives_refined_aged}"
           }
         },
         {
@@ -403,7 +403,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.kids_books_wait_5_some_of_them_used_to_be_yours_15e18676fa}"
+            ["text"] = "{hometown.school.toriel_class.kids_books_some_used}"
           }
         },
         {
@@ -418,7 +418,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_primitive_drawing_of_your_mom_5749bd9e89}"
+            ["text"] = "{hometown.school.toriel_class.primitive_drawing_mom}"
           }
         },
         {
@@ -434,7 +434,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.the_throne_of_the_gods_grows_even_higher_almost__1e3858eb87}"
+            ["text"] = "{hometown.school.toriel_class.throne_gods_grows_even_higher}"
           }
         },
         {
@@ -449,7 +449,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.hey_apple_da08088bab}"
+            ["text"] = "{hometown.school.toriel_class.hey_apple}"
           }
         },
         {
@@ -464,7 +464,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.hyperdodecahedron_792f52e3d3}"
+            ["text"] = "{hometown.school.toriel_class.hyperdodecahedron}"
           }
         },
         {
@@ -479,8 +479,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}",
-            ["text2"] = "{hometown.text.it_s_a_picture_of_your_brother_and_you_playing_v_7ec75b0e9e}"
+            ["text1"] = "{hometown.school.kris_class.computer_wallpaper_updated}",
+            ["text2"] = "{hometown.school.toriel_class.picture_brother_playing_video_games}"
           }
         }
       }

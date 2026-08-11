@@ -301,7 +301,7 @@ return {
           visible = true,
           properties = {
             ["actor"] = "castle_town/coody",
-            ["text"] = "{hometown.text.i_m_a_worm_i_don_t_understand_taxes_and_values_63d39eaa99}"
+            ["text"] = "{hometown.dark.castletown.worm_dont_understand_taxes_values}"
           }
         },
         {
@@ -317,8 +317,8 @@ return {
           visible = true,
           properties = {
             ["actor"] = "castle_town/mrelegance",
-            ["text1"] = "{hometown.text.we_re_n_building_up_the_area_to_be_a_bit_n_more__dea8f57017}",
-            ["text2"] = "{hometown.text.the_ponmen_ll_be_happy_wait_5_too_e866a7b416}"
+            ["text1"] = "{hometown.dark.castletown.building_up_area_bit_more}",
+            ["text2"] = "{hometown.dark.castletown.ponmenll_happy}"
           }
         }
       }

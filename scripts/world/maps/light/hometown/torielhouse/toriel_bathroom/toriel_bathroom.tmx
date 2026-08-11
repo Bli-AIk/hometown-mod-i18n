@@ -41,8 +41,8 @@
   </object>
   <object id="10" name="interactable" x="200" y="250" width="116" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.on_the_shower_ledge_wait_5_there_s_a_small_conta_52822089e2}"/>
-    <property name="text2" value="{hometown.text.and_a_gallon_sized_container_of_pet_shampoo_791f2be0a8}"/>
+    <property name="text1" value="{hometown.torielhouse.toriel_bathroom.shower_ledge_small_container_apple}"/>
+    <property name="text2" value="{hometown.torielhouse.toriel_bathroom.gallon_sized_container_pet_shampoo}"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="340" y="240" width="44" height="40">
@@ -54,8 +54,8 @@
    <properties>
     <property name="text1">* You looked inside the sink cupboard.
 [wait:5]* There's...</property>
-    <property name="text2" value="{hometown.text.a_can_of_ice_e_s_cool_boys_body_spray_spray_for__ed46212e83}"/>
-    <property name="text3" value="{hometown.text.it_seems_to_be_almost_entirely_full_9cd0e0ad53}"/>
+    <property name="text2" value="{hometown.torielhouse.toriel_bathroom.can_ice_es_cool_boys}"/>
+    <property name="text3" value="{hometown.torielhouse.toriel_bathroom.seems_almost_entirely_full}"/>
    </properties>
   </object>
  </objectgroup>

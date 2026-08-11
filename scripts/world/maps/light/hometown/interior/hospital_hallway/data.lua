@@ -254,7 +254,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_diagram_showing_a_bunch_of_lines_and_a_ci_d1ff329eed}"
+            ["text"] = "{hometown.hospital_hallway.diagram_showing_bunch_lines_circle}"
           }
         }
       }

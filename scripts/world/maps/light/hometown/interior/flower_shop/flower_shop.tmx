@@ -30,22 +30,22 @@
  <objectgroup color="#ff00ff" id="4" name="objects">
   <object id="13" name="interactable" x="280" y="120" width="80" height="40">
    <properties>
-    <property name="text" value="{hometown.text.it_s_an_expertly_trimmed_arrangement_fd85182832}"/>
+    <property name="text" value="{hometown.flower_shop.expertly_trimmed_arrangement}"/>
    </properties>
   </object>
   <object id="14" name="interactable" x="136" y="120" width="130" height="40">
    <properties>
-    <property name="text" value="{hometown.text.there_are_various_flowers_inside_672bd56033}"/>
+    <property name="text" value="{hometown.flower_shop.various_flowers_inside}"/>
    </properties>
   </object>
   <object id="16" name="interactable" x="374" y="120" width="130" height="40">
    <properties>
-    <property name="text" value="{hometown.text.there_are_various_flowers_inside_672bd56033}"/>
+    <property name="text" value="{hometown.flower_shop.various_flowers_inside}"/>
    </properties>
   </object>
   <object id="17" name="interactable" x="124" y="268" width="40" height="40">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_flower_9aa54c688a}"/>
+    <property name="text" value="{hometown.flower_shop.flower}"/>
    </properties>
   </object>
   <object id="18" name="interactable" x="190" y="268" width="40" height="40">
@@ -56,7 +56,7 @@
   </object>
   <object id="19" name="interactable" x="74" y="268" width="40" height="40">
    <properties>
-    <property name="text" value="{hometown.text.it_s_some_kind_of_catalogue_wait_5_there_s_a_car_4531af96fb}"/>
+    <property name="text" value="{hometown.flower_shop.some_kind_catalogue_car_magazine}"/>
    </properties>
   </object>
   <object id="20" name="transition" x="40" y="80" width="80" height="40">

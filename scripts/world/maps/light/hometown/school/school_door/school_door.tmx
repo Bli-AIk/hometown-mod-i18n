@@ -61,7 +61,7 @@
   </object>
   <object id="19" name="interactable" x="160" y="198" width="81" height="40">
    <properties>
-    <property name="text" value="{hometown.text.the_door_is_locked_40c4b0c9dc}"/>
+    <property name="text" value="{hometown.dark.castletown.door_locked}"/>
    </properties>
   </object>
   <object id="21" name="darkdoor" x="576" y="120" width="88" height="112"/>

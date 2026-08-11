@@ -28,18 +28,18 @@
  <objectgroup color="#ff00ff" id="4" name="objects">
   <object id="10" name="interactable" x="90" y="200" width="40" height="40">
    <properties>
-    <property name="text" value="{hometown.text.the_door_is_locked_40c4b0c9dc}"/>
+    <property name="text" value="{hometown.dark.castletown.door_locked}"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="332" y="170" width="40" height="40">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_lightswitch_3f68b7c708}"/>
+    <property name="text" value="{hometown.school.unused_class.lightswitch}"/>
    </properties>
   </object>
   <object id="12" name="interactable" x="510" y="170" width="40" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_a_yellowed_poorly_drawn_picture_of_a_green__8d61cc7a49}"/>
-    <property name="text2" value="{hometown.text.it_s_signed_alvin_d4ba8d8435}"/>
+    <property name="text1" value="{hometown.school.unused_class.yellowed_poorly_drawn_picture_green}"/>
+    <property name="text2" value="{hometown.school.unused_class.signed_alvin}"/>
    </properties>
   </object>
   <object id="13" name="transition" x="280" y="360" width="80" height="40">

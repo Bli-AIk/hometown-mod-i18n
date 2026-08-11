@@ -372,8 +372,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_dess_s_bed_underneath_are_army_rations_wait_c2e82ed5ec}",
-            ["text2"] = "{hometown.text.wait_5_and_a_badly_traced_drawing_of_a_dragon_70a3cf0824}"
+            ["text1"] = "{hometown.noellehouse.dess.desss_bed_underneath_army_rations}",
+            ["text2"] = "{hometown.noellehouse.dess.badly_traced_drawing_dragon}"
           }
         },
         {
@@ -388,7 +388,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_cd_player_underneath_are_tons_of_punk_roc_9fc37133fd}"
+            ["text"] = "{hometown.noellehouse.dess.cd_player_underneath_tons_punk}"
           }
         },
         {
@@ -403,7 +403,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_computer_the_monitor_is_unplugged_2a00ee7140}"
+            ["text"] = "{hometown.noellehouse.dess.computer_monitor_unplugged}"
           }
         },
         {
@@ -433,7 +433,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.rollerblades_wait_5_wiffle_bat_looking_at_these__f3472cf82e}"
+            ["text"] = "{hometown.noellehouse.dess.rollerblades_wiffle_bat_looking_things}"
           }
         },
         {
@@ -448,7 +448,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_an_excessively_large_walk_in_closet_0726a53d00}"
+            ["text"] = "{hometown.noellehouse.dess.excessively_large_walk_closet}"
           }
         },
         {
@@ -478,8 +478,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.a_violin_wait_5_a_flute_wait_5_a_microphone_4f961d3abc}",
-            ["text2"] = "{hometown.text.they_all_look_very_expensive_wait_5_and_very_den_382faf8ef8}"
+            ["text1"] = "{hometown.noellehouse.dess.violin_flute_microphone}",
+            ["text2"] = "{hometown.noellehouse.dess.all_look_expensive_dented}"
           }
         }
       }

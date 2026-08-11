@@ -486,7 +486,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_bikeless_bed_264280806f}"
+            ["text"] = "{hometown.dark.castletown.bikeless_bed}"
           }
         },
         {
@@ -516,7 +516,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_some_kind_of_digging_implement_769835eef9}"
+            ["text"] = "{hometown.dark.castletown.some_kind_digging_implement}"
           }
         },
         {
@@ -531,7 +531,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.there_s_salsa_buried_in_the_ground_here_029324803b}"
+            ["text"] = "{hometown.dark.castletown.salsa_buried_ground_here}"
           }
         },
         {
@@ -546,7 +546,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_hole_wait_5_presumably_dug_for_fun_e8a95e2da3}"
+            ["text"] = "{hometown.dark.castletown.hole_presumably_dug_fun}"
           }
         },
         {
@@ -561,7 +561,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_hole_made_recreationally_85a23712c9}"
+            ["text"] = "{hometown.dark.castletown.hole_made_recreationally}"
           }
         },
         {
@@ -576,8 +576,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.you_found_20_rupys_in_the_hole_abba163464}",
-            ["text2"] = "{hometown.text.unfortunately_wait_5_that_s_not_a_useful_currenc_7a3f287c67}"
+            ["text1"] = "{hometown.dark.castletown.found_20_rupys_hole}",
+            ["text2"] = "{hometown.dark.castletown.unfortunately_useful_currency_here}"
           }
         },
         {
