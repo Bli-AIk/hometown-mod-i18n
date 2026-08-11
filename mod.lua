@@ -37,6 +37,8 @@ function Mod:postInit(newfile)
         end
     end
 
+    Game:setFlag("hometown_time", "sunrise")
+
 end
 
 
