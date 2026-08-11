@@ -204,23 +204,23 @@
   </object>
   <object id="33" name="interactable" x="0" y="200" width="80" height="240">
    <properties>
-    <property name="text1" value="{hometown.text.there_s_more_police_tape_145f0671c4}"/>
-    <property name="text2" value="{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}"/>
-    <property name="text3" value="{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"/>
+    <property name="text1" value="{hometown.town_south.more_police_tape}"/>
+    <property name="text2" value="{hometown.town_south.says_ngahhhh_mean}"/>
+    <property name="text3" value="{hometown.town_south.clear_what_meant}"/>
    </properties>
   </object>
   <object id="34" name="interactable" x="80" y="200" width="40" height="200">
    <properties>
-    <property name="text1" value="{hometown.text.there_s_more_police_tape_145f0671c4}"/>
-    <property name="text2" value="{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}"/>
-    <property name="text3" value="{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"/>
+    <property name="text1" value="{hometown.town_south.more_police_tape}"/>
+    <property name="text2" value="{hometown.town_south.says_ngahhhh_mean}"/>
+    <property name="text3" value="{hometown.town_south.clear_what_meant}"/>
    </properties>
   </object>
   <object id="36" name="interactable" x="120" y="200" width="32" height="119">
    <properties>
-    <property name="text1" value="{hometown.text.there_s_more_police_tape_145f0671c4}"/>
-    <property name="text2" value="{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}"/>
-    <property name="text3" value="{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"/>
+    <property name="text1" value="{hometown.town_south.more_police_tape}"/>
+    <property name="text2" value="{hometown.town_south.says_ngahhhh_mean}"/>
+    <property name="text3" value="{hometown.town_south.clear_what_meant}"/>
    </properties>
   </object>
  </objectgroup>

@@ -63,27 +63,27 @@
   </object>
   <object id="35" name="interactable" x="292" y="176" width="50" height="40">
    <properties>
-    <property name="text" value="{hometown.text.the_sink_is_sparkling_clean_5bebe962d8}"/>
+    <property name="text" value="{hometown.noellehouse.kitchen.sink_sparkling_clean}"/>
    </properties>
   </object>
   <object id="36" name="interactable" x="366" y="176" width="64" height="40">
    <properties>
-    <property name="text" value="{hometown.text.new_stovetop_wait_5_ancient_katana_3e6321eff5}"/>
+    <property name="text" value="{hometown.noellehouse.kitchen.new_stovetop_ancient_katana}"/>
    </properties>
   </object>
   <object id="37" name="interactable" x="442" y="168" width="40" height="48">
    <properties>
-    <property name="text" value="{hometown.text.in_the_cupboard_are_wait_5_cutters_for_gingerbre_5860018a7b}"/>
+    <property name="text" value="{hometown.noellehouse.kitchen.cupboard_cutters_gingerbread_monsters}"/>
    </properties>
   </object>
   <object id="38" name="interactable" x="1074" y="206" width="40" height="84">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_highly_climbable_looking_tree_8b3fc7f13a}"/>
+    <property name="text" value="{hometown.noellehouse.kitchen.highly_climbable_looking_tree}"/>
    </properties>
   </object>
   <object id="39" name="interactable" x="1124" y="336" width="40" height="42">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_piano_799372963b}"/>
+    <property name="text" value="{hometown.noellehouse.kitchen.piano}"/>
    </properties>
   </object>
   <object id="40" gid="127" x="176" y="106" width="56" height="32"/>

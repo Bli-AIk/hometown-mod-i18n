@@ -94,8 +94,8 @@
   </object>
   <object id="22" name="interactable" x="458" y="236" width="76" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_a_sink_you_could_wash_your_hands_here_1edcaa5689}"/>
-    <property name="text2" value="{hometown.text.wait_5_but_wait_5_isn_t_the_sink_in_the_bathroom_6dfdf12e34}"/>
+    <property name="text1" value="{hometown.torielhouse.tor_house.sink_could_wash_hands_here}"/>
+    <property name="text2" value="{hometown.torielhouse.tor_house.isnt_sink_bathroom_better}"/>
    </properties>
   </object>
   <object id="23" name="interactable" x="534" y="236" width="82" height="40">
@@ -105,7 +105,7 @@
   </object>
   <object id="24" name="interactable" x="616" y="236" width="80" height="40">
    <properties>
-    <property name="text" value="{hometown.text.cookie_cutters_for_gingerbread_monsters_and_ging_b64e068c5b}"/>
+    <property name="text" value="{hometown.torielhouse.tor_house.cookie_cutters_gingerbread_monsters}"/>
    </properties>
   </object>
   <object id="25" name="interactable" x="412" y="260" width="44" height="40">
@@ -116,14 +116,14 @@
   <object id="26" name="interactable" x="948" y="258" width="94" height="46">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.you_can_feel_a_pressure_gradient_from_the_absenc_797aec94f4}"/>
+    <property name="text" value="{hometown.torielhouse.tor_house.can_feel_pressure_gradient_absence}"/>
    </properties>
   </object>
   <object id="27" gid="38" x="370" y="400" width="830" height="94"/>
   <object id="30" name="interactable" x="1148" y="382" width="52" height="18">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_book_of_hymns_e8625e25e3}"/>
+    <property name="text" value="{hometown.torielhouse.tor_house.book_hymns}"/>
    </properties>
   </object>
   <object id="31" name="interactable" x="684" y="280" width="44" height="40">

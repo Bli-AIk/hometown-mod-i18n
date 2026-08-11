@@ -34,8 +34,8 @@
   </object>
   <object id="12" name="interactable" x="410" y="169" width="84" height="100">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_your_bed_7cef8dacdb}"/>
-    <property name="text2" value="{hometown.text.it_feels_incredibly_soft_like_sleeping_on_a_drea_6a38861f7d}"/>
+    <property name="text1" value="{hometown.dark.castletown.bed}"/>
+    <property name="text2" value="{hometown.dark.castletown.feels_incredibly_soft_like_sleeping}"/>
    </properties>
   </object>
   <object id="13" name="interactable" x="316" y="161" width="45" height="43">
@@ -45,14 +45,14 @@
   </object>
   <object id="16" name="interactable" x="217" y="159" width="61" height="39">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_a_shelf_76a512df1b}"/>
-    <property name="text2" value="{hometown.text.all_sorts_of_keepsakes_could_be_put_here_665ca88dac}"/>
+    <property name="text1" value="{hometown.dark.castletown.shelf}"/>
+    <property name="text2" value="{hometown.dark.castletown.all_sorts_keepsakes_could_put}"/>
    </properties>
   </object>
   <object id="17" name="interactable" x="151" y="160" width="47" height="39">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_a_wardrobe_full_of_all_sorts_of_different_c_46ef21e8ab}"/>
-    <property name="text2" value="{hometown.text.you_could_wear_whatever_you_want_f034e07f68}"/>
+    <property name="text1" value="{hometown.dark.castletown.wardrobe_full_all_sorts_different}"/>
+    <property name="text2" value="{hometown.dark.castletown.could_wear_whatever_want}"/>
    </properties>
   </object>
   <object id="20" name="interactable" x="470" y="386" width="20" height="20">

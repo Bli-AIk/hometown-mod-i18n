@@ -48,18 +48,18 @@
   <object id="20" gid="94" x="46" y="440" width="156" height="92"/>
   <object id="30" name="interactable" x="66" y="228" width="124" height="40">
    <properties>
-    <property name="text1" value="{hometown.text.it_s_dess_s_bed_underneath_are_army_rations_wait_c2e82ed5ec}"/>
-    <property name="text2" value="{hometown.text.wait_5_and_a_badly_traced_drawing_of_a_dragon_70a3cf0824}"/>
+    <property name="text1" value="{hometown.noellehouse.dess.desss_bed_underneath_army_rations}"/>
+    <property name="text2" value="{hometown.noellehouse.dess.badly_traced_drawing_dragon}"/>
    </properties>
   </object>
   <object id="31" name="interactable" x="344" y="404" width="94" height="28">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_cd_player_underneath_are_tons_of_punk_roc_9fc37133fd}"/>
+    <property name="text" value="{hometown.noellehouse.dess.cd_player_underneath_tons_punk}"/>
    </properties>
   </object>
   <object id="32" name="interactable" x="102" y="402" width="76" height="34">
    <properties>
-    <property name="text" value="{hometown.text.it_s_a_computer_the_monitor_is_unplugged_2a00ee7140}"/>
+    <property name="text" value="{hometown.noellehouse.dess.computer_monitor_unplugged}"/>
    </properties>
   </object>
   <object id="33" name="interactable" x="48" y="358" width="36" height="72">
@@ -69,12 +69,12 @@
   </object>
   <object id="34" name="interactable" x="496" y="278" width="26" height="30">
    <properties>
-    <property name="text" value="{hometown.text.rollerblades_wait_5_wiffle_bat_looking_at_these__f3472cf82e}"/>
+    <property name="text" value="{hometown.noellehouse.dess.rollerblades_wiffle_bat_looking_things}"/>
    </properties>
   </object>
   <object id="35" name="interactable" x="228" y="176" width="156" height="50">
    <properties>
-    <property name="text" value="{hometown.text.it_s_an_excessively_large_walk_in_closet_0726a53d00}"/>
+    <property name="text" value="{hometown.noellehouse.dess.excessively_large_walk_closet}"/>
    </properties>
   </object>
   <object id="36" name="interactable" x="466" y="410" width="42" height="28">
@@ -84,8 +84,8 @@
   </object>
   <object id="37" name="interactable" x="486" y="332" width="26" height="30">
    <properties>
-    <property name="text1" value="{hometown.text.a_violin_wait_5_a_flute_wait_5_a_microphone_4f961d3abc}"/>
-    <property name="text2" value="{hometown.text.they_all_look_very_expensive_wait_5_and_very_den_382faf8ef8}"/>
+    <property name="text1" value="{hometown.noellehouse.dess.violin_flute_microphone}"/>
+    <property name="text2" value="{hometown.noellehouse.dess.all_look_expensive_dented}"/>
    </properties>
   </object>
  </objectgroup>

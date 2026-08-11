@@ -220,7 +220,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.patient_name_wait_5_rudolph_rudy_holiday_269d45522e}"
+            ["text"] = "{hometown.hospital_rudy.patient_name_rudolph_rudy_holiday}"
           }
         },
         {
@@ -235,7 +235,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_an_angel_doll_wait_5_its_lack_of_facial_fea_31d177ccfe}"
+            ["text"] = "{hometown.hospital_rudy.angel_doll_lack_facial_features}"
           }
         },
         {
@@ -250,7 +250,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_chair_10976e57a6}"
+            ["text"] = "{hometown.hospital_rudy.chair}"
           }
         },
         {
@@ -265,7 +265,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_bouquet_of_flowers_in_a_glass_container_5bf47bcd04}"
+            ["text"] = "{hometown.hospital_rudy.bouquet_flowers_glass_container}"
           }
         },
         {
@@ -280,7 +280,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_sink_70b61bc3d8}"
+            ["text"] = "{hometown.hospital_rudy.sink}"
           }
         },
         {

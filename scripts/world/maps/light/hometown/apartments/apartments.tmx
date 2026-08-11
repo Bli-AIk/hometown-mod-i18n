@@ -27,37 +27,37 @@
   <object id="6" name="interactable" x="356" y="332" width="44" height="52">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"/>
+    <property name="text" value="{hometown.apartments.dirty_trash_can}"/>
    </properties>
   </object>
   <object id="7" name="interactable" x="356" y="278" width="44" height="52">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"/>
+    <property name="text" value="{hometown.apartments.dirty_trash_can}"/>
    </properties>
   </object>
   <object id="8" name="interactable" x="358" y="224" width="42" height="52">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"/>
+    <property name="text" value="{hometown.apartments.trash_can_full_well_kept}"/>
    </properties>
   </object>
   <object id="9" name="interactable" x="358" y="174" width="42" height="50">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"/>
+    <property name="text" value="{hometown.apartments.trash_can_full_well_kept}"/>
    </properties>
   </object>
   <object id="10" name="interactable" x="358" y="124" width="42" height="50">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"/>
+    <property name="text" value="{hometown.apartments.trash_can_full_well_kept}"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="240" y="224" width="40" height="14">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_saucer_of_milk_b4814dd153}"/>
+    <property name="text" value="{hometown.apartments.saucer_milk}"/>
    </properties>
   </object>
  </objectgroup>

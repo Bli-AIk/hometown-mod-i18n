@@ -233,7 +233,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_seems_to_be_locked_wait_5_it_may_never_open_a_00664fdcdc}"
+            ["text"] = "{hometown.dark.castletown.seems_locked_may_never_open}"
           }
         }
       }

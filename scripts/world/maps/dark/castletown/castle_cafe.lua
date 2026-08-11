@@ -369,7 +369,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_jukebox_is_broken_feels_like_you_might_never_285c3bd5e8}"
+            ["text"] = "{hometown.dark.castletown.jukebox_broken_feels_like_might}"
           }
         }
       }

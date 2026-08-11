@@ -18,9 +18,9 @@ function Mod:postInit(newfile)
 
     if os.getenv("KRISTAL_MOD_SMOKE") == "1" then
         print("EL_LANG=" .. tostring(Game.lang))
-        print("EL_T1=" .. tostring(Game:hasStr("hometown.text.it_s_a_door_fb1c09569b") and Game:loc("hometown.text.it_s_a_door_fb1c09569b") or "NO"))
-        print("EL_T2=" .. tostring(Game:hasStr("hometown.text.documents_87a11b64c8") and Game:loc("hometown.text.documents_87a11b64c8") or "NO"))
-        print("EL_T4=" .. tostring(Game:hasStr("hometown.text.the_name_s_seam_wait_5_pronounced_shawm_d4c9256998") and Game:loc("hometown.text.the_name_s_seam_wait_5_pronounced_shawm_d4c9256998") or "NO"))
+        print("EL_T1=" .. tostring(Game:hasStr("hometown.smoke.door") and Game:loc("hometown.smoke.door") or "NO"))
+        print("EL_T2=" .. tostring(Game:hasStr("hometown.smoke.documents") and Game:loc("hometown.smoke.documents") or "NO"))
+        print("EL_T4=" .. tostring(Game:hasStr("hometown.smoke.names_seam_pronounced_shawm") and Game:loc("hometown.smoke.names_seam_pronounced_shawm") or "NO"))
         print("EL_T3=" .. tostring(Game:hasStr("untranslated_stuff_xyz") and Game:loc("untranslated_stuff_xyz") or "FALLBACK_OK"))
         print("KRISTAL_MOD_SMOKE=PASS")
         love.event.quit()

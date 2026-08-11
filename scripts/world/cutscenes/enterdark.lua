@@ -175,6 +175,6 @@ return function(cutscene)
         cutscene:attachCamera()
         cutscene:attachFollowers()
     else
-        cutscene:text("{hometown.text.you_can_t_enter_yet_a4e382127c}")
+        cutscene:text("{hometown.enterdark.cant_enter_yet}")
     end
 end

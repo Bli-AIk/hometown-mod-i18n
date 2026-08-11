@@ -209,7 +209,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.a_very_old_school_id_with_an_embarrassing_haircu_acbe3587aa}"
+            ["text"] = "{hometown.torielhouse.kris_room.old_school_embarrassing_haircut}"
           }
         },
         {
@@ -225,7 +225,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.there_s_nothing_useful_in_the_drawer_5f6ad47ac1}"
+            ["text"] = "{hometown.torielhouse.kris_room.nothing_useful_drawer}"
           }
         },
         {
@@ -240,11 +240,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["nighttext1"] = "{hometown.text.it_s_a_quiet_night_outside_e034bb4cd6}",
+            ["nighttext1"] = "{hometown.torielhouse.kris_room.quiet_night_outside}",
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_a_beautiful_day_outside_b9bd775b89}",
-            ["text2"] = "{hometown.text.text_9727d4d874}",
-            ["text3"] = "{hometown.text.you_felt_a_strange_feeling_of_judgement_2767f1800e}"
+            ["text1"] = "{hometown.torielhouse.kris_room.beautiful_day_outside}",
+            ["text2"] = "{hometown.music_player.text}",
+            ["text3"] = "{hometown.torielhouse.kris_room.felt_strange_feeling_judgement}"
           }
         },
         {
@@ -276,8 +276,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.underneath_the_bed_is_an_old_cartridge_of_cat_pe_5de1c8f39d}",
-            ["text2"] = "{hometown.text.catti_catty_can_be_seen_faintly_written_on_it_in_8eda4a77d2}"
+            ["text1"] = "{hometown.torielhouse.kris_room.underneath_bed_old_cartridge_cat}",
+            ["text2"] = "{hometown.torielhouse.kris_room.catti_catty_can_seen_faintly}"
           }
         },
         {
@@ -339,10 +339,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.on_the_computer_s_desktop_is_a_folder_called_epi_5402080567}",
-            ["text2"] = "{hometown.text.it_s_a_poorly_drawn_design_for_a_game_67bbc986ff}",
-            ["text3"] = "{hometown.text.seems_the_last_boss_is_a_creature_with_giant_rai_5c9513b952}",
-            ["text4"] = "{hometown.text.doesn_t_seem_like_this_game_ever_saw_the_light_o_c5caa2b9c3}"
+            ["text1"] = "{hometown.torielhouse.kris_room.computers_desktop_folder_called_epic}",
+            ["text2"] = "{hometown.torielhouse.kris_room.poorly_drawn_design_game}",
+            ["text3"] = "{hometown.torielhouse.kris_room.seems_last_boss_creature_giant}",
+            ["text4"] = "{hometown.torielhouse.kris_room.doesnt_seem_like_game_ever}"
           }
         },
         {
@@ -358,7 +358,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_cage_50782ffee0}"
+            ["text"] = "{hometown.torielhouse.kris_room.cage}"
           }
         },
         {
@@ -373,7 +373,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_stained_d1dae2417b}"
+            ["text"] = "{hometown.torielhouse.kris_room.stained}"
           }
         },
         {

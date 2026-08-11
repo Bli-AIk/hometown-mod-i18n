@@ -285,7 +285,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_noelle_s_bed_there_s_ample_space_to_hide_un_1f0b8db894}"
+            ["text"] = "{hometown.noellehouse.noelle.noelles_bed_ample_space_hide}"
           }
         },
         {
@@ -315,7 +315,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_state_of_the_art_high_definition_tv_with__464f726d7e}"
+            ["text"] = "{hometown.noellehouse.noelle.state_art_high_definition_tv}"
           }
         },
         {
@@ -330,7 +330,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_couch_wait_5_for_watching_the_tv_8ce4e1af7f}"
+            ["text"] = "{hometown.noellehouse.noelle.couch_watching_tv}"
           }
         },
         {
@@ -360,7 +360,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_noelle_s_homework_desk_24e7f14650}"
+            ["text"] = "{hometown.noellehouse.noelle.noelles_homework_desk}"
           }
         },
         {
@@ -375,7 +375,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.a_clothes_wardrobe_a_pair_of_small_angel_wings_a_c5eebc17fe}"
+            ["text"] = "{hometown.noelle_closet.clothes_wardrobe_pair_small_angel}"
           }
         }
       }

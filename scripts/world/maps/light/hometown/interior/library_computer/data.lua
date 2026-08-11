@@ -267,7 +267,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_full_of_many_backup_devices_wait_5_like_ext_aaffe0b0ed}"
+            ["text"] = "{hometown.library_computer.full_many_backup_devices_like}"
           }
         },
         {
@@ -282,8 +282,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.the_closet_is_spacious_and_full_of_old_electroni_c265038580}",
-            ["text2"] = "{hometown.text.a_large_person_could_easily_fit_inside_ed370994a4}"
+            ["text1"] = "{hometown.library_computer.closet_spacious_full_old_electronics}",
+            ["text2"] = "{hometown.library_computer.large_person_could_easily_fit}"
           }
         },
         {
@@ -298,7 +298,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.various_posters_talking_about_internet_safety_9c44161560}"
+            ["text"] = "{hometown.library_computer.various_posters_talking_internet_safety}"
           }
         },
         {

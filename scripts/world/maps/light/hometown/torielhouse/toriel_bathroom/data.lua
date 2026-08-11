@@ -216,8 +216,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.on_the_shower_ledge_wait_5_there_s_a_small_conta_52822089e2}",
-            ["text2"] = "{hometown.text.and_a_gallon_sized_container_of_pet_shampoo_791f2be0a8}"
+            ["text1"] = "{hometown.torielhouse.toriel_bathroom.shower_ledge_small_container_apple}",
+            ["text2"] = "{hometown.torielhouse.toriel_bathroom.gallon_sized_container_pet_shampoo}"
           }
         },
         {
@@ -247,9 +247,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.you_looked_inside_the_sink_cupboard_wait_5_there_3d4c7c2c30}",
-            ["text2"] = "{hometown.text.a_can_of_ice_e_s_cool_boys_body_spray_spray_for__ed46212e83}",
-            ["text3"] = "{hometown.text.it_seems_to_be_almost_entirely_full_9cd0e0ad53}"
+            ["text1"] = "{hometown.torielhouse.toriel_bathroom.looked_inside_sink_cupboard}",
+            ["text2"] = "{hometown.torielhouse.toriel_bathroom.can_ice_es_cool_boys}",
+            ["text3"] = "{hometown.torielhouse.toriel_bathroom.seems_almost_entirely_full}"
           }
         }
       }

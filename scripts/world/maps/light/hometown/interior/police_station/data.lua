@@ -339,7 +339,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.well_cared_for_flowers_b7a2ab3eb8}"
+            ["text"] = "{hometown.police_station.well_cared_flowers}"
           }
         },
         {
@@ -370,12 +370,12 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.you_skimmed_a_news_article_about_undyne_7314aded4d}",
-            ["text2"] = "{hometown.text.new_police_chief_undyne_s_explosive_debut_4a0dbe4e76}",
-            ["text3"] = "{hometown.text.passionate_young_rookie_becomes_the_new_police_c_94fec8a5c7}",
-            ["text4"] = "{hometown.text.though_energetic_it_may_be_hard_to_live_up_to_th_4e9d0f0353}",
-            ["text5"] = "{hometown.text.after_asgore_dreemurr_was_removed_from_the_force_2e3e1db0ae}",
-            ["text6"] = "{hometown.text.there_s_no_need_to_read_any_more_ee542f6062}"
+            ["text1"] = "{hometown.police_station.skimmed_news_article_undyne}",
+            ["text2"] = "{hometown.police_station.new_police_chief_undynes_explosive}",
+            ["text3"] = "{hometown.police_station.passionate_young_rookie_becomes_new}",
+            ["text4"] = "{hometown.police_station.though_energetic_may_hard_live}",
+            ["text5"] = "{hometown.police_station.after_asgore_dreemurr_removed_force}",
+            ["text6"] = "{hometown.police_station.need_read_any_more}"
           }
         },
         {
@@ -390,9 +390,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.photos_of_chief_undyne_and_deputy_napstablook_c7d1e0961a}",
-            ["text2"] = "{hometown.text.undyne_is_rescuing_all_of_catti_s_family_from_a__cced8ca4c8}",
-            ["text3"] = "{hometown.text.napstablook_is_also_stuck_in_the_tree_somehow_a8c84081cc}"
+            ["text1"] = "{hometown.police_station.photos_chief_undyne_deputy_napstablook}",
+            ["text2"] = "{hometown.police_station.undyne_rescuing_all_cattis_family}",
+            ["text3"] = "{hometown.police_station.napstablook_also_stuck_tree_somehow}"
           }
         }
       }

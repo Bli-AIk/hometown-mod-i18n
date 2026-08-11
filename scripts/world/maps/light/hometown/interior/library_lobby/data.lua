@@ -329,9 +329,9 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.there_s_a_crude_drawing_of_an_ice_cube_wearing_a_a524c6311c}",
-            ["text2"] = "{hometown.text.the_teenzone_where_teen_s_can_be_kid_s_21528fa43b}",
-            ["text3"] = "{hometown.text.a_feeling_of_immense_relief_washes_over_you_c9e6b61f9d}"
+            ["text1"] = "{hometown.library_lobby.crude_drawing_ice_cube_wearing}",
+            ["text2"] = "{hometown.library_lobby.teenzone_where_teens_can_kids}",
+            ["text3"] = "{hometown.library_lobby.feeling_immense_relief_washes_over}"
           }
         },
         {
@@ -347,10 +347,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_an_unlabelled_book_you_look_inside_9f4ecb824a}",
-            ["text2"] = "{hometown.text.oh_i_accidentally_returned_my_personal_journal_i_645848b92e}",
-            ["text3"] = "{hometown.text.oh_no_they_re_putting_it_into_their_catalogue_bcb581288d}",
-            ["text4"] = "{hometown.text.oh_no_i_have_to_take_it_out_every_time_i_want_to_bf218cc700}"
+            ["text1"] = "{hometown.library_lobby.unlabelled_book_look_inside}",
+            ["text2"] = "{hometown.library_lobby.oh_accidentally_returned_personal}",
+            ["text3"] = "{hometown.library_lobby.oh_theyre_putting_their_catalogue}",
+            ["text4"] = "{hometown.library_lobby.oh_take_out_every_time}"
           }
         },
         {
@@ -366,8 +366,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.lord_of_the_hammer_9964d33e38}",
-            ["text2"] = "{hometown.text.first_in_the_award_winning_fiction_series_by_lau_18e4ba9254}"
+            ["text1"] = "{hometown.library_lobby.lord_hammer}",
+            ["text2"] = "{hometown.library_lobby.first_award_winning_fiction_series}"
           }
         },
         {
@@ -383,8 +383,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_a_book_of_magic_tricks_d8d03abff1}",
-            ["text2"] = "{hometown.text.most_of_them_require_orbs_or_floating_hands_82d5e9d6a8}"
+            ["text1"] = "{hometown.library_lobby.book_magic_tricks}",
+            ["text2"] = "{hometown.library_lobby.most_require_orbs_floating_hands}"
           }
         },
         {
@@ -400,8 +400,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.there_s_a_book_here_wait_5_you_lick_the_page_wai_2c1ea26277}",
-            ["text2"] = "{hometown.text.this_must_be_what_they_meant_by_flavor_text_0340cfd589}"
+            ["text1"] = "{hometown.library_lobby.book_here_lick_page_delicious}",
+            ["text2"] = "{hometown.library_lobby.must_what_meant_flavor_text}"
           }
         },
         {
@@ -418,8 +418,8 @@ return {
           properties = {
             ["flagcheck"] = "!hometown_digisetup",
             ["solid"] = true,
-            ["text1"] = "{hometown.text.computer_lab_wait_5_please_surf_the_web_responsi_9602a6f757}",
-            ["text2"] = "{hometown.text.in_fact_wait_5_maybe_don_t_do_it_at_all_4c9461df40}"
+            ["text1"] = "{hometown.library_lobby.computer_lab_please_surf_web}",
+            ["text2"] = "{hometown.library_lobby.fact_maybe_dont_all}"
           }
         },
         {
@@ -435,8 +435,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_the_weekly_cartoon_review_c396f10805}",
-            ["text2"] = "{hometown.text.just_looking_at_cartoon_criticism_is_sapping_you_d662bb2b98}"
+            ["text1"] = "{hometown.library_lobby.weekly_cartoon_review}",
+            ["text2"] = "{hometown.library_lobby.looking_cartoon_criticism_sapping_energy}"
           }
         }
       }

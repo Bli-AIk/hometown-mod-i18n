@@ -462,7 +462,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_landline_phone_wait_5_but_you_already_hav_6e23e3eb3a}"
+            ["text"] = "{hometown.torielhouse.tor_house.landline_phone_already_cell_phone}"
           }
         },
         {
@@ -477,8 +477,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_sink_you_could_wash_your_hands_here_1edcaa5689}",
-            ["text2"] = "{hometown.text.wait_5_but_wait_5_isn_t_the_sink_in_the_bathroom_6dfdf12e34}"
+            ["text1"] = "{hometown.torielhouse.tor_house.sink_could_wash_hands_here}",
+            ["text2"] = "{hometown.torielhouse.tor_house.isnt_sink_bathroom_better}"
           }
         },
         {
@@ -508,7 +508,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.cookie_cutters_for_gingerbread_monsters_and_ging_b64e068c5b}"
+            ["text"] = "{hometown.torielhouse.tor_house.cookie_cutters_gingerbread_monsters}"
           }
         },
         {
@@ -539,7 +539,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.you_can_feel_a_pressure_gradient_from_the_absenc_797aec94f4}"
+            ["text"] = "{hometown.torielhouse.tor_house.can_feel_pressure_gradient_absence}"
           }
         },
         {
@@ -569,7 +569,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_book_of_hymns_e8625e25e3}"
+            ["text"] = "{hometown.torielhouse.tor_house.book_hymns}"
           }
         },
         {
@@ -584,7 +584,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_trashcan_wait_5_somehow_wait_5_its_floral_3714503e89}"
+            ["text"] = "{hometown.torielhouse.tor_house.trashcan_somehow_floral_scent_increased}"
           }
         },
         {

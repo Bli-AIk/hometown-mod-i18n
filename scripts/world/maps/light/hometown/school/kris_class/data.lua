@@ -448,8 +448,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.you_checked_the_time_e8e22ddbf0}",
-            ["text2"] = "{hometown.text.it_s_an_enigma_cc1c13833e}"
+            ["text1"] = "{hometown.school.kris_class.checked_time}",
+            ["text2"] = "{hometown.school.kris_class.enigma}"
           }
         },
         {
@@ -464,9 +464,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.looks_like_motivational_quotes_from_various_lite_c89ef9582d}",
-            ["text2"] = "{hometown.text.try_your_best_wait_5_astral_wolf_wait_5_even_in__1da5873609}",
-            ["text3"] = "{hometown.text.that_one_seems_to_be_from_a_video_game_ab9d709258}"
+            ["text1"] = "{hometown.school.kris_class.looks_like_motivational_quotes_various}",
+            ["text2"] = "{hometown.school.kris_class.try_best_astral_wolf_even}",
+            ["text3"] = "{hometown.school.kris_class.one_seems_video_game}"
           }
         },
         {
@@ -481,9 +481,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}",
-            ["text2"] = "{hometown.text.it_s_from_the_newely_released_season_of_mew_mew__cad7750121}",
-            ["text3"] = "{hometown.text.you_decide_to_keep_a_safe_distance_0765557bd9}"
+            ["text1"] = "{hometown.school.kris_class.computer_wallpaper_updated}",
+            ["text2"] = "{hometown.school.kris_class.newely_released_season_mew_mew}",
+            ["text3"] = "{hometown.school.kris_class.decide_keep_safe_distance}"
           }
         },
         {
@@ -498,7 +498,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_bunch_of_roses_c24167f6b7}"
+            ["text"] = "{hometown.school.kris_class.bunch_roses}"
           }
         },
         {

@@ -711,9 +711,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.there_s_more_police_tape_145f0671c4}",
-            ["text2"] = "{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}",
-            ["text3"] = "{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"
+            ["text1"] = "{hometown.town_south.more_police_tape}",
+            ["text2"] = "{hometown.town_south.says_ngahhhh_mean}",
+            ["text3"] = "{hometown.town_south.clear_what_meant}"
           }
         },
         {
@@ -728,9 +728,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.there_s_more_police_tape_145f0671c4}",
-            ["text2"] = "{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}",
-            ["text3"] = "{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"
+            ["text1"] = "{hometown.town_south.more_police_tape}",
+            ["text2"] = "{hometown.town_south.says_ngahhhh_mean}",
+            ["text3"] = "{hometown.town_south.clear_what_meant}"
           }
         },
         {
@@ -745,9 +745,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.there_s_more_police_tape_145f0671c4}",
-            ["text2"] = "{hometown.text.it_says_ngahhhh_wait_5_i_mean_it_7f47c603e5}",
-            ["text3"] = "{hometown.text.it_s_not_clear_what_is_meant_by_that_b53546304e}"
+            ["text1"] = "{hometown.town_south.more_police_tape}",
+            ["text2"] = "{hometown.town_south.says_ngahhhh_mean}",
+            ["text3"] = "{hometown.town_south.clear_what_meant}"
           }
         }
       }

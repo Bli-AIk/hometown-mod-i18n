@@ -487,7 +487,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_fridge_is_packed_with_festive_foods_wait_5_a_be7d6eaaea}"
+            ["text"] = "{hometown.noellehouse.kitchen.fridge_packed_festive_foods_jar}"
           }
         },
         {
@@ -502,7 +502,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_sink_is_sparkling_clean_5bebe962d8}"
+            ["text"] = "{hometown.noellehouse.kitchen.sink_sparkling_clean}"
           }
         },
         {
@@ -517,7 +517,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.new_stovetop_wait_5_ancient_katana_3e6321eff5}"
+            ["text"] = "{hometown.noellehouse.kitchen.new_stovetop_ancient_katana}"
           }
         },
         {
@@ -532,7 +532,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.in_the_cupboard_are_wait_5_cutters_for_gingerbre_5860018a7b}"
+            ["text"] = "{hometown.noellehouse.kitchen.cupboard_cutters_gingerbread_monsters}"
           }
         },
         {
@@ -547,7 +547,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_highly_climbable_looking_tree_8b3fc7f13a}"
+            ["text"] = "{hometown.noellehouse.kitchen.highly_climbable_looking_tree}"
           }
         },
         {
@@ -562,7 +562,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_piano_799372963b}"
+            ["text"] = "{hometown.noellehouse.kitchen.piano}"
           }
         },
         {

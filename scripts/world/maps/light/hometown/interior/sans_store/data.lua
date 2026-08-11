@@ -304,7 +304,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.various_frozen_bagels_and_treats_781b7bd0bf}"
+            ["text"] = "{hometown.sans_store.various_frozen_bagels_treats}"
           }
         },
         {
@@ -319,8 +319,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.ice_e_s_pizza_pin_ups_mangazine_fc38c83bd9}",
-            ["text2"] = "{hometown.text.hot_and_fresh_chease_wait_5_pepperonie_wait_5_ju_74a9d265e2}"
+            ["text1"] = "{hometown.sans_store.ice_es_pizza_pin_ups}",
+            ["text2"] = "{hometown.sans_store.hot_fresh_chease_pepperonie_like}"
           }
         },
         {
@@ -335,9 +335,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.there_re_some_car_magazines_on_the_racks_9a7cd452c4}",
-            ["text2"] = "{hometown.text.it_might_be_fun_to_look_at_them_ade6ea9fc5}",
-            ["text3"] = "{hometown.text.but_there_s_other_people_around_73719bb0f7}"
+            ["text1"] = "{hometown.sans_store.therere_some_car_magazines_racks}",
+            ["text2"] = "{hometown.sans_store.might_fun_look}",
+            ["text3"] = "{hometown.sans_store.other_people_around}"
           }
         },
         {
@@ -352,7 +352,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_zine_for_jockington_fans_seems_popular_3039158dc6}"
+            ["text"] = "{hometown.sans_store.zine_jockington_fans_seems_popular}"
           }
         },
         {
@@ -367,8 +367,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_bunch_of_cards_and_heart_shaped_chocolate_b5d36d7398}",
-            ["text2"] = "{hometown.text.get_well_soon_i_m_glad_your_bike_crashed_a61a24a1a2}"
+            ["text1"] = "{hometown.sans_store.bunch_cards_heart_shaped_chocolates}",
+            ["text2"] = "{hometown.sans_store.get_well_soon_glad_bike}"
           }
         },
         {
@@ -384,7 +384,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_trash_can_4b208a8154}"
+            ["text"] = "{hometown.sans_store.trash_can}"
           }
         },
         {
@@ -400,8 +400,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.you_can_t_reach_the_top_wait_5_rendering_it_impo_9756129751}",
-            ["text2"] = "{hometown.text.you_ll_never_be_able_to_buy_something_in_this_st_d19e1c9965}"
+            ["text1"] = "{hometown.sans_store.cant_reach_top_rendering_impossible}",
+            ["text2"] = "{hometown.sans_store.youll_never_able_buy_something}"
           }
         },
         {
@@ -416,7 +416,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_rack_of_candy_wait_5_jerky_wait_5_and_var_89fc2493ee}"
+            ["text"] = "{hometown.sans_store.rack_candy_jerky_various_nuts}"
           }
         },
         {
@@ -431,8 +431,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.loose_eggs_1_d8a7efaee0}",
-            ["text2"] = "{hometown.text.it_s_too_much_responsibility_for_an_egg_380c8020c0}"
+            ["text1"] = "{hometown.sans_store.loose_eggs_1}",
+            ["text2"] = "{hometown.sans_store.much_responsibility_egg}"
           }
         },
         {
@@ -447,8 +447,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_looks_like_a_normal_basket_of_fruit_wait_5_bu_b9b759fb74}",
-            ["text2"] = "{hometown.text.wait_5_it_s_incredibly_deep_and_holds_all_sorts__ed00310da9}"
+            ["text1"] = "{hometown.sans_store.looks_like_normal_basket_fruit}",
+            ["text2"] = "{hometown.sans_store.incredibly_deep_holds_all_sorts}"
           }
         },
         {
@@ -463,7 +463,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.grapes_wait_5_melons_wait_5_oranges_wait_5_and_t_5849572366}"
+            ["text"] = "{hometown.sans_store.grapes_melons_oranges_scent_fresh}"
           }
         },
         {
@@ -478,7 +478,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_looks_like_a_normal_palm_tree_wait_5_but_it_s_97ac8b475b}"
+            ["text"] = "{hometown.sans_store.looks_like_normal_palm_tree}"
           }
         },
         {

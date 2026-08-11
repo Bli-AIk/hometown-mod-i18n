@@ -185,7 +185,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "{hometown.text.it_s_a_regular_sink_1570ab3538}"
+            ["text"] = "{hometown.hospital_room2.regular_sink}"
           }
         },
         {
@@ -201,8 +201,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.it_s_a_clone_of_the_other_sink_f458e060db}",
-            ["text2"] = "{hometown.text.perhaps_there_was_originally_one_tall_sink_that__c14e4174cb}"
+            ["text1"] = "{hometown.hospital_room2.clone_other_sink}",
+            ["text2"] = "{hometown.hospital_room2.perhaps_originally_one_tall_sink}"
           }
         },
         {
@@ -234,8 +234,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "{hometown.text.you_looked_inside_the_cupboard_9b93c9fd4d}",
-            ["text2"] = "{hometown.text.a_very_small_obligatory_piano_is_hiding_inside_3fd294cb5a}"
+            ["text1"] = "{hometown.hospital_room2.looked_inside_cupboard}",
+            ["text2"] = "{hometown.hospital_room2.small_obligatory_piano_hiding_inside}"
           }
         },
         {
@@ -250,8 +250,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "{hometown.text.it_s_a_classic_1_to_10_pain_scale_wait_5_using_i_5c14efbe16}",
-            ["text2"] = "{hometown.text.at_0_pain_wait_5_he_s_happy_wait_5_at_10_pain_wa_fb570cc0f3}"
+            ["text1"] = "{hometown.hospital_room2.classic_1_10_pain_scale}",
+            ["text2"] = "{hometown.hospital_room2.0_pain_hes_happy_10}"
           }
         },
         {
@@ -268,7 +268,7 @@ return {
           properties = {
             ["flagcheck"] = "POST_SNOWGRAVE",
             ["solid"] = true,
-            ["text"] = "{hometown.text.the_space_heater_is_running_f1d6f82188}"
+            ["text"] = "{hometown.hospital_room2.space_heater_running}"
           }
         },
         {

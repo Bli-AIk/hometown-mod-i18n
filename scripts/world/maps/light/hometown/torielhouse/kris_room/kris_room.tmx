@@ -34,22 +34,22 @@
   <object id="8" name="interactable" x="190" y="200" width="82" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.a_very_old_school_id_with_an_embarrassing_haircu_acbe3587aa}"/>
+    <property name="text" value="{hometown.torielhouse.kris_room.old_school_embarrassing_haircut}"/>
    </properties>
   </object>
   <object id="9" name="interactable" x="378" y="200" width="82" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.there_s_nothing_useful_in_the_drawer_5f6ad47ac1}"/>
+    <property name="text" value="{hometown.torielhouse.kris_room.nothing_useful_drawer}"/>
    </properties>
   </object>
   <object id="10" name="interactable" x="272" y="160" width="106" height="40">
    <properties>
-    <property name="nighttext1" value="{hometown.text.it_s_a_quiet_night_outside_e034bb4cd6}"/>
+    <property name="nighttext1" value="{hometown.torielhouse.kris_room.quiet_night_outside}"/>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="{hometown.text.it_s_a_beautiful_day_outside_b9bd775b89}"/>
-    <property name="text2" value="{hometown.text.text_9727d4d874}"/>
-    <property name="text3" value="{hometown.text.you_felt_a_strange_feeling_of_judgement_2767f1800e}"/>
+    <property name="text1" value="{hometown.torielhouse.kris_room.beautiful_day_outside}"/>
+    <property name="text2" value="{hometown.music_player.text}"/>
+    <property name="text3" value="{hometown.torielhouse.kris_room.felt_strange_feeling_judgement}"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="80" y="196" width="100" height="120">
@@ -61,8 +61,8 @@
   <object id="12" name="interactable" x="466" y="200" width="94" height="120">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="{hometown.text.underneath_the_bed_is_an_old_cartridge_of_cat_pe_5de1c8f39d}"/>
-    <property name="text2" value="{hometown.text.catti_catty_can_be_seen_faintly_written_on_it_in_8eda4a77d2}"/>
+    <property name="text1" value="{hometown.torielhouse.kris_room.underneath_bed_old_cartridge_cat}"/>
+    <property name="text2" value="{hometown.torielhouse.kris_room.catti_catty_can_seen_faintly}"/>
    </properties>
   </object>
   <object id="13" gid="34" x="470" y="390" width="74" height="60">
@@ -79,21 +79,21 @@
   <object id="16" name="interactable" x="90" y="366" width="92" height="34">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="{hometown.text.on_the_computer_s_desktop_is_a_folder_called_epi_5402080567}"/>
-    <property name="text2" value="{hometown.text.it_s_a_poorly_drawn_design_for_a_game_67bbc986ff}"/>
-    <property name="text3" value="{hometown.text.seems_the_last_boss_is_a_creature_with_giant_rai_5c9513b952}"/>
-    <property name="text4" value="{hometown.text.doesn_t_seem_like_this_game_ever_saw_the_light_o_c5caa2b9c3}"/>
+    <property name="text1" value="{hometown.torielhouse.kris_room.computers_desktop_folder_called_epic}"/>
+    <property name="text2" value="{hometown.torielhouse.kris_room.poorly_drawn_design_game}"/>
+    <property name="text3" value="{hometown.torielhouse.kris_room.seems_last_boss_creature_giant}"/>
+    <property name="text4" value="{hometown.torielhouse.kris_room.doesnt_seem_like_game_ever}"/>
    </properties>
   </object>
   <object id="17" name="interactable" x="486" y="354" width="58" height="36">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="{hometown.text.it_s_a_cage_50782ffee0}"/>
+    <property name="text" value="{hometown.torielhouse.kris_room.cage}"/>
    </properties>
   </object>
   <object id="18" name="interactable" x="532" y="322" width="24" height="28">
    <properties>
-    <property name="text" value="{hometown.text.it_s_stained_d1dae2417b}"/>
+    <property name="text" value="{hometown.torielhouse.kris_room.stained}"/>
    </properties>
   </object>
   <object id="20" name="transition" x="290" y="480" width="80" height="40">

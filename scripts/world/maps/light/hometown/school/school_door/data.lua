@@ -251,7 +251,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_door_is_locked_40c4b0c9dc}"
+            ["text"] = "{hometown.dark.castletown.door_locked}"
           }
         },
         {

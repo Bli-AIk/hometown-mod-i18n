@@ -187,7 +187,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.bf_living_quarters_for_bad_guys_06e5945156}"
+            ["text"] = "{hometown.dark.castletown.bf_living_quarters_bad_guys}"
           }
         },
         {
@@ -202,7 +202,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.the_door_is_locked_40c4b0c9dc}"
+            ["text"] = "{hometown.dark.castletown.door_locked}"
           }
         },
         {
@@ -217,7 +217,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.2f_living_quarters_18502175b0}"
+            ["text"] = "{hometown.dark.castletown.2f_living_quarters}"
           }
         },
         {

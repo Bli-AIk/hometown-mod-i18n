@@ -355,7 +355,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "{hometown.text.it_s_a_bed_for_three_people_wait_5_or_one_three__4e036d8277}"
+            ["text"] = "{hometown.dark.castletown.bed_three_people_one_three}"
           }
         }
       }
