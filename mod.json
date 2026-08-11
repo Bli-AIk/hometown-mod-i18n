@@ -19,7 +19,7 @@
     "chapter": 4,
 
     // The map that you start in when first starting the mod.
-    "map": "light/hometown/torielhouse/kris_room",
+    "map": "light/hometown/noellehouse/dess",
 
     // The party. The first character is the player.
     "party": ["mainchara"],
