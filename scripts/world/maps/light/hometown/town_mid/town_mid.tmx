@@ -201,29 +201,29 @@
   </object>
   <object id="48" name="interactable" x="744" y="194" width="70" height="40">
    <properties>
-    <property name="text" value="* (Here at ICE-E'S PEZZA, You're Family.)"/>
+    <property name="text" value="{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"/>
    </properties>
   </object>
   <object id="49" name="interactable" x="548" y="194" width="50" height="40">
    <properties>
-    <property name="text" value="* (Here at ICE-E'S PEZZA, You're Family.)"/>
+    <property name="text" value="{hometown.text.here_at_ice_e_s_pezza_you_re_family_74a8410c46}"/>
    </properties>
   </object>
   <object id="50" name="interactable" x="3036" y="174" width="48" height="66">
    <properties>
-    <property name="text" value="* (It's locked...)"/>
+    <property name="text" value="{hometown.text.it_s_locked_be68bf3c90}"/>
    </properties>
   </object>
   <object id="51" name="interactable" x="3316" y="174" width="48" height="66">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5]The town is pretty empty today.)"/>
+    <property name="text1" value="{hometown.text.it_s_locked_be68bf3c90}"/>
+    <property name="text2" value="{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"/>
    </properties>
   </object>
   <object id="52" name="interactable" x="3756" y="174" width="48" height="66">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5]The town is pretty empty today.)"/>
+    <property name="text1" value="{hometown.text.it_s_locked_be68bf3c90}"/>
+    <property name="text2" value="{hometown.text.wait_5_the_town_is_pretty_empty_today_de03c05ecc}"/>
    </properties>
   </object>
   <object id="64" gid="409" x="1920" y="178" width="230" height="92">

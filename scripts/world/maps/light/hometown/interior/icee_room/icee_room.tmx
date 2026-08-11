@@ -29,8 +29,8 @@
   <object id="10" gid="21" x="72" y="360" width="130" height="124"/>
   <object id="13" name="interactable" x="120" y="236" width="36" height="40">
    <properties>
-    <property name="text1" value="* (There's some condiments at the table.)"/>
-    <property name="text2" value="* ICE-E's &quot;Original&quot; Parmajohn Che&quot;E&quot;ese!"/>
+    <property name="text1" value="{hometown.text.there_s_some_condiments_at_the_table_63544e653d}"/>
+    <property name="text2" value="{hometown.text.ice_e_s_original_parmajohn_che_e_ese_ee36eaee95}"/>
    </properties>
   </object>
   <object id="14" name="interactable" x="72" y="195" width="94" height="17">
@@ -40,8 +40,8 @@
   </object>
   <object id="15" name="interactable" x="440" y="114" width="122" height="80">
    <properties>
-    <property name="text1" value="* (Try our new CHOCCOLATE PEZZA)"/>
-    <property name="text2" value="* (Melts in your pants not in your mouth)"/>
+    <property name="text1" value="{hometown.text.try_our_new_choccolate_pezza_79288c1f70}"/>
+    <property name="text2" value="{hometown.text.melts_in_your_pants_not_in_your_mouth_4bd6b80606}"/>
    </properties>
   </object>
   <object id="17" name="transition" x="264" y="480" width="80" height="40">

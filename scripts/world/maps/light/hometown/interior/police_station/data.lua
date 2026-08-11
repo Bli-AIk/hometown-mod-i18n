@@ -339,7 +339,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (Well-cared-for flowers.)"
+            ["text"] = "{hometown.text.well_cared_for_flowers_b7a2ab3eb8}"
           }
         },
         {
@@ -370,12 +370,12 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (You skimmed a news article about Undyne.)",
-            ["text2"] = "* New Police Chief Undyne's Explosive Debut",
-            ["text3"] = "* ...passionate young rookie... becomes the new police chief...",
-            ["text4"] = "* Though energetic, it may be \nhard to live up to the \nlegacy...",
-            ["text5"] = "* ... after Asgore Dreemurr was removed from the force...",
-            ["text6"] = "* (... there's no need to read \nany more.)"
+            ["text1"] = "{hometown.text.you_skimmed_a_news_article_about_undyne_7314aded4d}",
+            ["text2"] = "{hometown.text.new_police_chief_undyne_s_explosive_debut_4a0dbe4e76}",
+            ["text3"] = "{hometown.text.passionate_young_rookie_becomes_the_new_police_c_94fec8a5c7}",
+            ["text4"] = "{hometown.text.though_energetic_it_may_be_hard_to_live_up_to_th_4e9d0f0353}",
+            ["text5"] = "{hometown.text.after_asgore_dreemurr_was_removed_from_the_force_2e3e1db0ae}",
+            ["text6"] = "{hometown.text.there_s_no_need_to_read_any_more_ee542f6062}"
           }
         },
         {
@@ -390,9 +390,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (Photos of Chief Undyne and \nDeputy Napstablook.)",
-            ["text2"] = "* (Undyne is rescuing all of \nCatti's family from a tree.)",
-            ["text3"] = "* (... Napstablook is also stuck\nin the tree somehow.)"
+            ["text1"] = "{hometown.text.photos_of_chief_undyne_and_deputy_napstablook_c7d1e0961a}",
+            ["text2"] = "{hometown.text.undyne_is_rescuing_all_of_catti_s_family_from_a__cced8ca4c8}",
+            ["text3"] = "{hometown.text.napstablook_is_also_stuck_in_the_tree_somehow_a8c84081cc}"
           }
         }
       }

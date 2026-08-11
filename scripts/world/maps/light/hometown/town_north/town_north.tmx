@@ -335,8 +335,8 @@
   <object id="29" name="interactable" x="1360" y="94" width="80" height="38">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's a broken grill.)"/>
-    <property name="text2" value="* (... It smells like burnt cat food.)"/>
+    <property name="text1" value="{hometown.text.it_s_a_broken_grill_c7d8a06426}"/>
+    <property name="text2" value="{hometown.text.it_smells_like_burnt_cat_food_2bbd5ea797}"/>
    </properties>
   </object>
   <object id="32" name="transition" x="1240" y="480" width="200" height="40">
@@ -369,7 +369,7 @@
   </object>
   <object id="36" name="interactable" x="1656" y="152" width="132" height="38">
    <properties>
-    <property name="text" value="* (There's some kind of scratching and hissing from inside.)"/>
+    <property name="text" value="{hometown.text.there_s_some_kind_of_scratching_and_hissing_from_96bb852904}"/>
    </properties>
   </object>
   <object id="37" name="interactable" x="360" y="200" width="40" height="240">
@@ -379,27 +379,27 @@
   </object>
   <object id="38" name="interactable" x="1042" y="106" width="80" height="80">
    <properties>
-    <property name="text1" value="* (There's a cat flap.)"/>
-    <property name="text2" value="* (It's locked.)"/>
-    <property name="text3" value="* (Somehow.)"/>
+    <property name="text1" value="{hometown.text.there_s_a_cat_flap_3fe4dfdda4}"/>
+    <property name="text2" value="{hometown.text.it_s_locked_827a359a7f}"/>
+    <property name="text3" value="{hometown.text.somehow_cc2a79c4f9}"/>
    </properties>
   </object>
   <object id="39" name="interactable" x="1160" y="146" width="132" height="40">
    <properties>
-    <property name="text1" value="* (Various cat-themed junk is piled up inside the house.)"/>
-    <property name="text2" value="* (It seems to be a bit of a cat-sty...)"/>
+    <property name="text1" value="{hometown.text.various_cat_themed_junk_is_piled_up_inside_the_h_88adbcae9f}"/>
+    <property name="text2" value="{hometown.text.it_seems_to_be_a_bit_of_a_cat_sty_2d4ca93224}"/>
    </properties>
   </object>
   <object id="40" name="interactable" x="1838" y="150" width="62" height="40">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5] the town it's pretty empty today.)"/>
+    <property name="text1" value="{hometown.text.it_s_locked_be68bf3c90}"/>
+    <property name="text2" value="{hometown.text.wait_5_the_town_it_s_pretty_empty_today_fa5dd2f6c7}"/>
    </properties>
   </object>
   <object id="41" name="interactable" x="2204" y="148" width="44" height="66">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5] the town it's pretty empty today.)"/>
+    <property name="text1" value="{hometown.text.it_s_locked_be68bf3c90}"/>
+    <property name="text2" value="{hometown.text.wait_5_the_town_it_s_pretty_empty_today_fa5dd2f6c7}"/>
    </properties>
   </object>
   <object id="43" name="transition" x="2508" y="204" width="58" height="40">

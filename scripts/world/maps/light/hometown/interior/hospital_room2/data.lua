@@ -185,7 +185,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a regular sink.)"
+            ["text"] = "{hometown.text.it_s_a_regular_sink_1570ab3538}"
           }
         },
         {
@@ -201,8 +201,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's a clone of the other sink.)",
-            ["text2"] = "* (Perhaps there was originally one tall sink that was cut in half to create both of them.)"
+            ["text1"] = "{hometown.text.it_s_a_clone_of_the_other_sink_f458e060db}",
+            ["text2"] = "{hometown.text.perhaps_there_was_originally_one_tall_sink_that__c14e4174cb}"
           }
         },
         {
@@ -234,8 +234,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (You looked inside the cupboard.)",
-            ["text2"] = "* (... a very small obligatory piano is hiding inside.)"
+            ["text1"] = "{hometown.text.you_looked_inside_the_cupboard_9b93c9fd4d}",
+            ["text2"] = "{hometown.text.a_very_small_obligatory_piano_is_hiding_inside_3fd294cb5a}"
           }
         },
         {
@@ -250,8 +250,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (It's a classic 1-to-10 pain scale,[wait:5] using ICE-E as a model.)",
-            ["text2"] = "* (At 0 pain,[wait:5] he's happy.)\n[wait:5](At 10 pain,[wait:5] he's happy and sweating.)"
+            ["text1"] = "{hometown.text.it_s_a_classic_1_to_10_pain_scale_wait_5_using_i_5c14efbe16}",
+            ["text2"] = "{hometown.text.at_0_pain_wait_5_he_s_happy_wait_5_at_10_pain_wa_fb570cc0f3}"
           }
         },
         {
@@ -268,7 +268,7 @@ return {
           properties = {
             ["flagcheck"] = "POST_SNOWGRAVE",
             ["solid"] = true,
-            ["text"] = "* (The space heater is running.)"
+            ["text"] = "{hometown.text.the_space_heater_is_running_f1d6f82188}"
           }
         },
         {

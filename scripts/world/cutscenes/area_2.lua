@@ -1,23 +1,23 @@
 return {
     book_pillar = function(cutscene, me, chara, facing)
-        cutscene:text("* (It's a manual. Read a topic?)")
+        cutscene:text("{hometown.text.it_s_a_manual_read_a_topic_bfec37e746}")
         local tip = cutscene:choicer({"Recruits", "Item storage", "Controls", "Do not read"})
 
         if tip == 1 then
-            cutscene:text("* If you SPARE or PACIFY enough enemies of the same type,[wait:5] they will be RECRUITed.")
-            cutscene:text("* RECRUITs will appear in your TOWN. Wonder what happens if you get them all...?")
-            cutscene:text("* You can check the area's RECRUIT status at SAVE POINTS. Certain BOSSES are excluded.")
+            cutscene:text("{hometown.text.if_you_spare_or_pacify_enough_enemies_of_the_sam_a3d14e0fff}")
+            cutscene:text("{hometown.text.recruits_will_appear_in_your_town_wonder_what_ha_9b5fd04ce6}")
+            cutscene:text("{hometown.text.you_can_check_the_area_s_recruit_status_at_save__dfcb1db8e6}")
         elseif tip == 2 then
-            cutscene:text("* You will now have access to a STORAGE menu at SAVE POINTS.")
-            cutscene:text("* When you're out of space,[wait:5] ITEMs you find or BUY will be sent to your STORAGE.")
-            cutscene:text("* Feel free to put things inside you might not be able to use yet.")
+            cutscene:text("{hometown.text.you_will_now_have_access_to_a_storage_menu_at_sa_8640e58f92}")
+            cutscene:text("{hometown.text.when_you_re_out_of_space_wait_5_items_you_find_o_72182acd50}")
+            cutscene:text("{hometown.text.feel_free_to_put_things_inside_you_might_not_be__f9f067f6f2}")
         elseif tip == 3 then
-            cutscene:text("* Here is a reminder of the controls. Change them in the config menu.")
-            cutscene:text(string.format("* %s\n* Confirm and interact with things.", Input.getText("confirm")))
-            cutscene:text(string.format("* %s\n* Cancel. Hold to RUN. Shows all text instantly.", Input.getText("cancel")))
-            cutscene:text(string.format("* %s\n* Opens the menu. Hold down to quickly skip textboxes.", Input.getText("menu")))
+            cutscene:text("{hometown.text.here_is_a_reminder_of_the_controls_change_them_i_9e2a9efc0b}")
+            cutscene:text(string.format("{hometown.text.s_confirm_and_interact_with_things_0a1c4aacf7}", Input.getText("confirm")))
+            cutscene:text(string.format("{hometown.text.s_cancel_hold_to_run_shows_all_text_instantly_24b74bf937}", Input.getText("cancel")))
+            cutscene:text(string.format("{hometown.text.s_opens_the_menu_hold_down_to_quickly_skip_textb_356e537202}", Input.getText("menu")))
         else
-            cutscene:text("* (There's no time to read books.)")
+            cutscene:text("{hometown.text.there_s_no_time_to_read_books_670ad76d5c}")
         end
     end,
 }

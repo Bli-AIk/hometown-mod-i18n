@@ -188,7 +188,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's just a computer.)"
+            ["text"] = "{hometown.text.it_s_just_a_computer_434fa39112}"
           }
         },
         {
@@ -204,7 +204,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's just a computer.)"
+            ["text"] = "{hometown.text.it_s_just_a_computer_434fa39112}"
           }
         }
       }

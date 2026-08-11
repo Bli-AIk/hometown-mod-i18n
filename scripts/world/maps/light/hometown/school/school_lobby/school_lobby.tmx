@@ -76,9 +76,9 @@
   </object>
   <object id="30" name="interactable" x="1208" y="360" width="114" height="80">
    <properties>
-    <property name="text1" value="* Do you like,[wait:5] breathing?[wait:5] Moving fast,[wait:5] with or without,[wait:5] legs?"/>
-    <property name="text2" value="* But usually,[wait:5] with legs?"/>
-    <property name="text3" value="* Join the Cross Country Team with Jockington,[wait:5] and Noelle!"/>
+    <property name="text1" value="{hometown.text.do_you_like_wait_5_breathing_wait_5_moving_fast__c55599a557}"/>
+    <property name="text2" value="{hometown.text.but_usually_wait_5_with_legs_84b0a2441e}"/>
+    <property name="text3" value="{hometown.text.join_the_cross_country_team_with_jockington_wait_f66f116b0f}"/>
    </properties>
   </object>
   <object id="31" name="interactable" x="1112" y="400" width="40" height="40">
@@ -89,24 +89,24 @@
   </object>
   <object id="32" name="interactable" x="592" y="360" width="114" height="80">
    <properties>
-    <property name="text1" value="* (Are you ready for the Sadie Hawkman's dance?)"/>
-    <property name="text2" value="* (At this dance,[wait:5] all the chaperones wear giant hawk heads...)"/>
-    <property name="text3" value="* (... and screech at any students that make contact while dancing.)"/>
+    <property name="text1" value="{hometown.text.are_you_ready_for_the_sadie_hawkman_s_dance_18a371c6e1}"/>
+    <property name="text2" value="{hometown.text.at_this_dance_wait_5_all_the_chaperones_wear_gia_cc219b659b}"/>
+    <property name="text3" value="{hometown.text.and_screech_at_any_students_that_make_contact_wh_032865b1fa}"/>
    </properties>
   </object>
   <object id="33" name="interactable" x="1400" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* (Locker.[wait:5] It's locked.)"/>
+    <property name="text" value="{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"/>
    </properties>
   </object>
   <object id="35" name="interactable" x="1440" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* (Locker.[wait:5] It's locked.)"/>
+    <property name="text" value="{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"/>
    </properties>
   </object>
   <object id="36" name="interactable" x="1480" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* (Locker.[wait:5] It's locked.)"/>
+    <property name="text" value="{hometown.text.locker_wait_5_it_s_locked_1ac12d20c7}"/>
    </properties>
   </object>
   <object id="37" name="interactable" x="1560" y="400" width="40" height="40">
@@ -117,32 +117,32 @@
   </object>
   <object id="38" name="interactable" x="1520" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* (This used to be your brother's locker.)"/>
+    <property name="text" value="{hometown.text.this_used_to_be_your_brother_s_locker_895ff9ba9c}"/>
    </properties>
   </object>
   <object id="39" name="interactable" x="320" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* The locker is locked."/>
+    <property name="text" value="{hometown.text.the_locker_is_locked_1e94f71ef2}"/>
    </properties>
   </object>
   <object id="41" name="interactable" x="360" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* The locker is locked."/>
+    <property name="text" value="{hometown.text.the_locker_is_locked_1e94f71ef2}"/>
    </properties>
   </object>
   <object id="42" name="interactable" x="400" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* The locker is locked."/>
+    <property name="text" value="{hometown.text.the_locker_is_locked_1e94f71ef2}"/>
    </properties>
   </object>
   <object id="43" name="interactable" x="440" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* The locker is locked."/>
+    <property name="text" value="{hometown.text.the_locker_is_locked_1e94f71ef2}"/>
    </properties>
   </object>
   <object id="44" name="interactable" x="480" y="400" width="40" height="40">
    <properties>
-    <property name="text" value="* (The locker is covered in Jockington memorabilia.)"/>
+    <property name="text" value="{hometown.text.the_locker_is_covered_in_jockington_memorabilia_f4bb7fd7f7}"/>
    </properties>
   </object>
  </objectgroup>

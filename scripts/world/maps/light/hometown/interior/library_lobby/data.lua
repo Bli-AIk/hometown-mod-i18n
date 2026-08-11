@@ -329,9 +329,9 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (There's a crude drawing of an ice-cube wearing a headband.)",
-            ["text2"] = "* (\"The TeenZone: Where Teen's Can Be Kid's.\")",
-            ["text3"] = "* (A feeling of immense relief washes over you.)"
+            ["text1"] = "{hometown.text.there_s_a_crude_drawing_of_an_ice_cube_wearing_a_a524c6311c}",
+            ["text2"] = "{hometown.text.the_teenzone_where_teen_s_can_be_kid_s_21528fa43b}",
+            ["text3"] = "{hometown.text.a_feeling_of_immense_relief_washes_over_you_c9e6b61f9d}"
           }
         },
         {
@@ -347,10 +347,10 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's an unlabelled book. You look inside...)",
-            ["text2"] = "* oh.... i accidentally returned my personal journal instead of my book...",
-            ["text3"] = "* oh no.... they're putting it into their catalogue...",
-            ["text4"] = "* oh no... i have to take it out every time i want to write a new entry..."
+            ["text1"] = "{hometown.text.it_s_an_unlabelled_book_you_look_inside_9f4ecb824a}",
+            ["text2"] = "{hometown.text.oh_i_accidentally_returned_my_personal_journal_i_645848b92e}",
+            ["text3"] = "{hometown.text.oh_no_they_re_putting_it_into_their_catalogue_bcb581288d}",
+            ["text4"] = "{hometown.text.oh_no_i_have_to_take_it_out_every_time_i_want_to_bf218cc700}"
           }
         },
         {
@@ -366,8 +366,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* \"Lord of the Hammer\"",
-            ["text2"] = "* (First in the award-winning fiction series by lauded historian Gerson Boom.)"
+            ["text1"] = "{hometown.text.lord_of_the_hammer_9964d33e38}",
+            ["text2"] = "{hometown.text.first_in_the_award_winning_fiction_series_by_lau_18e4ba9254}"
           }
         },
         {
@@ -383,8 +383,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's a book of magic tricks.)",
-            ["text2"] = "* (Most of them require orbs or floating hands.)"
+            ["text1"] = "{hometown.text.it_s_a_book_of_magic_tricks_d8d03abff1}",
+            ["text2"] = "{hometown.text.most_of_them_require_orbs_or_floating_hands_82d5e9d6a8}"
           }
         },
         {
@@ -400,8 +400,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (There's a book here.)\n[wait:5]* (You lick the page...)\n[wait:5]* (It's delicious!)",
-            ["text2"] = "* (This must be what they meant by flavor text.)"
+            ["text1"] = "{hometown.text.there_s_a_book_here_wait_5_you_lick_the_page_wai_2c1ea26277}",
+            ["text2"] = "{hometown.text.this_must_be_what_they_meant_by_flavor_text_0340cfd589}"
           }
         },
         {
@@ -418,8 +418,8 @@ return {
           properties = {
             ["flagcheck"] = "!hometown_digisetup",
             ["solid"] = true,
-            ["text1"] = "* (Computer Lab.)\n[wait:5]* (Please surf the web responsibly.)",
-            ["text2"] = "* (In fact,[wait:5] maybe don't do it at all.)"
+            ["text1"] = "{hometown.text.computer_lab_wait_5_please_surf_the_web_responsi_9602a6f757}",
+            ["text2"] = "{hometown.text.in_fact_wait_5_maybe_don_t_do_it_at_all_4c9461df40}"
           }
         },
         {
@@ -435,8 +435,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's the weekly cartoon review.)",
-            ["text2"] = "* (Just looking at cartoon criticism is sapping your energy rapidly.)"
+            ["text1"] = "{hometown.text.it_s_the_weekly_cartoon_review_c396f10805}",
+            ["text2"] = "{hometown.text.just_looking_at_cartoon_criticism_is_sapping_you_d662bb2b98}"
           }
         }
       }

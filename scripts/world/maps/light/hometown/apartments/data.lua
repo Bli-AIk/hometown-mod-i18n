@@ -133,7 +133,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a dirty trash can.)"
+            ["text"] = "{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"
           }
         },
         {
@@ -149,7 +149,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a dirty trash can.)"
+            ["text"] = "{hometown.text.it_s_a_dirty_trash_can_1c898cd418}"
           }
         },
         {
@@ -165,7 +165,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a trash can full of well-kept flowers.)"
+            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
           }
         },
         {
@@ -181,7 +181,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a trash can full of well-kept flowers.)"
+            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
           }
         },
         {
@@ -197,7 +197,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a trash can full of well-kept flowers.)"
+            ["text"] = "{hometown.text.it_s_a_trash_can_full_of_well_kept_flowers_c74f63e5a8}"
           }
         },
         {
@@ -213,7 +213,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's a saucer of milk.)"
+            ["text"] = "{hometown.text.it_s_a_saucer_of_milk_b4814dd153}"
           }
         }
       }

@@ -68,7 +68,7 @@
   <object id="17" gid="272" x="115" y="64" width="80" height="34"/>
   <object id="18" name="interactable" x="79" y="278" width="123" height="122">
    <properties>
-    <property name="text" value="* (It's a bed for three people,[wait:5] or one three-headed person.)"/>
+    <property name="text" value="{hometown.text.it_s_a_bed_for_three_people_wait_5_or_one_three__4e036d8277}"/>
    </properties>
   </object>
  </objectgroup>

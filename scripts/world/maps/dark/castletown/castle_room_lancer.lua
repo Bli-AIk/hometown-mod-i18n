@@ -486,7 +486,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a bikeless bed.)"
+            ["text"] = "{hometown.text.it_s_a_bikeless_bed_264280806f}"
           }
         },
         {
@@ -516,7 +516,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's some kind of digging implement.)"
+            ["text"] = "{hometown.text.it_s_some_kind_of_digging_implement_769835eef9}"
           }
         },
         {
@@ -531,7 +531,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (There's salsa buried in the ground here.)"
+            ["text"] = "{hometown.text.there_s_salsa_buried_in_the_ground_here_029324803b}"
           }
         },
         {
@@ -546,7 +546,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a hole.[wait:5] Presumably dug for fun.)"
+            ["text"] = "{hometown.text.it_s_a_hole_wait_5_presumably_dug_for_fun_e8a95e2da3}"
           }
         },
         {
@@ -561,7 +561,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a hole made recreationally.)"
+            ["text"] = "{hometown.text.it_s_a_hole_made_recreationally_85a23712c9}"
           }
         },
         {
@@ -576,8 +576,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (You found 20 Rupys in the hole!)",
-            ["text2"] = "* (Unfortunately,[wait:5] that's not a useful currency here...)"
+            ["text1"] = "{hometown.text.you_found_20_rupys_in_the_hole_abba163464}",
+            ["text2"] = "{hometown.text.unfortunately_wait_5_that_s_not_a_useful_currenc_7a3f287c67}"
           }
         },
         {

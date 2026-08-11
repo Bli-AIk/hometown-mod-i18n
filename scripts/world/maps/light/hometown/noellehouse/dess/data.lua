@@ -393,8 +393,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (It's Dess's bed. Underneath are army rations,[wait:5] guitar picks,[wait:5] paintball gear,[wait:5] ice skates...)",
-            ["text2"] = "* (...[wait:5] and a badly traced drawing of a dragon.)"
+            ["text1"] = "{hometown.text.it_s_dess_s_bed_underneath_are_army_rations_wait_c2e82ed5ec}",
+            ["text2"] = "{hometown.text.wait_5_and_a_badly_traced_drawing_of_a_dragon_70a3cf0824}"
           }
         },
         {
@@ -410,7 +410,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "* (It's a CD player. Underneath are tons of punk rock CDs...[wait:5] and one still-sealed ska CD.)"
+            ["text"] = "{hometown.text.it_s_a_cd_player_underneath_are_tons_of_punk_roc_9fc37133fd}"
           }
         },
         {
@@ -426,7 +426,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "* (It's a computer. The monitor is unplugged.)"
+            ["text"] = "{hometown.text.it_s_a_computer_the_monitor_is_unplugged_2a00ee7140}"
           }
         },
         {
@@ -458,7 +458,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "* Rollerblades,[wait:5] wiffle bat. Looking at these things make your head hurt."
+            ["text"] = "{hometown.text.rollerblades_wait_5_wiffle_bat_looking_at_these__f3472cf82e}"
           }
         },
         {
@@ -474,7 +474,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "* (It's an excessively large walk-in closet.)"
+            ["text"] = "{hometown.text.it_s_an_excessively_large_walk_in_closet_0726a53d00}"
           }
         },
         {
@@ -506,8 +506,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* A violin,[wait:5] a flute,[wait:5] a microphone...",
-            ["text2"] = "* They all look very expensive,[wait:5] and very dented."
+            ["text1"] = "{hometown.text.a_violin_wait_5_a_flute_wait_5_a_microphone_4f961d3abc}",
+            ["text2"] = "{hometown.text.they_all_look_very_expensive_wait_5_and_very_den_382faf8ef8}"
           }
         }
       }

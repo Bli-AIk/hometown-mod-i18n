@@ -37,27 +37,27 @@
   <object id="10" name="interactable" x="354" y="222" width="102" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (...[wait:5] How to Draw Dragons is at the bottom of the drawer."/>
-    <property name="text2" value="* (The purple character on the cover is dressed...[wait:5] immodestly.)"/>
-    <property name="text3" value="* (...)"/>
-    <property name="text4" value="* (Your brother will never return this book.)"/>
+    <property name="text1" value="{hometown.text.wait_5_how_to_draw_dragons_is_at_the_bottom_of_t_506f137a1e}"/>
+    <property name="text2" value="{hometown.text.the_purple_character_on_the_cover_is_dressed_wai_f2dc60e615}"/>
+    <property name="text3" value="{hometown.text.text_9727d4d874}"/>
+    <property name="text4" value="{hometown.text.your_brother_will_never_return_this_book_5a4fc5dae4}"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="270" y="216" width="44" height="40">
    <properties>
-    <property name="text" value="* (It's what they call &quot;you.&quot;)"/>
+    <property name="text" value="{hometown.text.it_s_what_they_call_you_39c07d3b4d}"/>
    </properties>
   </object>
   <object id="12" name="interactable" x="170" y="214" width="62" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* The door is locked."/>
+    <property name="text" value="{hometown.text.the_door_is_locked_7b35d07eca}"/>
    </properties>
   </object>
   <object id="13" name="interactable" x="676" y="224" width="102" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (There's no time to read books. Just generally.)"/>
+    <property name="text" value="{hometown.text.there_s_no_time_to_read_books_just_generally_5e204904c2}"/>
    </properties>
   </object>
   <object id="14" name="transition" x="840" y="182" width="76" height="40">

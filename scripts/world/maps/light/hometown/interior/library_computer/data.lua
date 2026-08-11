@@ -267,7 +267,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's full of many backup devices,[wait:5] like extra mice,[wait:5] extra keyboards,[wait:5] or extra maracas.)"
+            ["text"] = "{hometown.text.it_s_full_of_many_backup_devices_wait_5_like_ext_aaffe0b0ed}"
           }
         },
         {
@@ -282,8 +282,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (The closet is spacious and full of old electronics.)",
-            ["text2"] = "* (A large person could easily fit inside.)"
+            ["text1"] = "{hometown.text.the_closet_is_spacious_and_full_of_old_electroni_c265038580}",
+            ["text2"] = "{hometown.text.a_large_person_could_easily_fit_inside_ed370994a4}"
           }
         },
         {
@@ -298,7 +298,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Various posters talking about Internet safety.)"
+            ["text"] = "{hometown.text.various_posters_talking_about_internet_safety_9c44161560}"
           }
         },
         {

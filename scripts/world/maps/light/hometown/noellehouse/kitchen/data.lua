@@ -487,7 +487,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The fridge is packed with festive foods.)\n* (...[wait:5] and a jar of pickles.)"
+            ["text"] = "{hometown.text.the_fridge_is_packed_with_festive_foods_wait_5_a_be7d6eaaea}"
           }
         },
         {
@@ -502,7 +502,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The sink is sparkling clean.)"
+            ["text"] = "{hometown.text.the_sink_is_sparkling_clean_5bebe962d8}"
           }
         },
         {
@@ -517,7 +517,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (New stovetop,[wait:5] ancient katana.)"
+            ["text"] = "{hometown.text.new_stovetop_wait_5_ancient_katana_3e6321eff5}"
           }
         },
         {
@@ -532,7 +532,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (In the cupboard are...[wait:5] cutters for gingerbread monsters.)"
+            ["text"] = "{hometown.text.in_the_cupboard_are_wait_5_cutters_for_gingerbre_5860018a7b}"
           }
         },
         {
@@ -547,7 +547,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a highly climbable looking tree.)"
+            ["text"] = "{hometown.text.it_s_a_highly_climbable_looking_tree_8b3fc7f13a}"
           }
         },
         {
@@ -562,7 +562,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a piano.)"
+            ["text"] = "{hometown.text.it_s_a_piano_799372963b}"
           }
         },
         {

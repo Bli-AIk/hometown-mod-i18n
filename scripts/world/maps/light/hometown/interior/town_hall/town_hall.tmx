@@ -31,17 +31,17 @@
   <object id="9" name="interactable" x="488" y="348" width="60" height="52">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (It's a chair.)"/>
+    <property name="text" value="{hometown.text.it_s_a_chair_10976e57a6}"/>
    </properties>
   </object>
   <object id="15" name="interactable" x="350" y="118" width="148" height="40">
    <properties>
-    <property name="text" value="* (It's a painting of the town.)"/>
+    <property name="text" value="{hometown.text.it_s_a_painting_of_the_town_21927e2766}"/>
    </properties>
   </object>
   <object id="16" name="interactable" x="508" y="118" width="44" height="40">
    <properties>
-    <property name="text" value="* (It's a small pine tree.)"/>
+    <property name="text" value="{hometown.text.it_s_a_small_pine_tree_9e833f6e43}"/>
    </properties>
   </object>
   <object id="17" name="transition" x="280" y="460" width="80" height="40">

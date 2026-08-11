@@ -1293,7 +1293,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's Noelle's absurdly dangerous ninja weapon collection.)"
+            ["text"] = "{hometown.text.it_s_noelle_s_absurdly_dangerous_ninja_weapon_co_779979deec}"
           }
         },
         {
@@ -1308,7 +1308,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a heart or human-soul shaped pillow,[wait:5] depending on your opinion.)"
+            ["text"] = "{hometown.text.it_s_a_heart_or_human_soul_shaped_pillow_wait_5__dd73b57541}"
           }
         },
         {
@@ -1323,7 +1323,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a thermostat. The only option is cold.)"
+            ["text"] = "{hometown.text.it_s_a_thermostat_the_only_option_is_cold_51854b73f6}"
           }
         },
         {
@@ -1338,7 +1338,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a fridge containing lots of greens and bottled water.)"
+            ["text"] = "{hometown.text.it_s_a_fridge_containing_lots_of_greens_and_bott_8210899506}"
           }
         },
         {
@@ -1353,7 +1353,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Just an empty table.)"
+            ["text"] = "{hometown.text.just_an_empty_table_a493cafeca}"
           }
         },
         {
@@ -1368,7 +1368,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The house's back door.)[wait:5]\n* (Somehow,[wait:5] it's locked.)"
+            ["text"] = "{hometown.text.the_house_s_back_door_wait_5_somehow_wait_5_it_s_878df98f6d}"
           }
         },
         {
@@ -1383,7 +1383,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a tree that would potentially fall down if you climbed it.)"
+            ["text"] = "{hometown.text.it_s_a_tree_that_would_potentially_fall_down_if__3b4827efa7}"
           }
         },
         {
@@ -1398,7 +1398,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (The auto-treat-catcher is ready to nab anything in range.)"
+            ["text"] = "{hometown.text.the_auto_treat_catcher_is_ready_to_nab_anything__8106040117}"
           }
         }
       }

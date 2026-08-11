@@ -40,7 +40,7 @@
   <object id="13" gid="104" x="90" y="440" width="92" height="54"/>
   <object id="33" name="interactable" x="96" y="254" width="104" height="77">
    <properties>
-    <property name="text" value="* (It's Noelle's bed. There's ample space to hide underneath.)"/>
+    <property name="text" value="{hometown.text.it_s_noelle_s_bed_there_s_ample_space_to_hide_un_1f0b8db894}"/>
    </properties>
   </object>
   <object id="35" name="interactable" x="102" y="414" width="68" height="20">
@@ -50,12 +50,12 @@
   </object>
   <object id="36" name="interactable" x="232" y="386" width="100" height="40">
    <properties>
-    <property name="text" value="* (It's a state of the art high-definition TV with old game consoles under it.)"/>
+    <property name="text" value="{hometown.text.it_s_a_state_of_the_art_high_definition_tv_with__464f726d7e}"/>
    </properties>
   </object>
   <object id="37" name="interactable" x="244" y="210" width="218" height="54">
    <properties>
-    <property name="text" value="* (It's a couch,[wait:5] for watching the TV.)"/>
+    <property name="text" value="{hometown.text.it_s_a_couch_wait_5_for_watching_the_tv_8ce4e1af7f}"/>
    </properties>
   </object>
   <object id="38" name="interactable" x="354" y="390" width="40" height="40">
@@ -65,12 +65,12 @@
   </object>
   <object id="39" name="interactable" x="515" y="312" width="40" height="94">
    <properties>
-    <property name="text" value="* (It's Noelle's homework desk.)"/>
+    <property name="text" value="{hometown.text.it_s_noelle_s_homework_desk_24e7f14650}"/>
    </properties>
   </object>
   <object id="40" name="interactable" x="492" y="224" width="52" height="38">
    <properties>
-    <property name="text" value="* (A clothes wardrobe. A pair of small angel wings are inside...[wait:5] worn out and tattered.)"/>
+    <property name="text" value="{hometown.text.a_clothes_wardrobe_a_pair_of_small_angel_wings_a_c5eebc17fe}"/>
    </properties>
   </object>
  </objectgroup>

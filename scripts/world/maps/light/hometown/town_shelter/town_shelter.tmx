@@ -341,7 +341,7 @@
   </object>
   <object id="42" name="interactable" x="240" y="2280" width="160" height="40">
    <properties>
-    <property name="text" value="* (It's locked...)"/>
+    <property name="text" value="{hometown.text.it_s_locked_be68bf3c90}"/>
    </properties>
   </object>
   <object id="52" name="npc" x="296" y="2312" width="40" height="40">

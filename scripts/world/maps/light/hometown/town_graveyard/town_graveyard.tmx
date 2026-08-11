@@ -113,7 +113,7 @@
  <objectgroup color="#ff00ff" id="9" name="objects">
   <object id="9" name="interactable" x="614" y="132" width="54" height="40">
    <properties>
-    <property name="nighttext" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
+    <property name="nighttext" value="{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}"/>
     <property name="solid" type="bool" value="true"/>
     <property name="text">* SHYRA
 [wait:5]* A KARAOKE MICROPHONE FOR A BRAVE SINGER</property>
@@ -121,7 +121,7 @@
   </object>
   <object id="10" name="interactable" x="488" y="132" width="62" height="40">
    <properties>
-    <property name="nighttext" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
+    <property name="nighttext" value="{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}"/>
     <property name="solid" type="bool" value="true"/>
     <property name="text">* MUTTLER
 [wait:5]* A BIG BONE FOR THE LEADER OF THE PACK</property>
@@ -129,7 +129,7 @@
   </object>
   <object id="11" name="interactable" x="322" y="132" width="66" height="40">
    <properties>
-    <property name="nighttext" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
+    <property name="nighttext" value="{hometown.text.it_s_a_gravestone_it_s_kind_of_hard_to_read_in_t_09ea20a44d}"/>
     <property name="solid" type="bool" value="true"/>
     <property name="text">* CRYSTAL
 [wait:5]* A SNOWY GEMSTONE FOR A PROUD MOTHER</property>
@@ -145,10 +145,10 @@
   <object id="15" name="interactable" x="52" y="120" width="78" height="42">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (Gerson Boom Memorial Bench)"/>
-    <property name="text2" value="* &quot;Throughout my career, some of my best ideas came from dreams.&quot;"/>
-    <property name="text3" value="* &quot;Take a rest here.[wait:5] If anyone asks -- you're writing!&quot;"/>
-    <property name="text4" value="* (You decided not to sit.)"/>
+    <property name="text1" value="{hometown.text.gerson_boom_memorial_bench_b8103bc947}"/>
+    <property name="text2" value="{hometown.text.throughout_my_career_some_of_my_best_ideas_came__28a778123c}"/>
+    <property name="text3" value="{hometown.text.take_a_rest_here_wait_5_if_anyone_asks_you_re_wr_4bad94a1a3}"/>
+    <property name="text4" value="{hometown.text.you_decided_not_to_sit_232723eadc}"/>
    </properties>
   </object>
   <object id="18" name="transition" x="1200" y="240" width="40" height="200">

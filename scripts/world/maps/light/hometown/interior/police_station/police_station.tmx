@@ -44,7 +44,7 @@
   <object id="9" name="interactable" x="120" y="360" width="40" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (Well-cared-for flowers.)"/>
+    <property name="text" value="{hometown.text.well_cared_for_flowers_b7a2ab3eb8}"/>
    </properties>
   </object>
   <object id="26" name="npc" x="201" y="240">
@@ -56,13 +56,13 @@
   </object>
   <object id="27" name="interactable" x="239" y="89" width="85" height="80">
    <properties>
-    <property name="text1" value="* (You skimmed a news article about Undyne.)"/>
-    <property name="text2" value="* New Police Chief Undyne's Explosive Debut"/>
-    <property name="text3" value="* ...passionate young rookie... becomes the new police chief..."/>
+    <property name="text1" value="{hometown.text.you_skimmed_a_news_article_about_undyne_7314aded4d}"/>
+    <property name="text2" value="{hometown.text.new_police_chief_undyne_s_explosive_debut_4a0dbe4e76}"/>
+    <property name="text3" value="{hometown.text.passionate_young_rookie_becomes_the_new_police_c_94fec8a5c7}"/>
     <property name="text4">* Though energetic, it may be 
 hard to live up to the 
 legacy...</property>
-    <property name="text5" value="* ... after Asgore Dreemurr was removed from the force..."/>
+    <property name="text5" value="{hometown.text.after_asgore_dreemurr_was_removed_from_the_force_2e3e1db0ae}"/>
     <property name="text6">* (... there's no need to read 
 any more.)</property>
    </properties>

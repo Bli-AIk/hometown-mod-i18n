@@ -65,7 +65,7 @@
   </object>
   <object id="35" name="interactable" x="160" y="110" width="130" height="110">
    <properties>
-    <property name="text" value="* (It's a bikeless bed.)"/>
+    <property name="text" value="{hometown.text.it_s_a_bikeless_bed_264280806f}"/>
    </properties>
   </object>
   <object id="36" name="interactable" x="390" y="150" width="60" height="32">
@@ -75,28 +75,28 @@
   </object>
   <object id="37" name="interactable" x="420" y="210" width="20" height="30">
    <properties>
-    <property name="text" value="* (It's some kind of digging implement.)"/>
+    <property name="text" value="{hometown.text.it_s_some_kind_of_digging_implement_769835eef9}"/>
    </properties>
   </object>
   <object id="38" name="interactable" x="370" y="270" width="30" height="20">
    <properties>
-    <property name="text" value="* (There's salsa buried in the ground here.)"/>
+    <property name="text" value="{hometown.text.there_s_salsa_buried_in_the_ground_here_029324803b}"/>
    </properties>
   </object>
   <object id="39" name="interactable" x="320" y="210" width="30" height="20">
    <properties>
-    <property name="text" value="* (It's a hole.[wait:5] Presumably dug for fun.)"/>
+    <property name="text" value="{hometown.text.it_s_a_hole_wait_5_presumably_dug_for_fun_e8a95e2da3}"/>
    </properties>
   </object>
   <object id="40" name="interactable" x="270" y="250" width="30" height="20">
    <properties>
-    <property name="text" value="* (It's a hole made recreationally.)"/>
+    <property name="text" value="{hometown.text.it_s_a_hole_made_recreationally_85a23712c9}"/>
    </properties>
   </object>
   <object id="41" name="interactable" x="190" y="260" width="30" height="20">
    <properties>
-    <property name="text1" value="* (You found 20 Rupys in the hole!)"/>
-    <property name="text2" value="* (Unfortunately,[wait:5] that's not a useful currency here...)"/>
+    <property name="text1" value="{hometown.text.you_found_20_rupys_in_the_hole_abba163464}"/>
+    <property name="text2" value="{hometown.text.unfortunately_wait_5_that_s_not_a_useful_currenc_7a3f287c67}"/>
    </properties>
   </object>
   <object id="47" name="npc" x="320" y="90">

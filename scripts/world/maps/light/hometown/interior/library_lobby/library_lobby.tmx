@@ -59,32 +59,32 @@
   <object id="11" name="interactable" x="398" y="212" width="58" height="82">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (There's a crude drawing of an ice-cube wearing a headband.)"/>
-    <property name="text2" value="* (&quot;The TeenZone: Where Teen's Can Be Kid's.&quot;)"/>
-    <property name="text3" value="* (A feeling of immense relief washes over you.)"/>
+    <property name="text1" value="{hometown.text.there_s_a_crude_drawing_of_an_ice_cube_wearing_a_a524c6311c}"/>
+    <property name="text2" value="{hometown.text.the_teenzone_where_teen_s_can_be_kid_s_21528fa43b}"/>
+    <property name="text3" value="{hometown.text.a_feeling_of_immense_relief_washes_over_you_c9e6b61f9d}"/>
    </properties>
   </object>
   <object id="12" name="interactable" x="80" y="206" width="78" height="86">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's an unlabelled book. You look inside...)"/>
-    <property name="text2" value="* oh.... i accidentally returned my personal journal instead of my book..."/>
-    <property name="text3" value="* oh no.... they're putting it into their catalogue..."/>
-    <property name="text4" value="* oh no... i have to take it out every time i want to write a new entry..."/>
+    <property name="text1" value="{hometown.text.it_s_an_unlabelled_book_you_look_inside_9f4ecb824a}"/>
+    <property name="text2" value="{hometown.text.oh_i_accidentally_returned_my_personal_journal_i_645848b92e}"/>
+    <property name="text3" value="{hometown.text.oh_no_they_re_putting_it_into_their_catalogue_bcb581288d}"/>
+    <property name="text4" value="{hometown.text.oh_no_i_have_to_take_it_out_every_time_i_want_to_bf218cc700}"/>
    </properties>
   </object>
   <object id="14" name="interactable" x="80" y="74" width="78" height="86">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* &quot;Lord of the Hammer&quot;"/>
-    <property name="text2" value="* (First in the award-winning fiction series by lauded historian Gerson Boom.)"/>
+    <property name="text1" value="{hometown.text.lord_of_the_hammer_9964d33e38}"/>
+    <property name="text2" value="{hometown.text.first_in_the_award_winning_fiction_series_by_lau_18e4ba9254}"/>
    </properties>
   </object>
   <object id="28" name="interactable" x="158" y="74" width="68" height="86">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's a book of magic tricks.)"/>
-    <property name="text2" value="* (Most of them require orbs or floating hands.)"/>
+    <property name="text1" value="{hometown.text.it_s_a_book_of_magic_tricks_d8d03abff1}"/>
+    <property name="text2" value="{hometown.text.most_of_them_require_orbs_or_floating_hands_82d5e9d6a8}"/>
    </properties>
   </object>
   <object id="29" name="interactable" x="158" y="206" width="78" height="86">
@@ -93,7 +93,7 @@
     <property name="text1">* (There's a book here.)
 [wait:5]* (You lick the page...)
 [wait:5]* (It's delicious!)</property>
-    <property name="text2" value="* (This must be what they meant by flavor text.)"/>
+    <property name="text2" value="{hometown.text.this_must_be_what_they_meant_by_flavor_text_0340cfd589}"/>
    </properties>
   </object>
   <object id="15" name="interactable" x="226" y="108" width="52" height="40">
@@ -102,14 +102,14 @@
     <property name="solid" type="bool" value="true"/>
     <property name="text1">* (Computer Lab.)
 [wait:5]* (Please surf the web responsibly.)</property>
-    <property name="text2" value="* (In fact,[wait:5] maybe don't do it at all.)"/>
+    <property name="text2" value="{hometown.text.in_fact_wait_5_maybe_don_t_do_it_at_all_4c9461df40}"/>
    </properties>
   </object>
   <object id="30" name="interactable" x="456" y="212" width="104" height="82">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's the weekly cartoon review.)"/>
-    <property name="text2" value="* (Just looking at cartoon criticism is sapping your energy rapidly.)"/>
+    <property name="text1" value="{hometown.text.it_s_the_weekly_cartoon_review_c396f10805}"/>
+    <property name="text2" value="{hometown.text.just_looking_at_cartoon_criticism_is_sapping_you_d662bb2b98}"/>
    </properties>
   </object>
  </objectgroup>

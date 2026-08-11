@@ -462,7 +462,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* It's a landline phone.\n[wait:5]* But you already have a cell phone."
+            ["text"] = "{hometown.text.it_s_a_landline_phone_wait_5_but_you_already_hav_6e23e3eb3a}"
           }
         },
         {
@@ -477,8 +477,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* It's a sink. You could wash your hands here.",
-            ["text2"] = "* ...[wait:5] but,[wait:5] isn't the sink in the bathroom better?"
+            ["text1"] = "{hometown.text.it_s_a_sink_you_could_wash_your_hands_here_1edcaa5689}",
+            ["text2"] = "{hometown.text.wait_5_but_wait_5_isn_t_the_sink_in_the_bathroom_6dfdf12e34}"
           }
         },
         {
@@ -508,7 +508,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Cookie cutters for gingerbread monsters and gingerbread humans.)"
+            ["text"] = "{hometown.text.cookie_cutters_for_gingerbread_monsters_and_ging_b64e068c5b}"
           }
         },
         {
@@ -539,7 +539,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (You can feel a pressure gradient from the absence of entertainment.)"
+            ["text"] = "{hometown.text.you_can_feel_a_pressure_gradient_from_the_absenc_797aec94f4}"
           }
         },
         {
@@ -569,7 +569,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* It's a book of hymns."
+            ["text"] = "{hometown.text.it_s_a_book_of_hymns_e8625e25e3}"
           }
         },
         {
@@ -584,7 +584,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* It's a trashcan.\n[wait:5]* Somehow,[wait:5] its floral scent has increased."
+            ["text"] = "{hometown.text.it_s_a_trashcan_wait_5_somehow_wait_5_its_floral_3714503e89}"
           }
         },
         {

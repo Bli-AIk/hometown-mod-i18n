@@ -371,8 +371,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (\"Ms. Toriel\" is written in cursive on the dry-erase board.)",
-            ["text2"] = "* (Seems like it hasn't been erased in a very long time.)"
+            ["text1"] = "{hometown.text.ms_toriel_is_written_in_cursive_on_the_dry_erase_b1f4d1f8b0}",
+            ["text2"] = "{hometown.text.seems_like_it_hasn_t_been_erased_in_a_very_long__dc2e45e51e}"
           }
         },
         {
@@ -387,8 +387,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (You uncapped the scented green marker.)",
-            ["text2"] = "* (It's almost dry,[wait:5] but that gives it a refined,[wait:5] aged apple bouquet.)"
+            ["text1"] = "{hometown.text.you_uncapped_the_scented_green_marker_2f9c8631bc}",
+            ["text2"] = "{hometown.text.it_s_almost_dry_wait_5_but_that_gives_it_a_refin_cf6364e7f0}"
           }
         },
         {
@@ -403,7 +403,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Kids' books.)\n[wait:5]* (Some of them used to be yours.)"
+            ["text"] = "{hometown.text.kids_books_wait_5_some_of_them_used_to_be_yours_15e18676fa}"
           }
         },
         {
@@ -418,7 +418,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a primitive drawing of your mom.)"
+            ["text"] = "{hometown.text.it_s_a_primitive_drawing_of_your_mom_5749bd9e89}"
           }
         },
         {
@@ -434,7 +434,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (The Throne of the Gods grows even higher.)\n* (Almost an sky-scrapper)"
+            ["text"] = "{hometown.text.the_throne_of_the_gods_grows_even_higher_almost__1e3858eb87}"
           }
         },
         {
@@ -449,7 +449,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Hey Apple!)"
+            ["text"] = "{hometown.text.hey_apple_da08088bab}"
           }
         },
         {
@@ -464,7 +464,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Hyperdodecahedron...)"
+            ["text"] = "{hometown.text.hyperdodecahedron_792f52e3d3}"
           }
         },
         {
@@ -479,8 +479,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (The computer wallpaper is updated.)",
-            ["text2"] = "* (It's a picture of your brother and you playing video games.)"
+            ["text1"] = "{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}",
+            ["text2"] = "{hometown.text.it_s_a_picture_of_your_brother_and_you_playing_v_7ec75b0e9e}"
           }
         }
       }

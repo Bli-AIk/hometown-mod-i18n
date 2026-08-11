@@ -786,7 +786,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (It's locked.)"
+            ["text1"] = "{hometown.text.it_s_locked_827a359a7f}"
           }
         },
         {
@@ -819,8 +819,8 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* Mama Miba![wait:5] Welcome to TOP Bakery!",
-            ["text2"] = "* Our special chefs spin baked goods at the TOP of their class!"
+            ["text1"] = "{hometown.text.mama_miba_wait_5_welcome_to_top_bakery_dfd69054a9}",
+            ["text2"] = "{hometown.text.our_special_chefs_spin_baked_goods_at_the_top_of_18ede19b48}"
           }
         },
         {

@@ -28,14 +28,14 @@
   <object id="8" name="interactable" x="240" y="326" width="40" height="74">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (It's a regular sink.)"/>
+    <property name="text" value="{hometown.text.it_s_a_regular_sink_1570ab3538}"/>
    </properties>
   </object>
   <object id="9" name="interactable" x="480" y="326" width="40" height="74">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (It's a clone of the other sink.)"/>
-    <property name="text2" value="* (Perhaps there was originally one tall sink that was cut in half to create both of them.)"/>
+    <property name="text1" value="{hometown.text.it_s_a_clone_of_the_other_sink_f458e060db}"/>
+    <property name="text2" value="{hometown.text.perhaps_there_was_originally_one_tall_sink_that__c14e4174cb}"/>
    </properties>
   </object>
   <object id="10" name="interactable" x="428" y="220" width="82" height="100">
@@ -47,13 +47,13 @@
   <object id="11" name="interactable" x="244" y="198" width="54" height="40">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (You looked inside the cupboard.)"/>
-    <property name="text2" value="* (... a very small obligatory piano is hiding inside.)"/>
+    <property name="text1" value="{hometown.text.you_looked_inside_the_cupboard_9b93c9fd4d}"/>
+    <property name="text2" value="{hometown.text.a_very_small_obligatory_piano_is_hiding_inside_3fd294cb5a}"/>
    </properties>
   </object>
   <object id="13" name="interactable" x="320" y="180" width="76" height="40">
    <properties>
-    <property name="text1" value="* (It's a classic 1-to-10 pain scale,[wait:5] using ICE-E as a model.)"/>
+    <property name="text1" value="{hometown.text.it_s_a_classic_1_to_10_pain_scale_wait_5_using_i_5c14efbe16}"/>
     <property name="text2">* (At 0 pain,[wait:5] he's happy.)
 [wait:5](At 10 pain,[wait:5] he's happy and sweating.)</property>
    </properties>
@@ -62,7 +62,7 @@
    <properties>
     <property name="flagcheck" value="POST_SNOWGRAVE"/>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* (The space heater is running.)"/>
+    <property name="text" value="{hometown.text.the_space_heater_is_running_f1d6f82188}"/>
    </properties>
   </object>
   <object id="14" name="transition" x="280" y="480" width="80" height="40">

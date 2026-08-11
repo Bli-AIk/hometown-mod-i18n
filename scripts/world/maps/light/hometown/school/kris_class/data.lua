@@ -448,8 +448,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (You checked the time...)",
-            ["text2"] = "* (It's an enigma.)"
+            ["text1"] = "{hometown.text.you_checked_the_time_e8e22ddbf0}",
+            ["text2"] = "{hometown.text.it_s_an_enigma_cc1c13833e}"
           }
         },
         {
@@ -464,9 +464,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (Looks like motivational quotes from various literature.)",
-            ["text2"] = "* \"Try your best,[wait:5] Astral Wolf!\"\n[wait:5]* \"Even in your darkest hour...!\"",
-            ["text3"] = "* (... that one seems to be from a video game.)"
+            ["text1"] = "{hometown.text.looks_like_motivational_quotes_from_various_lite_c89ef9582d}",
+            ["text2"] = "{hometown.text.try_your_best_wait_5_astral_wolf_wait_5_even_in__1da5873609}",
+            ["text3"] = "{hometown.text.that_one_seems_to_be_from_a_video_game_ab9d709258}"
           }
         },
         {
@@ -481,9 +481,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (The computer wallpaper is updated.)",
-            ["text2"] = "* (... it's from the newely released season of Mew Mew Kissy Cutie.)",
-            ["text3"] = "* (You decide to keep a safe distance.)"
+            ["text1"] = "{hometown.text.the_computer_wallpaper_is_updated_a03fdb53a8}",
+            ["text2"] = "{hometown.text.it_s_from_the_newely_released_season_of_mew_mew__cad7750121}",
+            ["text3"] = "{hometown.text.you_decide_to_keep_a_safe_distance_0765557bd9}"
           }
         },
         {
@@ -498,7 +498,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a bunch of roses.)"
+            ["text"] = "{hometown.text.it_s_a_bunch_of_roses_c24167f6b7}"
           }
         },
         {
