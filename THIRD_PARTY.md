@@ -20,7 +20,7 @@
   (MIT/Apache-2.0 dual). Vendored inline with a mod-specific extension
   (raw-string dictionary lookup in `localizeStaticTextValue`, gated to `zh_hans`);
   the extension is intentionally not upstreamed.
-- `libraries/object-editor`, `libraries/terminal-cli`, `libraries/kristal-debug-tools`,
+- `libraries/kristal-object-selector-plus`, `libraries/terminal-cli`, `libraries/kristal-debug-tools`,
   `libraries/virtualkeyboard`, `.emacs`, `.helix` — git submodules of
   [Bli-AIk](https://github.com/Bli-AIk) repositories (template dev toolchain,
   see [thrash-machine](https://github.com/Bli-AIk/thrash-machine)).
