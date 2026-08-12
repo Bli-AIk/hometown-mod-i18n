@@ -1,9 +1,7 @@
 # Hometown Mod (i18n)
 
-[![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE)
-<br>
-<img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" />
-<img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
+[![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE) <img src="https://img.shields.io/github/repo-size/Bli-AIk/hometown-mod-i18n.svg"/> <img src="https://img.shields.io/github/last-commit/Bli-AIk/hometown-mod-i18n.svg"/> <img src="https://img.shields.io/github/v/release/Bli-AIk/hometown-mod-i18n.svg"/> <br>
+<img src="https://img.shields.io/badge/Deltarune-001225?style=for-the-badge&labelColor=001225&logo=undertale&logoColor=ff0000" /> <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" /> <img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
 
 ![Hometown Mod screenshot](./screenshot.png)
 
@@ -28,6 +26,12 @@ multilingual localization library.
 | ------- | ----------------------- |
 | English | [简体中文](./README.md) |
 
+## Kristal Version Support
+
+| `kristal`                                                                                                      | `hometown-mod-i18n` |
+| -------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`) | v0.0.0              |
+
 ## What is this
 
 A Simplified Chinese localization fork of the Hometown Mod subtree in AfterChill's
@@ -40,12 +44,12 @@ A Simplified Chinese localization fork of the Hometown Mod subtree in AfterChill
 
 ## Localization coverage
 
-| Content                 | Count      | Notes                                                                                          |
-| ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| Dialogue/item/UI strings | **550**    | `lang/zh_hans.json`, keys are the original runtime text; ≤19 chars per line per Goodman group standard |
-| Character names         | **24**     | `lang/names.json`, incl. full names (Rudy "Rudolph" Holiday, Asgore Dreemurr, Noelle…), referenced via `[name:xxx]` |
-| Map texture variants    | **20**     | `assets/sprites/lang/zh_hans/`, Chinese signage/building textures (sansstore, hospital, school, Librarby, Ice-E's Pizza…) |
-| sans Chinese font       | 1 set      | FangZheng Kaitong Simplified (27/24), used for sans's dialogue only                             |
+| Content                  | Count   | Notes                                                                                                                     |
+| ------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Dialogue/item/UI strings | **550** | `lang/zh_hans.json`, keys are the original runtime text; ≤19 chars per line per Goodman group standard                    |
+| Character names          | **24**  | `lang/names.json`, incl. full names (Rudy "Rudolph" Holiday, Asgore Dreemurr, Noelle…), referenced via `[name:xxx]`       |
+| Map texture variants     | **20**  | `assets/sprites/lang/zh_hans/`, Chinese signage/building textures (sansstore, hospital, school, Librarby, Ice-E's Pizza…) |
+| sans Chinese font        | 1 set   | FangZheng Kaitong Simplified (27/24), used for sans's dialogue only                                                       |
 
 **Mechanics** (kristal-i18n):
 
@@ -114,13 +118,13 @@ This mod's content, translations and dependency libraries are not original. Sour
 references are listed below (attribution format follows the
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) README):
 
-| Project | Author/Organization |
-|---------|---------------------|
-| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
-| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source) | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/) |
-| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0) | [Bli-AIk](https://github.com/Bli-AIk) |
-| [WeatherLib](https://github.com/MrFukuo/WeatherLib) (weather system) | [MrFukuo](https://github.com/MrFukuo) (crocokuo) |
-| [thrash-machine](https://github.com/Bli-AIk/thrash-machine) (dev toolchain) | [Bli-AIk](https://github.com/Bli-AIk) |
+| Project                                                                                                   | Author/Organization                                                                                     |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                         |
+| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source)                        | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/) |
+| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0)    | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
+| [WeatherLib](https://github.com/MrFukuo/WeatherLib) (weather system)                                      | [MrFukuo](https://github.com/MrFukuo) (crocokuo)                                                        |
+| [thrash-machine](https://github.com/Bli-AIk/thrash-machine) (dev toolchain)                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
 
 ## License
 

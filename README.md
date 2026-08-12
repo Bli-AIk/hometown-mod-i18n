@@ -1,9 +1,7 @@
 # Hometown Mod (i18n)
 
-[![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE)
-<br>
-<img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" />
-<img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
+[![license](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE) <img src="https://img.shields.io/github/repo-size/Bli-AIk/hometown-mod-i18n.svg"/> <img src="https://img.shields.io/github/last-commit/Bli-AIk/hometown-mod-i18n.svg"/> <img src="https://img.shields.io/github/v/release/Bli-AIk/hometown-mod-i18n.svg"/> <br>
+<img src="https://img.shields.io/badge/Deltarune-001225?style=for-the-badge&labelColor=001225&logo=undertale&logoColor=ff0000" /> <img src="https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" /> <img src="https://img.shields.io/badge/Kristal-FF6B35?style=for-the-badge&logo=love2d&logoColor=white" />
 
 ![Hometown Mod 截图](./screenshot.png)
 
@@ -26,6 +24,12 @@
 | 简体中文 | English                   |
 | -------- | ------------------------- |
 | 简体中文 | [English](./README_en.md) |
+
+## Kristal 版本支持
+
+| `kristal`                                                                                                      | `hometown-mod-i18n` |
+| -------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`) | v0.0.0              |
 
 ## 这是什么
 
@@ -110,13 +114,13 @@ Game.stage:setWeather()            -- 清空（晴天）
 本 mod 的内容、译文与依赖库均非自创，来源与参考如下（致谢格式同
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) README）：
 
-| 项目 | 作者/组织 |
-|------|-----------|
-| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（Hometown Mod 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop) |
-| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源） | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
-| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0） | [Bli-AIk](https://github.com/Bli-AIk) |
-| [WeatherLib](https://github.com/MrFukuo/WeatherLib)（天气系统） | [MrFukuo](https://github.com/MrFukuo)（crocokuo） |
-| [thrash-machine](https://github.com/Bli-AIk/thrash-machine)（开发工具链） | [Bli-AIk](https://github.com/Bli-AIk) |
+| 项目                                                                                                    | 作者/组织                                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（Hometown Mod 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                                       |
+| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源）                               | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
+| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0）                 | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
+| [WeatherLib](https://github.com/MrFukuo/WeatherLib)（天气系统）                                         | [MrFukuo](https://github.com/MrFukuo)（crocokuo）                                                                     |
+| [thrash-machine](https://github.com/Bli-AIk/thrash-machine)（开发工具链）                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
 
 ## 许可
 
