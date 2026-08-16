@@ -27,11 +27,15 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y just jq love luajit rsync unzip xvfb zip
+          sudo apt-get install -y just jq love luajit rsync unzip xvfb zip icoutils
       - name: Check Lua source and documentation
         run: make test
-      - name: Build standalone packages
-        run: ./build_standalone.sh
+      - name: Build standalone packages (love + win)
+        run: just build
+      - name: Build Windows-only package
+        run: HOMETOWN_MOD_I18N_OUTPUT_DIR=dist-win just build-win
+      - name: Build .love-only package
+        run: HOMETOWN_MOD_I18N_OUTPUT_DIR=dist-love just build-love
       - name: Build Mod package
         run: ./.github/scripts/build_mod.sh
       - name: Run Kristal smoke test
@@ -50,10 +54,28 @@ jobs:
             test -s "$file"
             unzip -t "$file" >/dev/null
           done
+          test -s dist-win/hometown-mod-i18n-release-win64.zip
+          test -s dist-win/hometown-mod-i18n-debug-win64.zip
+          test ! -e dist-win/hometown-mod-i18n-release.love
+          test ! -e dist-win/hometown-mod-i18n-debug.love
+          test -s dist-love/hometown-mod-i18n-release.love
+          test -s dist-love/hometown-mod-i18n-debug.love
+          test -z "$(find dist-love -name '*.zip' | head -n 1)"
           unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep -Fx mod.json >/dev/null
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/kristal-object-selector-plus/' || true)"
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/terminal-cli/' || true)"
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/kristal-debug-tools/' || true)"
+          # Custom-icon contract: build-time icon sources never leak into packages.
+          # Inside the .love the mod lives under mods/<id>/, so the leaked path
+          # would be mods/hometown-mod-i18n/assets/icon/ — not a root-level one.
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-release.love | grep '^mods/hometown-mod-i18n/assets/icon/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^assets/icon/' || true)"
+          # When a window icon is provided, it must land at the mod root and enable the flag.
+          if [ -f assets/icon/window_icon.png ]; then
+            unzip -p dist/hometown-mod-i18n-release.love mods/hometown-mod-i18n/mod.json \
+              | grep -q '"setWindowTitleAndIcon": true'
+            unzip -Z1 dist/hometown-mod-i18n-release.love | grep -Fx 'mods/hometown-mod-i18n/window_icon.png' >/dev/null
+          fi
       - name: Generate and verify SHA-256 manifest
         run: |
           .github/scripts/generate_sha256sums.sh dist
