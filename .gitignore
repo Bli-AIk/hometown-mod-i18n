@@ -1,10 +1,18 @@
 .build/
 dist/
+dist-*/
 .worktrees/
 .vscode/
 *.luac
 *.log
 *.tiled-session
 .DS_Store
-__pycache__/
-*.pyc
+
+# Generated copy of assets/icon/window_icon.png at the mod root (engine convention).
+/window_icon.png
+
+# GUI download cache (release binaries + .mode)
+.tools/
+
+# GUI source is optional and cloned on demand by `just gui-dev`.
+libraries/kristal-debug-tools-gui/
