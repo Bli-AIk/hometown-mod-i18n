@@ -211,20 +211,11 @@ stage_window_icon() {
 }
 
 detect_kristal_path() {
-    local candidates=() candidate dir parent
-    [ -n "$HOMETOWN_MOD_I18N_KRISTAL_DIR_ENV" ] && candidates+=("$HOMETOWN_MOD_I18N_KRISTAL_DIR_ENV")
-    [ -n "$KRISTAL_ROOT_ENV" ] && candidates+=("$KRISTAL_ROOT_ENV")
-    for candidate in "${candidates[@]}"; do
-        [ -n "$candidate" ] || continue
-        if [ -f "$candidate/main.lua" ]; then
-            printf '%s\n' "$candidate"
-            return 0
-        fi
-    done
+    local candidate dir parent
     # Same probe as the game launcher (libraries/kristal-debug-tools/bin/kristal-run):
-    # walk up from the mod root for the nearest engine, so a mod sitting inside an
-    # engine's mods/ (e.g. .../Kristal-0.10.0/mods/hometown-mod-i18n) is found without
-    # env vars. Explicit env vars above still win.
+    # local-first — walk up from the mod root for the nearest engine, so a mod
+    # sitting inside its own engine fork (e.g. el-mods/ inside kristal-el) is
+    # authoritative even when KRISTAL_ROOT is inherited from the shell profile.
     dir="$HOMETOWN_MOD_I18N_MOD_DIR"
     while :; do
         if [ -f "$dir/main.lua" ] && [ -f "$dir/src/kristal.lua" ]; then
@@ -234,6 +225,17 @@ detect_kristal_path() {
         parent=$(dirname "$dir")
         [ "$parent" = "$dir" ] && break
         dir=$parent
+    done
+    # Explicit env vars are only a fallback for mods outside an engine tree.
+    local candidates=()
+    [ -n "$HOMETOWN_MOD_I18N_KRISTAL_DIR_ENV" ] && candidates+=("$HOMETOWN_MOD_I18N_KRISTAL_DIR_ENV")
+    [ -n "$KRISTAL_ROOT_ENV" ] && candidates+=("$KRISTAL_ROOT_ENV")
+    for candidate in "${candidates[@]}"; do
+        [ -n "$candidate" ] || continue
+        if [ -f "$candidate/main.lua" ]; then
+            printf '%s\n' "$candidate"
+            return 0
+        fi
     done
     candidates+=(
         "$HOMETOWN_MOD_I18N_MOD_DIR/.build/Kristal"
