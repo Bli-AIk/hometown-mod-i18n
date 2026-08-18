@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.0...v0.1.1) (2026-08-18)
+
+
+### Bug Fixes
+
+* refresh bundled library releases ([8d19f8a](https://github.com/Bli-AIk/hometown-mod-i18n/commit/8d19f8a71e0b8a562645eae6e7535aeb2f1ed2da))
+* refresh Hometown v0.11 development dependencies ([139f71f](https://github.com/Bli-AIk/hometown-mod-i18n/commit/139f71fe21bb6a3b4169ad7170983640b72b7360))
+
 ## [0.1.0](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.0.0...v0.1.0) (2026-08-18)
 
 
