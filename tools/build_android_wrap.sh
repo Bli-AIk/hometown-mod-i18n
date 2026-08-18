@@ -32,10 +32,10 @@ HOMETOWN_MOD_I18N_ANDROID_EMBED_APK_SHA256="${HOMETOWN_MOD_I18N_ANDROID_EMBED_AP
 HOMETOWN_MOD_I18N_ANDROID_BUILD_TOOLS_VERSION="${HOMETOWN_MOD_I18N_ANDROID_BUILD_TOOLS_VERSION:-34.0.0}"
 HOMETOWN_MOD_I18N_ANDROID_BUILD_TOOLS_DIR="${HOMETOWN_MOD_I18N_ANDROID_BUILD_TOOLS_DIR:-}"
 
-# Kristal is always fetched non-interactively (tag v0.10.0 by default), so the
-# one-click Windows launcher never sees the interactive source prompt.
-HOMETOWN_MOD_I18N_KRISTAL_SOURCE="${HOMETOWN_MOD_I18N_KRISTAL_SOURCE:-tag}"
-HOMETOWN_MOD_I18N_KRISTAL_REF="${HOMETOWN_MOD_I18N_KRISTAL_REF:-v0.10.0}"
+# Explicit Kristal source settings keep their normal precedence. Without an
+# override, build_standalone uses the pinned 0.11.0-dev commit without a prompt.
+HOMETOWN_MOD_I18N_KRISTAL_SOURCE="${HOMETOWN_MOD_I18N_KRISTAL_SOURCE:-}"
+HOMETOWN_MOD_I18N_KRISTAL_REF="${HOMETOWN_MOD_I18N_KRISTAL_REF:-}"
 
 log() {
     printf '[android-wrap] %s\n' "$*" >&2
