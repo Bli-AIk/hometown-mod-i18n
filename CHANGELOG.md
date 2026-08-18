@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.1.0](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.0.0...v0.1.0) (2026-08-18)
+
+
+### Features
+
+* **i18n:** add Dess character name translations ([3e31d0b](https://github.com/Bli-AIk/hometown-mod-i18n/commit/3e31d0b1c73181964274782268d802302ec2add9))
+* support Kristal 0.11.0-dev ([8085607](https://github.com/Bli-AIk/hometown-mod-i18n/commit/8085607f2b0de190d92e2295b84c11357eb651f8))
+* update chapter from 4 to 5 in mod.json configuration ([5a2f407](https://github.com/Bli-AIk/hometown-mod-i18n/commit/5a2f40752e2885fa74a1b0cf25a64ca48573cdd4))
+
+
+### Bug Fixes
+
+* **build:** resolve the local engine fork first (local-first) ([f09633e](https://github.com/Bli-AIk/hometown-mod-i18n/commit/f09633edc34e586f03b09248ec9f7a6e3eb7ff61))
+* play mus_birdnoise for hometown sunrise music ([be83437](https://github.com/Bli-AIk/hometown-mod-i18n/commit/be83437843778becc61f57c524cd683e20dfe811))
+
+
+### Code Refactoring
+
+* **i18n:** use readable key names and drop unused legacy keys ([6fbb5a8](https://github.com/Bli-AIk/hometown-mod-i18n/commit/6fbb5a8863fa14b5d5509c3bfbc9fa2fdfac1b27))
+* rename project to hometown-mod-i18n ([c3b3efa](https://github.com/Bli-AIk/hometown-mod-i18n/commit/c3b3efaac677c3c56f6d93fedb6fab4e39243644))
+
 ## 0.0.0 (2026-08-08)
 
 ### Bug Fixes
