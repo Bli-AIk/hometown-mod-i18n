@@ -1,0 +1,10 @@
+{
+    "id": "mainchara_lib",
+    "authors": [
+        "RiotNeko - Making this library.",
+        "Segoe - Making some of the Vessel/Protag sprite designs (Will be added later)",
+        "SadDiamondMan - Making the OG Vessel library that inspired this one"
+    ],
+    "version": "v1.0.1",
+    "engineVer": "v0.11.0-dev"
+}
