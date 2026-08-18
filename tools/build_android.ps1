@@ -231,8 +231,9 @@ $env:HOMETOWN_MOD_I18N_ANDROID_JAVA_HOME = $javaHome
 $env:LOVE = $loveExe.Replace('\', '/')
 $loveDir = Split-Path -Parent $loveExe
 if (-not $env:PATH.Contains($loveDir)) { $env:PATH = "$loveDir;$env:PATH" }
-$env:HOMETOWN_MOD_I18N_KRISTAL_SOURCE = 'tag'
-$env:HOMETOWN_MOD_I18N_KRISTAL_REF = 'v0.10.0'
+$env:HOMETOWN_MOD_I18N_KRISTAL_SOURCE = 'commit'
+$env:HOMETOWN_MOD_I18N_KRISTAL_REF = 'f62afea63ccab02f468c24ac0d096bd8a2c9aa81'
+$env:HOMETOWN_MOD_I18N_KRISTAL_EXPECTED_VERSION = '0.11.0-dev'
 # The bash scripts don't open the folder themselves: this launcher opens dist
 # below after a successful build (avoids a second explorer window).
 $env:HOMETOWN_MOD_I18N_NO_OPEN_DIR = '1'
