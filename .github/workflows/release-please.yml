@@ -101,6 +101,7 @@ jobs:
           .github/scripts/generate_sha256sums.sh dist
           (cd dist && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: hometown-mod-i18n-${{ needs.release.outputs.tag_name }}
           path: dist/

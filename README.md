@@ -60,11 +60,12 @@
 
 ## 安装
 
-把整个目录放进 Kristal 引擎的 `mods/` 文件夹（或做成 mod ZIP）：
+本 Mod 仅由 Kristal EL 的专用 loader 加载。把整个目录放进 Kristal EL
+检出的 `mods/` 文件夹（或使用对应的 Mod ZIP）：
 
 ```bash
 git clone --recurse-submodules git@github.com:Bli-AIk/hometown-mod-i18n.git
-cp -r hometown-mod-i18n /path/to/kristal/mods/hometown-mod-i18n
+cp -r hometown-mod-i18n /path/to/kristal-el/mods/hometown-mod-i18n
 ```
 
 ## 开发

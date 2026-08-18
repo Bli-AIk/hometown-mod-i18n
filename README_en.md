@@ -62,11 +62,12 @@ A Simplified Chinese localization fork of the Hometown Mod subtree in AfterChill
 
 ## Installation
 
-Drop the whole directory into Kristal's `mods/` folder (or package it as a mod ZIP):
+This project is loaded only by Kristal EL's dedicated loader. Put the whole
+directory in a Kristal EL checkout's `mods/` folder (or use its matching Mod ZIP):
 
 ```bash
 git clone --recurse-submodules git@github.com:Bli-AIk/hometown-mod-i18n.git
-cp -r hometown-mod-i18n /path/to/kristal/mods/hometown-mod-i18n
+cp -r hometown-mod-i18n /path/to/kristal-el/mods/hometown-mod-i18n
 ```
 
 ## Development
