@@ -20,11 +20,30 @@ function Mod:postInit(newfile)
         print("EL_LANG=" .. tostring(Game.lang))
         print("EL_T1=" .. tostring(Game:hasStr("hometown.smoke.door") and Game:loc("hometown.smoke.door") or "NO"))
         print("EL_T2=" .. tostring(Game:hasStr("hometown.smoke.documents") and Game:loc("hometown.smoke.documents") or "NO"))
-        print("EL_T4=" .. tostring(Game:hasStr("{hometown.smoke.names_seam_pronounced_shawm}") and Game:loc("{hometown.smoke.names_seam_pronounced_shawm}") or "NO"))
+        print("EL_T4=" .. tostring(Game:hasStr("hometown.smoke.names_seam_pronounced_shawm") and Game:loc("hometown.smoke.names_seam_pronounced_shawm") or "NO"))
         print("EL_T3=" .. tostring(Game:hasStr("untranslated_stuff_xyz") and Game:loc("untranslated_stuff_xyz") or "FALLBACK_OK"))
+        Game.stage:setWeather("rain", false, false)
+        assert(Game.stage:hasWeather("rain"), "weather smoke: rain was not applied")
+        Game.stage:resetWeather()
+        assert(not Game.stage:hasWeather("rain"), "weather smoke: rain was not cleared")
+        print("EL_WEATHER=PASS")
         print("KRISTAL_MOD_SMOKE=PASS")
         love.event.quit()
     end
+
+    -- 临时 hook
+    -- Keep the Hometown north gate open for testing. The initial map is not
+    -- town_north, so its noellegate event may not exist yet.
+    Game:setFlag("noelle_gate_open", true)
+    if Game.world and Game.world.map and Game.world.map.id == "light/hometown/town_north" then
+        local gate = Game.world.map:getEvent("noellegate")
+        if gate then
+            gate:open()
+        end
+    end
+
+    Game:setFlag("hometown_time", "sunrise")
+
 end
 
 

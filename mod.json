@@ -21,10 +21,10 @@
     "chapter": 5,
 
     // The map that you start in when first starting the mod.
-    "map": "light/hometown/torielhouse/kris_room",
+    "map": "light/hometown/noellehouse/dess",
 
     // The party. The first character is the player.
-    "party": ["kris"],
+    "party": ["mainchara"],
 
     // The light-world inventory. Contains a ball of junk, cards, a cell phone and a shadow crystal by default.
     "lightInventory": {

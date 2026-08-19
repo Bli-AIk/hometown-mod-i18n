@@ -98,7 +98,7 @@ Game:setFlag("hometown_time", "day")       -- 白天
 
 ### 天气（weatherlib）
 
-依赖 [MrFukuo/WeatherLib](https://github.com/MrFukuo/WeatherLib)（子模块）：
+依赖 [Bli-AIk/WeatherLib](https://github.com/Bli-AIk/WeatherLib) 维护 fork（子模块，固定 `v1.1.1` 标签；基于上游 `v1.1.0`）：
 
 ```lua
 Game.stage:setWeather("rain")      -- 下雨
@@ -121,7 +121,7 @@ Game.stage:setWeather()            -- 清空（晴天）
 | [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（Hometown Mod 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                                       |
 | [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源）                               | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
 | [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0）                 | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
-| [WeatherLib](https://github.com/MrFukuo/WeatherLib)（天气系统）                                         | [MrFukuo](https://github.com/MrFukuo)（crocokuo）                                                                     |
+| [WeatherLib](https://github.com/Bli-AIk/WeatherLib)（天气系统维护 fork，基于上游 v1.1.0）              | [MrFukuo](https://github.com/MrFukuo)（crocokuo）；[Bli-AIk](https://github.com/Bli-AIk)（0.11 维护）                |
 | [thrash-machine](https://github.com/Bli-AIk/thrash-machine)（开发工具链）                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
 
 ## 许可

@@ -16,6 +16,11 @@ test -f "$root/libraries/terminal-cli/lib.lua"
 test -f "$root/libraries/kristal-debug-tools/lib.lua"
 test -f "$root/libraries/virtualkeyboard/lib.lua"
 test -f "$root/libraries/weatherlib/lib.lua"
+grep -Fq '| [v0.11.0-dev]' "$root/libraries/virtualkeyboard/README.md"
+grep -Fq '| [v0.11.0-dev]' "$root/libraries/protag-kun_library/readme_el.md"
+grep -Fq '| [v0.11.0-dev]' "$root/libraries/weatherlib/README.md"
+grep -F '"version": "v1.1.1"' "$root/libraries/weatherlib/lib.json" >/dev/null
+grep -F '"engineVer": "v0.11.0-dev"' "$root/libraries/weatherlib/lib.json" >/dev/null
 grep -F '"engineVer": "v0.11.0-dev"' "$root/mod.json" >/dev/null
 grep -F '"lightInventory": {' "$root/mod.json" >/dev/null
 if grep -F '"inventory": {' "$root/mod.json" >/dev/null; then

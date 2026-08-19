@@ -100,7 +100,8 @@ Game:setFlag("hometown_time", "day")       -- day
 
 ### Weather (weatherlib)
 
-Depends on [MrFukuo/WeatherLib](https://github.com/MrFukuo/WeatherLib) (submodule):
+Depends on the [Bli-AIk/WeatherLib](https://github.com/Bli-AIk/WeatherLib)
+maintenance fork as a submodule, pinned to tag `v1.1.1` (based on upstream `v1.1.0`):
 
 ```lua
 Game.stage:setWeather("rain")      -- rain
@@ -125,7 +126,7 @@ references are listed below (attribution format follows the
 | [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                         |
 | [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source)                        | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/) |
 | [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0)    | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
-| [WeatherLib](https://github.com/MrFukuo/WeatherLib) (weather system)                                      | [MrFukuo](https://github.com/MrFukuo) (crocokuo)                                                        |
+| [WeatherLib](https://github.com/Bli-AIk/WeatherLib) (weather maintenance fork, based on upstream v1.1.0) | [MrFukuo](https://github.com/MrFukuo) (crocokuo); [Bli-AIk](https://github.com/Bli-AIk) (0.11 maintenance) |
 | [thrash-machine](https://github.com/Bli-AIk/thrash-machine) (dev toolchain)                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
 
 ## License

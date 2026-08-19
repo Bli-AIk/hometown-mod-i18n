@@ -3,6 +3,12 @@
 This is an optional Kristal 0.11.0-dev library for Android builds. It provides a
 touch joystick or button layout that feeds normal Kristal `Input` key events.
 
+## Kristal Version Support
+
+| `kristal` | `virtualkeyboard` |
+| --- | --- |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/f62afea63ccab02f468c24ac0d096bd8a2c9aa81) (`f62afea`, 2026-08-17) | v0.1.0 |
+
 The library is enabled by default only when `love.system.getOS()` returns
 `Android`. Desktop builds therefore keep their normal keyboard and gamepad
 behavior. To test the controls on another platform, set `only_android` to

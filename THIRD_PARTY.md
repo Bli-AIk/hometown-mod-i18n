@@ -13,9 +13,10 @@
 
 ## Libraries
 
-- `libraries/weatherlib` — [MrFukuo/WeatherLib](https://github.com/MrFukuo/WeatherLib)
-  v1.1.0 by crocokuo. Bundled as a git submodule (pinned commit). **No LICENSE** in the
-  upstream repository; referenced as a gitlink rather than vendored.
+- `libraries/weatherlib` — [Bli-AIk/WeatherLib](https://github.com/Bli-AIk/WeatherLib)
+  v1.1.1 maintenance fork of [MrFukuo/WeatherLib](https://github.com/MrFukuo/WeatherLib)
+  v1.1.0 by crocokuo. Bundled as a git submodule pinned to the `v1.1.1` tag. **No LICENSE**
+  in the upstream repository; referenced as a gitlink rather than vendored.
 - `libraries/kristal-i18n` — [Bli-AIk/kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)
   (MIT/Apache-2.0 dual). Vendored inline with a mod-specific extension
   (raw-string dictionary lookup in `localizeStaticTextValue`, gated to `zh_hans`);
