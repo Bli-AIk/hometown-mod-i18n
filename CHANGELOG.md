@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.1...v0.1.2) (2026-08-19)
+
+
+### Bug Fixes
+
+* restore Hometown customizations and 0.11 libraries ([ce91dba](https://github.com/Bli-AIk/hometown-mod-i18n/commit/ce91dba142666d57820147b06a8980801f41fad4))
+
 ## [0.1.1](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.0...v0.1.1) (2026-08-18)
 
 
