@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.2...v0.2.0) (2026-08-20)
+
+
+### Features
+
+* **luals:** generate library globals shim ([4082e6c](https://github.com/Bli-AIk/hometown-mod-i18n/commit/4082e6c64fcaa5916090c3d5333ea7c7febe2327))
+
 ## [0.1.2](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.1...v0.1.2) (2026-08-19)
 
 
