@@ -1,9 +1,9 @@
-# Run the mod with a local Kristal checkout and shared debug tools.
-# zh_hans: 用本地 Kristal 引擎启动 mod（带共享调试工具）
+# Run the project with a local Kristal checkout and shared debug tools.
+# zh_hans: 用本地 Kristal 引擎启动项目（带共享调试工具）
 default: test
 
-# Run the mod with debug launcher arguments.
-# zh_hans: 启动游戏，可带调试参数（如 -w 波次、-tp 初始 TP）
+# Run the project with debug launcher arguments.
+# zh_hans: 启动项目，可带调试参数（如 -w 波次、-tp 初始 TP）
 run *args:
     @just --justfile libraries/kristal-debug-tools/justfile run {{ args }}
 
@@ -22,8 +22,8 @@ gui-dev:
 gui-dev-release:
     @just --justfile libraries/kristal-debug-tools/justfile gui-dev-release
 
-# Run the mod's test suite.
-# zh_hans: 运行 mod 测试
+# Run the project's test suite.
+# zh_hans: 运行项目测试
 test:
     @make test
 
@@ -35,42 +35,43 @@ test-kristal:
 # Build .love only.
 # zh_hans: 只打包 .love
 build-love:
-    @HOMETOWN_MOD_I18N_BUILD_LOVE=1 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=0 bash ./tools/build_standalone.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build.ps1\" love" } else { "HOMETOWN_MOD_I18N_BUILD_LOVE=1 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=0 bash ./tools/build_standalone.sh" } }}
 
 # Build Windows only.
 # zh_hans: 只打包 Windows
 build-win:
-    @HOMETOWN_MOD_I18N_BUILD_LOVE=0 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=1 bash ./tools/build_standalone.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build.ps1\" win" } else { "HOMETOWN_MOD_I18N_BUILD_LOVE=0 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=1 bash ./tools/build_standalone.sh" } }}
 
 # Build .love + Windows (original behavior).
 # zh_hans: 同时打包 .love 和 Windows（老用法）
 build:
-    @HOMETOWN_MOD_I18N_BUILD_LOVE=1 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=1 bash ./tools/build_standalone.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build.ps1\" all" } else { "HOMETOWN_MOD_I18N_BUILD_LOVE=1 HOMETOWN_MOD_I18N_BUILD_WINDOWS_EXE=1 bash ./tools/build_standalone.sh" } }}
 
 # Compile the Android APK from source (full build; needs JDK 17 + Android SDK API 34 + NDK 25.2.9519653).
 # A missing JDK 17 or Android SDK (API 34 + build-tools 34.0.0 + NDK 25.2.9519653) is
 # auto-downloaded into the shared tools dir next to the Kristal engine on first use
-# (<kristal-root>/.tools/jdk17 / <kristal-root>/.tools/android-sdk; mod-root .tools as fallback).
+# (<kristal-root>/.tools/jdk17 / <kristal-root>/.tools/android-sdk; project-root .tools as fallback).
 # Uses the pinned Kristal commit by default; set HOMETOWN_MOD_I18N_KRISTAL_SOURCE=ask
 # to choose a local path, tag, commit, or branch interactively.
-# zh_hans: 编译构建 Android APK（完整构建，需要 JDK 17 + Android SDK API 34 + NDK 25.2.9519653；缺 JDK/SDK 时首次自动下载到 Kristal 根 .tools/jdk17 / .tools/android-sdk，无引擎时回退 mod 根 .tools；默认使用固定 Kristal commit；设 HOMETOWN_MOD_I18N_KRISTAL_SOURCE=ask 可交互选择本地路径、tag、commit 或分支）
+# zh_hans: 编译构建 Android APK（完整构建，需要 JDK 17 + Android SDK API 34 + NDK 25.2.9519653；缺 JDK/SDK 时首次自动下载到 Kristal 根 .tools/jdk17 / .tools/android-sdk，无引擎时回退 project 根 .tools；默认使用固定 Kristal commit；设 HOMETOWN_MOD_I18N_KRISTAL_SOURCE=ask 可交互选择本地路径、tag、commit 或分支）
 build-android:
-    @bash ./tools/build_android.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build_android.ps1\" compile" } else { "bash ./tools/build_android.sh" } }}
 
 # Wrap-build a quick Android APK (official LÖVE shell + game.love, re-aligned and re-signed).
-# Only needs a JDK (auto-downloaded into the shared tools dir when missing, see build-android);
+# Needs no Android SDK/NDK; JDK 17 is auto-downloaded into the shared tools dir
+# when missing (see build-android). The normal Git/Kristal source requirement still applies;
 # build-tools are downloaded automatically. Faster, but cannot change package id/icon/name and
 # cannot be published on Google Play.
-# zh_hans: 套包构建 Android APK（官方 LÖVE 壳 + game.love，重对齐并重签名；只需 JDK，缺则自动下载到 Kristal 根 .tools/jdk17，工具自动下载；不能改包名/图标/名称，不能上 Google Play）
+# zh_hans: 套包构建 Android APK（官方 LÖVE 壳 + game.love，重对齐并重签名；不需 Android SDK/NDK，缺 JDK 17 时自动下载到 Kristal 根 .tools/jdk17；仍需常规 Git/Kristal 源；不能改包名/图标/名称，不能上 Google Play）
 build-android-wrap:
-    @bash ./tools/build_android_wrap.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build_android.ps1\" wrap" } else { "bash ./tools/build_android_wrap.sh" } }}
 
-# Build the mod-only distribution.
-# zh_hans: 构建 mod 单包分发版
+# Build the project-only distribution (recipe name retained for Kristal compatibility).
+# zh_hans: 构建项目单包分发版（recipe 名称为兼容 Kristal 保留）
 build-mod:
-    @bash ./.github/scripts/build_mod.sh
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"" + justfile_directory() + "/tools/build.ps1\" mod" } else { "bash ./.github/scripts/build_mod.sh" } }}
 
 # Remove build artifacts.
 # zh_hans: 清理构建产物
 clean-build:
-    rm -rf .build dist
+    @{{ if os() == "windows" { "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Remove-Item -LiteralPath '.build','dist' -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item -Path 'dist-*' -Recurse -Force -ErrorAction SilentlyContinue\"" } else { "rm -rf .build dist dist-*" } }}

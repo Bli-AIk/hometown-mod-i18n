@@ -25,6 +25,13 @@
   `libraries/virtualkeyboard`, `.emacs`, `.helix` — git submodules of
   [Bli-AIk](https://github.com/Bli-AIk) repositories (template dev toolchain,
   see [thrash-machine](https://github.com/Bli-AIk/thrash-machine)).
+- `libraries/MagicalGlassRedux` — [Bli-AIk/MagicalGlassRedux](https://github.com/Bli-AIk/MagicalGlassRedux),
+  upstream: all rights reserved © original authors; fork additions MIT or Apache-2.0.
+  Optional UT content library — kept disabled by default (see `optionalLibraries`
+  in `mod.json`, IDs `magical-glass` / `undertale_monsters_recreation`; the latter
+  requires the former). Disabled optional libraries are removed from release and
+  mod packages; debug packages retain their files but do not initialize or expose
+  them through `Mod.libs` at runtime.
 
 ## IP notice
 

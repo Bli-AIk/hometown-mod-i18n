@@ -24,6 +24,8 @@ jobs:
           test -s libraries/kristal-object-selector-plus/lib.lua
           test -s libraries/terminal-cli/lib.lua
           test -s libraries/kristal-debug-tools/lib.lua
+          test -s libraries/MagicalGlassRedux/lib.lua
+          test -s libraries/UndertaleMonstersRecreation/lib.json
       - name: Install build dependencies
         run: |
           sudo apt-get update
@@ -65,6 +67,12 @@ jobs:
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/kristal-object-selector-plus/' || true)"
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/terminal-cli/' || true)"
           test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/kristal-debug-tools/' || true)"
+          # Disabled optional libraries must never ship (see mod.json optionalLibraries).
+          # Forks that re-enable the packs must flip these asserts back to 'grep -q'.
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/MagicalGlassRedux/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-mod.zip | grep '^libraries/UndertaleMonstersRecreation/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-release.love | grep '^mods/hometown-mod-i18n/libraries/MagicalGlassRedux/' || true)"
+          test -z "$(unzip -Z1 dist/hometown-mod-i18n-release.love | grep '^mods/hometown-mod-i18n/libraries/UndertaleMonstersRecreation/' || true)"
           # Custom-icon contract: build-time icon sources never leak into packages.
           # Inside the .love the mod lives under mods/<id>/, so the leaked path
           # would be mods/hometown-mod-i18n/assets/icon/ — not a root-level one.
@@ -76,6 +84,18 @@ jobs:
               | grep -q '"setWindowTitleAndIcon": true'
             unzip -Z1 dist/hometown-mod-i18n-release.love | grep -Fx 'mods/hometown-mod-i18n/window_icon.png' >/dev/null
           fi
+          # Local/editor metadata must never ship, including from nested libraries.
+          for archive in \
+            dist/hometown-mod-i18n-release.love \
+            dist/hometown-mod-i18n-debug.love \
+            dist/hometown-mod-i18n-mod.zip \
+            dist-win/hometown-mod-i18n-release-win64.zip \
+            dist-win/hometown-mod-i18n-debug-win64.zip; do
+            if metadata_entries=$(unzip -Z1 "$archive" | grep -E '(^|/)(\.github|\.claude)(/|$)'); then
+              printf 'Package contains local metadata: %s\n%s\n' "$archive" "$metadata_entries" >&2
+              exit 1
+            fi
+          done
       - name: Generate and verify SHA-256 manifest
         run: |
           .github/scripts/generate_sha256sums.sh dist

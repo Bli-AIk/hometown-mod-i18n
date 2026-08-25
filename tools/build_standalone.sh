@@ -214,7 +214,7 @@ detect_kristal_path() {
     local candidate dir parent
     # Same probe as the game launcher (libraries/kristal-debug-tools/bin/kristal-run):
     # local-first — walk up from the mod root for the nearest engine, so a mod
-    # sitting inside its own engine fork (e.g. el-mods/ inside kristal-el) is
+    # sitting inside its own engine fork (e.g. mods/ inside kristal-el) is
     # authoritative even when KRISTAL_ROOT is inherited from the shell profile.
     dir="$HOMETOWN_MOD_I18N_MOD_DIR"
     while :; do
@@ -481,8 +481,10 @@ choose_kristal_source() {
 resolve_kristal_source() {
     if [ "$HOMETOWN_MOD_I18N_KRISTAL_SOURCE" = "ask" ]; then
         HOMETOWN_MOD_I18N_KRISTAL_SOURCE=""
-        choose_kristal_source
-        return 0
+        if [ -t 0 ] && [ -t 1 ]; then
+            choose_kristal_source
+            return 0
+        fi
     fi
 
     if [ -n "$HOMETOWN_MOD_I18N_KRISTAL_SOURCE" ]; then
@@ -698,6 +700,9 @@ copy_mod() {
     tar -cf - \
         --exclude='*.git' \
         --exclude='./.github' \
+        --exclude='./libraries/*/.github' \
+        --exclude='./.claude' \
+        --exclude='./libraries/*/.claude' \
         --exclude='./.build' \
         --exclude='./dist*' \
         --exclude='./.tools' \
@@ -709,6 +714,7 @@ copy_mod() {
         --exclude='./docs' \
         --exclude='./Makefile' \
         --exclude='./justfile' \
+        --exclude='./gui.cmd' \
         --exclude='./tools' \
         --exclude='./build-helper' \
         --exclude='__pycache__' \
@@ -729,9 +735,9 @@ copy_mod() {
         -C "$HOMETOWN_MOD_I18N_MOD_DIR" . | tar -xf - -C "$stage_mod"
 
     if [ "$variant" = "release" ]; then
-        rm -rf "$stage_mod/libraries/kristal-object-selector-plus"
-        rm -rf "$stage_mod/libraries/terminal-cli"
-        rm -rf "$stage_mod/libraries/kristal-debug-tools"
+        # The helper owns release stripping by library ID. Debug packages
+        # intentionally retain every optional and development library directory.
+        prune_release_optional_libraries "$stage_mod"
     fi
 }
 
