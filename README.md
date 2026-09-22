@@ -27,10 +27,11 @@
 
 ## Kristal 版本支持
 
-| `kristal`                                                                                                                    | `hometown-mod-i18n` |
-| -------------------------------------------------------------------------------------------------------------------------------| ------ |
-| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/8e592d84065263138d4e92593f0a4ab780d93822) (`8e592d8`, 2026-09-21) | v0.1.2 |
-| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`, 2026-06-23)    | v0.0.0 |
+| `kristal`                                                                                                                     | `hometown-mod-i18n` |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/8e592d84065263138d4e92593f0a4ab780d93822) (`8e592d8`, 2026-09-21) |                     |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/f62afea63ccab02f468c24ac0d096bd8a2c9aa81) (`f62afea`, 2026-08-17) | v0.1.2              |
+| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`, 2026-06-23)    | v0.0.0              |
 
 ## 这是什么
 
@@ -121,7 +122,7 @@ Game.stage:setWeather()            -- 清空（晴天）
 | [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC)（Hometown Mod 子树，BSD-3-Clause） | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                                       |
 | [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese)（译文信源）                               | [好人汉化组（Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization）](https://github.com/gm3dr/) |
 | [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n)（内置本地化库，MIT/Apache-2.0）                 | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
-| [WeatherLib](https://github.com/Bli-AIk/WeatherLib)（天气系统维护 fork，基于上游 v1.1.0）              | [MrFukuo](https://github.com/MrFukuo)（crocokuo）；[Bli-AIk](https://github.com/Bli-AIk)（0.11 维护）                |
+| [WeatherLib](https://github.com/Bli-AIk/WeatherLib)（天气系统维护 fork，基于上游 v1.1.0）               | [MrFukuo](https://github.com/MrFukuo)（crocokuo）；[Bli-AIk](https://github.com/Bli-AIk)（0.11 维护）                 |
 | [thrash-machine](https://github.com/Bli-AIk/thrash-machine)（开发工具链）                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                                 |
 
 ## 许可

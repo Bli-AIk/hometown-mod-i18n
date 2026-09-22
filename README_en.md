@@ -28,10 +28,11 @@ multilingual localization library.
 
 ## Kristal Version Support
 
-| `kristal`                                                                                                                    | `hometown-mod-i18n` |
-| -------------------------------------------------------------------------------------------------------------------------------| ------ |
-| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/8e592d84065263138d4e92593f0a4ab780d93822) (`8e592d8`, 2026-09-21) | v0.1.2 |
-| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`, 2026-06-23)    | v0.0.0 |
+| `kristal`                                                                                                                     | `hometown-mod-i18n` |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/8e592d84065263138d4e92593f0a4ab780d93822) (`8e592d8`, 2026-09-21) |                     |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/f62afea63ccab02f468c24ac0d096bd8a2c9aa81) (`f62afea`, 2026-08-17) | v0.1.2              |
+| [v0.10.0](https://github.com/KristalTeam/Kristal/commit/752bc0688ba97ca8a256ba9125b7e05a1ca6edbd) (`752bc068`, 2026-06-23)    | v0.0.0              |
 
 ## What is this
 
@@ -121,13 +122,13 @@ This mod's content, translations and dependency libraries are not original. Sour
 references are listed below (attribution format follows the
 [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) README):
 
-| Project                                                                                                   | Author/Organization                                                                                     |
-| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                         |
-| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source)                        | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/) |
-| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0)    | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
-| [WeatherLib](https://github.com/Bli-AIk/WeatherLib) (weather maintenance fork, based on upstream v1.1.0) | [MrFukuo](https://github.com/MrFukuo) (crocokuo); [Bli-AIk](https://github.com/Bli-AIk) (0.11 maintenance) |
-| [thrash-machine](https://github.com/Bli-AIk/thrash-machine) (dev toolchain)                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                   |
+| Project                                                                                                   | Author/Organization                                                                                        |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [deltarune-AC](https://github.com/sekalisukarumah-boop/deltarune-AC) (Hometown Mod subtree, BSD-3-Clause) | [sekalisukarumah-boop](https://github.com/sekalisukarumah-boop)                                            |
+| [DeltaruneChinese](https://github.com/gm3dr/DeltaruneChinese) (translation source)                        | [Goodman 3 Localization Group \| UNDERTALE & DELTARUNE Chinese Localization](https://github.com/gm3dr/)    |
+| [kristal-i18n](https://github.com/Bli-AIk/kristal-i18n) (bundled localization library, MIT/Apache-2.0)    | [Bli-AIk](https://github.com/Bli-AIk)                                                                      |
+| [WeatherLib](https://github.com/Bli-AIk/WeatherLib) (weather maintenance fork, based on upstream v1.1.0)  | [MrFukuo](https://github.com/MrFukuo) (crocokuo); [Bli-AIk](https://github.com/Bli-AIk) (0.11 maintenance) |
+| [thrash-machine](https://github.com/Bli-AIk/thrash-machine) (dev toolchain)                               | [Bli-AIk](https://github.com/Bli-AIk)                                                                      |
 
 ## License
 
