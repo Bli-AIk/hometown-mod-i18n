@@ -9,7 +9,7 @@
     "subtitle": "",
 
     // The version of your mod.
-    "version": "v0.1.2", // x-release-please-version
+    "version": "v0.2.0", // x-release-please-version
     // What version of the engine your mod was made with.
     "engineVer": "v0.11.0-dev",
     // This project is loaded only by the dedicated Kristal EL loader.
