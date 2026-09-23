@@ -7,6 +7,8 @@ test: test-static test-debug-tools
 test-static:
 	sh .github/scripts/static-smoke.sh
 	luajit tests/optional_libraries.lua
+	luajit tests/i18n_console_segments.lua
+	luajit tests/library_enabled_announce.lua
 	luajit tests/i18n_item_key_api.lua
 	sh tests/build_helper_manifest.sh
 	sh tests/refactor_boundaries.sh

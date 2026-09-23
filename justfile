@@ -2,10 +2,12 @@
 # zh_hans: 用本地 Kristal 引擎启动项目（带共享调试工具）
 default: test
 
+libs := env("HOMETOWN_MOD_I18N_OPTIONAL_LIBS", "")
+
 # Run the project with debug launcher arguments.
 # zh_hans: 启动项目，可带调试参数（如 -w 波次、-tp 初始 TP）
 run *args:
-    @just --justfile libraries/kristal-debug-tools/justfile run {{ args }}
+    @set -- {{ args }}; libs="{{ libs }}"; rest=""; for arg in "$@"; do case "$arg" in libs=*) libs="${arg#libs=}" ;; *) rest="$rest $arg" ;; esac; done; HOMETOWN_MOD_I18N_OPTIONAL_LIBS="$libs" just --justfile libraries/kristal-debug-tools/justfile run $rest
 
 # Run the debug-tools GUI (end users: auto-downloads/updates release binaries).
 # zh_hans: 启动调试工具图形界面（自动检测并下载最新 release，无需 just/Rust/Node）

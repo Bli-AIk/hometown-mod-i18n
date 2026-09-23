@@ -7,7 +7,7 @@ touch joystick or button layout that feeds normal Kristal `Input` key events.
 
 | `kristal` | `virtualkeyboard` |
 | --- | --- |
-| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/f62afea63ccab02f468c24ac0d096bd8a2c9aa81) (`f62afea`, 2026-08-17) | v0.1.0 |
+| [v0.11.0-dev](https://github.com/KristalTeam/Kristal/commit/8e592d84065263138d4e92593f0a4ab780d93822) (`8e592d8`, 2026-09-21) | v0.1.0 |
 
 The library is enabled by default only when `love.system.getOS()` returns
 `Android`. Desktop builds therefore keep their normal keyboard and gamepad
@@ -49,7 +49,7 @@ and `c` buttons. A mod can also call `VirtualKeyboard:setVisible(false)` or
 `VirtualKeyboard:toggle()` at runtime. `toggle_key` is disabled by default;
 Android Back is intentionally not used as the control toggle.
 
-The adapter targets Kristal `f62afea63ccab02f468c24ac0d096bd8a2c9aa81`
+The adapter targets Kristal `8e592d84065263138d4e92593f0a4ab780d93822`
 (`0.11.0-dev`). It draws in Kristal's side areas when available, falls back to the
 existing 640x480 game canvas with the same edge spacing, and converts touch
 coordinates through Kristal's game scale and side offsets. It is not an API
