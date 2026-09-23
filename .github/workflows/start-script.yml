@@ -90,11 +90,7 @@ jobs:
           } finally {
             Pop-Location
           }
-      - name: Verify the renamed copy passes the test suite (Linux)
-        if: runner.os == 'Linux'
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y just luajit jq
-          cd "$RUNNER_TEMP/start-script-test"
-          make test
+# The renamed copy is not exercised here. A derived project's suite asserts
+# its own identity and paths (e.g. a library directory containing the project
+# id), which a blind rename cannot preserve -- see the template repo for that
+# step. This repo's ci.yml runs the same suite on the real tree.
