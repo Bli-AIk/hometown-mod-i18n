@@ -136,3 +136,28 @@ references are listed below (attribution format follows the
 - kristal-i18n: MIT/Apache-2.0 ([Bli-AIk/kristal-i18n](https://github.com/Bli-AIk/kristal-i18n))
 - Attribution and license boundaries for each library: see [`THIRD_PARTY.md`](THIRD_PARTY.md)
 - DELTARUNE is copyrighted by Toby Fox; this project is a fan remake and is not affiliated with Toby Fox
+
+### Android release signing and upgrades
+
+Tagged compiled APK releases require four repository secrets:
+`ANDROID_SIGNING_KEYSTORE_BASE64`, `ANDROID_SIGNING_STORE_PASSWORD`,
+`ANDROID_SIGNING_KEY_ALIAS`, and `ANDROID_SIGNING_KEY_PASSWORD`. Set the public
+repository variable `ANDROID_SIGNING_CERT_SHA256` to the signing certificate's
+SHA-256 fingerprint. Each project must use its own persistent keystore; never
+reuse the template's signing key in a derived project. Missing configuration or
+a certificate mismatch stops the Android release before publication.
+
+Release tags must be `vMAJOR.MINOR.PATCH`. The compiled APK uses
+`major * 1000000 + minor * 1000 + patch` as its version code, with minor and patch
+at most 999 and the result within `1..2100000000`. CI checks the APK's certificate,
+package ID, version code, and version name before uploading it. Pull request
+builds retain debug signing and do not access release secrets. Wrapper APKs keep
+the official LÖVE shell's package identity and version, so they are for local
+experiments and tests; tagged releases publish the compiled APK.
+
+Older APK releases used different temporary signing keys. Android cannot install
+a newly signed APK over an installation with another certificate. Export saves
+before uninstalling that old installation, then install the new APK and restore
+them. Future compiled releases signed with the same persistent key can upgrade
+in place. Keep an encrypted offline backup of the keystore, alias, passwords, and
+certificate fingerprint; losing the key prevents updates to existing installs.
