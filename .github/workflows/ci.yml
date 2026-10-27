@@ -56,6 +56,8 @@ jobs:
             test -s "$file"
             unzip -t "$file" >/dev/null
           done
+          python3 .github/scripts/verify-package-libraries.py dist/hometown-mod-i18n-mod.zip --mod-id hometown-mod-i18n
+          python3 .github/scripts/verify-package-libraries.py dist/hometown-mod-i18n-release.love --mod-id hometown-mod-i18n
           test -s dist-win/hometown-mod-i18n-release-win64.zip
           test -s dist-win/hometown-mod-i18n-debug-win64.zip
           test ! -e dist-win/hometown-mod-i18n-release.love

@@ -31,6 +31,9 @@ jobs:
       - name: Build Android APK
         run: ./tools/build_android.sh
 
+      - name: Verify packaged runtime libraries
+        run: python3 .github/scripts/verify-package-libraries.py dist/hometown-mod-i18n-android.apk --mod-id hometown-mod-i18n
+
       - uses: actions/upload-artifact@v4
         with:
           name: hometown-mod-i18n-android-${{ github.sha }}
