@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.2.0...v0.2.1) (2026-10-27)
+
+
+### Bug Fixes
+
+* **android:** sync thrash-machine release reliability fixes ([#22](https://github.com/Bli-AIk/hometown-mod-i18n/issues/22)) ([405b47c](https://github.com/Bli-AIk/hometown-mod-i18n/commit/405b47c46f4a59ad425ba507d62f0e12694db9f5))
+
 ## [0.2.0](https://github.com/Bli-AIk/hometown-mod-i18n/compare/v0.1.2...v0.2.0) (2026-09-23)
 
 
